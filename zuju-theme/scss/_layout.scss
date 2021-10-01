@@ -1030,7 +1030,7 @@ input[type='submit'] {
   }
 
   &--primary {
-    font-size: rem(64)
+    font-size: rem(64);
   }
 }
 
@@ -1038,10 +1038,19 @@ input[type='submit'] {
   background-color: var(--clr-dark-400);
   padding-bottom: rem(125);
 
+  .kfd-aspect-ratio-control {
+    position: relative;
+    padding-top: 50%;
+  }
+
   iframe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
     width: 100%;
     border: none;
     outline: none;
-    aspect-ratio: 2;
+    // aspect-ratio: 2;
   }
 }
