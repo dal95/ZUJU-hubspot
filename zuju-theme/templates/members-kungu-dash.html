@@ -50,11 +50,13 @@
     </div>
 
     {# Iframe wrapper #}
-    <div class="kd-game">
-      <div class="container">
-        {% dnd_area "draggable", class="kd-draggable" %}
+    <div class="kd-aspect-ratio">
+      <div class="kd-game">
+        <div class="container">
+          {% dnd_area "draggable", class="kd-draggable" %}
 
-        {% end_dnd_area %}
+          {% end_dnd_area %}
+        </div>
       </div>
     </div>
   </main>
@@ -63,15 +65,28 @@
 {{ require_js('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 'footer' ) }}
 {% require_js 'my_require_js' position='footer' %}
   <script>
-  $(document).ready(function() {
-    if($(window).width() < 768)  {
-      $(".kd-grid").slick({
-        infinite: true,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        arrows: false
+    $(window).on('load resize orientationchange', function() {
+      $('.kd-grid').each(function() {
+        var $carousel = $(this);
+          /* Initializes a slick carousel only on mobile screens */
+          // slick on mobile
+          if ($(window).width() > 768) {
+            if ($carousel.hasClass('slick-initialized')) {
+              $carousel.slick('unslick');
+            }
+          } else {
+             if (!$carousel.hasClass('slick-initialized')) {
+               $carousel.slick({
+                 slidesToShow: 1,
+                 slidesToScroll: 1,
+                 mobileFirst: true,
+                 infinite: true,
+                 arrows: false
+              });
+            }
+          }
       });
-    }
-  })
+    });
+
   </script>
 {% end_require_js %}
