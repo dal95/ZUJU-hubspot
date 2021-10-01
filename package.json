@@ -1,0 +1,15 @@
+{
+  "name": "zuju-theme",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "sass:global": "sass --watch --update ./zuju-theme/scss:./css",
+    "sass:module": "sass --watch --update ./zuju-theme/modules:./modules",
+    "watch": "hs watch ./zuju-theme zuju-theme --remove",
+    "fetch:modules": "hs fetch ./zuju-theme zuju-theme --overwrite"
+  },
+  "devDependencies": {
+    "sass": "^1.39.2"
+  }
+}

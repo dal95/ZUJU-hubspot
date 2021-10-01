@@ -1,0 +1,46 @@
+// Layouting
+.dfl {
+  display: flex;
+}
+
+.fl-a-c {
+  align-items: center;
+}
+
+.fl-j-c {
+  justify-content: center;
+}
+
+.fl-j-sb {
+  justify-content: space-between;
+}
+
+// Colors
+.clr-mute {
+  color: var(--clr-light-600);
+}
+
+.clr-primary {
+  color: var(--clr-primary);
+}
+
+.clr-green {
+  color: var(--clr-green-400);
+}
+
+// Fonts and text styling
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.all-caps {
+  text-transform: uppercase;
+}
+
+.fs-sm {
+  font-size: var(--fs-300);
+}

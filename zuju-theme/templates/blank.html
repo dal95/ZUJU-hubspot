@@ -1,0 +1,17 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Register
+  screenshotPath: ../images/template-previews/pricing.png
+-->
+{% extends './layouts/base.html' %}
+
+{% block body %}
+  <main class="main-wrapper">
+    {% dnd_area 'dnd_area'
+      label='Main section',
+    %}
+
+    {% end_dnd_area %}
+  </main>
+{% endblock body %}

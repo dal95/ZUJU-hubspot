@@ -1,0 +1,94 @@
+<!--
+  templateType: none
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+    {% if page_meta.html_title %}<title>{{ page_meta.html_title }}</title>{% endif %}
+    {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+    {{ require_css(get_asset_url("../../fonts/stylesheet.css")) }}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+    {{ require_css(get_asset_url("../../css/main.css")) }}
+
+    {# This is intended to be used if a template requires template specific style sheets #}
+    {% if template_css %}
+      {{ require_css(get_asset_url(template_css)) }}
+    {% endif %}
+    {# To see a full list of what is included via standard_header_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
+    {{ standard_header_includes }}
+  </head>
+  <body>
+    <div class="body-wrapper {{ builtin_body_classes }}">
+    {% block header %}
+      {% global_partial path='../partials/header.html' %}
+    {% endblock header %}
+
+    <main class="main-wrapper">
+      <div class="left-offset"></div>
+      <div class="main-wrapper__row">
+        <aside class="sidebar">
+          {% if request_contact.is_logged_in %}
+            <div class="users">
+              <a href="/profile" class="users__avatar"> </a>
+
+              {# <textarea name="" id="" cols="30" rows="10">{{ contact|tojson }}</textarea> #}
+              <div class="users__content">
+                <div class="users__name all-caps">{{ request_contact.contact.firstname }} {{ contact.lastname }}</div>
+                <div class="users__tier fs-sm">{{ contact.membership_tier }}</div>
+                <div class="users__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> Zuju Points</div>
+              </div>
+            </div>
+          {% endif %}
+
+          <div class="separator">Menu</div>
+          <!-- Side menu -->
+          {% module "side_menu" path="/zuju-theme/modules/menu-with-icon", label="Side Menu" %}
+
+          <div class="separator">Zuju Loyalty</div>
+          <ul class="v-menu">
+            <li><a href="#">How do loyalty points work?</a></li>
+            <li><a href="#">Your Tiering & Benefits</a></li>
+
+            {% if request_contact.is_logged_in %}
+              <li>
+                <a href="/_hcms/mem/logout">Logout</a>
+              </li>
+            {% else %}
+              <li>
+                <a href="/_hcms/mem/login">Login</a>
+              </li>
+            {% endif %}
+          </ul>
+        </aside>
+
+        {% block body %}
+        {% endblock body %}
+
+        </div>
+      </main>
+
+      {% block footer %}
+        {# {% global_partial path='../partials/footer.html' %} #}
+      {% endblock footer %}
+    </div>
+    <script>
+      var user_vid = "{{ contact.hs_object_id }}";
+    </script>
+    {{ require_js('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js') }}
+    {{ require_js(get_asset_url('../../js/main.js')) }}
+    {{ standard_footer_includes }}
+  </body>
+</html>

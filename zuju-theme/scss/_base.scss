@@ -1,0 +1,105 @@
+:root {
+  font-size: 16px;
+
+  // Colors
+  --clr-primary: #ed2938;
+  --clr-primary-800: #ffcaca;
+  --clr-dark-800: #111111;
+  --clr-dark-400: #1d1d1b; // base
+  --clr-dark-300: #1e1c1d;
+
+  --clr-light-900: #f5f5f5;
+  --clr-light-800: #ebedf2;
+  --clr-light-700: #999999;
+  --clr-light-600: #979797;
+  --clr-light-300: #474742;
+  --clr-green-400: #00e264;
+
+  // Fonts
+  --ff-primary: 'Montserrat', sans-serif;
+  --ff-accent: 'GT America Condensed', sans-serif;
+  --fs-300: 0.875rem;
+  --fs-400: 1rem;
+
+  // Misc
+  --mx-width: 1200px;
+  --sidebar-width: 278px;
+}
+
+$max-width: 1200px;
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+body {
+  font-family: var(--ff-primary);
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--clr-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--clr-primary);
+  text-underline-offset: 3px;
+  transition: opacity 0.3s ease;
+}
+
+h1,
+h2,
+h3,
+h4,
+.button {
+  font-family: var(--ff-accent);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin-top: 0;
+}
+
+h1 {
+  font-size: 5rem;
+  line-height: 4rem;
+
+  @include media('>mobile') {
+    font-size: 5rem;
+    line-height: 4rem;
+  }
+}
+
+h2 {
+  font-size: 3rem;
+  line-height: 3.5rem;
+}
+
+h3 {
+  font-size: 2rem;
+  line-height: 2.5rem;
+}
+
+h4 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+label {
+  cursor: pointer;
+}
+
+.container {
+  @include container;
+}

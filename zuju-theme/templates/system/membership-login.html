@@ -1,0 +1,32 @@
+<!--
+  templateType: membership_login_page
+  isAvailableForNewContent: true
+  label: Zuju theme -  membership login
+  screenshotPath: ../../images/template-previews/membership-login.png
+-->
+{% extends '../layouts/base-standard.html' %}
+
+{% block body %}
+<main class="public">
+  <div class="auth-wrapper auth login" style="background-image: url({{ get_asset_url('../../images/assets/bg/register.png') }})">
+      <div class="container">
+        <div class="auth__push-right form-dark">
+          <h2 class="auth__heading">Login</h2>
+          {% member_login 'my_login'
+            email_label= 'Email',
+            password_label= 'Password',
+            remember_me_label= 'Remember Me',
+            reset_password_text= 'Forgot your password?',
+            submit_button_text= 'Login'
+          %}
+
+          <h2 class="auth__heading">Sign Up</h2>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum convallis pharetra turpis porta sodales. Donec eget facilisis sem. Donec aliquam magna a feugiat gravida.</p>
+          <div class="text-right" style="margin-top: 2rem">
+            <a href="https://members.zujugp.com/registration" class="button">Create</a>
+          </div>
+        </div>
+    </div>
+  </div>
+</main>
+{% endblock %}

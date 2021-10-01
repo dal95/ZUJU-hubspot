@@ -1,0 +1,22 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Members Register
+  screenshotPath: ../images/template-previews/home.png
+-->
+{% extends "./layouts/base-standard.html" %}
+{% block body %}
+  <main class="public">
+    <div class="auth-wrapper auth" style="background-image: url({{ get_asset_url('../images/assets/bg/register.png') }})">
+      <div class="container">
+        <div class="auth__push-right form-dark">
+          <h2 class="auth__heading">New Account Sign Up</h2>
+          {% form 'my_form'
+            form_key='register',
+            form_to_use='2a6a57d9-9360-489a-aabe-a6d5bc87d744',
+          %}
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock body %}

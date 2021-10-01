@@ -1,0 +1,70 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Zuju Statics - blog post
+-->
+{% set is_statics = true %}
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<div class="app">
+	<main class="bg-zuju-gray-1" x-data="{ heroHeight: 0 }">
+		<article>
+			<header class="max-w-[1440px] flex flex-col items-center justify-center bg-zuju-gray-db mx-auto">
+				<section class="lg:w-2/3 sm:px-4 sm:py-16 lg:py-36">
+					<h2 class="text-zuju-red font-bold uppercase text-center mb-8">{{ content.tag_list[0].name }}</h2>
+					<h1 class="text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center">{{ content.name }}</h1>
+				</section>
+				<section
+					class="sm:w-full lg:w-1/3 self-end flex-grow flex flex-col sm:items-end sm:justify-start justify-end sm:-mt-8 sm:pb-40"
+					x-bind:style="{ height: $px(heroHeight / 2) }"
+				>
+					<div class="lg:hidden pr-8">
+						<img
+							class="h-14 w-14 cursor-pointer"
+							x-on:click="navigator.share?.({ url: location.href })"
+							src="https://dev.zujugp.com/hubfs/statics/assets/share.png"
+						/>
+					</div>
+					<div class="sm:hidden px-8">
+						<p class="text-white font-bold uppercase mb-4">Share</p>
+						<div class="flex -mx-4 mb-4">
+							<a href="#"><img class="h-6 mx-4" src="https://dev.zujugp.com/hubfs/statics/assets/share-twitter.png" /></a>
+							<a href="#"><img class="h-6 mx-4" src="https://dev.zujugp.com/hubfs/statics/assets/share-facebook.png" /></a>
+							<a href="#"><img class="h-6 mx-4" src="https://dev.zujugp.com/hubfs/statics/assets/share-instagram.png" /></a>
+						</div>
+						<p class="text-white mb-8">{{ content.publish_date_localized }}</p>
+					</div>
+				</section>
+			</header>
+			<div class="bg-white">
+				<div class="max-w-[1440px] flex sm:flex-col mx-auto">
+					<div class="sm:hidden w-1/12"></div>
+					<div class="lg:w-7/12 px-8" x-bind:style="{ marginTop: $px(heroHeight / 2 * -1) }">
+						<img class="w-full sm:mb-2 lg:mb-16" src="{{ content.featured_image }}" x-init="$RO(() => { heroHeight = $height })" />
+						<p class="lg:hidden text-xs mb-8">{{ content.publish_date_localized }}</p>
+						<section class="blog-post__body mb-24">{{ content.post_body }}</section>
+						<div class="blog-post__comments-listing">{% if group.allow_comments %} {% blog_comments "blog_comments" limit=10000 %} {% endif %}</div>
+					</div>
+					<div class="sm:hidden lg:w-1/4 p-8">
+						<div class="aspect-w-4 aspect-h-3"><div class="flex items-center justify-center bg-blue-200 text-white font-bold">Ad Space</div></div>
+						<div class="pt-16">
+							<h5 class="text-zuju-red text-sm font-bold border-b uppercase pb-2 mb-2">Trending</h5>
+							<article class="mb-8">
+								<img class="mb-2" src="https://dev.zujugp.com/hubfs/statics/assets/trend-1.png" />
+								<h1 class="text-2xl font-gtcond font-regular">Top 10 most decorated footballers in the world right now</h1>
+							</article>
+							<article class="mb-8">
+								<img class="mb-2" src="https://dev.zujugp.com/hubfs/statics/assets/trend-2.png" />
+								<h1 class="text-2xl font-gtcond font-regular">
+									12-hour plane trips, death-defying ojeks and football away days - Getting in and around Indonesia
+								</h1>
+							</article>
+						</div>
+					</div>
+				</div>
+			</div>
+		</article>
+	</main>
+</div>
+{% endblock body %}

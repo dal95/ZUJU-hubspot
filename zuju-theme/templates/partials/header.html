@@ -1,0 +1,78 @@
+<!--
+  templateType: global_partial
+  label: Website header
+-->
+
+<!-- Top nav -->
+<div class="nav">
+  <nav class="top-nav">
+    <div class="top-nav__container">
+      <div class="top-nav__social social-links">
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Main nav -->
+  <nav class="main-nav">
+    <div class="main-nav__container">
+      <div class="main-nav__logo clr-primary">
+        {% logo "logo" no_wrapper=True %}
+      </div>
+
+      <div class="main-nav__omega">
+        {% menu "main-nav" id=54357477653 %}
+
+        {% if request_contact.is_logged_in %}
+          <a class="nav__link" href="/_hcms/mem/logout">Logout</a>
+        {% else %}
+          <a class="nav__link" href="/_hcms/mem/login">Login</a>
+        {% endif %}
+
+        <div class="off-canvas">
+          <svg
+            width="31"
+            height="31"
+            viewBox="0 0 31 31"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M1.35783 1.35787L29.6421 29.6421"
+              stroke="#ED2938"
+              stroke-linecap="square"
+            />
+            <path
+              d="M29.6421 1.35786L1.35783 29.6421"
+              stroke="#ED2938"
+              stroke-linecap="square"
+            />
+          </svg>
+
+          <!-- Off canvas -->
+          <ul class="off-canvas__menu">
+            <li><a class="nav__link" href="/">Latest</a></li>
+            <li><a class="nav__link" href="/">Portofolio</a></li>
+            <li><a class="nav__link" href="/">Impact</a></li>
+            <li><a class="nav__link" href="/">Shop</a></li>
+            <li><a class="nav__link" href="/">About</a></li>
+            <li><a class="nav__link" href="/">Advertise</a></li>
+            <li><a class="nav__link" href="/">NFT</a></li>
+            <li><a class="nav__link" href="/">Subscribe</a></li>
+          </ul>
+        </div>
+
+        <!-- Burger menu -->
+        <div class="burger-menu">
+          <div class="burger-menu__item"></div>
+          <div class="burger-menu__item"></div>
+          <div class="burger-menu__item"></div>
+        </div>
+
+      </div>
+    </div>
+  </nav>
+</div>

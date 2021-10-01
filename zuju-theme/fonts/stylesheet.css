@@ -1,0 +1,21 @@
+@font-face {
+  font-family: 'GT America Condensed';
+  src: url('https://members.zujugp.com/hubfs/theme-assets/fonts/GTAmerica-CondensedBold.woff2')
+      format('woff2'),
+    url('https://members.zujugp.com/hubfs/theme-assets/fonts/GTAmerica-CondensedBold.woff')
+      format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT America Condensed';
+  src: url('https://members.zujugp.com/hubfs/theme-assets/fonts/GTAmerica-CondensedBlack.woff2')
+      format('woff2'),
+    url('https://members.zujugp.com/hubfs/theme-assets/fonts/GTAmerica-CondensedBlack.woff')
+      format('woff');
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}

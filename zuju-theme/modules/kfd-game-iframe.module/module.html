@@ -1,0 +1,12 @@
+<iframe id="kfd-iframe" src=" https://playcanv.as/e/p/7lBAJoW2/" width="800" height="450"></iframe>
+<script>
+  window.onmessage = function(e){
+    if(e.data == "ReadyToRecieveID")
+    {
+      var iframe = document.querySelector('#kfd-iframe');
+      iframe.contentWindow.postMessage({
+        HubSpotContactID: {{ contact.hs_object_id }},
+      }, "https://playcanv.as");
+    }
+  }
+</script>

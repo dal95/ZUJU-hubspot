@@ -1,0 +1,34 @@
+<!--
+  templateType: "none"
+  isAvailableForNewContent: false
+-->
+{# Domain #}
+{% macro my_domain() %}
+  {{ request.scheme~'://'~request.domain }}
+{% endmacro %}
+
+{# Filter unused tags #}
+{% macro tags_exclude(tags, tag_to_exclude) %}
+  {{ tags|rejectattr('slug', 'equalto', tags_to_exclude) }}
+{% endmacro %}
+
+{# Modal #}
+{% macro modal(headerContent, footerContent) %}
+	<div class="modal">
+		<div class="modal__overlay"></div>
+
+		<div class="modal__main">
+			{% if headerContent %}
+				<div class="modal__header">{{ headerContent }}</div>
+			{% endif %}
+
+			<div class="modal__body">
+				{{ caller() }}
+			</div>
+
+			{% if footerContent %}
+				<div class="modal__footer">{{ footerContent }}</div>
+			{% endif %}
+		</div>
+	</div>
+{% endmacro %}

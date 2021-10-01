@@ -1,0 +1,463 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Zuju Statics - Landing
+-->
+{% set is_statics = true %}
+{% extends '../layouts/base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block footer %}
+{% endblock footer %}
+
+{% block body %}
+<div class="app">
+  <main class="bg-zuju-gray-1" x-data="{}">
+    <div
+      class="sm:hidden fixed inset-y-0 right-0 z-50 flex flex-col items-center justify-center pr-8"
+      x-data="{ show: ($scrollY >= $vh50), overflow: false, active: 1, top: 0, right: 0, share: false }"
+      x-on:scroll.window="show = ($scrollY >= $vh50)"
+      x-on:floater-overflow.window="overflow = $event.detail"
+      x-on:floater-index.window="active = $event.detail"
+      x-effect="show == false &amp;&amp; share == false"
+    >
+      <div
+        class="relative w-[42px] bg-zuju-gray-2 rounded-full shadow-lg px-3 transition duration-300 transform translate-x-full opacity-0"
+        x-bind:class="(show &amp;&amp; !overflow) &amp;&amp; '!translate-x-0 !opacity-100'"
+      >
+        <svg
+          viewBox="0 0 18 14"
+          version="1.1"
+          xmlns="http://www.w3.org/2000/svg"
+          xmlns:xlink="http://www.w3.org/1999/xlink"
+          class="w-[18px] absolute z-40 transition-all duration-300 ease-out"
+          x-bind:style="{ top }"
+          x-cloak=""
+        >
+          <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+            <g fill="#ED2938" stroke="#ED2938"><polygon points="17 7.0046755 9.273566 13 1 10.7009908 3.613411 3.2843148 13.501537 1"></polygon></g>
+          </g>
+        </svg>
+        <div>
+          <div
+            x-effect="active == 1 &amp;&amp; (top = $el.offsetTop)"
+            x-on:click="$dispatch('float-to', 1)"
+            class="relative my-8 first:mt-4 last:mb-4 cursor-pointer z-10"
+          >
+            <svg width="18px" height="14px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g stroke="#FFFFFF"><polygon points="17 7.0046755 9.273566 13 1 10.7009908 3.613411 3.2843148 13.501537 1"></polygon></g>
+              </g>
+            </svg>
+            <div
+              class="
+                absolute
+                inset-y-0
+                right-full
+                flex
+                items-center
+                text-zuju-gray-9
+                font-bold
+                uppercase
+                pr-8
+                transition
+                duration-300
+                transform
+                translate-x-8
+                opacity-0
+              "
+              x-bind:class="active == 1 &amp;&amp; '!translate-x-0 !opacity-100'"
+            >
+              Cristiano!
+            </div>
+          </div>
+          <div
+            x-effect="active == 2 &amp;&amp; (top = $el.offsetTop)"
+            x-on:click="$dispatch('float-to', 2)"
+            class="relative my-8 first:mt-4 last:mb-4 cursor-pointer z-10"
+          >
+            <svg width="18px" height="14px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g stroke="#FFFFFF"><polygon points="17 7.0046755 9.273566 13 1 10.7009908 3.613411 3.2843148 13.501537 1"></polygon></g>
+              </g>
+            </svg>
+            <div
+              class="
+                absolute
+                inset-y-0
+                right-full
+                flex
+                items-center
+                text-zuju-gray-9
+                font-bold
+                uppercase
+                pr-8
+                transition
+                duration-300
+                transform
+                translate-x-8
+                opacity-0
+              "
+              x-bind:class="active == 2 &amp;&amp; '!translate-x-0 !opacity-100'"
+            >
+              ZujuGP!
+            </div>
+          </div>
+          <div
+            x-effect="active == 3 &amp;&amp; (top = $el.offsetTop)"
+            x-on:click="$dispatch('float-to', 3)"
+            class="relative my-8 first:mt-4 last:mb-4 cursor-pointer z-10"
+          >
+            <svg width="18px" height="14px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g stroke="#FFFFFF"><polygon points="17 7.0046755 9.273566 13 1 10.7009908 3.613411 3.2843148 13.501537 1"></polygon></g>
+              </g>
+            </svg>
+            <div
+              class="
+                absolute
+                inset-y-0
+                right-full
+                flex
+                items-center
+                text-zuju-gray-9
+                font-bold
+                uppercase
+                pr-8
+                transition
+                duration-300
+                transform
+                translate-x-8
+                opacity-0
+              "
+              x-bind:class="active == 3 &amp;&amp; '!translate-x-0 !opacity-100'"
+            >
+              Launch&nbsp;Exclusive!
+            </div>
+          </div>
+          <div
+            x-effect="active == 4 &amp;&amp; (top = $el.offsetTop)"
+            x-on:click="$dispatch('float-to', 4)"
+            class="relative my-8 first:mt-4 last:mb-4 cursor-pointer z-10"
+          >
+            <svg width="18px" height="14px" viewBox="0 0 18 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+              <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                <g stroke="#FFFFFF"><polygon points="17 7.0046755 9.273566 13 1 10.7009908 3.613411 3.2843148 13.501537 1"></polygon></g>
+              </g>
+            </svg>
+            <div
+              class="
+                absolute
+                inset-y-0
+                right-full
+                flex
+                items-center
+                text-zuju-gray-9
+                font-bold
+                uppercase
+                pr-8
+                transition
+                duration-300
+                transform
+                translate-x-8
+                opacity-0
+              "
+              x-bind:class="active == 4 &amp;&amp; '!translate-x-0 !opacity-100'"
+            >
+              Unlockables!
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="
+          group
+          relative
+          h-[42px]
+          w-[42px]
+          flex flex-col
+          bg-white
+          rounded-full
+          shadow-lg
+          mt-4
+          transition-all
+          duration-300
+          transform
+          translate-x-full
+          opacity-0
+          cursor-pointer
+          overflow-y-hidden
+        "
+        role="button"
+        x-bind:class="(show &amp;&amp; !overflow) &amp;&amp; '!translate-x-0 !opacity-100'"
+        x-on:click="share = true"
+        x-on:click.away="share = false"
+        x-on:mouseenter="share = true"
+        x-on:mouseleave="share = false"
+        x-bind:style="{ height: share ? `${$refs.icons.clientHeight}px` : null }"
+      >
+        <div class="absolute top-0 inset-x-0 h-[42px] flex items-center justify-center transition duration-300 group-hover:opacity-0 pointer-events-none">
+          <img class="w-[18px]" src="https://dev.zujugp.com/hubfs/statics/assets/floater-share-icon.png" />
+        </div>
+        <div
+          class="flex flex-col items-center py-4 opacity-0 transition duration-300 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto"
+          x-ref="icons"
+        >
+          <a href="#" x-on:click.prevent=""><img class="w-[18px] my-2" src="https://dev.zujugp.com/hubfs/statics/assets/floater-twitter.png" /></a>
+          <a href="#" x-on:click.prevent=""><img class="w-[18px] my-2" src="https://dev.zujugp.com/hubfs/statics/assets/floater-facebook.png" /></a>
+          <a href="#" x-on:click.prevent=""><img class="w-[18px] my-2" src="https://dev.zujugp.com/hubfs/statics/assets/floater-instagram.png" /></a>
+        </div>
+      </div>
+    </div>
+    <img class="absolute top-0 inset-x-0 z-10 m-4 mx-auto h-12 pointer-events-none" src="https://dev.zujugp.com/hubfs/statics/assets/landing-logo.png" />
+    <section>
+      <div
+        class="relative h-screen w-full overflow-hidden cursor-pointer"
+        x-data="{ init: false, show: false, x: 0, y: 0, top: 0, playing: false }"
+        x-init="init = true"
+        x-on:scroll.window="top = $top"
+        x-on:mousemove.window="show = $el.matches(':hover'); if (show) { x = $event.clientX; y = $event.clientY }"
+      >
+        <img
+          x-show="!init"
+          class="absolute z-20 transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          src="https://dev.zujugp.com/hubfs/statics/assets/play-button.png"
+        />
+        <div
+          x-show="show"
+          x-transition.duration.500ms.opacity.scale.50=""
+          x-cloak=""
+          class="touch:hidden sm:hidden absolute z-20 origin-center transition-all duration-200 ease-out pointer-events-none"
+          x-bind:style="{ top: (y - top - $height / 2)+'px', left: (x - $width / 2)+'px' }"
+        >
+          <img src="https://dev.zujugp.com/hubfs/statics/assets/play-button.png" />
+        </div>
+        <video muted="" autoplay="" loop="" class="sm:hidden h-full w-full object-cover object-center opacity-70" x-on:click="playing = true">
+          <source src="https://dev.zujugp.com/hubfs/statics/trailer.mp4" type="video/mp4" />
+        </video>
+        <div class="hidden sm:block touch:block absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <img class="sm:h-20 sm:0w-20" src="https://dev.zujugp.com/hubfs/statics/assets/play-button.png" />
+        </div>
+        <video muted="" class="lg:hidden h-full w-full object-cover object-center" x-on:click="playing = true">
+          <source src="https://dev.zujugp.com/hubfs/statics/trailer.mp4" type="video/mp4" />
+        </video>
+        <div
+          x-cloak
+          x-show="playing"
+          x-transition.opacity.duration.300ms=""
+          class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+          x-on:click.self="playing = false"
+        >
+          <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+            <div class="relative">
+              <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
+              <video controls="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+                <source src="https://dev.zujugp.com/hubfs/statics/trailer.mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-[#1d1d1b]" x-bind="$floaterAnchor(1)">
+      <div class="w-full max-w-[1440px] bg-gradient-cr mx-auto grid sm:grid-cols-1 sm:auto-rows-auto lg:grid-cols-12 p-8">
+        <div class="lg:col-start-2 lg:col-span-5 flex flex-col justify-center sm:z-10" x-data="parallax()" x-bind="root">
+          <h1 class="text-white sm:text-4xl lg:text-6xl font-bold sm:-mt-4 mb-8" x-bind="animate(8)">Cristiano!</h1>
+          <p class="text-white lg:pr-16 sm:mb-8" x-bind="animate(4)">
+            Widely regarded as football's GOAT, Cristiano Ronaldo has received five Ballon d'OR awards, the most for a European player, and holds an
+            unassailable number of records for his performance on the pitch. Philanthropist and an advocate for social good, Ronaldo is also the world's most
+            powerful influencer, with &gt;600M followers on social media.
+          </p>
+        </div>
+        <div class="sm:row-start-1 lg:col-span-5 sm:-mt-8 sm:-mx-8" x-data="parallax()" x-bind="root">
+          <img class="transform lg:translate-y-24" src="https://dev.zujugp.com/hubfs/statics/assets/cr7.png" x-bind="animate(24, 96)" />
+        </div>
+      </div>
+    </section>
+    <section class="bg-white" x-bind="$floaterAnchor(2, { scrollToMid: true })">
+      <div class="w-full max-w-[1440px] mx-auto flex justify-center p-8 sm:pt-16 lg:pt-24">
+        <div class="lg:w-2/3 flex flex-col" x-data="parallax()" x-bind="root">
+          <h1 class="text-zuju-red text-4xl font-bold mb-8" x-bind="animate(8)">ZujuGP!</h1>
+          <p class="sm:mb-8 lg:mb-16" x-bind="animate(8)">
+            We are born in Asia and raised in the world. Our mission is to elevate fan experience in football by building community-driven technology to connect
+            fans and businesses - from East to West - with products they love, experiences they want and the opportunities they deserve.
+          </p>
+          <div class="self-center border-l border-r border-zuju-red h-24 -mb-8"></div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-[#1d1d1b]">
+      <div
+        class="w-full max-w-[1920px] bg-fixed bg-no-repeat bg-center bg-cover mx-auto"
+        style="
+          background-image: url(https://dev.zujugp.com/hubfs/statics/assets/network.png), radial-gradient(circle closest-side at center, #574969, #1d1d1b 120%);
+        "
+      >
+        <div class="w-full max-w-[1440px] sm:flex sm:flex-col lg:grid lg:grid-cols-12 auto-rows-auto pt-0 p-8 mx-auto">
+          <div class="lg:row-start-1 lg:col-start-9 lg:col-span-3 pt-24" x-data="parallax()" x-bind="root">
+            <span></span>
+            <img class="object-center object-contain sm:mx-auto" src="https://dev.zujugp.com/hubfs/statics/assets/nft.png" x-bind="animate(24)" />
+          </div>
+          <div class="lg:row-span-1 lg:col-start-2 lg:col-span-7 pt-24 mb-16" x-bind="$floaterAnchor(3)">
+            <div x-data="parallax()" x-bind="root">
+              <h1 class="text-zuju-red text-xl font-bold mb-8" x-bind="animate(8)">Launch Exclusive!</h1>
+              <p class="text-white mb-2" x-bind="animate(8)">To commemorate the launch of ZujuGP we are issuing this limited</p>
+              <p class="text-white text-3xl font-bold mb-4" x-bind="animate(8)">1st Edition ZujuGP Cristiano Ronaldo NFT</p>
+              <p class="text-white mb-8" x-bind="animate(8)">
+                Unlock automatic entry into a Grand Prize sweepstake for three winners to receive a spectacular
+                <strong>gold plated stone crusted mask</strong>
+                worth USD $70,000 plus a 1/7 specially minted
+                <strong>'Ultra&nbsp;Rare BianLian&nbsp;NFT'</strong>
+                .
+              </p>
+              <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4" x-bind="animate(8)">Get Yours Now</button>
+            </div>
+          </div>
+          <div class="lg:row-start-2 lg:col-start-4 lg:col-span-6 text-center mb-16" x-bind="$floaterAnchor(3, { disableScroll: true })">
+            <div x-data="parallax()" x-bind="root">
+              <h1 class="text-zuju-red font-bold uppercase mb-4" x-bind="animate(0)">What's more...</h1>
+              <p class="text-white mb-4" x-bind="animate(0)">
+                Collectors of our
+                <strong>1st Edition NFT</strong>
+                will unlock reward opportunities and voting rights as we build out our vision of a decentralised, community-driven football technology. This
+                includes digitised live game experiences, training &amp; talent services, esports and entertainment platforms that are adoptable universally
+                across other industries.
+              </p>
+              <div class="text-white mb-4" x-bind="animate(0)">
+                Be a part of
+                <strong>#WritingTheFutureOfFootball</strong>
+                with us!
+              </div>
+            </div>
+          </div>
+          <div class="lg:row-start-3 lg:col-start-2 lg:col-span-10 mb-16" x-bind="$floaterAnchor(4, { scrollToMid: true })">
+            <div x-data="parallax()" x-bind="root"><h1 class="text-white text-4xl font-bold text-center" x-bind="animate(8)">Unlockables!</h1></div>
+          </div>
+          <div class="lg:row-start-4 lg:col-start-2 lg:col-span-10 flex justify-center"><div class="border-l border-r border-zuju-red h-full"></div></div>
+          <div
+            class="lg:row-start-4 lg:col-start-2 lg:col-span-10 sm:max-w-md flex flex-wrap mb-8 sm:mx-auto"
+            x-bind="$floaterAnchor(4, { disableScroll: true })"
+          >
+            <div class="sm:w-full lg:w-1/2 flex flex-col lg:px-8 sm:mb-16" x-data="parallax()" x-bind="root">
+              <img class="lg:w-4/5 self-end z-10" src="https://dev.zujugp.com/hubfs/statics/assets/unlock-1.png" x-bind="animate(20)" />
+              <h1 class="text-white text-2xl font-bold mb-8">Automatic entry into Sweepstakes</h1>
+              <ul class="lg:w-4/5 text-white">
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>3 Grand&nbsp;Prize</p>
+                </li>
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>Unlock limited Ultra Rare 1/7 specially minted&nbsp;NFT</p>
+                </li>
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>Win gold-plated, stone-crusted bianlian mask as seen on ZujuGP commercial with&nbsp;CR</p>
+                </li>
+              </ul>
+            </div>
+            <div class="sm:w-full lg:w-1/2 flex flex-col lg:items-end lg:pt-32 lg:px-8 sm:mb-16" x-data="parallax()" x-bind="root">
+              <img class="lg:w-4/5 z-10" src="https://dev.zujugp.com/hubfs/statics/assets/unlock-2.png" x-bind="animate(16)" />
+              <h1 class="lg:w-4/5 text-white text-2xl font-bold mb-8">Collectors-only Premium&nbsp;Experience</h1>
+              <ul class="lg:w-4/5 text-white">
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>1st Edition ZujuGP-CR NFT as an access token to unlock premium digital content such as private chats and media&nbsp;drops</p>
+                </li>
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>Special discounts on merchandise and&nbsp;promotions</p>
+                </li>
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>Early access to&nbsp;exclusives</p>
+                </li>
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>Unlock redemption of physical&nbsp;goods</p>
+                </li>
+              </ul>
+            </div>
+            <div class="sm:w-full lg:w-1/2 flex flex-col lg:items-end lg:-mt-56 lg:px-8 sm:mb-16" x-data="parallax()" x-bind="root">
+              <img class="lg:w-4/5 lg:-mr-24 z-10" src="https://dev.zujugp.com/hubfs/statics/assets/unlock-3.png" x-bind="animate(12)" />
+              <h1 class="lg:w-4/5 text-white text-2xl font-bold mb-8">Collectors-only Participation</h1>
+              <ul class="lg:w-4/5 text-white">
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>Be rewarded for building our vision with&nbsp;us</p>
+                </li>
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>Special voting rights to influence decision-making at&nbsp;ZujuGP</p>
+                </li>
+                <li class="flex mb-4">
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://dev.zujugp.com/hubfs/statics/assets/bullet.png" />
+                  <p>Corresponding tiered discount and perks&nbsp;rewards</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div
+            class="row-start-5 col-start-4 col-span-6 my-16"
+            x-on:onload.window="$dispatch('floater-overflow', ($bottom <= $vh50))"
+            x-on:scroll.window="$dispatch('floater-overflow', ($bottom <= $vh50))"
+          >
+            <div x-data="parallax()" x-bind="root">
+              <h1 class="text-white text-4xl font-bold text-center mb-16" x-bind="animate(8)">Don't miss out!</h1>
+              <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 block mx-auto" x-bind="animate(8)">Get Yours Now</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="max-w-[1920px] flex sm:flex-col mx-auto">
+        <article class="relative lg:w-1/3">
+          <img class="w-full" src="https://dev.zujugp.com/hubfs/statics/assets/land-1.png" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <h1 class="w-4/5 max-w-[calc(1920px/3/3*2)] text-white sm:text-lg lg:text-2xl font-bold text-center mb-8">
+              Bring home our unique&nbsp;merchandises
+            </h1>
+            <button class="bg-white text-black sm:text-sm font-bold uppercase rounded px-6 py-4 lg:h-14">Visit Shop</button>
+          </div>
+        </article>
+        <article class="relative lg:w-1/3">
+          <img class="w-full" src="https://dev.zujugp.com/hubfs/statics/assets/land-2.png" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <h1 class="w-4/5 max-w-[calc(1920px/3/3*2)] text-white sm:text-lg lg:text-2xl font-bold text-center mb-8">
+              Get rewarded with loyalty points with our daily task&nbsp;challenges
+            </h1>
+            <button class="bg-white text-black sm:text-sm font-bold uppercase rounded px-6 py-4 lg:h-14">Register With Us</button>
+          </div>
+        </article>
+        <article class="relative lg:w-1/3">
+          <img class="w-full" src="https://dev.zujugp.com/hubfs/statics/assets/land-3.png" />
+          <div class="absolute inset-0 flex flex-col items-center justify-center">
+            <h1 class="w-4/5 max-w-[calc(1920px/3/3*2)]/3 text-white sm:text-lg lg:text-2xl font-bold text-center mb-8">
+              Never miss and get your latest sports&nbsp;updates
+            </h1>
+            <button class="bg-white text-black sm:text-sm font-bold uppercase rounded px-6 py-4 lg:h-14">Read Latest News</button>
+          </div>
+        </article>
+      </div>
+    </section>
+    <section class="relative bg-white flex flex-col items-center justify-center p-8 sm:pb-6 lg:pt-12">
+      <svg
+        width="60px"
+        height="20px"
+        viewBox="0 0 60 20"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        class="absolute top-0 transform translate-y-[calc(-100%+1px)]"
+      >
+        <g stroke="none" stroke-width="1" fill="#FFFFFF" fill-rule="evenodd"><polygon points="30 0 60 20 0 20"></polygon></g>
+      </svg>
+      <img class="lg:h-9 sm:w-full object-contain" src="https://dev.zujugp.com/hubfs/statics/assets/hashtag.png" />
+      <p class="text-zuju-gray-6 text-sm sm:mt-4 lg:mt-8">© 2021 Mint Media Sports Limited</p>
+    </section>
+  </main>
+</div>
+{% endblock body %}

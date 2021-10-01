@@ -1,0 +1,7 @@
+{
+  "files.associations": {
+    "*html": "html-hubl"
+  },
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.parameterHints": true
+}

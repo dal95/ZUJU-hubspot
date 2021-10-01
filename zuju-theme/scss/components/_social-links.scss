@@ -1,0 +1,10 @@
+.social-links {
+  display: flex;
+  align-items: center;
+
+  a {
+    color: var(--clr-light-700);
+    font-size: 1.7rem;
+    margin: 0 0.7rem;
+  }
+}

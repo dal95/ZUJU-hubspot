@@ -1,0 +1,447 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Zuju Statics - About
+-->
+
+{% set is_statics = true %}
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<div class="app">
+	<main class="bg-zuju-gray-1" x-data="{}">
+		<div class="w-full relative">
+			<div class="absolute z-10 inset-x-0 h-[90vh] w-full max-w-[1920px] bg-black mx-auto pointer-events-none">
+				<video muted="" autoplay="" loop="" class="h-full w-full opacity-30 object-cover transition duration-[3s]">
+					<source src="https://dev.zujugp.com/hubfs/statics/wave.mp4" />
+				</video>
+			</div>
+			<div class="relative z-20">
+				<section class="h-[80vh] max-w-[1440px] mx-auto flex items-center justify-center p-8" x-data="parallax()" x-bind="root">
+					<h1 class="lg:w-5/6 font-gtcom text-white text-6xl lg:text-8xl font-extralight" x-bind="animate(24)">
+						ZujuGP converges
+						<br />
+						<strong>media, tech</strong>
+						and
+						<strong>football</strong>
+					</h1>
+				</section>
+				<section class="max-w-[1440px] mx-auto lg:grid grid-cols-12 auto-rows-auto p-8">
+					<div class="row-start-1 col-end-12 col-span-5 sm:-mx-8 z-10" x-data="parallax()" x-bind="root">
+						<img src="https://dev.zujugp.com/hubfs/statics/assets/about-1.png" x-bind="animate(0)" />
+					</div>
+					<div class="row-start-1 col-start-2 col-span-8 relative lg:grid grid-cols-8 grid-rows-[1fr,auto,auto,1fr] z-20" x-data="parallax()" x-bind="root">
+						<div class="row-start-3 row-span-2 col-start-1"><div class="h-full w-0 border-l border-r border-zuju-red mx-auto"></div></div>
+						<h2 class="row-start-2 col-span-8 text-white sm:text-2xl lg:text-4xl font-gtcond font-black sm:-mt-4 mb-8" x-bind="animate(16)">
+							A community platform bridging East and West, we are an exchange not just between fans but worlds between businesses and ecosystems.
+						</h2>
+						<p class="row-start-3 col-start-2 col-span-4 text-white lg:pr-8" x-bind="animate(16)">
+							It is a powerful and simple idea that with tech, everyone who loves football can come together to interact in diverse ways. Both business
+							economies and individual economies can benefit.
+						</p>
+					</div>
+					<div class="row-start-2 col-start-2"><div class="h-full w-0 border-l border-r border-zuju-red mx-auto"></div></div>
+					<article class="contents" x-data="{ active: 1, top: 0 }">
+						<div class="row-start-2 col-start-3 col-span-8 pt-16" x-data="parallax()" x-bind="root">
+							<h2 class="text-white sm:max-w-md sm:text-4xl lg:text-6xl font-gtcond font-black mb-8 sm:mx-auto" x-bind="animate(8)">We believe that..</h2>
+						</div>
+						<div class="row-start-3 col-start-2 relative">
+							<div class="sm:hidden h-full w-0 border-l border-r border-zuju-red mx-auto"></div>
+							<svg
+								viewBox="0 0 18 14"
+								version="1.1"
+								xmlns="http://www.w3.org/2000/svg"
+								xmlns:xlink="http://www.w3.org/1999/xlink"
+								class="sm:hidden absolute top-0 inset-x-0 w-8 mx-auto transition-all duration-500 transform -translate-y-full"
+								x-bind:style="{ top: $px(top + ($height / 2)) }"
+							>
+								<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+									<g fill="#ED2938" stroke="#ED2938"><polygon points="17 7.0046755 9.273566 13 1 10.7009908 3.613411 3.2843148 13.501537 1"></polygon></g>
+								</g>
+							</svg>
+						</div>
+						<div class="sm:hidden relative row-start-3 col-start-3 col-span-4 pr-8">
+							<div
+								class="group font-bold flex items-center py-4 cursor-pointer"
+								x-data="{ myIndex: 1, update() { active === this.myIndex &amp;&amp; (top = $el.offsetTop + ($height / 2)) } }"
+								x-effect="update()"
+								x-on:resize.window="update()"
+								x-on:click="active = myIndex"
+								x-on:mouseenter="active = myIndex"
+							>
+								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">1</p>
+								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
+									The AI revolution has started
+								</p>
+							</div>
+							<div
+								class="group font-bold flex items-center py-4 cursor-pointer"
+								x-data="{ myIndex: 2, update() { active === this.myIndex &amp;&amp; (top = $el.offsetTop + ($height / 2)) } }"
+								x-effect="update()"
+								x-on:resize.window="update()"
+								x-on:click="active = myIndex"
+								x-on:mouseenter="active = myIndex"
+							>
+								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">2</p>
+								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
+									Football will change seismically
+								</p>
+							</div>
+							<div
+								class="group font-bold flex items-center py-4 cursor-pointer"
+								x-data="{ myIndex: 3, update() { active === this.myIndex &amp;&amp; (top = $el.offsetTop + ($height / 2)) } }"
+								x-effect="update()"
+								x-on:resize.window="update()"
+								x-on:click="active = myIndex"
+								x-on:mouseenter="active = myIndex"
+							>
+								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">3</p>
+								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
+									Football 3.0 is the Asian Era
+								</p>
+							</div>
+							<div
+								class="group font-bold flex items-center py-4 cursor-pointer"
+								x-data="{ myIndex: 4, update() { active === this.myIndex &amp;&amp; (top = $el.offsetTop + ($height / 2)) } }"
+								x-effect="update()"
+								x-on:resize.window="update()"
+								x-on:click="active = myIndex"
+								x-on:mouseenter="active = myIndex"
+							>
+								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">4</p>
+								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
+									4 billion fans want to be connected globally and served collectively
+								</p>
+							</div>
+							<div
+								class="group font-bold flex items-center py-4 cursor-pointer"
+								x-data="{ myIndex: 5, update() { active === this.myIndex &amp;&amp; (top = $el.offsetTop + ($height / 2)) } }"
+								x-effect="update()"
+								x-on:resize.window="update()"
+								x-on:click="active = myIndex"
+								x-on:mouseenter="active = myIndex"
+							>
+								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">5</p>
+								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
+									This will take place at the intersection of technology and the public realm
+								</p>
+							</div>
+							<div
+								class="group font-bold flex items-center py-4 cursor-pointer"
+								x-data="{ myIndex: 6, update() { active === this.myIndex &amp;&amp; (top = $el.offsetTop + ($height / 2)) } }"
+								x-effect="update()"
+								x-on:resize.window="update()"
+								x-on:click="active = myIndex"
+								x-on:mouseenter="active = myIndex"
+							>
+								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">6</p>
+								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
+									This intersection is ZujuGP
+								</p>
+							</div>
+						</div>
+						<div class="lg:hidden max-w-md pb-4 mx-auto">
+							<div class="glide" x-data="{}" x-init="new Glide($el).mount()">
+								<div class="glide__track" data-glide-el="track">
+									<div class="glide__slides">
+										<div class="glide__slide">
+											<div class="">
+												<div>
+													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
+														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+															The AI revolution has started
+														</div>
+														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+															along with
+															<span class="text-zuju-red">gaming trends</span>
+															and evolving ways to design and respond to our world.
+														</div>
+														<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-1.png" /></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="glide__slide">
+											<div class="">
+												<div>
+													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
+														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+															Football will change seismically
+														</div>
+														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+															simply because ..
+															<span class="text-zuju-red">Technology</span>
+															. We will all demand
+															<span class="text-zuju-red">interoperability, immersion, access</span>
+															and
+															<span class="text-zuju-red">accountability.</span>
+														</div>
+														<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-2.png" /></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="glide__slide">
+											<div class="">
+												<div>
+													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
+														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+															Football 3.0 is the Asian Era
+														</div>
+														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+															Football 1.0 Europe faces decline. Football 2.0 US is growing.
+															<span class="text-zuju-red">A new era where 60% of the world's population reside heralds.</span>
+														</div>
+														<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-3.png" /></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="glide__slide">
+											<div class="">
+												<div>
+													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
+														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+															4 billion fans want to be connected globally and served collectively
+														</div>
+														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+															It is our right to
+															<span class="text-zuju-red">grow, play</span>
+															and
+															<span class="text-zuju-red">create</span>
+															together in both real and digital worlds.
+														</div>
+														<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-4.png" /></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="glide__slide">
+											<div class="">
+												<div>
+													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
+														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+															This will take place at the intersection of technology and the public realm
+														</div>
+														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+															on a single platform. Where components of the football ecosystem
+															<span class="text-zuju-red">function as a whole.</span>
+														</div>
+														<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-5.png" /></div>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="glide__slide">
+											<div class="">
+												<div>
+													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
+														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+															This intersection is ZujuGP
+														</div>
+														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+															Where
+															<span class="text-zuju-red">#WritingTheFutureOfFootball</span>
+															begins
+														</div>
+														<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-6.png" /></div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="-mb-8 glide__bullets bottom-1" data-glide-el="controls[nav]">
+									<button class="glide__bullet" data-glide-dir="=0"></button>
+									<button class="glide__bullet" data-glide-dir="=1"></button>
+									<button class="glide__bullet" data-glide-dir="=2"></button>
+									<button class="glide__bullet" data-glide-dir="=3"></button>
+									<button class="glide__bullet" data-glide-dir="=4"></button>
+									<button class="glide__bullet" data-glide-dir="=5"></button>
+								</div>
+							</div>
+						</div>
+						<div class="sm:hidden relative row-start-2 row-span-2 col-start-7 col-span-6 pr-8">
+							<div
+								class="flex flex-col lg:items-center justify-center mx-auto w-1/2 absolute inset-0"
+								x-data="parallax()"
+								x-bind="root"
+								x-show="active === 1"
+								x-transition.duration.500ms=""
+							>
+								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+									the AI revolution has started
+								</div>
+								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+									Along with
+									<span class="text-zuju-red">gaming trends</span>
+									and evolving ways to design and respond to our world.
+								</div>
+								<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-1.png" /></div>
+							</div>
+							<div
+								class="flex flex-col lg:items-center justify-center mx-auto w-1/2 absolute inset-0"
+								x-data="parallax()"
+								x-bind="root"
+								x-show="active === 2"
+								x-transition.duration.500ms=""
+							>
+								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+									football will change seismically
+								</div>
+								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+									Simply because ..
+									<span class="text-zuju-red">Technology</span>
+									. We will all demand
+									<span class="text-zuju-red">interoperability, immersion, access</span>
+									and
+									<span class="text-zuju-red">accountability.</span>
+								</div>
+								<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-2.png" /></div>
+							</div>
+							<div
+								class="flex flex-col lg:items-center justify-center mx-auto w-1/2 absolute inset-0"
+								x-data="parallax()"
+								x-bind="root"
+								x-show="active === 3"
+								x-transition.duration.500ms=""
+							>
+								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+									Football 3.0 is the Asian Era
+								</div>
+								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+									Football 1.0 Europe faces decline. Football 2.0 US is growing.
+									<span class="text-zuju-red">A new era where 60% of the world's population reside heralds.</span>
+								</div>
+								<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-3.png" /></div>
+							</div>
+							<div
+								class="flex flex-col lg:items-center justify-center mx-auto w-1/2 absolute inset-0"
+								x-data="parallax()"
+								x-bind="root"
+								x-show="active === 4"
+								x-transition.duration.500ms=""
+							>
+								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+									4 billion fans want to be connected globally and served collectively
+								</div>
+								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+									It is our right to
+									<span class="text-zuju-red">grow, play</span>
+									and
+									<span class="text-zuju-red">create</span>
+									together in both real and digital worlds.
+								</div>
+								<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-4.png" /></div>
+							</div>
+							<div
+								class="flex flex-col lg:items-center justify-center mx-auto w-1/2 absolute inset-0"
+								x-data="parallax()"
+								x-bind="root"
+								x-show="active === 5"
+								x-transition.duration.500ms=""
+							>
+								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+									this will take place at the intersection of technology and the public realm
+								</div>
+								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+									On a single platform. Where components of the football ecosystem
+									<span class="text-zuju-red">function as a whole.</span>
+								</div>
+								<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-5.png" /></div>
+							</div>
+							<div
+								class="flex flex-col lg:items-center justify-center mx-auto w-1/2 absolute inset-0"
+								x-data="parallax()"
+								x-bind="root"
+								x-show="active === 6"
+								x-transition.duration.500ms=""
+							>
+								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+									this intersection is ZujuGP
+								</div>
+								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+									Where
+									<span class="text-zuju-red">#WritingTheFutureOfFootball</span>
+									begins
+								</div>
+								<div class="sm:mx-auto"><img class="h-24" src="https://dev.zujugp.com/hubfs/statics/assets/belief-6.png" /></div>
+							</div>
+						</div>
+					</article>
+				</section>
+				<section class="w-full bg-white sm:pt-8 sm:pb-24 lg:pt-16 lg:pb-40">
+					<div class="max-w-[1440px] p-8 mx-auto" x-data="parallax()" x-bind="root">
+						<p class="lg:w-7/12 sm:text-2xl lg:text-4xl text-center font-gtcond font-black mx-auto" x-bind="animate(-4)">
+							<span class="text-zuju-red">ZujuGP's</span>
+							architecture is to allow immediacy of creation, sharing of and collaboration on content, experience and&nbsp;playing.
+						</p>
+					</div>
+				</section>
+				<section class="w-full bg-zuju-gray-2">
+					<div class="max-w-[1440px] p-8 mx-auto">
+						<img class="lg:hidden w-full max-w-md -mt-24 mb-16 mx-auto" src="https://dev.zujugp.com/hubfs/statics/assets/about-ball-mobile.png" />
+						<div class="sm:hidden -mt-32 mb-16" x-data="parallax()" x-bind="root">
+							<img src="https://dev.zujugp.com/hubfs/statics/assets/about-ball.png" x-bind="animate(16)" />
+						</div>
+						<div class="lg:w-7/12 mb-16 relative z-20" x-data="parallax()" x-bind="root">
+							<p class="text-white mb-8" x-bind="animate(8)">
+								You may be looking for opportunities to upskill, gain employment or watch a game, shop, play and interact. This will no longer be something
+								that only one person does. You won't need a new standalone app or travel to a stadium or find new ways to access different components of
+								what interests you. What you want will be found on
+								<strong>a single&nbsp;platform.</strong>
+							</p>
+							<p class="text-zuju-red font-gtcond font-black sm:text-2xl lg:text-4xl mb-8" x-bind="animate(8)">This platform is ZujuGP.</p>
+							<p class="text-white" x-bind="animate(8)">
+								Where immediacy of use and interactivity of content will directly contribute to your enjoyment, allow you to connect globally and profit in
+								your love for the sport.
+							</p>
+						</div>
+						<div class="lg:grid grid-cols-12 grid-rows-[1fr,auto,auto,repeat(4,1fr),auto]">
+							<div class="sm:hidden0 row-start-1 row-end-7 col-start-6 col-end-13 -mt-32 z-10" x-data="parallax()" x-bind="root">
+								<img class="h-full w-full object-contain" src="https://dev.zujugp.com/hubfs/statics/assets/bg-ball-dark.png" x-bind="animate(-16)" />
+							</div>
+							<div class="row-start-1 row-span-5 col-start-3 col-span-5 sm:-mx-8 z-20">
+								<img class="h-full w-full max-w-none object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/about-stadium.png" />
+							</div>
+							<div class="row-start-2 col-end-[-2] col-span-5 sm:-mt-8 sm:mb-8 lg:mb-16 z-30" x-data="parallax()" x-bind="root">
+								<p class="text-white sm:text-2xl lg:text-4xl font-gtcond font-black" x-bind="animate(24)">
+									The future of football will be mostly social, collaborative and participative, defined by immersion, UGC, dynamic and malleable
+									experiences online.
+								</p>
+							</div>
+							<div class="row-start-3 col-end-[-2] col-span-3 mb-8 z-30" x-data="parallax()" x-bind="root">
+								<p class="text-white" x-bind="animate(16)">
+									It will not always be authoritarian or top down. All football fans and professionals will be both users and creators. Football on ZujuGP
+									is also an outlet for those who seek creative and commercial interests.
+								</p>
+							</div>
+							<div class="row-start-6 row-span-2 col-start-1 col-end-[-1]">
+								<div class="h-full sm:h-36 w-0 border-l border-r border-zuju-red mx-auto"></div>
+							</div>
+							<p
+								class="
+									row-start-9
+									col-start-2 col-span-10
+									text-white
+									sm:text-2xl
+									lg:text-4xl
+									font-gtcond font-black
+									text-center
+									sm:pt-8
+									lg:pt-16
+									sm:mb-8
+									lg:mb-24
+								"
+							>
+								The collective experience that allows ZujuGP to be better is that football&nbsp;will no longer be a walled garden. ZujuGP will be an online
+								immersive that mirrors our world.
+							</p>
+						</div>
+					</div>
+				</section>
+			</div>
+		</div>
+	</main>
+</div>
+{% endblock body%}

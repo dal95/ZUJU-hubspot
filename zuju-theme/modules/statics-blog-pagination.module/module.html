@@ -1,0 +1,46 @@
+{% if contents.total_page_count > 1 %}
+  <div class="max-w-[1440px] flex items-center justify-center mx-auto pb-8">
+    {% set page_list = [-2, -1, 0, 1, 2] %}
+    {% if contents.total_page_count - current_page_num == 1 %}
+      {% set offset = -1 %}
+    {% elif contents.total_page_count - current_page_num == 0 %}
+      {% set offset = -2 %}
+    {% elif current_page_num == 2 %}
+      {% set offset = 1 %}
+    {% elif current_page_num == 1 %}
+      {% set offset = 2 %}
+    {% else %}
+      {% set offset = 0 %}
+    {% endif %}
+
+    {# Previous page link #}
+    <a {% if last_page_num %} href="{% if current_page_num == 2 %}{{ group.absolute_url }}{% else %}{{ blog_page_link(last_page_num) }}{% endif %}"{% endif %}>
+      <button {{ disabled if !last_page_num }} class="bg-zuju-red hover:bg-zuju-red-hover disabled:bg-zuju-gray-d text-white text-sm leading-none font-sans font-bold rounded shadow-lg px-6 py-3 transition duration-200 ease-linear disabled:cursor-not-allowed">
+        Prev
+      </button>
+    </a>
+    {# End previous page link #}
+
+    {# Numbered pagination #}
+    <div class="flex text-white px-8">
+      {% for page in page_list %}
+        {% set this_page = current_page_num + page + offset %}
+        {% if this_page > 0 and this_page <= contents.total_page_count %}
+          <a class="px-2 {{ 'text-zuju-red' if this_page == current_page_num }}" aria-label="Go to page {{ this_page }}" {{ 'aria-current="true"' if this_page == current_page_num }} href="{% if this_page == 1 %}{{ group.absolute_url }}{% else %}{{ blog_page_link(this_page) }}{% endif %}">
+            {{ this_page }}
+          </a>
+        {% endif %}
+      {% endfor %}
+    </div>
+    {# End numbered pagination #}
+
+    {# Next page link #}
+    <a class=""{% if next_page_num %} href="{{ blog_page_link(current_page_num + 1) }}"{% endif %}>
+      <button {{ disabled if !next_page_num }} class="bg-zuju-red hover:bg-zuju-red-hover disabled:bg-zuju-gray-d text-white text-sm leading-none font-sans font-bold rounded shadow-lg px-6 py-3 transition duration-200 ease-linear disabled:cursor-not-allowed">
+        Next
+      </button>
+    </a>
+    {# End next page link #}
+
+  </div>
+{% endif %}

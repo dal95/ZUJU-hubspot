@@ -1,0 +1,214 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Zuju Statics - Portfolio Rank
+-->
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<div class="app">
+  <main class="bg-zuju-gray-1" x-data="{}">
+    <section class="bg-zuju-gray-db" x-data="{ playing: false }">
+      <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16">
+        <div class="absolute inset-0">
+          <div class="sm:aspect-w-16 sm:aspect-h-9">
+            <div><img class="h-full w-full object-cover object-center" src="https://dev.zujugp.com/hubfs/statics/assets/rank-mast.png" /></div>
+          </div>
+        </div>
+        <div class="relative flex flex-col items-center justify-center sm:p-8" x-data="{ noti: false }">
+          <img class="sm:h-10 lg:h-16 mb-16" src="https://dev.zujugp.com/hubfs/statics/assets/rank-logo.png" />
+          <h1 class="lg:w-1/2 text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16">World-class digital academy</h1>
+          <p class="text-white lg:w-5/12 text-center mb-8">
+            Check in for exceptional performance training with the world's best football Experts and Academies. From professional drills, specialist training
+            for specific positions to mentoring, nutrition and rehabilitative conditioning. ZujuGP Rank is a world-class Digital academy in your pocket.
+          </p>
+          <div class="lg:h-20 lg:-mx-4">
+            <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4">I'm interested</button>
+            <button
+              class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
+              x-on:click="playing = true"
+            >
+              Watch Video
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        x-cloak=""
+        x-show="playing"
+        x-transition.opacity.duration.300ms=""
+        class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+        x-on:click.self="playing = false"
+        x-on:keyup.window.escape="playing = false"
+      >
+        <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+          <div class="relative">
+            <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
+            <video controls="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+              <source src="https://dev.zujugp.com/hubfs/statics/rank.mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-zuju-gray-db">
+      <article class="relative max-w-[1440px] grid sm:grid-rows-2 lg:grid-cols-2 mx-auto">
+        <div><img class="h-full w-full object-cover object-center" src="https://dev.zujugp.com/hubfs/statics/assets/rank-hero.png" /></div>
+        <div class="relative bg-zuju-red flex flex-col items-center justify-center p-8 sm:py-16">
+          <div class="absolute inset-0 flex items-center justify-center p-8">
+            <img class="lg:w-1/2" src="https://dev.zujugp.com/hubfs/statics/assets/bg-ball-dark.png" />
+          </div>
+          <h1 class="lg:w-3/4 relative text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-8">
+            Instant access to global football talents
+          </h1>
+          <p class="lg:w-3/4 relative text-white text-center">
+            Scouts now have instant access to a hyperledger of global football talents. Complete with videos, player aggregated statistics and augmented data.
+            Don't worry about your intel, it's secured with blockchain enabled technology.
+          </p>
+        </div>
+      </article>
+      <div class="max-w-[1440px] mx-auto pb-16">
+        <div class="w-full py-16">
+          <p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
+            Everyone can
+            <span class="text-zuju-red">participate.</span>
+          </p>
+          <p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
+            Everyone can
+            <span class="text-zuju-red">benefit.</span>
+          </p>
+        </div>
+        <div class="w-full max-w-[1000px] mx-auto">
+          <div class="aspect-w-4 aspect-h-1"><div class="flex items-center justify-center bg-blue-200 text-white font-bold">Ad Space</div></div>
+        </div>
+      </div>
+    </section>
+    <section>
+      <div class="max-w-[1440px] mx-auto">
+        <div class="sm:hidden flex">
+          <div class="lg:w-1/2">
+            <a href="/portfolio/zujugp-exchange">
+              <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9">
+                <div>
+                  <img class="w-full h-full object-cover object-center" src="https://dev.zujugp.com/hubfs/statics/assets/more-exchange.png" />
+                  <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
+                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">ZujuGP Exchange</h1>
+                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8">Our AI-powered and automated global&nbsp;job search&nbsp;app</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
+                      <title>Arrow Forward</title>
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="48"
+                        d="M268 112l144 144-144 144M392 256H100"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="lg:w-1/2">
+            <a href="/portfolio/zujugp-rank">
+              <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9">
+                <div>
+                  <img class="w-full h-full object-cover object-center" src="https://dev.zujugp.com/hubfs/statics/assets/more-rank.png" />
+                  <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
+                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">ZujuGP Rank</h1>
+                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8">Blockchain and AI-enabled talent development &amp; recruitment app</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
+                      <title>Arrow Forward</title>
+                      <path
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        stroke-width="48"
+                        d="M268 112l144 144-144 144M392 256H100"
+                      ></path>
+                    </svg>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+        <div class="lg:hidden max-w-md pb-4 mx-auto">
+          <div class="glide pb-8" x-data="{}" x-init="new Glide($el).mount()">
+            <div class="glide__track" data-glide-el="track">
+              <div class="glide__slides">
+                <div class="glide__slide">
+                  <div class="">
+                    <div>
+                      <div class="lg:w-1/2">
+                        <a href="/portfolio/zujugp-exchange">
+                          <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9">
+                            <div>
+                              <img class="w-full h-full object-cover object-center" src="https://dev.zujugp.com/hubfs/statics/assets/more-exchange.png" />
+                              <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
+                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">ZujuGP Exchange</h1>
+                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8">Our AI-powered and automated global&nbsp;job search&nbsp;app</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
+                                  <title>Arrow Forward</title>
+                                  <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="48"
+                                    d="M268 112l144 144-144 144M392 256H100"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="glide__slide">
+                  <div class="">
+                    <div>
+                      <div class="lg:w-1/2">
+                        <a href="/portfolio/zujugp-rank">
+                          <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9">
+                            <div>
+                              <img class="w-full h-full object-cover object-center" src="https://dev.zujugp.com/hubfs/statics/assets/more-rank.png" />
+                              <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
+                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">ZujuGP Rank</h1>
+                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8">Blockchain and AI-enabled talent development &amp; recruitment app</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
+                                  <title>Arrow Forward</title>
+                                  <path
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                    stroke-width="48"
+                                    d="M268 112l144 144-144 144M392 256H100"
+                                  ></path>
+                                </svg>
+                              </div>
+                            </div>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="glide__bullets bottom-1" data-glide-el="controls[nav]">
+              <button class="glide__bullet" data-glide-dir="=0"></button>
+              <button class="glide__bullet" data-glide-dir="=1"></button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+{% endblock body %}
