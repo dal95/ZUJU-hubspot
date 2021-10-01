@@ -26,8 +26,8 @@
           />
           <p class="row-start-3 row-span-2 col-start-6 col-span-3 text-white z-10 lg:p-8 sm:mb-8">
             Not unlike the internet, we create connections in a collective digital space shared by everyone. We are all about creating new experiences and
-            opportunities so you can communicate, create, game and profit from your love of football. The greater the utility of our networks, the more we can
-            do when connected!
+            opportunities so you can communicate, create, game and profit from your love of football. The greater the utility of our networks, the more we can do
+            when connected!
           </p>
           <p class="row-start-4 row-span-2 col-start-9 col-span-3 text-white z-10 lg:p-8">
             No surprise then that we are launching super cool projects to port football online. ZujuGP's projects will be built around an ecosystem of community
@@ -49,11 +49,15 @@
             <strong>ZujuGamePlay</strong>
             - our flagship product centred on digitising the LIVE game experience.
             <strong>ZujuGamePlay</strong>
-            is an interactive, real-time screening venue and virtual stadium where you can participate as a fan, pundit, bookmaker, bidder or event creator.
-            Host your personal Owner's Box or join the brands you love for exclusive drops and content. The live game just got a lot less boring!
+            is an interactive, real-time screening venue and virtual stadium where you can participate as a fan, pundit, bookmaker, bidder or event creator. Host
+            your personal Owner's Box or join the brands you love for exclusive drops and content. The live game just got a lot less boring!
           </p>
           <a href="/portfolio/zujugameplay">
-            <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">Find Out More</button>
+            <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
+              <!--[-->
+              Find Out More
+              <!--]-->
+            </button>
           </a>
         </div>
       </div>
@@ -116,9 +120,11 @@
         <div class="glide lg:hidden sm:max-w-md" x-data="{}" x-init="new Glide($el).mount()">
           <div class="glide__track" data-glide-el="track">
             <div class="glide__slides">
+              <!--[-->
               <div class="glide__slide">
                 <div class="">
                   <div>
+                    <!--[-->
                     <div class="bg-zuju-red-dark mt-4 ml-4 mb-8">
                       <img class="relative bottom-4 right-4" src="https://dev.zujugp.com/hubfs/statics/assets/list-exchange.png" />
                     </div>
@@ -137,12 +143,14 @@
                         ></path>
                       </svg>
                     </div>
+                    <!--]-->
                   </div>
                 </div>
               </div>
               <div class="glide__slide">
                 <div class="">
                   <div>
+                    <!--[-->
                     <div class="bg-zuju-red-dark mt-4 ml-4 mb-8">
                       <img class="relative bottom-4 right-4" src="https://dev.zujugp.com/hubfs/statics/assets/list-rank.png" />
                     </div>
@@ -161,14 +169,18 @@
                         ></path>
                       </svg>
                     </div>
+                    <!--]-->
                   </div>
                 </div>
               </div>
+              <!--]-->
             </div>
           </div>
           <div class="glide__bullets bottom-1" data-glide-el="controls[nav]">
+            <!--[-->
             <button class="glide__bullet" data-glide-dir="=0"></button>
             <button class="glide__bullet" data-glide-dir="=1"></button>
+            <!--]-->
           </div>
         </div>
         <div class="w-full mb-16"></div>
@@ -179,16 +191,20 @@
             NFT now
           </h1>
           <a href="https://shop.zujugp.com/">
-            <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 mb-16">To Shop</button>
+            <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 mb-16">
+              <!--[-->
+              To Shop
+              <!--]-->
+            </button>
           </a>
         </div>
       </div>
     </section>
-    <section class="bg-zuju-gray-2 p-8">
+    <section class="bg-zuju-gray-2 p-8 pb-32">
       <div class="max-w-[1000px] mx-auto">
-        <div class="aspect-w-4 aspect-h-1"><div class="flex items-center justify-center bg-blue-200 text-white font-bold">Ad Space</div></div>
+        {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
       </div>
     </section>
-  </main>
+  </main>  
 </div>
 {% endblock body %}
