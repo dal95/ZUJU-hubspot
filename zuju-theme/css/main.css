@@ -805,29 +805,31 @@ label {
   accent-color: var(--clr-primary);
 }
 
-.kungfu-dash {
+.kungfu-dash-in {
   min-height: 16vw;
   background: url("https://i.imgur.com/W8PwNBa.png");
   margin-bottom: 3.125rem;
   background-size: cover;
   background-repeat: no-repeat;
+  display: flex;
   flex-wrap: wrap;
   padding: 2rem;
 }
-.kungfu-dash > * {
+.kungfu-dash-in > * {
   flex: 5;
 }
-.kungfu-dash__cta {
+.kungfu-dash-in__cta {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   min-width: 40%;
+  text-align: center;
 }
-.kungfu-dash__cta img {
+.kungfu-dash-in__cta img {
   margin-bottom: 20px;
 }
-.kungfu-dash > div:last-child {
+.kungfu-dash-in > div:last-child {
   flex: 6;
   padding-right: 90px;
   display: flex;
@@ -835,7 +837,7 @@ label {
   justify-content: center;
 }
 @media (max-width: 800px) {
-  .kungfu-dash > div:last-child {
+  .kungfu-dash-in > div:last-child {
     padding-inline: 0;
     padding-block: 2rem 1rem;
   }

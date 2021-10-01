@@ -1,7 +1,7 @@
 <!--
   templateType: page
   isAvailableForNewContent: true
-  label: hubdb template
+  label: Hubdb template
 -->
 {% extends "./layouts/base-members.html" %}
 {% import "../macros/tags.html" as macros %}
@@ -36,7 +36,25 @@
 						<div class="content-col">
 							<h2 class="post-title">{{ d.name }}</h2>
 							<div>{{ d.content }}</div>
-							<div class="availability {{ d.stock > 0 ? '' : 'clr-mute' }}">{{ d.stock > 0 ? 'Available' : 'Fully Redeemed' }}</div>
+
+							{% if d.stock <= 0 %}
+								{% set class_name = 'clr-mute' %}
+								{% set label = 'Fully Redeemed' %}
+							{% endif%}
+
+							{% if contact.current_loyalty_points < d.point %}
+								{# {{ contact.current_loyalty_points < d.point  }} #}
+								{% set class_name = 'clr-mute' %}
+								{% set label = 'Point not sufficient' %}
+							{% endif %}
+
+							{% if  contact.current_loyalty_points > d.point && d.stock > 0 %}
+								{% set class_name = '' %}
+								{% set label = 'Available' %}
+							{% endif %}
+							<div class="availability {{ class_name }}">
+								{{ label  }}
+							</div>
 
 							<div class="dfl cta">
 								<div>
@@ -49,8 +67,8 @@
 										href="#"
 										data-modal="modal"
 										class="button button--primary "
-										{{ d.stock > 0 || 'disabled' }}
-										>{{ d.stock > 0 ? 'Redeem Now' : 'Unavailable' }} </a
+										{{ d.stock > 0 && contact.current_loyalty_points > d.point || 'disabled' }}
+										>{{ d.stock > 0 && contact.current_loyalty_points > d.point ? 'Redeem Now' : 'Unavailable' }} </a
 
 									>
 								</div>
@@ -93,8 +111,6 @@
 
 	{# Modal #}
 	{% call macros.modal() %}
-		{# <h3 class="text-center">Billing Details</h3>
-		<p class="text-center">Fill in the particulars to receive your reward</p> #}
 		{% form "redemption_form" form_to_use='72dcb3b7-6292-492c-a1c1-b902c41704cd' %}
 	{% endcall %}
 
@@ -155,7 +171,28 @@
 									<div class="tag">{{ (row.categories|first).name }}</div>
 									<h3 class="card__title">{{ row.name }}</h3>
 									<div class="card__desc">{{ row.content }}</div>
-									<div class="availability {{ row.stock > 0 ? '' : 'clr-mute' }}">{{ row.stock > 0 ? 'Available' : 'Fully Redeemed' }}</div>
+
+
+									{% if row.stock <= 0 %}
+										{% set class_name = 'clr-mute' %}
+										{% set label = 'Fully Redeemed' %}
+									{% endif%}
+
+									{% if contact.current_loyalty_points < row.point %}
+										{# {{ contact.current_loyalty_points < row.point  }} #}
+										{% set class_name = 'clr-mute' %}
+										{% set label = 'Point not sufficient' %}
+									{% endif %}
+
+									{% if  contact.current_loyalty_points > row.point && row.stock > 0 %}
+										{% set class_name = '' %}
+										{% set label = 'Available' %}
+									{% endif %}
+
+									<div class="availability {{ class_name }}">
+										{{ label }}
+									</div>
+
 									<div class="points">
 										<b>{{ row.point }}</b> <span class="fs-sm">Zuju points</span>
 									</div>
