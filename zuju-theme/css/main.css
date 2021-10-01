@@ -811,7 +811,6 @@ label {
   margin-bottom: 3.125rem;
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
   flex-wrap: wrap;
   padding: 2rem;
 }
@@ -1392,8 +1391,13 @@ input[type=submit] {
 }
 
 .kungfu-dash {
+  padding-top: 8.4375rem;
+  padding-bottom: 5rem;
   color: #fff;
   margin-bottom: 0;
+}
+.kungfu-dash .clr-primary {
+  font-weight: bold;
 }
 
 .kd-grid {
@@ -1405,7 +1409,31 @@ input[type=submit] {
   flex: 1 1 25%;
 }
 .kd-card img {
-  margin: auto;
+  margin-inline: auto;
+  margin-bottom: 1.5rem;
+}
+
+.kd-heading {
+  font-size: 2rem;
+  max-width: 695px;
+  margin-inline: auto;
+}
+.kd-heading + p {
+  margin-bottom: 1.8rem;
+}
+.kd-heading--primary {
+  font-size: 4rem;
+}
+
+.kd-game {
+  background-color: var(--clr-dark-400);
+  padding-bottom: 7.8125rem;
+}
+.kd-game iframe {
+  width: 100%;
+  border: none;
+  outline: none;
+  aspect-ratio: 2;
 }
 
 .hs-input {

@@ -4,15 +4,20 @@
   label: Kungfu dash
   screenshotPath: ../images/template-previews/home.png
 -->
+{# {% set template_css = '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' %} #}
 {% extends "./layouts/base-standard.html" %}
+
+{{ require_css('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', 'header') }}
+
+
 {% block body %}
   <main class="public">
     <div class="kungfu-dash" style="background-image: url(https://i.imgur.com/d32YxC5.png)">
       <div class="container">
         <div class="form-dark text-center">
-          <h1>Kungfu Dash</h1>
+          <h2 class="kd-heading kd-heading--primary">Kungfu Dash</h2>
 
-          <h3>Play to win a chance to meet Cristiano Ronaldo up close & personal on Zoom!</h3>
+          <h3 class="kd-heading">Play to win a chance to meet Cristiano Ronaldo up close & personal on Zoom!</h3>
 
           <p>Here's how to the competition works:</p>
 
@@ -24,7 +29,7 @@
 
             <div class="kd-card">
               <img src="https://i.imgur.com/VWmKPKh.png" alt="">
-              <p>High score dashers earn the honour of a place on the leaderboard</p>
+              <p><b>High score dashers</b> earn the honour of a place on the leaderboard</p>
             </div>
 
             <div class="kd-card">
@@ -34,13 +39,39 @@
 
             <div class="kd-card">
               <img src="https://i.imgur.com/Junatax.png" alt="">
-              <p>For 8 weeks we will pick 1 lucky dasher from the Raffle to win this once-in-a-lifetime opportunity to meet Cristiano Ronaldo!</p>
+              <p>For 8 weeks we will pick 1 lucky dasher from the Raffle to win this once-in-a-lifetime opportunity to meet <b>Cristiano Ronaldo</b>!</p>
             </div>
           </div>
+
 
           <p class="clr-primary text-center all-caps">Competition closes on 12 December 2021 at 2359 GMT.</p>
         </div>
       </div>
     </div>
+
+    {# Iframe wrapper #}
+    <div class="kd-game">
+      <div class="container">
+        {% dnd_area "draggable", class="kd-draggable" %}
+
+        {% end_dnd_area %}
+      </div>
+    </div>
   </main>
 {% endblock body %}
+
+{{ require_js('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 'footer' ) }}
+{% require_js 'my_require_js' position='footer' %}
+  <script>
+  $(document).ready(function() {
+    if($(window).width() < 768)  {
+      $(".kd-grid").slick({
+        infinite: true,
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        arrows: false
+      });
+    }
+  })
+  </script>
+{% end_require_js %}

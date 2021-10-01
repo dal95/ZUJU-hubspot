@@ -4,8 +4,8 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-    "sass:global": "sass --watch --update ./zuju-theme/scss:./css",
-    "sass:module": "sass --watch --update ./zuju-theme/modules:./modules",
+    "sass:global": "sass --watch --update ./zuju-theme/scss:./zuju-theme/css",
+    "sass:module": "sass --watch --update ./zuju-theme/modules:./zuju-theme/modules",
     "watch": "hs watch ./zuju-theme zuju-theme --remove",
     "fetch:modules": "hs fetch ./zuju-theme zuju-theme --overwrite"
   },
