@@ -8,22 +8,28 @@
 {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
-    <section class="bg-zuju-gray-db" x-data="{ playing: false }">
+    <section class="bg-zuju-gray-db" x-data="{ playing: false, noti: false }">
       <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16">
         <div class="absolute inset-0">
           <div class="sm:aspect-w-16 sm:aspect-h-9">
             <div><img class="h-full w-full object-cover object-center" src="https://dev.zujugp.com/hubfs/statics/assets/rank-mast.png" /></div>
           </div>
         </div>
-        <div class="relative flex flex-col items-center justify-center sm:p-8" x-data="{ noti: false }">
+        <div class="relative flex flex-col items-center justify-center sm:p-8">
           <img class="sm:h-10 lg:h-16 mb-16" src="https://dev.zujugp.com/hubfs/statics/assets/rank-logo.png" />
           <h1 class="lg:w-1/2 text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16">World-class digital academy</h1>
           <p class="text-white lg:w-5/12 text-center mb-8">
-            Check in for exceptional performance training with the world's best football Experts and Academies. From professional drills, specialist training
-            for specific positions to mentoring, nutrition and rehabilitative conditioning. ZujuGP Rank is a world-class Digital academy in your pocket.
+            Check in for exceptional performance training with the world's best football Experts and Academies. From professional drills, specialist
+            training for specific positions to mentoring, nutrition and rehabilitative conditioning. ZujuGP Rank is a world-class Digital academy in your
+            pocket.
           </p>
           <div class="lg:h-20 lg:-mx-4">
-            <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4">I'm interested</button>
+            <button
+              class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
+              x-on:click="noti = true"
+            >
+              Get Notified
+            </button>
             <button
               class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
               x-on:click="playing = true"
@@ -47,6 +53,21 @@
             <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
               <source src="https://dev.zujugp.com/hubfs/statics/rank.mp4" />
             </video>
+          </div>
+        </div>
+      </div>
+      <div
+        x-cloak=""
+        x-show="noti"
+        x-transition.opacity.duration.300ms=""
+        class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+        x-on:click="noti = false"
+        x-on:keyup.window.escape="noti = false"
+      >
+        <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
+          <div class="relative">
+            <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
+            <div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" %}</div>
           </div>
         </div>
       </div>
