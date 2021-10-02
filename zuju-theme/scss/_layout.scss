@@ -513,8 +513,7 @@
       margin-inline: 10px;
 
       @include media('<=mobile') {
-        flex-shrink: 0;
-        flex-basis: 100%;
+        flex: 1 1 100%;
       }
     }
 
