@@ -4,7 +4,24 @@
 -->
 <!-- Begin partial -->
 <div class="app">
-  <div class="absolute z-50 w-8 cursor-pointer" x-data="egg()" x-bind="root" />  
+  <div class="absolute z-50 w-8 cursor-pointer" x-data="egg({ uid: '{{ contact.hs_object_id }}' })" x-bind="root" />
+  <div
+    x-cloak
+    x-data="{ showingMessage: false, msg: '' }"
+    x-show="showingMessage"
+    x-transition.opacity.duration.300ms
+    class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+    x-on:click="showingMessage = false"
+    x-on:keyup.window.escape="showingMessage = false"
+    x-on:show-message.window="msg = $event.detail; showingMessage = true"
+  >
+    <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[showingMessage ? 'add' : 'remove']('overflow-hidden')">
+      <div class="relative">
+        <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="showingMessage = false">&times;</button>
+        <div x-on:click.stop class="w-full bg-white font-monsterrat rounded-lg p-4" x-text="msg"></div>
+      </div>
+    </div>
+  </div>
 </div>
 <script src="{{ get_asset_url("../../js/statics/magic.js") }}"></script>
 <script src="{{ get_asset_url("../../js/statics/particle.js") }}"></script>

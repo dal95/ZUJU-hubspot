@@ -205,9 +205,17 @@
           class="flex flex-col items-center py-4 opacity-0 transition duration-300 pointer-events-none group-hover:opacity-100 group-hover:pointer-events-auto"
           x-ref="icons"
         >
-          <a href="#" x-on:click.prevent=""><img class="w-[18px] my-2" src="https://dev.zujugp.com/hubfs/statics/assets/floater-twitter.png" /></a>
-          <a href="#" x-on:click.prevent=""><img class="w-[18px] my-2" src="https://dev.zujugp.com/hubfs/statics/assets/floater-facebook.png" /></a>
-          <a href="#" x-on:click.prevent=""><img class="w-[18px] my-2" src="https://dev.zujugp.com/hubfs/statics/assets/floater-instagram.png" /></a>
+          <a target="_blank" x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'tw_share' })" x-bind:href="`https://twitter.com/intent/tweet?url=${location.href}`">
+            <img class="w-[18px] my-2" src="https://dev.zujugp.com/hubfs/statics/assets/floater-twitter.png" />
+          </a>
+          <a
+            target="_blank"
+            x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' })"
+            x-bind:href="`https://www.facebook.com/sharer/sharer.php?u=${location.href}`"
+          >
+            <img class="w-[18px] my-2" src="https://dev.zujugp.com/hubfs/statics/assets/floater-facebook.png" />
+          </a>
+          <!-- <a href="#" x-on:click.prevent=""><img class="w-[18px] my-2" src="https://dev.zujugp.com/hubfs/statics/assets/floater-instagram.png" /></a> -->
         </div>
       </div>
     </div>
@@ -248,12 +256,12 @@
           x-show="playing"
           x-transition.opacity.duration.300ms=""
           class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
-          x-on:click.self="playing = false"
+          x-on:click="playing = false"
         >
           <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
             <div class="relative">
               <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
-              <video controls="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+              <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
                 <source src="https://dev.zujugp.com/hubfs/statics/trailer.mp4" />
               </video>
             </div>

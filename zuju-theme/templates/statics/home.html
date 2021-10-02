@@ -10,7 +10,6 @@
 {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
-    <div class="absolute z-50 w-8 cursor-pointer" x-data="egg()" x-bind="root"></div>
     <section class="sm:hidden">
       <div class="h-[calc(100vh-var(--nav-height))] min-h-[600px] max-w-[1920px] mx-auto grid sm:grid-cols-1 sm:grid-rows-1 lg:grid-cols-4 lg:grid-rows-2">
         <article class="relative flex items-end lg:col-span-2 lg:row-span-2">
@@ -552,7 +551,7 @@
     </section>
     <section class="bg-zuju-gray-2 p-8">
       <div class="max-w-[1000px] mx-auto">
-        <div class="aspect-w-4 aspect-h-1"><div class="flex items-center justify-center bg-blue-200 text-white font-bold">Ad Space</div></div>
+        {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
       </div>
     </section>
   </main>
