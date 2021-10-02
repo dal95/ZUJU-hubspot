@@ -1162,11 +1162,14 @@ body.overflow-hidden {
 .app .row-start-6 {
   grid-row-start: 6;
 }
-.app .row-start-4 {
-  grid-row-start: 4;
-}
 .app .row-start-5 {
   grid-row-start: 5;
+}
+.app .row-start-7 {
+  grid-row-start: 7;
+}
+.app .row-start-4 {
+  grid-row-start: 4;
 }
 .app .row-end-7 {
   grid-row-end: 7;
@@ -1201,6 +1204,10 @@ body.overflow-hidden {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.app .my-16 {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
 .app .my-1 {
   margin-top: 0.25rem;
   margin-bottom: 0.25rem;
@@ -1213,15 +1220,11 @@ body.overflow-hidden {
   margin-top: 0.5rem;
   margin-bottom: 0.5rem;
 }
-.app .my-16 {
-  margin-top: 4rem;
-  margin-bottom: 4rem;
+.app .mb-2 {
+  margin-bottom: 0.5rem;
 }
 .app .mb-8 {
   margin-bottom: 2rem;
-}
-.app .mb-2 {
-  margin-bottom: 0.5rem;
 }
 .app .mr-4 {
   margin-right: 1rem;
@@ -1238,20 +1241,29 @@ body.overflow-hidden {
 .app .mr-5 {
   margin-right: 1.25rem;
 }
+.app .mb-16 {
+  margin-bottom: 4rem;
+}
 .app .ml-8 {
   margin-left: 2rem;
 }
 .app .-mt-24 {
   margin-top: -6rem;
 }
-.app .mb-16 {
-  margin-bottom: 4rem;
-}
 .app .-mt-32 {
   margin-top: -8rem;
 }
+.app .mt-96 {
+  margin-top: 24rem;
+}
+.app .mt-\[480px\] {
+  margin-top: 480px;
+}
 .app .mb-24 {
   margin-bottom: 6rem;
+}
+.app .mt-2 {
+  margin-top: 0.5rem;
 }
 .app .mt-1 {
   margin-top: 0.25rem;
@@ -1313,6 +1325,9 @@ body.overflow-hidden {
 .app .h-0 {
   height: 0px;
 }
+.app .h-16 {
+  height: 4rem;
+}
 .app .h-8 {
   height: 2rem;
 }
@@ -1328,11 +1343,11 @@ body.overflow-hidden {
 .app .h-14 {
   height: 3.5rem;
 }
+.app .h-36 {
+  height: 9rem;
+}
 .app .h-3\/5 {
   height: 60%;
-}
-.app .h-16 {
-  height: 4rem;
 }
 .app .h-20 {
   height: 5rem;
@@ -1376,17 +1391,23 @@ body.overflow-hidden {
 .app .w-1\/5 {
   width: 20%;
 }
+.app .w-16 {
+  width: 4rem;
+}
 .app .w-0 {
   width: 0px;
+}
+.app .w-5\/12 {
+  width: 41.666667%;
+}
+.app .w-5\/6 {
+  width: 83.333333%;
 }
 .app .w-14 {
   width: 3.5rem;
 }
 .app .w-1\/12 {
   width: 8.333333%;
-}
-.app .w-5\/6 {
-  width: 83.333333%;
 }
 .app .w-1\/3 {
   width: 33.333333%;
@@ -1399,9 +1420,6 @@ body.overflow-hidden {
 }
 .app .w-2\/3 {
   width: 66.666667%;
-}
-.app .w-16 {
-  width: 4rem;
 }
 .app .w-\[42px\] {
   width: 42px;
@@ -1519,11 +1537,17 @@ body.overflow-hidden {
 .app .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
+.app .grid-cols-\[2rem\,2rem\,auto\] {
+  grid-template-columns: 2rem 2rem auto;
+}
 .app .grid-cols-8 {
   grid-template-columns: repeat(8, minmax(0, 1fr));
 }
 .app .grid-rows-\[1fr\,auto\,auto\,repeat\(4\,1fr\)\,auto\] {
   grid-template-rows: 1fr auto auto repeat(4, 1fr) auto;
+}
+.app .grid-rows-\[repeat\(8\,minmax\(0\,1fr\)\)\] {
+  grid-template-rows: repeat(8, minmax(0, 1fr));
 }
 .app .grid-rows-\[1fr\,repeat\(4\,auto\)\,1fr\] {
   grid-template-rows: 1fr repeat(4, auto) 1fr;
@@ -1545,6 +1569,9 @@ body.overflow-hidden {
 }
 .app .items-center {
   align-items: center;
+}
+.app .justify-start {
+  justify-content: flex-start;
 }
 .app .justify-end {
   justify-content: flex-end;
@@ -1672,6 +1699,9 @@ body.overflow-hidden {
 .app .bg-gradient-to-r {
   background-image: linear-gradient(to right, var(--tw-gradient-stops));
 }
+.app .bg-gradient-to-b {
+  background-image: linear-gradient(to bottom, var(--tw-gradient-stops));
+}
 .app .bg-gradient-to-bl {
   background-image: linear-gradient(to bottom left, var(--tw-gradient-stops));
 }
@@ -1681,6 +1711,22 @@ body.overflow-hidden {
 .app .from-zuju-red {
   --tw-gradient-from: #ed2938;
   --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(237, 41, 56, 0));
+}
+.app .from-white {
+  --tw-gradient-from: #fff;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(255, 255, 255, 0));
+}
+.app .from-graph-blue {
+  --tw-gradient-from: #3d7ff4;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(61, 127, 244, 0));
+}
+.app .from-graph-blue-dark {
+  --tw-gradient-from: #2f569a;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(47, 86, 154, 0));
+}
+.app .from-graph-red {
+  --tw-gradient-from: #dd322e;
+  --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(221, 50, 46, 0));
 }
 .app .from-black\/0 {
   --tw-gradient-from: rgba(0, 0, 0, 0);
@@ -1692,6 +1738,15 @@ body.overflow-hidden {
 .app .to-zuju-blue {
   --tw-gradient-to: #3998cd;
 }
+.app .to-zuju-gray-db {
+  --tw-gradient-to: #1d1d1b;
+}
+.app .to-graph-dirt {
+  --tw-gradient-to: #9b7331;
+}
+.app .to-graph-orange {
+  --tw-gradient-to: #f6b543;
+}
 .app .to-black\/50 {
   --tw-gradient-to: rgba(0, 0, 0, 0.5);
 }
@@ -1700,6 +1755,9 @@ body.overflow-hidden {
 }
 .app .bg-fixed {
   background-attachment: fixed;
+}
+.app .bg-top {
+  background-position: top;
 }
 .app .bg-center {
   background-position: center;
@@ -1760,6 +1818,10 @@ body.overflow-hidden {
   padding-left: 1.25rem;
   padding-right: 1.25rem;
 }
+.app .px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
 .app .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -1767,10 +1829,6 @@ body.overflow-hidden {
 .app .py-1 {
   padding-top: 0.25rem;
   padding-bottom: 0.25rem;
-}
-.app .px-2 {
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
 }
 .app .py-16 {
   padding-top: 4rem;
@@ -1802,6 +1860,9 @@ body.overflow-hidden {
 .app .pb-4 {
   padding-bottom: 1rem;
 }
+.app .pb-16 {
+  padding-bottom: 4rem;
+}
 .app .pt-16 {
   padding-top: 4rem;
 }
@@ -1810,9 +1871,6 @@ body.overflow-hidden {
 }
 .app .pl-2 {
   padding-left: 0.5rem;
-}
-.app .pb-16 {
-  padding-bottom: 4rem;
 }
 .app .pb-8 {
   padding-bottom: 2rem;
@@ -1864,16 +1922,16 @@ body.overflow-hidden {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
+.app .text-5xl {
+  font-size: 3rem;
+  line-height: 1;
+}
 .app .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
 }
 .app .text-6xl {
   font-size: 3.75rem;
-  line-height: 1;
-}
-.app .text-5xl {
-  font-size: 3rem;
   line-height: 1;
 }
 .app .text-xl {
@@ -1940,6 +1998,9 @@ body.overflow-hidden {
 .app .text-trueGray-500 {
   --tw-text-opacity: 1;
   color: rgba(115, 115, 115, var(--tw-text-opacity));
+}
+.app .underline {
+  text-decoration: underline;
 }
 .app .placeholder-zuju-gray-9::-moz-placeholder {
   --tw-placeholder-opacity: 1;
@@ -2162,6 +2223,10 @@ body.overflow-hidden {
     margin-left: -2rem;
     margin-right: -2rem;
   }
+  .app .sm\:-mx-16 {
+    margin-left: -4rem;
+    margin-right: -4rem;
+  }
   .app .sm\:mx-auto {
     margin-left: auto;
     margin-right: auto;
@@ -2208,6 +2273,9 @@ body.overflow-hidden {
   .app .sm\:w-full {
     width: 100%;
   }
+  .app .sm\:max-w-sm {
+    max-width: 24rem;
+  }
   .app .sm\:max-w-md {
     max-width: 28rem;
   }
@@ -2248,17 +2316,32 @@ body.overflow-hidden {
   .app .sm\:justify-start {
     justify-content: flex-start;
   }
+  .app .sm\:justify-center {
+    justify-content: center;
+  }
   .app .sm\:gap-y-8 {
     row-gap: 2rem;
   }
   .app .sm\:bg-contain {
     background-size: contain;
   }
+  .app .sm\:object-contain {
+    -o-object-fit: contain;
+    object-fit: contain;
+  }
+  .app .sm\:object-top {
+    -o-object-position: top;
+    object-position: top;
+  }
   .app .sm\:p-4 {
     padding: 1rem;
   }
   .app .sm\:p-8 {
     padding: 2rem;
+  }
+  .app .sm\:py-8 {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
   }
   .app .sm\:px-4 {
     padding-left: 1rem;
@@ -2480,6 +2563,9 @@ body.overflow-hidden {
   .app .lg\:mb-8 {
     margin-bottom: 2rem;
   }
+  .app .lg\:flex {
+    display: flex;
+  }
   .app .lg\:grid {
     display: grid;
   }
@@ -2504,17 +2590,17 @@ body.overflow-hidden {
   .app .lg\:w-7\/12 {
     width: 58.333333%;
   }
-  .app .lg\:w-2\/3 {
-    width: 66.666667%;
+  .app .lg\:w-1\/2 {
+    width: 50%;
   }
   .app .lg\:w-1\/3 {
     width: 33.333333%;
   }
+  .app .lg\:w-2\/3 {
+    width: 66.666667%;
+  }
   .app .lg\:w-1\/4 {
     width: 25%;
-  }
-  .app .lg\:w-1\/2 {
-    width: 50%;
   }
   .app .lg\:w-5\/12 {
     width: 41.666667%;
@@ -2588,12 +2674,26 @@ body.overflow-hidden {
   .app .lg\:items-center {
     align-items: center;
   }
+  .app .lg\:justify-between {
+    justify-content: space-between;
+  }
   .app .lg\:gap-x-8 {
     -moz-column-gap: 2rem;
     column-gap: 2rem;
   }
+  .app .lg\:self-start {
+    align-self: flex-start;
+  }
   .app .lg\:bg-cover {
     background-size: cover;
+  }
+  .app .lg\:object-cover {
+    -o-object-fit: cover;
+    object-fit: cover;
+  }
+  .app .lg\:object-center {
+    -o-object-position: center;
+    object-position: center;
   }
   .app .lg\:p-24 {
     padding: 6rem;
@@ -2601,20 +2701,23 @@ body.overflow-hidden {
   .app .lg\:p-8 {
     padding: 2rem;
   }
-  .app .lg\:py-36 {
-    padding-top: 9rem;
-    padding-bottom: 9rem;
+  .app .lg\:px-8 {
+    padding-left: 2rem;
+    padding-right: 2rem;
   }
   .app .lg\:py-16 {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
-  .app .lg\:px-8 {
-    padding-left: 2rem;
-    padding-right: 2rem;
+  .app .lg\:py-36 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
   }
   .app .lg\:pt-16 {
     padding-top: 4rem;
+  }
+  .app .lg\:pt-32 {
+    padding-top: 8rem;
   }
   .app .lg\:pb-16 {
     padding-bottom: 4rem;
@@ -2645,9 +2748,6 @@ body.overflow-hidden {
   }
   .app .lg\:pt-12 {
     padding-top: 3rem;
-  }
-  .app .lg\:pt-32 {
-    padding-top: 8rem;
   }
   .app .lg\:text-center {
     text-align: center;
