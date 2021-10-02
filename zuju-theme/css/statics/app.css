@@ -1415,6 +1415,9 @@ body.overflow-hidden {
 .app .w-5 {
   width: 1.25rem;
 }
+.app .w-1\/4 {
+  width: 25%;
+}
 .app .min-w-\[80px\] {
   min-width: 80px;
 }
@@ -1506,6 +1509,9 @@ body.overflow-hidden {
 }
 .app .resize {
   resize: both;
+}
+.app .list-disc {
+  list-style-type: disc;
 }
 .app .auto-rows-auto {
   grid-auto-rows: auto;
@@ -1873,10 +1879,6 @@ body.overflow-hidden {
 .app .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
-}
-.app .text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
 }
 .app .font-bold {
   font-weight: 700;
@@ -2475,12 +2477,6 @@ body.overflow-hidden {
   .app .lg\:mt-36 {
     margin-top: 9rem;
   }
-  .app .lg\:-mt-56 {
-    margin-top: -14rem;
-  }
-  .app .lg\:-mr-24 {
-    margin-right: -6rem;
-  }
   .app .lg\:mb-8 {
     margin-bottom: 2rem;
   }
@@ -2501,6 +2497,9 @@ body.overflow-hidden {
   }
   .app .lg\:h-14 {
     height: 3.5rem;
+  }
+  .app .lg\:h-80 {
+    height: 20rem;
   }
   .app .lg\:w-7\/12 {
     width: 58.333333%;
