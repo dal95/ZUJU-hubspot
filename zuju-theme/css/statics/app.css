@@ -426,6 +426,14 @@ body {
   tab-size: 4;
   -webkit-text-size-adjust: 100%;
 }
+.app main .glide__bullets {
+  margin-left: -0.25rem;
+  margin-right: -0.25rem;
+}
+.app main .glide__bullet {
+  margin-left: 0.25rem;
+  margin-right: 0.25rem;
+}
 .app main .glide__bullet {
   border-width: 1px !important;
 }
