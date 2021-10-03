@@ -167,7 +167,9 @@ document.addEventListener("alpine:init", () => {
             body: JSON.stringify({ uid }),
           });
           const json = await res.json();
-          if (json?.message) {
+          if (json?.success) {
+            this.$dispatch("show-message", "You found me! 2 points for you!");
+          } else if (json?.message) {
             this.$dispatch("show-message", json.message);
           }
         } catch (err) {}
