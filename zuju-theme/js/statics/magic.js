@@ -89,20 +89,23 @@ document.addEventListener("alpine:init", () => {
     if (!uid || !type) return;
 
     const url = "/_hcms/api/share-points";
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ uid, type }),
+      });
+      const json = await res.json();
 
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ uid, type }),
-    });
-    const json = await res.json();
-
-    console.log(json);
+      if (json?.message) {
+        this.$dispatch("show-message", json.message);
+      }
+    } catch (err) {}
   });
 
   Alpine.data("egg", (opts) => {
     const uid = opts.uid;
-    
+
     return {
       top: 0,
       left: 0,
@@ -146,7 +149,7 @@ document.addEventListener("alpine:init", () => {
           const url = `/_hcms/api/easter-egg-info?uid=${uid}`;
           const res = await fetch(url);
           const json = await res.json();
-          if ("data" in json && "show_easter_egg" in json.data) {
+          if ("show_easter_egg" in json?.data) {
             return !!json?.data?.show_easter_egg;
           }
         } catch (err) {
@@ -157,13 +160,17 @@ document.addEventListener("alpine:init", () => {
         if (!uid) return;
 
         const url = "/_hcms/api/find-easter-egg";
-        const res = await fetch(url, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({ uid }),
-        });
-        const json = await res.json();
-        this.$dispatch("show-message", json.message ?? "");
+        try {
+          const res = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ uid }),
+          });
+          const json = await res.json();
+          if (json?.message) {
+            this.$dispatch("show-message", json.message);
+          }
+        } catch (err) {}
       },
     };
   });
