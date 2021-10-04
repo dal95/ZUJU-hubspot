@@ -4,6 +4,9 @@
   label: Members portal
   screenshotPath: ../images/template-previews/home.png
 -->
+{% import "../macros/tags.html" as c %}
+
+{% set template_css = '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' %}
 {% extends "./layouts/base-members.html" %}
 
 {% block body %}
@@ -49,7 +52,7 @@
                     id="id-easter-egg"
                   />
                   <div>Find the Easter Egg</div>
-                  <div class="pg">Progress <span class="pg__achieved"></span>/<span class="pg__max"><span></div>
+                  <div class="pg">Progress <span class="pg__achieved"></span> / <span class="pg__max"></span></div>
                 </label>
               </li>
 
@@ -68,8 +71,8 @@
             <div class="progress wrap">
               <div class="progress__indicator">
                 <span class="fs-sm">Progress:</span>
-                <span class="clr-primary progress-indicator__cn">3</span
-                >/<span class="progress-indicator__tg">4</span>
+                <span class="clr-primary progress-indicator__cn"></span
+                > / <span class="progress-indicator__tg">4</span>
               </div>
             </div>
           </div>
@@ -81,7 +84,7 @@
 
               <div><b> {{ contact.current_loyalty_points }} </b> Zuju points</div>
             </div>
-            <a href="#" class="button button--primary">More details</a>
+            <a href="/membership" class="button button--primary">More details</a>
           </div>
           <div class="tiles__item referral text-center">
             <div>
@@ -99,55 +102,34 @@
         <section class="kungfu-dash-in">
           <div class="kungfu-dash-in__cta">
             <img src="https://i.imgur.com/oGRwfKL.png" alt="" />
-            <a href="#" class="button button--primary">Play Now</a>
+            <a href="/kungfu-dash-updated" class="button button--primary">Play Now</a>
           </div>
 
           <div class="kungfu-dash-in__check-in">
             <p>7 Days Daily Spent Bonus</p>
 
             <div class="timeline">
-              <div class="timeline__point checked">
-                <div class="timeline__dot"></div>
-                Day 1
-              </div>
-              <div class="timeline__point checked">
-                <div class="timeline__dot"></div>
-                Day 2
-              </div>
-              <div class="timeline__point checked">
-                <div class="timeline__dot"></div>
-                Day 3
-              </div>
-              <div class="timeline__point">
-                <div class="timeline__dot"></div>
-                Day 4
-              </div>
-              <div class="timeline__point">
-                <div class="timeline__dot"></div>
-                Day 5
-              </div>
-              <div class="timeline__point">
-                <div class="timeline__dot"></div>
-                Day 6
-              </div>
-              <div class="timeline__point">
-                <div class="timeline__dot"></div>
-                Day 7
-              </div>
+              {% for i in range(7) %}
+                <div class="timeline__point" data-day="{{ loop.index }}">
+                  <div class="timeline__dot"></div>
+                  <div class="timeline__bar"></div>
+                  <div class="timeline__day">Day {{loop.index}}</div>
+                </div>
+              {% endfor %}
             </div>
 
             <p>25 Days Daily Spent Bonus</p>
 
             <div class="continous">
-              <div class="continous__item checked">
-                Day <span>8</span>
-              </div>
-              <div class="continous__item checked">
-                Day <span>9</span>
-              </div>
-              <div class="continous__item">Day <span>10</span></div>
-              <div class="continous__item">Day <span>11</span></div>
-              <div class="continous__item">Day <span>12</span></div>
+              {% for i in range(25) %}
+                <div>
+                  <div class="continous__item" data-day="{{loop.index}}">Day<span>{{ loop.index }}</span></div>
+                </div>
+              {% endfor %}
+            </div>
+
+            <div class="text-center">
+              <a href="/kungfu-dash-updated" class="button button--primary">Play Now</a>
             </div>
           </div>
         </section>
@@ -179,4 +161,29 @@
     </section>
   </div>
 
+{{ require_js('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 'footer') }}
+
+{% require_js 'my_require_js' position='position'%}
+  <script>
+    $(document).on('ready', function() {
+      $('.continous, .timeline').slick({
+        slidesToShow: 7,
+        slidesToScroll: 7,
+        arrows: true,
+        infinite: false,
+        prevArrow: `<div class="prev-arrow">{{ c.chevron_left() }}</div>`,
+        nextArrow: `<div class="next-arrow">{{ c.chevron_right() }}</div>`,
+        responsive: [
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 4,
+              slidesToScroll: 4
+            }
+          },
+        ]
+      });
+    })
+  </script>
+{% end_require_js %}
 {% endblock body %}

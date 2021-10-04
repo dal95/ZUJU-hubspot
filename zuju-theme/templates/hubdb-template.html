@@ -45,7 +45,7 @@
 							{% if contact.current_loyalty_points < d.point %}
 								{# {{ contact.current_loyalty_points < d.point  }} #}
 								{% set class_name = 'clr-mute' %}
-								{% set label = 'Point not sufficient' %}
+								{% set label = 'Insufficient Points' %}
 							{% endif %}
 
 							{% if  contact.current_loyalty_points > d.point && d.stock > 0 %}
@@ -181,7 +181,7 @@
 									{% if contact.current_loyalty_points < row.point %}
 										{# {{ contact.current_loyalty_points < row.point  }} #}
 										{% set class_name = 'clr-mute' %}
-										{% set label = 'Point not sufficient' %}
+										{% set label = 'Insufficient Points' %}
 									{% endif %}
 
 									{% if  contact.current_loyalty_points > row.point && row.stock > 0 %}
@@ -215,8 +215,10 @@
 	window.addEventListener('message', event => {
 		if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
 				const $redeemInput = document.querySelector('input[name="last_redeemed_id"]')
+				const $redeemItemName = document.querySelector('input[name="last_redeemed_item_name"]')
 				console.log($redeemInput)
 				$redeemInput.value = "{{ dynamic_page_hubdb_row.hs_id }}";
+				$redeemItemName.value = "{{ dynamic_page_hubdb_row.name }}"
 		}
 	});
 

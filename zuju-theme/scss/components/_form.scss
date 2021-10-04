@@ -244,9 +244,20 @@ section.edit {
 }
 
 .form-dark.form-dark {
-  .hs-input {
+  .hs-input, #hs-pwd-widget-password {
     background: var(--clr-dark-400);
     color: #fff;
+
+    &:disabled {
+      opacity: .5;
+      cursor: not-allowed;
+      background: #242424 !important
+    }
+  }
+
+  #hs-pwd-widget-password {
+    height: 40px !important;
+    margin-bottom: 1rem;
   }
 
   label {

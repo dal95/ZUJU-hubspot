@@ -55,4 +55,20 @@
     </section>
   </div>
 
+<script>
+	window.addEventListener('message', event => {
+		if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+				const $birthdayInput = $('input[name="birthday"]')
+        console.log($birthdayInput)
+        console.log($birthdayInput.prev())
+        $birthdayInput.attr('disabled', true)
+        $birthdayInput.prev().attr('disabled', true)
+        $birthdayInput.css('pointer-events', 'none')
+        $birthdayInput.prev().css('pointer-events', 'none')
+        $birthdayInput.closest('.hs-dateinput').css('pointer-events', 'none')
+        $birthdayInput.closest('.input').css('cursor', 'not-allowed')
+		}
+	});
+</script>
+
 {% endblock body %}

@@ -29,7 +29,7 @@
     padding-left: 20px;
   }
 
-  @include media('<=tablet') {
+  @include media('<=laptop') {
     display: none;
   }
 }
@@ -347,17 +347,18 @@
 }
 
 .kungfu-dash-in {
-  min-height: 16vw;
+  // min-height: 16vw;
   background: url('https://i.imgur.com/W8PwNBa.png');
   margin-bottom: 3.125rem;
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem;
+  padding: rem(20);
+  max-width: 100%;
+  overflow: hidden;
+  // display: none;
 
-  > * {
-    flex: 5;
+  @include media('>=tablet') {
+    display: flex;
   }
 
   &__cta {
@@ -368,21 +369,37 @@
     min-width: 40%;
     text-align: center;
 
+    .button {
+      display: none;
+    }
+
+    @include media('>tablet') {
+      .button {
+        display: flex;
+      }
+    }
+
     img {
       margin-bottom: 20px;
     }
   }
 
   > div:last-child {
-    flex: 6;
-    padding-right: 90px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding-right: 60px;
+    padding-left: 30px;
+    overflow: hidden;
 
     @include media('<=tablet') {
       padding-inline: 0;
       padding-block: 2rem 1rem;
+    }
+  }
+
+  &__check-in {
+    @include media('>tablet') {
+      .button {
+        display: none;
+      }
     }
   }
 }
@@ -390,9 +407,21 @@
 .timeline {
   position: relative;
   display: flex;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 14px;
+  margin-top: rem(30);
+  margin-bottom: rem(30);
+  font-size: rem(14);
+
+  .slick-track {
+    margin-top: rem(30);
+  }
+
+  .slick-list {
+    margin-inline: rem(20);
+
+    @include media('>600px') {
+      margin: 0;
+    }
+  }
 
   &__point {
     position: relative;
@@ -402,17 +431,17 @@
     }
 
     .timeline__dot {
-      position: absolute;
-      top: -30px;
+      position: relative;
+      // top: -30px;
       content: '';
       width: 20px;
       height: 20px;
       border-radius: 50%;
-      margin-left: 10px;
       background-color: #fff;
       z-index: 1;
       cursor: pointer;
       padding: 5px;
+      margin: auto;
 
       &:before {
         position: absolute;
@@ -436,19 +465,25 @@
       }
     }
 
-    &.checked:not(:last-child):after {
-      background: var(--clr-green-400);
-    }
-
-    &:not(:last-child):after {
+    &:not(:last-child) .timeline__bar {
+      // &:after {
       position: absolute;
-      top: -20px;
-      left: 10px;
+      top: 10px;
+      left: 50%;
       content: '';
       width: 100%;
       height: 2px;
       background-color: #fff;
     }
+  }
+
+  &__day {
+    text-align: center;
+    margin-top: 10px;
+  }
+
+  &__bar.active {
+    background: var(--clr-green-400) !important;
   }
 }
 
@@ -547,6 +582,16 @@
     color: #fff;
   }
 
+  input:disabled:not(input[type='submit']):not(button),
+  select:disabled,
+  textarea:disabled {
+      background: #242424;
+      opacity: .5
+  }
+
+  input:not(input[type='submit']):not(button),
+  select,
+
   input:not(input[type='submit']) {
     background: var(--clr-dark-800);
     color: #fff;
@@ -595,7 +640,18 @@ input[type='submit'] {
 .continous {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
+  margin-bottom: 2rem;
+
+  .slick-slide {
+    display: flex;
+    justify-content: center;
+  }
+
+  .slick-list {
+    margin-inline: rem(20);
+  }
 
   &__item {
     flex-grow: 0;
@@ -612,17 +668,16 @@ input[type='submit'] {
     font-size: 10px;
     font-weight: bold;
     font-family: var(--ff-primary);
-    cursor: pointer;
     @include transition;
 
     &:not(.checked) {
       border: 1px solid #6ef3fb;
     }
 
-    &:hover {
-      background-color: var(--clr-green-400);
-      color: #fff;
-    }
+    // &:hover {
+    //   background-color: var(--clr-green-400);
+    //   color: #fff;
+    // }
 
     span {
       display: block;
@@ -997,6 +1052,8 @@ input[type='submit'] {
 }
 
 .kungfu-dash {
+  background-size: cover;
+  background-repeat: no-repeat;
   padding-top: rem(135);
   padding-bottom: rem(80);
   color: #fff;
@@ -1054,4 +1111,32 @@ input[type='submit'] {
     outline: none;
     // aspect-ratio: 2;
   }
+}
+
+.prev-arrow {
+  left: 0;
+  transform: translate(0px, -50%);
+}
+
+.next-arrow {
+  right: 0;
+  transform: translate(0px, -50%);
+}
+
+.prev-arrow,
+.next-arrow {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  display: flex !important;
+  z-index: 5;
+}
+
+.slick-arrow.slick-disabled {
+  opacity: 0.3;
+  cursor: unset;
+}
+
+.slick-list {
+  width: 100%;
 }

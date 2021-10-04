@@ -520,7 +520,7 @@ label {
     padding-left: 20px;
   }
 }
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .sidebar {
     display: none;
   }
@@ -808,17 +808,18 @@ label {
 }
 
 .kungfu-dash-in {
-  min-height: 16vw;
   background: url("https://i.imgur.com/W8PwNBa.png");
   margin-bottom: 3.125rem;
   background-size: cover;
   background-repeat: no-repeat;
-  display: flex;
-  flex-wrap: wrap;
-  padding: 2rem;
+  padding: 1.25rem;
+  max-width: 100%;
+  overflow: hidden;
 }
-.kungfu-dash-in > * {
-  flex: 5;
+@media (min-width: 800px) {
+  .kungfu-dash-in {
+    display: flex;
+  }
 }
 .kungfu-dash-in__cta {
   display: flex;
@@ -828,15 +829,21 @@ label {
   min-width: 40%;
   text-align: center;
 }
+.kungfu-dash-in__cta .button, .kungfu-dash-in__cta .hs-button {
+  display: none;
+}
+@media (min-width: 801px) {
+  .kungfu-dash-in__cta .button, .kungfu-dash-in__cta .hs-button {
+    display: flex;
+  }
+}
 .kungfu-dash-in__cta img {
   margin-bottom: 20px;
 }
 .kungfu-dash-in > div:last-child {
-  flex: 6;
-  padding-right: 90px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
+  padding-right: 60px;
+  padding-left: 30px;
+  overflow: hidden;
 }
 @media (max-width: 800px) {
   .kungfu-dash-in > div:last-child {
@@ -844,13 +851,29 @@ label {
     padding-block: 2rem 1rem;
   }
 }
+@media (min-width: 801px) {
+  .kungfu-dash-in__check-in .button, .kungfu-dash-in__check-in .hs-button {
+    display: none;
+  }
+}
 
 .timeline {
   position: relative;
   display: flex;
-  margin-top: 30px;
-  margin-bottom: 30px;
-  font-size: 14px;
+  margin-top: 1.875rem;
+  margin-bottom: 1.875rem;
+  font-size: 0.875rem;
+}
+.timeline .slick-track {
+  margin-top: 1.875rem;
+}
+.timeline .slick-list {
+  margin-inline: 1.25rem;
+}
+@media (min-width: 601px) {
+  .timeline .slick-list {
+    margin: 0;
+  }
 }
 .timeline__point {
   position: relative;
@@ -859,17 +882,16 @@ label {
   flex: 1;
 }
 .timeline__point .timeline__dot {
-  position: absolute;
-  top: -30px;
+  position: relative;
   content: "";
   width: 20px;
   height: 20px;
   border-radius: 50%;
-  margin-left: 10px;
   background-color: #fff;
   z-index: 1;
   cursor: pointer;
   padding: 5px;
+  margin: auto;
 }
 .timeline__point .timeline__dot:before {
   position: absolute;
@@ -889,17 +911,21 @@ label {
 .timeline__point.checked .timeline__dot:before {
   content: "";
 }
-.timeline__point.checked:not(:last-child):after {
-  background: var(--clr-green-400);
-}
-.timeline__point:not(:last-child):after {
+.timeline__point:not(:last-child) .timeline__bar {
   position: absolute;
-  top: -20px;
-  left: 10px;
+  top: 10px;
+  left: 50%;
   content: "";
   width: 100%;
   height: 2px;
   background-color: #fff;
+}
+.timeline__day {
+  text-align: center;
+  margin-top: 10px;
+}
+.timeline__bar.active {
+  background: var(--clr-green-400) !important;
 }
 
 .progress {
@@ -985,6 +1011,14 @@ label {
   background: var(--clr-dark-400) !important;
   color: #fff;
 }
+.edit input:disabled:not(input[type=submit]):not(button),
+.edit select:disabled,
+.edit textarea:disabled {
+  background: #242424;
+  opacity: 0.5;
+}
+.edit input:not(input[type=submit]):not(button),
+.edit select,
 .edit input:not(input[type=submit]) {
   background: var(--clr-dark-800);
   color: #fff;
@@ -1030,7 +1064,16 @@ input[type=submit] {
 .continous {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   position: relative;
+  margin-bottom: 2rem;
+}
+.continous .slick-slide {
+  display: flex;
+  justify-content: center;
+}
+.continous .slick-list {
+  margin-inline: 1.25rem;
 }
 .continous__item {
   flex-grow: 0;
@@ -1047,15 +1090,10 @@ input[type=submit] {
   font-size: 10px;
   font-weight: bold;
   font-family: var(--ff-primary);
-  cursor: pointer;
   transition: all 0.3s ease;
 }
 .continous__item:not(.checked) {
   border: 1px solid #6ef3fb;
-}
-.continous__item:hover {
-  background-color: var(--clr-green-400);
-  color: #fff;
 }
 .continous__item span {
   display: block;
@@ -1394,6 +1432,8 @@ input[type=submit] {
 }
 
 .kungfu-dash {
+  background-size: cover;
+  background-repeat: no-repeat;
   padding-top: 8.4375rem;
   padding-bottom: 5rem;
   color: #fff;
@@ -1444,6 +1484,34 @@ input[type=submit] {
   width: 100%;
   border: none;
   outline: none;
+}
+
+.prev-arrow {
+  left: 0;
+  transform: translate(0px, -50%);
+}
+
+.next-arrow {
+  right: 0;
+  transform: translate(0px, -50%);
+}
+
+.prev-arrow,
+.next-arrow {
+  position: absolute;
+  top: 50%;
+  cursor: pointer;
+  display: flex !important;
+  z-index: 5;
+}
+
+.slick-arrow.slick-disabled {
+  opacity: 0.3;
+  cursor: unset;
+}
+
+.slick-list {
+  width: 100%;
 }
 
 .hs-input {
@@ -1657,9 +1725,18 @@ section.edit .form-columns-0:not(:first-of-type) {
   font-weight: bold;
 }
 
-.form-dark.form-dark .hs-input {
+.form-dark.form-dark .hs-input, .form-dark.form-dark #hs-pwd-widget-password {
   background: var(--clr-dark-400);
   color: #fff;
+}
+.form-dark.form-dark .hs-input:disabled, .form-dark.form-dark #hs-pwd-widget-password:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #242424 !important;
+}
+.form-dark.form-dark #hs-pwd-widget-password {
+  height: 40px !important;
+  margin-bottom: 1rem;
 }
 .form-dark.form-dark label {
   color: #fff;
@@ -1980,7 +2057,7 @@ section.edit .form-columns-0:not(:first-of-type) {
 .has-dropdown {
   position: relative;
 }
-@media (max-width: 800px) {
+@media (max-width: 1024px) {
   .has-dropdown {
     margin-right: 1rem;
   }
@@ -2020,7 +2097,7 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 .has-dropdown .dropdown a {
   text-decoration: none;
-  text-align: right;
+  text-align: center;
   display: block;
   padding: 5px 20px;
   color: var(--clr-dark-400);
@@ -2056,10 +2133,12 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 
 .auth-wrapper {
-  min-height: 100vh;
+  min-height: 850px;
   background-size: cover;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  display: flex;
+}
+.auth-wrapper a {
+  text-decoration: none;
 }
 @media (max-width: 800px) {
   .auth-wrapper {
@@ -2303,6 +2382,10 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 .footer__social path {
   color: #333;
+}
+
+#hs_cos_wrapper_membership_admin_content {
+  margin-top: 2rem;
 }
 
 /*# sourceMappingURL=main.css.map */

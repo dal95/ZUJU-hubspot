@@ -1,8 +1,11 @@
 .auth-wrapper {
-  min-height: 100vh;
+  min-height: 850px;
   background-size: cover;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  display: flex;
+
+  a {
+    text-decoration: none;
+  }
 
   @include media('<=tablet') {
     background-position: -85px;
@@ -270,4 +273,8 @@
       color: #333;
     }
   }
+}
+
+#hs_cos_wrapper_membership_admin_content {
+  margin-top: 2rem;
 }

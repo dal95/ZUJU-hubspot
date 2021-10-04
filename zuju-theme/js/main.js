@@ -236,7 +236,7 @@ const formatDate = date => {
   })
 }
 
-const BASE_URL = 'https://members.zujugp.com/_hcms/api'
+const BASE_URL = 'https://dev.zujugp.com/_hcms/api'
 
 const uid = user_vid
 
@@ -272,29 +272,52 @@ fetch(`${BASE_URL}/dashboard?uid=${uid}`)
   .then(res => res.json())
   .then(res => {
     // Membership page
-    const checks = Object.keys(res.data.daily_task)
-    const mapped = checks.map(i => ({ task: i, value: res.data.daily_task[i] }))
+    const { daily_task, kfd_game, refer } = res.data
+    const tasksNames = Object.keys(daily_task)
+    const mapped = tasksNames.map(i => res.data.daily_task[i])
 
-    const checkedLength = mapped.filter(i => i.value > 0).length
-    const checkedTarget = mapped.length
+    const completedProgress = mapped.filter(item => item.completed).length
+    const goalProgress = tasksNames.length
 
-    $('.progress-indicator__cn').text(mapped.filter(i => i.value > 0).length + 1)
-    $('.progress-indicator__tg').text(checks.length)
-    $('.progress__bar-inner').css(
-      'width',
-      (checkedLength / checkedTarget) * 100 + '%'
-    )
+    $('.progress-indicator__cn').text(completedProgress)
+    $('.progress-indicator__tg').text(goalProgress)
 
+    // Disabled due to requirement change
+    // $('.progress__bar-inner').css(
+    //   'width',
+    //   (checkedLength / checkedTarget) * 100 + '%'
+    // )
+
+    // Check the completed item
     $('.list input[type="checkbox"]').each(function (index) {
       const val = res.data.daily_task[$(this).attr('name')]
-      $(this).attr('checked', !!val)
+      $(this).attr('checked', !!val?.completed)
     })
 
-    console.log(res.data.daily_task.find_easter_egg.achieved_times)
-    $('.pg__achieved').text(res.data.daily_task.find_easter_egg.achieved_times)
-    $('.pg__max').text(res.data.daily_task.find_easter_egg.max_times_per_day)
+    $('.pg__achieved').text(daily_task?.find_easter_egg?.value?.achieved_times)
+    $('.pg__max').text(daily_task?.find_easter_egg?.value?.max_times_per_day)
 
-    $('#hs_cos_wrapper_side_menu li:last-child a').attr('href', res.data.daily_task.refer.referral_link)
+    $('.timeline__point').each(function() {
+      const day = kfd_game?.this_week_continuous_days
+      if ($(this).data('day') <= day) {
+        $(this).addClass('checked')
+
+        if ($(this).data('day') <= day - 1) {
+          console.log($(this).find('.timeline__day').text())
+          console.log($(this).find('.timeline__bar'))
+          $(this).find('.timeline__bar').addClass('active')
+        }
+      }
+    })
+
+    $('.continous__item').each(function() {
+      if ($(this).data('day') <= kfd_game.continuous_day) {
+        $(this).addClass('checked')
+      }
+    })
+
+    // Set Referral Link
+    $('.referral .button').attr('href', refer?.referral_link)
   })
   .catch(err => console.log(err))
 
