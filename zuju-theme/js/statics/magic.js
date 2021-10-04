@@ -114,7 +114,7 @@ document.addEventListener("alpine:init", () => {
       ready: false,
       chance: Math.random() <= 1 / 7,
       async init() {
-        const prefix = "https://dev.zujugp.com/hubfs/statics/";
+        const prefix = "/hubfs/statics/";
         const paths = ["mask/mask-01.json", "mask/mask-02.json", "mask/mask-03.json", "mask/mask-04.json"];
         const index = Math.floor(Math.random() * paths.length);
         this.$lottie(prefix + paths[index]);

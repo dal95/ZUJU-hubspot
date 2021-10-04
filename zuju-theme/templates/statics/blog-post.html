@@ -29,7 +29,7 @@
             <img
               class="h-14 w-14 cursor-pointer"
               x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' }); navigator.share?.({ url: location.href })"
-              src="https://dev.zujugp.com/hubfs/statics/assets/share.png"
+              src="/hubfs/statics/assets/share.png"
             />
           </div>
           <div class="sm:hidden px-8">
@@ -40,14 +40,14 @@
 							x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'tw_share' })"
 							x-bind:href="`https://twitter.com/intent/tweet?url=${encodeURIComponent(location.href)}`"
 						>
-							<img class="h-6 mx-4" src="https://dev.zujugp.com/hubfs/statics/assets/share-twitter.png" />
+							<img class="h-6 mx-4" src="/hubfs/statics/assets/share-twitter.png" />
 						</a>
 						<a
 							target="_blank"
 							x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' })"
 							x-bind:href="`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`"
 						>
-							<img class="h-6 mx-4" src="https://dev.zujugp.com/hubfs/statics/assets/share-facebook.png" />
+							<img class="h-6 mx-4" src="/hubfs/statics/assets/share-facebook.png" />
 						</a>
 						<!-- <a href="#"><img class="h-6 mx-4" src="@src/assets/blog/share-instagram.png" /></a> -->            </div>
             <p class="text-white mb-8">{{ content.publish_date_localized }}</p>
