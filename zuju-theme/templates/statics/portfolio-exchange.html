@@ -46,7 +46,7 @@
 				x-on:click="playing = false"
 				x-on:keyup.window.escape="playing = false"
 			>
-				<div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+				<div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
 					<div class="relative">
 						<button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
 						<video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
