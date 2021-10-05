@@ -163,6 +163,8 @@ $('.off-canvas')
   .find('svg')
   .on('click', () => offCanvasOut())
 
+$('.has-dropdown svg').on('click', e => e.preventDefault())
+
 document.addEventListener('click', function (event) {
   if (!event.target.closest('.off-canvas')) {
     offCanvasOut()
@@ -249,8 +251,9 @@ fetch(`${BASE_URL}/daily-login`, {
   body: JSON.stringify({
     uid: uid
   })
-}).then(res => res.json())
-.then(res => console.log(res.message))
+})
+  .then(res => res.json())
+  .then(res => console.log(res.message))
 
 fetch(`${BASE_URL}/points-history?uid=${uid}`)
   .then(res => res.json())
@@ -268,58 +271,79 @@ fetch(`${BASE_URL}/points-history?uid=${uid}`)
   })
   .catch(err => console.log(err))
 
-fetch(`${BASE_URL}/dashboard?uid=${uid}`)
-  .then(res => res.json())
-  .then(res => {
-    // Membership page
-    const { daily_task, kfd_game, refer } = res.data
-    const tasksNames = Object.keys(daily_task)
-    const mapped = tasksNames.map(i => res.data.daily_task[i])
+const dashboardAllowedPages = ['/members-portal', '/membership']
 
-    const completedProgress = mapped.filter(item => item.completed).length
-    const goalProgress = tasksNames.length
+if (dashboardAllowedPages.includes(location.pathname)) {
+  fetch(`${BASE_URL}/dashboard?uid=${uid}`)
+    .then(res => res.json())
+    .then(res => {
+      // Membership page
+      const { daily_task, kfd_game, refer } = res.data
+      const tasksNames = Object.keys(daily_task)
+      const mapped = tasksNames.map(i => res.data.daily_task[i])
 
-    $('.progress-indicator__cn').text(completedProgress)
-    $('.progress-indicator__tg').text(goalProgress)
+      const completedProgress = mapped.filter(item => item.completed).length
+      const goalProgress = tasksNames.length
 
-    // Disabled due to requirement change
-    // $('.progress__bar-inner').css(
-    //   'width',
-    //   (checkedLength / checkedTarget) * 100 + '%'
-    // )
+      $('.progress-indicator__cn').text(completedProgress)
+      $('.progress-indicator__tg').text(goalProgress)
 
-    // Check the completed item
-    $('.list input[type="checkbox"]').each(function (index) {
-      const val = res.data.daily_task[$(this).attr('name')]
-      $(this).attr('checked', !!val?.completed)
-    })
+      // Disabled due to requirement change
+      // $('.progress__bar-inner').css(
+      //   'width',
+      //   (checkedLength / checkedTarget) * 100 + '%'
+      // )
 
-    $('.pg__achieved').text(daily_task?.find_easter_egg?.value?.achieved_times)
-    $('.pg__max').text(daily_task?.find_easter_egg?.value?.max_times_per_day)
+      // Check the completed item
+      $('.list input[type="checkbox"]').each(function (index) {
+        const val = res.data.daily_task[$(this).attr('name')]
+        $(this).attr('checked', !!val?.completed)
+      })
 
-    $('.timeline__point').each(function() {
-      const day = kfd_game?.this_week_continuous_days
-      if ($(this).data('day') <= day) {
-        $(this).addClass('checked')
+      $('.task-easter-egg .pg__achieved').text(
+        daily_task?.find_easter_egg?.value?.achieved_times
+      )
+      $('.task-easter-egg .pg__max').text(
+        daily_task?.find_easter_egg?.value?.max_times_per_day
+      )
 
-        if ($(this).data('day') <= day - 1) {
-          console.log($(this).find('.timeline__day').text())
-          console.log($(this).find('.timeline__bar'))
-          $(this).find('.timeline__bar').addClass('active')
+      $('.task-comments .pg__achieved').text(
+        daily_task?.comments?.value?.achieved_times
+      )
+      $('.task-comments .pg__max').text(
+        daily_task?.comments?.value?.max_times_per_day
+      )
+
+      $('.timeline__point').each(function () {
+        const day = kfd_game?.this_week_continuous_days
+        if ($(this).data('day') <= day) {
+          $(this).addClass('checked')
+
+          if ($(this).data('day') <= day - 1) {
+            console.log(
+              $(this)
+                .find('.timeline__day')
+                .text()
+            )
+            console.log($(this).find('.timeline__bar'))
+            $(this)
+              .find('.timeline__bar')
+              .addClass('active')
+          }
         }
-      }
-    })
+      })
 
-    $('.continous__item').each(function() {
-      if ($(this).data('day') <= kfd_game.continuous_day) {
-        $(this).addClass('checked')
-      }
-    })
+      $('.continous__item').each(function () {
+        if ($(this).data('day') <= kfd_game.continuous_day) {
+          $(this).addClass('checked')
+        }
+      })
 
-    // Set Referral Link
-    $('.referral .button').attr('href', refer?.referral_link)
-  })
-  .catch(err => console.log(err))
+      // Set Referral Link
+      $('.referral .button').attr('href', refer?.referral_link)
+    })
+    .catch(err => console.log(err))
+}
 
 $('.tab-content.active').fadeIn()
 $('.tabs__menu').on('click', function () {

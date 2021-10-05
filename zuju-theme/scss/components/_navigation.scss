@@ -150,7 +150,7 @@
 
   a {
     color: #fff;
-    font-size: 1.5rem;
+    font-size: 1.25rem;
     display: inline-block;
     margin-block: 1rem !important;
   }
@@ -183,6 +183,10 @@
       position: relative;
       color: var(--clr-primary);
 
+      path {
+        fill: var(--clr-primary);
+      }
+
       &:before {
         position: absolute;
         content: '';
@@ -201,7 +205,7 @@
     }
   }
 
-  svg {
+  svg, img {
     margin-right: 5px;
     margin-bottom: 3px;
   }
@@ -248,14 +252,14 @@
     position: absolute;
     top: 100%;
     background: #fff;
-    width: 110px;
+    min-width: 180px;
     right: 0;
     border-radius: 4px;
     z-index: 9;
-    box-shadow: 0 10px 10px rgba(#000, .3);
+    box-shadow: 0 10px 10px rgba(#000, 0.1);
     transform-origin: top center;
     transform: scaleY(0);
-    padding-block: .2rem;
+    padding-block: 0.5rem;
     @include transition;
 
     a {
@@ -267,10 +271,11 @@
       font-family: var(--ff-accent);
       font-weight: bold;
       text-transform: uppercase;
+      @include transition;
 
       &:hover {
-        text-decoration: underline;
-        color: var(--clr-primary)
+        color: var(--clr-primary);
+        background: rgba(#000, 0.1);
       }
     }
   }

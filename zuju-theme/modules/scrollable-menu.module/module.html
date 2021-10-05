@@ -1,0 +1,41 @@
+{{ require_js(get_asset_url('zuju-theme/js/svg-inject.js')) }}
+
+<div class="scrollable-container">
+	<ul class="scrollable-menu">
+		{% for item in module.Menu %}
+			<li>
+				{% set href = item.link.url.href %}
+				{% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+				{% endif %}
+				{% set rel = [] %}
+				{% if item.link.no_follow %}
+					{% do rel.append("nofollow") %}
+				{% endif %}
+				{% if item.link.open_in_new_tab %}
+					{% do rel.append("noopener") %}
+				{% endif %}
+
+				<a href="{{ href }}" class="{% if content.id == item.link.url.content_id %}active{% endif %}"
+					{% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+					{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+				>
+					{% if item.icon.src %}
+					{% set sizeAttrs = 'width="{{ item.icon.width }}" height="{{ item.icon.height }}"' %}
+					{% if item.icon.size_type == 'auto' %}
+						{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+					{% elif item.icon.size_type == 'auto_custom_max' %}
+						{% set sizeAttrs = 'width="{{ item.icon.max_width }}" height="{{ item.icon.max_height }}" style="max-width: 100%; height: auto;"' %}
+					{% endif %}
+					{% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
+						{# Icon #}
+						<img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" >
+					{% endif %}
+
+					{# Label #}
+					{% inline_text field="text" value="{{ item.text }}" %}
+				</a>
+			</li>
+		{% endfor %}
+	</ul>
+</div>

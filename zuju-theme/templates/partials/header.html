@@ -2,6 +2,7 @@
   templateType: global_partial
   label: Website header
 -->
+{% import 'zuju-theme/macros/tags.html' as c %}
 
 <!-- Top nav -->
 <div class="nav">
@@ -30,12 +31,11 @@
           <div class="has-dropdown">
             <a href="http://dev.zujugp.com/members-portal" class="nav__link account-link">
               Account
-              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
-              </svg>
+              {{ c.icon_chevron_down() }}
               <div class="arrow-up"></div>
             </a>
             <div class="dropdown">
+              <a  href="/profile">Edit profile</a>
               <a  href="/_hcms/mem/logout">Logout</a>
             </div>
           </div>
@@ -44,36 +44,10 @@
         {% endif %}
 
         <div class="off-canvas">
-          <svg
-            width="31"
-            height="31"
-            viewBox="0 0 31 31"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.35783 1.35787L29.6421 29.6421"
-              stroke="#ED2938"
-              stroke-linecap="square"
-            />
-            <path
-              d="M29.6421 1.35786L1.35783 29.6421"
-              stroke="#ED2938"
-              stroke-linecap="square"
-            />
-          </svg>
+          {{ c.icon_cross() }}
 
-          <!-- Off canvas -->
-          <ul class="off-canvas__menu">
-            <li><a class="nav__link" href="/">Latest</a></li>
-            <li><a class="nav__link" href="/">Portofolio</a></li>
-            <li><a class="nav__link" href="/">Impact</a></li>
-            <li><a class="nav__link" href="/">Shop</a></li>
-            <li><a class="nav__link" href="/">About</a></li>
-            <li><a class="nav__link" href="/">Advertise</a></li>
-            <li><a class="nav__link" href="/">NFT</a></li>
-            <li><a class="nav__link" href="/">Subscribe</a></li>
-          </ul>
+          <!-- Off canvas menu content -->
+          {{ c.z_menu(54357477653, 'off-canvas__menu', 'nav__link') }}
         </div>
 
         <!-- Burger menu -->

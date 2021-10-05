@@ -526,11 +526,13 @@ label {
   }
 }
 
-.users {
+.user-card {
   display: flex;
   margin-bottom: 3.125rem;
+  text-decoration: none;
+  color: #fff;
 }
-.users__avatar {
+.user-card__avatar {
   position: relative;
   width: 50px;
   height: 50px;
@@ -542,10 +544,10 @@ label {
   overflow: hidden;
   margin-right: 17px;
 }
-.users__tier {
+.user-card__tier {
   margin-bottom: 8px;
 }
-.users__name, .users__tier {
+.user-card__name, .user-card__tier {
   font-weight: 600;
 }
 
@@ -760,8 +762,6 @@ label {
 }
 .daily-tasks label {
   font-size: 1rem;
-}
-.daily-tasks label[for=id-easter-egg] {
   flex-wrap: wrap;
 }
 .daily-tasks label .pg {
@@ -797,14 +797,18 @@ label {
 }
 .list label {
   display: flex;
-  align-items: center;
 }
 .list input[type=checkbox] {
+  margin-top: 5px;
   margin-right: 10px;
   width: 16px;
   height: 16px;
   color: var(--clr-primary);
   accent-color: var(--clr-primary);
+}
+
+.task__label {
+  flex: 1;
 }
 
 .kungfu-dash-in {
@@ -889,7 +893,6 @@ label {
   border-radius: 50%;
   background-color: #fff;
   z-index: 1;
-  cursor: pointer;
   padding: 5px;
   margin: auto;
 }
@@ -1991,7 +1994,7 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 .off-canvas a {
   color: #fff;
-  font-size: 1.5rem;
+  font-size: 1.25rem;
   display: inline-block;
   margin-block: 1rem !important;
 }
@@ -2032,6 +2035,9 @@ section.edit .form-columns-0:not(:first-of-type) {
   position: relative;
   color: var(--clr-primary);
 }
+.scrollable-menu a.active path {
+  fill: var(--clr-primary);
+}
 .scrollable-menu a.active:before {
   position: absolute;
   content: "";
@@ -2044,7 +2050,7 @@ section.edit .form-columns-0:not(:first-of-type) {
 .scrollable-menu li:first-child a {
   margin-left: 0;
 }
-.scrollable-menu svg {
+.scrollable-menu svg, .scrollable-menu img {
   margin-right: 5px;
   margin-bottom: 3px;
 }
@@ -2085,14 +2091,14 @@ section.edit .form-columns-0:not(:first-of-type) {
   position: absolute;
   top: 100%;
   background: #fff;
-  width: 110px;
+  min-width: 180px;
   right: 0;
   border-radius: 4px;
   z-index: 9;
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
   transform-origin: top center;
   transform: scaleY(0);
-  padding-block: 0.2rem;
+  padding-block: 0.5rem;
   transition: all 0.3s ease;
 }
 .has-dropdown .dropdown a {
@@ -2104,10 +2110,11 @@ section.edit .form-columns-0:not(:first-of-type) {
   font-family: var(--ff-accent);
   font-weight: bold;
   text-transform: uppercase;
+  transition: all 0.3s ease;
 }
 .has-dropdown .dropdown a:hover {
-  text-decoration: underline;
   color: var(--clr-primary);
+  background: rgba(0, 0, 0, 0.1);
 }
 
 .arrow-up {

@@ -4,17 +4,11 @@
   label: Hubdb template
 -->
 {% extends "./layouts/base-members.html" %}
-{% import "../macros/tags.html" as macros %}
+{% import "../macros/tags.html" as c %}
 
 {% block body %}
-{% if dynamic_page_hubdb_row %}
-	{% set d = dynamic_page_hubdb_row %}
-
-	<div class="content-wrapper">
-		<section class="title-section">
-			<h2 class="page-title">Rewards</h2>
-		</section>
-
+	{% if dynamic_page_hubdb_row %}
+		{% set d = dynamic_page_hubdb_row %}
 		<section class="content-area">
 			<div class="main-content">
 				<!-- Rewards -->
@@ -67,10 +61,10 @@
 										href="#"
 										data-modal="modal"
 										class="button button--primary "
-										{{ d.stock > 0 && contact.current_loyalty_points > d.point || 'disabled' }}
-										>{{ d.stock > 0 && contact.current_loyalty_points > d.point ? 'Redeem Now' : 'Unavailable' }} </a
-
-									>
+											{{ d.stock > 0 && contact.current_loyalty_points > d.point || 'disabled' }}
+										>
+										{{ d.stock > 0 && contact.current_loyalty_points > d.point ? 'Redeem Now' : 'Unavailable' }}
+									</a>
 								</div>
 							</div>
 
@@ -100,6 +94,7 @@
 								</ul>
 							</div>
 						</div>
+
 						<div class="content-col">
 							<img src="{{ d.image.url }}" alt="" />
 						</div>
@@ -107,19 +102,13 @@
 				</section>
 			</div>
 		</section>
-	</div>
 
-	{# Modal #}
-	{% call macros.modal() %}
-		{% form "redemption_form" form_to_use='72dcb3b7-6292-492c-a1c1-b902c41704cd' %}
-	{% endcall %}
+		{# Modal #}
+		{% call c.modal() %}
+			{% form "redemption_form" form_to_use='72dcb3b7-6292-492c-a1c1-b902c41704cd' %}
+		{% endcall %}
 
-{% elif dynamic_page_hubdb_table_id %}
-	<div class="content-wrapper">
-		<section class="title-section">
-			<h2 class="page-title">Rewards</h2>
-		</section>
-
+	{% elif dynamic_page_hubdb_table_id %}
 		<section class="content-area">
 			<div class="main-content">
 				<!-- Rewards -->
@@ -204,24 +193,20 @@
 				</section>
 			</div>
 		</section>
-	</div>
-{% endif %}
+	{% endif %}
 
-<script>
-	const rowId = "{{ dynamic_page_hubdb_row.hs_id }}"
-	console.log(rowId)
+	<script>
+		const rowId = "{{ dynamic_page_hubdb_row.hs_id }}"
 
+		window.addEventListener('message', event => {
+			if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+					const $redeemInput = document.querySelector('input[name="last_redeemed_id"]')
+					const $redeemItemName = document.querySelector('input[name="last_redeemed_item_name"]')
 
-	window.addEventListener('message', event => {
-		if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-				const $redeemInput = document.querySelector('input[name="last_redeemed_id"]')
-				const $redeemItemName = document.querySelector('input[name="last_redeemed_item_name"]')
-				console.log($redeemInput)
-				$redeemInput.value = "{{ dynamic_page_hubdb_row.hs_id }}";
-				$redeemItemName.value = "{{ dynamic_page_hubdb_row.name }}"
-		}
-	});
-
-</script>
+					$redeemInput.value = "{{ dynamic_page_hubdb_row.hs_id }}";
+					$redeemItemName.value = "{{ dynamic_page_hubdb_row.name }}"
+			}
+		});
+	</script>
 
 {% endblock body %}

@@ -5,267 +5,54 @@
 -->
 {% extends "./layouts/base-members.html" %}
 {% block body %}
-  <div class="content-wrapper">
-    <section class="title-section">
-      <h2 class="page-title">Dashboard</h2>
+  <div class="member-benefit membership-header" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/bg/members.png') }})">
+    <div class="content-container">
+      <div class="member-benefit__row">
+        <div
+          class="member-benefit__card"
+          data-tilt
+          data-tilt-max="10"
+          data-tilt-speed="600"
+          data-tilt-perspective="400"
+        >
+          <div class="aspect-ratio" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/bg/membership-card.svg') }})"></div>
+          <div class="member-benefit__tier">{{ contact.membership_tier }}</div>
+        </div>
 
-      <!-- Scrollaable menu -->
-      <div class="scrollable-container">
-        <ul class="scrollable-menu">
-          <li>
-            <a href="#" class="active">
-              <svg
-                width="20"
-                height="19"
-                viewBox="0 0 20 19"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <mask
-                  id="mask0"
-                  style="mask-type:alpha"
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="19"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 0H19.5088V18.152H0V0Z"
-                    fill="white"
-                  />
-                </mask>
-                <g mask="url(#mask0)">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M12.682 16.7561H15.539V10.2431C15.539 9.7111 15.972 9.2781 16.503 9.2781H17.502L9.78804 1.5661L2.00704 9.3471H3.21104C3.74304 9.3471 4.17504 9.7781 4.17504 10.3091V16.6871H7.03304V12.3701C7.03304 11.8381 7.46504 11.4051 7.99704 11.4051H11.717C12.249 11.4051 12.682 11.8381 12.682 12.3701V16.7561ZM15.971 18.1521H12.25C11.718 18.1521 11.286 17.7191 11.286 17.1871V12.8011H8.42904V17.1191C8.42904 17.6511 7.99504 18.0831 7.46404 18.0831H3.74404C3.21204 18.0831 2.77904 17.6521 2.77904 17.1211V10.7431H0.965038C0.573038 10.7431 0.224038 10.5091 0.0740381 10.1481C-0.0759619 9.7861 0.00603807 9.3741 0.283038 9.0971L9.10704 0.2731C9.46904 -0.0908995 10.105 -0.0918995 10.471 0.2731L19.225 9.0281C19.502 9.3051 19.585 9.7171 19.435 10.0791C19.285 10.4411 18.935 10.6741 18.544 10.6741H16.935V17.1871C16.935 17.7191 16.502 18.1521 15.971 18.1521V18.1521Z"
-                    fill="#EE2737"
-                  />
-                </g>
-              </svg>
-              Dashboard</a
-            >
-          </li>
-          <li>
-            <a href="#">
-              <svg
-                width="20"
-                height="17"
-                viewBox="0 0 20 17"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <mask
-                  id="mask0"
-                  style="mask-type:alpha"
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="17"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 0H19.432V16.562H0V0Z"
-                    fill="white"
-                  />
-                </mask>
-                <g mask="url(#mask0)">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M1.50991 4.92439L9.71591 14.9014L17.9219 4.92439L15.5689 1.39539H3.86291L1.50991 4.92439ZM9.71591 16.5624C9.43491 16.5624 9.17291 16.4384 8.99491 16.2214L0.213908 5.54739C-0.0490916 5.22639 -0.0720916 4.77939 0.157908 4.43539L2.83791 0.41539C3.01191 0.15439 3.30191 -0.000610352 3.61491 -0.000610352H15.8169C16.1299 -0.000610352 16.4199 0.15439 16.5939 0.41539L19.2739 4.43539C19.5039 4.77939 19.4809 5.22639 19.2179 5.54639L10.4369 16.2214C10.2599 16.4384 9.99691 16.5624 9.71591 16.5624V16.5624Z"
-                    fill="white"
-                  />
-                </g>
-                <mask
-                  id="mask1"
-                  style="mask-type:alpha"
-                  maskUnits="userSpaceOnUse"
-                  x="0"
-                  y="0"
-                  width="20"
-                  height="17"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0 16.562H19.432V0H0V16.562Z"
-                    fill="white"
-                  />
-                </mask>
-                <g mask="url(#mask1)">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M0.643005 5.577H18.79V4.181H0.643005V5.577Z"
-                    fill="white"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M8.79549 15.9781L4.59949 4.84809L6.49849 0.444092L7.77949 0.996092L6.10449 4.88309L10.1015 15.4861L8.79549 15.9781Z"
-                    fill="white"
-                  />
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M10.6314 15.9781L9.32541 15.4861L13.3224 4.88309L11.6474 0.996092L12.9284 0.444092L14.8274 4.84809L10.6314 15.9781Z"
-                    fill="white"
-                  />
-                </g>
-              </svg>
-            Membership</a>
-          </li>
-          <li>
-            <a href="/rewards.html"
-              ><svg
-                width="17"
-                height="20"
-                viewBox="0 0 17 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M1.396 17.8924H15.356V6.4654H1.396V17.8924ZM16.054 19.2884H0.698C0.312 19.2884 0 18.9764 0 18.5894V5.7674C0 5.3814 0.312 5.0694 0.698 5.0694H16.054C16.44 5.0694 16.752 5.3814 16.752 5.7674V18.5894C16.752 18.9764 16.44 19.2884 16.054 19.2884V19.2884Z"
-                  fill="white"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M8.26801 19.3662C7.88201 19.3662 7.57001 19.0542 7.57001 18.6682V5.82721C7.57001 5.44121 7.88201 5.12921 8.26801 5.12921C8.65401 5.12921 8.96601 5.44121 8.96601 5.82721V18.6682C8.96601 19.0542 8.65401 19.3662 8.26801 19.3662"
-                  fill="white"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M11.1064 1.396C10.6134 1.396 9.1654 1.396 9.0084 5.02C9.1024 5.017 9.2044 5.014 9.3144 5.011C9.7294 5 10.2384 4.987 10.7904 4.987C11.7464 4.987 12.9014 4.186 12.9014 3.191C12.9014 2.202 12.0964 1.396 11.1064 1.396M8.6544 6.421C8.1554 6.421 8.0004 6.375 7.8134 6.193C7.6794 6.062 7.5994 5.873 7.5994 5.685C7.5994 0.986 9.5064 0 11.1064 0C12.8664 0 14.2974 1.431 14.2974 3.191C14.2974 5.072 12.4494 6.383 10.7904 6.383C10.2534 6.383 9.7554 6.396 9.3514 6.406C9.0614 6.415 8.8354 6.421 8.6544 6.421"
-                  fill="white"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M5.40719 1.396C4.41719 1.396 3.61219 2.202 3.61219 3.191C3.61219 4.186 4.76719 4.987 5.72419 4.987C6.27619 4.987 6.78519 5 7.20019 5.011C7.31019 5.014 7.41219 5.017 7.50619 5.02C7.34919 1.396 5.90219 1.396 5.40719 1.396M7.86119 6.421C7.68019 6.421 7.45319 6.415 7.16319 6.406C6.75919 6.396 6.26119 6.383 5.72419 6.383C4.06519 6.383 2.21619 5.072 2.21619 3.191C2.21619 1.431 3.64719 0 5.40719 0C7.00819 0 8.91619 0.986 8.91619 5.685C8.91619 5.873 8.83519 6.062 8.70119 6.193C8.51419 6.375 8.35919 6.421 7.86119 6.421"
-                  fill="white"
-                />
-              </svg>
-              Rewards</a
-            >
-          </li>
-          <li>
-            <a href="#"
-              ><svg
-                width="20"
-                height="21"
-                viewBox="0 0 20 21"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M9.571 1.396C7.488 1.396 5.793 3.091 5.793 5.174C5.793 7.257 7.488 8.952 9.571 8.952C11.654 8.952 13.349 7.257 13.349 5.174C13.349 3.091 11.654 1.396 9.571 1.396M9.571 10.348C6.717 10.348 4.397 8.027 4.397 5.174C4.397 2.321 6.717 0 9.571 0C12.424 0 14.745 2.321 14.745 5.174C14.745 8.027 12.424 10.348 9.571 10.348"
-                  fill="white"
-                />
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M8.55 19.2207H0.697C0.312 19.2207 0 18.9087 0 18.5227C0 13.2457 4.293 8.95169 9.571 8.95169C11.521 8.95169 13.398 9.53469 14.997 10.6377C15.315 10.8567 15.394 11.2917 15.175 11.6087C14.955 11.9237 14.521 12.0057 14.205 11.7867C12.84 10.8457 11.237 10.3477 9.571 10.3477C5.298 10.3477 1.78 13.6427 1.425 17.8247H8.55C8.936 17.8247 9.248 18.1377 9.248 18.5227C9.248 18.9087 8.936 19.2207 8.55 19.2207"
-                  fill="white"
-                />
-                <mask
-                  id="mask0"
-                  style="mask-type:alpha"
-                  maskUnits="userSpaceOnUse"
-                  x="9"
-                  y="11"
-                  width="11"
-                  height="10"
-                >
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M9.89279 11.1512H19.7705V20.242H9.89279V11.1512Z"
-                    fill="white"
-                  />
-                </mask>
-                <g mask="url(#mask0)">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M13.1828 20.2422C11.3698 20.2422 9.89279 18.7662 9.89279 16.9522C9.89279 15.1382 11.3698 13.6632 13.1828 13.6632H17.4618L16.2068 12.3252C15.9438 12.0442 15.9578 11.6032 16.2398 11.3392C16.5198 11.0762 16.9638 11.0912 17.2258 11.3712L19.5818 13.8842C19.7718 14.0872 19.8238 14.3842 19.7128 14.6392C19.6018 14.8942 19.3498 15.0592 19.0728 15.0592H13.1828C12.1388 15.0592 11.2888 15.9092 11.2888 16.9522C11.2888 17.9962 12.1388 18.8462 13.1828 18.8462C13.5688 18.8462 13.8808 19.1582 13.8808 19.5442C13.8808 19.9302 13.5688 20.2422 13.1828 20.2422"
-                    fill="white"
-                  />
-                </g>
-                <path
-                  fill-rule="evenodd"
-                  clip-rule="evenodd"
-                  d="M16.7165 17.5723C16.5455 17.5723 16.3735 17.5093 16.2395 17.3833C15.9575 17.1193 15.9435 16.6773 16.2075 16.3973L18.5635 13.8843C18.8265 13.6013 19.2685 13.5893 19.5495 13.8523C19.8305 14.1163 19.8455 14.5573 19.5815 14.8393L17.2255 17.3513C17.0885 17.4973 16.9025 17.5723 16.7165 17.5723"
-                  fill="white"
-                />
-              </svg>
-              Refer A Friend</a
-            >
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <div class="member-benefit membership-header" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/bg/members.png') }})">
-      <div class="content-container">
-        <div class="member-benefit__row">
-          <div
-            class="member-benefit__card"
-            data-tilt
-            data-tilt-max="10"
-            data-tilt-speed="600"
-            data-tilt-perspective="400"
-          >
-            <div class="aspect-ratio" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/bg/membership-card.svg') }})"></div>
-            <div class="member-benefit__tier">{{ contact.membership_tier }}</div>
+        <div class="member-benefit__card-desc">
+          <b class="accumulated-points">{{ contact.current_loyalty_points }} zuju points</b>
+          <div class="progress">
+            <div class="progress__bar"></div>
+            <div class="icon icon--ball"></div>
           </div>
-
-          <div class="member-benefit__card-desc">
-            <b class="accumulated-points">{{ contact.current_loyalty_points }} zuju points</b>
-            <div class="progress">
-              <div class="progress__bar"></div>
-              <div class="icon icon--ball"></div>
-            </div>
-            <p>
-              Get xx more points by 31 Dec 2021 to maintain Super Fans
-            </p>
-            <a href="#" class="button button--primary">Tier Benefits</a>
-          </div>
+          <p>
+            Get xx more points to achieve Super Fan.
+          </p>
+          <a href="/about-rewards" class="button button--primary">Tier Benefits</a>
         </div>
       </div>
     </div>
-
-    <section class="content-area">
-      <div class="main-content">
-        <section class="pnt-history">
-          <h4>My points history</h4>
-          <!-- Tabs -->
-          <div class="scrollable">
-            <div class="tabs">
-              <div class="tabs__menu active">All Transactions</div>
-              <div class="tabs__menu" data-filter="credit">Points Received</div>
-              <div class="tabs__menu" data-filter="debit">Points Used</div>
-            </div>
-          </div>
-
-          <table class="table table--dark">
-            <tbody></tbody>
-          </table>
-        </section>
-      </div>
-    </section>
   </div>
+
+  <section class="content-area">
+    <div class="main-content">
+      <section class="pnt-history">
+        <h4>My points history</h4>
+        <!-- Tabs -->
+        <div class="scrollable">
+          <div class="tabs">
+            <div class="tabs__menu active">All Transactions</div>
+            <div class="tabs__menu" data-filter="credit">Points Received</div>
+            <div class="tabs__menu" data-filter="debit">Points Used</div>
+          </div>
+        </div>
+
+        <table class="table table--dark">
+          <tbody></tbody>
+        </table>
+      </section>
+    </div>
+  </section>
 {% endblock body %}
 
 {{ require_js('https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js', 'footer')}}

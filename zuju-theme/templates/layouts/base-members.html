@@ -44,26 +44,29 @@
       <div class="main-wrapper__row">
         <aside class="sidebar">
           {% if request_contact.is_logged_in %}
-            <div class="users">
-              <a href="/profile" class="users__avatar"> </a>
+            <a href="/profile" class="user-card">
+              <div class="user-card__avatar"> </div>
 
               {# <textarea name="" id="" cols="30" rows="10">{{ contact|tojson }}</textarea> #}
-              <div class="users__content">
-                <div class="users__name all-caps">{{ request_contact.contact.firstname }} {{ contact.lastname }}</div>
-                <div class="users__tier fs-sm">{{ contact.membership_tier }}</div>
-                <div class="users__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> Zuju Points</div>
+              <div class="user-card__content">
+                <div class="user-card__name all-caps">{{ request_contact.contact.firstname }} {{ contact.lastname }}</div>
+                <div class="user-card__tier fs-sm">{{ contact.membership_tier }}</div>
+                <div class="user-card__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> Zuju Points</div>
               </div>
-            </div>
+            </a>
           {% endif %}
 
           <div class="separator">Menu</div>
           <!-- Side menu -->
-          {% module "side_menu" path="/zuju-theme/modules/menu-with-icon", label="Side Menu" %}
+          {% module "side_menu"
+            path="/zuju-theme/modules/menu-with-icon",
+            label="Secondary Menu (Desktop only)"
+          %}
 
           <div class="separator">Zuju Loyalty</div>
           <ul class="v-menu">
-            <li><a href="#">How do loyalty points work?</a></li>
-            <li><a href="#">Your Tiering & Benefits</a></li>
+            <li><a href="/about-rewards">How do loyalty points work?</a></li>
+            <li><a href="/about-rewards">Your Tiering & Benefits</a></li>
 
             {% if request_contact.is_logged_in %}
               <li>
@@ -77,14 +80,26 @@
           </ul>
         </aside>
 
-        {% block body %}
-        {% endblock body %}
+        <div class="content-wrapper">
+          <section class="title-section">
+            <h2 class="page-title">{{ content.title }}</h2>
+
+            <!-- Scrollable menu -->
+            {% module "scrollable_menu"
+              path="/zuju-theme/modules/scrollable-menu",
+              label="Secondary menu (mobile only)"
+            %}
+          </section>
+
+          {% block body %}
+          {% endblock body %}
+        </div>
 
         </div>
       </main>
 
       {% block footer %}
-        {# {% global_partial path='../partials/footer.html' %} #}
+        {% global_partial path='../partials/footer.html' %}
       {% endblock footer %}
     </div>
     <script>

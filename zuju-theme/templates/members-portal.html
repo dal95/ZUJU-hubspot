@@ -11,179 +11,176 @@
 
 {% block body %}
   {% set rewards = hubdb_table_rows('rewards', 'limit=3') %}
+  <section class="content-area">
+    <div class="main-content">
+      <section class="tiles">
+      <div class="tiles__single tiles__item daily-tasks">
+        <div class="daily-tasks__inner">
+          <h4 class="text-center">Daily Task</h4>
+          <p class="text-center">Complete task and earn points</p>
 
-  <div class="content-wrapper">
-    <section class="title-section">
-      <h2 class="page-title">{{ content.title }}</h2>
-    </section>
-
-    <section class="content-area">
-      <div class="main-content">
-        <section class="tiles">
-        <div class="tiles__single tiles__item daily-tasks">
-          <div class="daily-tasks__inner">
-            <h4 class="text-center">Daily Task</h4>
-            <p class="text-center">Complete task and earn points</p>
-
-            <ul class="list">
-              <li>
-                <label for="id-check-in">
-                  <input
-                    type="checkbox"
-                    name="daily_check_in"
-                    id="id-check-in"
-                  />
+          <ul class="list">
+            <li>
+              <label for="id-check-in" class="task">
+                <input
+                  type="checkbox"
+                  name="daily_check_in"
+                  id="id-check-in"
+                />
+                <div class="task__label">
                   Daily Check-in
-                </label>
-              </li>
+                </div>
+              </label>
+            </li>
 
-              <li>
-                <label for="id-share">
-                  <input type="checkbox" name="share" id="id-share" />
+            <li>
+              <label for="id-share" class="task">
+                <input type="checkbox" name="share" id="id-share" />
+                <div class="task__label">
                   Share a page on social media
-                </label>
-              </li>
-
-                <li>
-                <label for="id-easter-egg">
-                  <input
-                    type="checkbox"
-                    name="find_easter_egg"
-                    id="id-easter-egg"
-                  />
-                  <div>Find the Easter Egg</div>
-                  <div class="pg">Progress <span class="pg__achieved"></span> / <span class="pg__max"></span></div>
-                </label>
-              </li>
+                </div>
+              </label>
+            </li>
 
               <li>
-                <label for="id-comments">
-                  <input
-                    type="checkbox"
-                    name="comments"
-                    id="id-comments"
-                  />
+              <label for="id-easter-egg" class="task task-easter-egg">
+                <input
+                  type="checkbox"
+                  name="find_easter_egg"
+                  id="id-easter-egg"
+                />
+                <div class="task__label">Daily Treasure Hunt</div>
+                <div class="pg">Progress <span class="pg__achieved"></span> / <span class="pg__max"></span></div>
+              </label>
+            </li>
+
+            <li>
+              <label for="id-comments" class="task task-comments">
+                <input type="checkbox" name="comments" id="id-comments">
+                <div class="task__label">
                   Leave 10 comments on articles
-                </label>
-              </li>
-            </ul>
+                  <div>(Only for Super Fans &amp; Ultimate Fans)</div>
+                </div>
+                <div class="pg">Progress <span class="pg__achieved">0</span> / <span class="pg__max">10</span></div>
+              </label>
+            </li>
+          </ul>
 
-            <div class="progress wrap">
-              <div class="progress__indicator">
-                <span class="fs-sm">Progress:</span>
-                <span class="clr-primary progress-indicator__cn"></span
-                > / <span class="progress-indicator__tg">4</span>
-              </div>
-            </div>
-          </div>
         </div>
+      </div>
 
-          <div class="tiles__item current-point text-center">
+        <div class="tiles__item current-point">
+          <div class="dfl fl-j-c">
+            <img src="{{ get_asset_url('zuju-theme/images/assets/icons/coin.svg') }}" alt="" />
             <div>
               <h4>Current</h4>
 
-              <div><b> {{ contact.current_loyalty_points }} </b> Zuju points</div>
+              <div><b>{{ contact.current_loyalty_points }}</b> Zuju points</div>
             </div>
+          </div>
+          <div class="text-center">
             <a href="/membership" class="button button--primary">More details</a>
           </div>
-          <div class="tiles__item referral text-center">
-            <div>
-              <h4>Refer a Friend</h4>
+        </div>
+        <div class="tiles__item referral text-center">
+          <div>
+            <h4>Refer a Friend</h4>
 
-              <div>And be rewarded</div>
-            </div>
-            <a href="#" class="button button--primary">More details</a>
+            <div>And be rewarded</div>
           </div>
-        </section>
-        <!-- End of tiles -->
+          <a href="#" class="button button--primary">More details</a>
+        </div>
+      </section>
+      <!-- End of tiles -->
 
-        <!-- Kungfu dash -->
-        <h4 class="all-caps">Kungfu Dash</h4>
-        <section class="kungfu-dash-in">
-          <div class="kungfu-dash-in__cta">
-            <img src="https://i.imgur.com/oGRwfKL.png" alt="" />
-            <a href="/kungfu-dash-updated" class="button button--primary">Play Now</a>
-          </div>
+      <!-- Kungfu dash -->
+      <h4 class="all-caps">Kungfu Dash</h4>
+      <section class="kungfu-dash-in">
+        <div class="kungfu-dash-in__cta">
+          <img src="https://i.imgur.com/oGRwfKL.png" alt="" />
+          <a href="/kungfu-dash" class="button button--primary">Play Now</a>
+        </div>
 
-          <div class="kungfu-dash-in__check-in">
-            <p>7 Days Daily Spent Bonus</p>
+        <div class="kungfu-dash-in__check-in">
+          <p>7 Days Daily Spent Bonus</p>
+          {# <p>Bonus! 1 point per dollar spent with a min. of $1 daily for 7 days consecutively</p> #}
 
-            <div class="timeline">
-              {% for i in range(7) %}
-                <div class="timeline__point" data-day="{{ loop.index }}">
-                  <div class="timeline__dot"></div>
-                  <div class="timeline__bar"></div>
-                  <div class="timeline__day">Day {{loop.index}}</div>
-                </div>
-              {% endfor %}
-            </div>
-
-            <p>25 Days Daily Spent Bonus</p>
-
-            <div class="continous">
-              {% for i in range(25) %}
-                <div>
-                  <div class="continous__item" data-day="{{loop.index}}">Day<span>{{ loop.index }}</span></div>
-                </div>
-              {% endfor %}
-            </div>
-
-            <div class="text-center">
-              <a href="/kungfu-dash-updated" class="button button--primary">Play Now</a>
-            </div>
-          </div>
-        </section>
-
-        <!-- Rewards -->
-        <section class="rewards">
-          <div class="dfl fl-j-sb fl-a-c">
-            <h4 class="all-caps">Popular Rewards</h4>
-            <a href="/rewards">View more</a>
-          </div>
-          <div class="grids">
-            {% for reward in rewards %}
-              <a href="/rewards/{{ reward.hs_path }}" class="card">
-                <img src="{{ resize_image_url(reward.image.url, 280, 180, 200, true, true) }}" alt="" loading="lazy" width="280" height="180"/>
-                <div class="card__content">
-                  <div class="tag">{{ (reward.categories|first).name }}</div>
-                  <h3 class="card__title">{{ reward.name }}</h3>
-                  <div class="card__desc">{{ reward.content }}</div>
-                  <div class="availability {{ reward.stock > 0 ? '' : 'clr-mute' }}">{{ reward.stock > 0 ? 'Available' : 'Fully Redeemed' }}</div>
-                  <div class="points">
-                    <b>{{ reward.point }}</b> <span class="fs-sm">Zuju points</span>
-                  </div>
-                </div>
-              </a>
+          <div class="timeline">
+            {% for i in range(7) %}
+              <div class="timeline__point" data-day="{{ loop.index }}">
+                <div class="timeline__dot"></div>
+                <div class="timeline__bar"></div>
+                <div class="timeline__day">Day {{loop.index}}</div>
+              </div>
             {% endfor %}
           </div>
-        </section>
-      </div>
-    </section>
-  </div>
 
-{{ require_js('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 'footer') }}
+          <p>25 Days Daily Spent Bonus</p>
+          {# <p>Bigger bonus! 2 points per dollar spent with a min. of $1 daily for 25 days consecutively</p> #}
 
-{% require_js 'my_require_js' position='position'%}
-  <script>
-    $(document).on('ready', function() {
-      $('.continous, .timeline').slick({
-        slidesToShow: 7,
-        slidesToScroll: 7,
-        arrows: true,
-        infinite: false,
-        prevArrow: `<div class="prev-arrow">{{ c.chevron_left() }}</div>`,
-        nextArrow: `<div class="next-arrow">{{ c.chevron_right() }}</div>`,
-        responsive: [
-          {
-            breakpoint: 600,
-            settings: {
-              slidesToShow: 4,
-              slidesToScroll: 4
-            }
-          },
-        ]
-      });
-    })
-  </script>
-{% end_require_js %}
+          <div class="continous">
+            {% for i in range(25) %}
+              <div>
+                <div class="continous__item" data-day="{{loop.index}}">Day<span>{{ loop.index }}</span></div>
+              </div>
+            {% endfor %}
+          </div>
+
+          <div class="text-center">
+            <a href="/kungfu-dash-updated" class="button button--primary">Play Now</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Rewards -->
+      <section class="rewards">
+        <div class="dfl fl-j-sb fl-a-c">
+          <h4 class="all-caps">Popular Rewards</h4>
+          <a href="/rewards">View more</a>
+        </div>
+        <div class="grids">
+          {% for reward in rewards %}
+            <a href="/rewards/{{ reward.hs_path }}" class="card">
+              <img src="{{ resize_image_url(reward.image.url, 280, 180, 200, true, true) }}" alt="" loading="lazy" width="280" height="180"/>
+              <div class="card__content">
+                <div class="tag">{{ (reward.categories|first).name }}</div>
+                <h3 class="card__title">{{ reward.name }}</h3>
+                <div class="card__desc">{{ reward.content }}</div>
+                <div class="availability {{ reward.stock > 0 ? '' : 'clr-mute' }}">{{ reward.stock > 0 ? 'Available' : 'Fully Redeemed' }}</div>
+                <div class="points">
+                  <b>{{ reward.point }}</b> <span class="fs-sm">Zuju points</span>
+                </div>
+              </div>
+            </a>
+          {% endfor %}
+        </div>
+      </section>
+    </div>
+  </section>
+
+  {{ require_js('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 'footer') }}
+
+  {% require_js 'my_require_js' position='position'%}
+    <script>
+      $(document).on('ready', function() {
+        $('.continous, .timeline').slick({
+          slidesToShow: 7,
+          slidesToScroll: 7,
+          arrows: true,
+          infinite: false,
+          prevArrow: `<div class="prev-arrow">{{ c.chevron_left() }}</div>`,
+          nextArrow: `<div class="next-arrow">{{ c.chevron_right() }}</div>`,
+          responsive: [
+            {
+              breakpoint: 600,
+              settings: {
+                slidesToShow: 4,
+                slidesToScroll: 4
+              }
+            },
+          ]
+        });
+      })
+    </script>
+  {% end_require_js %}
 {% endblock body %}

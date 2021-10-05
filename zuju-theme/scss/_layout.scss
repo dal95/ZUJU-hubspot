@@ -34,9 +34,11 @@
   }
 }
 
-.users {
+.user-card {
   display: flex;
   margin-bottom: 3.125rem;
+  text-decoration: none;
+  color: #fff;
 
   &__avatar {
     position: relative;
@@ -295,10 +297,7 @@
 
   label {
     font-size: 1rem;
-
-    &[for='id-easter-egg'] {
-      flex-wrap: wrap;
-    }
+    flex-wrap: wrap;
 
     .pg {
       flex-basis: 100%;
@@ -334,16 +333,20 @@
 
   label {
     display: flex;
-    @include f-center(true, null);
   }
 
   input[type='checkbox'] {
+    margin-top: 5px;
     margin-right: 10px;
     width: 16px;
     height: 16px;
     color: var(--clr-primary);
     accent-color: var(--clr-primary);
   }
+}
+
+.task__label {
+  flex: 1;
 }
 
 .kungfu-dash-in {
@@ -439,7 +442,6 @@
       border-radius: 50%;
       background-color: #fff;
       z-index: 1;
-      cursor: pointer;
       padding: 5px;
       margin: auto;
 
@@ -585,13 +587,12 @@
   input:disabled:not(input[type='submit']):not(button),
   select:disabled,
   textarea:disabled {
-      background: #242424;
-      opacity: .5
+    background: #242424;
+    opacity: 0.5;
   }
 
   input:not(input[type='submit']):not(button),
   select,
-
   input:not(input[type='submit']) {
     background: var(--clr-dark-800);
     color: #fff;
