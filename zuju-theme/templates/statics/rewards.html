@@ -4,54 +4,28 @@
     label: Zuju Statics - Rewards
 -->
 
-{% set is_statics = true %} {% extends '../layouts/base.html' %} {% block body
-%}
+{% set is_statics = true %} {% extends '../layouts/base.html' %} {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
-    <section
-      class="relative max-w-[1440px] min-h-screen flex bg-zuju-gray-db mx-auto overflow-hidden"
-    >
+    <section class="relative max-w-[1440px] min-h-screen flex bg-zuju-gray-db mx-auto overflow-hidden">
       <div class="absolute inset-0 sm:-mx-16">
-        <img
-          class="h-full w-full sm:object-contain sm:object-top lg:object-cover lg:object-center"
-          src="/hubfs/statics/assets/rewards-masthead.png"
-        />
+        <img class="h-full w-full sm:object-contain sm:object-top lg:object-cover lg:object-center" src="/hubfs/statics/assets/rewards-masthead.png" />
       </div>
-      <div
-        class="relative flex-grow flex flex-col items-center sm:justify-center lg:justify-between p-8 lg:pt-32 lg:pb-16"
-      >
-        <h1
-          class="lg:w-1/2 sm:w-full sm:max-w-sm text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16"
-        >
-          Earn points and redeem rewards
-        </h1>
+      <div class="relative flex-grow flex flex-col items-center sm:justify-center lg:justify-between p-8 lg:pt-32 lg:pb-16">
+        <h1 class="lg:w-1/2 sm:w-full sm:max-w-sm text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16">Earn points and redeem rewards</h1>
         <div class="lg:w-1/2 sm:w-full sm:max-w-md lg:self-start">
-          <h2 class="text-white text-4xl font-gtcond font-black mb-8">
-            Earn Loyalty Points
-          </h2>
+          <h2 class="text-white text-4xl font-gtcond font-black mb-8">Earn Loyalty Points</h2>
           <p class="text-white mb-8">
-            Subscribe to ZujuGP and be rewarded for shopping and spending time
-            with us! You might even earn the vaunted title of the ZujuGP
-            Ultimate Fan! At every turn, you will enjoy the most fabulous
-            opportunities to redeem exclusive prizes and wicked experiences.
-            Simply sign up on our site or log in, if you are already registered.
-            Every activity on our ecosystem is designed to help you accumulate
-            points!
+            Subscribe to ZujuGP and be rewarded for shopping and spending time with us! You might even earn the vaunted title of the ZujuGP Ultimate Fan! At every
+            turn, you will enjoy the most fabulous opportunities to redeem exclusive prizes and wicked experiences. Simply sign up on our site or log in, if you
+            are already registered. Every activity on our ecosystem is designed to help you accumulate points!
           </p>
           <div class="flex flex-wrap justify-start -mx-4">
             <a href="/registration?{{ request.query }}">
-              <button
-                class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 h-14 mx-4 mb-4"
-              >
-                Sign Up Now
-              </button>
+              <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 h-14 mx-4 mb-4">Sign Up Now</button>
             </a>
             <a href="/_hcms/mem/login">
-              <button
-                class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 h-14 mx-4 mb-4"
-              >
-                Login Now
-              </button>
+              <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 h-14 mx-4 mb-4">Login Now</button>
             </a>
           </div>
         </div>
@@ -59,457 +33,313 @@
     </section>
     <section class="bg-white">
       <div class="max-w-[1440px] lg:flex justify-center p-8 lg:pb-16 mx-auto">
-        <div class="lg:w-1/2 flex items-center sm:py-8 lg:px-8 lg:py-16">
-          <img
-            src="/hubfs/statics/assets/fan-level.png"
-          />
-        </div>
+        <div class="lg:w-1/2 flex items-center sm:py-8 lg:px-8 lg:py-16"><img src="/hubfs/statics/assets/fan-level.png" /></div>
         <div class="lg:w-1/3 flex flex-col items-start justify-center">
-          <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black mb-8">
-            Rewards Redemption
-          </h1>
+          <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black mb-8">Rewards Redemption</h1>
           <p class="mb-8">
-            Work your way up. We have Fans. Super Fans. And the illustrious
-            Ultimate Fans. Each tier exists to reward you - bonus raffle
-            chances, exclusive invites, extra birthday gifts .. we are not
-            stopping there!
+            Work your way up. We have Fans. Super Fans. And the illustrious Ultimate Fans. Each tier exists to reward you - bonus raffle chances, exclusive
+            invites, extra birthday gifts .. we are not stopping there!
           </p>
           <p class="mb-8">
-            Supers and Ultimates will unlock privilege rewards. Points not spent
-            following transactions will be carried over to your next redemption.
-            ZujuGPoints DO NOT expire but you will need to be in receipt of
-            points in the last 90 days to enjoy benefits.
+            Supers and Ultimates will unlock privilege rewards. Points not spent following transactions will be carried over to your next redemption. ZujuGPoints
+            DO NOT expire but you will need to be in receipt of points in the last 90 days to enjoy benefits.
           </p>
         </div>
       </div>
     </section>
-    <section class="sm:hidden bg-gradient-to-b from-white to-zuju-gray-db">
+    <section class="bg-gradient-to-b from-white to-zuju-gray-db">
       <div class="max-w-[1440px] flex flex-col items-center p-8 mx-auto">
-        <h1
-          class="sm:text-2xl lg:text-4xl font-gtcond font-black text-center mb-16"
-        >
-          Member Tiers
-        </h1>
+        <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black text-center sm:mb-8 lg:mb-16">Member Tiers</h1>
         <img src="/hubfs/statics/assets/tiers.png" />
       </div>
     </section>
-    <div class="sm:hidden bg-zuju-gray-db h-36"></div>
-    <section class="lg:hidden bg-zuju-gray-db0">
-      <div
-        class="max-w-[1440px] flex flex-col items-center bg-top bg-no-repeat p-8 pb-16 mx-auto pb-16"
-        style="background-image: url(/hubfs/statics/assets/kungfu.png)"
-      >
-        <h1
-          class="text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mt-96 mb-16"
-        >
-          Be a Super Earner!
-        </h1>
-        <h2
-          class="text-white sm:text-2xl lg:text-4xl font-gtcond font-black text-center mb-8"
-        >
-          Kung Fu Dash Game
-        </h2>
-        <p class="lg:w-2/3 text-white text-center mb-8">
-          For every day that you spend money in-game, you will earn precious
-          loyalty points to exchange for great rewards. Play consecutively for 7
-          days for bonus points. Earn triple that when you enter 25-day playing
-          streaks!
-        </p>
-        <img
-          class="my-16"
-          src="/hubfs/statics/assets/treasure.png"
-        />
-        <h2
-          class="text-white sm:text-2xl lg:text-4xl font-gtcond font-black text-center mb-8"
-        >
-          Daily Treasure Hunt
-        </h2>
-        <p class="lg:w-2/3 text-white text-center mb-8">
-          We have hidden little treasures on our site. Look out for different
-          themes each month - oh sneaky sneaky! This month Warrior CR's exotic
-          Bian Lian masks are hidden carefully within the pages on our site. Not
-          so fast… first you need to unlock them by clicking in (gain a point!).
-          Then find these little darling masks (gain another point!). Do this
-          with persistence daily and you shall harvest the virtues of the
-          heavens and be rewarded with yet more bonus points! Pay particular
-          action on the first day of each new moon when at magic six-hour
-          interludes, treasures will be making more frequent appearances for you
-          to quadruple your daily bounty!
-        </p>
-        <p class="lg:w-2/3 text-white text-center mb-8">
-          Read our Terms and Conditions
-          <a href="#" class="text-zuju-red underline">here.</a>
-        </p>
-        <a href="#">
-          <button
-            class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4"
-          >
-            Play Kungfu Dash
-          </button>
-        </a>
-      </div>
-    </section>
-    <section class="sm:hidden bg-zuju-gray-db">
+    <div class="bg-zuju-gray-db sm:h-8 lg:h-36"></div>
+    <section class="bg-zuju-gray-db">
       <div
         class="max-w-[1440px] flex flex-col items-center bg-top bg-no-repeat p-8 pb-16 mx-auto"
         style="background-image: url(/hubfs/statics/assets/kungfu.png)"
       >
-        <img
-          class="mt-[480px] mb-16"
-          src="/hubfs/statics/assets/kungfu-logo.png"
-        />
-        <h1 class="text-white text-5xl font-gtcond font-black mb-16">
-          How To Earn Zuju Points!
-        </h1>
-        <div class="flex flex-wrap justify-center">
-          <div class="w-5/12 px-8">
-            <section class="mb-24">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8">
-                Kung Fu Dash Game
-              </h2>
-              <div
-                class="grid grid-cols-[2rem,2rem,auto] grid-rows-[repeat(8,minmax(0,1fr))] mb-4"
-              >
+        <img class="mt-[480px] mb-16" src="/hubfs/statics/assets/kungfu-logo.png" />
+        <h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-16">How To Earn Zuju Points!</h1>
+        <div class="w-full flex flex-wrap justify-center">
+          <div class="sm:contents sm:w-full lg:w-5/12 lg:px-8 lg:pb-16">
+            <section class="sm:order-1 mb-24">
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8">Kung Fu Dash Game</h2>
+              <div class="grid grid-cols-[0.5rem,1.5rem,auto] lg:grid-cols-[2rem,2rem,auto] grid-rows-[repeat(8,minmax(0,1fr))] mb-4">
                 <div class="row-start-1 row-span-2 col-span-3 py-2">
-                  <div
-                    class="flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg px-6 py-4"
-                  >
-                    <div
-                      class="flex items-center text-white text-sm font-bold uppercase"
-                    >
-                      Every Dollar Spent
-                    </div>
-                    <div
-                      class="flex items-center text-white text-lg font-bold pr-8"
-                    >
-                      5
-                    </div>
+                  <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
+                    <div class="flex items-center text-white text-sm font-bold uppercase pr-6">Every Dollar Spent</div>
+                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">5</div>
                   </div>
                 </div>
-                <div
-                  class="row-start-3 row-span-2 col-start-1 border-r border-white mt-2"
-                ></div>
-                <div
-                  class="row-start-3 col-start-2 border-b border-white mr-4"
-                ></div>
+                <div class="row-start-3 row-span-2 col-start-1 border-r border-white mt-2"></div>
+                <div class="row-start-3 col-start-2 border-b border-white mr-4"></div>
                 <div class="row-start-3 row-span-2 col-start-3 py-2">
-                  <div
-                    class="flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg px-6 py-4"
-                  >
-                    <div
-                      class="flex items-center text-white text-sm font-bold uppercase"
-                    >
-                      For 7 Consecutive Days*
-                    </div>
-                    <div
-                      class="flex items-center text-white text-lg font-bold pr-8"
-                    >
-                      1
-                    </div>
+                  <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
+                    <div class="flex items-center text-white text-sm font-bold uppercase pr-6">For 7 Consecutive Days*</div>
+                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">1</div>
                   </div>
                 </div>
-                <div
-                  class="row-start-5 col-start-1 border-r border-white"
-                ></div>
-                <div
-                  class="row-start-5 col-start-2 border-b border-white mr-4"
-                ></div>
+                <div class="row-start-5 col-start-1 border-r border-white"></div>
+                <div class="row-start-5 col-start-2 border-b border-white mr-4"></div>
                 <div class="row-start-5 row-span-2 col-start-3 py-2">
-                  <div
-                    class="flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg px-6 py-4"
-                  >
-                    <div
-                      class="flex items-center text-white text-sm font-bold uppercase"
-                    >
-                      For 25 Consecutive Days*
-                    </div>
-                    <div
-                      class="flex items-center text-white text-lg font-bold pr-8"
-                    >
-                      2
-                    </div>
+                  <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
+                    <div class="flex items-center text-white text-sm font-bold uppercase pr-6">For 25 Consecutive Days*</div>
+                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
                 </div>
-                <div class="row-start-7 row-span-2 col-start-3">
-                  <p class="text-white text-sm">
-                    *One-time bonus, reset after rewarding
-                  </p>
-                  <p class="text-white text-sm">
-                    Based on rolling calendar days
-                  </p>
+                <div class="row-start-7 row-span-2 sm:col-span-3 lg:col-start-3">
+                  <p class="text-white text-sm pr-6">*One-time bonus, reset after rewarding</p>
+                  <p class="text-white text-sm pr-6">Based on rolling calendar days</p>
                 </div>
               </div>
               <p class="text-white mb-8">
-                For every day that you spend money in-game, you will earn
-                precious loyalty points to exchange for great rewards. Play
-                consecutively for 7 days for bonus points. Earn triple that when
-                you enter 25-day playing streaks!
+                For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for
+                bonus points. Earn triple that when you enter 25-day playing streaks!
               </p>
-              <a href="#">
-                <button
-                  class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4"
-                >
-                  Play Kungfu Dash
-                </button>
+              <a href="/kungfu-dash">
+                <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">Play Kungfu Dash</button>
               </a>
             </section>
-            <section class="mb-24">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8">
-                CR7 ( Cross Ref 7 )
-              </h2>
+            <section class="sm:order-3 mb-24">
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8">CR7 ( Cross Ref 7 )</h2>
               <div class="mb-4">
                 <div class="py-2">
-                  <div
-                    class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg px-6 py-4"
-                  >
+                  <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase">
-                        1 Referal
-                      </h3>
-                      <p class="text-white text-sm">
-                        *Cap at 70 points per month
-                      </p>
-                      <p class="text-white text-sm">
-                        *Based on successful referral condition
-                      </p>
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">1 Referal</h3>
+                      <p class="text-white text-sm pr-6">*Cap at 70 points per month</p>
+                      <p class="text-white text-sm pr-6">*Based on successful referral condition</p>
                     </div>
-                    <div
-                      class="flex items-center text-white text-lg font-bold pr-8"
-                    >
-                      2
-                    </div>
+                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
                 </div>
                 <div class="py-2">
-                  <div
-                    class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg px-6 py-4"
-                  >
+                  <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase">
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">
                         New account sign up through
                         <br />
                         Current user unique link
                       </h3>
-                      <p class="text-white text-sm">
-                        *One time reward, instantly rewarded
-                      </p>
+                      <p class="text-white text-sm pr-6">*One time reward, instantly rewarded</p>
                     </div>
-                    <div
-                      class="flex items-center text-white text-lg font-bold pr-8"
-                    >
-                      10
-                    </div>
+                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">10</div>
                   </div>
                 </div>
               </div>
               <p class="text-white mb-8">
-                For every day that you spend money in-game, you will earn
-                precious loyalty points to exchange for great rewards. Play
-                consecutively for 7 days for bonus points. Earn triple that when
-                you enter 25-day playing streaks!
+                For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for
+                bonus points. Earn triple that when you enter 25-day playing streaks!
               </p>
-              <a href="#">
-                <button
-                  class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4"
-                >
-                  Play Kungfu Dash
-                </button>
-              </a>
             </section>
           </div>
-          <div class="w-5/12 px-8">
-            <section class="mb-24">
-              <h2 class="text-white text-4xl font-gtcond font-black mb-8">
-                Daily Treasure Hunt
-              </h2>
+          <div class="sm:contents sm:w-full lg:w-5/12 lg:px-8 lg:pb-16">
+            <section class="sm:order-2 mb-24">
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8">Daily Treasure Hunt</h2>
               <div class="mb-4">
                 <div class="py-2">
-                  <div
-                    class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg px-6 py-4"
-                  >
+                  <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase">
-                        Daily Login
-                      </h3>
-                      <p class="text-white text-sm">*Rewarded once per day</p>
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">Daily Login</h3>
+                      <p class="text-white text-sm pr-6">*Rewarded once per day</p>
                     </div>
-                    <div
-                      class="flex items-center text-white text-lg font-bold pr-8"
-                    >
-                      1
-                    </div>
+                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">1</div>
                   </div>
                 </div>
                 <div class="py-2">
-                  <div class="flex justify-between rounded-lg px-6 py-4">
+                  <div class="flex justify-between rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase">
-                        Browse Site to Find Treasure
-                      </h3>
-                      <p class="text-white text-sm">*Rewarded once per day</p>
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">Browse Site to Find Treasure</h3>
+                      <p class="text-white text-sm pr-6">*Rewarded once per day</p>
                     </div>
-                    <div
-                      class="flex items-center text-white text-lg font-bold pr-8"
-                    >
-                      2
-                    </div>
+                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
                 </div>
                 <div class="py-2">
-                  <div
-                    class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg px-6 py-4"
-                  >
+                  <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase">
-                        Monthly Campaign
-                      </h3>
-                      <p class="text-white text-sm">
-                        *Treasure appears once every 6 hours in a day
-                      </p>
-                      <p class="text-white text-sm">
-                        *Rewarded up to 4 times a day
-                      </p>
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">Monthly Campaign</h3>
+                      <p class="text-white text-sm pr-6">*Treasure appears once every 6 hours in a day</p>
+                      <p class="text-white text-sm pr-6">*Rewarded up to 4 times a day</p>
                     </div>
-                    <div
-                      class="flex items-center text-white text-lg font-bold pr-8"
-                    >
-                      2
-                    </div>
+                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
                 </div>
               </div>
               <p class="text-white mb-8">
-                We have hidden little treasures on our site. Look out for
-                different themes each month - oh sneaky sneaky! This month
-                Warrior CR's exotic Bian Lian masks are hidden carefully within
-                the pages on our site. Not so fast… first you need to unlock
-                them by clicking in (gain a point!). Then find these little
-                darling masks (gain another point!). Do this with persistence
-                daily and you shall harvest the virtues of the heavens and be
-                rewarded with yet more bonus points! Pay particular action on
-                the first day of each new moon when at magic six-hour
-                interludes, treasures will be making more frequent appearances
-                for you to quadruple your daily bounty!
+                We have hidden little treasures on our site. Look out for different themes each month - oh sneaky sneaky! This month Warrior CR's exotic Bian Lian
+                masks are hidden carefully within the pages on our site. Not so fast… first you need to unlock them by clicking in (gain a point!). Then find
+                these little darling masks (gain another point!). Do this with persistence daily and you shall harvest the virtues of the heavens and be rewarded
+                with yet more bonus points! Pay particular action on the first day of each new moon when at magic six-hour interludes, treasures will be making
+                more frequent appearances for you to quadruple your daily bounty!
               </p>
               <p class="text-white mb-8">
                 Read our Terms and Conditions
                 <a href="#" class="text-zuju-red underline">here.</a>
               </p>
             </section>
-            <section class="mb-24">
-              <h2 class="text-white text-4xl font-gtcond font-black mb-8">
-                Share ZujuGP
-              </h2>
+            <section class="sm:order-4 mb-24">
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8">Share ZujuGP</h2>
               <div class="mb-4">
                 <div class="py-2">
-                  <div
-                    class="flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg px-6 py-4"
-                  >
+                  <div class="flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase">
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">
                         First share per day on
                         <br />
                         Facebook instagram or twitter
                       </h3>
-                      <p class="text-white text-sm">*Rewarded once per day</p>
+                      <p class="text-white text-sm pr-6">*Rewarded once per day</p>
                     </div>
-                    <div
-                      class="flex items-center text-white text-lg font-bold pr-8"
-                    >
-                      2
-                    </div>
+                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
                 </div>
               </div>
-              <img
-                class="mb-8"
-                src="/hubfs/statics/assets/socmed.png"
-              />
+              <img class="mb-8" src="/hubfs/statics/assets/socmed.png" />
               <p class="text-white mb-8">
-                For every day that you spend money in-game, you will earn
-                precious loyalty points to exchange for great rewards. Play
-                consecutively for 7 days for bonus points. Earn triple that when
-                you enter 25-day playing streaks!
+                For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for
+                bonus points. Earn triple that when you enter 25-day playing streaks!
               </p>
             </section>
           </div>
-          <div class="w-5/6 px-8">
+          <div class="sm:order-last sm:w-full lg:w-5/6 lg:px-8">
             <section class="mb-24">
-              <h2
-                class="text-white text-2xl font-gtcond font-black text-center mb-16"
-              >
-                More Ways To Earn Zuju Points
-              </h2>
-              <div class="flex -mx-2">
-                <div class="w-1/4 flex flex-col items-center px-2">
+              <h2 class="text-white text-4xl font-gtcond font-black text-center sm:mb-16 lg:mb-24">More Ways To Earn Zuju Points</h2>
+              <div class="sm:hidden flex lg:-mx-2">
+                <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
                   <div class="h-16 w-16 flex items-center mb-16">
-                    <img
-                      src="/hubfs/statics/assets/rebate.png"
-                    />
+                    <img src="/hubfs/statics/assets/rebate.png" />
                   </div>
-                  <h2 class="w-full text-white font-bold uppercase mb-2">
-                    Rebate
-                  </h2>
-                  <div class="flex-grow w-full text-white mb-8">
+                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Rebate</h2>
+                  <div class="flex-grow w-full text-white sm:text-center mb-8">
                     <p class="mb-2">* Minimum $20 spending per transaction</p>
                     <p class="mb-2">*Only on selected products</p>
                   </div>
-                  <div class="w-full text-white font-bold uppercase">
-                    2 Points Per Dollar
-                  </div>
+                  <div class="w-full text-white font-bold sm:text-center uppercase">2 Points Per Dollar</div>
                 </div>
-                <div class="w-1/4 flex flex-col items-center px-2">
+                <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
                   <div class="h-16 w-16 flex items-center mb-16">
-                    <img
-                      src="/hubfs/statics/assets/welcome.png"
-                    />
+                    <img src="/hubfs/statics/assets/welcome.png" />
                   </div>
-                  <h2 class="w-full text-white font-bold uppercase mb-2">
-                    Welcome Gift
-                  </h2>
-                  <div class="flex-grow w-full text-white mb-8">
+                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Welcome Gift</h2>
+                  <div class="flex-grow w-full text-white sm:text-center mb-8">
                     <p class="mb-2">* New account sign-ups, one time reward</p>
                   </div>
-                  <div class="w-full text-white font-bold uppercase">
-                    50 Points
-                  </div>
+                  <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
                 </div>
-                <div class="w-1/4 flex flex-col items-center px-2">
+                <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
                   <div class="h-16 w-16 flex items-center mb-16">
-                    <img
-                      src="/hubfs/statics/assets/bday.png"
-                    />
+                    <img src="/hubfs/statics/assets/bday.png" />
                   </div>
-                  <h2 class="w-full text-white font-bold uppercase mb-2">
-                    Birthday Gift
-                  </h2>
-                  <div class="flex-grow w-full text-white mb-8">
-                    <p class="mb-2">
-                      * Rewarded once a year on actual birthday
-                    </p>
-                    <p class="mb-2">
-                      * Not rewarded if user did not provide date of birth
-                    </p>
+                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Birthday Gift</h2>
+                  <div class="flex-grow w-full text-white sm:text-center mb-8">
+                    <p class="mb-2">* Rewarded once a year on actual birthday</p>
+                    <p class="mb-2">* Not rewarded if user did not provide date of birth</p>
                   </div>
-                  <div class="w-full text-white font-bold uppercase">
-                    50 Points
-                  </div>
+                  <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
                 </div>
-                <div class="w-1/4 flex flex-col items-center px-2">
+                <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
                   <div class="h-16 w-16 flex items-center mb-16">
-                    <img
-                      src="/hubfs/statics/assets/comment.png"
-                    />
+                    <img src="/hubfs/statics/assets/comment.png" />
                   </div>
-                  <h2 class="w-full text-white font-bold uppercase mb-2">
-                    Leave A Comment
-                  </h2>
-                  <div class="flex-grow w-full text-white mb-8">
+                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Leave A Comment</h2>
+                  <div class="flex-grow w-full text-white sm:text-center mb-8">
                     <p class="mb-2">* Only for SUPER and ULTIMATE fans</p>
                     <p class="mb-2">* Cap at 10 points daily</p>
                   </div>
-                  <div class="w-full text-white font-bold uppercase">
-                    1 Points
+                  <div class="w-full text-white font-bold sm:text-center uppercase">1 Points</div>
+                </div>
+              </div>
+              <div class="lg:hidden">
+                <div class="glide" x-data="{}" x-init="new Glide($el).mount()">
+                  <div class="glide__track" data-glide-el="track">
+                    <div class="glide__slides">
+                      <div class="glide__slide">
+                        <div class="">
+                          <div>
+                            <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
+                              <div class="h-16 w-16 flex items-center mb-16">
+                                <img src="/hubfs/statics/assets/rebate.png" />
+                              </div>
+                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Rebate</h2>
+                              <div class="flex-grow w-full text-white sm:text-center mb-8">
+                                <p class="mb-2">* Minimum $20 spending per transaction</p>
+                                <p class="mb-2">*Only on selected products</p>
+                              </div>
+                              <div class="w-full text-white font-bold sm:text-center uppercase">2 Points Per Dollar</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="glide__slide">
+                        <div class="">
+                          <div>
+                            <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
+                              <div class="h-16 w-16 flex items-center mb-16">
+                                <img src="/hubfs/statics/assets/welcome.png" />
+                              </div>
+                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Welcome Gift</h2>
+                              <div class="flex-grow w-full text-white sm:text-center mb-8">
+                                <p class="mb-2">* New account sign-ups, one time reward</p>
+                              </div>
+                              <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="glide__slide">
+                        <div class="">
+                          <div>
+                            <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
+                              <div class="h-16 w-16 flex items-center mb-16">
+                                <img src="/hubfs/statics/assets/bday.png" />
+                              </div>
+                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Birthday Gift</h2>
+                              <div class="flex-grow w-full text-white sm:text-center mb-8">
+                                <p class="mb-2">* Rewarded once a year on actual birthday</p>
+                                <p class="mb-2">* Not rewarded if user did not provide date of birth</p>
+                              </div>
+                              <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <!-- <CarouselSlide aspect="">
+  <RewardCard>
+  <template #image>
+    <img src="@src/assets/rewards/follow.png" />
+  </template>
+  <template #title>Follow Us</template>
+  <p class="mb-2">* Instagram / Twitter / Facebook / Weibo / WeChat</p>
+  <p class="mb-2">* One time reward</p>
+  <template #pts>10 Points</template>
+  </RewardCard>
+  </CarouselSlide> -->
+                      <div class="glide__slide">
+                        <div class="">
+                          <div>
+                            <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
+                              <div class="h-16 w-16 flex items-center mb-16">
+                                <img src="/hubfs/statics/assets/comment.png" />
+                              </div>
+                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Leave A Comment</h2>
+                              <div class="flex-grow w-full text-white sm:text-center mb-8">
+                                <p class="mb-2">* Only for SUPER and ULTIMATE fans</p>
+                                <p class="mb-2">* Cap at 10 points daily</p>
+                              </div>
+                              <div class="w-full text-white font-bold sm:text-center uppercase">1 Points</div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="glide__bullets bottom-1" data-glide-el="controls[nav]">
+                    <button class="glide__bullet" data-glide-dir="=0"></button>
+                    <button class="glide__bullet" data-glide-dir="=1"></button>
+                    <button class="glide__bullet" data-glide-dir="=2"></button>
+                    <button class="glide__bullet" data-glide-dir="=3"></button>
                   </div>
                 </div>
               </div>
@@ -519,10 +349,8 @@
       </div>
     </section>
     <section class="bg-zuju-gray-db">
-      <div class="w-full max-w-[1000px] mx-auto pb-32">
-        {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
-      </div>
+      <div class="w-full max-w-[1000px] mx-auto pb-32">{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}</div>
     </section>
-  </main>
+  </main>  
 </div>
 {% endblock body%}

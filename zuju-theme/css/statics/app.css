@@ -1337,9 +1337,6 @@ body.overflow-hidden {
 .app .h-14 {
   height: 3.5rem;
 }
-.app .h-36 {
-  height: 9rem;
-}
 .app .h-3\/5 {
   height: 60%;
 }
@@ -1382,26 +1379,20 @@ body.overflow-hidden {
 .app .w-1\/5 {
   width: 20%;
 }
-.app .w-1\/4 {
-  width: 25%;
-}
 .app .w-16 {
   width: 4rem;
 }
 .app .w-0 {
   width: 0px;
 }
-.app .w-5\/12 {
-  width: 41.666667%;
-}
-.app .w-5\/6 {
-  width: 83.333333%;
-}
 .app .w-14 {
   width: 3.5rem;
 }
 .app .w-1\/12 {
   width: 8.333333%;
+}
+.app .w-5\/6 {
+  width: 83.333333%;
 }
 .app .w-1\/2 {
   width: 50%;
@@ -1420,6 +1411,9 @@ body.overflow-hidden {
 }
 .app .w-5 {
   width: 1.25rem;
+}
+.app .w-1\/4 {
+  width: 25%;
 }
 .app .min-w-\[80px\] {
   min-width: 80px;
@@ -1522,8 +1516,8 @@ body.overflow-hidden {
 .app .grid-cols-12 {
   grid-template-columns: repeat(12, minmax(0, 1fr));
 }
-.app .grid-cols-\[2rem\,2rem\,auto\] {
-  grid-template-columns: 2rem 2rem auto;
+.app .grid-cols-\[0\.5rem\,1\.5rem\,auto\] {
+  grid-template-columns: 0.5rem 1.5rem auto;
 }
 .app .grid-cols-8 {
   grid-template-columns: repeat(8, minmax(0, 1fr));
@@ -1842,8 +1836,14 @@ body.overflow-hidden {
 .app .pb-4 {
   padding-bottom: 1rem;
 }
+.app .pb-8 {
+  padding-bottom: 2rem;
+}
 .app .pb-16 {
   padding-bottom: 4rem;
+}
+.app .pr-6 {
+  padding-right: 1.5rem;
 }
 .app .pt-16 {
   padding-top: 4rem;
@@ -1853,9 +1853,6 @@ body.overflow-hidden {
 }
 .app .pl-2 {
   padding-left: 0.5rem;
-}
-.app .pb-8 {
-  padding-bottom: 2rem;
 }
 .app .pb-0 {
   padding-bottom: 0;
@@ -1904,16 +1901,16 @@ body.overflow-hidden {
   font-size: 1.125rem;
   line-height: 1.75rem;
 }
-.app .text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
 .app .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
 }
 .app .text-6xl {
   font-size: 3.75rem;
+  line-height: 1;
+}
+.app .text-5xl {
+  font-size: 3rem;
   line-height: 1;
 }
 .app .text-xl {
@@ -2180,6 +2177,24 @@ body.overflow-hidden {
   .app .sm\:z-10 {
     z-index: 10;
   }
+  .app .sm\:order-1 {
+    order: 1;
+  }
+  .app .sm\:order-3 {
+    order: 3;
+  }
+  .app .sm\:order-2 {
+    order: 2;
+  }
+  .app .sm\:order-4 {
+    order: 4;
+  }
+  .app .sm\:order-last {
+    order: 9999;
+  }
+  .app .sm\:col-span-3 {
+    grid-column: span 3 / span 3;
+  }
   .app .sm\:col-start-1 {
     grid-column-start: 1;
   }
@@ -2207,14 +2222,14 @@ body.overflow-hidden {
   .app .sm\:mb-2 {
     margin-bottom: 0.5rem;
   }
+  .app .sm\:mb-16 {
+    margin-bottom: 4rem;
+  }
   .app .sm\:-mt-8 {
     margin-top: -2rem;
   }
   .app .sm\:mb-8 {
     margin-bottom: 2rem;
-  }
-  .app .sm\:mb-16 {
-    margin-bottom: 4rem;
   }
   .app .sm\:-mt-4 {
     margin-top: -1rem;
@@ -2234,11 +2249,20 @@ body.overflow-hidden {
   .app .sm\:flex {
     display: flex;
   }
+  .app .sm\:contents {
+    display: contents;
+  }
   .app .sm\:hidden {
     display: none;
   }
+  .app .sm\:h-full {
+    height: 100%;
+  }
   .app .sm\:h-36 {
     height: 9rem;
+  }
+  .app .sm\:h-8 {
+    height: 2rem;
   }
   .app .sm\:h-10 {
     height: 2.5rem;
@@ -2334,6 +2358,9 @@ body.overflow-hidden {
   .app .sm\:px-8 {
     padding-left: 2rem;
     padding-right: 2rem;
+  }
+  .app .sm\:pt-4 {
+    padding-top: 1rem;
   }
   .app .sm\:pt-8 {
     padding-top: 2rem;
@@ -2447,6 +2474,9 @@ body.overflow-hidden {
   .app .lg\:aspect-h-9 {
     --tw-aspect-h: 9;
   }
+  .app .lg\:pointer-events-none {
+    pointer-events: none;
+  }
   .app .lg\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -2468,6 +2498,9 @@ body.overflow-hidden {
   .app .lg\:col-span-5 {
     grid-column: span 5 / span 5;
   }
+  .app .lg\:col-start-3 {
+    grid-column-start: 3;
+  }
   .app .lg\:col-start-6 {
     grid-column-start: 6;
   }
@@ -2476,9 +2509,6 @@ body.overflow-hidden {
   }
   .app .lg\:col-start-1 {
     grid-column-start: 1;
-  }
-  .app .lg\:col-start-3 {
-    grid-column-start: 3;
   }
   .app .lg\:col-start-9 {
     grid-column-start: 9;
@@ -2506,6 +2536,10 @@ body.overflow-hidden {
   }
   .app .lg\:row-start-4 {
     grid-row-start: 4;
+  }
+  .app .lg\:-mx-2 {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
   }
   .app .lg\:-mx-4 {
     margin-left: -1rem;
@@ -2548,6 +2582,9 @@ body.overflow-hidden {
   .app .lg\:hidden {
     display: none;
   }
+  .app .lg\:h-36 {
+    height: 9rem;
+  }
   .app .lg\:h-16 {
     height: 4rem;
   }
@@ -2563,6 +2600,9 @@ body.overflow-hidden {
   .app .lg\:h-80 {
     height: 20rem;
   }
+  .app .lg\:w-1\/4 {
+    width: 25%;
+  }
   .app .lg\:w-7\/12 {
     width: 58.333333%;
   }
@@ -2575,11 +2615,11 @@ body.overflow-hidden {
   .app .lg\:w-2\/3 {
     width: 66.666667%;
   }
-  .app .lg\:w-1\/4 {
-    width: 25%;
-  }
   .app .lg\:w-5\/12 {
     width: 41.666667%;
+  }
+  .app .lg\:w-5\/6 {
+    width: 83.333333%;
   }
   .app .lg\:w-3\/5 {
     width: 60%;
@@ -2589,9 +2629,6 @@ body.overflow-hidden {
   }
   .app .lg\:w-96 {
     width: 24rem;
-  }
-  .app .lg\:w-5\/6 {
-    width: 83.333333%;
   }
   .app .lg\:w-4\/5 {
     width: 80%;
@@ -2616,6 +2653,9 @@ body.overflow-hidden {
   }
   .app .lg\:grid-cols-4 {
     grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .app .lg\:grid-cols-\[2rem\,2rem\,auto\] {
+    grid-template-columns: 2rem 2rem auto;
   }
   .app .lg\:grid-cols-12 {
     grid-template-columns: repeat(12, minmax(0, 1fr));
@@ -2685,6 +2725,10 @@ body.overflow-hidden {
     padding-top: 4rem;
     padding-bottom: 4rem;
   }
+  .app .lg\:px-6 {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
   .app .lg\:py-36 {
     padding-top: 9rem;
     padding-bottom: 9rem;
@@ -2698,6 +2742,9 @@ body.overflow-hidden {
   .app .lg\:pb-16 {
     padding-bottom: 4rem;
   }
+  .app .lg\:pr-8 {
+    padding-right: 2rem;
+  }
   .app .lg\:pl-16 {
     padding-left: 4rem;
   }
@@ -2706,9 +2753,6 @@ body.overflow-hidden {
   }
   .app .lg\:pb-60 {
     padding-bottom: 15rem;
-  }
-  .app .lg\:pr-8 {
-    padding-right: 2rem;
   }
   .app .lg\:pb-40 {
     padding-bottom: 10rem;
