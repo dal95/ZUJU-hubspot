@@ -1,0 +1,27 @@
+{
+  "cta_field.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "cta_field.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "cta_field.label" : {
+    "message" : "CTA",
+    "description" : "",
+    "placeholders" : null
+  },
+  "cta_field.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "blog-adspace",
+    "description" : "",
+    "placeholders" : null
+  }
+}

@@ -2,6 +2,7 @@
   templateType: global_partial
   label: Website header
 -->
+{% import 'zuju-theme/macros/tags.html' as c %}
 
 <!-- Top nav -->
 <div class="nav">
@@ -27,42 +28,26 @@
         {% menu "main-nav" id=54357477653 %}
 
         {% if request_contact.is_logged_in %}
-          <a class="nav__link" href="/_hcms/mem/logout">Logout</a>
+          <div class="has-dropdown">
+            <a href="http://dev.zujugp.com/members-portal" class="nav__link account-link">
+              Account
+              {{ c.icon_chevron_down() }}
+              <div class="arrow-up"></div>
+            </a>
+            <div class="dropdown">
+              <a  href="/profile">Edit profile</a>
+              <a  href="/_hcms/mem/logout">Logout</a>
+            </div>
+          </div>
         {% else %}
           <a class="nav__link" href="/_hcms/mem/login">Login</a>
         {% endif %}
 
         <div class="off-canvas">
-          <svg
-            width="31"
-            height="31"
-            viewBox="0 0 31 31"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M1.35783 1.35787L29.6421 29.6421"
-              stroke="#ED2938"
-              stroke-linecap="square"
-            />
-            <path
-              d="M29.6421 1.35786L1.35783 29.6421"
-              stroke="#ED2938"
-              stroke-linecap="square"
-            />
-          </svg>
+          {{ c.icon_cross() }}
 
-          <!-- Off canvas -->
-          <ul class="off-canvas__menu">
-            <li><a class="nav__link" href="/">Latest</a></li>
-            <li><a class="nav__link" href="/">Portofolio</a></li>
-            <li><a class="nav__link" href="/">Impact</a></li>
-            <li><a class="nav__link" href="/">Shop</a></li>
-            <li><a class="nav__link" href="/">About</a></li>
-            <li><a class="nav__link" href="/">Advertise</a></li>
-            <li><a class="nav__link" href="/">NFT</a></li>
-            <li><a class="nav__link" href="/">Subscribe</a></li>
-          </ul>
+          <!-- Off canvas menu content -->
+          {{ c.z_menu(54357477653, 'off-canvas__menu', 'nav__link') }}
         </div>
 
         <!-- Burger menu -->

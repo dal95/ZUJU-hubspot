@@ -25,7 +25,10 @@
     {% if template_css %}
       {{ require_css(get_asset_url(template_css)) }}
     {% endif %}
+
+    {% include '../statics/statics-head.html' %}
     {{ standard_header_includes }}
+
   </head>
   <body>
     <div class="body-wrapper {{ builtin_body_classes }}">
@@ -40,8 +43,7 @@
         {% global_partial path='../partials/footer.html' %}
       {% endblock footer %}
     </div>
-    {{ require_js('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js') }}
-    {{ require_js(get_asset_url('../../js/main.js')) }}
     {{ standard_footer_includes }}
+    {% include '../statics/statics-foot.html' %}
   </body>
 </html>

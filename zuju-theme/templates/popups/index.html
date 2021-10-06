@@ -1,0 +1,20 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+<!-- Begin partial -->
+{# Modal #}
+  {% macro modal_welcome_header() %}
+    <img class="modal__header-bg" src="http://unsplash.it/500" alt="">
+    </div>
+  {% endmacro %}
+
+  {% call c.modal('modal-welcome') %}
+    <div class="text-center">
+			<h3>Welcome, Samantha!</h3>
+			<div class="highlight">Here is a gift for you</div>
+			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+
+			<a href="/" class="button button--primary">Claim now</a>
+    </div>
+  {% endcall %}

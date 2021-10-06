@@ -1,21 +1,14 @@
 <!--
   templateType: page
   isAvailableForNewContent: true
-  label: hubdb template
-  screenshotPath: ../images/template-previews/home.png
+  label: Hubdb template
 -->
 {% extends "./layouts/base-members.html" %}
-{% import "../macros/tags.html" as macros %}
+{% import "../macros/tags.html" as c %}
 
 {% block body %}
-{% if dynamic_page_hubdb_row %}
-	{% set d = dynamic_page_hubdb_row %}
-
-	<div class="content-wrapper">
-		<section class="title-section">
-			<h2 class="page-title">Rewards</h2>
-		</section>
-
+	{% if dynamic_page_hubdb_row %}
+		{% set d = dynamic_page_hubdb_row %}
 		<section class="content-area">
 			<div class="main-content">
 				<!-- Rewards -->
@@ -37,7 +30,25 @@
 						<div class="content-col">
 							<h2 class="post-title">{{ d.name }}</h2>
 							<div>{{ d.content }}</div>
-							<div class="availability {{ d.stock > 0 ? '' : 'clr-mute' }}">{{ d.stock > 0 ? 'Available' : 'Fully Redeemed' }}</div>
+
+							{% if d.stock <= 0 %}
+								{% set class_name = 'clr-mute' %}
+								{% set label = 'Fully Redeemed' %}
+							{% endif%}
+
+							{% if contact.current_loyalty_points < d.point %}
+								{# {{ contact.current_loyalty_points < d.point  }} #}
+								{% set class_name = 'clr-mute' %}
+								{% set label = 'Insufficient Points' %}
+							{% endif %}
+
+							{% if  contact.current_loyalty_points > d.point && d.stock > 0 %}
+								{% set class_name = '' %}
+								{% set label = 'Available' %}
+							{% endif %}
+							<div class="availability {{ class_name }}">
+								{{ label  }}
+							</div>
 
 							<div class="dfl cta">
 								<div>
@@ -48,12 +59,12 @@
 								<div>
 									<a
 										href="#"
-										data-modal="modal"
+										data-modal-target="modal-redemption"
 										class="button button--primary "
-										{{ d.stock > 0 || 'disabled' }}
-										>{{ d.stock > 0 ? 'Redeem Now' : 'Unavailable' }} </a
-
-									>
+											{{ d.stock > 0 && contact.current_loyalty_points > d.point || 'disabled' }}
+										>
+										{{ d.stock > 0 && contact.current_loyalty_points > d.point ? 'Redeem Now' : 'Unavailable' }}
+									</a>
 								</div>
 							</div>
 
@@ -83,6 +94,7 @@
 								</ul>
 							</div>
 						</div>
+
 						<div class="content-col">
 							<img src="{{ d.image.url }}" alt="" />
 						</div>
@@ -90,21 +102,15 @@
 				</section>
 			</div>
 		</section>
-	</div>
 
-	{# Modal #}
-	{% call macros.modal() %}
-		{# <h3 class="text-center">Billing Details</h3>
-		<p class="text-center">Fill in the particulars to receive your reward</p> #}
-		{% form "redemption_form" form_to_use='72dcb3b7-6292-492c-a1c1-b902c41704cd' %}
-	{% endcall %}
+		{# Modal #}
+		{% call c.modal('modal-redemption') %}
+			<div class="form-container" style="padding-top: 30px">
+				{% form "redemption_form" form_to_use='72dcb3b7-6292-492c-a1c1-b902c41704cd' %}
+			</div>
+		{% endcall %}
 
-{% elif dynamic_page_hubdb_table_id %}
-	<div class="content-wrapper">
-		<section class="title-section">
-			<h2 class="page-title">Rewards</h2>
-		</section>
-
+	{% elif dynamic_page_hubdb_table_id %}
 		<section class="content-area">
 			<div class="main-content">
 				<!-- Rewards -->
@@ -156,7 +162,28 @@
 									<div class="tag">{{ (row.categories|first).name }}</div>
 									<h3 class="card__title">{{ row.name }}</h3>
 									<div class="card__desc">{{ row.content }}</div>
-									<div class="availability {{ row.stock > 0 ? '' : 'clr-mute' }}">{{ row.stock > 0 ? 'Available' : 'Fully Redeemed' }}</div>
+
+
+									{% if row.stock <= 0 %}
+										{% set class_name = 'clr-mute' %}
+										{% set label = 'Fully Redeemed' %}
+									{% endif%}
+
+									{% if contact.current_loyalty_points < row.point %}
+										{# {{ contact.current_loyalty_points < row.point  }} #}
+										{% set class_name = 'clr-mute' %}
+										{% set label = 'Insufficient Points' %}
+									{% endif %}
+
+									{% if  contact.current_loyalty_points > row.point && row.stock > 0 %}
+										{% set class_name = '' %}
+										{% set label = 'Available' %}
+									{% endif %}
+
+									<div class="availability {{ class_name }}">
+										{{ label }}
+									</div>
+
 									<div class="points">
 										<b>{{ row.point }}</b> <span class="fs-sm">Zuju points</span>
 									</div>
@@ -168,22 +195,20 @@
 				</section>
 			</div>
 		</section>
-	</div>
-{% endif %}
+	{% endif %}
 
-<script>
-	const rowId = "{{ dynamic_page_hubdb_row.hs_id }}"
-	console.log(rowId)
+	<script>
+		const rowId = "{{ dynamic_page_hubdb_row.hs_id }}"
 
+		window.addEventListener('message', event => {
+			if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
+					const $redeemInput = document.querySelector('input[name="last_redeemed_id"]')
+					const $redeemItemName = document.querySelector('input[name="last_redeemed_item_name"]')
 
-	window.addEventListener('message', event => {
-		if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-				const $redeemInput = document.querySelector('input[name="last_redeemed_id"]')
-				console.log($redeemInput)
-				$redeemInput.value = "{{ dynamic_page_hubdb_row.hs_id }}";
-		}
-	});
-
-</script>
+					$redeemInput.value = "{{ dynamic_page_hubdb_row.hs_id }}";
+					$redeemItemName.value = "{{ dynamic_page_hubdb_row.name }}"
+			}
+		});
+	</script>
 
 {% endblock body %}

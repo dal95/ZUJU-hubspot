@@ -1,10 +1,10 @@
-const modalTrigger = document.querySelector('[data-modal]')
+const modalTrigger = document.querySelector('[data-modal-target]')
 const modalOverlay = document.querySelector('.modal__overlay')
 
 modalTrigger &&
   modalTrigger.addEventListener('click', function () {
     // togggleBodyScroll(true)
-    modalIn('.modal')
+    modalIn(`#${$(this).data('modal-target')}`)
     // document.querySelector('.modal').classList.add('active')
   })
 
@@ -31,6 +31,8 @@ function togggleBodyScroll (cond) {
  * Animation / effect
  */
 function modalIn (selector = '.modal', callback) {
+  console.log(selector)
+  console.log($(selector))
   const overlay = $(selector).find('.modal__overlay')
   const main = $(selector).find('.modal__main')
   const tl = gsap.timeline({
@@ -163,6 +165,8 @@ $('.off-canvas')
   .find('svg')
   .on('click', () => offCanvasOut())
 
+$('.has-dropdown svg').on('click', e => e.preventDefault())
+
 document.addEventListener('click', function (event) {
   if (!event.target.closest('.off-canvas')) {
     offCanvasOut()
@@ -236,7 +240,7 @@ const formatDate = date => {
   })
 }
 
-const BASE_URL = 'https://members.zujugp.com/_hcms/api'
+const BASE_URL = 'https://dev.zujugp.com/_hcms/api'
 
 const uid = user_vid
 
@@ -249,8 +253,9 @@ fetch(`${BASE_URL}/daily-login`, {
   body: JSON.stringify({
     uid: uid
   })
-}).then(res => res.json())
-.then(res => console.log(res.message))
+})
+  .then(res => res.json())
+  .then(res => console.log(res.message))
 
 fetch(`${BASE_URL}/points-history?uid=${uid}`)
   .then(res => res.json())
@@ -268,35 +273,83 @@ fetch(`${BASE_URL}/points-history?uid=${uid}`)
   })
   .catch(err => console.log(err))
 
-fetch(`${BASE_URL}/dashboard?uid=${uid}`)
-  .then(res => res.json())
-  .then(res => {
-    // Membership page
-    const checks = Object.keys(res.data.daily_task)
-    const mapped = checks.map(i => ({ task: i, value: res.data.daily_task[i] }))
+const dashboardAllowedPages = ['/members-portal', '/membership']
 
-    const checkedLength = mapped.filter(i => i.value > 0).length
-    const checkedTarget = mapped.length
+if (dashboardAllowedPages.includes(location.pathname)) {
+  fetch(`${BASE_URL}/dashboard?uid=${uid}`)
+    .then(res => res.json())
+    .then(res => {
+      // Membership page
+      const { daily_task, kfd_game, refer } = res.data
+      const tasksNames = Object.keys(daily_task)
+      const mapped = tasksNames.map(i => res.data.daily_task[i])
 
-    $('.progress-indicator__cn').text(mapped.filter(i => i.value > 0).length + 1)
-    $('.progress-indicator__tg').text(checks.length)
-    $('.progress__bar-inner').css(
-      'width',
-      (checkedLength / checkedTarget) * 100 + '%'
-    )
+      const completedProgress = mapped.filter(item => item.completed).length
+      const goalProgress = tasksNames.length
 
-    $('.list input[type="checkbox"]').each(function (index) {
-      const val = res.data.daily_task[$(this).attr('name')]
-      $(this).attr('checked', !!val)
+      $('.progress-indicator__cn').text(completedProgress)
+      $('.progress-indicator__tg').text(goalProgress)
+
+      // Disabled due to requirement change
+      // $('.progress__bar-inner').css(
+      //   'width',
+      //   (checkedLength / checkedTarget) * 100 + '%'
+      // )
+
+      // Check the completed item
+      $('.list input[type="checkbox"]').each(function (index) {
+        const val = res.data.daily_task[$(this).attr('name')]
+        $(this).attr('checked', !!val?.completed)
+      })
+
+      $('.task-easter-egg .pg__achieved').text(
+        daily_task?.find_easter_egg?.value?.achieved_times
+      )
+      $('.task-easter-egg .pg__max').text(
+        daily_task?.find_easter_egg?.value?.max_times_per_day
+      )
+
+      $('.task-comments .pg__achieved').text(
+        daily_task?.comments?.value?.achieved_times
+      )
+      $('.task-comments .pg__max').text(
+        daily_task?.comments?.value?.max_times_per_day
+      )
+
+      $('.timeline__point').each(function () {
+        const day = kfd_game?.this_week_continuous_days
+        if ($(this).data('day') <= day) {
+          $(this).addClass('checked')
+
+          if ($(this).data('day') <= day - 1) {
+            console.log(
+              $(this)
+                .find('.timeline__day')
+                .text()
+            )
+            console.log($(this).find('.timeline__bar'))
+            $(this)
+              .find('.timeline__bar')
+              .addClass('active')
+          }
+        }
+      })
+
+      $('.continous__item').each(function () {
+        if ($(this).data('day') <= kfd_game.continuous_day) {
+          $(this).addClass('checked')
+        }
+      })
+
+      // Set Referral Link
+      const ref = new URL(refer?.referral_link)
+
+      if (ref) {
+        $('#referral-id').val(ref.searchParams.get('refer'))
+      }
     })
-
-    console.log(res.data.daily_task.find_easter_egg.achieved_times)
-    $('.pg__achieved').text(res.data.daily_task.find_easter_egg.achieved_times)
-    $('.pg__max').text(res.data.daily_task.find_easter_egg.max_times_per_day)
-
-    $('#hs_cos_wrapper_side_menu li:last-child a').attr('href', res.data.daily_task.refer.referral_link)
-  })
-  .catch(err => console.log(err))
+    .catch(err => console.log(err))
+}
 
 $('.tab-content.active').fadeIn()
 $('.tabs__menu').on('click', function () {
@@ -311,3 +364,19 @@ $('.tabs__menu').on('click', function () {
 })
 
 $('.list input[type="checkbox"]').on('click', e => e.preventDefault())
+
+$('.copy')
+  .find('.button')
+  .on('click', function () {
+    navigator.clipboard
+      .writeText($('.copy input[type="text"]').val())
+      .then(() => {
+        // Success!
+        $(this).text('Copied')
+      })
+      .catch(err => {
+        console.log('Something went wrong', err)
+      })
+  })
+
+  // modalIn('#modal-welcome')

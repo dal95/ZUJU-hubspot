@@ -1,13 +1,8 @@
 {
-  "label": "Sidemenu",
-  "css_assets": [],
-  "external_js": [],
-  "global": true,
-  "help_text": "",
-  "host_template_types": ["PAGE", "BLOG_POST", "BLOG_LISTING"],
-  "js_assets": [],
-  "other_assets": [],
-  "smart_type": "NOT_SMART",
-  "tags": [],
-  "is_available_for_new_content": false
+  "global" : true,
+  "smart_type" : "NOT_SMART",
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 56329648976,
+  "label" : "Side menu",
+  "is_available_for_new_content" : false
 }
