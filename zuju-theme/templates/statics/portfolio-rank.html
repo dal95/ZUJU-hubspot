@@ -9,26 +9,21 @@
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
     <section class="bg-zuju-gray-db" x-data="{ playing: false, noti: false }">
-      <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16">
+      <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
         <div class="absolute inset-0">
           <div class="sm:aspect-w-16 sm:aspect-h-9">
-            <div>
-              <img class="h-full w-full object-cover object-center" src="/hubfs/statics/assets/rank-mast.png" />
-            </div>
+            <div><img class="h-full w-full object-cover object-center" src="/hubfs/statics/assets/rank-mast.png" /></div>
           </div>
         </div>
         <div class="relative flex flex-col items-center justify-center sm:p-8">
-          <img class="sm:h-10 lg:h-16 mb-16" src="/hubfs/statics/assets/rank-logo.png" />
-          <h1 class="lg:w-1/2 text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16">World-class digital academy</h1>
-          <p class="text-white lg:w-5/12 text-center mb-8">
-            Check in for exceptional performance training with the world's best football Experts and Academies. From professional drills, specialist training
-            for specific positions to mentoring, nutrition and rehabilitative conditioning. ZujuGP Rank is a world-class Digital academy in your pocket.
+          <img class="sm:h-10 lg:h-16 mb-16" src="/hubfs/statics/assets/rank-logo.png" x-bind="animate(16)" />
+          <h1 class="lg:w-1/2 text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">World-class digital academy</h1>
+          <p class="text-white lg:w-5/12 text-center mb-8" x-bind="animate(16)">
+            Check in for exceptional performance training with the world's best football Experts and Academies. From professional drills, specialist training for
+            specific positions to mentoring, nutrition and rehabilitative conditioning. ZujuGP Rank is a world-class Digital academy in your pocket.
           </p>
-          <div class="lg:h-20 lg:-mx-4">
-            <button
-              class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
-              x-on:click="noti = true"
-            >
+          <div class="lg:h-20 lg:-mx-4" x-bind="animate(8)">
+            <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4" x-on:click="noti = true">
               Get Notified
             </button>
             <button
@@ -48,7 +43,7 @@
         x-on:click="playing = false"
         x-on:keyup.window.escape="playing = false"
       >
-        <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+        <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
           <div class="relative">
             <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
             <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
@@ -74,18 +69,16 @@
       </div>
     </section>
     <section class="bg-zuju-gray-db">
-      <article class="relative max-w-[1440px] grid sm:grid-rows-2 lg:grid-cols-2 mx-auto">
-        <div>
-          <img class="h-full w-full object-cover object-center" src="/hubfs/statics/assets/rank-hero.png" />
-        </div>
+      <article class="relative max-w-[1440px] grid sm:grid-rows-2 lg:grid-cols-2 mx-auto" x-data="parallax()" x-bind="root">
+        <div><img class="h-full w-full object-cover object-center" src="/hubfs/statics/assets/rank-hero.png" /></div>
         <div class="relative bg-zuju-red flex flex-col items-center justify-center p-8 sm:py-16">
           <div class="absolute inset-0 flex items-center justify-center p-8">
-            <img class="lg:w-1/2" src="/hubfs/statics/assets/bg-ball-dark.png" />
+            <img class="lg:w-1/2" src="/hubfs/statics/assets/bg-ball-dark.png" x-bind="animate(-8)" />
           </div>
-          <h1 class="lg:w-3/4 relative text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-8">
+          <h1 class="lg:w-3/4 relative text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-8" x-bind="animate(16)">
             Instant access to global football talents
           </h1>
-          <p class="lg:w-3/4 relative text-white text-center">
+          <p class="lg:w-3/4 relative text-white text-center" x-bind="animate(8)">
             Scouts now have instant access to a hyperledger of global football talents. Complete with videos, player aggregated statistics and augmented data.
             Don't worry about your intel, it's secured with blockchain enabled technology.
           </p>
@@ -102,7 +95,12 @@
             <span class="text-zuju-red">benefit.</span>
           </p>
         </div>
-        <div class="w-full max-w-[1000px] mx-auto">{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}</div>
+        <div class="w-full max-w-[1000px] mx-auto">
+          <!-- <div class="aspect-w-4 aspect-h-1">
+  <div class="flex items-center justify-center bg-blue-200 text-white font-bold">Ad Space</div>
+  </div> -->
+          {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+        </div>
       </div>
     </section>
     <section class="pb-32">
@@ -110,13 +108,13 @@
         <div class="sm:hidden flex">
           <div class="lg:w-1/2">
             <a href="/portfolio/zujugp-exchange">
-              <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9">
+              <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
                 <div>
                   <img class="w-full h-full object-cover object-center" src="/hubfs/statics/assets/more-exchange.png" />
                   <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
-                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">ZujuGP Exchange</h1>
-                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8">Our AI-powered and automated global&nbsp;job search&nbsp;app</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
+                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">ZujuGP Exchange</h1>
+                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">Our AI-powered and automated global&nbsp;job search&nbsp;app</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512" x-bind="animate(8)">
                       <title>Arrow Forward</title>
                       <path
                         fill="none"
@@ -134,13 +132,13 @@
           </div>
           <div class="lg:w-1/2">
             <a href="/portfolio/zujugameplay">
-              <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9">
+              <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
                 <div>
                   <img class="w-full h-full object-cover object-center" src="/hubfs/statics/assets/more-gameplay.png" />
                   <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
-                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">ZujuGamePlay</h1>
-                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8">Digitised Live game experience</p>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
+                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">ZujuGamePlay</h1>
+                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">Digitised Live game experience</p>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512" x-bind="animate(8)">
                       <title>Arrow Forward</title>
                       <path
                         fill="none"
@@ -166,13 +164,13 @@
                     <div>
                       <div class="lg:w-1/2">
                         <a href="/portfolio/zujugp-exchange">
-                          <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9">
+                          <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
                             <div>
                               <img class="w-full h-full object-cover object-center" src="/hubfs/statics/assets/more-exchange.png" />
                               <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
-                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">ZujuGP Exchange</h1>
-                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8">Our AI-powered and automated global&nbsp;job search&nbsp;app</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
+                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">ZujuGP Exchange</h1>
+                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">Our AI-powered and automated global&nbsp;job search&nbsp;app</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512" x-bind="animate(8)">
                                   <title>Arrow Forward</title>
                                   <path
                                     fill="none"
@@ -196,13 +194,13 @@
                     <div>
                       <div class="lg:w-1/2">
                         <a href="/portfolio/zujugameplay">
-                          <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9">
+                          <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
                             <div>
                               <img class="w-full h-full object-cover object-center" src="/hubfs/statics/assets/more-gameplay.png" />
                               <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
-                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">ZujuGamePlay</h1>
-                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8">Digitised Live game experience</p>
-                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
+                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">ZujuGamePlay</h1>
+                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">Digitised Live game experience</p>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512" x-bind="animate(8)">
                                   <title>Arrow Forward</title>
                                   <path
                                     fill="none"
