@@ -72,11 +72,32 @@
             <section class="blog-post__body mb-24">
               {{ content.post_body }}
             </section>
-            <div class="blog-post__comments-listing">
-              <h3 class="sm:text-2xl lg:text-4xl font-gtcond font-black uppercase mb-4">Leave a Comment</h3>
-              {% if group.allow_comments %} {% blog_comments "blog_comments"
-              limit=10000 %} {% endif %}
-            </div>
+            
+            {% if request_contact.is_logged_in %}
+              <div class="blog-post__comments-listing">
+                <div>
+                  <h3 class="sm:text-2xl lg:text-4xl font-gtcond font-black uppercase mb-4">Leave a Comment</h3>
+                  <strong>Comment Guidelines</strong><br>
+                  <p>
+                    Let's keep comments respectful and avoid language or phrasing that could be misinterpreted as offensive. By commenting, you agree to abide by our <a class="text-zuju-red underline" href="{{ content_by_id(54357381224).absolute_url }}" target="_blank">terms of use</a>. Thank you!
+                  </p><br>
+                </div>
+                {% if group.allow_comments %} {% blog_comments "blog_comments"
+                  limit=10000 %} {% endif %}
+              </div>
+            {% else %}
+              <div>
+                <h3 class="sm:text-2xl lg:text-4xl font-gtcond font-black uppercase mb-4">Leave a Comment</h3>
+                <strong>Comment Guidelines</strong><br>
+                <p>
+                  Let's keep comments respectful and avoid language or phrasing that could be misinterpreted as offensive. By commenting, you agree to abide by our <a class="text-zuju-red underline" href="{{ content_by_id(54357381224).absolute_url }}" target="_blank">terms of use</a>. Thank you!
+                </p><br>
+                <p>
+                  Please <a href="/_hcms/mem/login" class="text-zuju-red underline">log in</a> or <a class="text-zuju-red underline" href="{{ content_by_id(56393738550).absolute_url }}">sign up</a> to view and post comments.
+                </p>
+              </div>
+            {% endif %}
+            
           </div>
           <div class="sm:hidden lg:w-1/4 p-8">
             <div class="w-full">
