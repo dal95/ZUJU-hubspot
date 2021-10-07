@@ -88,7 +88,7 @@
 
             <div>And be rewarded</div>
           </div>
-          <a href="#" class="button button--primary">More details</a>
+          <button data-modal-target="modal-referral" class="button button--primary">More details</button>
         </div>
       </section>
       <!-- End of tiles -->
@@ -158,6 +158,29 @@
     </div>
   </section>
 
+  {# Modal #}
+  {% macro modal_referral_header() %}
+    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/referral-modal.png') }}" alt="">
+    <div class="modal__header-inner text-center">
+
+      <h3>Pass the Ball</h3>
+      <p>Share the love by inviting your friends. Each successful sign up through your unique link will award you 2 Zuju Points. Every 7 such referrals entitle you to 1 chance to win prizes.</p>
+
+      <div class="copy">
+        <input type="text" value="refId999" id="referral-id"/>
+        <button class="button">Copy Link</button>
+      </div>
+    </div>
+  {% endmacro %}
+
+  {% call c.modal('modal-referral', null, modal_referral_header()) %}
+    <div class="text-center">
+      <p>Or</p>
+
+      <button class="button button--o-primary" id="share-referral">Share to other platform</button>
+    </div>
+  {% endcall %}
+
   {{ require_js('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 'footer') }}
 
   {% require_js 'my_require_js' position='position'%}
@@ -166,6 +189,7 @@
         $('.continous, .timeline').slick({
           slidesToShow: 7,
           slidesToScroll: 7,
+          centerMode: false,
           arrows: true,
           infinite: false,
           prevArrow: `<div class="prev-arrow">{{ c.chevron_left() }}</div>`,

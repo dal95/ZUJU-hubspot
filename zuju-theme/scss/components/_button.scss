@@ -19,8 +19,8 @@
   @include transition(background);
 
   &:hover {
-    background: var(--clr-primary);
-    border-color: var(--clr-primary);
+    background: darken($clr-primary, 5%);
+    border-color: darken($clr-primary, 5%);
     color: #fff;
   }
 

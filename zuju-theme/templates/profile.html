@@ -4,6 +4,7 @@
   label: Members Profile
 -->
 {% extends "./layouts/base-members.html" %}
+{% import 'zuju-theme/macros/tags.html' as c %}
 
 {% block body %}
   <style>
@@ -15,6 +16,8 @@
   <section class="content-area">
     <div class="main-content">
       <section class="edit">
+
+        {# https://dev.zujugp.com/hubfs/theme-assets/avatars/avatar-01.svg #}
         {# <div class="scrollable">
           <div class="tabs">
             <div class="tabs__menu active" data-tab="content-profile">User Profile</div>
@@ -23,6 +26,9 @@
         </div> #}
 
         {# <div id="content-profile" class="tab-content active"> #}
+          <div class="avatar-edit">
+            {{ c.avatar() }}
+          </div>
           {% form "profile" form_to_use='48fa9bbb-c0d8-4996-a45e-de28f83f227a' %}
         {# </div> #}
 
@@ -55,21 +61,23 @@
   </section>
 
   <script>
+    const contact = JSON.parse(`{{ contact|tojson }}`)
     window.addEventListener('message', event => {
       if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-          const $birthdayInput = $('input[name="birthday"]')
-          const $emailInput = $('.hs-input[type="email"]')
+        $('[name="custom_avatar"]').each(function() {
+            const avatarWrap = document.createElement('div');
+            avatarWrap.classList.add('avatar-wrap')
+            const img = new Image()
+            img.src = $(this).val()
 
-          $birthdayInput.attr('disabled', true)
-          $birthdayInput.prev().attr('disabled', true)
-          $birthdayInput.css('pointer-events', 'none')
-          $birthdayInput.prev().css('pointer-events', 'none')
-          $birthdayInput.closest('.hs-dateinput').css('pointer-events', 'none')
-          $birthdayInput.closest('.input').css('cursor', 'not-allowed')
-
-          $emailInput.attr('disabled', true)
-          $emailInput.css('cursor', 'not-allowed')
+            $(avatarWrap).append(img)
+            $(this).closest('.hs-form-radio-display').append(avatarWrap)
+        })
       }
+
+      $('[name="custom_avatar"]').on('change', function() {
+        $('.avatar-edit img').attr('src', $(this).val())
+      })
     });
   </script>
 

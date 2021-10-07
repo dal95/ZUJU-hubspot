@@ -59,7 +59,7 @@
 								<div>
 									<a
 										href="#"
-										data-modal="modal"
+										data-modal-target="modal-redemption"
 										class="button button--primary "
 											{{ d.stock > 0 && contact.current_loyalty_points > d.point || 'disabled' }}
 										>
@@ -104,8 +104,10 @@
 		</section>
 
 		{# Modal #}
-		{% call c.modal() %}
-			{% form "redemption_form" form_to_use='72dcb3b7-6292-492c-a1c1-b902c41704cd' %}
+		{% call c.modal('modal-redemption', 'lg') %}
+			<div class="form-container anim" style="padding-top: 30px">
+				{% form "redemption_form" form_to_use='72dcb3b7-6292-492c-a1c1-b902c41704cd' %}
+			</div>
 		{% endcall %}
 
 	{% elif dynamic_page_hubdb_table_id %}

@@ -1,0 +1,32 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: false
+-->
+<!-- Begin partial -->
+{# Modal #}
+  {% macro modal_welcome_header() %}
+    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/welcome-gift.png') }}" alt="">
+  {% endmacro %}
+
+  {% call c.modal('modal-welcome', null, modal_welcome_header()) %}
+    <div class="text-center">
+			<h3>Welcome, {{ contact.firstname }}!</h3>
+			<div class="highlight">Here is a gift for you</div>
+			<p>Enjoy 50 Zuju Points from us to kickoff your ZujuGP experience.</p>
+
+			<button class="button button--primary" data-modal-close>Claim now</button>
+    </div>
+  {% endcall %}
+
+  {% macro modal_birthday_header() %}
+    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/birthday-gift.png') }}" alt="">
+  {% endmacro %}
+
+  {% call c.modal('modal-birthday', null, modal_birthday_header()) %}
+    <div class="text-center">
+			<h2>Happy Birthday, <br> {{ contact.firstname }}!</h2>
+			<p>Here’s a present from us at ZujuGP: 50 Zuju Points! Have a blast.</p>
+
+			<button class="button button--primary" data-modal-close>Claim now</button>
+    </div>
+  {% endcall %}

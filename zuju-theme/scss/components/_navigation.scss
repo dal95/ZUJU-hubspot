@@ -92,7 +92,7 @@
 
   &__container {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     @include container;
     @include f-center(true, null);
     height: 100%;
@@ -205,7 +205,8 @@
     }
   }
 
-  svg, img {
+  svg,
+  img {
     margin-right: 5px;
     margin-bottom: 3px;
   }
@@ -262,7 +263,8 @@
     padding-block: 0.5rem;
     @include transition;
 
-    a {
+    a,
+    div {
       text-decoration: none;
       text-align: center;
       display: block;
@@ -272,7 +274,9 @@
       font-weight: bold;
       text-transform: uppercase;
       @include transition;
+    }
 
+    a {
       &:hover {
         color: var(--clr-primary);
         background: rgba(#000, 0.1);

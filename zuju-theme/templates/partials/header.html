@@ -8,6 +8,21 @@
 <div class="nav">
   <nav class="top-nav">
     <div class="top-nav__container">
+      <div>
+        {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}
+          <div class="header__language-switcher">
+            <div class="header__language-switcher-label">
+              {% module 'language-switcher'
+                path='@hubspot/language_switcher',
+                label='Language switcher',
+                display_mode='localized'
+              %}
+              <div class="header__language-switcher-label-current"> {{ locale_name(locale) }}</div>
+            </div>
+          </div>
+        {% endif %}
+      </div>
+
       <div class="top-nav__social social-links">
         <a href="#"><i class="fab fa-facebook-square"></i></a>
         <a href="#"><i class="fab fa-twitter"></i></a>
@@ -35,7 +50,9 @@
               <div class="arrow-up"></div>
             </a>
             <div class="dropdown">
+              <div>Hi, {{ contact.firstname }}</div>
               <a  href="/profile">Edit profile</a>
+              <a  href="/membership">Membership</a>
               <a  href="/_hcms/mem/logout">Logout</a>
             </div>
           </div>

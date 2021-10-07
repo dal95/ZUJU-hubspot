@@ -1,19 +1,18 @@
-const modalTrigger = document.querySelector('[data-modal]')
-const modalOverlay = document.querySelector('.modal__overlay')
+const modalTrigger = document.querySelector('[data-modal-target]')
+const triggerClose = $('.modal__overlay, [data-modal-close]')
 
 modalTrigger &&
   modalTrigger.addEventListener('click', function () {
     // togggleBodyScroll(true)
-    modalIn('.modal')
+    modalIn(`#${$(this).data('modal-target')}`)
     // document.querySelector('.modal').classList.add('active')
   })
 
-modalTrigger &&
-  modalOverlay.addEventListener('click', function () {
-    modalOut('.modal', () => {
-      // togggleBodyScroll(false)
-    })
+triggerClose.on('click', function () {
+  modalOut('.modal', () => {
+    // togggleBodyScroll(false)
   })
+})
 
 function isModalActive (modalClass = '.modal') {
   return $(modalClass).hasClass('active')
@@ -69,12 +68,15 @@ function modalIn (selector = '.modal', callback) {
       },
       '-=.5'
     )
-    .from('.modal h3, .modal p, .fields, .field, input[type="submit"]', {
-      duration: 0.5,
-      stagger: 0.05,
-      opacity: 0,
-      ease: Linear.easeInOut
-    })
+    .from(
+      '.anim img, .anim h3, .anim .highlight, .anim .button, .anim p, .anim .fields, .anim .field, .anim input',
+      {
+        duration: 0.3,
+        stagger: 0.05,
+        opacity: 0,
+        ease: Linear.easeInOut
+      }
+    )
 }
 
 function modalOut (selector = '.modal', callback) {
@@ -278,7 +280,7 @@ if (dashboardAllowedPages.includes(location.pathname)) {
     .then(res => res.json())
     .then(res => {
       // Membership page
-      const { daily_task, kfd_game, refer } = res.data
+      const { daily_task, kfd_game, refer, is_first_login } = res.data
       const tasksNames = Object.keys(daily_task)
       const mapped = tasksNames.map(i => res.data.daily_task[i])
 
@@ -310,6 +312,7 @@ if (dashboardAllowedPages.includes(location.pathname)) {
       $('.task-comments .pg__achieved').text(
         daily_task?.comments?.value?.achieved_times
       )
+
       $('.task-comments .pg__max').text(
         daily_task?.comments?.value?.max_times_per_day
       )
@@ -320,12 +323,6 @@ if (dashboardAllowedPages.includes(location.pathname)) {
           $(this).addClass('checked')
 
           if ($(this).data('day') <= day - 1) {
-            console.log(
-              $(this)
-                .find('.timeline__day')
-                .text()
-            )
-            console.log($(this).find('.timeline__bar'))
             $(this)
               .find('.timeline__bar')
               .addClass('active')
@@ -340,7 +337,34 @@ if (dashboardAllowedPages.includes(location.pathname)) {
       })
 
       // Set Referral Link
-      $('.referral .button').attr('href', refer?.referral_link)
+      const ref = new URL(refer?.referral_link)
+
+      if (ref) {
+        $('#referral-id').val(ref.searchParams.get('refer'))
+
+        const shareData = {
+          title: 'Zuju Referral Program',
+          text: 'Get more zuju points',
+          url: refer?.referral_link
+        }
+
+        const btn = document.querySelector('#share-referral')
+        const resultPara = document.querySelector('.result')
+
+        // Share must be triggered by "user activation"
+        btn.addEventListener('click', async () => {
+          try {
+            await navigator.share(shareData)
+            // resultPara.textContent = 'MDN shared successfully'
+            console.log('successfully share')
+          } catch (err) {
+            // resultPara.textContent = 'Error: ' + err
+          }
+        })
+      }
+
+      if (is_first_login) return modalIn('#modal-welcome')
+      //  modalIn('#modal-welcome')
     })
     .catch(err => console.log(err))
 }
@@ -358,3 +382,50 @@ $('.tabs__menu').on('click', function () {
 })
 
 $('.list input[type="checkbox"]').on('click', e => e.preventDefault())
+
+$('.copy')
+  .find('.button')
+  .on('click', function () {
+    $('.copy input[type="text"]').select()
+
+    navigator.clipboard
+      .writeText($('.copy input[type="text"]').val())
+      .then(() => {
+        // Success!
+        $(this).text('Copied')
+      })
+      .catch(err => {
+        console.log('Something went wrong', err)
+      })
+  })
+
+function setCookie (name, value, days) {
+  var expires = ''
+  if (days) {
+    var date = new Date()
+    date.setTime(date.getTime() + days * 24 * 60 * 60 * 1000)
+    expires = '; expires=' + date.toUTCString()
+  }
+  document.cookie = name + '=' + (value || '') + expires + '; path=/'
+}
+
+function getCookie (name) {
+  var nameEQ = name + '='
+  var ca = document.cookie.split(';')
+  for (var i = 0; i < ca.length; i++) {
+    var c = ca[i]
+    while (c.charAt(0) == ' ') c = c.substring(1, c.length)
+    if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length)
+  }
+  return null
+}
+
+window.getCookie = getCookie
+
+function eraseCookie (name) {
+  document.cookie = name + '=; Path=/; Expires=Thu, 01 Jan 1970 00:00:01 GMT;'
+}
+
+$('#modal-birthday .button').on('click', function () {
+  setCookie('birthday-give-claimed', +new Date(), 365)
+})
