@@ -61,24 +61,9 @@
   </section>
 
   <script>
-    const contact = JSON.parse(`{{ contact|tojson }}`)
-    window.addEventListener('message', event => {
-      if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-        $('[name="custom_avatar"]').each(function() {
-            const avatarWrap = document.createElement('div');
-            avatarWrap.classList.add('avatar-wrap')
-            const img = new Image()
-            img.src = $(this).val()
-
-            $(avatarWrap).append(img)
-            $(this).closest('.hs-form-radio-display').append(avatarWrap)
-        })
-      }
-
-      $('[name="custom_avatar"]').on('change', function() {
-        $('.avatar-edit img').attr('src', $(this).val())
-      })
-    });
+    var contact = JSON.parse(`{{ contact|tojson }}`)
   </script>
 
 {% endblock body %}
+
+{{ require_js(get_asset_url('zuju-theme/js/pages/profile.js'), 'footer')}}
