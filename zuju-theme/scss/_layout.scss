@@ -286,7 +286,7 @@
 
 .daily-tasks {
   background: linear-gradient(to bottom, rgba(black, 0), rgba(black, 0)),
-    url('https://i.imgur.com/flhC0XO.png');
+    url(asset_url('/bg/daily-task.png'));
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -314,7 +314,7 @@
 }
 
 .current-point {
-  background-image: url('https://i.imgur.com/N9NQKhJ.png');
+  background-image: url(asset_url('/bg/current.png'));
 
   img {
     margin-right: 20px;
@@ -322,7 +322,7 @@
 }
 
 .referral {
-  background-image: url('https://i.imgur.com/VlRFiYo.png');
+  background-image: url(asset_url('/bg/referral.png'));
 }
 
 // Lists
@@ -355,7 +355,7 @@
 
 .kungfu-dash-in {
   // min-height: 16vw;
-  background: url('https://i.imgur.com/W8PwNBa.png');
+  background: url(asset_url('/bg/kungfu-dash-bg.png'));
   margin-bottom: 3.125rem;
   background-size: cover;
   background-repeat: no-repeat;
