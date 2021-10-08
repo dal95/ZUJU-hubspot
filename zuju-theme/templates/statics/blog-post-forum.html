@@ -1,0 +1,116 @@
+<!--
+  templateType: blog_post
+  isAvailableForNewContent: true
+  label: Zuju Statics - blog post for Forum
+-->
+{% set is_statics = true %} {% extends '../layouts/base.html' %} {% block body
+%}
+<div class="app">
+  <main class="bg-zuju-gray-1" x-data="{ heroHeight: 0 }">
+    <article>
+      <header
+        class="max-w-[1440px] flex flex-col items-center justify-center bg-zuju-gray-db mx-auto"
+      >
+        <section class="lg:w-2/3 sm:px-4 sm:py-16 lg:py-36">
+          <h2 class="text-zuju-red font-bold uppercase text-center mb-8">
+            {{ content.tag_list[0].name }}
+          </h2>
+          <h1
+            class="text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center"
+          >
+            {{ content.name }}
+          </h1>
+        </section>
+        <section
+          class="sm:w-full lg:w-1/3 self-end flex-grow flex flex-col sm:items-end sm:justify-start justify-end sm:box-content sm:-mt-8 sm:pb-32"
+          x-bind:style="{ height: $px(heroHeight / 2) }"
+        >
+          <div class="lg:hidden pr-8">
+            <img
+              class="h-14 w-14 cursor-pointer"
+              x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' }); navigator.share?.({ url: location.href })"
+              src="/hubfs/statics/assets/share.png"
+            />
+          </div>
+          <div class="sm:hidden px-8">
+            <p class="text-white font-bold uppercase mb-4">Share</p>
+            <div class="flex -mx-4 mb-4">
+							<a
+							target="_blank"
+							x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'tw_share' })"
+							x-bind:href="`https://twitter.com/intent/tweet?url=${encodeURIComponent(location.href)}`"
+						>
+							<img class="h-6 mx-4" src="/hubfs/statics/assets/share-twitter.png" />
+						</a>
+						<a
+							target="_blank"
+							x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' })"
+							x-bind:href="`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`"
+						>
+							<img class="h-6 mx-4" src="/hubfs/statics/assets/share-facebook.png" />
+						</a>
+						<!-- <a href="#"><img class="h-6 mx-4" src="@src/assets/blog/share-instagram.png" /></a> -->            </div>
+            <p class="text-white mb-8">{{ content.publish_date_localized }}</p>
+          </div>
+        </section>
+      </header>
+      <div class="bg-white pb-32">
+        <div class="max-w-[1440px] flex sm:flex-col mx-auto">
+          <div class="sm:hidden w-1/12"></div>
+          <div
+            class="lg:w-7/12 px-8"
+            x-bind:style="{ marginTop: $px(heroHeight / 2 * -1) }"
+          >
+            <img
+              class="w-full sm:mb-2 lg:mb-16"
+              src="{{ content.featured_image }}"
+              x-init="$RO(() => { heroHeight = $height })"
+            />
+            <p class="lg:hidden text-xs mb-8">
+              {{ content.publish_date_localized }}
+            </p>
+            <section class="blog-post__body mb-24">
+              {{ content.post_body }}
+            </section>
+            
+            <div class="blog-post__comments-listing">
+              <div>
+                <h3 class="sm:text-2xl lg:text-4xl font-gtcond font-black uppercase mb-4">Leave a Comment</h3>
+                <strong>Comment Guidelines</strong><br>
+                <p>
+                  Let's keep comments respectful and avoid language or phrasing that could be misinterpreted as offensive. By commenting, you agree to abide by our <a class="text-zuju-red underline" href="{{ content_by_id(54357381224).absolute_url }}" target="_blank">terms of use</a>. Thank you!
+                </p><br>
+              </div>
+              {% if group.allow_comments %} {% blog_comments "blog_comments"
+                  limit=10000 %} {% endif %}
+            </div>
+            
+          </div>
+          <div class="sm:hidden lg:w-1/4 p-8">
+            <div class="w-full">
+              {% module "module_16330991548833" path="/zuju-theme/modules/blog-adspace", label="Ad Space" %}
+            </div>
+            <div class="pt-16">
+              <h5 class="text-zuju-red text-sm font-bold border-b uppercase pb-2 mb-2">Trending</h5>
+              {% set renderCount = { value: 0 } %}
+              {% for pop_post in blog_popular_posts('default', 3) %}
+                {% if pop_post.id != content.id and renderCount.value < 2 %}
+                  {% set renderCount = renderCount.update({ value: renderCount.value + 1 })%}
+                  <a href="{{ pop_post.absoluteUrl }}">
+                    <article class="mb-8">
+                      <img class="mb-2" src="{{pop_post.featuredImage}}" />
+                      <h1 class="text-2xl font-gtcond font-regular">
+                        {{ pop_post.name }}
+                      </h1>
+                    </article>
+                  </a>
+                {% endif %}
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </article>
+  </main>
+</div>
+{% endblock body %}

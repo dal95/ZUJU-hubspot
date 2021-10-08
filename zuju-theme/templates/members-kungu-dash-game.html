@@ -1,0 +1,35 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Kungfu dash Game
+  screenshotPath: ../images/template-previews/home.png
+-->
+{# {% set template_css = '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' %} #}
+{% extends "./layouts/base-standard.html" %}
+
+{% block body %}
+  <main class="public">
+    <div class="kungfu-dash" style="background-image: url(https://i.imgur.com/d32YxC5.png)">
+      <div class="container">
+        <div class="form-dark text-center">
+          <h2 class="kd-heading kd-heading--primary">Kungfu Dash</h2>
+
+          <h3 class="kd-heading">Play to win a chance to meet Cristiano Ronaldo up close &amp; personal on Zoom!</h3>
+          
+          <p>Click <a href="{{ content_by_id(56505783586).absolute_url }}">here</a> to read how to the competition works.</p>
+          
+          {# Iframe wrapper #}
+          <div class="kd-aspect-ratio">
+            <div class="kd-game">
+              <div class="container">
+                {% dnd_area "draggable", class="kd-draggable" %}
+
+                {% end_dnd_area %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+{% endblock body %}
