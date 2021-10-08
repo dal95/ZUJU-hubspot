@@ -30,6 +30,8 @@ function togggleBodyScroll (cond) {
  * Animation / effect
  */
 function modalIn (selector = '.modal', callback) {
+  console.log(selector)
+  console.log($(selector))
   const overlay = $(selector).find('.modal__overlay')
   const main = $(selector).find('.modal__main')
   const tl = gsap.timeline({

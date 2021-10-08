@@ -10,13 +10,14 @@
 {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
-    <div class="absolute z-50 w-8 cursor-pointer" x-data="egg()" x-bind="root"></div>
     <section class="sm:hidden">
-      <div class="h-[calc(100vh-var(--nav-height))] min-h-[600px] max-w-[1920px] mx-auto grid sm:grid-cols-1 sm:grid-rows-1 lg:grid-cols-4 lg:grid-rows-2">
+      <div
+        class="h-[calc(100vh-var(--nav-height))] min-h-[600px] max-w-[1920px] mx-auto grid sm:grid-cols-1 sm:grid-rows-1 lg:grid-cols-4 lg:grid-rows-2"
+      >
         <article class="relative flex items-end lg:col-span-2 lg:row-span-2">
-          <a href="#">
+          <a href="/about-us">
             <div class="absolute inset-0 bg-black">
-              <img class="opacity-80 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-1.png" />
+              <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-1.png" />
             </div>
             <div class="relative w-full p-4">
               <h1 class="lg:text-6xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Enter the ZujuGP footballverse</h1>
@@ -37,8 +38,32 @@
             </div>
           </a>
         </article>
-        <article class="relative flex items-end lg:col-span-2">
-          <a href="#">
+        <article class="relative flex items-end h-full lg:col-span-2">
+          <a href="https://shop.zujugp.com">
+            <div class="absolute inset-0 bg-black">
+              <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-4.png" />
+            </div>
+            <div class="relative w-full p-4">
+              <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Shop Megastore </h1>
+              <p class="relative text-trueGray-200 sm:text-sm pr-12">
+                Limited edition items only
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                  <title>Arrow Forward</title>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="48"
+                    d="M268 112l144 144-144 144M392 256H100"
+                  ></path>
+                </svg>
+              </p>
+            </div>
+          </a>
+        </article>
+        <article class="relative flex items-end">
+          <a href="{{ content_by_id(56334347298).absolute_url }}">
             <div class="absolute inset-0 bg-black">
               <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-2.png" />
             </div>
@@ -62,9 +87,9 @@
           </a>
         </article>
         <article class="relative flex items-end">
-          <a href="#">
+          <a href="/kungfu-dash">
             <div class="absolute inset-0 bg-black">
-              <img class="opacity-40 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-3.png" />
+              <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-3.png" />
             </div>
             <div class="relative w-full p-4">
               <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Kungfu Dash &amp; Win</h1>
@@ -85,42 +110,18 @@
             </div>
           </a>
         </article>
-        <article class="relative flex items-end">
-          <a href="#">
-            <div class="absolute inset-0 bg-black">
-              <img class="opacity-60 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-4.png" />
-            </div>
-            <div class="relative w-full p-4">
-              <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Name My Mask</h1>
-              <p class="relative text-trueGray-200 sm:text-sm pr-12">
-                Name Ronaldo's masks in ZujuGP's commercial and win
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
-                  <title>Arrow Forward</title>
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="48"
-                    d="M268 112l144 144-144 144M392 256H100"
-                  ></path>
-                </svg>
-              </p>
-            </div>
-          </a>
-        </article>
       </div>
     </section>
     <section class="lg:hidden">
       <div class="aspect-w-4 aspect-h-3">
         <div>
-          <article class="relative flex items-end h-full">
-            <a href="#">
+          <article class="relative flex items-end h-full lg:col-span-2 lg:row-span-2">
+            <a href="/about-us">
               <div class="absolute inset-0 bg-black">
-                <img class="opacity-80 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-1.png" />
+                <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-1.png" />
               </div>
               <div class="relative w-full p-4">
-                <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Enter the ZujuGP footballverse</h1>
+                <h1 class="lg:text-6xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Enter the ZujuGP footballverse</h1>
                 <p class="relative text-trueGray-200 sm:text-sm pr-12">
                   #WritingTheFutureOfFootball - The best new digital experiences and opportunities
                   <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
@@ -147,13 +148,43 @@
               <div class="aspect-w-4 aspect-h-3">
                 <div>
                   <article class="relative flex items-end h-full">
-                    <a href="#">
+                    <a href="https://shop.zujugp.com">
+                      <div class="absolute inset-0 bg-black">
+                        <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-4.png" />
+                      </div>
+                      <div class="relative w-full p-4">
+                        <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Shop Megastore </h1>
+                        <p class="relative text-trueGray-200 sm:text-sm pb-8 pr-12">
+                          Limited edition items only
+                          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                            <title>Arrow Forward</title>
+                            <path
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="48"
+                              d="M268 112l144 144-144 144M392 256H100"
+                            ></path>
+                          </svg>
+                        </p>
+                      </div>
+                    </a>
+                  </article>
+                </div>
+              </div>
+            </div>
+            <div class="glide__slide">
+              <div class="aspect-w-4 aspect-h-3">
+                <div>
+                  <article class="relative flex items-end h-full">
+                    <a href="{{ content_by_id(56334347298).absolute_url }}">
                       <div class="absolute inset-0 bg-black">
                         <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-2.png" />
                       </div>
                       <div class="relative w-full p-4">
                         <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Ronaldo X Bian Lian</h1>
-                        <p class="mb-8 relative text-trueGray-200 sm:text-sm pr-12">
+                        <p class="relative text-trueGray-200 sm:text-sm pb-8 pr-12">
                           Football's first mask changing 变脸 WARRIOR
                           <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
                             <title>Arrow Forward</title>
@@ -177,44 +208,14 @@
               <div class="aspect-w-4 aspect-h-3">
                 <div>
                   <article class="relative flex items-end h-full">
-                    <a href="#">
+                    <a href="/kungfu-dash">
                       <div class="absolute inset-0 bg-black">
-                        <img class="opacity-40 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-3.png" />
+                        <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-3.png" />
                       </div>
                       <div class="relative w-full p-4">
                         <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Kungfu Dash &amp; Win</h1>
-                        <p class="mb-8 relative text-trueGray-200 sm:text-sm pr-12">
+                        <p class="relative text-trueGray-200 sm:text-sm pb-8 pr-12">
                           Play to win a chance to meet Cristiano Ronaldo on ZOOM
-                          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
-                            <title>Arrow Forward</title>
-                            <path
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="48"
-                              d="M268 112l144 144-144 144M392 256H100"
-                            ></path>
-                          </svg>
-                        </p>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-              </div>
-            </div>
-            <div class="glide__slide">
-              <div class="aspect-w-4 aspect-h-3">
-                <div>
-                  <article class="relative flex items-end h-full">
-                    <a href="#">
-                      <div class="absolute inset-0 bg-black">
-                        <img class="opacity-60 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-4.png" />
-                      </div>
-                      <div class="relative w-full p-4">
-                        <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">Name My Mask</h1>
-                        <p class="mb-8 relative text-trueGray-200 sm:text-sm pr-12">
-                          Name Ronaldo's masks in ZujuGP's commercial and win
                           <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
                             <title>Arrow Forward</title>
                             <path
@@ -250,7 +251,7 @@
         >
           <section class="lg:col-end-11 lg:col-span-3 lg:row-start-1" x-data="parallax()" x-bind="root">
             <div class="lg:aspect-w-1 lg:aspect-h-1" x-bind="animate(8)">
-              <div><img class="sm:max-w-md h-full w-full object-contain sm:mx-auto" src="https://dev.zujugp.com/hubfs/statics/assets/nft.png" /></div>
+              <div><img class="sm:max-w-md h-full w-full object-contain sm:mx-auto" src="/hubfs/statics/assets/nft.png" /></div>
             </div>
           </section>
           <section class="lg:col-start-3 lg:col-span-7 lg:row-start-1 z-10" x-data="parallax()" x-bind="root">
@@ -271,7 +272,7 @@
       <div class="relative w-full sm:max-w-md max-w-[1920px] mx-auto" x-data="parallax()" x-bind="root">
         <img
           class="sm:hidden absolute bottom-0 -right-8 pointer-events-none"
-          src="https://dev.zujugp.com/hubfs/statics/assets/ball-bg.png"
+          src="/hubfs/statics/assets/ball-bg.png"
           x-bind="animate(-24)"
         />
         <div
@@ -289,7 +290,7 @@
             <div class="sm:max-w-md sm:mx-auto">
               <div class="relative aspect-w-4 aspect-h-3">
                 <div class="absolute top-4 left-4 bottom-0 right-0 bg-zuju-red"></div>
-                <img class="h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/ball.png" />
+                <img class="h-full w-full object-cover" src="/hubfs/statics/assets/ball.png" />
               </div>
             </div>
           </div>
@@ -329,7 +330,7 @@
                     <div class="">
                       <div>
                         <div class="py-8">
-                          <img class="h-16 w-16 mb-4" src="https://dev.zujugp.com/hubfs/statics/assets/port-1.png" />
+                          <img class="h-16 w-16 mb-4" src="/hubfs/statics/assets/port-1.png" />
                           <h3 class="text-zuju-red font-bold mb-2">ZujuGamePlay</h3>
                           <p class="text-trueGray-500 text-sm">The LIVE game experience gets interactive, real-time &amp; EPIC</p>
                         </div>
@@ -340,7 +341,7 @@
                     <div class="">
                       <div>
                         <div class="py-8">
-                          <img class="h-16 w-16 mb-4" src="https://dev.zujugp.com/hubfs/statics/assets/port-2.png" />
+                          <img class="h-16 w-16 mb-4" src="/hubfs/statics/assets/port-2.png" />
                           <h3 class="text-zuju-red font-bold mb-2">ZujuGP Exchange</h3>
                           <p class="text-trueGray-500 text-sm">Global job search &amp; match engine powered by AI &amp; smart tech</p>
                         </div>
@@ -351,7 +352,7 @@
                     <div class="">
                       <div>
                         <div class="py-8">
-                          <img class="h-16 w-16 mb-4" src="https://dev.zujugp.com/hubfs/statics/assets/port-3.png" />
+                          <img class="h-16 w-16 mb-4" src="/hubfs/statics/assets/port-3.png" />
                           <h3 class="text-zuju-red font-bold mb-2">ZujuGP Rank</h3>
                           <p class="text-trueGray-500 text-sm">A digital academy in your pocket. Train or be discovered anywhere</p>
                         </div>
@@ -372,7 +373,7 @@
             class="sm:hidden lg:row-start-3 lg:col-span-3 pt-8 pr-8 transition duration-0 transform translate-y-8 opacity-0"
             x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700'"
           >
-            <img class="h-16 w-16 mb-4" src="https://dev.zujugp.com/hubfs/statics/assets/port-1.png" />
+            <img class="h-16 w-16 mb-4" src="/hubfs/statics/assets/port-1.png" />
             <h3 class="text-zuju-red font-bold mb-2">ZujuGamePlay</h3>
             <p class="text-trueGray-500 text-sm">The LIVE game experience gets interactive, real-time &amp; EPIC</p>
           </div>
@@ -380,7 +381,7 @@
             class="sm:hidden lg:row-start-3 lg:col-span-3 pt-8 pr-8 transition duration-0 transform translate-y-8 opacity-0"
             x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700 !delay-[200ms]'"
           >
-            <img class="h-16 w-16 mb-4" src="https://dev.zujugp.com/hubfs/statics/assets/port-2.png" />
+            <img class="h-16 w-16 mb-4" src="/hubfs/statics/assets/port-2.png" />
             <h3 class="text-zuju-red font-bold mb-2">ZujuGP Exchange</h3>
             <p class="text-trueGray-500 text-sm">Global job search &amp; match engine powered by AI &amp; smart tech</p>
           </div>
@@ -388,7 +389,7 @@
             class="sm:hidden lg:row-start-3 lg:col-span-3 pt-8 pr-8 transition duration-0 transform translate-y-8 opacity-0"
             x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700 !delay-[400ms]'"
           >
-            <img class="h-16 w-16 mb-4" src="https://dev.zujugp.com/hubfs/statics/assets/port-3.png" />
+            <img class="h-16 w-16 mb-4" src="/hubfs/statics/assets/port-3.png" />
             <h3 class="text-zuju-red font-bold mb-2">ZujuGP Rank</h3>
             <p class="text-trueGray-500 text-sm">A digital academy in your pocket. Train or be discovered anywhere</p>
           </div>
@@ -407,7 +408,7 @@
       <div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto">
         <div class="row-start-1 col-start-1 col-span-12">
           <div class="sm:aspect-w-9 sm:aspect-h-5">
-            <div><img class="h-full w-full object-cover object-left" src="https://dev.zujugp.com/hubfs/statics/assets/earn-banner.png" /></div>
+            <div><img class="h-full w-full object-cover object-left" src="/hubfs/statics/assets/earn-banner.png" /></div>
           </div>
         </div>
         <div class="row-start-1 col-start-8 col-span-4 p-8" x-data="parallax()" x-bind="root">
@@ -454,7 +455,7 @@
               <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
                 <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
                 <div class="absolute top-0 left-0 right-4 bottom-4">
-                  <img class="w-full h-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/trend-1.png" />
+                  <img class="w-full h-full object-cover" src="/hubfs/statics/assets/trend-1.png" />
                 </div>
               </div>
               <div x-bind="animate(16)">
@@ -485,7 +486,7 @@
               <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(-8)">
                 <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
                 <div class="absolute top-0 left-0 right-4 bottom-4">
-                  <img class="w-full h-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/trend-2.png" />
+                  <img class="w-full h-full object-cover" src="/hubfs/statics/assets/trend-2.png" />
                 </div>
               </div>
               <div x-bind="animate(-8)">
@@ -516,7 +517,7 @@
               <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(0)">
                 <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
                 <div class="absolute top-0 left-0 right-4 bottom-4">
-                  <img class="w-full h-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/trend-3.png" />
+                  <img class="w-full h-full object-cover" src="/hubfs/statics/assets/trend-3.png" />
                 </div>
               </div>
               <div x-bind="animate(0)">
@@ -550,9 +551,9 @@
         </div>
       </div>
     </section>
-    <section class="bg-zuju-gray-2 p-8">
+    <section class="bg-zuju-gray-2 p-8 pb-32">
       <div class="max-w-[1000px] mx-auto">
-        <div class="aspect-w-4 aspect-h-1"><div class="flex items-center justify-center bg-blue-200 text-white font-bold">Ad Space</div></div>
+        {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
       </div>
     </section>
   </main>

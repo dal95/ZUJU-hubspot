@@ -85,34 +85,97 @@ document.addEventListener("alpine:init", () => {
     });
   });
 
-  Alpine.data("egg", () => ({
-    top: 0,
-    left: 0,
-    randTop: Math.random(),
-    randLeft: Math.random(),
-    ready: true,
-    chance: Math.random() <= 1 / 7,
-    init() {
-      const prefix = "https://dev.zujugp.com/hubfs/statics/";
-      const paths = ["mask/mask-01.json", "mask/mask-02.json", "mask/mask-03.json", "mask/mask-04.json"];
-      const index = Math.floor(Math.random() * paths.length);
-      this.$lottie(prefix + paths[index]);
-      this.update();
-    },
-    root: {
-      "x-bind:style"() {
-        return { top: this.top + "px", left: this.left + "px", display: this.ready && this.chance ? "block" : "none" };
-      },
-      "x-on:resize.window"() {
+  Alpine.magic("share", () => async ({ uid, type }) => {
+    if (!uid || !type) return;
+
+    const url = "/_hcms/api/share-points";
+    try {
+      const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ uid, type }),
+      });
+      const json = await res.json();
+
+      if (json?.message) {
+        this.$dispatch("show-message", json.message);
+      }
+    } catch (err) {}
+  });
+
+  Alpine.data("egg", (opts) => {
+    const uid = opts.uid;
+
+    return {
+      top: 0,
+      left: 0,
+      randTop: Math.random(),
+      randLeft: Math.random(),
+      ready: false,
+      chance: Math.random() <= 1 / 7,
+      async init() {
+        const prefix = "/hubfs/statics/";
+        const paths = ["mask/mask-01.json", "mask/mask-02.json", "mask/mask-03.json", "mask/mask-04.json"];
+        const index = Math.floor(Math.random() * paths.length);
+        this.$lottie(prefix + paths[index]);
         this.update();
+
+        this.ready = await this.getReady();
       },
-    },
-    update() {
-      const main = document.querySelector("main");
-      this.top = Math.floor(this.randTop * (main.clientHeight - this.$height));
-      this.left = Math.floor(this.randLeft * (main.clientWidth - this.$width));
-    },
-  }));
+      root: {
+        "x-bind:style"() {
+          return {
+            top: this.top + "px",
+            left: this.left + "px",
+            display: this.ready && this.chance ? "block" : "none",
+          };
+        },
+        "x-on:resize.window"() {
+          this.update();
+        },
+        "x-on:click"() {
+          this.ready = false;
+          this.submit();
+        },
+      },
+      update() {
+        const main = document.querySelector("main");
+        this.top = Math.floor(this.randTop * (main.clientHeight - this.$height));
+        this.left = Math.floor(this.randLeft * (main.clientWidth - this.$width));
+      },
+      async getReady() {
+        if (!uid) return false;
+        try {
+          const url = `/_hcms/api/easter-egg-info?uid=${uid}`;
+          const res = await fetch(url);
+          const json = await res.json();
+          if ("show_easter_egg" in json?.data) {
+            return !!json?.data?.show_easter_egg;
+          }
+        } catch (err) {
+          return false;
+        }
+      },
+      async submit() {
+        if (!uid) return;
+
+        const url = "/_hcms/api/find-easter-egg";
+        try {
+          const res = await fetch(url, {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ uid }),
+          });
+          const json = await res.json();
+          if (json?.success) {
+            this.$dispatch("show-message", "You found me! 2 points for you!");
+          } else if (json?.message) {
+            this.$dispatch("show-message", json.message);
+          }
+        } catch (err) {}
+      },
+    };
+  });
 
   Alpine.data("parallax", () => ({
     innerIsSm: false,
@@ -137,7 +200,9 @@ document.addEventListener("alpine:init", () => {
     animate(intensity, ofst = 0, mofst = 0) {
       return {
         "x-bind:style"() {
-          return { transform: `translateY(${this.innerIsSm ? mofst : this.translate * intensity + ofst}px)` };
+          return {
+            transform: `translateY(${this.innerIsSm ? mofst : this.translate * intensity + ofst}px)`,
+          };
         },
       };
     },

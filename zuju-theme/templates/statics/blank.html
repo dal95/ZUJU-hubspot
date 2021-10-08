@@ -1,0 +1,17 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Zuju Statics - Blank Page Template
+-->
+
+{% set is_statics = true %}
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+
+<div>
+  {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}  
+</div>
+
+      
+{% endblock body%}
