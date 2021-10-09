@@ -24,10 +24,10 @@
       </div>
 
       <div class="top-nav__social social-links">
-        <a href="#"><i class="fab fa-facebook-square"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.facebook.com/zujugp" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://twitter.com/zujugp" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/zujugp" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/channel/UCbXvRvjZAt5aZhBNlDFxHuw" target="_blank"><i class="fab fa-youtube"></i></a>
       </div>
     </div>
   </nav>
@@ -36,28 +36,75 @@
   <nav class="main-nav">
     <div class="main-nav__container">
       <div class="main-nav__logo clr-primary">
-        {% logo "logo" no_wrapper=True %}
+        {% if content.language.languageTag == "zh-cn" %}
+        {% logo "logo" src="/hubfs/BRAND%20ASSETS/ZujuGP%20Chinese%20Logo_Red%20Horizontal.png" style="height:54px;" link="/zh-cn/" no_wrapper=True %}
+        {% else %}
+        {% logo "logo" link="/" no_wrapper=True %}
+        {% endif %}
       </div>
 
       <div class="main-nav__omega">
+        
+        {% if content.language.languageTag == "zh-cn" %}
+        {% menu "main-nav" id=57071986309 %}
+        {% else %}
         {% menu "main-nav" id=54357477653 %}
-
+        {% endif %}
+        
         {% if request_contact.is_logged_in %}
           <div class="has-dropdown">
-            <a href="http://dev.zujugp.com/members-portal" class="nav__link account-link">
+            <a href="/members-portal" class="nav__link account-link">
+              {% if content.language.languageTag == "zh-cn" %}
+              账户
+              {% else %}
               Account
+              {% endif %}
+
               {{ c.icon_chevron_down() }}
               <div class="arrow-up"></div>
             </a>
             <div class="dropdown">
-              <div>Hi, {{ contact.firstname }}</div>
-              <a  href="/profile">Edit profile</a>
-              <a  href="/membership">Membership</a>
-              <a  href="/_hcms/mem/logout">Logout</a>
+              <div>
+                {% if content.language.languageTag == "zh-cn" %}
+                你好，{{ contact.firstname }}
+                {% else %}
+                Hi, {{ contact.firstname }}
+                {% endif %}
+              </div>
+              
+              <a href="/profile">
+                {% if content.language.languageTag == "zh-cn" %}
+                编辑个人资料
+                {% else %}
+                Edit profile
+                {% endif %}
+              </a>
+              
+              <a href="/membership">
+                {% if content.language.languageTag == "zh-cn" %}
+                会员
+                {% else %}
+                Membership
+                {% endif %}
+              </a>
+              
+              <a href="/_hcms/mem/logout">
+                {% if content.language.languageTag == "zh-cn" %}
+                退出登录
+                {% else %}
+                Logout
+                {% endif %}
+              </a>
             </div>
           </div>
         {% else %}
-          <a class="nav__link" href="/_hcms/mem/login">Login</a>
+          <a class="nav__link" href="/_hcms/mem/login">
+            {% if content.language.languageTag == "zh-cn" %}
+            登录
+            {% else %}
+            Login
+            {% endif %}
+          </a>
         {% endif %}
 
         <div class="off-canvas">

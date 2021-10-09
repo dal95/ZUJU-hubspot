@@ -12,20 +12,48 @@
         <img class="h-full w-full sm:object-contain sm:object-top lg:object-cover lg:object-center" src="/hubfs/statics/assets/rewards-masthead.png" />
       </div>
       <div class="relative flex-grow flex flex-col items-center sm:justify-center lg:justify-between p-8 lg:pt-32 lg:pb-16">
-        <h1 class="lg:w-1/2 sm:w-full sm:max-w-sm text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16">Earn points and redeem rewards</h1>
+        <h1 class="lg:w-1/2 sm:w-full sm:max-w-sm text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16">
+          {% if content.language.languageTag == "zh-cn" %}
+            赚取积分并兑换奖励
+            {% else %}
+            Earn points and redeem rewards
+            {% endif %}
+        </h1>
         <div class="lg:w-1/2 sm:w-full sm:max-w-md lg:self-start">
-          <h2 class="text-white text-4xl font-gtcond font-black mb-8">Earn Loyalty Points</h2>
+          <h2 class="text-white text-4xl font-gtcond font-black mb-8">
+            {% if content.language.languageTag == "zh-cn" %}
+            赚取忠诚积分
+            {% else %}
+            Earn Loyalty Points
+            {% endif %}
+          </h2>
           <p class="text-white mb-8">
+            {% if content.language.languageTag == "zh-cn" %}
+            订阅蹴蹴，通过获得积分而兑换购物或者赢取其他奖励！您有机会得到蹴蹴终极会员的头衔。每时每刻，您都可能享受到绝妙的时机兑换专属奖品。请开启注册或者选择登录您的已有账号，参与到蹴蹴生态系统中积累更多的积分吧！
+            {% else %}
             Subscribe to ZujuGP and be rewarded for shopping and spending time with us! You might even earn the vaunted title of the ZujuGP Ultimate Fan! At every
             turn, you will enjoy the most fabulous opportunities to redeem exclusive prizes and wicked experiences. Simply sign up on our site or log in, if you
             are already registered. Every activity on our ecosystem is designed to help you accumulate points!
+            {% endif %}
           </p>
           <div class="flex flex-wrap justify-start -mx-4">
             <a href="/registration?{{ request.query }}">
-              <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 h-14 mx-4 mb-4">Sign Up Now</button>
+              <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 h-14 mx-4 mb-4">
+                {% if content.language.languageTag == "zh-cn" %}
+                现在注册
+                {% else %}
+                Sign Up Now
+                {% endif %}
+              </button>
             </a>
             <a href="/_hcms/mem/login">
-              <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 h-14 mx-4 mb-4">Login Now</button>
+              <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 h-14 mx-4 mb-4">
+                {% if content.language.languageTag == "zh-cn" %}
+                现在登录
+                {% else %}
+                Login Now
+                {% endif %}
+              </button>
             </a>
           </div>
         </div>
@@ -35,21 +63,41 @@
       <div class="max-w-[1440px] lg:flex justify-center p-8 lg:pb-16 mx-auto">
         <div class="lg:w-1/2 flex items-center sm:py-8 lg:px-8 lg:py-16"><img src="/hubfs/statics/assets/fan-level.png" /></div>
         <div class="lg:w-1/3 flex flex-col items-start justify-center">
-          <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black mb-8">Rewards Redemption</h1>
+          <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black mb-8">
+            {% if content.language.languageTag == "zh-cn" %}
+            奖励兑换
+            {% else %}
+            Rewards Redemption
+            {% endif %}
+          </h1>
           <p class="mb-8">
+            {% if content.language.languageTag == "zh-cn" %}
+            努力向上吧！我们有会员。超级会员。以及终极会员。每个等级都有其专享礼遇 —— 抽奖机会、独家邀请、额外的生日礼物等等…… 我们不会就此止步。
+            {% else %}
             Work your way up. We have Fans. Super Fans. And the illustrious Ultimate Fans. Each tier exists to reward you - bonus raffle chances, exclusive
             invites, extra birthday gifts .. we are not stopping there!
+            {% endif %}
           </p>
           <p class="mb-8">
+            {% if content.language.languageTag == "zh-cn" %}
+            超级会员和终极会员可以解锁一些特级奖励。交易后未花费的积分将结转至您的下一次兑换。蹴蹴积分不会过期，但需要是在过去90天内收到的积分才能享受相关优惠。
+            {% else %}
             Supers and Ultimates will unlock privilege rewards. Points not spent following transactions will be carried over to your next redemption. ZujuGPoints
             DO NOT expire but you will need to be in receipt of points in the last 90 days to enjoy benefits.
+            {% endif %}
           </p>
         </div>
       </div>
     </section>
     <section class="bg-gradient-to-b from-white to-zuju-gray-db">
       <div class="max-w-[1440px] flex flex-col items-center p-8 mx-auto">
-        <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black text-center sm:mb-8 lg:mb-16">Member Tiers</h1>
+        <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black text-center sm:mb-8 lg:mb-16">
+          {% if content.language.languageTag == "zh-cn" %}
+          (cn) Member Tiers
+          {% else %}
+          Member Tiers
+          {% endif %}
+        </h1>
         <img src="/hubfs/statics/assets/tiers.png" />
       </div>
     </section>
@@ -64,7 +112,13 @@
         <div class="w-full flex flex-wrap justify-center">
           <div class="sm:contents sm:w-full lg:w-5/12 lg:px-8 lg:pb-16">
             <section class="sm:order-1 mb-24">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8">Kung Fu Dash Game</h2>
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8">
+                {% if content.language.languageTag == "zh-cn" %}
+                功夫快跳游戏
+                {% else %}
+                Kung Fu Dash Game
+                {% endif %}
+              </h2>
               <div class="grid grid-cols-[0.5rem,1.5rem,auto] lg:grid-cols-[2rem,2rem,auto] grid-rows-[repeat(8,minmax(0,1fr))] mb-4">
                 <div class="row-start-1 row-span-2 col-span-3 py-2">
                   <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
@@ -94,8 +148,12 @@
                 </div>
               </div>
               <p class="text-white mb-8">
+                {% if content.language.languageTag == "zh-cn" %}
+                您每天在游戏内消费，都将让您获得宝贵的蹴蹴忠诚积分，用以换取丰厚的奖励。连续玩7天将获得额外积分。连续玩25天将让您获得3倍蹴蹴忠诚积分！
+                {% else %}
                 For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for
                 bonus points. Earn triple that when you enter 25-day playing streaks!
+                {% endif %}
               </p>
               <a href="/kungfu-dash">
                 <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">Play Kungfu Dash</button>
@@ -128,15 +186,17 @@
                   </div>
                 </div>
               </div>
-              <p class="text-white mb-8">
-                For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for
-                bonus points. Earn triple that when you enter 25-day playing streaks!
-              </p>
             </section>
           </div>
           <div class="sm:contents sm:w-full lg:w-5/12 lg:px-8 lg:pb-16">
             <section class="sm:order-2 mb-24">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8">Daily Treasure Hunt</h2>
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8">
+                {% if content.language.languageTag == "zh-cn" %}
+                每日寻宝
+                {% else %}
+                Daily Treasure Hunt
+                {% endif %}
+              </h2>
               <div class="mb-4">
                 <div class="py-2">
                   <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
@@ -168,11 +228,15 @@
                 </div>
               </div>
               <p class="text-white mb-8">
+                {% if content.language.languageTag == "zh-cn" %}
+                我们在网站上隐藏了一些小宝藏。注意留意每个月不同的主题！本月C罗的变脸面具就已经被小心翼翼地藏在了网站某处。不要太着急……首先，您要通过点击去解锁他们（获得1个积分）。然后，找到这些小面具们！（获得1个积分）。每天坚持这样做，你将收获乐趣并获得更多的奖励积分！在每个新月的第一天，神奇的6个小时内会有宝物频繁出现，注意查收！您的奖励甚至会较普通日翻上两番！
+                {% else %}
                 We have hidden little treasures on our site. Look out for different themes each month - oh sneaky sneaky! This month Warrior CR's exotic Bian Lian
                 masks are hidden carefully within the pages on our site. Not so fast… first you need to unlock them by clicking in (gain a point!). Then find
                 these little darling masks (gain another point!). Do this with persistence daily and you shall harvest the virtues of the heavens and be rewarded
                 with yet more bonus points! Pay particular action on the first day of each new moon when at magic six-hour interludes, treasures will be making
                 more frequent appearances for you to quadruple your daily bounty!
+                {% endif %}
               </p>
               <p class="text-white mb-8">
                 Read our Terms and Conditions
@@ -197,10 +261,6 @@
                 </div>
               </div>
               <img class="mb-8" src="/hubfs/statics/assets/socmed.png" />
-              <p class="text-white mb-8">
-                For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for
-                bonus points. Earn triple that when you enter 25-day playing streaks!
-              </p>
             </section>
           </div>
           <div class="sm:order-last sm:w-full lg:w-5/6 lg:px-8">
