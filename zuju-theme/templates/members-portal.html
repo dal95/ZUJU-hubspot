@@ -97,7 +97,7 @@
       <h4 class="all-caps">Kungfu Dash</h4>
       <section class="kungfu-dash-in">
         <div class="kungfu-dash-in__cta">
-          <img src="https://i.imgur.com/oGRwfKL.png" alt="" />
+          <img src="{{ get_asset_url('zuju-theme/images/assets/kungfu-dash-logo.png') }}" alt="" />
           <a href="/kungfu-dash" class="button button--primary">Play Now</a>
         </div>
 
@@ -160,12 +160,11 @@
 
   {# Modal #}
   {% macro modal_referral_header() %}
-    <img class="modal__header-bg" src="http://unsplash.it/500" alt="">
+    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/referral-modal.png') }}" alt="">
     <div class="modal__header-inner text-center">
 
       <h3>Pass the Ball</h3>
-      <p>Share the love by inviting your friends
-        and both of you will get xxx Zuju points</p>
+      <p>Share the love by inviting your friends. Each successful sign up through your unique link will award you 2 Zuju Points. Every 7 such referrals entitle you to 1 chance to win prizes.</p>
 
       <div class="copy">
         <input type="text" value="refId999" id="referral-id"/>
@@ -174,11 +173,11 @@
     </div>
   {% endmacro %}
 
-  {% call c.modal('modal-referral', modal_referral_header()) %}
+  {% call c.modal('modal-referral', null, modal_referral_header()) %}
     <div class="text-center">
-      <div>Or</div>
+      <p>Or</p>
 
-      <button class="button button--o-primary">Share to other platform</button>
+      <button class="button button--o-primary" id="share-referral">Share to other platform</button>
     </div>
   {% endcall %}
 

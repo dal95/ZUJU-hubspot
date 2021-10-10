@@ -5,16 +5,28 @@
 <!-- Begin partial -->
 {# Modal #}
   {% macro modal_welcome_header() %}
-    <img class="modal__header-bg" src="http://unsplash.it/500" alt="">
-    </div>
+    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/welcome-gift.png') }}" alt="">
   {% endmacro %}
 
-  {% call c.modal('modal-welcome') %}
+  {% call c.modal('modal-welcome', null, modal_welcome_header()) %}
     <div class="text-center">
-			<h3>Welcome, Samantha!</h3>
+			<h3>Welcome, {{ contact.firstname }}!</h3>
 			<div class="highlight">Here is a gift for you</div>
-			<p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo.</p>
+			<p>Enjoy 50 Zuju Points from us to kickoff your ZujuGP experience.</p>
 
-			<a href="/" class="button button--primary">Claim now</a>
+			<button class="button button--primary" data-modal-close>Claim now</button>
+    </div>
+  {% endcall %}
+
+  {% macro modal_birthday_header() %}
+    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/birthday-gift.png') }}" alt="">
+  {% endmacro %}
+
+  {% call c.modal('modal-birthday', null, modal_birthday_header()) %}
+    <div class="text-center">
+			<h2>Happy Birthday, <br> {{ contact.firstname }}!</h2>
+			<p>Here’s a present from us at ZujuGP: 50 Zuju Points! Have a blast.</p>
+
+			<button class="button button--primary" data-modal-close>Claim now</button>
     </div>
   {% endcall %}

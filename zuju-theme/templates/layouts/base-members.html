@@ -5,7 +5,7 @@
 <html lang="{{ html_lang }}" {{ html_lang_dir }}>
   <head>
     <meta charset="utf-8">
-    {% if page_meta.html_title %}<title>{{ page_meta.html_title }}</title>{% endif %}
+    {% if page_meta.html_title %}<title>{{ page_meta.html_title }} {% if content.language.languageTag == "zh-cn" %}| 蹴蹴ZujuGP{% else %}| ZujuGP{% endif %}</title>{% endif %}
     {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
     <meta name="description" content="{{ page_meta.meta_description }}">
     {{ require_css(get_asset_url("../../fonts/stylesheet.css")) }}
@@ -32,6 +32,7 @@
     {# To see a full list of what is included via standard_header_includes please reference this article: https://developers.hubspot.com/docs/cms/hubl/variables#required-page-template-variables #}
     {% include '../statics/statics-head.html' %}
     {{ standard_header_includes }}
+    {% import 'zuju-theme/macros/tags.html' as c %}
   </head>
   <body>
     <div class="body-wrapper {{ builtin_body_classes }}">
@@ -45,7 +46,9 @@
         <aside class="sidebar">
           {% if request_contact.is_logged_in %}
             <a href="/profile" class="user-card">
-              <div class="user-card__avatar"> </div>
+              <div class="user-card__avatar">
+                {{ c.avatar() }}
+              </div>
 
               {# <textarea name="" id="" cols="30" rows="10">{{ contact|tojson }}</textarea> #}
               <div class="user-card__content">
@@ -109,6 +112,21 @@
     </script>
     {{ require_js('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js') }}
     {{ require_js(get_asset_url('../../js/main.js')) }}
+
+    {# Birthday logic #}
+    {% set today = today("Asia/Singapore")|datetimeformat('%m/%e/%y') %}
+    {% set birthday = contact.birthday %}
+
+    {% if today == birthday %}
+      <script>
+        window.addEventListener('DOMContentLoaded', (event) => {
+          if (!getCookie('birthday-give-claimed')) {
+            modalIn('#modal-birthday');
+          }
+        });
+      </script>
+    {% endif %}
+
     {% include '../statics/statics-foot.html' %}
     {{ standard_footer_includes }}
   </body>
