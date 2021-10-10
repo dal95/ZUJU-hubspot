@@ -18,13 +18,23 @@
 			</div>
 			<div class="relative z-20">
 				<section class="h-[80vh] max-w-[1440px] mx-auto flex items-center justify-center p-8" x-data="parallax()" x-bind="root">
-					<h1 class="lg:w-5/6 font-gtcom text-white text-6xl lg:text-8xl font-extralight" x-bind="animate(24)">
-						ZujuGP converges
-						<br />
-						<strong>media, tech</strong>
-						and
-						<strong>football</strong>
-					</h1>
+					{% if content.language.languageTag == "zh-cn" %}
+          <h1 class="lg:w-5/6 font-gtcom text-white text-6xl lg:text-8xl font-extralight" x-bind="animate(24)">
+            蹴蹴ZujuGP聚合
+            <br />
+            <strong>传媒、技术</strong>
+            与
+            <strong>足球。</strong>
+          </h1>
+          {% else %}
+          <h1 class="lg:w-5/6 font-gtcom text-white text-6xl lg:text-8xl font-extralight" x-bind="animate(24)">
+            ZujuGP converges
+            <br />
+            <strong>media, tech</strong>
+            and
+            <strong>football</strong>
+          </h1>
+          {% endif %}
 				</section>
 				<section class="max-w-[1440px] mx-auto lg:grid grid-cols-12 auto-rows-auto p-8">
 					<div class="row-start-1 col-end-12 col-span-5 sm:-mx-8 z-10" x-data="parallax()" x-bind="root">
@@ -32,18 +42,32 @@
 					</div>
 					<div class="row-start-1 col-start-2 col-span-8 relative lg:grid grid-cols-8 grid-rows-[1fr,auto,auto,1fr] z-20" x-data="parallax()" x-bind="root">
 						<div class="row-start-3 row-span-2 col-start-1"><div class="h-full w-0 border-l border-r border-zuju-red mx-auto"></div></div>
-						<h2 class="row-start-2 col-span-8 text-white sm:text-2xl lg:text-4xl font-gtcond font-black sm:-mt-4 mb-8" x-bind="animate(16)">
-							A community platform bridging East and West, we are an exchange not just between fans but worlds between businesses and ecosystems.
-						</h2>
-						<p class="row-start-3 col-start-2 col-span-4 text-white lg:pr-8" x-bind="animate(16)">
-							It is a powerful and simple idea that with tech, everyone who loves football can come together to interact in diverse ways. Both business
-							economies and individual economies can benefit.
-						</p>
+            <h2 class="row-start-2 col-span-8 text-white sm:text-2xl lg:text-4xl font-gtcond font-black sm:-mt-4 mb-8" x-bind="animate(16)">
+              {% if content.language.languageTag == "zh-cn" %}
+              一个能真正沟通东西方的平台，我们不仅仅帮助世界各地的球迷在此交换意见，还帮助建立企业和足球生态的全新连接。
+              {% else %}
+              A community platform bridging East and West, we are an exchange not just between fans but worlds between businesses and ecosystems.
+              {% endif %}
+            </h2>
+            <p class="row-start-3 col-start-2 col-span-4 text-white lg:pr-8" x-bind="animate(16)">
+              {% if content.language.languageTag == "zh-cn" %}
+              因为一个纯粹且极具力量的想法 —— 那就是通过技术，每个热爱足球的人都能以各色各样的方式紧密相连。无论是企业经济还是个体经济，都能从中获利。
+              {% else %}
+              It is a powerful and simple idea that with tech, everyone who loves football can come together to interact in diverse ways. Both business
+              economies and individual economies can benefit.
+              {% endif %}
+            </p>
 					</div>
 					<div class="row-start-2 col-start-2"><div class="h-full w-0 border-l border-r border-zuju-red mx-auto"></div></div>
 					<article class="contents" x-data="{ active: 1, top: 0 }">
 						<div class="row-start-2 col-start-3 col-span-8 pt-16" x-data="parallax()" x-bind="root">
-							<h2 class="text-white sm:max-w-md sm:text-4xl lg:text-6xl font-gtcond font-black mb-8 sm:mx-auto" x-bind="animate(8)">We believe that..</h2>
+							<h2 class="text-white sm:max-w-md sm:text-4xl lg:text-6xl font-gtcond font-black mb-8 sm:mx-auto" x-bind="animate(8)">
+                {% if content.language.languageTag == "zh-cn" %}
+                我们相信
+                {% else %}
+                We believe that..
+                {% endif %}
+              </h2>
 						</div>
 						<div class="row-start-3 col-start-2 relative">
 							<div class="sm:hidden h-full w-0 border-l border-r border-zuju-red mx-auto"></div>
@@ -71,7 +95,11 @@
 							>
 								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">1</p>
 								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
-									The AI revolution has started
+                  {% if content.language.languageTag == "zh-cn" %}
+                  AI的革命已经开始
+                  {% else %}
+                  The AI revolution has started
+                  {% endif %}
 								</p>
 							</div>
 							<div
@@ -84,7 +112,11 @@
 							>
 								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">2</p>
 								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
-									Football will change seismically
+									{% if content.language.languageTag == "zh-cn" %}
+                  足球正迎来巨变
+                  {% else %}
+                  Football will change seismically
+                  {% endif %}
 								</p>
 							</div>
 							<div
@@ -97,7 +129,11 @@
 							>
 								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">3</p>
 								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
-									Football 3.0 is the Asian Era
+									{% if content.language.languageTag == "zh-cn" %}
+                  足球3.0是属于亚洲的时代
+                  {% else %}
+                  Football 3.0 is the Asian Era
+                  {% endif %}
 								</p>
 							</div>
 							<div
@@ -110,7 +146,11 @@
 							>
 								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">4</p>
 								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
-									4 billion fans want to be connected globally and served collectively
+									{% if content.language.languageTag == "zh-cn" %}
+                  全球40亿球迷渴望更多的连接、合作与交互
+                  {% else %}
+                  4 billion fans want to be connected globally and served collectively
+                  {% endif %}
 								</p>
 							</div>
 							<div
@@ -123,7 +163,11 @@
 							>
 								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">5</p>
 								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
-									This will take place at the intersection of technology and the public realm
+									{% if content.language.languageTag == "zh-cn" %}
+                  变革就发生在技术与公共领域的交汇处
+                  {% else %}
+                  This will take place at the intersection of technology and the public realm
+                  {% endif %}
 								</p>
 							</div>
 							<div
@@ -136,7 +180,11 @@
 							>
 								<p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">6</p>
 								<p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
-									This intersection is ZujuGP
+									{% if content.language.languageTag == "zh-cn" %}
+                  蹴蹴ZujuGP正处在时代的风口
+                  {% else %}
+                  This intersection is ZujuGP
+                  {% endif %}
 								</p>
 							</div>
 						</div>
@@ -149,12 +197,20 @@
 												<div>
 													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
 														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-															The AI revolution has started
+                              {% if content.language.languageTag == "zh-cn" %}
+                              AI的革命已经开始
+                              {% else %}
+                              The AI revolution has started
+                              {% endif %}
 														</div>
 														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-															along with
+                              {% if content.language.languageTag == "zh-cn" %}
+                              足球这项运动和它的理念也正随着这场变革在发生<span class="text-zuju-red">转变</span>。
+                              {% else %}
+                              along with
 															<span class="text-zuju-red">gaming trends</span>
 															and evolving ways to design and respond to our world.
+                              {% endif %}
 														</div>
 														<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-1.png" /></div>
 													</div>
@@ -166,15 +222,29 @@
 												<div>
 													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
 														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-															Football will change seismically
+															{% if content.language.languageTag == "zh-cn" %}
+                              足球正迎来巨变
+                              {% else %}
+                              Football will change seismically
+                              {% endif %}
 														</div>
 														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-															simply because ..
-															<span class="text-zuju-red">Technology</span>
-															. We will all demand
-															<span class="text-zuju-red">interoperability, immersion, access</span>
-															and
-															<span class="text-zuju-red">accountability.</span>
+                              {% if content.language.languageTag == "zh-cn" %}
+                              因为
+                              <span class="text-zuju-red">技术</span>
+                              的发展和我们所处的数字时代，无论我们身处何地，我们都需要
+                              <span class="text-zuju-red">更加互动、更加沉浸、更加贴合</span>
+                              以及
+                              <span class="text-zuju-red">更多参与感</span>
+                              的体验。
+                              {% else %}
+                              Simply because ..
+                              <span class="text-zuju-red">Technology</span>
+                              . We will all demand
+                              <span class="text-zuju-red">interoperability, immersion, access</span>
+                              and
+                              <span class="text-zuju-red">accountability.</span>
+                              {% endif %}
 														</div>
 														<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-2.png" /></div>
 													</div>
@@ -186,11 +256,19 @@
 												<div>
 													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
 														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-															Football 3.0 is the Asian Era
+															{% if content.language.languageTag == "zh-cn" %}
+                              足球3.0是属于亚洲的时代
+                              {% else %}
+                              Football 3.0 is the Asian Era
+                              {% endif %}
 														</div>
 														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-															Football 1.0 Europe faces decline. Football 2.0 US is growing.
-															<span class="text-zuju-red">A new era where 60% of the world's population reside heralds.</span>
+                              {% if content.language.languageTag == "zh-cn" %}
+                              足球1.0的欧洲时代正面临颓势，足球2.0的美国时代还在成长，<span class="text-zuju-red">而足球3.0的时代注定属于超过全球人口60%的亚洲。</span>
+                              {% else %}
+                              Football 1.0 Europe faces decline. Football 2.0 US is growing.
+                              <span class="text-zuju-red">A new era where 60% of the world's population reside heralds.</span>
+                              {% endif %}
 														</div>
 														<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-3.png" /></div>
 													</div>
@@ -202,14 +280,22 @@
 												<div>
 													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
 														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-															4 billion fans want to be connected globally and served collectively
+															{% if content.language.languageTag == "zh-cn" %}
+                              全球40亿球迷渴望更多的连接、合作与交互
+                              {% else %}
+                              4 billion fans want to be connected globally and served collectively
+                              {% endif %}
 														</div>
 														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-															It is our right to
+                              {% if content.language.languageTag == "zh-cn" %}
+                              在虚拟与现实中相互<span class="text-zuju-red">成长、陪伴</span>和<span class="text-zuju-red">创造</span>是我们的权利。
+                              {% else %}
+                              It is our right to
 															<span class="text-zuju-red">grow, play</span>
 															and
 															<span class="text-zuju-red">create</span>
 															together in both real and digital worlds.
+                              {% endif %}
 														</div>
 														<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-4.png" /></div>
 													</div>
@@ -221,11 +307,20 @@
 												<div>
 													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
 														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-															This will take place at the intersection of technology and the public realm
+															{% if content.language.languageTag == "zh-cn" %}
+                              变革就发生在技术与公共领域的交汇处
+                              {% else %}
+                              This will take place at the intersection of technology and the public realm
+                              {% endif %}
 														</div>
 														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-															on a single platform. Where components of the football ecosystem
-															<span class="text-zuju-red">function as a whole.</span>
+                              {% if content.language.languageTag == "zh-cn" %}
+                              在这个平台上，所有足球生态中的元素都
+                              <span class="text-zuju-red">汇聚到了一起。</span>
+                              {% else %}
+                              On a single platform. Where components of the football ecosystem
+                              <span class="text-zuju-red">function as a whole.</span>
+                              {% endif %}
 														</div>
 														<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-5.png" /></div>
 													</div>
@@ -237,12 +332,21 @@
 												<div>
 													<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
 														<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-															This intersection is ZujuGP
+															{% if content.language.languageTag == "zh-cn" %}
+                              蹴蹴ZujuGP正处在时代的风口
+                              {% else %}
+                              This intersection is ZujuGP
+                              {% endif %}
 														</div>
 														<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-															Where
+                              {% if content.language.languageTag == "zh-cn" %}
+                              和我们一起
+                              <span class="text-zuju-red">#重新定义足球的未来</span>
+                              {% else %}
+                              Where
 															<span class="text-zuju-red">#WritingTheFutureOfFootball</span>
 															begins
+                              {% endif %}
 														</div>
 														<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-6.png" /></div>
 													</div>
@@ -269,13 +373,21 @@
 								x-show="active === 1"
 								x-transition.duration.500ms=""
 							>
-								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-									the AI revolution has started
+                <div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+                  {% if content.language.languageTag == "zh-cn" %}
+                  AI的革命已经开始
+                  {% else %}
+                  The AI revolution has started
+                  {% endif %}
 								</div>
 								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-									Along with
-									<span class="text-zuju-red">gaming trends</span>
-									and evolving ways to design and respond to our world.
+                  {% if content.language.languageTag == "zh-cn" %}
+                  足球这项运动和它的理念也正随着这场变革在发生<span class="text-zuju-red">转变</span>。
+                  {% else %}
+                  along with
+                  <span class="text-zuju-red">gaming trends</span>
+                  and evolving ways to design and respond to our world.
+                  {% endif %}
 								</div>
 								<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-1.png" /></div>
 							</div>
@@ -287,16 +399,30 @@
 								x-transition.duration.500ms=""
 							>
 								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-									football will change seismically
+									{% if content.language.languageTag == "zh-cn" %}
+                  足球正迎来巨变
+                  {% else %}
+                  Football will change seismically
+                  {% endif %}
 								</div>
-								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-									Simply because ..
-									<span class="text-zuju-red">Technology</span>
-									. We will all demand
-									<span class="text-zuju-red">interoperability, immersion, access</span>
-									and
-									<span class="text-zuju-red">accountability.</span>
-								</div>
+                <div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+                  {% if content.language.languageTag == "zh-cn" %}
+                  因为
+                  <span class="text-zuju-red">技术</span>
+                  的发展和我们所处的数字时代，无论我们身处何地，我们都需要
+                  <span class="text-zuju-red">更加互动、更加沉浸、更加贴合</span>
+                  以及
+                  <span class="text-zuju-red">更多参与感</span>
+                  的体验。
+                  {% else %}
+                  Simply because ..
+                  <span class="text-zuju-red">Technology</span>
+                  . We will all demand
+                  <span class="text-zuju-red">interoperability, immersion, access</span>
+                  and
+                  <span class="text-zuju-red">accountability.</span>
+                  {% endif %}
+                </div>
 								<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-2.png" /></div>
 							</div>
 							<div
@@ -307,11 +433,19 @@
 								x-transition.duration.500ms=""
 							>
 								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-									Football 3.0 is the Asian Era
+									{% if content.language.languageTag == "zh-cn" %}
+                  足球3.0是属于亚洲的时代
+                  {% else %}
+                  Football 3.0 is the Asian Era
+                  {% endif %}
 								</div>
 								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-									Football 1.0 Europe faces decline. Football 2.0 US is growing.
+									{% if content.language.languageTag == "zh-cn" %}
+                  足球1.0的欧洲时代正面临颓势，足球2.0的美国时代还在成长，<span class="text-zuju-red">而足球3.0的时代注定属于超过全球人口60%的亚洲。</span>
+                  {% else %}
+                  Football 1.0 Europe faces decline. Football 2.0 US is growing.
 									<span class="text-zuju-red">A new era where 60% of the world's population reside heralds.</span>
+                  {% endif %}
 								</div>
 								<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-3.png" /></div>
 							</div>
@@ -323,14 +457,22 @@
 								x-transition.duration.500ms=""
 							>
 								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-									4 billion fans want to be connected globally and served collectively
+									{% if content.language.languageTag == "zh-cn" %}
+                  全球40亿球迷渴望更多的连接、合作与交互
+                  {% else %}
+                  4 billion fans want to be connected globally and served collectively
+                  {% endif %}
 								</div>
 								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-									It is our right to
-									<span class="text-zuju-red">grow, play</span>
-									and
-									<span class="text-zuju-red">create</span>
-									together in both real and digital worlds.
+                  {% if content.language.languageTag == "zh-cn" %}
+                  在虚拟与现实中相互<span class="text-zuju-red">成长、陪伴</span>和<span class="text-zuju-red">创造</span>是我们的权利。
+                  {% else %}
+                  It is our right to
+                  <span class="text-zuju-red">grow, play</span>
+                  and
+                  <span class="text-zuju-red">create</span>
+                  together in both real and digital worlds.
+                  {% endif %}
 								</div>
 								<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-4.png" /></div>
 							</div>
@@ -342,11 +484,20 @@
 								x-transition.duration.500ms=""
 							>
 								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-									this will take place at the intersection of technology and the public realm
+									{% if content.language.languageTag == "zh-cn" %}
+                  变革就发生在技术与公共领域的交汇处
+                  {% else %}
+                  This will take place at the intersection of technology and the public realm
+                  {% endif %}
 								</div>
 								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-									On a single platform. Where components of the football ecosystem
-									<span class="text-zuju-red">function as a whole.</span>
+                  {% if content.language.languageTag == "zh-cn" %}
+                  在这个平台上，所有足球生态中的元素都
+                  <span class="text-zuju-red">汇聚到了一起。</span>
+                  {% else %}
+                  On a single platform. Where components of the football ecosystem
+                  <span class="text-zuju-red">function as a whole.</span>
+                  {% endif %}
 								</div>
 								<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-5.png" /></div>
 							</div>
@@ -358,12 +509,21 @@
 								x-transition.duration.500ms=""
 							>
 								<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
-									this intersection is ZujuGP
+									{% if content.language.languageTag == "zh-cn" %}
+                  蹴蹴ZujuGP正处在时代的风口
+                  {% else %}
+                  This intersection is ZujuGP
+                  {% endif %}
 								</div>
 								<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
-									Where
-									<span class="text-zuju-red">#WritingTheFutureOfFootball</span>
-									begins
+                  {% if content.language.languageTag == "zh-cn" %}
+                  和我们一起
+                  <span class="text-zuju-red">#重新定义足球的未来</span>
+                  {% else %}
+                  Where
+                  <span class="text-zuju-red">#WritingTheFutureOfFootball</span>
+                  begins
+                  {% endif %}
 								</div>
 								<div class="sm:mx-auto"><img class="h-24" src="/hubfs/statics/assets/belief-6.png" /></div>
 							</div>
@@ -373,8 +533,12 @@
 				<section class="w-full bg-white sm:pt-8 sm:pb-24 lg:pt-16 lg:pb-40">
 					<div class="max-w-[1440px] p-8 mx-auto" x-data="parallax()" x-bind="root">
 						<p class="lg:w-7/12 sm:text-2xl lg:text-4xl text-center font-gtcond font-black mx-auto" x-bind="animate(-4)">
-							<span class="text-zuju-red">ZujuGP's</span>
-							architecture is to allow immediacy of creation, sharing of and collaboration on content, experience and&nbsp;playing.
+              {% if content.language.languageTag == "zh-cn" %}
+              <span class="text-zuju-red">蹴蹴</span>平台的特殊架构能够允许即时地创作，多彩的内容分享与协作，并且还与玩乐兼容。
+              {% else %}
+              <span class="text-zuju-red">ZujuGP's</span>
+							architecture is to allow immediacy of creation, sharing of and collaboration on content, experience and playing.
+              {% endif %}
 						</p>
 					</div>
 				</section>
@@ -386,15 +550,28 @@
 						</div>
 						<div class="lg:w-7/12 mb-16 relative z-20" x-data="parallax()" x-bind="root">
 							<p class="text-white mb-8" x-bind="animate(8)">
-								You may be looking for opportunities to upskill, gain employment or watch a game, shop, play and interact. This will no longer be something
+                {% if content.language.languageTag == "zh-cn" %}
+                也许你是希望提升能力、寻找工作机会、看一场比赛、线上购物或者单纯上网冲浪一会儿。从现在开始你不再孤单，你也不需要再通过其他独立的应用程序或者通过前往现场的方式去一件一件完成那些事。在这里，你拥有<strong>一个整合而且丰富的平台</strong>，可以一次性实现所有的事。
+                {% else %}
+                You may be looking for opportunities to upskill, gain employment or watch a game, shop, play and interact. This will no longer be something
 								that only one person does. You won't need a new standalone app or travel to a stadium or find new ways to access different components of
-								what interests you. What you want will be found on
-								<strong>a single&nbsp;platform.</strong>
+								what interests you. What you want will be found on <strong>a single platform</strong>.
+                {% endif %}
 							</p>
-							<p class="text-zuju-red font-gtcond font-black sm:text-2xl lg:text-4xl mb-8" x-bind="animate(8)">This platform is ZujuGP.</p>
+							<p class="text-zuju-red font-gtcond font-black sm:text-2xl lg:text-4xl mb-8" x-bind="animate(8)">
+                {% if content.language.languageTag == "zh-cn" %}
+                这个平台就是蹴蹴ZujuGP
+                {% else %}
+                This platform is ZujuGP.
+                {% endif %}
+              </p>
 							<p class="text-white" x-bind="animate(8)">
-								Where immediacy of use and interactivity of content will directly contribute to your enjoyment, allow you to connect globally and profit in
+								{% if content.language.languageTag == "zh-cn" %}
+                在蹴蹴这个高度集成的平台上，您能享受到即时且互动性很强的内容，来这里，能让您无障碍对接全球并使得您从深爱的运动中学到更多！
+                {% else %}
+                Where immediacy of use and interactivity of content will directly contribute to your enjoyment, allow you to connect globally and profit in
 								your love for the sport.
+                {% endif %}
 							</p>
 						</div>
 						<div class="lg:grid grid-cols-12 grid-rows-[1fr,auto,auto,repeat(4,1fr),auto]">
@@ -406,14 +583,20 @@
 							</div>
 							<div class="row-start-2 col-end-[-2] col-span-5 sm:-mt-8 sm:mb-8 lg:mb-16 z-30" x-data="parallax()" x-bind="root">
 								<p class="text-white sm:text-2xl lg:text-4xl font-gtcond font-black" x-bind="animate(24)">
-									The future of football will be mostly social, collaborative and participative, defined by immersion, UGC, dynamic and malleable
-									experiences online.
+                  {% if content.language.languageTag == "zh-cn" %}
+                  足球的未来是更社交化的、更协作化的、参与度更高的。这是由更沉浸、更多用户原创内容、更动态和更具可塑性的<strong>线上</strong>模式所决定的。
+                  {% else %}
+                  The future of football will be mostly social, collaborative and participative, defined by immersion, UGC, dynamic and malleable experiences <strong>online</strong>.
+                  {% endif %}
 								</p>
 							</div>
 							<div class="row-start-3 col-end-[-2] col-span-3 mb-8 z-30" x-data="parallax()" x-bind="root">
 								<p class="text-white" x-bind="animate(16)">
-									It will not always be authoritarian or top down. All football fans and professionals will be both users and creators. Football on ZujuGP
-									is also an outlet for those who seek creative and commercial interests.
+									{% if content.language.languageTag == "zh-cn" %}
+                  足球将不再是一场自上而下单向制定规则的运动，而是全民参与，每个人都加入其中并成为创造者的游戏。同时，蹴蹴平台也为那些想在足球领域寻找商业和创意机会的人提供了一条出路。
+                  {% else %}
+                  It will not always be authoritarian or top down. All football fans and professionals will be both users and creators. Football on ZujuGP is also an outlet for those who seek creative and commercial interests.
+                  {% endif %}
 								</p>
 							</div>
 							<div class="row-start-6 row-span-2 col-start-1 col-end-[-1]">
@@ -434,8 +617,11 @@
 									lg:mb-24
 								"
 							>
-								The collective experience that allows ZujuGP to be better is that football&nbsp;will no longer be a walled garden. ZujuGP will be an online
-								immersive that mirrors our world.
+                {% if content.language.languageTag == "zh-cn" %}
+                整合的体验使得蹴蹴平台更加出众，足球圈不再是一座孤立的围城，因为网络能真实地折射出现实世界里所有的场景。
+                {% else %}
+                The collective experience that allows ZujuGP to be better is that football will no longer be a walled garden. ZujuGP will be an online immersive that mirrors our world.
+                {% endif %}
 							</p>
 						</div>
 					</div>

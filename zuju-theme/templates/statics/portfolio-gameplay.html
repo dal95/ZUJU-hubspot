@@ -13,19 +13,37 @@
         <div class="absolute inset-0"><img class="h-full w-full object-cover object-center" src="/hubfs/statics/assets/gameplay-mast.png" /></div>
         <div class="relative flex flex-col items-center justify-center sm:p-8">
           <img class="h-16 mb-16" src="/hubfs/statics/assets/gameplay-logo.png" x-bind="animate(16)" />
-          <h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">The LIVE game gets epic.</h1>
+          <h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
+            {% if content.language.languageTag == "zh-cn" %}
+            史诗般的LIVE游戏
+            {% else %}
+            The LIVE game gets epic.
+            {% endif %}
+          </h1>
           <p class="text-white lg:w-1/2 text-center mb-8" x-bind="animate(16)">
+            {% if content.language.languageTag == "zh-cn" %}
+            在一个高速运转且跨越现实世界和数字世界的经济体里，我们即将推出一个同步、沉浸且协作的空间。
+            {% else %}
             We will be launching a space at once synchronous, immersive and collaborative in a fully-functioning economy that spans the real and digital worlds.
+            {% endif %}
           </p>
           <div class="lg:h-20 lg:-mx-4" x-bind="animate(8)">
             <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4" x-on:click="noti = true">
+              {% if content.language.languageTag == "zh-cn" %}
+              得到通知
+              {% else %}
               Get Notified
+              {% endif %}
             </button>
             <button
               class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
               x-on:click="playing = true"
             >
+              {% if content.language.languageTag == "zh-cn" %}
+              观看视频
+              {% else %}
               Watch Video
+              {% endif %}
             </button>
           </div>
         </div>
@@ -67,11 +85,22 @@
       <div class="max-w-[1440px] flex sm:flex-col overflow-hidden mx-auto" x-data="parallax()" x-bind="root">
         <div class="lg:w-2/3 p-8 pb-0"><img src="/hubfs/statics/assets/gameplay-hero.png" /></div>
         <div class="lg:w-1/3 flex flex-col justify-center p-8">
-          <h1 class="lg:w-3/4 sm:text-4xl text-5xl font-gtcond font-black sm:text-center mb-8" x-bind="animate(16)">Build your own Footballverse.</h1>
+          <h1 class="lg:w-3/4 sm:text-4xl text-5xl font-gtcond font-black sm:text-center mb-8" x-bind="animate(16)">
+            {% if content.language.languageTag == "zh-cn" %}
+            建造你自己的足球世界
+            {% else %}
+            Build your own Footballverse.
+            {% endif %}
+          </h1>
           <p class="lg:w-3/4 sm:text-center" x-bind="animate(8)">
+            
+            {% if content.language.languageTag == "zh-cn" %}
+            邀请朋友加入你的<strong>私人专属房间</strong>！你在这里主持、评论、赚取额外的收入、甚至是进行社交或者商务会谈等等
+            {% else %}
             Invite friends to your
-            <strong>private Owner's&nbsp;Box</strong>
-            where you can host, commentate, earn extra income, conduct social commerce, chat and&nbsp;more.
+            <strong>private Owner's Box</strong>
+            where you can host, commentate, earn extra income, conduct social commerce, chat and more.
+            {% endif %}
           </p>
         </div>
       </div>
@@ -83,11 +112,18 @@
         </div>
         <div class="relative z-20 sm:row-start-2 sm:col-start-1 lg:row-start-1 lg:col-start-2 lg:col-span-4 flex flex-col justify-center p-8">
           <h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black sm:text-center lg:text-right mb-8" x-bind="animate(8)">
+            {% if content.language.languageTag == "zh-cn" %}
+            加入由您喜爱的明星或者主办品牌所设立的房间
+            {% else %}
             Join a public Gallery hosted by your idol or favourite brand
+            {% endif %}
           </h1>
           <p class="text-white sm:text-center lg:text-right" x-bind="animate(8)">
-            Access an experience exclusive to them - from live stream, locker room access, unique content, merchandise and special offers to interactions within a
-            shared&nbsp;community.
+            {% if content.language.languageTag == "zh-cn" %}
+            获得专门的体验 – 包括直播、探访更衣室、独家内幕、特别产品以及相关优惠。
+            {% else %}
+            Access an experience exclusive to them - from live stream, locker room access, unique content, merchandise and special offers to interactions within a shared community.
+            {% endif %}
           </p>
         </div>
         <div class="relative z-10 sm:row-start-1 sm:row-span-2 sm:col-start-1 lg:row-start-1 lg:col-start-1 lg:col-span-6 flex items-center justify-center pt-8">
@@ -106,14 +142,28 @@
           <img class="lg:w-96 mb-8" src="/hubfs/statics/assets/gameplay-heading.png" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
         </div>
         <p class="lg:w-1/2 text-white text-xl font-bold lg:text-center mb-8" x-bind="animate(4)">
+          {% if content.language.languageTag == "zh-cn" %}
+          高度沉浸的。交互的。及时的。娱乐的。数据丰富的。个性化的。社交的。可购物的。可变现的。
+          {% else %}
           Interactive. Instant. Entertainment. Data rich. Personalised. Social. Shoppable. Monetisable.
+          {% endif %}
         </p>
         <p class="lg:w-1/2 text-white lg:text-center sm:mb-16 lg:mb-24">
+          {% if content.language.languageTag == "zh-cn" %}
+          蹴蹴游戏空间可以在内容、数据和数字资产间向您提供前所未有的交互模式，它由数以万计的创造者和经营者贡献的宝贵经验而组成 - 从个人到非正式组织，再到企业和品牌。每个人都可以参与其中，每个人也都从中受益，每个人都会最终成为蹴蹴游戏愿景中的一部分。
+          {% else %}
           ZujuGamePlay will offer unprecedented interoperability between content, data and digital assets, framed by experiences created and operated by a wide
           range of contributors - from individuals to informally organised groups to brands and enterprises. Everyone can participate. Everyone can benefit. And
           everyone can be a part of building out the vision that is ZujuGamePlay.
+          {% endif %}
         </p>
-        <h2 class="text-zuju-red sm:text-4xl lg:text-5xl font-gtcond font-black mb-16" x-bind="animate(4)">Coming real soon.</h2>
+        <h2 class="text-zuju-red sm:text-4xl lg:text-5xl font-gtcond font-black mb-16" x-bind="animate(4)">
+          {% if content.language.languageTag == "zh-cn" %}
+          查看所有文章
+          {% else %}
+          Coming real soon.
+          {% endif %}
+        </h2>
         <div class="w-full max-w-[1000px] mx-auto">
           {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
         </div>
@@ -123,13 +173,31 @@
       <div class="max-w-[1440px] mx-auto">
         <div class="sm:hidden flex">
           <div class="lg:w-1/2">
-            <a href="/portfolio/zujugp-exchange">
+            <a href="
+                     {% if content.language.languageTag == "zh-cn" %}
+                     /zh-cn/portfolio/zujugp-exchange
+                     {% else %}
+                     /portfolio/zujugp-exchange
+                     {% endif %}
+                     ">
               <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
                 <div>
                   <img class="w-full h-full object-cover object-center" src="/hubfs/statics/assets/more-exchange.png" />
                   <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
-                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">ZujuGP Exchange</h1>
-                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">Our AI-powered and automated global&nbsp;job search&nbsp;app</p>
+                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      蹴蹴交换空间
+                      {% else %}
+                      ZujuGP Exchange
+                      {% endif %}
+                    </h1>
+                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      我们以AI智能和自动化技术作为驱动的全球工作搜寻应用程序
+                      {% else %}
+                      Our AI-powered and automated global job search app
+                      {% endif %}
+                    </p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512" x-bind="animate(8)">
                       <title>Arrow Forward</title>
                       <path
@@ -147,13 +215,31 @@
             </a>
           </div>
           <div class="lg:w-1/2">
-            <a href="/portfolio/zujugp-rank">
+            <a href="
+                     {% if content.language.languageTag == "zh-cn" %}
+                     /zh-cn/portfolio/zujugp-rank
+                     {% else %}
+                     /portfolio/zujugp-rank
+                     {% endif %}
+                     ">
               <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
                 <div>
                   <img class="w-full h-full object-cover object-center" src="/hubfs/statics/assets/more-rank.png" />
                   <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
-                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">ZujuGP Rank</h1>
-                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">Blockchain and AI-enabled talent development &amp; recruitment app</p>
+                    <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      蹴蹴探索空间
+                      {% else %}
+                      ZujuGP Rank
+                      {% endif %}
+                    </h1>
+                    <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      蹴蹴探索空间
+                      {% else %}
+                      Blockchain and AI-enabled talent development &amp; recruitment app
+                      {% endif %}
+                    </p>
                     <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512" x-bind="animate(8)">
                       <title>Arrow Forward</title>
                       <path
@@ -179,13 +265,31 @@
                   <div class="">
                     <div>
                       <div class="lg:w-1/2">
-                        <a href="/portfolio/zujugp-exchange">
+                        <a href="
+                                 {% if content.language.languageTag == "zh-cn" %}
+                                 /zh-cn/portfolio/zujugp-exchange
+                                 {% else %}
+                                 /portfolio/zujugp-exchange
+                                 {% endif %}
+                                 ">
                           <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
                             <div>
                               <img class="w-full h-full object-cover object-center" src="/hubfs/statics/assets/more-exchange.png" />
                               <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
-                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">ZujuGP Exchange</h1>
-                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">Our AI-powered and automated global&nbsp;job search&nbsp;app</p>
+                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  蹴蹴交换空间
+                                  {% else %}
+                                  ZujuGP Exchange
+                                  {% endif %}
+                                </h1>
+                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  我们以AI智能和自动化技术作为驱动的全球工作搜寻应用程序
+                                  {% else %}
+                                  Our AI-powered and automated global job search app
+                                  {% endif %}
+                                </p>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512" x-bind="animate(8)">
                                   <title>Arrow Forward</title>
                                   <path
@@ -209,13 +313,31 @@
                   <div class="">
                     <div>
                       <div class="lg:w-1/2">
-                        <a href="/portfolio/zujugp-rank">
+                        <a href="
+                                 {% if content.language.languageTag == "zh-cn" %}
+                                 /zh-cn/portfolio/zujugp-rank
+                                 {% else %}
+                                 /portfolio/zujugp-rank
+                                 {% endif %}
+                                 ">
                           <div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
                             <div>
                               <img class="w-full h-full object-cover object-center" src="/hubfs/statics/assets/more-rank.png" />
                               <div class="absolute inset-0 flex flex-col items-start justify-end bg-gradient-to-bl from-black/0 via-black/0 to-black/50 p-8">
-                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">ZujuGP Rank</h1>
-                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">Blockchain and AI-enabled talent development &amp; recruitment app</p>
+                                <h1 class="lg:w-1/2 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-4" x-bind="animate(8)">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  蹴蹴探索空间
+                                  {% else %}
+                                  ZujuGP Rank
+                                  {% endif %}
+                                </h1>
+                                <p class="lg:w-2/3 text-white sm:text-sm sm:mb-4 lg:mb-8" x-bind="animate(8)">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  蹴蹴探索空间
+                                  {% else %}
+                                  Blockchain and AI-enabled talent development &amp; recruitment app
+                                  {% endif %}
+                                </p>
                                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512" x-bind="animate(8)">
                                   <title>Arrow Forward</title>
                                   <path

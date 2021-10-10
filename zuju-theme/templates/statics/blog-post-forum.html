@@ -1,7 +1,7 @@
 <!--
   templateType: blog_post
   isAvailableForNewContent: true
-  label: Zuju Statics - blog post
+  label: Zuju Statics - blog post for Forum
 -->
 {% set is_statics = true %} {% extends '../layouts/base.html' %} {% block body
 %}
@@ -33,13 +33,7 @@
             />
           </div>
           <div class="sm:hidden px-8">
-            <p class="text-white font-bold uppercase mb-4">
-              {% if content.language.languageTag == "zh-cn" %}
-              分享
-              {% else %}
-              Share
-              {% endif %}
-            </p>
+            <p class="text-white font-bold uppercase mb-4">Share</p>
             <div class="flex -mx-4 mb-4">
 							<a
 							target="_blank"
@@ -79,66 +73,17 @@
               {{ content.post_body }}
             </section>
             
-            {% if request_contact.is_logged_in %}
-              <div class="blog-post__comments-listing">
-                <div>
-                  <h3 class="sm:text-2xl lg:text-4xl font-gtcond font-black uppercase mb-4">
-                    {% if content.language.languageTag == "zh-cn" %}
-                    留下评论
-                    {% else %}
-                    Leave a Comment
-                    {% endif %}
-                  </h3>
-                  <strong>
-                    {% if content.language.languageTag == "zh-cn" %}
-                    评论规则
-                    {% else %}
-                    Comment Guidelines
-                    {% endif %}
-                  </strong><br>
-                  <p>
-                    {% if content.language.languageTag == "zh-cn" %}
-                    为了维护友好和谐的评论区环境，请避免使用激烈的、冒犯性的、可能带来误解的语言或者措辞。同时，在评论前，请您仔细阅读并同意遵守我们的<a class="text-zuju-red underline" href="{{ content_by_id(54357381224).absolute_url }}" target="_blank">使用条款</a>。谢谢！
-                    {% else %}
-                    Let's keep comments respectful and avoid language or phrasing that could be misinterpreted as offensive. By commenting, you agree to abide by our <a class="text-zuju-red underline" href="{{ content_by_id(54357381224).absolute_url }}" target="_blank">terms of use</a>. Thank you!
-                    {% endif %}
-                  </p><br>
-                </div>
-                {% if group.allow_comments %} {% blog_comments "blog_comments"
-                  limit=10000 %} {% endif %}
-              </div>
-            {% else %}
+            <div class="blog-post__comments-listing">
               <div>
-                <h3 class="sm:text-2xl lg:text-4xl font-gtcond font-black uppercase mb-4">
-                  {% if content.language.languageTag == "zh-cn" %}
-                  留下评论
-                  {% else %}
-                  Leave a Comment
-                  {% endif %}
-                </h3>
-                <strong>
-                  {% if content.language.languageTag == "zh-cn" %}
-                  评论规则
-                  {% else %}
-                  Comment Guidelines
-                  {% endif %}
-                </strong><br>
+                <h3 class="sm:text-2xl lg:text-4xl font-gtcond font-black uppercase mb-4">Leave a Comment</h3>
+                <strong>Comment Guidelines</strong><br>
                 <p>
-                  {% if content.language.languageTag == "zh-cn" %}
-                  为了维护友好和谐的评论区环境，请避免使用激烈的、冒犯性的、可能带来误解的语言或者措辞。同时，在评论前，请您仔细阅读并同意遵守我们的<a class="text-zuju-red underline" href="{{ content_by_id(54357381224).absolute_url }}" target="_blank">使用条款</a>。谢谢！
-                  {% else %}
                   Let's keep comments respectful and avoid language or phrasing that could be misinterpreted as offensive. By commenting, you agree to abide by our <a class="text-zuju-red underline" href="{{ content_by_id(54357381224).absolute_url }}" target="_blank">terms of use</a>. Thank you!
-                  {% endif %}
                 </p><br>
-                <p>
-                  {% if content.language.languageTag == "zh-cn" %}
-                  请您<a href="/_hcms/mem/login" class="text-zuju-red underline">登录</a>或者<a class="text-zuju-red underline" href="{{ content_by_id(56393738550).absolute_url }}">注册</a>后再使用评论功能。
-                  {% else %}
-                  Please <a href="/_hcms/mem/login" class="text-zuju-red underline">log in</a> or <a class="text-zuju-red underline" href="{{ content_by_id(56393738550).absolute_url }}">sign up</a> to view and post comments.
-                  {% endif %}
-                </p>
               </div>
-            {% endif %}
+              {% if group.allow_comments %} {% blog_comments "blog_comments"
+                  limit=10000 %} {% endif %}
+            </div>
             
           </div>
           <div class="sm:hidden lg:w-1/4 p-8">
