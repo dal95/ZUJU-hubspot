@@ -4,6 +4,9 @@
 -->
 {% import 'zuju-theme/macros/tags.html' as c %}
 
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+
 <!-- Top nav -->
 <div class="nav">
   <nav class="top-nav">
@@ -36,7 +39,7 @@
   <nav class="main-nav">
     <div class="main-nav__container">
       <div class="main-nav__logo clr-primary">
-        {% if content.language.languageTag == "zh-cn" %}
+        {% if currLang == "zh-cn" %}
         {% logo "logo" src="/hubfs/BRAND%20ASSETS/ZujuGP%20Chinese%20Logo_Red%20Horizontal.png" link="/zh-cn/" no_wrapper=True %}
         {% else %}
         {% logo "logo" link="/" no_wrapper=True %}
@@ -45,7 +48,7 @@
 
       <div class="main-nav__omega">
         
-        {% if content.language.languageTag == "zh-cn" %}
+        {% if currLang == "zh-cn" %}
         {% menu "main-nav" id=57071986309 %}
         {% else %}
         {% menu "main-nav" id=54357477653 %}
@@ -54,7 +57,7 @@
         {% if request_contact.is_logged_in %}
           <div class="has-dropdown">
             <a href="/members-portal" class="nav__link account-link">
-              {% if content.language.languageTag == "zh-cn" %}
+              {% if currLang == "zh-cn" %}
               账户
               {% else %}
               Account
@@ -65,7 +68,7 @@
             </a>
             <div class="dropdown">
               <div>
-                {% if content.language.languageTag == "zh-cn" %}
+                {% if currLang == "zh-cn" %}
                 你好，{{ contact.firstname }}
                 {% else %}
                 Hi, {{ contact.firstname }}
@@ -73,7 +76,7 @@
               </div>
               
               <a href="/profile">
-                {% if content.language.languageTag == "zh-cn" %}
+                {% if currLang == "zh-cn" %}
                 编辑个人资料
                 {% else %}
                 Edit profile
@@ -81,7 +84,7 @@
               </a>
               
               <a href="/membership">
-                {% if content.language.languageTag == "zh-cn" %}
+                {% if currLang == "zh-cn" %}
                 会员
                 {% else %}
                 Membership
@@ -89,7 +92,7 @@
               </a>
               
               <a href="/_hcms/mem/logout">
-                {% if content.language.languageTag == "zh-cn" %}
+                {% if currLang == "zh-cn" %}
                 退出登录
                 {% else %}
                 Logout
@@ -99,7 +102,7 @@
           </div>
         {% else %}
           <a class="nav__link" href="/_hcms/mem/login">
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             登录
             {% else %}
             Login

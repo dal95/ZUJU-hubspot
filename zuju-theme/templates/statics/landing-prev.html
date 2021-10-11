@@ -227,7 +227,7 @@
         x-bind:style="{ height: share ? $px($refs.icons.clientHeight) : null }"
       >
         <div class="absolute top-0 inset-x-0 h-[42px] flex items-center justify-center transition duration-300 group-hover:opacity-0 pointer-events-none">
-          <img class="w-[18px]" src="/hubfs/statics/assets/floater-share-icon.png" />
+          <img class="w-[18px]" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/floater-share-icon.png" />
         </div>
         <div
           class="
@@ -247,19 +247,19 @@
             x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'tw_share' })"
             x-bind:href="`https://twitter.com/intent/tweet?url=${encodeURIComponent(location.href)}`"
           >
-            <img class="w-[18px] my-2" src="/hubfs/statics/assets/floater-twitter.png" />
+            <img class="w-[18px] my-2" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/floater-twitter.png" />
           </a>
           <a
             target="_blank"
             x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' })"
             x-bind:href="`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`"
           >
-            <img class="w-[18px] my-2" src="/hubfs/statics/assets/floater-facebook.png" />
+            <img class="w-[18px] my-2" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/floater-facebook.png" />
           </a>
         </div>
       </div>
     </div>
-    <img class="absolute top-0 inset-x-0 z-10 m-4 mx-auto h-12 pointer-events-none" src="/hubfs/statics/assets/landing-logo.png" />
+    <img class="absolute top-0 inset-x-0 z-10 m-4 mx-auto h-12 pointer-events-none" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/landing-logo.png" />
     <section>
       <div
         class="relative h-screen w-full overflow-hidden cursor-pointer"
@@ -272,7 +272,7 @@
           x-cloak=""
           x-show="!init"
           class="absolute z-20 transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          src="/hubfs/statics/assets/play-button.png"
+          src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png"
         />
         <div
           x-cloak=""
@@ -281,16 +281,16 @@
           class="touch:hidden sm:hidden absolute z-20 origin-center transition-all duration-200 ease-out pointer-events-none"
           x-bind:style="{ hidden: !init, top: $px(y - top - ($height / 2)), left: $px(x - ($width / 2)) }"
         >
-          <img src="/hubfs/statics/assets/play-button.png" />
+          <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" />
         </div>
         <video muted="" autoplay="" loop="" class="sm:hidden h-full w-full object-cover object-center opacity-70" x-on:click="playing = true">
-          <source src="/hubfs/statics/trailer.mp4" type="video/mp4" />
+          <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" type="video/mp4" />
         </video>
         <div class="hidden sm:block touch:block absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-          <img class="sm:h-20 sm:0w-20" src="/hubfs/statics/assets/play-button.png" />
+          <img class="sm:h-20 sm:0w-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" />
         </div>
         <video muted="" class="lg:hidden h-full w-full object-cover object-center" x-on:click="playing = true">
-          <source src="/hubfs/statics/trailer.mp4" type="video/mp4" />
+          <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" type="video/mp4" />
         </video>
         <div
           x-cloak=""
@@ -304,7 +304,7 @@
             <div class="relative">
               <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
               <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
-                <source src="/hubfs/statics/trailer.mp4" />
+                <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" />
               </video>
             </div>
           </div>
@@ -322,7 +322,7 @@
           </p>
         </div>
         <div class="sm:row-start-1 lg:col-span-5 sm:-mt-8 sm:-mx-8" x-data="parallax()" x-bind="root">
-          <img class="transform lg:translate-y-24" src="/hubfs/statics/assets/cr7.png" x-bind="animate(24, 96)" />
+          <img class="transform lg:translate-y-24" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/cr7.png" x-bind="animate(24, 96)" />
         </div>
       </div>
     </section>
@@ -342,14 +342,14 @@
       <div
         class="w-full max-w-[1920px] bg-fixed bg-no-repeat bg-center bg-cover mx-auto"
         style="
-          background-image: url(/hubfs/statics/assets/network.png),
+          background-image: url(https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/network.png),
             radial-gradient(circle closest-side at center, #574969, #1d1d1b 120%);
         "
       >
         <div class="w-full max-w-[1440px] sm:flex sm:flex-col lg:grid lg:grid-cols-12 auto-rows-auto pt-0 p-8 mx-auto">
           <div class="lg:row-start-1 lg:col-start-9 lg:col-span-3 pt-24" x-data="parallax()" x-bind="root">
             <span></span>
-            <img class="object-center object-contain sm:mx-auto" src="/hubfs/statics/assets/nft.png" x-bind="animate(24)" />
+            <img class="object-center object-contain sm:mx-auto" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/nft.png" x-bind="animate(24)" />
           </div>
           <div class="lg:row-span-1 lg:col-start-2 lg:col-span-7 pt-24 mb-16" x-bind="$floaterAnchor(3)">
             <div x-data="parallax()" x-bind="root">
@@ -405,7 +405,7 @@
             x-bind="$floaterAnchor(4, { disableScroll: true })"
           >
             <div class="sm:w-full lg:w-1/2 flex flex-col lg:px-8 sm:mb-16" x-data="parallax()" x-bind="root">
-              <img class="lg:w-4/5 self-end z-10" src="/hubfs/statics/assets/unlock-1.png" x-bind="animate(20)" />
+              <img class="lg:w-4/5 self-end z-10" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/unlock-1.png" x-bind="animate(20)" />
               <h1 class="text-white text-2xl font-bold mb-4">LUCKY Draw</h1>
               <p class="lg:w-4/5 text-white">
                 You will be automatically entered into a raffle where 18 insanely lucky winners will get invited to a virtual meet-and-greet with our
@@ -414,40 +414,40 @@
               </p>
             </div>
             <div class="sm:w-full lg:w-1/2 flex flex-col lg:items-end lg:pt-32 lg:px-8 sm:mb-16" x-data="parallax()" x-bind="root">
-              <img class="lg:w-4/5 z-10" src="/hubfs/statics/assets/unlock-2.png" x-bind="animate(16)" />
+              <img class="lg:w-4/5 z-10" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/unlock-2.png" x-bind="animate(16)" />
               <h1 class="lg:w-4/5 text-white text-2xl font-bold mb-8">Collectors-only Premium&nbsp;Experience</h1>
               <p class="lg:w-4/5 text-white mb-4">You can join the global ZujuGP community and be part of our future development to:</p>
               <ul class="lg:w-4/5 text-white">
                 <li class="flex mb-4">
-                  <img class="h-5 w-5 pointer-events-none mr-4" src="/hubfs/statics/assets/bullet.png" />
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bullet.png" />
                   <p>Unlock exclusive drops</p>
                 </li>
                 <li class="flex mb-4">
-                  <img class="h-5 w-5 pointer-events-none mr-4" src="/hubfs/statics/assets/bullet.png" />
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bullet.png" />
                   <p>Interact with CR (plus other football greats) on select channels and send him lucky&nbsp;wishes</p>
                 </li>
                 <li class="flex mb-4">
-                  <img class="h-5 w-5 pointer-events-none mr-4" src="/hubfs/statics/assets/bullet.png" />
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bullet.png" />
                   <p>Participate in lucky draws to win money-can't-buy prizes and&nbsp;more</p>
                 </li>
                 <li class="flex mb-4">
-                  <img class="h-5 w-5 pointer-events-none mr-4" src="/hubfs/statics/assets/bullet.png" />
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bullet.png" />
                   <p>Access premium digital content such as private chats, media drops and&nbsp;other&nbsp;specials</p>
                 </li>
                 <li class="flex mb-4">
-                  <img class="h-5 w-5 pointer-events-none mr-4" src="/hubfs/statics/assets/bullet.png" />
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bullet.png" />
                   <p>Invitations to virtual meet-and-greets with&nbsp;more&nbsp;legends</p>
                 </li>
                 <li class="flex mb-4">
-                  <img class="h-5 w-5 pointer-events-none mr-4" src="/hubfs/statics/assets/bullet.png" />
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bullet.png" />
                   <p>Enjoy extraordinary discounts on merchandise and&nbsp;promotions</p>
                 </li>
                 <li class="flex mb-4">
-                  <img class="h-5 w-5 pointer-events-none mr-4" src="/hubfs/statics/assets/bullet.png" />
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bullet.png" />
                   <p>Unlock redemption of physical goods</p>
                 </li>
                 <li class="flex mb-4">
-                  <img class="h-5 w-5 pointer-events-none mr-4" src="/hubfs/statics/assets/bullet.png" />
+                  <img class="h-5 w-5 pointer-events-none mr-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bullet.png" />
                   <p>Be invited to ZujuGP collectors-only Discord&nbsp;channel</p>
                 </li>
               </ul>
@@ -478,11 +478,11 @@
     <section class="bg-[#1d1d1b]">
       <div
         class="w-full max-w-[1920px] bg-no-repeat bg-center bg-cover mx-auto"
-        style="background-image: url(/hubfs/statics/assets/auction-bg.png)"
+        style="background-image: url(https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/auction-bg.png)"
       >
         <div class="w-full max-w-[1440px] mx-auto flex justify-center p-8" x-data="parallax()" x-bind="root">
           <div class="w-1/4 flex items-center justify-center">
-            <img class="lg:h-80" src="/hubfs/statics/assets/tribute.png" x-bind="animate(8)" />
+            <img class="lg:h-80" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/tribute.png" x-bind="animate(8)" />
           </div>
           <div class="w-1/2 flex flex-col items-start justify-center" x-bind="animate(4)">
             <h1 class="text-white sm:text-2xl lg:text-4xl font-gtcond font-black mb-4">Looking for more?</h1>
@@ -506,7 +506,7 @@
       
       <div class="max-w-[1920px] flex sm:flex-col mx-auto">
         <article class="relative lg:w-1/3">
-          <img class="w-full" src="/hubfs/statics/assets/land-1.png" />
+          <img class="w-full" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/land-1.png" />
           <div class="absolute inset-0 flex flex-col items-center justify-center">
             <h1 class="w-4/5 max-w-[calc(1920px/3/3*2)] text-white sm:text-lg lg:text-2xl font-bold text-center mb-8">
               Bring home our unique&nbsp;merchandises
@@ -519,7 +519,7 @@
           </div>
         </article>
         <article class="relative lg:w-1/3">
-          <img class="w-full" src="/hubfs/statics/assets/land-2.png" />
+          <img class="w-full" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/land-2.png" />
           <div class="absolute inset-0 flex flex-col items-center justify-center">
             <h1 class="w-4/5 max-w-[calc(1920px/3/3*2)] text-white sm:text-lg lg:text-2xl font-bold text-center mb-8">
               Get rewarded with loyalty points with our daily task&nbsp;challenges
@@ -532,7 +532,7 @@
           </div>
         </article>
         <article class="relative lg:w-1/3">
-          <img class="w-full" src="/hubfs/statics/assets/land-3.png" />
+          <img class="w-full" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/land-3.png" />
           <div class="absolute inset-0 flex flex-col items-center justify-center">
             <h1 class="w-4/5 max-w-[calc(1920px/3/3*2)]/3 text-white sm:text-lg lg:text-2xl font-bold text-center mb-8">
               Never miss and get your latest sports&nbsp;updates
@@ -558,7 +558,7 @@
       >
         <g stroke="none" stroke-width="1" fill="#FFFFFF" fill-rule="evenodd"><polygon points="30 0 60 20 0 20"></polygon></g>
       </svg>
-      <img class="lg:h-9 sm:w-full object-contain" src="/hubfs/statics/assets/hashtag.png" />
+      <img class="lg:h-9 sm:w-full object-contain" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/hashtag.png" />
       <p class="text-zuju-gray-6 text-sm sm:mt-4 lg:mt-8">© 2021 Mint Media Sports Limited</p>
     </section>
   </main>

@@ -2,6 +2,10 @@
   templateType: global_partial
   label: Footer
 -->
+
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+
 <section class="callout-section">
   <img
        src="{{ get_asset_url('../../images/assets/triangle.png') }}"
@@ -17,27 +21,27 @@
     <div class="footer__cta">
       <div class="footer__cta-alpha">
         <h3 class="all-caps">
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           保持更新
           {% else %}
           Stay in the know
           {% endif %}
         </h3>
         <p>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           获取第一手足球消息和相关内幕
           {% else %}
           Keep updated with news and rewards with us.
           {% endif %}
         </p>
         <form action="">
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           <input type="email" name="" id="" placeholder="您的电子邮件地址" />
           {% else %}
           <input type="email" name="" id="" placeholder="Your email address" />
           {% endif %}
           
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           <input type="submit" class="button button-o-primary" value="  订阅  " />
           {% else %}
           <input type="submit" class="button button-o-primary" value="Subscribe" />
@@ -46,21 +50,21 @@
       </div>
       <div class="footer__cta-omega">
         <h3 class="all-caps">
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           开启合作
           {% else %}
           Work with Us
           {% endif %}
         </h3>
         <p>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           诚邀有识之士与我们一起将足球推向数字化的未来
           {% else %}
           We welcome visionaries who share our desire to advance football’s transition to a digital future.
           {% endif %}
         </p>
         <button class="button button--primary">
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           联系我们
           {% else %}
           Let's talk
@@ -71,7 +75,7 @@
     <div class="footer__nav">
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           公司
           {% else %}
           Company
@@ -79,7 +83,7 @@
         </h4>
         <ul>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/about-us">关于我们</a>
             {% else %}
             <a href="/about-us">About</a>
@@ -91,7 +95,7 @@
       </div>
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           文章
           {% else %}
           Articles
@@ -99,49 +103,49 @@
         </h4>
         <ul>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest">所有</a>
             {% else %}
             <a href="/latest">All</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/观点">观点</a>
             {% else %}
             <a href="/latest/tag/opinion">Opinion</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/当地">当地</a>
             {% else %}
             <a href="/latest/tag/local-eye">Local Eye</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/周边">周边</a>
             {% else %}
             <a href="/latest/tag/offside">Offside</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/画廊">画廊</a>
             {% else %}
             <a href="/latest/tag/gallery">Gallery</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/图腾">图腾</a>
             {% else %}
             <a href="/latest/tag/icon">Icon</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/榜单">榜单</a>
             {% else %}
             <a href="/latest/tag/line-up">Line Up</a>
@@ -151,7 +155,7 @@
       </div>
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           更多模块
           {% else %}
           Portfolio
@@ -159,21 +163,21 @@
         </h4>
         <ul>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/portfolio/zujugameplay">蹴蹴游戏空间</a>
             {% else %}
             <a href="/portfolio/zujugameplay">ZujuGamePlay</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/portfolio/zujugp-exchange">蹴蹴交换空间</a>
             {% else %}
             <a href="/portfolio/zujugp-exchange">ZujuGP Exchange</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/portfolio/zujugp-rank">蹴蹴探索空间</a>
             {% else %}
             <a href="/portfolio/zujugp-rank">ZujuGP Rank</a>
@@ -183,7 +187,7 @@
       </div>
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           法律
           {% else %}
           Legal
@@ -191,14 +195,14 @@
         </h4>
         <ul>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/privacy-policy">隐私政策</a>
             {% else %}
             <a href="/privacy-policy">Privacy Policy</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/privacy-policy">使用条款</a>
             {% else %}
             <a href="/terms-of-use">Terms of use</a>
@@ -209,7 +213,7 @@
 
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           联系我们
           {% else %}
           Connect with us
