@@ -97,9 +97,15 @@ select.hs-input {
     }
   }
 
-  .hs-error-msg {
+  .hs-error-msg,
+  .custom-validation {
     display: block;
     color: #e58c8c;
+    font-size: 12px;
+  }
+
+  .custom-validation.success {
+    color: var(--clr-green-400)
   }
 }
 
@@ -260,7 +266,7 @@ section.edit {
     margin-bottom: 1rem;
   }
 
-  label {
+  label[for] {
     color: #fff;
   }
 
@@ -280,4 +286,13 @@ section.edit {
       text-align: center;
     }
   }
+}
+
+.hs-login-widget-show-password {
+  font-size: rem(12);
+  float: right;
+}
+
+#hs_login_reset {
+  // font-family: var(--ff-accent);
 }

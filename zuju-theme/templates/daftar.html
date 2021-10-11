@@ -1,7 +1,7 @@
 <!--
   templateType: page
   isAvailableForNewContent: true
-  label: Members Register
+  label: Daftar
 -->
 {% extends "./layouts/base-standard.html" %}
 {% block body %}
@@ -10,10 +10,10 @@
       <div class="container">
         <div class="auth__push-right form-dark">
           <h2 class="auth__heading">New Account Sign Up</h2>
-          {% form 'my_form'
-            form_key='register',
-            form_to_use='2a6a57d9-9360-489a-aabe-a6d5bc87d744',
-          %}
+
+
+          <div class="form-embed-container">
+          </div>
         </div>
       </div>
     </div>
@@ -24,6 +24,9 @@
     var referral_code = "{{ referral_code }}";
     var portal_id = "{{ portal_id }}";
   </script>
+  <!--[if lte IE 8]>
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
+  <![endif]-->
+  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
+  {{ require_js(get_asset_url('zuju-theme/js/pages/register.js'), 'footer')}}
 {% endblock body %}
-
-{{ require_js(get_asset_url('zuju-theme/js/pages/register.js'), 'footer')}}

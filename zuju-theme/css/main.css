@@ -818,7 +818,6 @@ h4 {
 @media (min-width: 800px) {
   .kungfu-dash-in {
     display: flex;
-    display: none;
   }
 }
 .kungfu-dash-in__cta {
@@ -1797,9 +1796,14 @@ select.hs-input {
   width: unset;
   height: unset;
 }
-.field .hs-error-msg {
+.field .hs-error-msg,
+.field .custom-validation {
   display: block;
   color: #e58c8c;
+  font-size: 12px;
+}
+.field .custom-validation.success {
+  color: var(--clr-green-400);
 }
 
 .inputs-list {
@@ -1941,7 +1945,7 @@ section.edit .form-columns-0:not(:first-of-type) {
   height: 40px !important;
   margin-bottom: 1rem;
 }
-.form-dark.form-dark label {
+.form-dark.form-dark label[for] {
   color: #fff;
 }
 .form-dark.form-dark .hs-richtext * {
@@ -1959,6 +1963,11 @@ section.edit .form-columns-0:not(:first-of-type) {
   .form-dark.form-dark .actions {
     text-align: center;
   }
+}
+
+.hs-login-widget-show-password {
+  font-size: 0.75rem;
+  float: right;
 }
 
 .button, .hs-button {
