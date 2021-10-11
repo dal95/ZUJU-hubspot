@@ -2507,8 +2507,8 @@ body.overflow-hidden {
   .app .lg\:col-start-4 {
     grid-column-start: 4;
   }
-  .app .lg\:col-end-11 {
-    grid-column-end: 11;
+  .app .lg\:col-end-9 {
+    grid-column-end: 9;
   }
   .app .lg\:row-span-2 {
     grid-row: span 2 / span 2;
@@ -2653,6 +2653,9 @@ body.overflow-hidden {
   }
   .app .lg\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .app .lg\:grid-cols-8 {
+    grid-template-columns: repeat(8, minmax(0, 1fr));
   }
   .app .lg\:grid-rows-2 {
     grid-template-rows: repeat(2, minmax(0, 1fr));

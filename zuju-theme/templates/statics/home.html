@@ -328,17 +328,17 @@
 
     {% else %}
     <section class="w-full bg-gradient-cr p-8">
-      <div class="max-w-[1440px] mx-auto" x-data="{ show: (window.innerHeight - $top) > 1 }" x-on:scroll.window="show = ((window.innerHeight - $top) > 1)">
+      <div class="max-w-[1000px] mx-auto" x-data="{ show: (window.innerHeight - $top) > 1 }" x-on:scroll.window="show = ((window.innerHeight - $top) > 1)">
         <div
-             class="grid sm:grid-cols-1 sm:grid-rows-[repeat(auto,2)] sm:gap-y-8 lg:grid-cols-12 transition duration-0 lg:transform translate-y-8 opacity-0"
+             class="grid sm:grid-cols-1 sm:grid-rows-[repeat(auto,2)] sm:gap-y-8 lg:grid-cols-8 transition duration-0 lg:transform translate-y-8 opacity-0"
              x-bind:class="show &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
              >
-          <section class="lg:col-end-11 lg:col-span-3 lg:row-start-1" x-data="parallax()" x-bind="root">
+          <section class="lg:col-end-9 lg:col-span-3 lg:row-start-1" x-data="parallax()" x-bind="root">
             <div class="lg:aspect-w-1 lg:aspect-h-1" x-bind="animate(8)">
               <div><img class="sm:max-w-md h-full w-full object-contain sm:mx-auto" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/nft.png" /></div>
             </div>
           </section>
-          <section class="lg:col-start-3 lg:col-span-7 lg:row-start-1 z-10" x-data="parallax()" x-bind="root">
+          <section class="lg:col-start-1 lg:col-span-7 lg:row-start-1 z-10" x-data="parallax()" x-bind="root">
             <div class="h-full flex flex-col sm:items-center lg:items-start justify-center" x-bind="animate(16)">
               <h1 class="text-2xl text-zuju-red font-bold sm:text-center uppercase mb-4">
                 LUMINA - Own your place in history.
