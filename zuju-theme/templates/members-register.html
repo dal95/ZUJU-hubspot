@@ -9,7 +9,13 @@
     <div class="auth-wrapper auth" style="background-image: url({{ get_asset_url('../images/assets/bg/register.png') }})">
       <div class="container">
         <div class="auth__push-right form-dark">
-          <h2 class="auth__heading">New Account Sign Up</h2>
+          <h2 class="auth__heading">
+            {% if content.language.languageTag == "zh-cn" %}
+            (cn) New Account Sign Up
+            {% else %}
+            New Account Sign Up
+            {% endif %}
+          </h2>
           {% form 'my_form'
             form_key='register',
             form_to_use='2a6a57d9-9360-489a-aabe-a6d5bc87d744',
