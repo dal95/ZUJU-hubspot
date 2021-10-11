@@ -23,9 +23,9 @@
    <script>
     window.addEventListener('message', event => {
       if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-          const $referralInput = $('input[name="referral_code"]')
+        const $referralInput = $('input[name="referral_code"]')
 
-          setTimeout(() => $referralInput[0].value = "{{ referral_code }}", 500)
+        $referralInput.val("{{ referral_code }}").trigger('change')
       }
     });
   </script>
