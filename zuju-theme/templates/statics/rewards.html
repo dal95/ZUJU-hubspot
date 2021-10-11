@@ -7,12 +7,12 @@
 {% set is_statics = true %} {% extends '../layouts/base.html' %} {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
-    <section class="relative max-w-[1440px] min-h-screen flex bg-zuju-gray-db mx-auto overflow-hidden">
+    <section class="relative max-w-[1440px] min-h-screen flex bg-zuju-gray-db mx-auto overflow-hidden" x-data="parallax()" x-bind="root">
       <div class="absolute inset-0 sm:-mx-16">
         <img class="h-full w-full sm:object-contain sm:object-top lg:object-cover lg:object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-masthead.png" />
       </div>
       <div class="relative flex-grow flex flex-col items-center sm:justify-center lg:justify-between p-8 lg:pt-32 lg:pb-16">
-        <h1 class="lg:w-1/2 sm:w-full sm:max-w-sm text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16">
+        <h1 class="lg:w-1/2 sm:w-full sm:max-w-sm text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(16)">
           {% if content.language.languageTag == "zh-cn" %}
             赚取积分并兑换奖励
             {% else %}
@@ -20,20 +20,22 @@
             {% endif %}
         </h1>
         <div class="lg:w-1/2 sm:w-full sm:max-w-md lg:self-start">
-          <h2 class="text-white text-4xl font-gtcond font-black mb-8">
+          <h2 class="text-white text-4xl font-gtcond font-black mb-8" x-bind="animate(8)">
             {% if content.language.languageTag == "zh-cn" %}
             赚取忠诚积分
             {% else %}
-            Earn Loyalty Points
+            Earn Loyalty Z Points
             {% endif %}
           </h2>
-          <p class="text-white mb-8">
+          <p class="text-white mb-8" x-bind="animate(4)">
             {% if content.language.languageTag == "zh-cn" %}
             订阅蹴蹴，通过获得积分而兑换购物或者赢取其他奖励！您有机会得到蹴蹴终极会员的头衔。每时每刻，您都可能享受到绝妙的时机兑换专属奖品。请开启注册或者选择登录您的已有账号，参与到蹴蹴生态系统中积累更多的积分吧！
             {% else %}
-            Subscribe to ZujuGP and be rewarded for shopping and spending time with us! You might even earn the vaunted title of the ZujuGP Ultimate Fan! At every
-            turn, you will enjoy the most fabulous opportunities to redeem exclusive prizes and wicked experiences. Simply sign up on our site or log in, if you
-            are already registered. Every activity on our ecosystem is designed to help you accumulate points!
+              Be rewarded for shopping and spending time with us! 
+              You might even earn the vaunted title of the ZujuGP Ultimate Fan! 
+              Earn Z Points to redeem exclusive prizes and wicked experiences. 
+              Simply sign up or log in, if you are already registered. 
+              Every activity on our ecosystem is designed to help you accumulate points!
             {% endif %}
           </p>
           <div class="flex flex-wrap justify-start -mx-4">
@@ -59,11 +61,13 @@
         </div>
       </div>
     </section>
-    <section class="bg-white">
+    <section class="bg-white" x-data="parallax()" x-bind="root">
       <div class="max-w-[1440px] lg:flex justify-center p-8 lg:pb-16 mx-auto">
-        <div class="lg:w-1/2 flex items-center sm:py-8 lg:px-8 lg:py-16"><img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/fan-level.png" /></div>
+        <div class="lg:w-1/2 flex items-center sm:py-8 lg:px-8 lg:py-16" x-bind="animate(16)">
+          <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/fan-level.png" />
+        </div>
         <div class="lg:w-1/3 flex flex-col items-start justify-center">
-          <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black mb-8">
+          <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black mb-8" x-bind="animate(4)">
             {% if content.language.languageTag == "zh-cn" %}
             奖励兑换
             {% else %}
@@ -82,44 +86,38 @@
             {% if content.language.languageTag == "zh-cn" %}
             超级会员和终极会员可以解锁一些特级奖励。交易后未花费的积分将结转至您的下一次兑换。蹴蹴积分不会过期，但需要是在过去90天内收到的积分才能享受相关优惠。
             {% else %}
-            Supers and Ultimates will unlock privilege rewards. Points not spent following transactions will be carried over to your next redemption. ZujuGPoints
-            DO NOT expire but you will need to be in receipt of points in the last 90 days to enjoy benefits.
+            Supers and Ultimates will unlock privilege rewards. Z Points not spent following transactions will be carried over to your next redemption.
+            Z Points DO NOT expire but you will need to be in receipt of points in the last 90 days to enjoy benefits.
             {% endif %}
           </p>
         </div>
       </div>
     </section>
-    <section class="bg-gradient-to-b from-white to-zuju-gray-db">
+    <section class="bg-zuju-gray-db">
       <div class="max-w-[1440px] flex flex-col items-center p-8 mx-auto">
-        <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black text-center sm:mb-8 lg:mb-16">
-          {% if content.language.languageTag == "zh-cn" %}
-          (cn) Member Tiers
-          {% else %}
-          Member Tiers
-          {% endif %}
-        </h1>
-        <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/tiers.png" />
+        <img class="lg:mt-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/tiers.png" />
       </div>
     </section>
-    <div class="bg-zuju-gray-db sm:h-8 lg:h-36"></div>
     <section class="bg-zuju-gray-db">
       <div
         class="max-w-[1440px] flex flex-col items-center bg-top bg-no-repeat p-8 pb-16 mx-auto"
         style="background-image: url(https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/kungfu.png)"
       >
-        <img class="mt-[480px] mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/kungfu-logo.png" />
-        <h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-16">How To Earn Zuju Points!</h1>
+        <div class="flex flex-col items-center" x-data="parallax()" x-bind="root">
+          <img class="mt-[480px] mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/kungfu-logo.png" x-bind="animate(16)" />
+          <h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-16" x-bind="animate(16)">Be a super earner!</h1>
+        </div>
         <div class="w-full flex flex-wrap justify-center">
           <div class="sm:contents sm:w-full lg:w-5/12 lg:px-8 lg:pb-16">
-            <section class="sm:order-1 mb-24">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8">
+            <section class="sm:order-1 mb-24" x-data="parallax()" x-bind="root">
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">
                 {% if content.language.languageTag == "zh-cn" %}
                 功夫快跳游戏
                 {% else %}
                 Kung Fu Dash Game
                 {% endif %}
               </h2>
-              <div class="grid grid-cols-[0.5rem,1.5rem,auto] lg:grid-cols-[2rem,2rem,auto] grid-rows-[repeat(8,minmax(0,1fr))] mb-4">
+              <div class="grid grid-cols-[0.5rem,1.5rem,auto] lg:grid-cols-[2rem,2rem,auto] grid-rows-[repeat(8,minmax(0,1fr))] mb-4"  x-bind="animate(8)">
                 <div class="row-start-1 row-span-2 col-span-3 py-2">
                   <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
                     <div class="flex items-center text-white text-sm font-bold uppercase pr-6">Every Dollar Spent</div>
@@ -159,9 +157,9 @@
                 <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">Play Kungfu Dash</button>
               </a>
             </section>
-            <section class="sm:order-3 mb-24">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8">CR7 ( Cross Ref 7 )</h2>
-              <div class="mb-4">
+            <section class="sm:order-3 mb-24" x-data="parallax()" x-bind="root">
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">CR7 ( Cross Ref 7 )</h2>
+              <div class="mb-4" x-bind="animate(8)">
                 <div class="py-2">
                   <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
@@ -189,15 +187,15 @@
             </section>
           </div>
           <div class="sm:contents sm:w-full lg:w-5/12 lg:px-8 lg:pb-16">
-            <section class="sm:order-2 mb-24">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8">
+            <section class="sm:order-2 mb-24" x-data="parallax()" x-bind="root">
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">
                 {% if content.language.languageTag == "zh-cn" %}
                 每日寻宝
                 {% else %}
                 Daily Treasure Hunt
                 {% endif %}
               </h2>
-              <div class="mb-4">
+              <div class="mb-8" x-bind="animate(8)">
                 <div class="py-2">
                   <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
@@ -240,12 +238,12 @@
               </p>
               <p class="text-white mb-8">
                 Read our Terms and Conditions
-                <a href="#" class="text-zuju-red underline">here.</a>
+                <a href="/daily-treasure-hunt-terms-and-conditions" target="_blank" class="text-zuju-red underline">here.</a>
               </p>
             </section>
-            <section class="sm:order-4 mb-24">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8">Share ZujuGP</h2>
-              <div class="mb-4">
+            <section class="sm:order-4 mb-24" x-data="parallax()" x-bind="root">
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">Share ZujuGP</h2>
+              <div class="mb-8" x-bind="animate(8)">
                 <div class="py-2">
                   <div class="flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
@@ -263,12 +261,12 @@
               <img class="mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/socmed.png" />
             </section>
           </div>
-          <div class="sm:order-last sm:w-full lg:w-5/6 lg:px-8">
+          <div class="sm:order-last sm:w-full lg:w-5/6 lg:px-8" x-data="parallax()" x-bind="root">
             <section class="mb-24">
-              <h2 class="text-white text-4xl font-gtcond font-black text-center sm:mb-16 lg:mb-24">More Ways To Earn Zuju Points</h2>
+              <h2 class="text-white text-4xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(8)">More Ways To Earn Zuju Points</h2>
               <div class="sm:hidden flex lg:-mx-2">
                 <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
-                  <div class="h-16 w-16 flex items-center mb-16">
+                  <div class="h-16 w-16 flex items-center mb-24" x-bind="animate(16)">
                     <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rebate.png" />
                   </div>
                   <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Rebate</h2>
@@ -279,7 +277,7 @@
                   <div class="w-full text-white font-bold sm:text-center uppercase">2 Points Per Dollar</div>
                 </div>
                 <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
-                  <div class="h-16 w-16 flex items-center mb-16">
+                  <div class="h-16 w-16 flex items-center mb-24" x-bind="animate(16)">
                     <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/welcome.png" />
                   </div>
                   <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Welcome Gift</h2>
@@ -289,7 +287,7 @@
                   <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
                 </div>
                 <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
-                  <div class="h-16 w-16 flex items-center mb-16">
+                  <div class="h-16 w-16 flex items-center mb-24" x-bind="animate(16)">
                     <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bday.png" />
                   </div>
                   <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Birthday Gift</h2>
@@ -300,7 +298,7 @@
                   <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
                 </div>
                 <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
-                  <div class="h-16 w-16 flex items-center mb-16">
+                  <div class="h-16 w-16 flex items-center mb-24" x-bind="animate(16)">
                     <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/comment.png" />
                   </div>
                   <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Leave A Comment</h2>
