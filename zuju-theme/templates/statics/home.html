@@ -17,7 +17,7 @@
         <article class="relative flex items-end lg:col-span-2 lg:row-span-2">
           <a href="/about-us">
             <div class="absolute inset-0 bg-black">
-              <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-1.png" />
+              <img class="opacity-50 h-full w-full object-cover" src="/hubfs/statics/assets/home-verse.jpg" />
             </div>
             <div class="relative w-full p-4">
               <h1 class="lg:text-6xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
@@ -51,7 +51,7 @@
         <article class="relative flex items-end h-full lg:col-span-2">
           <a href="https://shop.zujugp.com">
             <div class="absolute inset-0 bg-black">
-              <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-4.png" />
+              <img class="opacity-50 h-full w-full object-cover" src="/hubfs/statics/assets/home-shop.jpg" />
             </div>
             <div class="relative w-full p-4">
               <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
@@ -85,7 +85,7 @@
         <article class="relative flex items-end">
           <a href="{{ content_by_id(56334347298).absolute_url }}">
             <div class="absolute inset-0 bg-black">
-              <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-2.png" />
+              <img class="opacity-50 h-full w-full object-cover" src="/hubfs/statics/assets/home-2.png" />
             </div>
             <div class="relative w-full p-4">
               <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
@@ -119,7 +119,7 @@
         <article class="relative flex items-end">
           <a href="/kungfu-dash">
             <div class="absolute inset-0 bg-black">
-              <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-3.png" />
+              <img class="opacity-50 h-full w-full object-cover" src="/hubfs/statics/assets/home-3.png" />
             </div>
             <div class="relative w-full p-4">
               <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
@@ -133,7 +133,7 @@
                 {% if content.language.languageTag == "zh-cn" %}
                   开始游戏，可以赢得和C罗Zoom视频见面的机会
                 {% else %}
-                  Play to win a chance to meet Cristiano Ronaldo on ZOOM
+                Play to win a chance to meet Cristiano Ronaldo online
                 {% endif %}
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
                   <title>Arrow Forward</title>
@@ -158,7 +158,7 @@
           <article class="relative flex items-end h-full lg:col-span-2 lg:row-span-2">
             <a href="/about-us">
               <div class="absolute inset-0 bg-black">
-                <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-1.png" />
+                <img class="opacity-50 h-full w-full object-cover" src="/hubfs/statics/assets/home-verse.jpg" />
               </div>
               <div class="relative w-full p-4">
                 <h1 class="lg:text-6xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
@@ -200,7 +200,7 @@
                   <article class="relative flex items-end h-full">
                     <a href="https://shop.zujugp.com">
                       <div class="absolute inset-0 bg-black">
-                        <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-4.png" />
+                        <img class="opacity-50 h-full w-full object-cover" src="/hubfs/statics/assets/home-shop.jpg" />
                       </div>
                       <div class="relative w-full p-4">
                         <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
@@ -240,7 +240,7 @@
                   <article class="relative flex items-end h-full">
                     <a href="{{ content_by_id(56334347298).absolute_url }}">
                       <div class="absolute inset-0 bg-black">
-                        <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-2.png" />
+                        <img class="opacity-50 h-full w-full object-cover" src="/hubfs/statics/assets/home-2.png" />
                       </div>
                       <div class="relative w-full p-4">
                         <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
@@ -280,7 +280,7 @@
                   <article class="relative flex items-end h-full">
                     <a href="/kungfu-dash">
                       <div class="absolute inset-0 bg-black">
-                        <img class="opacity-50 h-full w-full object-cover" src="https://dev.zujugp.com/hubfs/statics/assets/home-3.png" />
+                        <img class="opacity-50 h-full w-full object-cover" src="/hubfs/statics/assets/home-3.png" />
                       </div>
                       <div class="relative w-full p-4">
                         <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
@@ -323,12 +323,16 @@
         </div>
       </div>
     </section>
+    
+    {% if content.language.languageTag == "zh-cn" %}
+
+    {% else %}
     <section class="w-full bg-gradient-cr p-8">
       <div class="max-w-[1440px] mx-auto" x-data="{ show: (window.innerHeight - $top) > 1 }" x-on:scroll.window="show = ((window.innerHeight - $top) > 1)">
         <div
-          class="grid sm:grid-cols-1 sm:grid-rows-[repeat(auto,2)] sm:gap-y-8 lg:grid-cols-12 transition duration-0 lg:transform translate-y-8 opacity-0"
-          x-bind:class="show &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
-        >
+             class="grid sm:grid-cols-1 sm:grid-rows-[repeat(auto,2)] sm:gap-y-8 lg:grid-cols-12 transition duration-0 lg:transform translate-y-8 opacity-0"
+             x-bind:class="show &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
+             >
           <section class="lg:col-end-11 lg:col-span-3 lg:row-start-1" x-data="parallax()" x-bind="root">
             <div class="lg:aspect-w-1 lg:aspect-h-1" x-bind="animate(8)">
               <div><img class="sm:max-w-md h-full w-full object-contain sm:mx-auto" src="/hubfs/statics/assets/nft.png" /></div>
@@ -336,27 +340,18 @@
           </section>
           <section class="lg:col-start-3 lg:col-span-7 lg:row-start-1 z-10" x-data="parallax()" x-bind="root">
             <div class="h-full flex flex-col sm:items-center lg:items-start justify-center" x-bind="animate(16)">
-              <h1 class="text-zuju-red font-bold sm:text-center uppercase mb-4">
-                {% if content.language.languageTag == "zh-cn" %}
-                  购买最初版ZujuGP和C罗联名的代币
-                {% else %}
-                  Buy a 1st Edition ZujuGP-CR token today
-                {% endif %}
+              <h1 class="text-2xl text-zuju-red font-bold sm:text-center uppercase mb-4">
+                LUMINA - Own your place in history.
               </h1>
-              <h2 class="text-white sm:text-3xl lg:text-4xl font-gtcond font-black sm:text-center mb-8">
-                {% if content.language.languageTag == "zh-cn" %}
-                  并有机会赢取独家镀金的、<br>价值超过4万美元的纪念面具！
-                {% else %}
-                  And WIN exclusive access &amp; gold-plated commemorative masks worth $40k!
-                {% endif %}
+              <h2 class="text-white sm:text-3xl lg:text-4xl font-gtcond font-black sm:text-center mb-4">
+                The only digital collectible recognised by Cristiano&nbsp;Ronaldo.
               </h2>
-              <a href="https://nft.zujugp.com">
+              <h2 class="text-2xl text-white font-gtcond font-black sm:text-center mb-4">
+                Auction time 0600 UTC +8 on 26 October 2021.
+              </h2>
+              <a href="https://collectibles.zujugp.com/#/auction/228">
                 <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">
-                  {% if content.language.languageTag == "zh-cn" %}
-                    立即获取
-                  {% else %}
-                    Get Yours Now
-                  {% endif %}
+                  Get Yours Now
                 </button>
               </a>
             </div>
@@ -364,7 +359,27 @@
         </div>
       </div>
     </section>
-    <section class="w-full bg-white p-8 overflow-hidden" x-data="{ bImg: false, bMan: false, mPort: false, dPort: false, dPortK: false }">
+    {% endif %}
+    
+    <section class="w-full bg-white p-8 overflow-hidden" x-data="{ bImg: false, bMan: false, mPort: false, dPort: false, dPortK: false, playing: false }">
+      <div
+        x-cloak
+        x-show="playing"
+        x-transition.opacity.duration.300ms
+        class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+        x-on:click="playing = false"
+        x-on:keyup.window.escape="playing = false"
+      >
+        <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+          <div class="relative">
+            <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">&times;</button>
+            <video controls x-on:click.stop x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+              <source src="/hubfs/statics/trailer.mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+
       <div class="relative w-full sm:max-w-md max-w-[1920px] mx-auto" x-data="parallax()" x-bind="root">
         <img
           class="sm:hidden absolute bottom-0 -right-8 pointer-events-none"
@@ -407,11 +422,11 @@
                 {% if content.language.languageTag == "zh-cn" %}
                   一个能真正沟通东西方的平台，我们不仅仅帮助世界各地的球迷在此交换意见，还帮助建立企业和足球生态的全新连接。
                 {% else %}
-                  A community platform bridging East and West, we are an exchange not just between fans but worlds between businesses and ecosystems.
+                A community platform for fans and businesses from East to West.
                 {% endif %}
               </p>
               <a href="/about-us">
-                <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
+                <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 mr-4">
                   {% if content.language.languageTag == "zh-cn" %}
                     了解更多
                   {% else %}
@@ -419,6 +434,13 @@
                   {% endif %}
                 </button>
               </a>
+              <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4" x-on:click="playing = true">
+                {% if content.language.languageTag == "zh-cn" %}
+                  (cn) View Trailer
+                {% else %}
+                  View Trailer
+                {% endif %}
+              </button>
             </div>
           </div>
           <div class="sm:hidden row-start-2 col-start-2 border-l-2 border-zuju-red pr-8"></div>
@@ -619,17 +641,17 @@
               {% if content.language.languageTag == "zh-cn" %}
                 奖励与忠诚积分
               {% else %}
-                Reward And Earn Loyalty Points
+                Rewards and loyalty Z points
               {% endif %}
             </h1>
             <p class="text-white text-center mb-4">
               {% if content.language.languageTag == "zh-cn" %}
                 通过兑换积分购物或者赢取奖励！
               {% else %}
-                Redeem or get rewarded for shopping and spending time with us!
+                Get rewarded for shopping and spending time with us!
               {% endif %}
             </p>
-            <a href="http://members.zujugp.com/rewards">
+            <a href="/about-rewards">
               <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
                 {% if content.language.languageTag == "zh-cn" %}
                   了解更多
@@ -671,22 +693,32 @@
             </h1>
           </div>
         </div>
+        {% set trend1_id = content.language.languageTag == "zh-cn" ? 57059261247 : 56328400151 %}
+        {% set trend1 = content_by_id(trend1_id) %}
+        {% set trend2_id = content.language.languageTag == "zh-cn" ? 57051763108 : 56335594397 %}
+        {% set trend2 = content_by_id(trend2_id) %}
+        {% set trend3_id = content.language.languageTag == "zh-cn" ? 57057840309 : 56335793467 %}
+        {% set trend3 = content_by_id(trend3_id) %}
         <div
           x-on:scroll.window="bArt1 = (($vh100 - $top) > 1)"
           class="lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:pt-24 sm:mb-16 transition duration-0 transform translate-y-8 opacity-0"
           x-bind:class="bArt1 &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
         >
           <article x-data="parallax()" x-bind="root">
-            <a href="#">
+            <a href="{{ trend1.absolute_url }}">
               <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
                 <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
                 <div class="absolute top-0 left-0 right-4 bottom-4">
-                  <img class="w-full h-full object-cover" src="/hubfs/statics/assets/trend-1.png" />
+                  <img class="w-full h-full object-cover" src="{{ trend1.featured_image }}" alt="{{ trend1.featured_image_alt_text }}" />
                 </div>
               </div>
               <div x-bind="animate(16)">
-                <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">Opinion</h2>
-                <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">Top 10 most decorated footballers in the world right now</h1>
+                <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">
+                  {{ trend1.tag_list[0].name }}
+                </h2>
+                <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">
+                  {{ trend1.name }}
+                </h1>
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
                   <title>Arrow Forward</title>
                   <path
@@ -708,16 +740,20 @@
           x-bind:class="bArt2 &amp;&amp; '!translate-y-0 !opacity-100 !duration-700 lg:!delay-[400ms]'"
         >
           <article x-data="parallax()" x-bind="root">
-            <a href="#">
-              <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(-8)">
+            <a href="{{ trend2.absolute_url }}">
+              <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
                 <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
                 <div class="absolute top-0 left-0 right-4 bottom-4">
-                  <img class="w-full h-full object-cover" src="/hubfs/statics/assets/trend-2.png" />
+                  <img class="w-full h-full object-cover" src="{{ trend2.featured_image }}" alt="{{ trend2.featured_image_alt_text }}" />
                 </div>
               </div>
-              <div x-bind="animate(-8)">
-                <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">Opinion</h2>
-                <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">Technology will change fan experience and behaviour in Asia..</h1>
+              <div x-bind="animate(16)">
+                <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">
+                  {{ trend2.tag_list[0].name }}
+                </h2>
+                <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">
+                  {{ trend2.name }}
+                </h1>
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
                   <title>Arrow Forward</title>
                   <path
@@ -739,17 +775,19 @@
           x-bind:class="bArt3 &amp;&amp; '!translate-y-0 !opacity-100 !duration-700 lg:!delay-[200ms]'"
         >
           <article x-data="parallax()" x-bind="root">
-            <a href="#">
-              <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(0)">
+            <a href="{{ trend3.absolute_url }}">
+              <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
                 <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
                 <div class="absolute top-0 left-0 right-4 bottom-4">
-                  <img class="w-full h-full object-cover" src="/hubfs/statics/assets/trend-3.png" />
+                  <img class="w-full h-full object-cover" src="{{ trend3.featured_image }}" alt="{{ trend3.featured_image_alt_text }}" />
                 </div>
               </div>
-              <div x-bind="animate(0)">
-                <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">Local Eye</h2>
+              <div x-bind="animate(16)">
+                <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">
+                  {{ trend3.tag_list[0].name }}
+                </h2>
                 <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">
-                  Bitter league rivalries, world cup starts and domestic success - all..
+                  {{ trend3.name }}
                 </h1>
                 <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
                   <title>Arrow Forward</title>

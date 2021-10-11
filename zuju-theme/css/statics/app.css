@@ -874,8 +874,11 @@ body {
 .app .blog-post__comments-listing form:before {
   text-transform: uppercase;
 }
-.app .blog-post__comments-listing form:before {
+html[lang="en"] .app .blog-post__comments-listing form:before {
   content: "I'd Say";
+}
+html[lang="zh-cn"] .app .blog-post__comments-listing form:before {
+  content: "\6709\8bdd\8981\8bf4";
 }
 .app .blog-post__comments-listing form:after {
   position: absolute;
@@ -1352,9 +1355,6 @@ body.overflow-hidden {
 .app .h-screen {
   height: 100vh;
 }
-.app .h-5 {
-  height: 1.25rem;
-}
 .app .min-h-\[600px\] {
   min-height: 600px;
 }
@@ -1408,9 +1408,6 @@ body.overflow-hidden {
 }
 .app .w-4\/5 {
   width: 80%;
-}
-.app .w-5 {
-  width: 1.25rem;
 }
 .app .w-1\/4 {
   width: 25%;
@@ -1506,9 +1503,6 @@ body.overflow-hidden {
 }
 .app .resize {
   resize: both;
-}
-.app .list-disc {
-  list-style-type: disc;
 }
 .app .auto-rows-auto {
   grid-auto-rows: auto;
@@ -2474,9 +2468,6 @@ body.overflow-hidden {
   .app .lg\:aspect-h-9 {
     --tw-aspect-h: 9;
   }
-  .app .lg\:pointer-events-none {
-    pointer-events: none;
-  }
   .app .lg\:col-span-2 {
     grid-column: span 2 / span 2;
   }
@@ -2533,9 +2524,6 @@ body.overflow-hidden {
   }
   .app .lg\:row-start-3 {
     grid-row-start: 3;
-  }
-  .app .lg\:row-start-4 {
-    grid-row-start: 4;
   }
   .app .lg\:-mx-2 {
     margin-left: -0.5rem;
@@ -2630,9 +2618,6 @@ body.overflow-hidden {
   .app .lg\:w-96 {
     width: 24rem;
   }
-  .app .lg\:w-4\/5 {
-    width: 80%;
-  }
   .app .lg\:max-w-\[1000px\] {
     max-width: 1000px;
   }
@@ -2683,9 +2668,6 @@ body.overflow-hidden {
   }
   .app .lg\:items-start {
     align-items: flex-start;
-  }
-  .app .lg\:items-end {
-    align-items: flex-end;
   }
   .app .lg\:items-center {
     align-items: center;

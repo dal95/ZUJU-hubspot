@@ -14,8 +14,8 @@
             <div class="header__language-switcher-label">
               {% module 'language-switcher'
                 path='@hubspot/language_switcher',
-                label='Language switcher',
-                display_mode='localized'
+                display_mode='Localized',
+                label='Language switcher'
               %}
               <div class="header__language-switcher-label-current"> {{ locale_name(locale) }}</div>
             </div>
@@ -37,7 +37,7 @@
     <div class="main-nav__container">
       <div class="main-nav__logo clr-primary">
         {% if content.language.languageTag == "zh-cn" %}
-        {% logo "logo" src="/hubfs/BRAND%20ASSETS/ZujuGP%20Chinese%20Logo_Red%20Horizontal.png" style="height:54px;" link="/zh-cn/" no_wrapper=True %}
+        {% logo "logo" src="/hubfs/BRAND%20ASSETS/ZujuGP%20Chinese%20Logo_Red%20Horizontal.png" link="/zh-cn/" no_wrapper=True %}
         {% else %}
         {% logo "logo" link="/" no_wrapper=True %}
         {% endif %}

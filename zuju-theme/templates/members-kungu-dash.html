@@ -15,43 +15,93 @@
     <div class="kungfu-dash" style="background-image: url(https://i.imgur.com/d32YxC5.png)">
       <div class="container">
         <div class="form-dark text-center">
-          <h2 class="kd-heading kd-heading--primary">Kungfu Dash</h2>
+          <h2 class="kd-heading kd-heading--primary">
+            {% if content.language.languageTag == "zh-cn" %}
+            功夫快跳
+            {% else %}
+            Kungfu Dash
+            {% endif %}
+          </h2>
 
-          <h3 class="kd-heading">Play to win a chance to meet Cristiano Ronaldo up close &amp; personal on Zoom!</h3>
+          <h3 class="kd-heading">
+            {% if content.language.languageTag == "zh-cn" %}
+            玩游戏获得与C罗近距离接触的机会，您会通过Zoom视频会议与C罗相见！
+            {% else %}
+            Play to win a chance to meet Cristiano Ronaldo up close &amp; personal on Zoom!
+            {% endif %}
+          </h3>
 
-          <p>Here's how to the competition works:</p>
+          <p>
+            {% if content.language.languageTag == "zh-cn" %}
+            这场游戏的规则如下：
+            {% else %}
+            Here's how to the competition works:
+            {% endif %}
+          </p>
 
           <div class="kd-grid">
             <div class="kd-card">
               <img src="https://i.imgur.com/XSBuA9y.png" alt="">
-              <p>Play to earn the highest score on Kungfu Dash</p>
+              <p>
+                {% if content.language.languageTag == "zh-cn" %}
+                尝试在功夫快跳里获得最高分；
+                {% else %}
+                Play to earn the highest score on Kungfu Dash
+                {% endif %}
+              </p>
             </div>
 
             <div class="kd-card">
               <img src="https://i.imgur.com/VWmKPKh.png" alt="">
-              <p><b>High score dashers</b> earn the honour of a place on the leaderboard</p>
+              <p>
+                {% if content.language.languageTag == "zh-cn" %}
+                <b>高分获得者</b>将会被列入排行榜单；
+                {% else %}
+                <b>High score dashers</b> earn the honour of a place on the leaderboard
+                {% endif %}
+              </p>
             </div>
 
             <div class="kd-card">
               <img src="https://i.imgur.com/P21F4t7.png" alt="">
-              <p>Everyone on the leaderboard gets entered into the Leaderboard Raffle</p>
+              <p>
+                {% if content.language.languageTag == "zh-cn" %}
+                在排行榜单中的玩家有机会参与到最后的抽奖活动；
+                {% else %}
+                Everyone on the leaderboard gets entered into the Leaderboard Raffle
+                {% endif %}
+              </p>
             </div>
 
             <div class="kd-card">
               <img src="https://i.imgur.com/Junatax.png" alt="">
-              <p>For 8 weeks we will pick 1 lucky dasher from the Raffle to win this once-in-a-lifetime opportunity to meet <b>Cristiano Ronaldo</b>!</p>
+              <p>
+                {% if content.language.languageTag == "zh-cn" %}
+                8周后，将会有1个幸运儿获得与<b>C罗</b>见面的这一千载难逢的好机会！
+                {% else %}
+                For 8 weeks we will pick 1 lucky dasher from the Raffle to win this once-in-a-lifetime opportunity to meet <b>Cristiano Ronaldo</b>!
+                {% endif %}
+              </p>
             </div>
           </div>
 
-          <p class="clr-primary text-center all-caps">Competition closes on 12 December 2021 at 2359 GMT.</p>
+          <p class="clr-primary text-center all-caps">
+            {% if content.language.languageTag == "zh-cn" %}
+            游戏将持续到2021年12月12日的23：59GMT为止。
+            {% else %}
+            Competition closes on 12 December 2021 at 2359 GMT.
+            {% endif %}
+          </p>
           
           <a href="{{ content_by_id(56960838040).absolute_url }}">
-            <button class="button button-o-primary">Play Now</button>
+            <button class="button button-o-primary">
+              {% if content.language.languageTag == "zh-cn" %}
+              立即玩游戏
+              {% else %}
+              Play Now
+              {% endif %}
+            </button>
           </a>
-          
-          <!--<a href="{{ content_by_id(56393738550).absolute_url }}">
-            <button class="button button-o-primary">Sign Up Now</button>
-          </a>-->
         </div>
       </div>
     </div>

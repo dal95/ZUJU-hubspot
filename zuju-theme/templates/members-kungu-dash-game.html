@@ -12,11 +12,29 @@
     <div class="kungfu-dash" style="background-image: url(https://i.imgur.com/d32YxC5.png)">
       <div class="container">
         <div class="form-dark text-center">
-          <h2 class="kd-heading kd-heading--primary">Kungfu Dash</h2>
+          <h2 class="kd-heading kd-heading--primary">
+            {% if content.language.languageTag == "zh-cn" %}
+            功夫快跳
+            {% else %}
+            Kungfu Dash
+            {% endif %}
+          </h2>
 
-          <h3 class="kd-heading">Play to win a chance to meet Cristiano Ronaldo up close &amp; personal on Zoom!</h3>
+          <h3 class="kd-heading">
+            {% if content.language.languageTag == "zh-cn" %}
+            玩游戏获得与C罗近距离接触的机会，您会通过Zoom视频会议与C罗相见！
+            {% else %}
+            Play to win a chance to meet Cristiano Ronaldo up close &amp; personal on Zoom!
+            {% endif %}
+          </h3>
           
-          <p>Click <a href="{{ content_by_id(56505783586).absolute_url }}">here</a> to read how to the competition works.</p>
+          <p>
+            {% if content.language.languageTag == "zh-cn" %}
+            <a href="{{ content_by_id(56505783586).absolute_url }}">阅读</a>游戏的规则。
+            {% else %}
+            Click <a href="{{ content_by_id(56505783586).absolute_url }}">here</a> to read how to the competition works.
+            {% endif %}
+          </p>
           
           {# Iframe wrapper #}
           <div class="kd-aspect-ratio">

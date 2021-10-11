@@ -45,17 +45,17 @@
 							target="_blank"
 							x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'tw_share' })"
 							x-bind:href="`https://twitter.com/intent/tweet?url=${encodeURIComponent(location.href)}`"
-						>
-							<img class="h-6 mx-4" src="/hubfs/statics/assets/share-twitter.png" />
-						</a>
-						<a
-							target="_blank"
-							x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' })"
-							x-bind:href="`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`"
-						>
-							<img class="h-6 mx-4" src="/hubfs/statics/assets/share-facebook.png" />
-						</a>
-						<!-- <a href="#"><img class="h-6 mx-4" src="@src/assets/blog/share-instagram.png" /></a> -->            </div>
+              >
+                <img class="h-6 mx-4" src="/hubfs/statics/assets/share-twitter.png" />
+              </a>
+              <a
+                target="_blank"
+                x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' })"
+                x-bind:href="`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`"
+              >
+                <img class="h-6 mx-4" src="/hubfs/statics/assets/share-facebook.png" />
+              </a>
+            </div>
             <p class="text-white mb-8">{{ content.publish_date_localized }}</p>
           </div>
         </section>
