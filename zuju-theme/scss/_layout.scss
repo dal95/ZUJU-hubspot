@@ -366,6 +366,7 @@
 
   @include media('>=tablet') {
     display: flex;
+    display: none;
   }
 
   &__cta {

@@ -818,6 +818,7 @@ h4 {
 @media (min-width: 800px) {
   .kungfu-dash-in {
     display: flex;
+    display: none;
   }
 }
 .kungfu-dash-in__cta {
