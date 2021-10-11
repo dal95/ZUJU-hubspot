@@ -15,9 +15,9 @@ window.addEventListener('message', event => {
         .append(avatarWrap)
     })
 
-    // $('[name="custom_avatar"]').on('change', function () {
-    //   $('.avatar-edit img').attr('src', $(this).val())
-    // })
+    $('[name="custom_avatar"]').on('change', function () {
+      $('.avatar-edit img').attr('src', $(this).val())
+    })
     $('.hs-input')
       // .not('[readonly]')
       .each(function () {
