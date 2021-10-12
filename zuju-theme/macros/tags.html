@@ -2,6 +2,49 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
+
+{% macro reward_card(cardData) %}
+	<a class="card" href="/rewards/{{ cardData.hs_path }}">
+		<img
+			src="{{ resize_image_url(cardData.image.url, 280, 180, 200, true, false) }}"
+			alt="{{ cardData.name }}"
+			loading="lazy"
+			width="280px"
+			height="180px"
+		/>
+
+		<div class="card__content">
+			<div class="tag">{{ (cardData.categories|first).name }}</div>
+			<h3 class="card__title">{{ cardData.name }}</h3>
+			<div class="card__desc">{{ cardData.content|truncate(160) }}</div>
+
+			{% if cardData.stock <= 0 %}
+				{% set class_name = 'clr-mute' %}
+				{% set label = 'Fully Redeemed' %}
+			{% endif%}
+
+			{% if contact.current_loyalty_points < cardData.point %}
+				{# {{ contact.current_loyalty_points < cardData.point  }} #}
+				{% set class_name = 'clr-mute' %}
+				{% set label = 'Insufficient Points' %}
+			{% endif %}
+
+			{% if  contact.current_loyalty_points > cardData.point && cardData.stock > 0 %}
+				{% set class_name = '' %}
+				{% set label = 'Available' %}
+			{% endif %}
+
+			<div class="availability {{ class_name }}">
+				{{ label }}
+			</div>
+
+			<div class="points">
+				<b>{{ cardData.point }}</b> <span class="fs-sm">Zuju points</span>
+			</div>
+		</div>
+	</a>
+{% endmacro %}
+
 {% macro avatar() %}
 	{% if contact.custom_avatar %}
 		<img src="{{ request.scheme~'://'~request.domain }}/hubfs/theme-assets/avatars/{{ contact.custom_avatar }}.svg" alt="user avatar">

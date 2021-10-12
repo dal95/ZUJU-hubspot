@@ -31,6 +31,11 @@
 							<h2 class="post-title">{{ d.name }}</h2>
 							<div>{{ d.content }}</div>
 
+							<p class="tier-availability">Available for: {{ d.member_tier_availability|map('name')|join(', ') }}</p>
+							{% if d.show_stock_count %}
+								Stock: {{ d.stock }}
+							{% endif %}
+
 							{% if d.stock <= 0 %}
 								{% set class_name = 'clr-mute' %}
 								{% set label = 'Fully Redeemed' %}
@@ -46,29 +51,31 @@
 								{% set class_name = '' %}
 								{% set label = 'Available' %}
 							{% endif %}
-							<div class="availability {{ class_name }}">
-								{{ label  }}
-							</div>
-
-							<div class="dfl cta">
-								<div>
-									<span class="fs-large">{{ d.point }}</span>
-									<span class="fs-sm">points</span>
+							<div class="cta-container">
+								<div class="availability {{ class_name }}">
+									{{ label  }}
 								</div>
 
-								<div>
-									<a
-										href="#"
-										data-modal-target="modal-redemption"
-										class="button button--primary "
-											{{ d.stock > 0 && contact.current_loyalty_points > d.point || 'disabled' }}
-										>
-										{{ d.stock > 0 && contact.current_loyalty_points > d.point ? 'Redeem Now' : 'Unavailable' }}
-									</a>
+								<div class="dfl cta">
+									<div>
+										<span class="fs-large">{{ d.point }}</span>
+										<span class="fs-sm">points</span>
+									</div>
+
+									<div>
+										<a
+											href="#"
+											data-modal-target="modal-redemption"
+											class="button button--primary "
+												{{ d.stock > 0 && contact.current_loyalty_points > d.point || 'disabled' }}
+											>
+											{{ d.stock > 0 && contact.current_loyalty_points > d.point ? 'Redeem Now' : 'Unavailable' }}
+										</a>
+									</div>
 								</div>
 							</div>
 
-							<div class="fs-sm">
+							<div class="fs-sm toc">
 								<p>Terms and Conditions</p>
 								<ul>
 									<li>
@@ -156,39 +163,7 @@
 
 
 						{% for row in hubdb_table_rows(dynamic_page_hubdb_table_id, q_cat) %}
-							<a class="card" href="{{ request.path }}/{{ row.hs_path }}">
-								<img src="{{ resize_image_url(row.image.url, 280, 180, 200, true, false) }}" alt="" loading="lazy" width="280px" height="180px"/>
-								<div class="card__content">
-									<div class="tag">{{ (row.categories|first).name }}</div>
-									<h3 class="card__title">{{ row.name }}</h3>
-									<div class="card__desc">{{ row.content }}</div>
-
-
-									{% if row.stock <= 0 %}
-										{% set class_name = 'clr-mute' %}
-										{% set label = 'Fully Redeemed' %}
-									{% endif%}
-
-									{% if contact.current_loyalty_points < row.point %}
-										{# {{ contact.current_loyalty_points < row.point  }} #}
-										{% set class_name = 'clr-mute' %}
-										{% set label = 'Insufficient Points' %}
-									{% endif %}
-
-									{% if  contact.current_loyalty_points > row.point && row.stock > 0 %}
-										{% set class_name = '' %}
-										{% set label = 'Available' %}
-									{% endif %}
-
-									<div class="availability {{ class_name }}">
-										{{ label }}
-									</div>
-
-									<div class="points">
-										<b>{{ row.point }}</b> <span class="fs-sm">Zuju points</span>
-									</div>
-								</div>
-							</a>
+							{{ c.reward_card(row) }}
 						{% endfor %}
 					</div>
 					{# End of Grids #}

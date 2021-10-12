@@ -140,18 +140,7 @@
         </div>
         <div class="grids">
           {% for reward in rewards %}
-            <a href="/rewards/{{ reward.hs_path }}" class="card">
-              <img src="{{ resize_image_url(reward.image.url, 280, 180, 200, true, true) }}" alt="" loading="lazy" width="280" height="180"/>
-              <div class="card__content">
-                <div class="tag">{{ (reward.categories|first).name }}</div>
-                <h3 class="card__title">{{ reward.name }}</h3>
-                <div class="card__desc">{{ reward.content }}</div>
-                <div class="availability {{ reward.stock > 0 ? '' : 'clr-mute' }}">{{ reward.stock > 0 ? 'Available' : 'Fully Redeemed' }}</div>
-                <div class="points">
-                  <b>{{ reward.point }}</b> <span class="fs-sm">Zuju points</span>
-                </div>
-              </div>
-            </a>
+            {{ c.reward_card(reward) }}
           {% endfor %}
         </div>
       </section>
