@@ -4,6 +4,10 @@
   label: Members transactions
 -->
 {% extends "./layouts/base-members.html" %}
+
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+
 {% block body %}
   <div class="member-benefit membership-header" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/bg/members.png') }})">
     <div class="content-container">
@@ -20,15 +24,23 @@
         </div>
 
         <div class="member-benefit__card-desc">
-          <b class="accumulated-points">{{ contact.current_loyalty_points }} zuju points</b>
+          <b class="accumulated-points">{{ contact.current_loyalty_points }} {{ currLang == "zh-cn" ? "蹴蹴积分" : "Z Points" }}</b>
           <div class="progress">
             <div class="progress__bar"></div>
             <div class="icon icon--ball"></div>
           </div>
           <p>
-            Get xx more points to achieve Super Fan.
+            
+            {% if currLang == "zh-cn" %}
+            获得XX积分来保持超级会员身份
+            {% else %}
+            Get xx more Z Points to achieve Super Fan.
+            {% endif %}
+            
+            {# 会员  |  超级会员  |  终身会员 #}
+            
           </p>
-          <a href="/about-rewards" class="button button--primary">Tier Benefits</a>
+          <a href="/about-rewards" class="button button--primary">{{ currLang == "zh-cn" ? "等级福利" : "Tier Benefits" }}</a>
         </div>
       </div>
     </div>
@@ -37,13 +49,13 @@
   <section class="content-area">
     <div class="main-content">
       <section class="pnt-history">
-        <h4>My points history</h4>
+        <h4>{{ currLang == "zh-cn" ? "我的历史积分" : "My points history" }}</h4>
         <!-- Tabs -->
         <div class="">
           <div class="tabs scrollable">
-            <div class="tabs__menu active">All Transactions</div>
-            <div class="tabs__menu" data-filter="credit">Points Received</div>
-            <div class="tabs__menu" data-filter="debit">Points Used</div>
+            <div class="tabs__menu active">{{ currLang == "zh-cn" ? "所有交易" : "All Transactions" }}</div>
+            <div class="tabs__menu" data-filter="credit">{{ currLang == "zh-cn" ? "获得积分" : "Points Received" }}</div>
+            <div class="tabs__menu" data-filter="debit">{{ currLang == "zh-cn" ? "已用积分" : "Points Used" }}</div>
           </div>
         </div>
 

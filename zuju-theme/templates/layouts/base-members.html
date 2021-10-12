@@ -12,20 +12,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
     {# This is intended to be used if a template requires template specific style sheets #}
     {% if template_css %}
-      {{ require_css(get_asset_url(template_css)) }}
-      {{ require_css(template_css) }}
+    {{ require_css(get_asset_url(template_css)) }}
+    {{ require_css(template_css) }}
     {% endif %}
 
     {{ require_css(get_asset_url("../../css/main.css")) }}
@@ -36,10 +29,13 @@
   </head>
   <body>
     <div class="body-wrapper {{ builtin_body_classes }}">
-    {% block header %}
+      {% block header %}
       {% global_partial path='../partials/header.html' %}
-    {% endblock header %}
+      {% endblock header %}
 
+      {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+      {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+      
     <main class="main-wrapper">
       <div class="left-offset"></div>
       <div class="main-wrapper__row">
@@ -54,30 +50,30 @@
               <div class="user-card__content">
                 <div class="user-card__name all-caps">{{ request_contact.contact.firstname }} {{ contact.lastname }}</div>
                 <div class="user-card__tier fs-sm">{{ contact.membership_tier }}</div>
-                <div class="user-card__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> Zuju Points</div>
+                <div class="user-card__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> {{ currLang == "zh-cn" ? "蹴蹴积分" : "Z Points" }}</div>
               </div>
             </a>
           {% endif %}
 
-          <div class="separator">Menu</div>
+          <div class="separator">{{ currLang == "zh-cn" ? "菜单" : "Menu" }}</div>
           <!-- Side menu -->
           {% module "side_menu"
             path="/zuju-theme/modules/menu-with-icon",
             label="Secondary Menu (Desktop only)"
           %}
 
-          <div class="separator">Zuju Loyalty</div>
+          <div class="separator">{{ currLang == "zh-cn" ? "蹴蹴忠诚积分" : "ZujuGP Loyalty" }}</div>
           <ul class="v-menu">
-            <li><a href="/about-rewards">How do loyalty points work?</a></li>
-            <li><a href="/about-rewards">Your Tiering & Benefits</a></li>
+            <li><a href="/about-rewards">{{ currLang == "zh-cn" ? "忠诚积分该如何获得及使用？" : "How do loyalty Z Points work?" }}</a></li>
+            <li><a href="/about-rewards">{{ currLang == "zh-cn" ? "您的等级和福利" : "Your Tiering & Benefits" }}</a></li>
 
             {% if request_contact.is_logged_in %}
               <li>
-                <a href="/_hcms/mem/logout">Logout</a>
+                <a href="/_hcms/mem/logout">{{ currLang == "zh-cn" ? "退出登录" : "Logout" }}</a>
               </li>
             {% else %}
               <li>
-                <a href="/_hcms/mem/login">Login</a>
+                <a href="/_hcms/mem/login">{{ currLang == "zh-cn" ? "登录" : "Login" }}</a>
               </li>
             {% endif %}
           </ul>
