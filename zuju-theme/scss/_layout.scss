@@ -1293,6 +1293,7 @@ input[type='submit'] {
   transform: scale(0) translateX(-50%) !important;
   opacity: 0;
   overflow: hidden;
+  min-width: 130px;
   transform-origin: top left !important;
   @include transition;
 
@@ -1306,6 +1307,11 @@ input[type='submit'] {
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
     overflow: hidden;
+  }
+
+  li a {
+    margin: 0 !important;
+    justify-content: center;
   }
 }
 

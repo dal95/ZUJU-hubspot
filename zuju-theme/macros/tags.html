@@ -115,6 +115,48 @@
 	</div>
 {% endmacro %}
 
+{% set reward_categories = {
+		'en': [
+			{
+				id: 1,
+				value: 'CR7 MEMORABILIA',
+			}, {
+				id: 2,
+				value: 'ELECTRONICS'
+			}, {
+				id: 3,
+				value: 'CR7 EXPERIENCES'
+			}, {
+				id: 4,
+				value: 'GIFT CARDS'
+			}
+		],
+		'zh-cn': [
+			{
+				id: 1,
+				value: 'CR7 MEMORABILIA',
+			}, {
+				id: 2,
+				value: 'ELECTRONICS'
+			}, {
+				id: 3,
+				value: 'CR7 EXPERIENCES'
+			}, {
+				id: 4,
+				value: 'GIFT CARDS'
+			}
+		]
+	}
+ %}
+
+{% macro categories(category_id) %}
+	{# {{ html_lang }} #}
+	{{ (reward_categories[html_lang]
+		|selectattr('id', 'equalto', category_id)
+		|first).value
+	}}
+{% endmacro %}
+
 {% macro reward_card(cardData) %}
 	<a class="card" href="{{ currLang == 'zh-cn' ? '/zh-cn' : '' }}/rewards/{{ cardData.hs_path }}">
 		<img
@@ -126,7 +168,7 @@
 		/>
 
 		<div class="card__content">
-			<div class="tag">{{ (cardData.categories|first).name }}</div>
+			<div class="tag">{{ categories((cardData.categories|first).name) }}</div>
 			<h3 class="card__title">
 				{% if currLang == 'zh-cn' %}
 					{{ cardData.name_chinese }}

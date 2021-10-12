@@ -25,7 +25,7 @@
 						</div>
 						{{ c.chevron_right() }}
 						<div class="breadcrumb__item">
-							{{ (d.categories|first).name }}
+							{{ c.categories(1) }}
 						</div>
 						{{ c.chevron_right() }}
 						<div class="breadcrumb__item active">
@@ -55,7 +55,9 @@
 								{% endif %}
 							</div>
 
-							<p class="tier-availability">{{ currLang == 'zh-cn' ? '适用于' : 'Available for' }} : {{ d.member_tier_availability|map('name')|join(', ') }}</p>
+							<p class="tier-availability">
+								{{ currLang == 'zh-cn' ? '适用于' : 'Available for' }} : {{ d.member_tier_availability|map('name')|join(', ') }}
+							</p>
 							{% if d.show_stock_count %}
 								{{ currLang == 'zh-cn' ? '股票' : 'Stock' }}: {{ d.stock }}
 							{% endif %}
@@ -132,15 +134,60 @@
 						<form action="" class="rewards__filter">
 							<div class="fields">
 								<div class="field">
-									<label for="id-categories" class="fs-sm"
-										>Categories</label
-									>
+									{% set categories = [
+										{
+											id: 1,
+											value: 'CR7 MEMORABILIA',
+										}, {
+											id: 2,
+											value: 'ELECTRONICS'
+										}, {
+											id: 3,
+											value: 'CR7 EXPERIENCES'
+										}, {
+											id: 4,
+											value: 'GIFT CARDS'
+										}
+									] %}
+
+									{% set points = [{
+											id: 1,
+											value: '<1000'
+										}, {
+											id: 2,
+											value: '1001 - 7000'
+										}, {
+											id: 3,
+											value: '>7000'
+										}
+									] %}
+
+									{% set qCat = request.query_dict['categories']|default('') %}
+									{% set qPts = request.query_dict['points']|default('') %}
+
+									{% if qCat %}
+										{% set catFilter = 'categories__in='~qCat %}
+									{% endif %}
+
+									{% if qPts %}
+										{% if qPts == 1 %}
+											{% set ptsFilter = '&point__lte=1000' %}
+										{% elif qPts == 2 %}
+											{% set ptsFilter = '&point__lte=7000&point__gt=1000' %}
+										{% elif qPts == 3 %}
+											{% set ptsFilter = '&point__gt=7000' %}
+										{% else %}
+											{% set ptsFilter = '' %}
+										{% endif %}
+									{% endif %}
+
+									<label for="id-categories" class="fs-sm">Categories</label>
 									<select name="" id="id-categories">
-										<option value="all" class="selected disabled"
-											>All</option
-										>
-										<option value="1">Others</option>
-										<option value="2">Gadgets</option>
+										<option value="" selected>All</option>
+
+										{% for category in categories %}
+											<option value="{{ category.id }}" {{ qCat == category.id ? 'selected' : '' }}>{{ category.value }}</option>
+										{% endfor %}
 									</select>
 								</div>
 
@@ -149,26 +196,18 @@
 										>Z Points</label
 									>
 									<select name="" id="id-points">
-										<option value="all" class="selected disabled"
-											>All</option
-										>
-										<option value="<1000">&lt; 1000</option>
-										<option value="1001-7000">1001 - 7000</option>
-										<option value=">7000">&gt; 7000</option>
+										<option value="" selected>All</option>
+
+										{% for point in points %}
+											<option value="{{ point.id }}" {{ 'selected' if point.id == qPts }}>{{ point.value }}</option>
+										{% endfor %}
 									</select>
 								</div>
 							</div>
 						</form>
 					</div>
 					<div class="grids">
-						{% if request.query_dict.categories %}
-							{% set q_cat = 'categories__icontains='~request.query_dict.categories %}
-						{% else %}
-							{% set q_cat = '' %}
-						{% endif %}
-
-
-						{% for row in hubdb_table_rows(dynamic_page_hubdb_table_id, q_cat) %}
+						{% for row in hubdb_table_rows(dynamic_page_hubdb_table_id, catFilter~ptsFilter) %}
 							{{ c.reward_card(row) }}
 						{% endfor %}
 					</div>

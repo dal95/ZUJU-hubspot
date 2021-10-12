@@ -114,28 +114,19 @@ $(window).on('load', function () {
 })
 
 $('#id-categories').on('change', function () {
-  const url = new URLSearchParams(window.location.search)
-  url.set('categories', $(this).val())
+  const url = new URL(window.location.href)
+  url.searchParams.set('categories', $(this).val())
+  console.log($(this).val())
+  console.log(url.toString())
 
-  window.location.href =
-    window.location.origin + '/rewards/' + '?' + url.toString()
+  window.location.href = url.toString()
 })
 
 $('#id-points').on('change', function () {
-  const url = new URLSearchParams(window.location.search)
-  url.delete('lt')
-  url.delete('gt')
+  const url = new URL(window.location.href)
+  url.searchParams.set('points', $(this).val())
 
-  const v = $(this).val()
-  if (v.includes('-')) {
-    url.set('gt', v.split('-')[0])
-    url.set('lt', v.split('-')[1])
-  }
-  if (v.includes('<')) url.set('lt', v.substr(1))
-  if (v.includes('>')) url.set('gt', v.substr(1))
-
-  window.location.href =
-    window.location.origin + '/rewards/' + '?' + url.toString()
+  window.location.href = url.toString()
 })
 
 // Off canvas

@@ -444,6 +444,10 @@ h4 {
 
 select {
   -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") !important;
+  background-size: 20px !important;
+  background-position: 98% !important;
+  background-repeat: no-repeat !important;
 }
 
 .dfl {
@@ -1634,6 +1638,7 @@ input[type=submit] {
   transform: scale(0) translateX(-50%) !important;
   opacity: 0;
   overflow: hidden;
+  min-width: 130px;
   transform-origin: top left !important;
   transition: all 0.3s ease;
 }
@@ -1646,6 +1651,10 @@ input[type=submit] {
   border-bottom-left-radius: 5px;
   border-bottom-right-radius: 5px;
   overflow: hidden;
+}
+.lang_list_class li a {
+  margin: 0 !important;
+  justify-content: center;
 }
 
 .globe_class .lang_list_class:after {
