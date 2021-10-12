@@ -5,7 +5,7 @@
 <html lang="{{ html_lang }}" {{ html_lang_dir }}>
   <head>
     <meta charset="utf-8">
-    
+
     {% if page_meta.html_title %}<title>{{ page_meta.html_title }} {% if content.language.languageTag == "zh-cn" %}| 蹴蹴ZujuGP{% else %}| ZujuGP{% endif %}</title>{% endif %}
     {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
     <meta name="description" content="{{ page_meta.meta_description }}">
@@ -44,6 +44,12 @@
       {% block footer %}
         {% global_partial path='../partials/footer.html' %}
       {% endblock footer %}
+
+      {{ require_js('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js') }}
+      <script>
+        var user_vid = "{{ contact.hs_object_id }}";
+      </script>
+      {{ require_js(get_asset_url('../../js/main.js')) }}
     </div>
     {{ standard_footer_includes }}
     {% include '../statics/statics-foot.html' %}

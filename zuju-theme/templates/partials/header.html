@@ -49,13 +49,13 @@
       </div>
 
       <div class="main-nav__omega">
-        
+
         {% if currLang == "zh-cn" %}
         {% menu "main-nav" id=57071986309 %}
         {% else %}
         {% menu "main-nav" id=54357477653 %}
         {% endif %}
-        
+
         {% if request_contact.is_logged_in %}
           <div class="has-dropdown">
             <a href="/members-portal" class="nav__link account-link">
@@ -76,7 +76,7 @@
                 Hi, {{ contact.firstname }}
                 {% endif %}
               </div>
-              
+
               <a href="/profile">
                 {% if currLang == "zh-cn" %}
                 编辑个人资料
@@ -84,7 +84,7 @@
                 Edit profile
                 {% endif %}
               </a>
-              
+
               <a href="/membership">
                 {% if currLang == "zh-cn" %}
                 会员
@@ -92,7 +92,7 @@
                 Membership
                 {% endif %}
               </a>
-              
+
               <a href="/_hcms/mem/logout">
                 {% if currLang == "zh-cn" %}
                 退出登录

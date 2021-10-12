@@ -15,25 +15,49 @@
 				<section class="rewards-details">
 					<div class="breadcrumb">
 						<div class="breadcrumb__item">
-							<a style="color: #fff; text-decoration: none" href="{{ '/'~(request.path|split('/'))[0] }}">Rewards</a>
+							<a style="color: #fff; text-decoration: none" href="{{ '/'~(request.path|split('/'))[0] }}">
+								{% if currLang == 'zh-cn' %}
+									 奖励
+								{% else %}
+									Rewards
+								{% endif %}
+							</a>
 						</div>
-						&gt;
+						{{ c.chevron_right() }}
 						<div class="breadcrumb__item">
 							{{ (d.categories|first).name }}
 						</div>
-						&gt;
-						<div class="breadcrumb__item active">{{ d.name }}</div>
+						{{ c.chevron_right() }}
+						<div class="breadcrumb__item active">
+						{% if currLang == 'zh-cn' %}
+							{{ d.name_chinese }}
+						{% else%}
+							{{ d.name }}
+						{% endif %}
+						</div>
 					</div>
 					<!-- End of breadcrumb -->
 
 					<div class="content-row">
 						<div class="content-col">
-							<h2 class="post-title">{{ d.name }}</h2>
-							<div>{{ d.content }}</div>
+							<h2 class="post-title">
+								{% if currLang == 'zh-cn' %}
+									{{ d.name_chinese }}
+								{% else%}
+									{{ d.name }}
+								{% endif %}
+							</h2>
+							<div>
+								{% if currLang == 'zh-cn' %}
+									{{ d.content_chinese }}
+								{% else %}
+									{{ d.content }}
+								{% endif %}
+							</div>
 
-							<p class="tier-availability">Available for: {{ d.member_tier_availability|map('name')|join(', ') }}</p>
+							<p class="tier-availability">{{ currLang == 'zh-cn' ? '适用于' : 'Available for' }} : {{ d.member_tier_availability|map('name')|join(', ') }}</p>
 							{% if d.show_stock_count %}
-								Stock: {{ d.stock }}
+								{{ currLang == 'zh-cn' ? '股票' : 'Stock' }}: {{ d.stock }}
 							{% endif %}
 
 							{% if d.stock <= 0 %}
@@ -44,7 +68,7 @@
 							{% if contact.current_loyalty_points < d.point %}
 								{# {{ contact.current_loyalty_points < d.point  }} #}
 								{% set class_name = 'clr-mute' %}
-								{% set label = 'Insufficient Points' %}
+								{% set label = 'Insufficient Z Points' %}
 							{% endif %}
 
 							{% if  contact.current_loyalty_points > d.point && d.stock > 0 %}
@@ -59,7 +83,7 @@
 								<div class="dfl cta">
 									<div>
 										<span class="fs-large">{{ d.point }}</span>
-										<span class="fs-sm">points</span>
+										<span class="fs-sm">Z Points</span>
 									</div>
 
 									<div>
@@ -76,29 +100,11 @@
 							</div>
 
 							<div class="fs-sm toc">
-								<p>Terms and Conditions</p>
-								<ul>
-									<li>
-										Lorem ipsum dolor sit amet consectetur adipisicing
-										elit. Iure, aliquam!
-									</li>
-									<li>
-										Lorem ipsum dolor sit amet consectetur adipisicing
-										elit. Repudiandae magni voluptatum ipsam inventore
-										doloribus eius culpa, impedit dolorem pariatur sunt?
-									</li>
-									<li>
-										Lorem ipsum dolor sit amet consectetur adipisicing
-										elit. Veritatis beatae doloribus voluptatum impedit
-										dignissimos voluptatem mollitia eveniet unde nostrum
-										placeat!
-									</li>
-									<li>
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit. Numquam illo animi, expedita ab quae praesentium
-										autem quos quas perferendis excepturi.
-									</li>
-								</ul>
+								{% if currLang == 'zh-cn' %}
+									{{ d.tnc_chinese }}
+								{% else%}
+									{{ d.tnc }}
+								{% endif %}
 							</div>
 						</div>
 
@@ -140,7 +146,7 @@
 
 								<div class="field">
 									<label for="id-points" class="fs-sm"
-										>Zuju Points</label
+										>Z Points</label
 									>
 									<select name="" id="id-points">
 										<option value="all" class="selected disabled"

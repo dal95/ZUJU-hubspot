@@ -213,6 +213,10 @@
   &:hover {
     transform: translateY(-10px);
 
+    // &__title {
+    //   color: $clr-primary
+    // }
+
     .card__content {
       background-color: var(--clr-dark-400);
       padding: 5px 20px 20px;
@@ -243,6 +247,12 @@
       }
     }
   }
+
+  // .arrow-right {
+  //   position: absolute;
+  //   right: 20px;
+  //   bottom: 20px;
+  // }
 }
 
 .availability {
@@ -745,6 +755,7 @@ input[type='submit'] {
     background-color: #282529;
     padding: 0 20px;
     z-index: 800;
+    padding-bottom: 2rem;
 
     .cta {
       justify-content: space-between;
@@ -775,7 +786,7 @@ input[type='submit'] {
 
   @include media('<=mobile') {
     flex-wrap: wrap;
-    padding-bottom: 140px;
+    padding-bottom: 120px;
   }
 
   .post-title {
@@ -1383,4 +1394,8 @@ input[type='submit'] {
   background: #3f3d3e;
   padding: 10px;
   margin-bottom: 2.5rem;
+}
+
+.is-hidden {
+  display: none;
 }

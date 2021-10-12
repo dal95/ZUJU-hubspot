@@ -24,18 +24,21 @@ window.addEventListener('message', event => {
           const usernmeValidation = parent.find('.custom-validation')
           usernmeValidation.remove()
 
+          const successMessage = $('.validate-message__success').text()
+          const failedMessage = $('.validate-message__failed').text()
+
           if (res.found) {
             // alert('Username/Nickname is taken')
             parent.append(
               `<div class="custom-validation hs-error-msg">Username ${$(
                 this
-              ).val()} is taken</div>`
+              ).val()} ${failedMessage}</div>`
             )
           } else {
             parent.append(
               `<div class="custom-validation success">Username ${$(
                 this
-              ).val()} is available</div>`
+              ).val()} ${successMessage}</div>`
             )
           }
         })

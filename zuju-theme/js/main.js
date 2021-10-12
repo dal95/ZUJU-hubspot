@@ -195,7 +195,7 @@ const renderHistoryTable = (data, filter = '') => {
         return `<tr class="table__row">
             <td class="table__td-left">${item.description}</td>
             <td class="table__td-right">
-              <div>Zuju points <span class="debug">credit: ${item.credit} debit: ${item.debit}</span></div>
+              <div>Z Points <span class="debug">credit: ${item.credit} debit: ${item.debit}</span></div>
               <div class="clr-primary">${pointChanged}</div>
             </td>
           </tr>`
@@ -344,7 +344,7 @@ if (dashboardAllowedPages.includes(location.pathname)) {
 
         const shareData = {
           title: 'Zuju Referral Program',
-          text: 'Get more zuju points',
+          text: 'Get more Z Points',
           url: refer?.referral_link
         }
 

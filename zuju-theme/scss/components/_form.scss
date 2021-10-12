@@ -296,3 +296,14 @@ section.edit {
 #hs_login_reset {
   // font-family: var(--ff-accent);
 }
+
+.input.disabled.disabled.disabled {
+  pointer-events: none;
+  cursor: not-allowed;
+  opacity: .5;
+
+  input {
+    background: #5f6064 !important;
+    cursor: not-allowed
+  }
+}

@@ -18,56 +18,66 @@ window.addEventListener('message', event => {
     $('[name="custom_avatar"]').on('change', function () {
       $('.avatar-edit img').attr('src', $(this).val())
     })
-    $('.hs-input')
-      // .not('[readonly]')
-      .each(function () {
-        const propName = $(this).attr('name')
-        if (propName === 'custom_avatar') return
-        // if (contact[propName]) return
 
-        console.log('el', this)
-        if (propName === 'birthday') {
-          console.log('hidden', $(this))
-          console.log('prev', $(this).prev())
-          const re = /\//gi
-          const current = new Date(contact[propName])
+    $birthdayInput = $('input[name="birthday"]').closest('.input')
+    $emailInput = $('input[name="email"]').closest('.input')
 
-          if (current) {
-            function pad (n) {
-              return (n < 10 ? '0' : '') + n
-            }
+    $birthdayInput.addClass('disabled')
+    $emailInput.addClass('disabled')
 
-            const newDate =
-              current.getFullYear() +
-              '-' +
-              (current.getMonth() + 1) +
-              '-' +
-              pad(current.getDate())
+    $('.disabled').closest('.field').find('label').on('click', e => e.preventDefault())
 
-            // this method of changing the value doesn't work.
-            // hubspot internally use react to control / sync between the hidden input, the readonly input and the datepicker
-            // To counter this we have to remove the data-reactid
-            // console.log('original', contact[propName])
-            // console.log(newDate, this)
-            $(this)
-              .prev()
-              .removeAttr('readonly')
-            $(this)
-              .prev()
-              .removeAttr('data-reactid')
-            $(this)
-              .prev()
-              .val(contact[propName])
-              .trigger('change')
-            $(this)
-              .val(newDate)
-              .trigger('change')
+    $('.hs-input').each(function () {
+      const propName = $(this).attr('name')
+      if (propName === 'custom_avatar') return
+
+      if (propName === 'birthday') {
+        const current = new Date(contact[propName])
+
+        if (current) {
+          function pad (n) {
+            return (n < 10 ? '0' : '') + n
           }
-        } else {
+
+          const newDate =
+            current.getFullYear() +
+            '-' +
+            (current.getMonth() + 1) +
+            '-' +
+            pad(current.getDate())
+
+          // this method of changing the value doesn't work.
+          // hubspot internally use react to control / sync between the hidden input, the readonly input and the datepicker
+          // To counter this we have to remove the data-reactid
+          // console.log('original', contact[propName])
+          // console.log(newDate, this)
+          const reactId = $(this)
+            .prev()
+            .data('react-id')
+
           $(this)
+            .prev()
+            .removeAttr('readonly')
+          $(this)
+            .prev()
+            .removeAttr('data-reactid')
+          $(this)
+            .prev()
             .val(contact[propName])
             .trigger('change')
+          $(this)
+            .val(newDate)
+            .trigger('change')
+
+          $(this)
+            .prev()
+            .data('react-id', reactId)
         }
-      })
+      } else {
+        $(this)
+          .val(contact[propName])
+          .trigger('change')
+      }
+    })
   }
 })

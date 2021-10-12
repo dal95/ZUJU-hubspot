@@ -35,7 +35,7 @@
 
       {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
       {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
-      
+
     <main class="main-wrapper">
       <div class="left-offset"></div>
       <div class="main-wrapper__row">
@@ -80,8 +80,21 @@
         </aside>
 
         <div class="content-wrapper">
+
           <section class="title-section">
-            <h2 class="page-title">{{ content.title }}</h2>
+            <h2 class="page-title">
+              {% if dynamic_page_hubdb_row %}
+                {% set d = dynamic_page_hubdb_row %}
+
+                {% if currLang == 'zh-cn' %}
+                  {{ d.name_chinese }}
+                {% else%}
+                  {{ d.name }}
+                {% endif %}
+              {% else %}
+                {{ content.title }}
+              {% endif%}
+            </h2>
 
             <!-- Scrollable menu -->
             {% module "scrollable_menu"
@@ -112,6 +125,11 @@
     {# Birthday logic #}
     {% set today = today("Asia/Singapore")|datetimeformat('%m/%e/%y') %}
     {% set birthday = contact.birthday %}
+
+      <script>
+      console.log("{{ today }}")
+      console.log("{{ birthday }}")
+      </script>
 
     {% if today == birthday %}
       <script>
