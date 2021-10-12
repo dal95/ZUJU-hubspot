@@ -1,71 +1,78 @@
-[
-  {
-    "children": [
-      {
-        "allow_new_line": false,
-        "id": "54021219-beea-beef-bbbb-96fa0dd107c9",
-        "label": "Menu label",
-        "locked": false,
-        "name": "text",
-        "required": true,
-        "show_emoji_picker": false,
-        "type": "text",
-        "validation_regex": ""
+[ {
+  "id" : "8eedd22c-624a-81f4-8a7b-9707513cf630",
+  "name" : "Menu",
+  "label" : "Field group",
+  "required" : false,
+  "locked" : true,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "54021219-beea-beef-bbbb-96fa0dd107c9",
+    "name" : "text",
+    "label" : "Menu label",
+    "required" : true,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "3c1bc264-3971-706c-7400-38cebf40aac2",
+    "name" : "icon",
+    "label" : "icon",
+    "required" : true,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "c7d2c2d1-0b0e-0f85-1a8f-13dc1a36fe7d",
+    "name" : "link",
+    "label" : "Link",
+    "required" : true,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "BLOG", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
       },
-      {
-        "default": {
-          "size_type": "auto",
-          "src": "",
-          "alt": null,
-          "loading": "lazy"
-        },
-        "id": "3c1bc264-3971-706c-7400-38cebf40aac2",
-        "label": "icon",
-        "locked": false,
-        "name": "icon",
-        "required": true,
-        "resizable": false,
-        "responsive": true,
-        "show_loading": false,
-        "type": "image"
-      },
-      {
-        "default": {
-          "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
-          "open_in_new_tab": false,
-          "no_follow": false
-        },
-        "id": "c7d2c2d1-0b0e-0f85-1a8f-13dc1a36fe7d",
-        "label": "Link",
-        "locked": false,
-        "name": "link",
-        "required": true,
-        "show_advanced_rel_options": false,
-        "supported_types": ["EXTERNAL", "BLOG", "CONTENT"],
-        "type": "link"
-      }
-    ],
-    "default": {
-      "icon": {
-        "size_type": "auto",
-        "src": "",
-        "alt": null,
-        "loading": "lazy"
-      },
-      "link": {
-        "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
-        "open_in_new_tab": false,
-        "no_follow": false
-      }
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "icon" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
     },
-    "expanded": false,
-    "id": "8eedd22c-624a-81f4-8a7b-9707513cf630",
-    "label": "Field group",
-    "locked": true,
-    "name": "Menu",
-    "occurrence": {},
-    "required": false,
-    "tab": "CONTENT",
-    "type": "group"
+    "link" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
   }
-]
+} ]

@@ -4,9 +4,11 @@
   x-on:click.self="open = !open"
   x-on:click.outside="open = false"
 >
+  {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+  {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
   {% set my_tags = blog_tags('default', 250) %}
   {% set currentURL = content.absolute_url|regex_replace('^(http|https):', '') %}
-  {% set currentTag = { value: "All" } %}
+  {% set currentTag = { value: '{{ currLang == "zh-cn" ? "所有" : "All" }}' } %}
 
   {% for item in my_tags %}
     {% if currentURL == blog_tag_url(group.id, item.slug)|regex_replace('^(http|https):', '') %}
@@ -20,7 +22,7 @@
 
     <ul class="py-2">
       <li class="px-4 py-1 my-1 hover:bg-zuju-gray-d {% if currentURL == group.absolute_url|regex_replace('^(http|https):', '') %} text-zuju-red font-bold {% endif %}">
-        <a href="{{ group.absolute_url }}">All</a>
+        <a href="{{ group.absolute_url }}">{{ currLang == "zh-cn" ? "所有" : "All" }}</a>
       </li>
       {% for item in my_tags %}
         <a href="{{ blog_tag_url(group.id, item.slug)|regex_replace('^(http|https):', '') }}">
