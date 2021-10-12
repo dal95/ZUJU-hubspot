@@ -8,6 +8,7 @@
       var iframe = document.querySelector('#kfd-iframe');
       iframe.contentWindow.postMessage({
         HubSpotContactID: {{ contact.hs_object_id }},
+        Nickname: "{{ contact.username }}",
       }, "https://playcanv.as");
     }
   }

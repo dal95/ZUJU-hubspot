@@ -1,0 +1,90 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Coming Soon
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ZujuGP | Coming Soon</title>
+	{{ standard_header_includes }}
+  {{ require_css(get_asset_url('/zuju-theme/css/_for_coming_soon/_containers-dnd.css')) }}
+  {{ require_css(get_asset_url('/zuju-theme/css/_for_coming_soon/_layouts.css')) }}
+  {{ require_css(get_asset_url('/zuju-theme/fonts/stylesheet.css')) }}
+  <style>
+  .ComingSoon{
+    background-color: #111;
+    background-image: url('https://f.hubspotusercontent20.net/hubfs/20618228/Coming%20Soon%20Images/bg.jpg');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: cover;
+    color: #fff;
+    min-height: 100vh;
+    height: 100%;
+    overflow: hidden;
+  }
+  body{
+    font-family: "GT America Condensed", sans-serif;
+    padding:0;
+    margin:0;
+  }
+  label, ul, li {
+    display:none !important;
+  }
+  input[type=email]{
+    font-size: 1rem;
+    color: #fff;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid #fff;
+  }
+  input[type=submit]{
+    max-width: 80px;
+    border-radius: 5px;
+    font-size: 1rem;
+    margin-left: 0;
+    background: #ed2938;
+    border: none;
+    color: #fff;
+    width: 100%;
+    margin-top: 16px;
+    font-weight: 500;
+    margin-bottom: 20px;
+    cursor: pointer;
+    font-size: .8rem;
+    line-height: 1.2;
+    font-weight: 900;
+    border-radius: 4px;
+    padding: 6px 10px;
+    box-shadow: 0 0 15px rgb(0 0 0 / 20%);
+    -webkit-transition: all .2s linear;
+    -moz-transition: all .2s linear;
+    transition: all .2s linear;
+  }
+  ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: #ffffff;
+    opacity: 1; /* Firefox */
+  }
+  :-ms-input-placeholder { /* Internet Explorer 10-11 */
+    color: #ffffff;
+  }
+  ::-ms-input-placeholder { /* Microsoft Edge */
+    color: #ffffff;
+  }
+  </style>
+</head>
+<body>
+  <div class="ComingSoon">
+    {% dnd_area 'dnd_area'
+  label='Main section'
+	%}
+
+	{% end_dnd_area %}
+  </div>
+	
+	{{ standard_footer_includes }}
+</body>
+</html>
