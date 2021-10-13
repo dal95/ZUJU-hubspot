@@ -324,9 +324,6 @@
       </div>
     </section>
     
-    {% if content.language.languageTag == "zh-cn" %}
-
-    {% else %}
     <section class="w-full bg-gradient-cr p-8">
       <div class="max-w-[1000px] mx-auto" x-data="{ show: (window.innerHeight - $top) > 1 }" x-on:scroll.window="show = ((window.innerHeight - $top) > 1)">
         <div
@@ -344,19 +341,35 @@
                 LUMINA - Own your place in history.
               </h1>
               <p class="text-2xl text-white font-gtcond font-black sm:text-center mb-4">
-                Our launch collectible featuring Cristiano Ronaldo
+                {% if content.language.languageTag == "zh-cn" %}
+                  包含C罗元素的特别收藏品
+                {% else %}
+                  Our launch collectible featuring Cristiano Ronaldo
+                {% endif %}
+              </p>
+              <p class="text-2xl text-white font-gtcond font-black sm:text-center mb-4">
+                Auction time 0600 UTC +8 on 26 October 2021.
               </p>
               <a href="https://collectibles.zujugp.com/#/auction/228">
                 <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 mb-4">
-                  More Info
+                  {% if content.language.languageTag == "zh-cn" %}
+                    更多信息
+                  {% else %}
+                    More Info
+                  {% endif %}
                 </button>
               </a>
               <p class="w-3/4 text-white sm:text-center mb-4">
                 <small>
                   <i>
-                    By clicking this button, I acknowledge that I may not buy any item that is restricted or prohibited by a federal,
-                    state or local law in your country or jurisdiction. I am responsible for ensuring that I am not buying any item
-                    that is prohibited by law in my jurisdiction and ensuring that the items bought comply with all laws and regulations.
+                    {% if content.language.languageTag == "zh-cn" %}
+                      一旦点击这个按钮，就代表我已经知晓并同意我不会购买任何被我所居住的国家、司法管辖区、联邦、州甚至是地方所禁止的物品。
+                      我有责任确保我没有购买任何被我所在司法管辖区的法律所禁止的物品，并确保所购买的物品符合所有法律法规。
+                    {% else %}
+                      By clicking this button, I acknowledge that I may not buy any item that is restricted or prohibited by a federal,
+                      state or local law in your country or jurisdiction. I am responsible for ensuring that I am not buying any item
+                      that is prohibited by law in my jurisdiction and ensuring that the items bought comply with all laws and regulations.
+                    {% endif %}
                   </i>
                 </small>
               </p>
@@ -365,7 +378,6 @@
         </div>
       </div>
     </section>
-    {% endif %}
     
     <section class="w-full bg-white p-8 overflow-hidden" x-data="{ bImg: false, bMan: false, mPort: false, dPort: false, dPortK: false, playing: false }">
       <div
