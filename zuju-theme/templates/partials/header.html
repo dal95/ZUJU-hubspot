@@ -116,7 +116,13 @@
           {{ c.icon_cross() }}
 
           <!-- Off canvas menu content -->
-          {{ c.z_menu(54357477653, 'off-canvas__menu', 'nav__link') }}
+
+          {% if currLang == "zh-cn" %}
+          {# {% menu "main-nav" id=57071986309 %} #}
+            {{ c.z_menu(57071986309, 'off-canvas__menu', 'nav__link') }}
+          {% else %}
+            {{ c.z_menu(54357477653, 'off-canvas__menu', 'nav__link') }}
+          {% endif %}
         </div>
 
         <!-- Burger menu -->

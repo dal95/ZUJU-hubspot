@@ -169,19 +169,31 @@
 			<div class="max-w-[1440px] flex sm:flex-col lg:flex-wrap mx-auto" x-data="parallax()" x-bind="root">
 				<div class="lg:w-1/3 relative">
 					<div class="absolute inset-0 flex items-center justify-center">
-						<img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t1.png" x-bind="animate(8)" />
+            {% if content.language.languageTag == "zh-cn" %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t1-cn.png" x-bind="animate(8)" />
+            {% else %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t1.png" x-bind="animate(8)" />
+            {% endif %}
 					</div>
 					<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-i1.jpg" />
 				</div>
 				<div class="lg:w-1/3 relative">
 					<div class="absolute inset-0 flex items-center justify-center">
-						<img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t2.png" x-bind="animate(8)" />
+            {% if content.language.languageTag == "zh-cn" %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t2-cn.png" x-bind="animate(8)" />
+            {% else %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t2.png" x-bind="animate(8)" />
+            {% endif %}
 					</div>
 					<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-i2.png" />
 				</div>
 				<div class="lg:w-1/3 relative">
 					<div class="absolute inset-0 flex items-center justify-center">
-						<img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t3.png" x-bind="animate(8)" />
+            {% if content.language.languageTag == "zh-cn" %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t3-cn.png" x-bind="animate(8)" />
+            {% else %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t3.png" x-bind="animate(8)" />
+            {% endif %}
 					</div>
 					<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-i3.png" />
 				</div>
