@@ -30,17 +30,13 @@ window.addEventListener('message', event => {
           if (res.found) {
             // alert('Username/Nickname is taken')
             parent.append(
-              `<div class="custom-validation hs-error-msg">Username ${$(
-                this
-              ).val()} ${failedMessage}</div>`
+              `<div class="custom-validation hs-error-msg">${failedMessage.replace('{uname}', $(this).val())}</div>`
             )
 
             $('#hs_form_target_register input[type="submit"]').attr('disabled', true)
           } else {
             parent.append(
-              `<div class="custom-validation success">Username ${$(
-                this
-              ).val()} ${successMessage}</div>`
+              `<div class="custom-validation success">${successMessage.replace('{uname}', $(this).val())}</div>`
             )
             $('#hs_form_target_register input[type="submit"]').attr('disabled', false)
           }

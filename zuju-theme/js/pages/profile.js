@@ -1,9 +1,14 @@
+let count = 0
+const total = $('.hs_cos_wrapper_type_form').length
+
 window.addEventListener('message', event => {
   if (
     event.data.type === 'hsFormCallback' &&
     event.data.eventName === 'onFormReady'
   ) {
-    if (event.data.id !== 'ff4fd248-ad02-4d39-9971-a8880316c297')  return
+    count++
+    // if (event.data.id !== 'ff4fd248-ad02-4d39-9971-a8880316c297')  return
+    if (count < total) return
 
     $('[name="custom_avatar"]').each(function () {
       const avatarWrap = document.createElement('div')
@@ -21,10 +26,10 @@ window.addEventListener('message', event => {
       $('.avatar-edit img').attr('src', $(this).val())
     })
 
-    $birthdayInput = $('input[name="birthday"]').closest('.input')
+    $disabledElement = $('input[name="birthday"], input[name="username"]').closest('.input')
     $emailInput = $('#hs_form_target_profile input[name="email"]').closest('.input')
 
-    $birthdayInput.addClass('disabled')
+    $disabledElement.addClass('disabled')
     $emailInput.addClass('disabled')
 
     $('.disabled').closest('.field').find('label').on('click', e => e.preventDefault())

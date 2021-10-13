@@ -15,7 +15,7 @@
         {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}
           <div class="header__language-switcher">
             <div class="header__language-switcher-label">
-              {% module 'language-switcher'
+              {% module 'language-switcher-3'
                 path='@hubspot/language_switcher',
                 display_mode='Localized',
                 label='Language switcher'

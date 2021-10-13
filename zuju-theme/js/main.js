@@ -2,7 +2,6 @@ const triggerClose = $('.modal__overlay, [data-modal-close]')
 
 $('[data-modal-target]').on('click', function () {
   // togggleBodyScroll(true)
-  console.log('test')
   modalIn(`#${$(this).data('modal-target')}`)
 })
 
@@ -328,8 +327,8 @@ if (
         }
       })
 
-      $('.continous__item').each(function () {
-        if ($(this).data('day') <= kfd_game.continuous_day) {
+      $('.cnt__item').each(function () {
+        if ($(this).data('day') <= kfd_game) {
           $(this).addClass('checked')
         }
       })
@@ -354,7 +353,7 @@ if (
         const resultPara = document.querySelector('.result')
 
         // Share must be triggered by "user activation"
-        btn.addEventListener('click', async () => {
+        btn && btn.addEventListener('click', async () => {
           try {
             await navigator.share(shareData)
             console.log('successfully share')
@@ -451,6 +450,8 @@ function setUpContinousSlide (start) {
   //     }
   //   ]
   // })
+  var Splide = window.Splide || ''
+  if (!Splide) return
 
   new Splide('.splide', {
     perPage: 7,

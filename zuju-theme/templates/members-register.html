@@ -18,17 +18,17 @@
           <div class="validate-message is-hidden">
             <div class="validate-message__success">
               {% if currLang == 'zh-cn' %}
-                可用
+                用户名 {uname} 可用
               {% else %}
-                is available
+                Username {uname} is available
               {% endif %}
             </div>
 
             <div class="validate-message__failed">
               {% if currLang == 'zh-cn' %}
-                被采取
+                用户名 {uname} 被采取
               {% else %}
-                is taken
+                Username {uname} is taken
               {% endif %}
             </div>
           </div>

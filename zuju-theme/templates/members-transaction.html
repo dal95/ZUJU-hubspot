@@ -32,7 +32,7 @@
           <p>
 
             {% if currLang == "zh-cn" %}
-            获得XX积分来保持超级会员身份
+            获得<span class="membership-tier-points">{{ 3000 - contact.current_loyalty_points }}</span>积分来保持超级会员身份
             {% else %}
             Get <span class="membership-tier-points">{{ 3000 - contact.current_loyalty_points }}</span> more Z Points to achieve <span class="membership-tier-goal">Super Fan</span>.
             {% endif %}

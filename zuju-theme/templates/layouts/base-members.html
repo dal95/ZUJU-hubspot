@@ -15,6 +15,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
+    {% if content.featured_image %}
+      <meta property="og:image" content="{{content.featured_image}}" />
+    {% else %}
+      <meta property="og:image" content="{{ get_asset_url("zuju-theme/images/assets/ZujuGP-OG.png") }}" />
+    {% endif %}
+
     {# This is intended to be used if a template requires template specific style sheets #}
     {% if template_css %}
     {{ require_css(get_asset_url(template_css)) }}
