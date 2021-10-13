@@ -133,6 +133,17 @@
   padding: 120px 0;
 }
 
+.auth-wrapper {
+  background: url(asset_url('/bg/zujugp-login.jpg'));
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  @include media('<=mobile') {
+    background-image: url(asset_url('/bg/zujugp-login-mobile.jpg'));
+    background-position: center center;
+  }
+}
+
 .content-area {
   background-color: var(--clr-dark-800);
   color: #fff;

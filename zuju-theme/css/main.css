@@ -612,6 +612,18 @@ select {
   padding: 120px 0;
 }
 
+.auth-wrapper {
+  background: url("/hubfs/raw_assets/public/zuju-theme/images/assets//bg/zujugp-login.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+@media (max-width: 600px) {
+  .auth-wrapper {
+    background-image: url("/hubfs/raw_assets/public/zuju-theme/images/assets//bg/zujugp-login-mobile.jpg");
+    background-position: center center;
+  }
+}
+
 .content-area {
   background-color: var(--clr-dark-800);
   color: #fff;
@@ -2056,11 +2068,11 @@ section.edit .form-columns-0:not(:first-of-type) {
 .input.disabled.disabled.disabled {
   pointer-events: none;
   cursor: not-allowed;
-  opacity: 0.5;
 }
 .input.disabled.disabled.disabled input {
   background: #5f6064 !important;
   cursor: not-allowed;
+  opacity: 0.5;
 }
 
 .subscription-form .hs-submit {
@@ -2480,16 +2492,6 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 .auth-wrapper a {
   text-decoration: none;
-}
-@media (max-width: 800px) {
-  .auth-wrapper {
-    background-position: -85px;
-  }
-}
-@media (max-width: 800px) {
-  .auth-wrapper {
-    background-position: -240px;
-  }
 }
 .auth-wrapper p {
   color: #fff;

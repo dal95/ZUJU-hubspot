@@ -26,13 +26,20 @@ window.addEventListener('message', event => {
       $('.avatar-edit img').attr('src', $(this).val())
     })
 
-    $disabledElement = $('input[name="birthday"], input[name="username"]').closest('.input')
-    $emailInput = $('#hs_form_target_profile input[name="email"]').closest('.input')
+    $disabledElement = $(
+      'input[name="birthday"], input[name="username"]'
+    ).closest('.input')
+    $emailInput = $('#hs_form_target_profile input[name="email"]').closest(
+      '.input'
+    )
 
     $disabledElement.addClass('disabled')
     $emailInput.addClass('disabled')
 
-    $('.disabled').closest('.field').find('label').on('click', e => e.preventDefault())
+    $('.disabled')
+      .closest('.field')
+      .find('label')
+      .on('click', e => e.preventDefault())
 
     $('.hs-input').each(function () {
       const propName = $(this).attr('name')
@@ -41,6 +48,14 @@ window.addEventListener('message', event => {
       if (propName === 'birthday') {
         const current = new Date(contact[propName])
 
+        $(this)
+          .closest('.hs-dateinput')
+          .css('position', 'relative')
+        $(this)
+          .closest('.hs-dateinput')
+          .append(
+            `<div class="hs-input" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color: #fff; background: transparent; display: flex; align-items: center; opacity: .5">${contact[propName]}</div>`
+          )
         if (current) {
           function pad (n) {
             return (n < 10 ? '0' : '') + n

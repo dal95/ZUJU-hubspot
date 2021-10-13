@@ -7,14 +7,6 @@
     text-decoration: none;
   }
 
-  @include media('<=tablet') {
-    background-position: -85px;
-  }
-
-  @include media('<=tablet') {
-    background-position: -240px;
-  }
-
   p {
     color: #fff;
   }
