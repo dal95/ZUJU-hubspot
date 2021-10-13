@@ -328,7 +328,10 @@ if (
       })
 
       $('.cnt__item').each(function () {
-        if ($(this).data('day') <= kfd_game) {
+        console.log($(this).data('day'))
+        console.log(kfd_game)
+        const day = kfd_game?.this_week_continuous_days
+        if ($(this).data('day') <= day) {
           $(this).addClass('checked')
         }
       })

@@ -13,7 +13,7 @@
     {% if content.featured_image %}
       <meta property="og:image" content="{{content.featured_image}}" />
     {% else %}
-      <meta property="og:image" content="{{ get_asset_url("zuju-theme/images/assets/ZujuGP-OG.png") }}" />
+      <meta property="og:image" content="{{ get_asset_url('zuju-theme/images/assets/bg/ZujuGP-OG.png') }}" />
     {% endif %}
 
     {{ require_css(get_asset_url("../../fonts/stylesheet.css")) }}
@@ -58,25 +58,25 @@
               <div class="user-card__content">
                 <div class="user-card__name all-caps">{{ request_contact.contact.firstname }} {{ contact.lastname }}</div>
                 <div class="user-card__tier fs-sm">
-                  
+
                   {% if currLang == 'zh-cn' %}
                     {% if contact.membership_tier == 'Fan' %}
                       会员
                     {% elif contact.membership_tier == 'Super Fan' %}
                       超级会员
-                    {% else %}  
+                    {% else %}
                       终身会员
                     {% endif %}
                   {% else %}
                     {{ contact.membership_tier }}
                   {% endif %}
-                  
+
                 </div>
                 <div class="user-card__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> {{ currLang == "zh-cn" ? " Z 积分" : "Z Points" }}</div>
               </div>
             </a>
           {% endif %}
-          
+
           <div class="separator">{{ currLang == "zh-cn" ? "菜单" : "Menu" }}</div>
           <!-- Side menu -->
           {% module "side_menu"

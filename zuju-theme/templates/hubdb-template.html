@@ -84,19 +84,18 @@
 
 								<div class="dfl cta">
 									<div>
-										<span class="fs-large">{{ d.point }}</span>
+										<span class="fs-large">{{ d.point|format_currency('en-US')|replace('$', '') }}</span>
 										<span class="fs-sm">Z Points</span>
 									</div>
 
 									<div>
-										<a
-											href="#"
+										<button
 											data-modal-target="modal-redemption"
 											class="button button--primary "
-												{{ d.stock > 0 && contact.current_loyalty_points > d.point || 'disabled' }}
+												{{ d.stock|int > 0 && contact.current_loyalty_points|int > d.point|int || 'disabled' }}
 											>
-											{{ d.stock > 0 && contact.current_loyalty_points > d.point ? 'Redeem Now' : 'Unavailable' }}
-										</a>
+											{{ (d.stock|int > 0 && contact.current_loyalty_points|int > d.point|int) ? 'Redeem Now' : 'Unavailable' }}
+										</button>
 									</div>
 								</div>
 							</div>
