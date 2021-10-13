@@ -34,12 +34,15 @@ window.addEventListener('message', event => {
                 this
               ).val()} ${failedMessage}</div>`
             )
+
+            $('#hs_form_target_register input[type="submit"]').attr('disabled', true)
           } else {
             parent.append(
               `<div class="custom-validation success">Username ${$(
                 this
               ).val()} ${successMessage}</div>`
             )
+            $('#hs_form_target_register input[type="submit"]').attr('disabled', false)
           }
         })
         .catch(err => alert('Something went wrong, contact us!'))
@@ -55,20 +58,20 @@ window.addEventListener('message', event => {
   }
 })
 
-hbspt.forms.create({
-  portalId: '20618228',
-  formId: '13fb8953-fb28-43c9-a410-82efb99e6847',
-  target: '.form-embed-container',
-  cssClass: 'form-register',
-  translations: {
-    en: {
-      required: 'Please enter {{input.name}} field',
-      invalidDate: 'Please enter a real date',
-      submitText: 'Custom Submit Button Text',
-      fieldLabels: {
-        email: 'Electronic mail'
-      },
-      groupErrors: false
-    }
-  }
-})
+// hbspt.forms.create({
+//   portalId: '20618228',
+//   formId: '13fb8953-fb28-43c9-a410-82efb99e6847',
+//   target: '.form-embed-container',
+//   cssClass: 'form-register',
+//   translations: {
+//     en: {
+//       required: 'Please enter {{input.name}} field',
+//       invalidDate: 'Please enter a real date',
+//       submitText: 'Custom Submit Button Text',
+//       fieldLabels: {
+//         email: 'Electronic mail'
+//       },
+//       groupErrors: false
+//     }
+//   }
+// })

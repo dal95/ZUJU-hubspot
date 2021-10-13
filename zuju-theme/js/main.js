@@ -1,8 +1,8 @@
 const triggerClose = $('.modal__overlay, [data-modal-close]')
 
 $('[data-modal-target]').on('click', function () {
-    // togggleBodyScroll(true)
-    console.log('test')
+  // togggleBodyScroll(true)
+  console.log('test')
   modalIn(`#${$(this).data('modal-target')}`)
 })
 
@@ -230,7 +230,7 @@ const formatDate = date => {
   })
 }
 
-const BASE_URL = 'https://dev.zujugp.com/_hcms/api'
+const BASE_URL = 'https://www.zujugp.com/_hcms/api'
 
 const uid = user_vid
 
@@ -265,12 +265,20 @@ fetch(`${BASE_URL}/points-history?uid=${uid}`)
 
 const dashboardAllowedPages = ['/members-portal', '/membership']
 
-if (dashboardAllowedPages.find(slug => window.location.href.indexOf(slug) != -1)) {
+if (
+  dashboardAllowedPages.find(slug => window.location.href.indexOf(slug) != -1)
+) {
   fetch(`${BASE_URL}/dashboard?uid=${uid}`)
     .then(res => res.json())
     .then(res => {
       // Membership page
-      const { daily_task, kfd_game, refer, is_first_login, progress_bar } = res.data
+      const {
+        daily_task,
+        kfd_game,
+        refer,
+        is_first_login,
+        progress_bar
+      } = res.data
       const tasksNames = Object.keys(daily_task)
       const mapped = tasksNames.map(i => res.data.daily_task[i])
 
@@ -326,6 +334,8 @@ if (dashboardAllowedPages.find(slug => window.location.href.indexOf(slug) != -1)
         }
       })
 
+      setUpContinousSlide(kfd_game.continuous_day)
+
       $('.membership-tier-points').text(progress_bar.target_to_points)
 
       // Set Referral Link
@@ -347,7 +357,6 @@ if (dashboardAllowedPages.find(slug => window.location.href.indexOf(slug) != -1)
         btn.addEventListener('click', async () => {
           try {
             await navigator.share(shareData)
-            // resultPara.textContent = 'MDN shared successfully'
             console.log('successfully share')
           } catch (err) {
             // resultPara.textContent = 'Error: ' + err
@@ -421,3 +430,37 @@ function eraseCookie (name) {
 $('#modal-birthday .button').on('click', function () {
   setCookie('birthday-give-claimed', +new Date(), 365)
 })
+
+function setUpContinousSlide (start) {
+  // $('.continous').slick({
+  //   slidesToShow: 7,
+  //   slidesToScroll: 7,
+  //   centerMode: false,
+  //   arrows: true,
+  //   infinite: false,
+  //   initialSlide: start,
+  //   prevArrow: `<div class="prev-arrow">${chevronLeft}</div>`,
+  //   nextArrow: `<div class="next-arrow">${chevronRight}</div>`,
+  //   responsive: [
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 4,
+  //         slidesToScroll: 4
+  //       }
+  //     }
+  //   ]
+  // })
+
+  new Splide('.splide', {
+    perPage: 7,
+    perMove: 7,
+    pagination: false,
+    start: start,
+    breakpoints: {
+      600: {
+        perPage: 4
+      }
+    }
+  }).mount()
+}

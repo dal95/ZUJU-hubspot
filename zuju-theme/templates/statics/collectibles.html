@@ -25,20 +25,37 @@
           <div class="lg:row-span-1 lg:col-start-2 lg:col-span-7 pt-24 pr-8 mb-16">
             <div x-data="parallax()" x-bind="root">
               <h1 class="text-zuju-red sm:text-lg lg:text-2xl font-bold uppercase mb-2" x-bind="animate(8)">Own Your Place In History</h1>
-              <p class="text-white mb-8" x-bind="animate(8)">Bid for LUMINA, the only digital collectible recognised by Cristiano Ronaldo.</p>
+              <p class="text-white mb-8" x-bind="animate(8)">
+                {% if content.language.languageTag == "zh-cn" %}
+                  竞标LUMINA, 包含C罗元素的特别收藏品
+                {% else %}
+                  Bid for LUMINA, our launch collectible featuring Cristiano Ronaldo
+                {% endif %}
+              </p>
               <p class="text-white mb-4" x-bind="animate(8)">
                 A 1-of-1 media asset featuring Cristiano Ronaldo in ZujuGP's acclaimed launch commercial,
                 <strong class="text-zuju-red">LUMINA</strong>
                 is the ultimate trophy for collectors and Cristiano Ronaldo fans. The highest bidder gets to meet Cristiano in person and will receive tickets to
                 a Manchester United home game, a 2-night suite stay at Hotel Football next to Old Trafford and many more amazing rewards.
               </p>
-              <p class="text-white" x-bind="animate(8)">Auction* time 0600 UCT +8 on 26 October 2021.</p>
+              <p class="text-white" x-bind="animate(8)">Auction* time 0600 UTC +8 on 26 October 2021.</p>
               <p class="text-white mb-4" x-bind="animate(8)"><small><i>*Auction time and date is subject to change.</i></small></p>
               <a href="https://collectibles.zujugp.com/#/auction/228">
-                <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 mb-8" x-bind="animate(8)">
+                <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 mb-4" x-bind="animate(8)">
                   More Info
                 </button>
               </a>
+              <p class="text-white mb-8" x-bind="animate(8)">
+                <small>
+                  <i>
+                    {% if content.language.languageTag == "zh-cn" %}
+                      一旦点击这个按钮，就代表我已经知晓并同意我不会购买任何被我所居住的国家、司法管辖区、联邦、州甚至是地方所禁止的物品。我有责任确保我没有购买任何被我所在司法管辖区的法律所禁止的物品，并确保所购买的物品符合所有法律法规。
+                    {% else %}
+                      By clicking this button, I acknowledge that I may not buy any item that is restricted or prohibited by a federal, state or local law in your country or jurisdiction. I am responsible for ensuring that I am not buying any item that is prohibited by law in my jurisdiction and ensuring that the items bought comply with all laws and regulations.
+                    {% endif %}
+                  </i>
+                </small>
+              </p>
             </div>
           </div>
           <div class="lg:row-start-2 lg:col-start-4 lg:col-span-6 text-center mb-16">
@@ -51,7 +68,15 @@
                 One such reward is to connect fans to their favourite stars such as Cristiano&nbsp;Ronaldo! Stay&nbsp;tuned.
               </p>
               <p class="text-white mb-8" x-bind="animate(0)">
-                <small>Disclaimer: We are unable to support sale of digital collectibles in countries where such products are prohibited.</small>
+                <small>
+                  {% if content.language.languageTag == "zh-cn" %}
+                    *免责声明：在那些数字产品被禁止的国家或地区，我们就无法提供对此类相关产品的销售支持。您有责任确保您没有购买任何被您所在司法管辖区的法律所禁止的物品，并确保所购买的物品符合所有法律法规。
+                  {% else %}
+                    *Disclaimer: We are unable to support sale of digital collectibles in countries where such products are prohibited. You are responsible for
+                    ensuring that you are not buying any item that is prohibited by law in your jurisdiction and ensuring that the items bought comply with all
+                    laws and regulations.
+                  {% endif %}
+                </small>
               </p>
             </div>
           </div>

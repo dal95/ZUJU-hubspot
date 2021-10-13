@@ -5,6 +5,7 @@
 
 {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
 {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+{% import '../../macros/tags.html' as c %}
 
 <section class="callout-section">
   <img
@@ -239,3 +240,13 @@
     <a href="https://mintmediallc.com" class="footer__copyright" target="_blank">&copy; 2021 Mint Media Sports Limited</a>
   </div>
 </footer>
+
+
+{% call c.modal('modal-contact-us', null, null) %}
+  <div class="form-contact-wrapper">
+    <h3 class="text-center">Contact Us</h3>
+    {% form 'form-contact-us'
+      form_to_use='ff4fd248-ad02-4d39-9971-a8880316c297',
+    %}
+  </div>
+{% endcall %}

@@ -139,7 +139,11 @@
         x-bind="root"
       >
         <div class="sm:w-full sm:max-w-md">
+          {% if content.language.languageTag == "zh-cn" %}
+          <img class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading-cn.png" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
+          {% else %}
           <img class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading.png" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
+          {% endif %}
         </div>
         <p class="lg:w-1/2 text-white text-xl font-bold lg:text-center mb-8" x-bind="animate(4)">
           {% if content.language.languageTag == "zh-cn" %}

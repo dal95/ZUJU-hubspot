@@ -10,6 +10,8 @@
 {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 
 {% set template_css = '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' %}
+{{ require_css('https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.6/dist/css/splide.min.css', 'header') }}
+
 {% extends "./layouts/base-members.html" %}
 
 {% block body %}
@@ -125,12 +127,24 @@
           <p>{{ currLang == "zh-cn" ? "25天内每日消费奖金" : "25 Days Daily Spent Bonus" }}</p>
           {# <p>Bigger bonus! 2 points per dollar spent with a min. of $1 daily for 25 days consecutively</p> #}
 
-          <div class="continous">
+          <div class="continous" style="display: none">
             {% for i in range(25) %}
               <div>
                 <div class="continous__item" data-day="{{loop.index}}">Day<span>{{ loop.index }}</span></div>
               </div>
             {% endfor %}
+          </div>
+
+          <div class="splide cnt">
+            <div class="splide__track">
+              <ul class="splide__list">
+                {% for i in range(25) %}
+                  <li class="splide__slide">
+                    <div class="cnt__item"  data-day="{{loop.index}}">Day <span>{{ loop.index }}</span></div>
+                  </li>
+                {% endfor %}
+              </ul>
+            </div>
           </div>
 
           <div class="text-center">
@@ -184,11 +198,16 @@
   {% endcall %}
 
   {{ require_js('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js', 'footer') }}
+  {{ require_js('https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.6/dist/js/splide.min.js', 'footer') }}
 
+  <script>
+    var chevronLeft = `{{ c.chevron_left() }}`
+    var chevronRight = `{{ c.chevron_right() }}`
+  </script>
   {% require_js 'my_require_js' position='position'%}
     <script>
       $(document).on('ready', function() {
-        $('.continous, .timeline').slick({
+        $('.timeline').slick({
           slidesToShow: 7,
           slidesToScroll: 7,
           centerMode: false,

@@ -81,9 +81,7 @@
 				<div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
 					<div class="relative">
 						<button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
-						<div x-on:click.stop="" class="STO-gpform bg-white">
-              {% module "form" path="@hubspot/form" %}
-            </div>
+						<div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" %}</div>
 					</div>
 				</div>
 			</div>
@@ -421,6 +419,6 @@
 			</div>
 		</section>
 	</main>
-
+	
 </div>
 {% endblock body %}
