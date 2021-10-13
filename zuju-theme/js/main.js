@@ -1,12 +1,9 @@
-const modalTrigger = document.querySelector('[data-modal-target]')
 const triggerClose = $('.modal__overlay, [data-modal-close]')
 
-modalTrigger &&
-  modalTrigger.addEventListener('click', function () {
+$('[data-modal-target]').on('click', function () {
     // togggleBodyScroll(true)
-    modalIn(`#${$(this).data('modal-target')}`)
-    // document.querySelector('.modal').classList.add('active')
-  })
+  modalIn(`#${$(this).data('modal-target')}`)
+})
 
 triggerClose.on('click', function () {
   modalOut('.modal', () => {
@@ -266,12 +263,12 @@ fetch(`${BASE_URL}/points-history?uid=${uid}`)
 
 const dashboardAllowedPages = ['/members-portal', '/membership']
 
-if (dashboardAllowedPages.includes(location.pathname)) {
+if (dashboardAllowedPages.find(slug => window.location.href.indexOf(slug) != -1)) {
   fetch(`${BASE_URL}/dashboard?uid=${uid}`)
     .then(res => res.json())
     .then(res => {
       // Membership page
-      const { daily_task, kfd_game, refer, is_first_login } = res.data
+      const { daily_task, kfd_game, refer, is_first_login, progress_bar } = res.data
       const tasksNames = Object.keys(daily_task)
       const mapped = tasksNames.map(i => res.data.daily_task[i])
 
@@ -326,6 +323,8 @@ if (dashboardAllowedPages.includes(location.pathname)) {
           $(this).addClass('checked')
         }
       })
+
+      $('.membership-tier-points').text(progress_bar.target_to_points)
 
       // Set Referral Link
       const ref = new URL(refer?.referral_link)

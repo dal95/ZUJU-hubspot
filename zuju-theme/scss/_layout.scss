@@ -968,6 +968,8 @@ input[type='submit'] {
   }
 
   &__card-desc {
+    flex: 1;
+
     b {
       font-size: 18px;
     }

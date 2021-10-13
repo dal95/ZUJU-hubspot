@@ -2,7 +2,7 @@
 .hs-input {
   height: 40px;
   border: none;
-  background-color: #fff;
+  background-color: var(--clr-light-900);
   border-radius: 0;
   font-size: 16px;
   display: block;
@@ -120,6 +120,15 @@ select.hs-input {
   padding: 0;
   list-style: none;
   color: #e58c8c;
+}
+
+.hs_cos_wrapper_type_password_prompt {
+  color: #e58c8c;
+  margin-bottom: 10px;
+}
+
+#hs-pwd-widget-password {
+  margin-top: 5px !important;
 }
 
 .hs-recaptcha {
@@ -305,5 +314,23 @@ section.edit {
   input {
     background: #5f6064 !important;
     cursor: not-allowed
+  }
+}
+
+.subscription-form {
+  .hs-submit {
+    margin-top: 0;
+  }
+
+  .field {
+    margin: 0;
+  }
+}
+
+.form-contact-wrapper {
+  padding-top: rem(30);
+
+  .field {
+    margin-left: 0;
   }
 }

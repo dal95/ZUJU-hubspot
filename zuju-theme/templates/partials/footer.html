@@ -34,19 +34,26 @@
           Keep updated with news and rewards with us.
           {% endif %}
         </p>
-        <form action="">
+        {# <form action="">
           {% if currLang == "zh-cn" %}
           <input type="email" name="" id="" placeholder="您的电子邮件地址" />
           {% else %}
           <input type="email" name="" id="" placeholder="Your email address" />
           {% endif %}
-          
+
           {% if currLang == "zh-cn" %}
           <input type="submit" class="button button-o-primary" value="  订阅  " />
           {% else %}
           <input type="submit" class="button button-o-primary" value="Subscribe" />
           {% endif %}
-        </form>
+        </form> #}
+
+        <div class="subscription-form">
+          {% form 'form-subscription'
+            form_to_use='2df3156e-384b-4ed8-8dea-af0bc8503144',
+          %}
+        </div>
+
       </div>
       <div class="footer__cta-omega">
         <h3 class="all-caps">
@@ -63,7 +70,7 @@
           We welcome visionaries who share our desire to advance football’s transition to a digital future.
           {% endif %}
         </p>
-        <button class="button button--primary">
+        <button class="button button--primary" data-modal-target="modal-contact-us">
           {% if currLang == "zh-cn" %}
           联系我们
           {% else %}

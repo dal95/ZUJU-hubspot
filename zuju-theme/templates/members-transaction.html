@@ -30,15 +30,15 @@
             <div class="icon icon--ball"></div>
           </div>
           <p>
-            
+
             {% if currLang == "zh-cn" %}
             获得XX积分来保持超级会员身份
             {% else %}
-            Get xx more Z Points to achieve Super Fan.
+            Get <span class="membership-tier-points">{{ 3000 - contact.current_loyalty_points }}</span> more Z Points to achieve <span class="membership-tier-goal">Super Fan</span>.
             {% endif %}
-            
+
             {# 会员  |  超级会员  |  终身会员 #}
-            
+
           </p>
           <a href="/about-rewards" class="button button--primary">{{ currLang == "zh-cn" ? "等级福利" : "Tier Benefits" }}</a>
         </div>
