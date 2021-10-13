@@ -35,26 +35,18 @@
           Keep updated with news and rewards with us.
           {% endif %}
         </p>
-        {# <form action="">
-          {% if currLang == "zh-cn" %}
-          <input type="email" name="" id="" placeholder="您的电子邮件地址" />
-          {% else %}
-          <input type="email" name="" id="" placeholder="Your email address" />
-          {% endif %}
-
-          {% if currLang == "zh-cn" %}
-          <input type="submit" class="button button-o-primary" value="  订阅  " />
-          {% else %}
-          <input type="submit" class="button button-o-primary" value="Subscribe" />
-          {% endif %}
-        </form> #}
-
+        
         <div class="subscription-form">
-          {% form 'form-subscription'
-            form_to_use='2df3156e-384b-4ed8-8dea-af0bc8503144',
-          %}
+          {% if currLang == "zh-cn" %}
+            {% form 'form-subscription'
+                form_to_use='3e069afc-6fdd-48ab-9c7c-f2544d944da1',
+              %}
+          {% else %}
+            {% form 'form-subscription'
+                form_to_use='2df3156e-384b-4ed8-8dea-af0bc8503144',
+              %}
+          {% endif %}
         </div>
-
       </div>
       <div class="footer__cta-omega">
         <h3 class="all-caps">
@@ -68,7 +60,8 @@
           {% if currLang == "zh-cn" %}
           诚邀有识之士与我们一起将足球推向数字化的未来
           {% else %}
-          We welcome visionaries who share our desire to advance football’s transition to a digital future.
+          We welcome visionaries to build a digital football future.
+          {# We welcome visionaries who share our desire to advance football’s transition to a digital future. #}
           {% endif %}
         </p>
         <button class="button button--primary" data-modal-target="modal-contact-us">
@@ -97,7 +90,13 @@
             <a href="/about-us">About</a>
             {% endif %}
           </li>
-          {# <li><a href="#">Impact</a></li> #}
+          <li>
+            {% if currLang == "zh-cn" %}
+            <a href="/zh-cn/impact">影响力</a>
+            {% else %}
+            <a href="/impact">Impact</a>
+            {% endif %}
+          </li>
           {# <li><a href="#">Advertise</a></li> #}
         </ul>
       </div>
@@ -244,9 +243,23 @@
 
 {% call c.modal('modal-contact-us', null, null) %}
   <div class="form-contact-wrapper">
-    <h3 class="text-center">Contact Us</h3>
-    {% form 'form-contact-us'
-      form_to_use='ff4fd248-ad02-4d39-9971-a8880316c297',
-    %}
+    <h3 class="text-center">
+      {% if currLang == "zh-cn" %}
+      联系我们
+      {% else %}
+      Contact Us
+      {% endif %}
+    </h3>
+
+    {% if currLang == "zh-cn" %}
+      {% form 'form-contact-us'
+        form_to_use='a47ead18-9f24-425f-9136-48e0f3f37c89',
+      %}
+    {% else %}
+      {% form 'form-contact-us'
+        form_to_use='ff4fd248-ad02-4d39-9971-a8880316c297',
+      %}
+    {% endif %}
+    
   </div>
 {% endcall %}

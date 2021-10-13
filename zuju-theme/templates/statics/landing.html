@@ -224,7 +224,7 @@
     <section>
       <div
         class="relative h-screen w-full overflow-hidden cursor-pointer"
-        x-data="{ init: false, show: false, x: 0, y: 0, top: 0, playing: false }"
+        x-data="{ init: false, show: false, x: 0, y: 0, top: $top, playing: false }"
         x-init="init = true"
         x-on:scroll.window="top = $top"
         x-on:mousemove.window="show = $el.matches(':hover'); if (show) { x = $event.clientX; y = $event.clientY }"

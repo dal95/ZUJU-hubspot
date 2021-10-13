@@ -10,6 +10,57 @@
 {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
+    <section>
+      <div
+        class="relative h-screen w-full overflow-hidden cursor-pointer"
+        x-data="{ init: false, show: false, x: 0, y: 0, top: $top, playing: false }"
+        x-init="init = true"
+        x-on:scroll.window="top = $top"
+        x-on:mousemove.window="show = $el.matches(':hover'); if (show) { x = $event.clientX; y = $event.clientY }"
+      >
+        <img
+          x-cloak=""
+          x-show="!init"
+          class="absolute z-20 transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png"
+        />
+        <div
+          x-cloak=""
+          x-show="show"
+          x-transition.duration.500ms.opacity.scale.50=""
+          class="touch:hidden sm:hidden absolute z-20 origin-center transition-all duration-200 ease-out pointer-events-none"
+          x-bind:style="{ hidden: !init, top: $px(y - top - ($height / 2)), left: $px(x - ($width / 2)) }"
+        >
+          <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" />
+        </div>
+        <video muted="" autoplay="" loop="" class="sm:hidden h-full w-full object-cover object-center opacity-70" x-on:click="playing = true">
+          <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" type="video/mp4" />
+        </video>
+        <div class="hidden sm:block touch:block absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <img class="sm:h-20 sm:0w-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" />
+        </div>
+        <video muted="" class="lg:hidden h-full w-full object-cover object-center" x-on:click="playing = true">
+          <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" type="video/mp4" />
+        </video>
+        <div
+          x-cloak=""
+          x-show="playing"
+          x-transition.opacity.duration.300ms=""
+          class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+          x-on:click="playing = false"
+          x-on:keyup.window.escape="playing = false"
+        >
+          <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+            <div class="relative">
+              <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
+              <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+                <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
     <section class="sm:hidden">
       <div
         class="h-[calc(100vh-var(--nav-height))] min-h-[600px] max-w-[1920px] mx-auto grid sm:grid-cols-1 sm:grid-rows-1 lg:grid-cols-4 lg:grid-rows-2"
@@ -324,7 +375,7 @@
       </div>
     </section>
     
-    {% if content.language.languageTag == "en" %}
+    {% if false && content.language.languageTag == "en" %}
     <section class="w-full bg-gradient-cr p-8">
       <div class="max-w-[1000px] mx-auto" x-data="{ show: (window.innerHeight - $top) > 1 }" x-on:scroll.window="show = ((window.innerHeight - $top) > 1)">
         <div
@@ -454,7 +505,7 @@
                   {% endif %}
                 </button>
               </a>
-              <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4" x-on:click="playing = true">
+              <button class="hidden text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4" x-on:click="playing = true">
                 {% if content.language.languageTag == "zh-cn" %}
                   观看预告片
                 {% else %}

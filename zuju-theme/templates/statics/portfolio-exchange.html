@@ -62,7 +62,7 @@
 				x-on:keyup.window.escape="playing = false"
 			>
 				<div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
-					<div class="relative">
+					<div class="relative sm:w-full">
 						<button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
 						<video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
 							<source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/exchange.mp4" />
@@ -79,7 +79,7 @@
 				x-on:keyup.window.escape="noti = false"
 			>
 				<div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
-					<div class="relative">
+					<div class="relative sm:w-full">
 						<button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
 						<div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" %}</div>
 					</div>
@@ -224,13 +224,7 @@
 			<div class="max-w-[1440px] mx-auto">
 				<div class="sm:hidden flex">
 					<div class="lg:w-1/2">
-            <a href="
-                     {% if content.language.languageTag == "zh-cn" %}
-                     /zh-cn/portfolio/zujugameplay
-                     {% else %}
-                     /portfolio/zujugameplay
-                     {% endif %}
-                     ">
+            <a href="/portfolio/zujugameplay">
 							<div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
 								<div>
 									<img class="w-full h-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/more-gameplay.png" />
@@ -266,13 +260,7 @@
 						</a>
 					</div>
 					<div class="lg:w-1/2">
-            <a href="
-                     {% if content.language.languageTag == "zh-cn" %}
-                     /zh-cn/portfolio/zujugp-rank
-                     {% else %}
-                     /portfolio/zujugp-rank
-                     {% endif %}
-                     ">
+            <a href="/portfolio/zujugp-rank">
 							<div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
 								<div>
 									<img class="w-full h-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/more-rank.jpg" />
@@ -316,13 +304,7 @@
 									<div class="">
 										<div>
 											<div class="lg:w-1/2">
-                        <a href="
-                                 {% if content.language.languageTag == "zh-cn" %}
-                                 /zh-cn/portfolio/zujugameplay
-                                 {% else %}
-                                 /portfolio/zujugameplay
-                                 {% endif %}
-                                 ">
+                        <a href="/portfolio/zujugameplay">
 													<div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
 														<div>
 															<img class="w-full h-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/more-gameplay.png" />
@@ -364,13 +346,7 @@
 									<div class="">
 										<div>
 											<div class="lg:w-1/2">
-                        <a href="
-                                 {% if content.language.languageTag == "zh-cn" %}
-                                 /zh-cn/portfolio/zujugp-rank
-                                 {% else %}
-                                 /portfolio/zujugp-rank
-                                 {% endif %}
-                                 ">
+                        <a href="/portfolio/zujugp-rank">
 													<div class="relative sm:aspect-w-1 sm:aspect-h-1 lg:aspect-w-16 lg:aspect-h-9 overflow-hidden" x-data="parallax()" x-bind="root">
 														<div>
 															<img class="w-full h-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/more-rank.jpg" />
