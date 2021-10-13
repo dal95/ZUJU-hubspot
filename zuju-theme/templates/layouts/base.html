@@ -9,6 +9,13 @@
     {% if page_meta.html_title %}<title>{{ page_meta.html_title }} {% if content.language.languageTag == "zh-cn" %}| 蹴蹴ZujuGP{% else %}| ZujuGP{% endif %}</title>{% endif %}
     {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
     <meta name="description" content="{{ page_meta.meta_description }}">
+
+    {% if content.featured_image %}
+      <meta property="og:image" content="{{content.featured_image}}" />
+    {% else %}
+      <meta property="og:image" content="{{ get_asset_url("zuju-theme/images/assets/ZujuGP-OG.png") }}" />
+    {% endif %}
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
