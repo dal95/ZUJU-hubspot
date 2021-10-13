@@ -9,7 +9,7 @@
 
 {% block body %}
   <main class="public">
-    <div class="kungfu-dash" style="background-image: url(https://i.imgur.com/d32YxC5.png)">
+    <div class="kungfu-dash" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/kungfu-dash-game/bg.png') }})">
       <div class="container">
         <div class="form-dark text-center">
           <h2 class="kd-heading kd-heading--primary">
@@ -27,7 +27,7 @@
             Play to win a chance to meet Cristiano Ronaldo online!
             {% endif %}
           </h3>
-          
+
           <p>
             {% if content.language.languageTag == "zh-cn" %}
             <a href="{{ content_by_id(56505783586).absolute_url }}">阅读</a>游戏的规则。
@@ -35,7 +35,7 @@
             Click <a href="{{ content_by_id(56505783586).absolute_url }}">here</a> to read how to the competition works.
             {% endif %}
           </p>
-          
+
           {# Iframe wrapper #}
           <div class="kd-aspect-ratio">
             <div class="kd-game">
