@@ -775,6 +775,23 @@ body {
 .app .blog-post__body blockquote:before {
   content: "\a0";
 }
+.app .blog-post__body ul,
+.app .blog-post__body ol {
+  margin-left: 2rem;
+}
+.app .blog-post__body ul {
+  list-style-type: disc;
+}
+.app .blog-post__body ol {
+  list-style-type: decimal;
+}
+.app .blog-post__body a[href] {
+  --tw-text-opacity: 1;
+  color: rgba(237, 41, 56, var(--tw-text-opacity));
+}
+.app .blog-post__body a[href] {
+  text-decoration: underline;
+}
 .app .blog-post__comments-listing #comments-listing .comment {
   margin-bottom: 1rem;
 }
