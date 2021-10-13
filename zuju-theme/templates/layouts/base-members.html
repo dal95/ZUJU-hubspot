@@ -57,12 +57,26 @@
               {# <textarea name="" id="" cols="30" rows="10">{{ contact|tojson }}</textarea> #}
               <div class="user-card__content">
                 <div class="user-card__name all-caps">{{ request_contact.contact.firstname }} {{ contact.lastname }}</div>
-                <div class="user-card__tier fs-sm">{{ contact.membership_tier }}</div>
-                <div class="user-card__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> {{ currLang == "zh-cn" ? "蹴蹴积分" : "Z Points" }}</div>
+                <div class="user-card__tier fs-sm">
+                  
+                  {% if currLang == 'zh-cn' %}
+                    {% if contact.membership_tier == 'Fan' %}
+                      会员
+                    {% elif contact.membership_tier == 'Super Fan' %}
+                      超级会员
+                    {% else %}  
+                      终身会员
+                    {% endif %}
+                  {% else %}
+                    {{ contact.membership_tier }}
+                  {% endif %}
+                  
+                </div>
+                <div class="user-card__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> {{ currLang == "zh-cn" ? " Z 积分" : "Z Points" }}</div>
               </div>
             </a>
           {% endif %}
-
+          
           <div class="separator">{{ currLang == "zh-cn" ? "菜单" : "Menu" }}</div>
           <!-- Side menu -->
           {% module "side_menu"
