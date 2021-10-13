@@ -192,7 +192,13 @@
 				{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
 			</div>
 			<div class="py-16 pb-32" x-data="parallax()" x-bind="root">
-				<h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(16)">In Alignment With</h1>
+				<h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(16)">
+					{% if content.language.languageTag == "zh-cn" %}
+						已与以下伙伴达成合作
+					{% else %}
+						In Alignment With
+					{% endif %}
+				</h1>
 				<div class="flex sm:flex-col gap-x-8 gap-y-8 items-center justify-center">
 					<div class="flex gap-x-8">
 						<img class="h-14" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-unesco.png" />
