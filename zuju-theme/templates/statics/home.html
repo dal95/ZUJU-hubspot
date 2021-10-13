@@ -324,6 +324,7 @@
       </div>
     </section>
     
+    {% if content.language.languageTag == "en" %}
     <section class="w-full bg-gradient-cr p-8">
       <div class="max-w-[1000px] mx-auto" x-data="{ show: (window.innerHeight - $top) > 1 }" x-on:scroll.window="show = ((window.innerHeight - $top) > 1)">
         <div
@@ -378,7 +379,8 @@
         </div>
       </div>
     </section>
-    
+    {% endif %}
+
     <section class="w-full bg-white p-8 overflow-hidden" x-data="{ bImg: false, bMan: false, mPort: false, dPort: false, dPortK: false, playing: false }">
       <div
         x-cloak
