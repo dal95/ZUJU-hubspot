@@ -22,14 +22,14 @@
         <div class="lg:w-1/2 sm:w-full sm:max-w-md lg:self-start">
           <h2 class="text-white text-4xl font-gtcond font-black mb-8" x-bind="animate(8)">
             {% if content.language.languageTag == "zh-cn" %}
-            赚取忠诚积分
+            赚取忠诚Z积分
             {% else %}
             Earn Loyalty Z Points
             {% endif %}
           </h2>
           <p class="text-white mb-8" x-bind="animate(4)">
             {% if content.language.languageTag == "zh-cn" %}
-            订阅蹴蹴，通过获得积分而兑换购物或者赢取其他奖励！您有机会得到蹴蹴终极会员的头衔。每时每刻，您都可能享受到绝妙的时机兑换专属奖品。请开启注册或者选择登录您的已有账号，参与到蹴蹴生态系统中积累更多的积分吧！
+            通过兑换获得的积分购物或者赢取其他奖励！你还有机会得到蹴蹴ZujuGP终极会员的头衔。Z积分可以兑换专属奖品并获得独特体验。请开启注册或者选择登录已有账号，参与到蹴蹴ZujuGP的生态系统中去，积累更多的积分吧！
             {% else %}
               Be rewarded for shopping and spending time with us! 
               You might even earn the vaunted title of the ZujuGP Ultimate Fan! 
@@ -64,7 +64,11 @@
     <section class="bg-white" x-data="parallax()" x-bind="root">
       <div class="max-w-[1440px] lg:flex justify-center p-8 lg:pb-16 mx-auto">
         <div class="lg:w-1/2 flex items-center sm:py-8 lg:px-8 lg:py-16" x-bind="animate(16)">
+          {% if content.language.languageTag == "zh-cn" %}
+          <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-fan-super-fan-ultimate-fan-cn.png" />
+          {% else %}
           <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/fan-level.png" />
+          {% endif %}
         </div>
         <div class="lg:w-1/3 flex flex-col items-start justify-center">
           <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black mb-8" x-bind="animate(4)">
@@ -84,7 +88,7 @@
           </p>
           <p class="mb-8">
             {% if content.language.languageTag == "zh-cn" %}
-            超级会员和终极会员可以解锁一些特级奖励。交易后未花费的积分将结转至您的下一次兑换。蹴蹴积分不会过期，但需要是在过去90天内收到的积分才能享受相关优惠。
+            超级会员和终极会员可以解锁一些特级奖励。交易后未花费完的Z积分将结转至下一次兑换。Z积分不会过期，但需要是在过去90天内收到的积分才能享受相关礼遇。
             {% else %}
             Supers and Ultimates will unlock privilege rewards. Z Points not spent following transactions will be carried over to your next redemption.
             Z Points DO NOT expire but you will need to be in receipt of points in the last 90 days to enjoy benefits.
@@ -95,8 +99,18 @@
     </section>
     <section class="bg-gradient-to-b from-white to-zuju-gray-db">
       <div class="max-w-[1440px] flex flex-col items-center p-8 mx-auto">
-        <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black text-center sm:mb-8 lg:mb-16">Member Tiers</h1>
-        <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/tiers.png" />
+        <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black text-center sm:mb-8 lg:mb-16">
+          {% if content.language.languageTag == "zh-cn" %}
+          会员等级
+          {% else %}
+          Member Tiers
+          {% endif %}
+        </h1>
+        {% if content.language.languageTag == "zh-cn" %}
+        <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-loyalty-points-cn.png" />
+        {% else %}
+        <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-loyalty-points.png" />
+        {% endif %}
       </div>
     </section>
     
@@ -109,7 +123,13 @@
       >
         <div class="flex flex-col items-center" x-data="parallax()" x-bind="root">
           <img class="mt-[480px] mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/kungfu-logo.png" x-bind="animate(16)" />
-          <h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-16" x-bind="animate(16)">Be a super earner!</h1>
+          <h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-16" x-bind="animate(16)">
+            {% if content.language.languageTag == "zh-cn" %}
+            成为超级赢家！
+            {% else %}
+            Be a super earner!
+            {% endif %}
+          </h1>
         </div>
         <div class="w-full flex flex-wrap justify-center">
           <div class="sm:contents sm:w-full lg:w-5/12 lg:px-8 lg:pb-16">
@@ -124,7 +144,13 @@
               <div class="grid grid-cols-[0.5rem,1.5rem,auto] lg:grid-cols-[2rem,2rem,auto] grid-rows-[repeat(8,minmax(0,1fr))] mb-4"  x-bind="animate(8)">
                 <div class="row-start-1 row-span-2 col-span-3 py-2">
                   <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
-                    <div class="flex items-center text-white text-sm font-bold uppercase pr-6">Every Dollar Spent</div>
+                    <div class="flex items-center text-white text-sm font-bold uppercase pr-6">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      每消费1美元
+                      {% else %}
+                      Every Dollar Spent
+                      {% endif %}
+                    </div>
                     <div class="flex items-center text-white text-lg font-bold lg:pr-8">5</div>
                   </div>
                 </div>
@@ -132,7 +158,13 @@
                 <div class="row-start-3 col-start-2 border-b border-white mr-4"></div>
                 <div class="row-start-3 row-span-2 col-start-3 py-2">
                   <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
-                    <div class="flex items-center text-white text-sm font-bold uppercase pr-6">For 7 Consecutive Days*</div>
+                    <div class="flex items-center text-white text-sm font-bold uppercase pr-6">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      连续7天*
+                      {% else %}
+                      For 7 Consecutive Days*
+                      {% endif %}
+                    </div>
                     <div class="flex items-center text-white text-lg font-bold lg:pr-8">1</div>
                   </div>
                 </div>
@@ -140,36 +172,83 @@
                 <div class="row-start-5 col-start-2 border-b border-white mr-4"></div>
                 <div class="row-start-5 row-span-2 col-start-3 py-2">
                   <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
-                    <div class="flex items-center text-white text-sm font-bold uppercase pr-6">For 25 Consecutive Days*</div>
+                    <div class="flex items-center text-white text-sm font-bold uppercase pr-6">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      连续25天*
+                      {% else %}
+                      For 25 Consecutive Days*
+                      {% endif %}
+                    </div>
                     <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
                 </div>
                 <div class="row-start-7 row-span-2 sm:col-span-3 lg:col-start-3">
-                  <p class="text-white text-sm pr-6">*One-time bonus, reset after rewarding</p>
-                  <p class="text-white text-sm pr-6">Based on rolling calendar days</p>
+                  <p class="text-white text-sm pr-6">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    *一次性奖金，奖金发出后重置
+                    {% else %}
+                    *One-time bonus, reset after rewarding
+                    {% endif %}
+                  </p>
+                  <p class="text-white text-sm pr-6">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    基于日历天数
+                    {% else %}
+                    Based on rolling calendar days
+                    {% endif %}
+                  </p>
                 </div>
               </div>
               <p class="text-white mb-8">
                 {% if content.language.languageTag == "zh-cn" %}
-                您每天在游戏内消费，都将让您获得宝贵的蹴蹴忠诚积分，用以换取丰厚的奖励。连续玩7天将获得额外积分。连续玩25天将让您获得3倍蹴蹴忠诚积分！
+                你每天在游戏内消费，都将让你获得宝贵的蹴蹴ZujuGP忠诚积分，用以换取丰厚的奖励。连续玩7天将获得额外积分。连续玩25天将让你获得3倍蹴蹴ZujuGP忠诚积分！
                 {% else %}
-                For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for
-                bonus points. Earn triple that when you enter 25-day playing streaks!
+                For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!
                 {% endif %}
               </p>
               <a href="/kungfu-dash">
-                <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">Play Kungfu Dash</button>
+                <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">
+                  {% if content.language.languageTag == "zh-cn" %}
+                  现在开玩功夫快跳
+                  {% else %}
+                  Play Kungfu Dash
+                  {% endif %}
+                </button>
               </a>
             </section>
             <section class="sm:order-3 mb-24" x-data="parallax()" x-bind="root">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">CR7 ( Cross Ref 7 )</h2>
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">
+                {% if content.language.languageTag == "zh-cn" %}
+                C罗
+                {% else %}
+                CR7 (Cross Ref 7)
+                {% endif %}
+              </h2>
               <div class="mb-4" x-bind="animate(8)">
                 <div class="py-2">
                   <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase pr-6">1 Referal</h3>
-                      <p class="text-white text-sm pr-6">*Cap at 70 points per month</p>
-                      <p class="text-white text-sm pr-6">*Based on successful referral condition</p>
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        1次推荐
+                        {% else %}
+                        1 Referral
+                        {% endif %}
+                      </h3>
+                      <p class="text-white text-sm pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        上限为每月70Z积分
+                        {% else %}
+                        *Cap at 70 points per month
+                        {% endif %}
+                      </p>
+                      <p class="text-white text-sm pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        基于成功的推荐条件
+                        {% else %}
+                        *Based on successful referral condition
+                        {% endif %}
+                      </p>
                     </div>
                     <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
@@ -178,11 +257,21 @@
                   <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
                       <h3 class="text-white text-sm font-bold uppercase pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        通过当前用户的唯一链接，<br />而有新帐户注册
+                        {% else %}
                         New account sign up through
                         <br />
                         Current user unique link
+                        {% endif %}
                       </h3>
-                      <p class="text-white text-sm pr-6">*One time reward, instantly rewarded</p>
+                      <p class="text-white text-sm pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        一次性的，即时的奖励
+                        {% else %}
+                        *One time reward, instantly rewarded
+                        {% endif %}
+                      </p>
                     </div>
                     <div class="flex items-center text-white text-lg font-bold lg:pr-8">10</div>
                   </div>
@@ -203,8 +292,20 @@
                 <div class="py-2">
                   <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase pr-6">Daily Login</h3>
-                      <p class="text-white text-sm pr-6">*Rewarded once per day</p>
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        每日签到
+                        {% else %}
+                        Daily Login
+                        {% endif %}
+                      </h3>
+                      <p class="text-white text-sm pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        每天奖励1次
+                        {% else %}
+                        *Rewarded once per day
+                        {% endif %}
+                      </p>
                     </div>
                     <div class="flex items-center text-white text-lg font-bold lg:pr-8">1</div>
                   </div>
@@ -212,8 +313,20 @@
                 <div class="py-2">
                   <div class="flex justify-between rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase pr-6">Browse Site to Find Treasure</h3>
-                      <p class="text-white text-sm pr-6">*Rewarded once per day</p>
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        浏览网页寻找宝藏
+                        {% else %}
+                        Browse Site to Find Treasure
+                        {% endif %}
+                      </h3>
+                      <p class="text-white text-sm pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        每天奖励1次
+                        {% else %}
+                        *Rewarded once per day
+                        {% endif %}
+                      </p>
                     </div>
                     <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
@@ -221,9 +334,27 @@
                 <div class="py-2">
                   <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
-                      <h3 class="text-white text-sm font-bold uppercase pr-6">Monthly Campaign</h3>
-                      <p class="text-white text-sm pr-6">*Treasure appears once every 6 hours in a day</p>
-                      <p class="text-white text-sm pr-6">*Rewarded up to 4 times a day</p>
+                      <h3 class="text-white text-sm font-bold uppercase pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        每月活动
+                        {% else %}
+                        Monthly Campaign
+                        {% endif %}
+                      </h3>
+                      <p class="text-white text-sm pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        宝藏每天6小时出现一次
+                        {% else %}
+                        *Treasure appears once every 6 hours in a day
+                        {% endif %}
+                      </p>
+                      <p class="text-white text-sm pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        每天最多奖励4次
+                        {% else %}
+                        *Rewarded up to 4 times a day
+                        {% endif %}
+                      </p>
                     </div>
                     <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
@@ -231,32 +362,49 @@
               </div>
               <p class="text-white mb-8">
                 {% if content.language.languageTag == "zh-cn" %}
-                我们在网站上隐藏了一些小宝藏。注意留意每个月不同的主题！本月C罗的变脸面具就已经被小心翼翼地藏在了网站某处。不要太着急……首先，您要通过点击去解锁他们（获得1个积分）。然后，找到这些小面具们！（获得1个积分）。每天坚持这样做，你将收获乐趣并获得更多的奖励积分！在每个新月的第一天，神奇的6个小时内会有宝物频繁出现，注意查收！您的奖励甚至会较普通日翻上两番！
+                我们在网页上隐藏了一些小宝藏。注意留意每个月不同的主题！本月C罗的变脸面具就已经被小心翼翼地藏在了网页某处。不要太着急……首先，通过点击去解锁他们（获得1个积分）。然后，找到这些小面具们！（获得1个积分）。每天坚持这样做，你将收获乐趣并获得更多的奖励积分！在每个新月的第一天，神奇的6个小时内会有宝物频繁出现，注意查收！你的奖励甚至会较普通日翻上两番！
                 {% else %}
-                We have hidden little treasures on our site. Look out for different themes each month - oh sneaky sneaky! This month Warrior CR's exotic Bian Lian
-                masks are hidden carefully within the pages on our site. Not so fast… first you need to unlock them by clicking in (gain a point!). Then find
-                these little darling masks (gain another point!). Do this with persistence daily and you shall harvest the virtues of the heavens and be rewarded
-                with yet more bonus points! Pay particular action on the first day of each new moon when at magic six-hour interludes, treasures will be making
-                more frequent appearances for you to quadruple your daily bounty!
+                We have hidden little treasures on our site. Look out for different themes each month – oh sneaky sneaky! This month Warrior CR’s exotic Bian Lian masks are hidden carefully within the pages on our site. Not so fast… first you need to unlock them by clicking in (gain a point!).  Then find these little darling masks (gain another point!). Do this with persistence daily and you shall harvest the virtues of the heavens and be rewarded with yet more bonus points! Pay particular action on the first day of each new moon when at magic six-hour interludes, treasures will be making more frequent appearances for you to quadruple your daily bounty!
                 {% endif %}
               </p>
               <p class="text-white mb-8">
-                Read our Terms and Conditions
-                <a href="/daily-treasure-hunt-terms-and-conditions" target="_blank" class="text-zuju-red underline">here.</a>
+                {% if content.language.languageTag == "zh-cn" %}
+                阅读我们的<a href="/zh-cn/daily-treasure-hunt-terms-and-conditions" target="_blank" class="text-zuju-red underline">条款和条件</a>
+                {% else %}
+                Read our Terms and Conditions <a href="/daily-treasure-hunt-terms-and-conditions" target="_blank" class="text-zuju-red underline">here</a>.
+                {% endif %}
               </p>
             </section>
             <section class="sm:order-4 mb-24" x-data="parallax()" x-bind="root">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">Share ZujuGP</h2>
+              <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">
+                {% if content.language.languageTag == "zh-cn" %}
+                分享蹴蹴ZujuGP
+                {% else %}
+                Share ZujuGP
+                {% endif %}
+              </h2>
               <div class="mb-8" x-bind="animate(8)">
                 <div class="py-2">
                   <div class="flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
                     <div>
                       <h3 class="text-white text-sm font-bold uppercase pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        每天的第一次分享
+                        <br />
+                        (Facebook, Instagram, Twitter)
+                        {% else %}
                         First share per day on
                         <br />
-                        Facebook instagram or twitter
+                        Facebook, instagram or twitter
+                        {% endif %}
                       </h3>
-                      <p class="text-white text-sm pr-6">*Rewarded once per day</p>
+                      <p class="text-white text-sm pr-6">
+                        {% if content.language.languageTag == "zh-cn" %}
+                        每天奖励1次
+                        {% else %}
+                        *Rewarded once per day
+                        {% endif %}
+                      </p>
                     </div>
                     <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
                   </div>
@@ -267,50 +415,146 @@
           </div>
           <div class="sm:order-last sm:w-full lg:w-5/6 lg:px-8" x-data="parallax()" x-bind="root">
             <section class="mb-24">
-              <h2 class="text-white text-4xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(8)">More Ways To Earn Zuju Points</h2>
+              <h2 class="text-white text-4xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(8)">
+                {% if content.language.languageTag == "zh-cn" %}
+                更多获取Z积分的办法
+                {% else %}
+                More Ways To Earn Zuju Points
+                {% endif %}
+              </h2>
               <div class="sm:hidden flex lg:-mx-2">
                 <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
                   <div class="h-16 w-16 flex items-center mb-24" x-bind="animate(16)">
                     <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rebate.png" />
                   </div>
-                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Rebate</h2>
+                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    返利
+                    {% else %}
+                    Rebate
+                    {% endif %}
+                  </h2>
                   <div class="flex-grow w-full text-white sm:text-center mb-8">
-                    <p class="mb-2">* Minimum $20 spending per transaction</p>
-                    <p class="mb-2">*Only on selected products</p>
+                    <p class="mb-2">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      每笔交易最低消费 20 美元
+                      {% else %}
+                      *Minimum $20 spending per transaction
+                      {% endif %}
+                    </p>
+                    <p class="mb-2">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      仅适用于选定的产品
+                      {% else %}
+                      *Only on selected products
+                      {% endif %}
+                    </p>
                   </div>
-                  <div class="w-full text-white font-bold sm:text-center uppercase">2 Points Per Dollar</div>
+                  <div class="w-full text-white font-bold sm:text-center uppercase">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    每1新元 2积分
+                    {% else %}
+                    2 Points Per SGD
+                    {% endif %}
+                  </div>
                 </div>
                 <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
                   <div class="h-16 w-16 flex items-center mb-24" x-bind="animate(16)">
                     <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/welcome.png" />
                   </div>
-                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Welcome Gift</h2>
+                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    欢迎好礼
+                    {% else %}
+                    Welcome Gift
+                    {% endif %}
+                  </h2>
                   <div class="flex-grow w-full text-white sm:text-center mb-8">
-                    <p class="mb-2">* New account sign-ups, one time reward</p>
+                    <p class="mb-2">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      新账号注册，一次性奖励
+                      {% else %}
+                      *New account sign-up,<br />one time reward
+                      {% endif %}
+                    </p>
                   </div>
-                  <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
+                  <div class="w-full text-white font-bold sm:text-center uppercase">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    50积分
+                    {% else %}
+                    50 Points
+                    {% endif %}
+                  </div>
                 </div>
                 <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
                   <div class="h-16 w-16 flex items-center mb-24" x-bind="animate(16)">
                     <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bday.png" />
                   </div>
-                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Birthday Gift</h2>
+                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    生日礼物
+                    {% else %}
+                    Birthday Gift
+                    {% endif %}
+                  </h2>
                   <div class="flex-grow w-full text-white sm:text-center mb-8">
-                    <p class="mb-2">* Rewarded once a year on actual birthday</p>
-                    <p class="mb-2">* Not rewarded if user did not provide date of birth</p>
+                    <p class="mb-2">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      每年实际生日天奖励一次
+                      {% else %}
+                      *Rewarded once a year on actual birthday
+                      {% endif %}
+                    </p>
+                    <p class="mb-2">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      如果用户未提供出生日期，则不予奖励
+                      {% else %}
+                      *Not rewarded if user did not provide date of birth
+                      {% endif %}
+                    </p>
                   </div>
-                  <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
+                  <div class="w-full text-white font-bold sm:text-center uppercase">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    50积分
+                    {% else %}
+                    50 Points
+                    {% endif %}
+                  </div>
                 </div>
                 <div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
                   <div class="h-16 w-16 flex items-center mb-24" x-bind="animate(16)">
                     <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/comment.png" />
                   </div>
-                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Leave A Comment</h2>
+                  <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    发表评论
+                    {% else %}
+                    Leave A Comment
+                    {% endif %}
+                  </h2>
                   <div class="flex-grow w-full text-white sm:text-center mb-8">
-                    <p class="mb-2">* Only for SUPER and ULTIMATE fans</p>
-                    <p class="mb-2">* Cap at 10 points daily</p>
+                    <p class="mb-2">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      仅限于超级粉丝和终极粉丝
+                      {% else %}
+                      *Only for SUPER and<br />ULTIMATE fans
+                      {% endif %}
+                    </p>
+                    <p class="mb-2">
+                      {% if content.language.languageTag == "zh-cn" %}
+                      每日上限为10积分
+                      {% else %}
+                      *Cap at 10 points daily
+                      {% endif %}
+                    </p>
                   </div>
-                  <div class="w-full text-white font-bold sm:text-center uppercase">1 Points</div>
+                  <div class="w-full text-white font-bold sm:text-center uppercase">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    1积分
+                    {% else %}
+                    1 Points
+                    {% endif %}  
+                  </div>
                 </div>
               </div>
               <div class="lg:hidden">
@@ -324,12 +568,36 @@
                               <div class="h-16 w-16 flex items-center mb-16">
                                 <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rebate.png" />
                               </div>
-                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Rebate</h2>
+                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+                                {% if content.language.languageTag == "zh-cn" %}
+                                返利
+                                {% else %}
+                                Rebate
+                                {% endif %}
+                              </h2>
                               <div class="flex-grow w-full text-white sm:text-center mb-8">
-                                <p class="mb-2">* Minimum $20 spending per transaction</p>
-                                <p class="mb-2">*Only on selected products</p>
+                                <p class="mb-2">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  每笔交易最低消费 20 美元
+                                  {% else %}
+                                  *Minimum $20 spending per transaction
+                                  {% endif %}
+                                </p>
+                                <p class="mb-2">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  仅适用于选定的产品
+                                  {% else %}
+                                  *Only on selected products
+                                  {% endif %}
+                                </p>
                               </div>
-                              <div class="w-full text-white font-bold sm:text-center uppercase">2 Points Per Dollar</div>
+                              <div class="w-full text-white font-bold sm:text-center uppercase">
+                                {% if content.language.languageTag == "zh-cn" %}
+                                每1新元 2积分
+                                {% else %}
+                                2 Points Per SGD
+                                {% endif %}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -341,11 +609,29 @@
                               <div class="h-16 w-16 flex items-center mb-16">
                                 <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/welcome.png" />
                               </div>
-                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Welcome Gift</h2>
+                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+                                {% if content.language.languageTag == "zh-cn" %}
+                                欢迎好礼
+                                {% else %}
+                                Welcome Gift
+                                {% endif %}
+                              </h2>
                               <div class="flex-grow w-full text-white sm:text-center mb-8">
-                                <p class="mb-2">* New account sign-ups, one time reward</p>
+                                <p class="mb-2">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  新账号注册，一次性奖励
+                                  {% else %}
+                                  *New account sign-up,<br />one time reward
+                                  {% endif %}
+                                </p>
                               </div>
-                              <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
+                              <div class="w-full text-white font-bold sm:text-center uppercase">
+                                {% if content.language.languageTag == "zh-cn" %}
+                                50积分
+                                {% else %}
+                                50 Points
+                                {% endif %}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -357,12 +643,36 @@
                               <div class="h-16 w-16 flex items-center mb-16">
                                 <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bday.png" />
                               </div>
-                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Birthday Gift</h2>
+                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+                                {% if content.language.languageTag == "zh-cn" %}
+                                生日礼物
+                                {% else %}
+                                Birthday Gift
+                                {% endif %}
+                              </h2>
                               <div class="flex-grow w-full text-white sm:text-center mb-8">
-                                <p class="mb-2">* Rewarded once a year on actual birthday</p>
-                                <p class="mb-2">* Not rewarded if user did not provide date of birth</p>
+                                <p class="mb-2">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  每年实际生日天奖励一次
+                                  {% else %}
+                                  *Rewarded once a year on actual birthday
+                                  {% endif %}
+                                </p>
+                                <p class="mb-2">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  如果用户未提供出生日期，则不予奖励
+                                  {% else %}
+                                  *Not rewarded if user did not provide date of birth
+                                  {% endif %}
+                                </p>
                               </div>
-                              <div class="w-full text-white font-bold sm:text-center uppercase">50 Points</div>
+                              <div class="w-full text-white font-bold sm:text-center uppercase">
+                                {% if content.language.languageTag == "zh-cn" %}
+                                50积分
+                                {% else %}
+                                50 Points
+                                {% endif %}
+                              </div>
                             </div>
                           </div>
                         </div>
@@ -385,12 +695,36 @@
                               <div class="h-16 w-16 flex items-center mb-16">
                                 <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/comment.png" />
                               </div>
-                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">Leave A Comment</h2>
+                              <h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+                                {% if content.language.languageTag == "zh-cn" %}
+                                发表评论
+                                {% else %}
+                                Leave A Comment
+                                {% endif %}
+                              </h2>
                               <div class="flex-grow w-full text-white sm:text-center mb-8">
-                                <p class="mb-2">* Only for SUPER and ULTIMATE fans</p>
-                                <p class="mb-2">* Cap at 10 points daily</p>
+                                <p class="mb-2">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  仅限于超级粉丝和终极粉丝
+                                  {% else %}
+                                  *Only for SUPER and<br />ULTIMATE fans
+                                  {% endif %}
+                                </p>
+                                <p class="mb-2">
+                                  {% if content.language.languageTag == "zh-cn" %}
+                                  每日上限为10积分
+                                  {% else %}
+                                  *Cap at 10 points daily
+                                  {% endif %}
+                                </p>
                               </div>
-                              <div class="w-full text-white font-bold sm:text-center uppercase">1 Points</div>
+                              <div class="w-full text-white font-bold sm:text-center uppercase">
+                                {% if content.language.languageTag == "zh-cn" %}
+                                1积分
+                                {% else %}
+                                1 Points
+                                {% endif %} 
+                              </div>
                             </div>
                           </div>
                         </div>
