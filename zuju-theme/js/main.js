@@ -2,6 +2,7 @@ const triggerClose = $('.modal__overlay, [data-modal-close]')
 
 $('[data-modal-target]').on('click', function () {
     // togggleBodyScroll(true)
+    console.log('test')
   modalIn(`#${$(this).data('modal-target')}`)
 })
 
@@ -29,6 +30,7 @@ function togggleBodyScroll (cond) {
 function modalIn (selector = '.modal', callback) {
   const overlay = $(selector).find('.modal__overlay')
   const main = $(selector).find('.modal__main')
+  console.log(main)
   const tl = gsap.timeline({
     ease: Power2.easeInOut
   })

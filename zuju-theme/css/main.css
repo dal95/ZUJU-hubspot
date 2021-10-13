@@ -2030,6 +2030,11 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 .form-contact-wrapper .field {
   margin-left: 0;
+  margin-right: 0;
+}
+
+.hs_error_rollup {
+  display: none;
 }
 
 .button, .hs-button {

@@ -3,6 +3,8 @@ window.addEventListener('message', event => {
     event.data.type === 'hsFormCallback' &&
     event.data.eventName === 'onFormReady'
   ) {
+    if (event.data.id !== 'ff4fd248-ad02-4d39-9971-a8880316c297')  return
+
     $('[name="custom_avatar"]').each(function () {
       const avatarWrap = document.createElement('div')
       avatarWrap.classList.add('avatar-wrap')
@@ -20,7 +22,7 @@ window.addEventListener('message', event => {
     })
 
     $birthdayInput = $('input[name="birthday"]').closest('.input')
-    $emailInput = $('input[name="email"]').closest('.input')
+    $emailInput = $('#hs_form_target_profile input[name="email"]').closest('.input')
 
     $birthdayInput.addClass('disabled')
     $emailInput.addClass('disabled')

@@ -30,12 +30,3 @@
 			<button class="button button--primary" data-modal-close>Claim now</button>
     </div>
   {% endcall %}
-
-    {% call c.modal('modal-contact-us', null) %}
-    <div class="form-contact-wrapper">
-      <h3 class="text-center">Contact Us</h3>
-      {% form 'form-contact-us'
-        form_to_use='ff4fd248-ad02-4d39-9971-a8880316c297',
-      %}
-    </div>
-  {% endcall %}
