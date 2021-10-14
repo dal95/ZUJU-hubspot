@@ -70,7 +70,7 @@
 							{% if contact.current_loyalty_points < d.point %}
 								{# {{ contact.current_loyalty_points < d.point  }} #}
 								{% set class_name = 'clr-mute' %}
-								{% set label = 'Insufficient Z Points' %}
+								{% set label = '{{ currLang == "zh-cn" ? "Z积分不足" : "Insufficient Z Points" }}' %}
 							{% endif %}
 
 							{% if  contact.current_loyalty_points > d.point && d.stock > 0 %}
@@ -85,7 +85,7 @@
 								<div class="dfl cta">
 									<div>
 										<span class="fs-large">{{ d.point|format_currency('en-US')|replace('$', '') }}</span>
-										<span class="fs-sm">Z Points</span>
+										<span class="fs-sm">{{ currLang == "zh-cn" ? "Z积分" : "Z Points" }}</span>
 									</div>
 
 									<div>
@@ -94,7 +94,11 @@
 											class="button button--primary "
 												{{ d.stock|int > 0 && contact.current_loyalty_points|int > d.point|int || 'disabled' }}
 											>
-											{{ (d.stock|int > 0 && contact.current_loyalty_points|int > d.point|int) ? 'Redeem Now' : 'Unavailable' }}
+                      {% if currLang == 'zh-cn' %}
+											  {{ (d.stock|int > 0 && contact.current_loyalty_points|int > d.point|int) ? 'Redeem Now' : '无法使用' }}
+                      {% else %}
+                        {{ (d.stock|int > 0 && contact.current_loyalty_points|int > d.point|int) ? 'Redeem Now' : 'Unavailable' }}
+                      {% endif %}
 										</button>
 									</div>
 								</div>

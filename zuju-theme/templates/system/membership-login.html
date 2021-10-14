@@ -37,9 +37,11 @@
             {% endif %}
           </p>
           <div class="text-right" style="margin-top: 2rem">
-            <a href="/registration" class="button">
-              {{ currLang == "zh-cn" ? "创建" : "Create" }}
-            </a>
+            {% if currLang == "zh-cn" %}
+              <a href="/zh-cn/registration?hsLang=zh-cn" class="button">创建</a>
+            {% else %}
+              <a href="/registration" class="button">Create</a>
+            {% endif %}
           </div>
         </div>
     </div>
