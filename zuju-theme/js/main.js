@@ -338,7 +338,13 @@ if (
 
       setUpContinousSlide(kfd_game.continuous_day)
 
-      $('.membership-tier-points').text(progress_bar.target_to_points)
+      if (progress_bar.target_to_points == 0) {
+        $('.membership-tier-desc').text('Congratulation you are an Ultimate Fan').css('opacity', 1)
+      } else {
+        $('.membership-tier-points').text(progress_bar.target_to_points)
+        $('.membership-tier-goal').text(progress_bar.goal_fan_status)
+        $('.membership-tier-desc').css('opacity', 1).fadeIn()
+      }
 
       // Set Referral Link
       const ref = new URL(refer?.referral_link)
@@ -460,7 +466,7 @@ function setUpContinousSlide (start) {
     perPage: 7,
     perMove: 7,
     pagination: false,
-    start: start,
+    start: start <= 1 ? 0 : start - 1,
     breakpoints: {
       600: {
         perPage: 4
