@@ -163,7 +163,10 @@
       </script>
     {% endif %}
 
-    {% include '../statics/statics-foot.html' %}
     {{ standard_footer_includes }}
+
+    {% if request_contact.is_logged_in %}
+      {% include '../statics/statics-foot.html' %}
+    {% endif %}
   </body>
 </html>

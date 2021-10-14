@@ -100,6 +100,10 @@
 		<div class="modal__overlay"></div>
 
 		<div class="modal__main {{ size }}">
+			<div class="modal__close" data-modal-close>
+				{{ icon_cross() }}
+			</div>
+
 			{% if headerContent %}
 				<header class="modal__header">{{ headerContent }}</header>
 			{% endif %}

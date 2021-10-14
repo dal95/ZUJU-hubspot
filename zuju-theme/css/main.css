@@ -1174,10 +1174,10 @@ input[type=submit] {
   fill: #fff;
 }
 .splide__arrow--prev {
-  left: -1.5em;
+  left: -2rem;
 }
 .splide__arrow--next {
-  right: -1.5em;
+  right: -2rem;
 }
 
 .breadcrumb {
@@ -1301,6 +1301,16 @@ input[type=submit] {
 .modal.active {
   display: flex;
 }
+.modal__close {
+  position: absolute;
+  right: 0;
+  top: -40px;
+  z-index: 900;
+  cursor: pointer;
+}
+.modal__close path {
+  stroke: #fff;
+}
 .modal__overlay {
   position: absolute;
   width: 100%;
@@ -1309,14 +1319,14 @@ input[type=submit] {
   z-index: 800;
 }
 .modal__main {
+  position: relative;
   display: none;
   background: #fff;
   width: clamp(300px, 660px, 90%);
   min-height: 20vh;
-  max-height: 95vh;
+  max-height: calc(100vh - 80px);
   z-index: 900;
   border-radius: 3px;
-  overflow-y: auto;
 }
 .modal__main.lg {
   width: clamp(300px, 880px, 90%);
@@ -1343,6 +1353,7 @@ input[type=submit] {
 }
 .modal__body {
   padding: 20px 50px 50px;
+  overflow-y: auto;
 }
 .modal .button, .modal .hs-button {
   margin: 0 15px;
@@ -1370,6 +1381,7 @@ input[type=submit] {
   padding-bottom: 33px;
   padding-right: 33px;
   color: #fff;
+  gap: 20px;
 }
 @media (max-width: 1024px) {
   .member-benefit__row {
@@ -1395,12 +1407,12 @@ input[type=submit] {
 @media (max-width: 1024px) {
   .member-benefit__card {
     margin-inline: auto;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
     flex-shrink: 1;
   }
 }
 .member-benefit__card-desc {
-  flex: 1;
+  flex: 1 1 320px;
 }
 .member-benefit__card-desc b {
   font-size: 18px;
@@ -1471,11 +1483,7 @@ input[type=submit] {
   justify-content: flex-end;
   min-height: 40px;
   align-items: center;
-}
-@media (max-width: 1024px) {
-  .table__td-right {
-    padding-right: 20px;
-  }
+  padding-right: 20px;
 }
 .table__td-right .clr-primary {
   font-size: 18px;
@@ -1641,6 +1649,7 @@ input[type=submit] {
   font-weight: bold;
   text-transform: uppercase;
   text-align: center;
+  padding-right: 20px;
 }
 #modal-referral .copy .button, #modal-referral .copy .hs-button {
   margin: 0;
@@ -1802,6 +1811,15 @@ input[type=submit] {
 
 .membership-tier-desc {
   opacity: 0;
+}
+
+.splide__arrow svg {
+  width: unset;
+  height: unset;
+}
+
+.splide__arrow:disabled {
+  opacity: 0.3;
 }
 
 .hs-input {

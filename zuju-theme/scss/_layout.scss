@@ -769,11 +769,11 @@ input[type='submit'] {
   }
 
   &--prev {
-    left: -1.5em;
+    left: -2rem;
   }
 
   &--next {
-    right: -1.5em;
+    right: -2rem;
   }
 }
 
@@ -909,6 +909,18 @@ input[type='submit'] {
     display: flex;
   }
 
+  &__close {
+    position: absolute;
+    right: 0;
+    top: -40px;
+    z-index: 900;
+    cursor: pointer;
+
+    path {
+      stroke: #fff;
+    }
+  }
+
   &__overlay {
     position: absolute;
     width: 100%;
@@ -918,14 +930,14 @@ input[type='submit'] {
   }
 
   &__main {
+    position: relative;
     display: none;
     background: #fff;
     width: clamp(300px, 660px, 90%);
     min-height: 20vh;
-    max-height: 95vh;
+    max-height: calc(100vh - 80px);
     z-index: 900;
     border-radius: 3px;
-    overflow-y: auto;
 
     &.lg {
       width: clamp(300px, 880px, 90%);
@@ -958,6 +970,7 @@ input[type='submit'] {
 
   &__body {
     padding: 20px 50px 50px;
+    overflow-y: auto;
   }
 
   .button {
@@ -989,6 +1002,7 @@ input[type='submit'] {
     padding-bottom: 33px;
     padding-right: 33px;
     color: #fff;
+    gap: 20px;
 
     @include media('<=laptop') {
       flex-wrap: wrap;
@@ -1014,13 +1028,13 @@ input[type='submit'] {
 
     @include media('<=laptop') {
       margin-inline: auto;
-      margin-bottom: 40px;
+      margin-bottom: 20px;
       flex-shrink: 1;
     }
   }
 
   &__card-desc {
-    flex: 1;
+    flex: 1 1 320px;
 
     b {
       font-size: 18px;
@@ -1098,10 +1112,7 @@ input[type='submit'] {
     justify-content: flex-end;
     min-height: 40px;
     align-items: center;
-
-    @include media('<=laptop') {
-      padding-right: 20px;
-    }
+    padding-right: 20px;
 
     .clr-primary {
       font-size: 18px;
@@ -1287,6 +1298,7 @@ input[type='submit'] {
       font-weight: bold;
       text-transform: uppercase;
       text-align: center;
+      padding-right: 20px;
     }
 
     .button {
@@ -1467,4 +1479,14 @@ input[type='submit'] {
 
 .membership-tier-desc {
   opacity: 0;
+}
+
+.splide__arrow {
+  svg {
+    width: unset;
+    height: unset;
+  }
+}
+.splide__arrow:disabled {
+  opacity: .3;
 }
