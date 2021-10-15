@@ -15,7 +15,7 @@
         {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}
           <div class="header__language-switcher">
             <div class="header__language-switcher-label">
-              {% module 'language-switcher-3'
+              {% module 'language-switcher-4'
                 path='@hubspot/language_switcher',
                 display_mode='Localized',
                 label='Language switcher'
@@ -103,13 +103,20 @@
             </div>
           </div>
         {% else %}
-          <a class="nav__link" href="/_hcms/mem/login">
-            {% if currLang == "zh-cn" %}
-            登录
-            {% else %}
-            Login
-            {% endif %}
-          </a>
+
+        {% if currLang == "zh-cn" %}
+        <a class="nav__link nav-auth" href="/zh-cn/registration">注册</a>
+        {% else %}
+        <a class="nav__link nav-auth" href="/registration">Sign Up</a>
+        {% endif %}
+
+        <a class="nav__link nav-auth" href="/_hcms/mem/login">
+          {% if currLang == "zh-cn" %}
+          登录
+          {% else %}
+          Login
+          {% endif %}
+        </a>
         {% endif %}
 
         <div class="off-canvas">

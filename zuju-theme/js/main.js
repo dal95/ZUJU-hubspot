@@ -29,7 +29,6 @@ function togggleBodyScroll (cond) {
 function modalIn (selector = '.modal', callback) {
   const overlay = $(selector).find('.modal__overlay')
   const main = $(selector).find('.modal__main')
-  console.log(main)
   const tl = gsap.timeline({
     ease: Power2.easeInOut
   })
@@ -114,8 +113,6 @@ $(window).on('load', function () {
 $('#id-categories').on('change', function () {
   const url = new URL(window.location.href)
   url.searchParams.set('categories', $(this).val())
-  console.log($(this).val())
-  console.log(url.toString())
 
   window.location.href = url.toString()
 })
@@ -328,8 +325,6 @@ if (
       })
 
       $('.cnt__item').each(function () {
-        console.log($(this).data('day'))
-        console.log(kfd_game)
         const day = kfd_game?.this_week_continuous_days
         if ($(this).data('day') <= day) {
           $(this).addClass('checked')
@@ -365,7 +360,6 @@ if (
         btn && btn.addEventListener('click', async () => {
           try {
             await navigator.share(shareData)
-            console.log('successfully share')
           } catch (err) {
             // resultPara.textContent = 'Error: ' + err
           }

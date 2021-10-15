@@ -779,14 +779,17 @@ input[type='submit'] {
 
 .breadcrumb {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   font-size: 12px;
 
   &__item {
+    // white-space: nowrap;
+
     &:not(:first-child) {
-      padding-left: 15px;
+      // padding-left: 15px;
     }
-    padding-right: 15px;
+    padding-right: 5px;
 
     &.active {
       color: var(--clr-primary);
@@ -1482,6 +1485,7 @@ input[type='submit'] {
 }
 
 .splide__arrow {
+  margin-top: 4px;
   svg {
     width: unset;
     height: unset;

@@ -23,17 +23,18 @@
 								{% endif %}
 							</a>
 						</div>
-						{{ c.chevron_right() }}
 						<div class="breadcrumb__item">
+							{{ c.chevron_right() }}
 							{{ c.categories(1) }}
 						</div>
-						{{ c.chevron_right() }}
 						<div class="breadcrumb__item active">
-						{% if currLang == 'zh-cn' %}
-							{{ d.name_chinese }}
-						{% else%}
-							{{ d.name }}
-						{% endif %}
+							{{ c.chevron_right() }}
+
+							{% if currLang == 'zh-cn' %}
+								{{ d.name_chinese }}
+							{% else%}
+								{{ d.name }}
+							{% endif %}
 						</div>
 					</div>
 					<!-- End of breadcrumb -->
@@ -225,11 +226,11 @@
 
 		window.addEventListener('message', event => {
 			if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-					const $redeemInput = document.querySelector('input[name="last_redeemed_id"]')
-					const $redeemItemName = document.querySelector('input[name="last_redeemed_item_name"]')
+					const $redeemInput = $('input[name="last_redeemed_id"]')
+					const $redeemItemName = $('input[name="last_redeemed_item_name"]')
 
-					$redeemInput.value = "{{ dynamic_page_hubdb_row.hs_id }}";
-					$redeemItemName.value = "{{ dynamic_page_hubdb_row.name }}"
+					$redeemInput.val("{{ dynamic_page_hubdb_row.hs_id }}");
+					$redeemItemName.val("{{ dynamic_page_hubdb_row.name }}");
 			}
 		});
 	</script>

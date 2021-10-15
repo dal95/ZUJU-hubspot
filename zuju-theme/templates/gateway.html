@@ -9,9 +9,9 @@
 {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 
 {% if currLang == 'zh-cn' %}
-  <meta http-equiv="refresh" content="0;URL='https://www.zujugp.com/zh-cn/'" />  
+  <meta http-equiv="refresh" content="0;URL='https://www.zujugp.com/zh-cn/'" />
 {% else %}
-  <meta http-equiv="refresh" content="0;URL='https://www.zujugp.com/'" />  
+  <meta http-equiv="refresh" content="0;URL='https://www.zujugp.com/'" />
 {% endif %}
 
 {{ standard_footer_includes }}

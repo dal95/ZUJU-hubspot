@@ -148,11 +148,6 @@
     {% set today = today("Asia/Singapore")|datetimeformat('%m/%e/%y') %}
     {% set birthday = contact.birthday %}
 
-      <script>
-      console.log("{{ today }}")
-      console.log("{{ birthday }}")
-      </script>
-
     {% if today == birthday %}
       <script>
         window.addEventListener('DOMContentLoaded', (event) => {
