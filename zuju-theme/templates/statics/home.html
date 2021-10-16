@@ -21,7 +21,7 @@
         <img
           x-cloak=""
           x-show="!init"
-          class="absolute z-20 transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="absolute z-20 transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
           src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png"
         />
         <div
@@ -36,7 +36,7 @@
         <video muted="" autoplay="" loop="" class="sm:hidden h-full w-full object-cover object-center opacity-70" x-on:click="playing = true">
           <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" type="video/mp4" />
         </video>
-        <div class="hidden sm:block touch:block absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div class="hidden sm:block touch:block absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
           <img class="sm:h-20 sm:0w-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" />
         </div>
         <video muted="" class="lg:hidden h-full w-full object-cover object-center" x-on:click="playing = true">
@@ -100,6 +100,40 @@
           </a>
         </article>
         <article class="relative flex items-end h-full lg:col-span-2">
+          <a href="/kungfu-dash">
+            <div class="absolute inset-0 bg-black">
+              <img class="opacity-50 h-full w-full object-cover" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-kfd-banner.jpg" />
+            </div>
+            <div class="relative w-full p-4">
+              <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
+                {% if content.language.languageTag == "zh-cn" %}
+                  功夫快跳 &amp; 赢得游戏
+                {% else %}
+                  Kungfu Dash &amp; Win
+                {% endif %}
+              </h1>
+              <p class="relative text-trueGray-200 sm:text-sm pr-12">
+                {% if content.language.languageTag == "zh-cn" %}
+                  开始游戏，可以赢得和C罗在线上见面的机会
+                {% else %}
+                  Play to win a chance to meet Cristiano Ronaldo online
+                {% endif %}
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                  <title>Arrow Forward</title>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="48"
+                    d="M268 112l144 144-144 144M392 256H100"
+                  ></path>
+                </svg>
+              </p>
+            </div>
+          </a>
+        </article>
+        <article class="relative flex items-end">
           <a href="https://shop.zujugp.com">
             <div class="absolute inset-0 bg-black">
               <img class="opacity-50 h-full w-full object-cover" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-shop.jpg" />
@@ -167,40 +201,6 @@
             </div>
           </a>
         </article>
-        <article class="relative flex items-end">
-          <a href="/kungfu-dash">
-            <div class="absolute inset-0 bg-black">
-              <img class="opacity-50 h-full w-full object-cover" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-3.png" />
-            </div>
-            <div class="relative w-full p-4">
-              <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
-                {% if content.language.languageTag == "zh-cn" %}
-                  功夫快跳 &amp; 赢得游戏
-                {% else %}
-                  Kungfu Dash &amp; Win
-                {% endif %}
-              </h1>
-              <p class="relative text-trueGray-200 sm:text-sm pr-12">
-                {% if content.language.languageTag == "zh-cn" %}
-                  开始游戏，可以赢得和C罗Zoom视频见面的机会
-                {% else %}
-                Play to win a chance to meet Cristiano Ronaldo online
-                {% endif %}
-                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
-                  <title>Arrow Forward</title>
-                  <path
-                    fill="none"
-                    stroke="currentColor"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="48"
-                    d="M268 112l144 144-144 144M392 256H100"
-                  ></path>
-                </svg>
-              </p>
-            </div>
-          </a>
-        </article>
       </div>
     </section>
     <section class="lg:hidden">
@@ -245,6 +245,46 @@
       <div class="glide" x-data="{}" x-init="new Glide($el).mount()">
         <div class="glide__track" data-glide-el="track">
           <div class="glide__slides">
+			<div class="glide__slide">
+              <div class="aspect-w-4 aspect-h-3">
+                <div>
+                  <article class="relative flex items-end h-full">
+                    <a href="/kungfu-dash">
+                      <div class="absolute inset-0 bg-black">
+                        <img class="opacity-50 h-full w-full object-cover" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-kfd-banner.jpg" />
+                      </div>
+                      <div class="relative w-full p-4">
+                        <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
+                          {% if content.language.languageTag == "zh-cn" %}
+                            功夫快跳 &amp; 赢得游戏
+                          {% else %}
+                            Kungfu Dash &amp; Win
+                          {% endif %}
+                        </h1>
+                        <p class="relative text-trueGray-200 sm:text-sm pb-8 pr-12">
+                          {% if content.language.languageTag == "zh-cn" %}
+                            开始游戏，可以赢得和C罗在线上见面的机会
+                          {% else %}
+                            Play to win a chance to meet Cristiano Ronaldo online
+                          {% endif %}
+                          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                            <title>Arrow Forward</title>
+                            <path
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              stroke-width="48"
+                              d="M268 112l144 144-144 144M392 256H100"
+                            ></path>
+                          </svg>
+                        </p>
+                      </div>
+                    </a>
+                  </article>
+                </div>
+              </div>
+            </div>
             <div class="glide__slide">
               <div class="aspect-w-4 aspect-h-3">
                 <div>
@@ -306,46 +346,6 @@
                             足球史上第一位变脸侠
                           {% else %}
                             Football's first mask changing 变脸 WARRIOR
-                          {% endif %}
-                          <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
-                            <title>Arrow Forward</title>
-                            <path
-                              fill="none"
-                              stroke="currentColor"
-                              stroke-linecap="round"
-                              stroke-linejoin="round"
-                              stroke-width="48"
-                              d="M268 112l144 144-144 144M392 256H100"
-                            ></path>
-                          </svg>
-                        </p>
-                      </div>
-                    </a>
-                  </article>
-                </div>
-              </div>
-            </div>
-            <div class="glide__slide">
-              <div class="aspect-w-4 aspect-h-3">
-                <div>
-                  <article class="relative flex items-end h-full">
-                    <a href="/kungfu-dash">
-                      <div class="absolute inset-0 bg-black">
-                        <img class="opacity-50 h-full w-full object-cover" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-3.png" />
-                      </div>
-                      <div class="relative w-full p-4">
-                        <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
-                          {% if content.language.languageTag == "zh-cn" %}
-                            功夫快跳 &amp; 赢得游戏
-                          {% else %}
-                            Kungfu Dash &amp; Win
-                          {% endif %}
-                        </h1>
-                        <p class="relative text-trueGray-200 sm:text-sm pb-8 pr-12">
-                          {% if content.language.languageTag == "zh-cn" %}
-                            开始游戏，可以赢得和C罗Zoom视频见面的机会
-                          {% else %}
-                            Play to win a chance to meet Cristiano Ronaldo on ZOOM
                           {% endif %}
                           <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
                             <title>Arrow Forward</title>
@@ -703,31 +703,31 @@
       <div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto">
         <div class="row-start-1 col-start-1 col-span-12">
           <div class="sm:aspect-w-9 sm:aspect-h-5">
-            <div><img class="h-full w-full object-cover object-left" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/earn-banner.png" /></div>
+            <div><img class="h-full w-full object-cover object-left" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/banner-rewards.jpg" /></div>
           </div>
         </div>
         <div class="row-start-1 col-start-8 col-span-4 p-8" x-data="parallax()" x-bind="root">
           <div class="h-full flex flex-col items-center justify-center" x-bind="animate(8)">
-            <h1 class="lg:w-3/4 text-white sm:text-3xl lg:text-4xl font-gtcond font-black text-center mb-4">
+            <h1 class="text-white sm:text-3xl lg:text-4xl font-gtcond font-black text-center mb-4">
               {% if content.language.languageTag == "zh-cn" %}
-                奖励与忠诚积分
+                获得在线上与C罗见面的机会
               {% else %}
-                Rewards and loyalty Z points
+                Win a chance to meet Cristiano online!
               {% endif %}
             </h1>
             <p class="text-white text-center mb-4">
               {% if content.language.languageTag == "zh-cn" %}
-                通过兑换积分购物或者赢取奖励！
+                立即登录以玩 Kungfu Dash！<br/>游戏活动将于2021年12月1日 23:59 GMT 截止
               {% else %}
-                Get rewarded for shopping and spending time with us!
+                Sign in to play Kungfu Dash now! <br/>Contest until 1 Dec only.
               {% endif %}
             </p>
-            <a href="/about-rewards">
+            <a href="/kungfu-dash">
               <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
                 {% if content.language.languageTag == "zh-cn" %}
-                  了解更多
+                  开始游戏
                 {% else %}
-                  Find out more
+                  Play Now
                 {% endif %}
               </button>
             </a>
