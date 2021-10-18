@@ -15,7 +15,13 @@
 				{% do rel.append("noopener") %}
 			{% endif %}
 
-			<a href="{{ href }}" class="{% if content.id == item.link.url.content_id %}active{% endif %}"
+			{% if (content.slug|split('/'))|length > 1 %}
+				{% set slg = (content.slug|split('/'))[1] %}
+			{% else %}
+				{% set slg = content.slug|split('/')|first %}
+			{% endif %}
+
+			<a href="{{ href }}" class="{% if slg == (item.link.url.href|split('/'))[2] %}active{% endif %}"
 				{% if item.link.open_in_new_tab %}target="_blank"{% endif %}
 				{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
 			>

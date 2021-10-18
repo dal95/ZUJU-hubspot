@@ -4,7 +4,6 @@
   label: Kungfu dash
   screenshotPath: ../images/template-previews/home.png
 -->
-{# {% set template_css = '//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css' %} #}
 {% extends "./layouts/base-standard.html" %}
 
 {{ require_css('//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css', 'header') }}
@@ -12,7 +11,7 @@
 {% block body %}
 <div class="app">
   <main class="public">
-    <div class="kungfu-dash" style="background-image: url(https://i.imgur.com/d32YxC5.png)">
+    <div class="kungfu-dash" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/kungfu-dash-game/bg.png') }})">
       <div class="container">
         <div class="form-dark text-center">
           <h2 class="kd-heading kd-heading--primary">
@@ -25,7 +24,7 @@
 
           <h3 class="kd-heading">
             {% if content.language.languageTag == "zh-cn" %}
-            玩游戏获得与C罗近距离接触的机会，您会通过Zoom视频会议与C罗相见！
+            玩游戏获得与C罗近距离接触的机会，在线上与C罗见面！
             {% else %}
             Play to win a chance to meet Cristiano Ronaldo online!
             {% endif %}
@@ -33,15 +32,15 @@
 
           <p>
             {% if content.language.languageTag == "zh-cn" %}
-            这场游戏的规则如下：
+            游戏规则如下：
             {% else %}
-            Here's how to the competition works:
+            Here's how the competition works:
             {% endif %}
           </p>
 
           <div class="kd-grid">
             <div class="kd-card">
-              <img src="https://i.imgur.com/XSBuA9y.png" alt="">
+              <img src="{{ get_asset_url('zuju-theme/images/assets/kungfu-dash-game/kungfu-dash-1.png') }}" alt="">
               <p>
                 {% if content.language.languageTag == "zh-cn" %}
                 尝试在功夫快跳里获得最高分；
@@ -52,7 +51,7 @@
             </div>
 
             <div class="kd-card">
-              <img src="https://i.imgur.com/VWmKPKh.png" alt="">
+              <img src="{{ get_asset_url('zuju-theme/images/assets/kungfu-dash-game/kungfu-dash-2.png') }}" alt="">
               <p>
                 {% if content.language.languageTag == "zh-cn" %}
                 <b>高分获得者</b>将会被列入排行榜单；
@@ -63,10 +62,10 @@
             </div>
 
             <div class="kd-card">
-              <img src="https://i.imgur.com/P21F4t7.png" alt="">
+              <img src="{{ get_asset_url('zuju-theme/images/assets/kungfu-dash-game/kungfu-dash-3.png') }}" alt="">
               <p>
                 {% if content.language.languageTag == "zh-cn" %}
-                在排行榜单中的玩家有机会参与到最后的抽奖活动；
+                在排行榜单中的玩家有机会参与每周的抽奖活动；
                 {% else %}
                 Everyone on the leaderboard gets entered into the weekly Leaderboard Raffle
                 {% endif %}
@@ -74,10 +73,10 @@
             </div>
 
             <div class="kd-card">
-              <img src="https://i.imgur.com/Junatax.png" alt="">
+              <img src="{{ get_asset_url('zuju-theme/images/assets/kungfu-dash-game/kungfu-dash-4.png') }}" alt="">
               <p>
                 {% if content.language.languageTag == "zh-cn" %}
-                8周后，将会有1个幸运儿获得与<b>C罗</b>见面的这一千载难逢的好机会！
+                在7周的时间里，我们将从抽奖活动中选出1位幸运儿，以赢得与C罗线上见面的好机会！
                 {% else %}
                 For 7 weeks we will pick 1 lucky dasher from the Raffle to win this once-in-a-lifetime opportunity to meet Cristiano Ronaldo virtually!
                 {% endif %}
@@ -87,16 +86,16 @@
 
           <p class="clr-primary text-center all-caps">
             {% if content.language.languageTag == "zh-cn" %}
-            游戏将持续到2021年12月12日的23：59GMT为止。
+            游戏活动将于2021年12月1日 23:59 GMT 截止
             {% else %}
             Competition closes on 1 December 2021 at 2359 GMT.
             {% endif %}
           </p>
-          
+
           <a href="{{ content_by_id(56960838040).absolute_url }}">
             <button class="button button-o-primary">
               {% if content.language.languageTag == "zh-cn" %}
-              立即玩游戏
+              现在开始
               {% else %}
               Play Now
               {% endif %}
@@ -134,6 +133,5 @@
           }
       });
     });
-
   </script>
 {% end_require_js %}

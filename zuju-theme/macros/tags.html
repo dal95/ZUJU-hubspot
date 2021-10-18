@@ -2,6 +2,17 @@
   templateType: "none"
   isAvailableForNewContent: false
 -->
+
+{# {% macro tx(prop) %}
+	{% if currLang == 'zh-cn' %}
+		{% set affix = '_chinese' %}
+	{% else %}
+		{% set affix = '' %}
+	{% endif %}
+
+	{{ prop~affix }}
+{% endmacro %} #}
+
 {% macro avatar() %}
 	{% if contact.custom_avatar %}
 		<img src="{{ request.scheme~'://'~request.domain }}/hubfs/theme-assets/avatars/{{ contact.custom_avatar }}.svg" alt="user avatar">
@@ -21,7 +32,19 @@
 	</ul>
 {% endmacro %}
 
-{# Arrow left #}
+{# Arrow right #}
+{% macro arrow_right() %}
+	<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3978 5.00003L20 10.7417V12.3493L14.3978 18.0909L12.8067 16.4833L16.4818 12.6938H4V10.3972H16.4818L12.7843 6.60769L14.3978 5.00003Z" fill="#C5C5C5"/>
+		<mask id="mask0" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="4" y="5" width="16" height="14">
+			<path fill-rule="evenodd" clip-rule="evenodd" d="M14.3978 5.00003L20 10.7417V12.3493L14.3978 18.0909L12.8067 16.4833L16.4818 12.6938H4V10.3972H16.4818L12.7843 6.60769L14.3978 5.00003Z" fill="white"/>
+		</mask>
+		<g mask="url(#mask0)">
+			<rect width="24" height="24" fill="white"/>
+		</g>
+	</svg>
+{% endmacro %}
+
 {% macro chevron_left() %}
 	<svg width="16" height="30" viewBox="0 0 16 30" fill="none" xmlns="http://www.w3.org/2000/svg">
 		<path d="M0.337571 13.9999L14.0404 0.335019C14.4893 -0.112433 15.2162 -0.111681 15.6644 0.337333C16.1123 0.78629 16.1111 1.51357 15.6621 1.96136L2.77492 14.813L15.6626 27.6645C16.1115 28.1123 16.1127 28.8392 15.6649 29.2882C15.4402 29.5133 15.1458 29.6258 14.8515 29.6258C14.5579 29.6258 14.2647 29.514 14.0404 29.2905L0.337571 15.6259C0.121338 15.4108 0 15.118 0 14.813C0 14.5079 0.121685 14.2155 0.337571 13.9999Z" fill="white"/>
@@ -77,6 +100,10 @@
 		<div class="modal__overlay"></div>
 
 		<div class="modal__main {{ size }}">
+			<div class="modal__close" data-modal-close>
+				{{ icon_cross() }}
+			</div>
+
 			{% if headerContent %}
 				<header class="modal__header">{{ headerContent }}</header>
 			{% endif %}
@@ -90,4 +117,107 @@
 			{% endif %}
 		</div>
 	</div>
+{% endmacro %}
+
+{% set reward_categories = {
+		'en': [
+			{
+				id: 1,
+				value: 'CR7 MEMORABILIA',
+			}, {
+				id: 2,
+				value: 'ELECTRONICS'
+			}, {
+				id: 3,
+				value: 'CR7 EXPERIENCES'
+			}, {
+				id: 4,
+				value: 'GIFT CARDS'
+			}
+		],
+		'zh-cn': [
+			{
+				id: 1,
+				value: 'CR7 MEMORABILIA',
+			}, {
+				id: 2,
+				value: 'ELECTRONICS'
+			}, {
+				id: 3,
+				value: 'CR7 EXPERIENCES'
+			}, {
+				id: 4,
+				value: 'GIFT CARDS'
+			}
+		]
+	}
+ %}
+
+{% macro categories(category_id) %}
+	{# {{ html_lang }} #}
+	{{ (reward_categories[html_lang]
+		|selectattr('id', 'equalto', category_id)
+		|first).value
+	}}
+{% endmacro %}
+
+{% macro reward_card(cardData) %}
+	<a class="card" href="{{ currLang == 'zh-cn' ? '/zh-cn' : '' }}/rewards/{{ cardData.hs_path }}">
+		<img
+			src="{{ resize_image_url(cardData.image.url, 280, 180, 200, true, false) }}"
+			alt="{{ cardData.name }}"
+			loading="lazy"
+			width="280px"
+			height="180px"
+		/>
+
+		<div class="card__content">
+			<div class="tag">{{ categories((cardData.categories|first).name) }}</div>
+			<h3 class="card__title">
+				{% if currLang == 'zh-cn' %}
+					{{ cardData.name_chinese }}
+				{% else %}
+					{{ cardData.name }}
+				{% endif %}
+			</h3>
+			<div class="card__desc">
+				{% if currLang == 'zh-cn' %}
+					{{ cardData.content_chinese|truncate(160) }}
+				{% else %}
+					{{ cardData.content|truncate(160) }}
+				{% endif %}
+			</div>
+
+			{% if cardData.stock <= 0 %}
+				{% set class_name = 'clr-mute' %}
+				{% set label = 'Fully Redeemed' %}
+			{% endif%}
+
+			{% if contact.current_loyalty_points < cardData.point %}
+				{% set class_name = 'clr-mute' %}
+				{% set label = 'Insufficient Z Points' %}
+			{% endif %}
+
+			{% if  contact.current_loyalty_points > cardData.point && cardData.stock > 0 %}
+				{% set class_name = '' %}
+				{% set label = 'Available' %}
+			{% endif %}
+
+			<div class="availability {{ class_name }}">
+				{{ label }}
+			</div>
+
+			<div class="card__footer">
+				<div>
+					<div class="points">
+						<b>{{ cardData.point }}</b> <span class="fs-sm">Z Points</span>
+					</div>
+				</div>
+
+				<div class="arrow-right">
+					{{ arrow_right() }}
+				</div>
+			</div>
+		</div>
+	</a>
 {% endmacro %}

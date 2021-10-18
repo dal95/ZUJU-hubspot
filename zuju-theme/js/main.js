@@ -1,12 +1,9 @@
-const modalTrigger = document.querySelector('[data-modal-target]')
 const triggerClose = $('.modal__overlay, [data-modal-close]')
 
-modalTrigger &&
-  modalTrigger.addEventListener('click', function () {
-    // togggleBodyScroll(true)
-    modalIn(`#${$(this).data('modal-target')}`)
-    // document.querySelector('.modal').classList.add('active')
-  })
+$('[data-modal-target]').on('click', function () {
+  // togggleBodyScroll(true)
+  modalIn(`#${$(this).data('modal-target')}`)
+})
 
 triggerClose.on('click', function () {
   modalOut('.modal', () => {
@@ -114,28 +111,17 @@ $(window).on('load', function () {
 })
 
 $('#id-categories').on('change', function () {
-  const url = new URLSearchParams(window.location.search)
-  url.set('categories', $(this).val())
+  const url = new URL(window.location.href)
+  url.searchParams.set('categories', $(this).val())
 
-  window.location.href =
-    window.location.origin + '/rewards/' + '?' + url.toString()
+  window.location.href = url.toString()
 })
 
 $('#id-points').on('change', function () {
-  const url = new URLSearchParams(window.location.search)
-  url.delete('lt')
-  url.delete('gt')
+  const url = new URL(window.location.href)
+  url.searchParams.set('points', $(this).val())
 
-  const v = $(this).val()
-  if (v.includes('-')) {
-    url.set('gt', v.split('-')[0])
-    url.set('lt', v.split('-')[1])
-  }
-  if (v.includes('<')) url.set('lt', v.substr(1))
-  if (v.includes('>')) url.set('gt', v.substr(1))
-
-  window.location.href =
-    window.location.origin + '/rewards/' + '?' + url.toString()
+  window.location.href = url.toString()
 })
 
 // Off canvas
@@ -195,7 +181,7 @@ const renderHistoryTable = (data, filter = '') => {
         return `<tr class="table__row">
             <td class="table__td-left">${item.description}</td>
             <td class="table__td-right">
-              <div>Zuju points <span class="debug">credit: ${item.credit} debit: ${item.debit}</span></div>
+              <div>Z Points <span class="debug">credit: ${item.credit} debit: ${item.debit}</span></div>
               <div class="clr-primary">${pointChanged}</div>
             </td>
           </tr>`
@@ -240,7 +226,7 @@ const formatDate = date => {
   })
 }
 
-const BASE_URL = 'https://dev.zujugp.com/_hcms/api'
+const BASE_URL = 'https://www.zujugp.com/_hcms/api'
 
 const uid = user_vid
 
@@ -275,12 +261,20 @@ fetch(`${BASE_URL}/points-history?uid=${uid}`)
 
 const dashboardAllowedPages = ['/members-portal', '/membership']
 
-if (dashboardAllowedPages.includes(location.pathname)) {
+if (
+  dashboardAllowedPages.find(slug => window.location.href.indexOf(slug) != -1)
+) {
   fetch(`${BASE_URL}/dashboard?uid=${uid}`)
     .then(res => res.json())
     .then(res => {
       // Membership page
-      const { daily_task, kfd_game, refer, is_first_login } = res.data
+      const {
+        daily_task,
+        kfd_game,
+        refer,
+        is_first_login,
+        progress_bar
+      } = res.data
       const tasksNames = Object.keys(daily_task)
       const mapped = tasksNames.map(i => res.data.daily_task[i])
 
@@ -330,37 +324,51 @@ if (dashboardAllowedPages.includes(location.pathname)) {
         }
       })
 
-      $('.continous__item').each(function () {
-        if ($(this).data('day') <= kfd_game.continuous_day) {
+      $('.cnt__item').each(function () {
+        const day = kfd_game?.this_week_continuous_days
+        if ($(this).data('day') <= day) {
           $(this).addClass('checked')
         }
       })
+
+      setUpContinousSlide(kfd_game.continuous_day)
+
+      if (progress_bar.target_to_points == 0) {
+        $('.membership-tier-desc')
+          .text('Congratulation you are an Ultimate Fan')
+          .css('opacity', 1)
+      } else {
+        $('.membership-tier-points').text(progress_bar.target_to_points)
+        $('.membership-tier-goal').text(progress_bar.goal_fan_status)
+        $('.membership-tier-desc')
+          .css('opacity', 1)
+          .fadeIn()
+      }
 
       // Set Referral Link
       const ref = new URL(refer?.referral_link)
 
       if (ref) {
-        $('#referral-id').val(ref.searchParams.get('refer'))
+      $('#referral-id').val('https://www.zujugp.com/registration' + '?refer=' + ref.searchParams.get('refer'))
 
         const shareData = {
           title: 'Zuju Referral Program',
-          text: 'Get more zuju points',
-          url: refer?.referral_link
+          text: 'Get more Z Points',
+          url: 'https://www.zujugp.com/registration' + '?refer=' + ref.searchParams.get('refer')
         }
 
         const btn = document.querySelector('#share-referral')
         const resultPara = document.querySelector('.result')
 
         // Share must be triggered by "user activation"
-        btn.addEventListener('click', async () => {
-          try {
-            await navigator.share(shareData)
-            // resultPara.textContent = 'MDN shared successfully'
-            console.log('successfully share')
-          } catch (err) {
-            // resultPara.textContent = 'Error: ' + err
-          }
-        })
+        btn &&
+          btn.addEventListener('click', async () => {
+            try {
+              await navigator.share(shareData)
+            } catch (err) {
+              // resultPara.textContent = 'Error: ' + err
+            }
+          })
       }
 
       if (is_first_login) return modalIn('#modal-welcome')
@@ -392,7 +400,8 @@ $('.copy')
       .writeText($('.copy input[type="text"]').val())
       .then(() => {
         // Success!
-        $(this).text('Copied')
+        $(this).text('Copied!')
+        setTimeout(() => $(this).text('Copy'), 1000)
       })
       .catch(err => {
         console.log('Something went wrong', err)
@@ -429,3 +438,41 @@ function eraseCookie (name) {
 $('#modal-birthday .button').on('click', function () {
   setCookie('birthday-give-claimed', +new Date(), 365)
 })
+
+function setUpContinousSlide (start) {
+  // $('.continous').slick({
+  //   slidesToShow: 7,
+  //   slidesToScroll: 7,
+  //   centerMode: false,
+  //   arrows: true,
+  //   infinite: false,
+  //   initialSlide: start,
+  //   prevArrow: `<div class="prev-arrow">${chevronLeft}</div>`,
+  //   nextArrow: `<div class="next-arrow">${chevronRight}</div>`,
+  //   responsive: [
+  //     {
+  //       breakpoint: 600,
+  //       settings: {
+  //         slidesToShow: 4,
+  //         slidesToScroll: 4
+  //       }
+  //     }
+  //   ]
+  // })
+  var Splide = window.Splide || ''
+  if (!Splide) return
+
+  new Splide('.splide', {
+    perPage: 7,
+    perMove: 7,
+    pagination: false,
+    start: start <= 1 ? 0 : start - 1,
+    arrowPath:
+      'M15.6624 13.9999L1.95962 0.335019C1.51067 -0.112433 0.783795 -0.111681 0.33559 0.337333C-0.112267 0.78629 -0.11111 1.51357 0.337905 1.96136L13.2251 14.813L0.337442 27.6645C-0.111515 28.1123 -0.112672 28.8392 0.335127 29.2882C0.559808 29.5133 0.854156 29.6258 1.1485 29.6258C1.4421 29.6258 1.73529 29.514 1.95956 29.2905L15.6624 15.6259C15.8787 15.4108 16 15.118 16 14.813C16 14.5079 15.8783 14.2155 15.6624 13.9999Z',
+    breakpoints: {
+      600: {
+        perPage: 4
+      }
+    }
+  }).mount()
+}

@@ -2,6 +2,11 @@
   templateType: global_partial
   label: Footer
 -->
+
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+{% import '../../macros/tags.html' as c %}
+
 <section class="callout-section">
   <img
        src="{{ get_asset_url('../../images/assets/triangle.png') }}"
@@ -17,50 +22,50 @@
     <div class="footer__cta">
       <div class="footer__cta-alpha">
         <h3 class="all-caps">
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           保持更新
           {% else %}
           Stay in the know
           {% endif %}
         </h3>
         <p>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           获取第一手足球消息和相关内幕
           {% else %}
           Keep updated with news and rewards with us.
           {% endif %}
         </p>
-        <form action="">
-          {% if content.language.languageTag == "zh-cn" %}
-          <input type="email" name="" id="" placeholder="您的电子邮件地址" />
+        
+        <div class="subscription-form">
+          {% if currLang == "zh-cn" %}
+            {% form 'form-subscription'
+                form_to_use='3e069afc-6fdd-48ab-9c7c-f2544d944da1',
+              %}
           {% else %}
-          <input type="email" name="" id="" placeholder="Your email address" />
+            {% form 'form-subscription'
+                form_to_use='2df3156e-384b-4ed8-8dea-af0bc8503144',
+              %}
           {% endif %}
-          
-          {% if content.language.languageTag == "zh-cn" %}
-          <input type="submit" class="button button-o-primary" value="  订阅  " />
-          {% else %}
-          <input type="submit" class="button button-o-primary" value="Subscribe" />
-          {% endif %}
-        </form>
+        </div>
       </div>
       <div class="footer__cta-omega">
         <h3 class="all-caps">
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           开启合作
           {% else %}
           Work with Us
           {% endif %}
         </h3>
         <p>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           诚邀有识之士与我们一起将足球推向数字化的未来
           {% else %}
-          We welcome visionaries who share our desire to advance football’s transition to a digital future.
+          We welcome visionaries to build a digital football future.
+          {# We welcome visionaries who share our desire to advance football’s transition to a digital future. #}
           {% endif %}
         </p>
-        <button class="button button--primary">
-          {% if content.language.languageTag == "zh-cn" %}
+        <button class="button button--primary" data-modal-target="modal-contact-us">
+          {% if currLang == "zh-cn" %}
           联系我们
           {% else %}
           Let's talk
@@ -71,7 +76,7 @@
     <div class="footer__nav">
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           公司
           {% else %}
           Company
@@ -79,19 +84,25 @@
         </h4>
         <ul>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/about-us">关于我们</a>
             {% else %}
             <a href="/about-us">About</a>
             {% endif %}
           </li>
-          {# <li><a href="#">Impact</a></li> #}
+          <li>
+            {% if currLang == "zh-cn" %}
+            <a href="/zh-cn/impact">影响力</a>
+            {% else %}
+            <a href="/impact">Impact</a>
+            {% endif %}
+          </li>
           {# <li><a href="#">Advertise</a></li> #}
         </ul>
       </div>
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           文章
           {% else %}
           Articles
@@ -99,49 +110,49 @@
         </h4>
         <ul>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest">所有</a>
             {% else %}
             <a href="/latest">All</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/观点">观点</a>
             {% else %}
             <a href="/latest/tag/opinion">Opinion</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/当地">当地</a>
             {% else %}
             <a href="/latest/tag/local-eye">Local Eye</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/周边">周边</a>
             {% else %}
             <a href="/latest/tag/offside">Offside</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/画廊">画廊</a>
             {% else %}
             <a href="/latest/tag/gallery">Gallery</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/图腾">图腾</a>
             {% else %}
             <a href="/latest/tag/icon">Icon</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/latest/tag/榜单">榜单</a>
             {% else %}
             <a href="/latest/tag/line-up">Line Up</a>
@@ -151,7 +162,7 @@
       </div>
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           更多模块
           {% else %}
           Portfolio
@@ -159,21 +170,21 @@
         </h4>
         <ul>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/portfolio/zujugameplay">蹴蹴游戏空间</a>
             {% else %}
             <a href="/portfolio/zujugameplay">ZujuGamePlay</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/portfolio/zujugp-exchange">蹴蹴交换空间</a>
             {% else %}
             <a href="/portfolio/zujugp-exchange">ZujuGP Exchange</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/zh-cn/portfolio/zujugp-rank">蹴蹴探索空间</a>
             {% else %}
             <a href="/portfolio/zujugp-rank">ZujuGP Rank</a>
@@ -183,7 +194,7 @@
       </div>
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           法律
           {% else %}
           Legal
@@ -191,14 +202,14 @@
         </h4>
         <ul>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/privacy-policy">隐私政策</a>
             {% else %}
             <a href="/privacy-policy">Privacy Policy</a>
             {% endif %}
           </li>
           <li>
-            {% if content.language.languageTag == "zh-cn" %}
+            {% if currLang == "zh-cn" %}
             <a href="/privacy-policy">使用条款</a>
             {% else %}
             <a href="/terms-of-use">Terms of use</a>
@@ -209,21 +220,46 @@
 
       <div class="footer__nav-col">
         <h4>
-          {% if content.language.languageTag == "zh-cn" %}
+          {% if currLang == "zh-cn" %}
           联系我们
           {% else %}
           Connect with us
           {% endif %}
         </h4>
         <ul class="footer__social">
-          <li><a href="/convo/cr-in-commercial" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 32 32" height="19" width="19" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1{fill:none;stroke-linejoin:round;stroke-width:2px;}</style></defs><title/><g data-name="47-chat" id="_47-chat"><polygon class="cls-1" points="31 1 31 19 25 19 25 23 21 19 7 19 7 1 31 1"/><polyline class="cls-1" points="7 13 1 13 1 27 7 27 7 31 11 27 18 27 18 19"/><line class="cls-1" x1="11" x2="27" y1="6" y2="6"/><line class="cls-1" x1="11" x2="27" y1="10" y2="10"/><line class="cls-1" x1="11" x2="27" y1="14" y2="14"/></g></svg> Convo</a></li>
-          <li><a href="http://twitter.com/zujugp" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 512 512" height="19" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"></path></svg> Twitter</a></li>
-          <li><a href="http://instagram.com/zujugp" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="19" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M512 306.9c-113.5 0-205.1 91.6-205.1 205.1S398.5 717.1 512 717.1 717.1 625.5 717.1 512 625.5 306.9 512 306.9zm0 338.4c-73.4 0-133.3-59.9-133.3-133.3S438.6 378.7 512 378.7 645.3 438.6 645.3 512 585.4 645.3 512 645.3zm213.5-394.6c-26.5 0-47.9 21.4-47.9 47.9s21.4 47.9 47.9 47.9 47.9-21.3 47.9-47.9a47.84 47.84 0 0 0-47.9-47.9zM911.8 512c0-55.2.5-109.9-2.6-165-3.1-64-17.7-120.8-64.5-167.6-46.9-46.9-103.6-61.4-167.6-64.5-55.2-3.1-109.9-2.6-165-2.6-55.2 0-109.9-.5-165 2.6-64 3.1-120.8 17.7-167.6 64.5C132.6 226.3 118.1 283 115 347c-3.1 55.2-2.6 109.9-2.6 165s-.5 109.9 2.6 165c3.1 64 17.7 120.8 64.5 167.6 46.9 46.9 103.6 61.4 167.6 64.5 55.2 3.1 109.9 2.6 165 2.6 55.2 0 109.9.5 165-2.6 64-3.1 120.8-17.7 167.6-64.5 46.9-46.9 61.4-103.6 64.5-167.6 3.2-55.1 2.6-109.8 2.6-165zm-88 235.8c-7.3 18.2-16.1 31.8-30.2 45.8-14.1 14.1-27.6 22.9-45.8 30.2C695.2 844.7 570.3 840 512 840c-58.3 0-183.3 4.7-235.9-16.1-18.2-7.3-31.8-16.1-45.8-30.2-14.1-14.1-22.9-27.6-30.2-45.8C179.3 695.2 184 570.3 184 512c0-58.3-4.7-183.3 16.1-235.9 7.3-18.2 16.1-31.8 30.2-45.8s27.6-22.9 45.8-30.2C328.7 179.3 453.7 184 512 184s183.3-4.7 235.9 16.1c18.2 7.3 31.8 16.1 45.8 30.2 14.1 14.1 22.9 27.6 30.2 45.8C844.7 328.7 840 453.7 840 512c0 58.3 4.7 183.2-16.2 235.8z"></path></svg>Instagram</a></li>
-          <li><a href="https://www.facebook.com/zujugp" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="19" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M880 112H144c-17.7 0-32 14.3-32 32v736c0 17.7 14.3 32 32 32h736c17.7 0 32-14.3 32-32V144c0-17.7-14.3-32-32-32zm-32 736H663.9V602.2h104l15.6-120.7H663.9v-77.1c0-35 9.7-58.8 59.8-58.8h63.9v-108c-11.1-1.5-49-4.8-93.2-4.8-92.2 0-155.3 56.3-155.3 159.6v89H434.9v120.7h104.3V848H176V176h672v672z"></path></svg>Facebook</a></li>
-          <li><a href="https://www.youtube.com/channel/UCbXvRvjZAt5aZhBNlDFxHuw" target="_blank"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024" height="19" width="19" xmlns="http://www.w3.org/2000/svg"><path d="M960 509.2c0-2.2 0-4.7-.1-7.6-.1-8.1-.3-17.2-.5-26.9-.8-27.9-2.2-55.7-4.4-81.9-3-36.1-7.4-66.2-13.4-88.8a139.52 139.52 0 0 0-98.3-98.5c-28.3-7.6-83.7-12.3-161.7-15.2-37.1-1.4-76.8-2.3-116.5-2.8-13.9-.2-26.8-.3-38.4-.4h-29.4c-11.6.1-24.5.2-38.4.4-39.7.5-79.4 1.4-116.5 2.8-78 3-133.5 7.7-161.7 15.2A139.35 139.35 0 0 0 82.4 304C76.3 326.6 72 356.7 69 392.8c-2.2 26.2-3.6 54-4.4 81.9-.3 9.7-.4 18.8-.5 26.9 0 2.9-.1 5.4-.1 7.6v5.6c0 2.2 0 4.7.1 7.6.1 8.1.3 17.2.5 26.9.8 27.9 2.2 55.7 4.4 81.9 3 36.1 7.4 66.2 13.4 88.8 12.8 47.9 50.4 85.7 98.3 98.5 28.2 7.6 83.7 12.3 161.7 15.2 37.1 1.4 76.8 2.3 116.5 2.8 13.9.2 26.8.3 38.4.4h29.4c11.6-.1 24.5-.2 38.4-.4 39.7-.5 79.4-1.4 116.5-2.8 78-3 133.5-7.7 161.7-15.2 47.9-12.8 85.5-50.5 98.3-98.5 6.1-22.6 10.4-52.7 13.4-88.8 2.2-26.2 3.6-54 4.4-81.9.3-9.7.4-18.8.5-26.9 0-2.9.1-5.4.1-7.6v-5.6zm-72 5.2c0 2.1 0 4.4-.1 7.1-.1 7.8-.3 16.4-.5 25.7-.7 26.6-2.1 53.2-4.2 77.9-2.7 32.2-6.5 58.6-11.2 76.3-6.2 23.1-24.4 41.4-47.4 47.5-21 5.6-73.9 10.1-145.8 12.8-36.4 1.4-75.6 2.3-114.7 2.8-13.7.2-26.4.3-37.8.3h-28.6l-37.8-.3c-39.1-.5-78.2-1.4-114.7-2.8-71.9-2.8-124.9-7.2-145.8-12.8-23-6.2-41.2-24.4-47.4-47.5-4.7-17.7-8.5-44.1-11.2-76.3-2.1-24.7-3.4-51.3-4.2-77.9-.3-9.3-.4-18-.5-25.7 0-2.7-.1-5.1-.1-7.1v-4.8c0-2.1 0-4.4.1-7.1.1-7.8.3-16.4.5-25.7.7-26.6 2.1-53.2 4.2-77.9 2.7-32.2 6.5-58.6 11.2-76.3 6.2-23.1 24.4-41.4 47.4-47.5 21-5.6 73.9-10.1 145.8-12.8 36.4-1.4 75.6-2.3 114.7-2.8 13.7-.2 26.4-.3 37.8-.3h28.6l37.8.3c39.1.5 78.2 1.4 114.7 2.8 71.9 2.8 124.9 7.2 145.8 12.8 23 6.2 41.2 24.4 47.4 47.5 4.7 17.7 8.5 44.1 11.2 76.3 2.1 24.7 3.4 51.3 4.2 77.9.3 9.3.4 18 .5 25.7 0 2.7.1 5.1.1 7.1v4.8zM423 646l232-135-232-133z"></path></svg>Youtube</a></li>
+          <li><a href="/convo/cr-in-commercial" target="_blank"><i class="far fa-comment"></i><span style="padding-left: 8px;">Convo</span></a></li>
+          <li><a href="https://www.facebook.com/zujugp" target="_blank"><i class="fab fa-facebook-square"></i><span style="padding-left: 8px;">Facebook</span></a></li>
+          <li><a href="https://instagram.com/zujugp" target="_blank"><i class="fab fa-instagram"></i><span style="padding-left: 8px;">Instagram</span></a></li>
+          <li><a href="https://twitter.com/zujugp" target="_blank"><i class="fab fa-twitter"></i><span style="padding-left: 8px;">Twitter</span></a></li>
+          <li><a href="https://www.youtube.com/channel/UCbXvRvjZAt5aZhBNlDFxHuw" target="_blank"><i class="fab fa-youtube"></i><span style="padding-left: 8px;">YouTube</span></a></li>
+          <li><a href="https://weibo.com/u/7706292600" target="_blank"><i class="fab fa-weibo"></i><span style="padding-left: 8px;">Weibo</span></a></li>
         </ul>
       </div>
     </div>
     <a href="https://mintmediallc.com" class="footer__copyright" target="_blank">&copy; 2021 Mint Media Sports Limited</a>
   </div>
 </footer>
+
+
+{% call c.modal('modal-contact-us', null, null) %}
+  <div class="form-contact-wrapper">
+    <h3 class="text-center">
+      {% if currLang == "zh-cn" %}
+      联系我们
+      {% else %}
+      Contact Us
+      {% endif %}
+    </h3>
+
+    {% if currLang == "zh-cn" %}
+      {% form 'form-contact-us'
+        form_to_use='a47ead18-9f24-425f-9136-48e0f3f37c89',
+      %}
+    {% else %}
+      {% form 'form-contact-us'
+        form_to_use='ff4fd248-ad02-4d39-9971-a8880316c297',
+      %}
+    {% endif %}
+    
+  </div>
+{% endcall %}

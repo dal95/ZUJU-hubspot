@@ -4,6 +4,9 @@
 -->
 {% import 'zuju-theme/macros/tags.html' as c %}
 
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+
 <!-- Top nav -->
 <div class="nav">
   <nav class="top-nav">
@@ -12,7 +15,7 @@
         {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}
           <div class="header__language-switcher">
             <div class="header__language-switcher-label">
-              {% module 'language-switcher'
+              {% module 'language-switcher-4'
                 path='@hubspot/language_switcher',
                 display_mode='Localized',
                 label='Language switcher'
@@ -24,10 +27,12 @@
       </div>
 
       <div class="top-nav__social social-links">
+        <a href="/convo/cr-in-commercial" target="_blank"><i class="far fa-comment"></i></a>
         <a href="https://www.facebook.com/zujugp" target="_blank"><i class="fab fa-facebook-square"></i></a>
-        <a href="https://twitter.com/zujugp" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://instagram.com/zujugp" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/zujugp" target="_blank"><i class="fab fa-twitter"></i></a>
         <a href="https://www.youtube.com/channel/UCbXvRvjZAt5aZhBNlDFxHuw" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://weibo.com/u/7706292600" target="_blank"><i class="fab fa-weibo"></i></a>
       </div>
     </div>
   </nav>
@@ -36,7 +41,7 @@
   <nav class="main-nav">
     <div class="main-nav__container">
       <div class="main-nav__logo clr-primary">
-        {% if content.language.languageTag == "zh-cn" %}
+        {% if currLang == "zh-cn" %}
         {% logo "logo" src="/hubfs/BRAND%20ASSETS/ZujuGP%20Chinese%20Logo_Red%20Horizontal.png" link="/zh-cn/" no_wrapper=True %}
         {% else %}
         {% logo "logo" link="/" no_wrapper=True %}
@@ -44,17 +49,17 @@
       </div>
 
       <div class="main-nav__omega">
-        
-        {% if content.language.languageTag == "zh-cn" %}
+
+        {% if currLang == "zh-cn" %}
         {% menu "main-nav" id=57071986309 %}
         {% else %}
         {% menu "main-nav" id=54357477653 %}
         {% endif %}
-        
+
         {% if request_contact.is_logged_in %}
           <div class="has-dropdown">
             <a href="/members-portal" class="nav__link account-link">
-              {% if content.language.languageTag == "zh-cn" %}
+              {% if currLang == "zh-cn" %}
               账户
               {% else %}
               Account
@@ -65,31 +70,31 @@
             </a>
             <div class="dropdown">
               <div>
-                {% if content.language.languageTag == "zh-cn" %}
+                {% if currLang == "zh-cn" %}
                 你好，{{ contact.firstname }}
                 {% else %}
                 Hi, {{ contact.firstname }}
                 {% endif %}
               </div>
-              
+
               <a href="/profile">
-                {% if content.language.languageTag == "zh-cn" %}
+                {% if currLang == "zh-cn" %}
                 编辑个人资料
                 {% else %}
                 Edit profile
                 {% endif %}
               </a>
-              
+
               <a href="/membership">
-                {% if content.language.languageTag == "zh-cn" %}
+                {% if currLang == "zh-cn" %}
                 会员
                 {% else %}
                 Membership
                 {% endif %}
               </a>
-              
+
               <a href="/_hcms/mem/logout">
-                {% if content.language.languageTag == "zh-cn" %}
+                {% if currLang == "zh-cn" %}
                 退出登录
                 {% else %}
                 Logout
@@ -98,20 +103,33 @@
             </div>
           </div>
         {% else %}
-          <a class="nav__link" href="/_hcms/mem/login">
-            {% if content.language.languageTag == "zh-cn" %}
-            登录
-            {% else %}
-            Login
-            {% endif %}
-          </a>
+
+        {% if currLang == "zh-cn" %}
+        <a class="nav__link nav-auth" href="/zh-cn/registration">注册</a>
+        {% else %}
+        <a class="nav__link nav-auth" href="/registration">Sign Up</a>
+        {% endif %}
+
+        <a class="nav__link nav-auth" href="/_hcms/mem/login">
+          {% if currLang == "zh-cn" %}
+          登录
+          {% else %}
+          Login
+          {% endif %}
+        </a>
         {% endif %}
 
         <div class="off-canvas">
           {{ c.icon_cross() }}
 
           <!-- Off canvas menu content -->
-          {{ c.z_menu(54357477653, 'off-canvas__menu', 'nav__link') }}
+
+          {% if currLang == "zh-cn" %}
+          {# {% menu "main-nav" id=57071986309 %} #}
+            {{ c.z_menu(57071986309, 'off-canvas__menu', 'nav__link') }}
+          {% else %}
+            {{ c.z_menu(54357477653, 'off-canvas__menu', 'nav__link') }}
+          {% endif %}
         </div>
 
         <!-- Burger menu -->

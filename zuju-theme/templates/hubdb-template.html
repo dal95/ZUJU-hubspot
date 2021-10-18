@@ -15,21 +15,53 @@
 				<section class="rewards-details">
 					<div class="breadcrumb">
 						<div class="breadcrumb__item">
-							<a style="color: #fff; text-decoration: none" href="{{ '/'~(request.path|split('/'))[0] }}">Rewards</a>
+							<a style="color: #fff; text-decoration: none" href="{{ '/'~(request.path|split('/'))[0] }}">
+								{% if currLang == 'zh-cn' %}
+									 奖励
+								{% else %}
+									Rewards
+								{% endif %}
+							</a>
 						</div>
-						&gt;
 						<div class="breadcrumb__item">
-							{{ (d.categories|first).name }}
+							{{ c.chevron_right() }}
+							{{ c.categories(1) }}
 						</div>
-						&gt;
-						<div class="breadcrumb__item active">{{ d.name }}</div>
+						<div class="breadcrumb__item active">
+							{{ c.chevron_right() }}
+
+							{% if currLang == 'zh-cn' %}
+								{{ d.name_chinese }}
+							{% else%}
+								{{ d.name }}
+							{% endif %}
+						</div>
 					</div>
 					<!-- End of breadcrumb -->
 
 					<div class="content-row">
 						<div class="content-col">
-							<h2 class="post-title">{{ d.name }}</h2>
-							<div>{{ d.content }}</div>
+							<h2 class="post-title">
+								{% if currLang == 'zh-cn' %}
+									{{ d.name_chinese }}
+								{% else%}
+									{{ d.name }}
+								{% endif %}
+							</h2>
+							<div>
+								{% if currLang == 'zh-cn' %}
+									{{ d.content_chinese }}
+								{% else %}
+									{{ d.content }}
+								{% endif %}
+							</div>
+
+							<p class="tier-availability">
+								{{ currLang == 'zh-cn' ? '适用于' : 'Available for' }} : {{ d.member_tier_availability|map('name')|join(', ') }}
+							</p>
+							{% if d.show_stock_count %}
+								{{ currLang == 'zh-cn' ? '股票' : 'Stock' }}: {{ d.stock }}
+							{% endif %}
 
 							{% if d.stock <= 0 %}
 								{% set class_name = 'clr-mute' %}
@@ -39,59 +71,46 @@
 							{% if contact.current_loyalty_points < d.point %}
 								{# {{ contact.current_loyalty_points < d.point  }} #}
 								{% set class_name = 'clr-mute' %}
-								{% set label = 'Insufficient Points' %}
+								{% set label = '{{ currLang == "zh-cn" ? "Z积分不足" : "Insufficient Z Points" }}' %}
 							{% endif %}
 
 							{% if  contact.current_loyalty_points > d.point && d.stock > 0 %}
 								{% set class_name = '' %}
 								{% set label = 'Available' %}
 							{% endif %}
-							<div class="availability {{ class_name }}">
-								{{ label  }}
-							</div>
-
-							<div class="dfl cta">
-								<div>
-									<span class="fs-large">{{ d.point }}</span>
-									<span class="fs-sm">points</span>
+							<div class="cta-container">
+								<div class="availability {{ class_name }}">
+									{{ label  }}
 								</div>
 
-								<div>
-									<a
-										href="#"
-										data-modal-target="modal-redemption"
-										class="button button--primary "
-											{{ d.stock > 0 && contact.current_loyalty_points > d.point || 'disabled' }}
-										>
-										{{ d.stock > 0 && contact.current_loyalty_points > d.point ? 'Redeem Now' : 'Unavailable' }}
-									</a>
+								<div class="dfl cta">
+									<div>
+										<span class="fs-large">{{ d.point|format_currency('en-US')|replace('$', '') }}</span>
+										<span class="fs-sm">{{ currLang == "zh-cn" ? "Z积分" : "Z Points" }}</span>
+									</div>
+
+									<div>
+										<button
+											data-modal-target="modal-redemption"
+											class="button button--primary "
+												{{ d.stock|int > 0 && contact.current_loyalty_points|int > d.point|int || 'disabled' }}
+											>
+                      {% if currLang == 'zh-cn' %}
+											  {{ (d.stock|int > 0 && contact.current_loyalty_points|int > d.point|int) ? 'Redeem Now' : '无法使用' }}
+                      {% else %}
+                        {{ (d.stock|int > 0 && contact.current_loyalty_points|int > d.point|int) ? 'Redeem Now' : 'Unavailable' }}
+                      {% endif %}
+										</button>
+									</div>
 								</div>
 							</div>
 
-							<div class="fs-sm">
-								<p>Terms and Conditions</p>
-								<ul>
-									<li>
-										Lorem ipsum dolor sit amet consectetur adipisicing
-										elit. Iure, aliquam!
-									</li>
-									<li>
-										Lorem ipsum dolor sit amet consectetur adipisicing
-										elit. Repudiandae magni voluptatum ipsam inventore
-										doloribus eius culpa, impedit dolorem pariatur sunt?
-									</li>
-									<li>
-										Lorem ipsum dolor sit amet consectetur adipisicing
-										elit. Veritatis beatae doloribus voluptatum impedit
-										dignissimos voluptatem mollitia eveniet unde nostrum
-										placeat!
-									</li>
-									<li>
-										Lorem ipsum dolor, sit amet consectetur adipisicing
-										elit. Numquam illo animi, expedita ab quae praesentium
-										autem quos quas perferendis excepturi.
-									</li>
-								</ul>
+							<div class="fs-sm toc">
+								{% if currLang == 'zh-cn' %}
+									{{ d.tnc_chinese }}
+								{% else%}
+									{{ d.tnc }}
+								{% endif %}
 							</div>
 						</div>
 
@@ -119,76 +138,81 @@
 						<form action="" class="rewards__filter">
 							<div class="fields">
 								<div class="field">
-									<label for="id-categories" class="fs-sm"
-										>Categories</label
-									>
+									{% set categories = [
+										{
+											id: 1,
+											value: 'CR7 MEMORABILIA',
+										}, {
+											id: 2,
+											value: 'ELECTRONICS'
+										}, {
+											id: 3,
+											value: 'CR7 EXPERIENCES'
+										}, {
+											id: 4,
+											value: 'GIFT CARDS'
+										}
+									] %}
+
+									{% set points = [{
+											id: 1,
+											value: '<1000'
+										}, {
+											id: 2,
+											value: '1001 - 7000'
+										}, {
+											id: 3,
+											value: '>7000'
+										}
+									] %}
+
+									{% set qCat = request.query_dict['categories']|default('') %}
+									{% set qPts = request.query_dict['points']|default('') %}
+
+									{% if qCat %}
+										{% set catFilter = 'categories__in='~qCat %}
+									{% endif %}
+
+									{% if qPts %}
+										{% if qPts == 1 %}
+											{% set ptsFilter = '&point__lte=1000' %}
+										{% elif qPts == 2 %}
+											{% set ptsFilter = '&point__lte=7000&point__gt=1000' %}
+										{% elif qPts == 3 %}
+											{% set ptsFilter = '&point__gt=7000' %}
+										{% else %}
+											{% set ptsFilter = '' %}
+										{% endif %}
+									{% endif %}
+
+									<label for="id-categories" class="fs-sm">Categories</label>
 									<select name="" id="id-categories">
-										<option value="all" class="selected disabled"
-											>All</option
-										>
-										<option value="1">Others</option>
-										<option value="2">Gadgets</option>
+										<option value="" selected>All</option>
+
+										{% for category in categories %}
+											<option value="{{ category.id }}" {{ qCat == category.id ? 'selected' : '' }}>{{ category.value }}</option>
+										{% endfor %}
 									</select>
 								</div>
 
 								<div class="field">
 									<label for="id-points" class="fs-sm"
-										>Zuju Points</label
+										>Z Points</label
 									>
 									<select name="" id="id-points">
-										<option value="all" class="selected disabled"
-											>All</option
-										>
-										<option value="<1000">&lt; 1000</option>
-										<option value="1001-7000">1001 - 7000</option>
-										<option value=">7000">&gt; 7000</option>
+										<option value="" selected>All</option>
+
+										{% for point in points %}
+											<option value="{{ point.id }}" {{ 'selected' if point.id == qPts }}>{{ point.value }}</option>
+										{% endfor %}
 									</select>
 								</div>
 							</div>
 						</form>
 					</div>
 					<div class="grids">
-						{% if request.query_dict.categories %}
-							{% set q_cat = 'categories__icontains='~request.query_dict.categories %}
-						{% else %}
-							{% set q_cat = '' %}
-						{% endif %}
-
-
-						{% for row in hubdb_table_rows(dynamic_page_hubdb_table_id, q_cat) %}
-							<a class="card" href="{{ request.path }}/{{ row.hs_path }}">
-								<img src="{{ resize_image_url(row.image.url, 280, 180, 200, true, false) }}" alt="" loading="lazy" width="280px" height="180px"/>
-								<div class="card__content">
-									<div class="tag">{{ (row.categories|first).name }}</div>
-									<h3 class="card__title">{{ row.name }}</h3>
-									<div class="card__desc">{{ row.content }}</div>
-
-
-									{% if row.stock <= 0 %}
-										{% set class_name = 'clr-mute' %}
-										{% set label = 'Fully Redeemed' %}
-									{% endif%}
-
-									{% if contact.current_loyalty_points < row.point %}
-										{# {{ contact.current_loyalty_points < row.point  }} #}
-										{% set class_name = 'clr-mute' %}
-										{% set label = 'Insufficient Points' %}
-									{% endif %}
-
-									{% if  contact.current_loyalty_points > row.point && row.stock > 0 %}
-										{% set class_name = '' %}
-										{% set label = 'Available' %}
-									{% endif %}
-
-									<div class="availability {{ class_name }}">
-										{{ label }}
-									</div>
-
-									<div class="points">
-										<b>{{ row.point }}</b> <span class="fs-sm">Zuju points</span>
-									</div>
-								</div>
-							</a>
+						{% for row in hubdb_table_rows(dynamic_page_hubdb_table_id, catFilter~ptsFilter) %}
+							{{ c.reward_card(row) }}
 						{% endfor %}
 					</div>
 					{# End of Grids #}
@@ -202,11 +226,11 @@
 
 		window.addEventListener('message', event => {
 			if(event.data.type === 'hsFormCallback' && event.data.eventName === 'onFormReady') {
-					const $redeemInput = document.querySelector('input[name="last_redeemed_id"]')
-					const $redeemItemName = document.querySelector('input[name="last_redeemed_item_name"]')
+					const $redeemInput = $('input[name="last_redeemed_id"]')
+					const $redeemItemName = $('input[name="last_redeemed_item_name"]')
 
-					$redeemInput.value = "{{ dynamic_page_hubdb_row.hs_id }}";
-					$redeemItemName.value = "{{ dynamic_page_hubdb_row.name }}"
+					$redeemInput.val("{{ dynamic_page_hubdb_row.hs_id }}");
+					$redeemItemName.val("{{ dynamic_page_hubdb_row.name }}");
 			}
 		});
 	</script>

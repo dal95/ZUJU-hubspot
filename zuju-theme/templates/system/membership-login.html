@@ -5,24 +5,43 @@
 -->
 {% extends '../layouts/base-standard.html' %}
 
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+
 {% block body %}
 <main class="public">
-  <div class="auth-wrapper auth login" style="background-image: url({{ get_asset_url('../../images/assets/bg/register.png') }})">
+  <div class="auth-wrapper auth login"  >
       <div class="container">
         <div class="auth__push-right form-dark">
-          <h2 class="auth__heading">Login</h2>
+
+          <h2 class="auth__heading">
+            {{ currLang == "zh-cn" ? "登录" : "Login" }}
+          </h2>
           {% member_login 'my_login'
-            email_label= 'Email',
-            password_label= 'Password',
-            remember_me_label= 'Remember Me',
-            reset_password_text= 'Forgot your password?',
-            submit_button_text= 'Login'
+            email_label= {{ currLang == "zh-cn" ? "电子邮箱" : "Email" }},
+            password_label= {{ currLang == "zh-cn" ? "密码" : "Password" }},
+            remember_me_label= {{ currLang == "zh-cn" ? "记住账号" : "Remember Me" }},
+            reset_password_text= {{ currLang == "zh-cn" ? "忘记密码?" : "Forgot your password?" }},
+            submit_button_text= {{ currLang == "zh-cn" ? "登录" : "Login" }},
+            show_password= {{ currLang == "zh-cn" ? "显示密码" : "Show password" }},
           %}
 
-          <h2 class="auth__heading">Sign Up</h2>
-          <p>Join now to get dips on exclusive access to events and football merchandise.</p>
+          <h2 class="auth__heading">
+            {{ currLang == "zh-cn" ? "注册" : "Sign Up" }}
+          </h2>
+          <p>
+            {% if currLang == "zh-cn" %}
+            加入全球蹴蹴ZujuGP社区以获得高级访问权限和奖励。
+            {% else %}
+            Join the global ZujuGP community for premium access and rewards.
+            {% endif %}
+          </p>
           <div class="text-right" style="margin-top: 2rem">
-            <a href="/registration" class="button">Create</a>
+            {% if currLang == "zh-cn" %}
+              <a href="/zh-cn/registration?hsLang=zh-cn" class="button">创建</a>
+            {% else %}
+              <a href="/registration" class="button">Create</a>
+            {% endif %}
           </div>
         </div>
     </div>

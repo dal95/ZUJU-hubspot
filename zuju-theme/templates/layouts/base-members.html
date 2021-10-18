@@ -8,24 +8,25 @@
     {% if page_meta.html_title %}<title>{{ page_meta.html_title }} {% if content.language.languageTag == "zh-cn" %}| 蹴蹴ZujuGP{% else %}| ZujuGP{% endif %}</title>{% endif %}
     {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
     <meta name="description" content="{{ page_meta.meta_description }}">
+
+    {# Open graph #}
+    {% if content.featured_image %}
+      <meta property="og:image" content="{{content.featured_image}}" />
+    {% else %}
+      <meta property="og:image" content="{{ get_asset_url('zuju-theme/images/assets/bg/ZujuGP-OG.png') }}" />
+    {% endif %}
+
     {{ require_css(get_asset_url("../../fonts/stylesheet.css")) }}
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
 
     {# This is intended to be used if a template requires template specific style sheets #}
     {% if template_css %}
-      {{ require_css(get_asset_url(template_css)) }}
-      {{ require_css(template_css) }}
+    {{ require_css(get_asset_url(template_css)) }}
+    {{ require_css(template_css) }}
     {% endif %}
 
     {{ require_css(get_asset_url("../../css/main.css")) }}
@@ -36,9 +37,12 @@
   </head>
   <body>
     <div class="body-wrapper {{ builtin_body_classes }}">
-    {% block header %}
+      {% block header %}
       {% global_partial path='../partials/header.html' %}
-    {% endblock header %}
+      {% endblock header %}
+
+      {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+      {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 
     <main class="main-wrapper">
       <div class="left-offset"></div>
@@ -53,39 +57,66 @@
               {# <textarea name="" id="" cols="30" rows="10">{{ contact|tojson }}</textarea> #}
               <div class="user-card__content">
                 <div class="user-card__name all-caps">{{ request_contact.contact.firstname }} {{ contact.lastname }}</div>
-                <div class="user-card__tier fs-sm">{{ contact.membership_tier }}</div>
-                <div class="user-card__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> Zuju Points</div>
+                <div class="user-card__tier fs-sm">
+
+                  {% if currLang == 'zh-cn' %}
+                    {% if contact.membership_tier == 'Fan' %}
+                      会员
+                    {% elif contact.membership_tier == 'Super Fan' %}
+                      超级会员
+                    {% else %}
+                      终身会员
+                    {% endif %}
+                  {% else %}
+                    {{ contact.membership_tier }}
+                  {% endif %}
+
+                </div>
+                <div class="user-card__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> {{ currLang == "zh-cn" ? " Z 积分" : "Z Points" }}</div>
               </div>
             </a>
           {% endif %}
 
-          <div class="separator">Menu</div>
+          <div class="separator">{{ currLang == "zh-cn" ? "菜单" : "Menu" }}</div>
           <!-- Side menu -->
           {% module "side_menu"
             path="/zuju-theme/modules/menu-with-icon",
             label="Secondary Menu (Desktop only)"
           %}
 
-          <div class="separator">Zuju Loyalty</div>
+          <div class="separator">{{ currLang == "zh-cn" ? "蹴蹴忠诚积分" : "ZujuGP Loyalty" }}</div>
           <ul class="v-menu">
-            <li><a href="/about-rewards">How do loyalty points work?</a></li>
-            <li><a href="/about-rewards">Your Tiering & Benefits</a></li>
+            <li><a href="/about-rewards">{{ currLang == "zh-cn" ? "忠诚积分该如何获得及使用？" : "How do loyalty Z Points work?" }}</a></li>
+            <li><a href="/about-rewards">{{ currLang == "zh-cn" ? "您的等级和福利" : "Your Tiering & Benefits" }}</a></li>
 
             {% if request_contact.is_logged_in %}
               <li>
-                <a href="/_hcms/mem/logout">Logout</a>
+                <a href="/_hcms/mem/logout">{{ currLang == "zh-cn" ? "退出登录" : "Logout" }}</a>
               </li>
             {% else %}
               <li>
-                <a href="/_hcms/mem/login">Login</a>
+                <a href="/_hcms/mem/login">{{ currLang == "zh-cn" ? "登录" : "Login" }}</a>
               </li>
             {% endif %}
           </ul>
         </aside>
 
         <div class="content-wrapper">
+
           <section class="title-section">
-            <h2 class="page-title">{{ content.title }}</h2>
+            <h2 class="page-title">
+              {% if dynamic_page_hubdb_row %}
+                {% set d = dynamic_page_hubdb_row %}
+
+                {% if currLang == 'zh-cn' %}
+                  {{ d.name_chinese }}
+                {% else%}
+                  {{ d.name }}
+                {% endif %}
+              {% else %}
+                {{ content.title }}
+              {% endif%}
+            </h2>
 
             <!-- Scrollable menu -->
             {% module "scrollable_menu"
@@ -127,7 +158,10 @@
       </script>
     {% endif %}
 
-    {% include '../statics/statics-foot.html' %}
     {{ standard_footer_includes }}
+
+    {% if request_contact.is_logged_in %}
+      {% include '../statics/statics-foot.html' %}
+    {% endif %}
   </body>
 </html>

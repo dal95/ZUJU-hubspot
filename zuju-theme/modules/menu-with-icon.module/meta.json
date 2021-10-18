@@ -1,8 +1,9 @@
 {
   "global" : true,
+  "master_language" : "en",
   "smart_type" : "NOT_SMART",
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
   "module_id" : 56329648976,
   "label" : "Side menu",
-  "is_available_for_new_content" : false
+  "is_available_for_new_content" : true
 }

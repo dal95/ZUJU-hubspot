@@ -9,7 +9,7 @@
 
 {% block body %}
   <main class="public">
-    <div class="kungfu-dash" style="background-image: url(https://i.imgur.com/d32YxC5.png)">
+    <div class="kungfu-dash" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/kungfu-dash-game/bg.png') }})">
       <div class="container">
         <div class="form-dark text-center">
           <h2 class="kd-heading kd-heading--primary">
@@ -22,12 +22,12 @@
 
           <h3 class="kd-heading">
             {% if content.language.languageTag == "zh-cn" %}
-            玩游戏获得与C罗近距离接触的机会，您会通过Zoom视频会议与C罗相见！
+            玩游戏获得与C罗近距离接触的机会，在线上与C罗见面！
             {% else %}
-            Play to win a chance to meet Cristiano Ronaldo up close &amp; personal on Zoom!
+            Play to win a chance to meet Cristiano Ronaldo online!
             {% endif %}
           </h3>
-          
+
           <p>
             {% if content.language.languageTag == "zh-cn" %}
             <a href="{{ content_by_id(56505783586).absolute_url }}">阅读</a>游戏的规则。
@@ -35,7 +35,7 @@
             Click <a href="{{ content_by_id(56505783586).absolute_url }}">here</a> to read how to the competition works.
             {% endif %}
           </p>
-          
+
           {# Iframe wrapper #}
           <div class="kd-aspect-ratio">
             <div class="kd-game">
