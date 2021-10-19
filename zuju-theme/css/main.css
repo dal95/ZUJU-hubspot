@@ -2050,11 +2050,13 @@ section.edit .form-columns-0:not(:first-of-type) {
   font-weight: bold;
 }
 
-.form-dark.form-dark .hs-input, .form-dark.form-dark #hs-pwd-widget-password {
+.form-dark.form-dark .hs-input,
+.form-dark.form-dark #hs-pwd-widget-password {
   background: var(--clr-dark-400);
   color: #fff;
 }
-.form-dark.form-dark .hs-input:disabled, .form-dark.form-dark #hs-pwd-widget-password:disabled {
+.form-dark.form-dark .hs-input:disabled,
+.form-dark.form-dark #hs-pwd-widget-password:disabled {
   opacity: 0.5;
   cursor: not-allowed;
   background: #242424 !important;
@@ -2089,8 +2091,23 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 
 .input.disabled.disabled.disabled {
+  position: relative;
   pointer-events: none;
   cursor: not-allowed;
+  height: 40px;
+}
+.input.disabled.disabled.disabled .mask-input {
+  background: #5f6064;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  padding-inline: 20px;
+  display: flex;
+  align-items: center;
+  opacity: 0.5;
 }
 .input.disabled.disabled.disabled input {
   background: #5f6064 !important;
@@ -2520,7 +2537,7 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 
 .auth-wrapper {
-  min-height: 850px;
+  min-height: 851px;
   background-size: cover;
   display: flex;
 }

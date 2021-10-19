@@ -1,14 +1,37 @@
+let count = 0
+const total = $('.hs_cos_wrapper_type_form').length
+
 window.addEventListener('message', event => {
   if (
     event.data.type === 'hsFormCallback' &&
     event.data.eventName === 'onFormReady'
   ) {
+    count++
+    if (count < total) return
     const $referralInput = $('input[name="referral_code"]')
+
+    $referralInput.attr('tabindex', -1)
+    $referralInput.addClass('disabled').attr('dsiabled', true)
+    $referralInput.closest('.input').addClass('disabled')
+
+    $('.disabled')
+      .closest('.field')
+      .find('label')
+      .on('click', e => e.preventDefault())
 
     $referralInput.val(referral_code).trigger('change')
 
     $('[name="username"]').on('focusout', function () {
-			if (!$(this).val()) return
+      const parent = $(this).closest('.hs-username')
+
+      if (!$(this).val()) return
+
+      if ($(this).val().length < 3) {
+        // parent.prepend(
+        //   `<div class="custom-validation hs-error-msg">Minimum character is 3</div>`
+        // )
+      }
+
       fetch(`${BASE_URL}/check-nickname`, {
         method: 'POST',
         headers: {
@@ -20,7 +43,6 @@ window.addEventListener('message', event => {
       })
         .then(res => res.json())
         .then(res => {
-          const parent = $(this).closest('.hs-username')
           const usernmeValidation = parent.find('.custom-validation')
           usernmeValidation.remove()
 
@@ -30,15 +52,27 @@ window.addEventListener('message', event => {
           if (res.found) {
             // alert('Username/Nickname is taken')
             parent.append(
-              `<div class="custom-validation hs-error-msg">${failedMessage.replace('{uname}', $(this).val())}</div>`
+              `<div class="custom-validation hs-error-msg">${failedMessage.replace(
+                '{uname}',
+                $(this).val()
+              )}</div>`
             )
 
-            $('#hs_form_target_register input[type="submit"]').attr('disabled', true)
+            $('#hs_form_target_register input[type="submit"]').attr(
+              'disabled',
+              true
+            )
           } else {
             parent.append(
-              `<div class="custom-validation success">${successMessage.replace('{uname}', $(this).val())}</div>`
+              `<div class="custom-validation success">${successMessage.replace(
+                '{uname}',
+                $(this).val()
+              )}</div>`
             )
-            $('#hs_form_target_register input[type="submit"]').attr('disabled', false)
+            $('#hs_form_target_register input[type="submit"]').attr(
+              'disabled',
+              false
+            )
           }
         })
         .catch(err => alert('Something went wrong, contact us!'))

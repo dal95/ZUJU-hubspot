@@ -334,36 +334,44 @@ if (
       setUpContinousSlide(kfd_game.continuous_day)
 
       if (progress_bar.target_to_points == 0) {
-        $('.membership-tier-desc').text('Congratulation you are an Ultimate Fan').css('opacity', 1)
+        $('.membership-tier-desc')
+          .text('Congratulation you are an Ultimate Fan')
+          .css('opacity', 1)
       } else {
         $('.membership-tier-points').text(progress_bar.target_to_points)
         $('.membership-tier-goal').text(progress_bar.goal_fan_status)
-        $('.membership-tier-desc').css('opacity', 1).fadeIn()
+        $('.membership-tier-desc')
+          .css('opacity', 1)
+          .fadeIn()
       }
 
       // Set Referral Link
       const ref = new URL(refer?.referral_link)
 
       if (ref) {
-        $('#referral-id').val(ref.searchParams.get('refer'))
+        const refVal = `https://www.zujugp.com/${
+          lang == 'en' ? '' : lang + '/'
+        }registration?refer=${ref.searchParams.get('refer')}`
+        $('#referral-id').val(refVal)
 
         const shareData = {
           title: 'Zuju Referral Program',
           text: 'Get more Z Points',
-          url: refer?.referral_link
+          url: refVal
         }
 
         const btn = document.querySelector('#share-referral')
         const resultPara = document.querySelector('.result')
 
         // Share must be triggered by "user activation"
-        btn && btn.addEventListener('click', async () => {
-          try {
-            await navigator.share(shareData)
-          } catch (err) {
-            // resultPara.textContent = 'Error: ' + err
-          }
-        })
+        btn &&
+          btn.addEventListener('click', async () => {
+            try {
+              await navigator.share(shareData)
+            } catch (err) {
+              // resultPara.textContent = 'Error: ' + err
+            }
+          })
       }
 
       if (is_first_login) return modalIn('#modal-welcome')
@@ -395,7 +403,8 @@ $('.copy')
       .writeText($('.copy input[type="text"]').val())
       .then(() => {
         // Success!
-        $(this).text('Copied')
+        $(this).text('Copied!')
+        setTimeout(() => $(this).text('Copy'), 1000)
       })
       .catch(err => {
         console.log('Something went wrong', err)
@@ -461,7 +470,8 @@ function setUpContinousSlide (start) {
     perMove: 7,
     pagination: false,
     start: start <= 1 ? 0 : start - 1,
-    arrowPath: 'M15.6624 13.9999L1.95962 0.335019C1.51067 -0.112433 0.783795 -0.111681 0.33559 0.337333C-0.112267 0.78629 -0.11111 1.51357 0.337905 1.96136L13.2251 14.813L0.337442 27.6645C-0.111515 28.1123 -0.112672 28.8392 0.335127 29.2882C0.559808 29.5133 0.854156 29.6258 1.1485 29.6258C1.4421 29.6258 1.73529 29.514 1.95956 29.2905L15.6624 15.6259C15.8787 15.4108 16 15.118 16 14.813C16 14.5079 15.8783 14.2155 15.6624 13.9999Z',
+    arrowPath:
+      'M15.6624 13.9999L1.95962 0.335019C1.51067 -0.112433 0.783795 -0.111681 0.33559 0.337333C-0.112267 0.78629 -0.11111 1.51357 0.337905 1.96136L13.2251 14.813L0.337442 27.6645C-0.111515 28.1123 -0.112672 28.8392 0.335127 29.2882C0.559808 29.5133 0.854156 29.6258 1.1485 29.6258C1.4421 29.6258 1.73529 29.514 1.95956 29.2905L15.6624 15.6259C15.8787 15.4108 16 15.118 16 14.813C16 14.5079 15.8783 14.2155 15.6624 13.9999Z',
     breakpoints: {
       600: {
         perPage: 4

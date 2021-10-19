@@ -20,7 +20,19 @@
           data-tilt-perspective="400"
         >
           <div class="aspect-ratio" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/bg/membership-card.svg') }})"></div>
-          <div class="member-benefit__tier">{{ contact.membership_tier }}</div>
+          <div class="member-benefit__tier">
+            {% if currLang == 'zh-cn' %}
+              {% if contact.membership_tier == 'Fan' %}
+                会员
+              {% elif contact.membership_tier == 'Super Fan' %}
+                超级会员
+              {% else %}
+                终身会员
+              {% endif %}
+            {% else %}
+              {{ contact.membership_tier }}
+            {% endif %}
+          </div>
         </div>
 
         <div class="member-benefit__card-desc">
