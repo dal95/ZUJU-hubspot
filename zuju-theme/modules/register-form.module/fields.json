@@ -1,101 +1,163 @@
-[ {
-  "id" : "e75d012f-72dc-add5-b7b9-609859bfc15c",
-  "name" : "form",
-  "label" : "Form",
-  "required" : false,
-  "locked" : true,
-  "type" : "form",
-  "default" : {
-    "form_id" : "2a6a57d9-9360-489a-aabe-a6d5bc87d744",
-    "response_type" : "inline",
-    "message" : "<p style=\"text-align: left;\">Thank you for signing up!</p>\n<p style=\"text-align: left;\">An invitation email will be sent to you shortly to continue your account activation.</p>\n<p style=\"text-align: left;\">In the meantime, you can read more of our <a href=\"/latest\" rel=\"noopener\">Latest articles</a> or join our <a href=\"https://www.zujugp.com/convo/cr-in-commercial\" rel=\"noopener\">Convo</a>.</p>",
-    "gotowebinar_webinar_key" : null,
-    "form_type" : "HUBSPOT"
+[
+  {
+    "default": {
+      "form_id": "2a6a57d9-9360-489a-aabe-a6d5bc87d744",
+      "response_type": "inline",
+      "message": "<p style=\"text-align: left;\">Thank you for signing up!</p>\n<p style=\"text-align: left;\">An invitation email will be sent to you shortly to continue your account activation.</p>\n<p style=\"text-align: left;\">In the meantime, you can read more of our <a href=\"/latest\" rel=\"noopener\">Latest articles</a> or join our <a href=\"https://www.zujugp.com/convo/cr-in-commercial\" rel=\"noopener\">Convo</a>.</p>",
+      "gotowebinar_webinar_key": null,
+      "form_type": "HUBSPOT"
+    },
+    "id": "e75d012f-72dc-add5-b7b9-609859bfc15c",
+    "label": "Form",
+    "locked": true,
+    "name": "form",
+    "required": false,
+    "type": "form"
+  },
+  {
+    "children": [
+      {
+        "children": [
+          {
+            "allow_new_line": false,
+            "default": "(username) is available",
+            "id": "c770350d-e18a-1eae-8063-788f180ab155",
+            "label": "Nickname available",
+            "locked": false,
+            "name": "username_valid",
+            "required": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "validation_regex": ""
+          },
+          {
+            "allow_new_line": false,
+            "default": "Referral code is valid",
+            "id": "c1f19ce0-b48e-c977-33c5-edaa241b4ca4",
+            "label": "Valid referral code",
+            "locked": false,
+            "name": "referral_code_valid",
+            "required": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "validation_regex": ""
+          },
+          {
+            "allow_new_line": false,
+            "default": "Email is available",
+            "label": "Email available",
+            "locked": false,
+            "name": "email_available",
+            "required": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "validation_regex": "",
+            "oldId": "c1f19ce0-b48e-c977-33c5-edaa241b4ca4",
+            "id": "5ba6f77e-54d4-fded-43e9-52ee6a65edd9"
+          }
+        ],
+        "default": {
+          "username_available": "(username) is available",
+          "referral_code_valid": "Referral code is valid",
+          "email_available": "Email is available"
+        },
+        "expanded": false,
+        "id": "995eb744-548d-1297-bcd8-40ba38931b70",
+        "label": "Success",
+        "locked": false,
+        "name": "success",
+        "required": false,
+        "tab": "CONTENT",
+        "type": "group"
+      },
+      {
+        "children": [
+          {
+            "allow_new_line": false,
+            "default": "Nickname is taken",
+            "id": "e3ea374d-b84c-9f7c-a2d5-a5bad10add6b",
+            "label": "Nickname is taken",
+            "locked": false,
+            "name": "username_taken",
+            "required": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "validation_regex": ""
+          },
+          {
+            "allow_new_line": false,
+            "default": "Nickname must be between 3-25 characters",
+            "id": "2ca9b819-58a3-f153-27d0-0dc3547f80c2",
+            "label": "Nickname Min/Max Char",
+            "locked": false,
+            "name": "username_minmax",
+            "required": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "validation_regex": ""
+          },
+          {
+            "allow_new_line": false,
+            "default": "Invalid referral code",
+            "id": "fa17ae5e-b5e5-ab7b-fc76-fe5ab3c448aa",
+            "label": "Invalid referral format",
+            "locked": false,
+            "name": "referral_code_invalid",
+            "required": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "validation_regex": ""
+          },
+          {
+            "allow_new_line": false,
+            "default": "Email already exists",
+            "label": "Email exist",
+            "locked": false,
+            "name": "email_exist",
+            "required": false,
+            "show_emoji_picker": false,
+            "type": "text",
+            "validation_regex": "",
+            "oldId": "5ba6f77e-54d4-fded-43e9-52ee6a65edd9",
+            "id": "2b104034-afb3-60d0-6b50-27eef177e023"
+          }
+        ],
+        "default": {
+          "username_taken": "Nickname is taken",
+          "username_minmax": "Nickname must be between 3-25 characters",
+          "referral_code_invalid": "Invalid referral code",
+          "email_exist": "Email already exists"
+        },
+        "expanded": false,
+        "id": "b28d4581-15a4-69f2-039e-2e791c8693f2",
+        "label": "Error",
+        "locked": false,
+        "name": "error",
+        "required": false,
+        "tab": "CONTENT",
+        "type": "group"
+      }
+    ],
+    "default": {
+      "success": {
+        "username_available": "(username) is available",
+        "referral_code_valid": "Referral code is valid",
+        "email_available": "Email is available"
+      },
+      "error": {
+        "username_taken": "Nickname is taken",
+        "username_minmax": "Nickname must be between 3-25 characters",
+        "referral_code_invalid": "Invalid referral code",
+        "email_exist": "Email already exists"
+      }
+    },
+    "expanded": false,
+    "id": "f6979640-bf1b-3c17-622c-732387b04cac",
+    "label": "Async Validation Messages",
+    "locked": false,
+    "name": "async_validation_messages",
+    "required": false,
+    "tab": "CONTENT",
+    "type": "group"
   }
-}, {
-  "id" : "f6979640-bf1b-3c17-622c-732387b04cac",
-  "name" : "async_validation_messages",
-  "label" : "Async Validation Messages",
-  "required" : false,
-  "locked" : false,
-  "children" : [ {
-    "id" : "995eb744-548d-1297-bcd8-40ba38931b70",
-    "name" : "success",
-    "label" : "Success",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "c770350d-e18a-1eae-8063-788f180ab155",
-      "name" : "username_available",
-      "label" : "Username available",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text"
-    }, {
-      "id" : "c1f19ce0-b48e-c977-33c5-edaa241b4ca4",
-      "name" : "referral_code_valid",
-      "label" : "Valid referral code",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text"
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "type" : "group",
-    "default" : { }
-  }, {
-    "id" : "b28d4581-15a4-69f2-039e-2e791c8693f2",
-    "name" : "error",
-    "label" : "Error",
-    "required" : false,
-    "locked" : false,
-    "children" : [ {
-      "id" : "fa17ae5e-b5e5-ab7b-fc76-fe5ab3c448aa",
-      "name" : "referral_code_invalid",
-      "label" : "Invalid referral format",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text"
-    }, {
-      "id" : "2ca9b819-58a3-f153-27d0-0dc3547f80c2",
-      "name" : "minimum_char",
-      "label" : "Minimum Char",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text"
-    }, {
-      "id" : "75d18aec-37a8-31ea-d22f-862b54da6860",
-      "name" : "maximum_char",
-      "label" : "Maximum char",
-      "required" : false,
-      "locked" : false,
-      "validation_regex" : "",
-      "allow_new_line" : false,
-      "show_emoji_picker" : false,
-      "type" : "text"
-    } ],
-    "tab" : "CONTENT",
-    "expanded" : false,
-    "type" : "group",
-    "default" : { }
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : {
-    "success" : { },
-    "error" : { }
-  }
-} ]
+]

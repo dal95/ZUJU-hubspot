@@ -1,4 +1,5 @@
 {
+  "label": "Register form",
   "global" : false,
   "host_template_types" : [ "PAGE" ],
   "module_id" : 57924878009,

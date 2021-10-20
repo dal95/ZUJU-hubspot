@@ -1911,7 +1911,7 @@ select.hs-input {
   color: #e58c8c;
   font-size: 12px;
 }
-.field .custom-validation.success {
+.field .custom-validation.validate-message__success {
   color: var(--clr-green-400);
 }
 
@@ -1956,7 +1956,46 @@ select.hs-input {
   min-width: 100%;
 }
 .hs-form fieldset[class*=form-columns-] .input {
+  position: relative;
   margin-right: 0 !important;
+}
+.hs-form fieldset[class*=form-columns-] .input .spinner {
+  display: none;
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  right: 12px;
+  margin: -8px 0 0 -8px;
+  width: 16px;
+  height: 16px;
+}
+.hs-form fieldset[class*=form-columns-] .input .spinner.active {
+  display: block;
+}
+.hs-form fieldset[class*=form-columns-] .input .spinner .path {
+  stroke: #ed2938;
+  stroke-linecap: round;
+  animation: dash 1.5s ease-in-out infinite;
+}
+@keyframes rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
 }
 @media (max-width: 800px) {
   .hs-form fieldset[class*=form-columns-] {
@@ -2538,6 +2577,7 @@ section.edit .form-columns-0:not(:first-of-type) {
 
 .auth-wrapper {
   min-height: 851px;
+  background-color: #363636;
   background-size: cover;
   display: flex;
 }
