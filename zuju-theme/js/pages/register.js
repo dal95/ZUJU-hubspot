@@ -21,6 +21,20 @@ window.addEventListener('message', event => {
 
     $referralInput.val(referral_code).trigger('change')
 
+    // $('[name="referral_code"]').on('focusout', function() {
+    //   if (!$(this).val()) return
+
+    //   fetch(`${BASE_URL}/check-refer-code`, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json'
+    //     },
+    //     body: JSON.stringify({
+    //       refer_code: $(this).val()
+    //     })
+    //   })
+    // })
+
     $('[name="username"]').on('focusout', function () {
       const parent = $(this).closest('.hs-username')
 

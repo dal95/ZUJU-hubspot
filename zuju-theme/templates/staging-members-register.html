@@ -1,0 +1,58 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Staging - Members Register
+-->
+{% extends "./layouts/base-standard.html" %}
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+
+{% block body %}
+  <main class="public">
+    <div class="auth-wrapper auth">
+      <div class="container">
+        <div class="auth__push-right form-dark">
+          <h2 class="auth__heading">{{ currLang == "zh-cn" ? "新用户注册" : "New Account Sign Up" }}</h2>
+
+          {# Custom validation message: read only #}
+          <div class="validate-message is-hidden">
+            <div class="validate-message__success">
+              {% if currLang == 'zh-cn' %}
+                用户名 {uname} 可用
+              {% else %}
+                Username {uname} is available
+              {% endif %}
+            </div>
+
+            <div class="validate-message__failed">
+              {% if currLang == 'zh-cn' %}
+                用户名 {uname} 被采取
+              {% else %}
+                Username {uname} is taken
+              {% endif %}
+            </div>
+          </div>
+
+          {% if currLang == 'zh-cn' %}
+            {% set formId = 'd1d73a59-8f4f-4f16-930e-bbba79f6bca4' %}
+          {% else %}
+            {% set formId = '2a6a57d9-9360-489a-aabe-a6d5bc87d744' %}
+          {% endif %}
+
+          {% form 'register_form'
+            form_key='register',
+            form_to_use='{{ formId }}'
+          %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {% set referral_code = request.query_dict.refer %}
+  <script>
+    var referral_code = "{{ referral_code }}";
+    var portal_id = "{{ portal_id }}";
+  </script>
+{% endblock body %}
+
+{{ require_js(get_asset_url('zuju-theme/js/pages/register.js'), 'footer')}}

@@ -1,0 +1,68 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Zuju Statics - Partnerships
+-->
+
+{% set is_statics = true %}
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<div class="app">
+	<main class="bg-zuju-gray-1" x-data="{}">
+		<section>
+			<div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
+				<div class="absolute inset-0">
+					<img
+						class="h-full w-full object-cover object-center"
+						src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/partnerships-masthead.jpg"
+					/>
+				</div>
+				<div class="relative flex flex-col items-center justify-center sm:p-8">
+					<h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">Partnerships</h1>
+					<div class="flex sm:flex-col items-center justify-center">
+						<div class="lg:w-1/3 flex justify-center px-8 py-2 mb-8">
+							<div class="relative" x-bind="animate(8)">
+								<img class="relative -top-2 -left-2 z-10" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/partnerships-hero.jpg" />
+								<div class="absolute top-2 left-2 -bottom-2 -right-2 bg-zuju-red-dark"></div>
+							</div>
+						</div>
+						<div class="lg:w-1/2 px-8">
+							<p class="text-white mb-8">
+								ZujuGP also provides game changing founder support to answer the large demand for a tech-driven football ecosystem globally. For investors
+								we provide exposure to the best growth opportunities in a space united by a fervent love for the beautiful game. ZujuGP is focused on
+								growth with a blend of direct and co-investments.
+							</p>
+							<p class="text-white mb-8">
+								We welcome visionaries who share our desire to advance football's transition to a digital future. Contact us at
+								<a class="underline" href="mailto:partners@zujugroup.com">partners@zujugroup.com</a>
+							</p>
+							<a href="#contact">
+								<button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">Contact Us Now</button>
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<section class="bg-zuju-gray-db">
+			<div class="max-w-[1440px] flex flex-col items-center justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
+				<img
+					class="relative z-10 w-40"
+					src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/partnerships-cuju.png"
+					x-bind="animate(8)"
+				/>
+				<div class="lg:w-1/2 relative flex items-center justify-center">
+					<img class="w-72" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png" x-bind="animate(-16)" />
+					<div class="absolute inset-0 flex flex-col items-center justify-center">
+						<h1 class="text-white text-6xl font-gtcond font-black text-center mb-8">Did you know?</h1>
+						<p class="lg:w-5/6 text-white text-center">
+							Zuju is a play on the name Cuju, an ancient Chinese game widely recognized as the earliest recorded form of football.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+</div>
+{% endblock body %}

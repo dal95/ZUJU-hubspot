@@ -10,7 +10,7 @@
 {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
-    <section>
+    {# <section>
       <div
         class="relative h-screen w-full overflow-hidden cursor-pointer"
         x-data="{ init: false, show: false, x: 0, y: 0, top: $top, playing: false }"
@@ -60,7 +60,9 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> #}
+    {% module "home_masthead" path="/zuju-theme/modules/masthead-video", label="Masthead video" %}
+
     <section class="sm:hidden">
       <div
         class="h-[calc(100vh-var(--nav-height))] min-h-[600px] max-w-[1920px] mx-auto grid sm:grid-cols-1 sm:grid-rows-1 lg:grid-cols-4 lg:grid-rows-2"
@@ -374,7 +376,7 @@
         </div>
       </div>
     </section>
-    
+
     {% if false && content.language.languageTag == "en" %}
     <section class="w-full bg-gradient-cr p-8">
       <div class="max-w-[1000px] mx-auto" x-data="{ show: (window.innerHeight - $top) > 1 }" x-on:scroll.window="show = ((window.innerHeight - $top) > 1)">
@@ -699,7 +701,9 @@
         </div>
       </div>
     </section>
-    <section>
+
+    {# Kfd banner #}
+    {# <section>
       <div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto">
         <div class="row-start-1 col-start-1 col-span-12">
           <div class="sm:aspect-w-9 sm:aspect-h-5">
@@ -734,7 +738,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> #}
+
+    {% module "kfd_banner" path="/zuju-theme/modules/kfd-banner-cta", label="Kungfu dash banner" %}
+
     <section class="w-full bg-zuju-gray-2 p-8" x-data="{ bTitle: false, bArt1: false, bArt2: false, bArt3: false, bAll: false }">
       <div
         class="
