@@ -1,0 +1,91 @@
+[ {
+  "id" : "3c66ce21-4be7-673a-e34c-d2eba25606ff",
+  "name" : "banner_image",
+  "label" : "Banner image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/Imported%20images/banner-rewards.jpg",
+    "alt" : "banner-rewards",
+    "loading" : "lazy",
+    "width" : 1440,
+    "height" : 400,
+    "max_width" : 1440,
+    "max_height" : 400
+  }
+}, {
+  "id" : "acadf756-3f18-c4ff-7ad7-feeaa552d002",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Win a chance to meet Cristiano online!"
+}, {
+  "id" : "5006e0ef-0e34-63a2-2278-7f1cd7d9d517",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "Sign in to play Kungfu Dash now! <br>Contest until 1 Dec only."
+}, {
+  "id" : "f7d4445f-dd95-5b00-3b81-0465d577bc3b",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "daf4681d-c3a3-1803-4b88-d45da5912d1b",
+    "name" : "button_label",
+    "label" : "Button label",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Play Now"
+  }, {
+    "id" : "559655d0-16b1-dc44-ff80-c928b90593af",
+    "name" : "button_url",
+    "label" : "Button url",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "type" : "CONTENT",
+        "href" : null,
+        "content_id" : 56505783586
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "button_label" : "Play Now",
+    "button_url" : {
+      "url" : {
+        "type" : "CONTENT",
+        "href" : null,
+        "content_id" : 56505783586
+      },
+      "open_in_new_tab" : true,
+      "no_follow" : false
+    }
+  }
+} ]

@@ -1,0 +1,157 @@
+{
+  "banner_image.default.alt" : {
+    "message" : "banner-rewards",
+    "description" : "",
+    "placeholders" : null
+  },
+  "banner_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "banner_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "banner_image.label" : {
+    "message" : "Banner image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "banner_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_label.default" : {
+    "message" : "Play Now",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_label.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_label.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_label.label" : {
+    "message" : "Button label",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_label.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_label.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_url.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_url.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_url.label" : {
+    "message" : "Button url",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.button_url.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.label" : {
+    "message" : "Button",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "description.default" : {
+    "message" : "Sign in to play Kungfu Dash now! <br>Contest until 1 Dec only.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "description.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "description.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "description.label" : {
+    "message" : "Description",
+    "description" : "",
+    "placeholders" : null
+  },
+  "description.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "kfd-banner-cta",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "Title",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  }
+}

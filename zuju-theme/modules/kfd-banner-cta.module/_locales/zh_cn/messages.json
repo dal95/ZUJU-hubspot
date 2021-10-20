@@ -1,0 +1,157 @@
+{
+  "banner_image.default.alt" : {
+    "message" : "banner-rewards",
+    "description" : null,
+    "placeholders" : null
+  },
+  "banner_image.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "banner_image.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "banner_image.label" : {
+    "message" : "Banner image",
+    "description" : null,
+    "placeholders" : null
+  },
+  "banner_image.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_label.default" : {
+    "message" : "开始游",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_label.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_label.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_label.label" : {
+    "message" : "Button label",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_label.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_label.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_url.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_url.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_url.label" : {
+    "message" : "Button url",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.button_url.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.label" : {
+    "message" : "Button",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.default" : {
+    "message" : "立即登录以玩 Kungfu Dash！<br/>游戏活动将于2021年12月1日 23:59 GMT 截",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.label" : {
+    "message" : "Description",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "kfd-banner-cta",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "开始游戏，可以赢得和C罗在线上见面的机",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "title",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

@@ -1,0 +1,10 @@
+[ {
+  "picker" : "video",
+  "id" : "20947916-ea1a-e911-d3c0-0aa117f52000",
+  "name" : "video",
+  "label" : "Video",
+  "required" : false,
+  "locked" : false,
+  "type" : "file",
+  "default" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4"
+} ]
