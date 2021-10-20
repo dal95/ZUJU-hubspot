@@ -3,7 +3,7 @@
   isAvailableForNewContent: true
   label: Staging - Members Register
 -->
-{% extends "./layouts/base-standard.html" %}
+{% extends "../layouts/base-standard.html" %}
 {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
 {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 

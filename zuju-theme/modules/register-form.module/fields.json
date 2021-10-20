@@ -9,7 +9,7 @@
     },
     "id": "e75d012f-72dc-add5-b7b9-609859bfc15c",
     "label": "Form",
-    "locked": true,
+    "locked": false,
     "name": "form",
     "required": false,
     "type": "form"
