@@ -129,21 +129,6 @@
   flex: 1;
 }
 
-.auth {
-  padding: 120px 0;
-}
-
-.auth-wrapper {
-  background: url(asset_url('/bg/zujugp-login.jpg'));
-  background-size: cover;
-  background-repeat: no-repeat;
-
-  @include media('<=mobile') {
-    background-image: url(asset_url('/bg/zujugp-login-mobile.jpg'));
-    background-position: center center;
-  }
-}
-
 .content-area {
   background-color: var(--clr-dark-800);
   color: #fff;
@@ -167,13 +152,13 @@
 .page-title {
   display: flex;
   @include f-center(true, null);
-  color: #fff;
+  color: #e7e7e7;
   margin-block: 0;
   min-height: 120px;
   padding-left: 1.25rem;
   max-width: calc(var(--mx-width) - var(--sidebar-width));
   // background-image: url('/hubfs/raw_assets/public/zuju-theme/images/assets/bg/page-title.svg');
-  background-image: url(asset_url('/bg/page-title.svg'));
+  background-image: url("{{ get_asset_url('/zuju-theme/images/assets/bg/page-title.svg') }}");
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain;
@@ -316,7 +301,7 @@
 
 .daily-tasks {
   background: linear-gradient(to bottom, rgba(black, 0), rgba(black, 0)),
-    url(asset_url('/bg/daily-task.png'));
+    url("{{ get_asset_url('/zuju-theme/images/assets/bg/daily-task.png') }}");
   background-size: cover;
   background-repeat: no-repeat;
 
@@ -344,7 +329,7 @@
 }
 
 .current-point {
-  background-image: url(asset_url('/bg/current.png'));
+  background-image: url("{{ get_asset_url('/zuju-theme/images/assets/bg/current-point.png') }}");
 
   img {
     margin-right: 20px;
@@ -352,7 +337,7 @@
 }
 
 .referral {
-  background-image: url(asset_url('/bg/referral.png'));
+  background-image: url("{{ get_asset_url('/zuju-theme/images/assets/bg/referral.png') }}");
 }
 
 // Lists
@@ -385,7 +370,7 @@
 
 .kungfu-dash-in {
   // min-height: 16vw;
-  background: url(asset_url('/bg/kungfu-dash-bg.png'));
+  background: url("{{ get_asset_url('/zuju-theme/images/assets/kungfu-dash-game/bg.png') }}");
   margin-bottom: 3.125rem;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1156,7 +1141,7 @@ input[type='submit'] {
 .icon--ball {
   width: 18px;
   height: 18px;
-  background: url(asset_url('/icons/ball.svg'));
+  background: url("{{ get_asset_url('/zuju-theme/images/assets/icons/ball.svg') }}");
   background-size: contain;
   background-repeat: no-repeat;
 }

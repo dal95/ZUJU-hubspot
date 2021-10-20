@@ -608,22 +608,6 @@ select {
   flex: 1;
 }
 
-.auth {
-  padding: 120px 0;
-}
-
-.auth-wrapper {
-  background: url("https://www.zujugp.com/hubfs/raw_assets/public/zuju-theme/images/assets//bg/zujugp-login.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-@media (max-width: 600px) {
-  .auth-wrapper {
-    background-image: url("https://www.zujugp.com/hubfs/raw_assets/public/zuju-theme/images/assets//bg/zujugp-login-mobile.jpg");
-    background-position: center center;
-  }
-}
-
 .content-area {
   background-color: var(--clr-dark-800);
   color: #fff;
@@ -647,12 +631,12 @@ select {
 .page-title {
   display: flex;
   align-items: center;
-  color: #fff;
+  color: #e7e7e7;
   margin-block: 0;
   min-height: 120px;
   padding-left: 1.25rem;
   max-width: calc(var(--mx-width) - var(--sidebar-width));
-  background-image: url("https://www.zujugp.com/hubfs/raw_assets/public/zuju-theme/images/assets//bg/page-title.svg");
+  background-image: url("{{ get_asset_url('/zuju-theme/images/assets/bg/page-title.svg') }}");
   background-repeat: no-repeat;
   background-position: right center;
   background-size: contain;
@@ -772,7 +756,7 @@ select {
 }
 
 .daily-tasks {
-  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("https://www.zujugp.com/hubfs/raw_assets/public/zuju-theme/images/assets//bg/daily-task.png");
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0)), url("{{ get_asset_url('/zuju-theme/images/assets/bg/daily-task.png') }}");
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -796,14 +780,14 @@ select {
 }
 
 .current-point {
-  background-image: url("https://www.zujugp.com/hubfs/raw_assets/public/zuju-theme/images/assets//bg/current.png");
+  background-image: url("{{ get_asset_url('/zuju-theme/images/assets/bg/current-point.png') }}");
 }
 .current-point img {
   margin-right: 20px;
 }
 
 .referral {
-  background-image: url("https://www.zujugp.com/hubfs/raw_assets/public/zuju-theme/images/assets//bg/referral.png");
+  background-image: url("{{ get_asset_url('/zuju-theme/images/assets/bg/referral.png') }}");
 }
 
 .list {
@@ -835,7 +819,7 @@ select {
 }
 
 .kungfu-dash-in {
-  background: url("https://www.zujugp.com/hubfs/raw_assets/public/zuju-theme/images/assets//bg/kungfu-dash-bg.png");
+  background: url("{{ get_asset_url('/zuju-theme/images/assets/kungfu-dash-game/bg.png') }}");
   margin-bottom: 3.125rem;
   background-size: cover;
   background-repeat: no-repeat;
@@ -1514,7 +1498,7 @@ input[type=submit] {
 .icon--ball {
   width: 18px;
   height: 18px;
-  background: url("https://www.zujugp.com/hubfs/raw_assets/public/zuju-theme/images/assets//icons/ball.svg");
+  background: url("{{ get_asset_url('/zuju-theme/images/assets/icons/ball.svg') }}");
   background-size: contain;
   background-repeat: no-repeat;
 }
@@ -2577,9 +2561,17 @@ section.edit .form-columns-0:not(:first-of-type) {
 
 .auth-wrapper {
   min-height: 851px;
-  background-color: #363636;
+  background-color: #010101;
+  background: url("{{ get_asset_url('/zuju-theme/images/assets/bg/zujugp-login.jpg') }}");
   background-size: cover;
+  background-repeat: no-repeat;
   display: flex;
+}
+@media (max-width: 600px) {
+  .auth-wrapper {
+    background-image: url("{{ get_asset_url('/zuju-theme/images/assets/bg/zujugp-login-mobile.jpg') }}");
+    background-position: center center;
+  }
 }
 .auth-wrapper a {
   text-decoration: none;
@@ -2588,6 +2580,9 @@ section.edit .form-columns-0:not(:first-of-type) {
   color: #fff;
 }
 
+.auth {
+  padding: 120px 0;
+}
 .auth.login .hs-form-field:nth-of-type(3) {
   display: flex;
   align-items: center;

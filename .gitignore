@@ -4,3 +4,4 @@ yarn-error.log
 hubspot.config.yml
 node_modules
 *.map
+zuju-theme/css/main.css.map
