@@ -1,0 +1,207 @@
+{
+  "children.cta_text.default" : {
+    "message" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.cta_text.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.cta_text.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.cta_text.label" : {
+    "message" : "CTA text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.cta_text.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.cta_text.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.label" : {
+    "message" : "Children",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.title.default" : {
+    "message" : "Enter the ZujuGP footballverse",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.title.label" : {
+    "message" : "Title",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.title.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.url_field.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.url_field.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.url_field.label" : {
+    "message" : "URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.url_field.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_text.default" : {
+    "message" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_text.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_text.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_text.label" : {
+    "message" : "CTA text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_text.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_text.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_url.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_url.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_url.label" : {
+    "message" : "URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.cta_url.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.label" : {
+    "message" : "Main Tiles",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.title.default" : {
+    "message" : "Enter the ZujuGP footballverse",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.title.label" : {
+    "message" : "Title",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.title.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "home-tiles",
+    "description" : "",
+    "placeholders" : null
+  }
+}
