@@ -1,13 +1,9 @@
 {
   "global" : false,
   "master_language" : "en",
+  "icon" : "fontawesome-5.14.0:Border%20None:SOLID",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 57858346676,
-  "css_assets" : [ {
-    "autoload" : true,
-    "path" : "../../css/statics/app.css",
-    "name" : "app.css"
-  } ],
   "label" : "Home tiles",
   "is_available_for_new_content" : true
 }

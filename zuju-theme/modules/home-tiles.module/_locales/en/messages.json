@@ -1,4 +1,29 @@
 {
+  "children.background.default.alt" : {
+    "message" : "home-verse",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.background.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.background.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.background.label" : {
+    "message" : "Background",
+    "description" : "",
+    "placeholders" : null
+  },
+  "children.background.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
   "children.cta_text.default" : {
     "message" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie",
     "description" : "",
@@ -95,6 +120,31 @@
     "placeholders" : null
   },
   "children.url_field.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.background.default.alt" : {
+    "message" : "home-verse",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.background.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.background.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.background.label" : {
+    "message" : "Background",
+    "description" : "",
+    "placeholders" : null
+  },
+  "main_tiles.background.placeholder" : {
     "message" : "",
     "description" : "",
     "placeholders" : null

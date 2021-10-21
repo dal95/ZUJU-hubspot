@@ -1,4 +1,29 @@
 {
+  "children.background.default.alt" : {
+    "message" : "home-verse",
+    "description" : null,
+    "placeholders" : null
+  },
+  "children.background.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "children.background.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "children.background.label" : {
+    "message" : "Background copy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "children.background.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "children.cta_text.default" : {
     "message" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie",
     "description" : null,
@@ -99,6 +124,31 @@
     "description" : null,
     "placeholders" : null
   },
+  "main_tiles.background.default.alt" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "main_tiles.background.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "main_tiles.background.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "main_tiles.background.label" : {
+    "message" : "Image",
+    "description" : null,
+    "placeholders" : null
+  },
+  "main_tiles.background.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "main_tiles.cta_text.default" : {
     "message" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie",
     "description" : null,
@@ -161,6 +211,11 @@
   },
   "main_tiles.label" : {
     "message" : "Main Tiles",
+    "description" : null,
+    "placeholders" : null
+  },
+  "main_tiles.name" : {
+    "message" : "home-tiles",
     "description" : null,
     "placeholders" : null
   },

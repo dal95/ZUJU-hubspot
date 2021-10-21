@@ -5,6 +5,37 @@
   "required" : false,
   "locked" : false,
   "children" : [ {
+    "id" : "0b84bf05-4e8e-dad5-2103-e26caf486709",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Enter the ZujuGP footballverse"
+  }, {
+    "id" : "3875ab53-5f3c-0f38-8624-8f59d7ffd75f",
+    "name" : "background",
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-verse.jpg",
+      "alt" : "home-verse",
+      "loading" : "lazy",
+      "width" : 1920,
+      "height" : 1080,
+      "max_width" : 1920,
+      "max_height" : 1080
+    }
+  }, {
     "id" : "39825c24-c521-429b-8bb5-889642f36e41",
     "name" : "cta_url",
     "label" : "URL",
@@ -28,8 +59,43 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "default" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie"
-  }, {
-    "id" : "0b84bf05-4e8e-dad5-2103-e26caf486709",
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Enter the ZujuGP footballverse",
+    "background" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-verse.jpg",
+      "alt" : "home-verse",
+      "loading" : "lazy",
+      "width" : 1920,
+      "height" : 1080,
+      "max_width" : 1920,
+      "max_height" : 1080
+    },
+    "cta_url" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.zujugp.com/about-us?hsLang=en",
+      "content_id" : null
+    },
+    "cta_text" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie"
+  }
+}, {
+  "id" : "38d3e71b-9af9-4a87-8d96-06e1bf78672f",
+  "name" : "children",
+  "label" : "Children",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : 3,
+    "max" : 4,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "8e503466-b246-61df-f5be-73230b083957",
     "name" : "title",
     "label" : "Title",
     "required" : false,
@@ -39,32 +105,27 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "default" : "Enter the ZujuGP footballverse"
-  } ],
-  "tab" : "CONTENT",
-  "expanded" : false,
-  "type" : "group",
-  "default" : {
-    "cta_url" : {
-      "type" : "EXTERNAL",
-      "href" : "https://www.zujugp.com/about-us?hsLang=en",
-      "content_id" : null
-    },
-    "cta_text" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie",
-    "title" : "Enter the ZujuGP footballverse"
-  }
-}, {
-  "id" : "38d3e71b-9af9-4a87-8d96-06e1bf78672f",
-  "name" : "children",
-  "label" : "Children",
-  "required" : false,
-  "locked" : false,
-  "occurrence" : {
-    "min" : null,
-    "max" : 4,
-    "sorting_label_field" : null,
-    "default" : null
-  },
-  "children" : [ {
+  }, {
+    "id" : "6c2558ed-97ef-7da2-fed7-f5a7db63f88d",
+    "name" : "background",
+    "label" : "Background",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-verse.jpg",
+      "alt" : "home-verse",
+      "loading" : "lazy",
+      "width" : 1920,
+      "height" : 1080,
+      "max_width" : 1920,
+      "max_height" : 1080
+    }
+  }, {
     "id" : "fe4976cb-8d63-05d2-daf4-37a060f59718",
     "name" : "url_field",
     "label" : "URL",
@@ -88,28 +149,63 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "default" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie"
-  }, {
-    "id" : "8e503466-b246-61df-f5be-73230b083957",
-    "name" : "title",
-    "label" : "Title",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Enter the ZujuGP footballverse"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
-  "default" : {
+  "default" : [ {
+    "title" : "Enter the ZujuGP footballverse",
+    "background" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-verse.jpg",
+      "alt" : "home-verse",
+      "loading" : "lazy",
+      "width" : 1920,
+      "height" : 1080,
+      "max_width" : 1920,
+      "max_height" : 1080
+    },
     "url_field" : {
       "type" : "EXTERNAL",
       "href" : "https://www.zujugp.com/about-us?hsLang=en",
       "content_id" : null
     },
-    "cta_text" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie",
-    "title" : "Enter the ZujuGP footballverse"
-  }
+    "cta_text" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie"
+  }, {
+    "title" : "Enter the ZujuGP footballverse",
+    "background" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-verse.jpg",
+      "alt" : "home-verse",
+      "loading" : "lazy",
+      "width" : 1920,
+      "height" : 1080,
+      "max_width" : 1920,
+      "max_height" : 1080
+    },
+    "url_field" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.zujugp.com/about-us?hsLang=en",
+      "content_id" : null
+    },
+    "cta_text" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie"
+  }, {
+    "title" : "Enter the ZujuGP footballverse",
+    "background" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/home-verse.jpg",
+      "alt" : "home-verse",
+      "loading" : "lazy",
+      "width" : 1920,
+      "height" : 1080,
+      "max_width" : 1920,
+      "max_height" : 1080
+    },
+    "url_field" : {
+      "type" : "EXTERNAL",
+      "href" : "https://www.zujugp.com/about-us?hsLang=en",
+      "content_id" : null
+    },
+    "cta_text" : " #WritingTheFutureOfFootball - The best new digital experiences and opportunitie"
+  } ]
 } ]
