@@ -1,0 +1,610 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Zuju Statics - staging Home
+-->
+
+{% set is_statics = true %}
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<div class="app">
+  <main class="bg-zuju-gray-1" x-data="{}">
+    {# <section>
+      <div
+        class="relative h-screen w-full overflow-hidden cursor-pointer"
+        x-data="{ init: false, show: false, x: 0, y: 0, top: $top, playing: false }"
+        x-init="init = true"
+        x-on:scroll.window="top = $top"
+        x-on:mousemove.window="show = $el.matches(':hover'); if (show) { x = $event.clientX; y = $event.clientY }"
+      >
+        <img
+          x-cloak=""
+          x-show="!init"
+          class="absolute z-20 transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
+          src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png"
+        />
+        <div
+          x-cloak=""
+          x-show="show"
+          x-transition.duration.500ms.opacity.scale.50=""
+          class="touch:hidden sm:hidden absolute z-20 origin-center transition-all duration-200 ease-out pointer-events-none"
+          x-bind:style="{ hidden: !init, top: $px(y - top - ($height / 2)), left: $px(x - ($width / 2)) }"
+        >
+          <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" />
+        </div>
+        <video muted="" autoplay="" loop="" class="sm:hidden h-full w-full object-cover object-center opacity-70" x-on:click="playing = true">
+          <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" type="video/mp4" />
+        </video>
+        <div class="hidden sm:block touch:block absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
+          <img class="sm:h-20 sm:0w-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" />
+        </div>
+        <video muted="" class="lg:hidden h-full w-full object-cover object-center" x-on:click="playing = true">
+          <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" type="video/mp4" />
+        </video>
+        <div
+          x-cloak=""
+          x-show="playing"
+          x-transition.opacity.duration.300ms=""
+          class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+          x-on:click="playing = false"
+          x-on:keyup.window.escape="playing = false"
+        >
+          <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+            <div class="relative">
+              <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
+              <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+                <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" />
+              </video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> #}
+    {% module "home_masthead"
+      path="/zuju-theme/modules/masthead-video",
+      label="Masthead video"
+    %}
+
+    {% module "home_tiles"
+      path="/zuju-theme/modules/home-tiles",
+      label="Home Tiles"
+    %}
+
+    {% module "nft_cta_section"
+      path="/zuju-theme/modules/nft-cta-section",
+      label="NFT CTA Section"
+    %}
+
+    {# {% if true %}
+    <section class="w-full bg-gradient-cr p-8">
+      <div class="max-w-[1000px] mx-auto" x-data="{ show: (window.innerHeight - $top) > 1 }" x-on:scroll.window="show = ((window.innerHeight - $top) > 1)">
+        <div
+             class="grid sm:grid-cols-1 sm:grid-rows-[repeat(auto,2)] sm:gap-y-8 lg:grid-cols-8 transition duration-0 lg:transform translate-y-8 opacity-0"
+             x-bind:class="show &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
+             >
+          <section class="lg:col-end-9 lg:col-span-3 lg:row-start-1" x-data="parallax()" x-bind="root">
+            <div class="lg:aspect-w-1 lg:aspect-h-1" x-bind="animate(8)">
+              <div><img class="sm:max-w-md h-full w-full object-contain sm:mx-auto" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/nft.png" /></div>
+            </div>
+          </section>
+          <section class="lg:col-start-1 lg:col-span-7 lg:row-start-1 z-10" x-data="parallax()" x-bind="root">
+            <div class="h-full flex flex-col sm:items-center lg:items-start justify-center" x-bind="animate(16)">
+              <h1 class="sm:text-3xl lg:text-4xl text-zuju-red font-bold sm:text-center uppercase mb-4">
+                LUMINA - Own your place in history.
+              </h1>
+              <p class="text-2xl text-white font-gtcond font-black sm:text-center mb-4">
+                {% if content.language.languageTag == "zh-cn" %}
+                  包含C罗元素的特别收藏品
+                {% else %}
+                  Our launch collectible featuring Cristiano Ronaldo
+                {% endif %}
+              </p>
+              <p class="text-2xl text-white font-gtcond font-black sm:text-center mb-4">
+                Auction time 0600 UTC +8 on 26 October 2021.
+              </p>
+              <a href="https://collectibles.zujugp.com/#/auction/228">
+                <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 mb-4">
+                  {% if content.language.languageTag == "zh-cn" %}
+                    更多信息
+                  {% else %}
+                    More Info
+                  {% endif %}
+                </button>
+              </a>
+              <p class="w-3/4 text-white sm:text-center mb-4">
+                <small>
+                  <i>
+                    {% if content.language.languageTag == "zh-cn" %}
+                      一旦点击这个按钮，就代表我已经知晓并同意我不会购买任何被我所居住的国家、司法管辖区、联邦、州甚至是地方所禁止的物品。
+                      我有责任确保我没有购买任何被我所在司法管辖区的法律所禁止的物品，并确保所购买的物品符合所有法律法规。
+                    {% else %}
+                      By clicking this button, I acknowledge that I may not buy any item that is restricted or prohibited by a federal,
+                      state or local law in your country or jurisdiction. I am responsible for ensuring that I am not buying any item
+                      that is prohibited by law in my jurisdiction and ensuring that the items bought comply with all laws and regulations.
+                    {% endif %}
+                  </i>
+                </small>
+              </p>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+    {% endif %} #}
+
+    <section class="w-full bg-white p-8 overflow-hidden" x-data="{ bImg: false, bMan: false, mPort: false, dPort: false, dPortK: false, playing: false }">
+      <div
+        x-cloak
+        x-show="playing"
+        x-transition.opacity.duration.300ms
+        class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+        x-on:click="playing = false"
+        x-on:keyup.window.escape="playing = false"
+      >
+        <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+          <div class="relative">
+            <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">&times;</button>
+            <video controls x-on:click.stop x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+              <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4" />
+            </video>
+          </div>
+        </div>
+      </div>
+
+      <div class="relative w-full sm:max-w-md max-w-[1920px] mx-auto" x-data="parallax()" x-bind="root">
+        <img
+          class="sm:hidden absolute bottom-0 -right-8 pointer-events-none"
+          src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball-bg.png"
+          x-bind="animate(-24)"
+        />
+        <div
+          class="
+            w-full
+            flex flex-col
+            lg:grid lg:grid-cols-[minmax(4rem,var(--gutter-1440)),auto,repeat(12,1fr),var(--gutter-1440)] lg:grid-rows-[repeat(3,auto)]
+          "
+        >
+          <div
+            x-on:scroll.window="bImg = (($vh100 - $top) > 1)"
+            class="lg:row-start-1 lg:col-start-1 lg:col-span-7 pr-4 pb-4 transition duration-0 transform sm:translate-y-8 lg:-translate-x-8 opacity-0"
+            x-bind:class="bImg &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700'"
+          >
+            <div class="sm:max-w-md sm:mx-auto">
+              <div class="relative aspect-w-4 aspect-h-3">
+                <div class="absolute top-4 left-4 bottom-0 right-0 bg-zuju-red"></div>
+                <img class="h-full w-full object-cover" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball.png" />
+              </div>
+            </div>
+          </div>
+          <div
+            x-on:scroll.window="bMan = (($vh100 - $top) > 1)"
+            class="lg:row-start-1 lg:col-span-7 lg:px-8 sm:pt-8 flex items-center transition duration-0 transform sm:translate-y-8 lg:translate-x-8 opacity-0"
+            x-bind:class="bMan &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700'"
+          >
+            <div>
+              <h1 class="sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">
+                {% if content.language.languageTag == "zh-cn" %}
+                  我们的宣言
+                {% else %}
+                  Our Manifesto
+                {% endif %}
+              </h1>
+              <p class="mb-8">
+                {% if content.language.languageTag == "zh-cn" %}
+                  一个真正沟通东西方球迷和企业的社群平台。
+                {% else %}
+                A community platform for fans and businesses from East to West.
+                {% endif %}
+              </p>
+              <a href="/about-us">
+                <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 mr-4">
+                  {% if content.language.languageTag == "zh-cn" %}
+                    了解更多
+                  {% else %}
+                    Learn About Us
+                  {% endif %}
+                </button>
+              </a>
+              <button class="hidden text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4" x-on:click="playing = true">
+                {% if content.language.languageTag == "zh-cn" %}
+                  观看预告片
+                {% else %}
+                  View Trailer
+                {% endif %}
+              </button>
+            </div>
+          </div>
+          <div class="sm:hidden row-start-2 col-start-2 border-l-2 border-zuju-red pr-8"></div>
+          <div
+            x-on:scroll.window="dPort = mPort = (($vh100 - $top) > 1)"
+            class="lg:row-start-2 lg:col-span-10 pt-16 transition duration-0 transform sm:translate-y-8 lg:translate-x-8 opacity-0"
+            x-bind:class="(mPort || dPort) &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700'"
+          >
+            <h1 class="sm:text-4xl lg:text-5xl font-gtcond font-black mb-4">
+              {% if content.language.languageTag == "zh-cn" %}
+                更多模块
+              {% else %}
+                Portfolio
+              {% endif %}
+            </h1>
+            <p>
+              {% if content.language.languageTag == "zh-cn" %}
+                在这里，会有你最喜欢的产品，有你渴望的新体验以及专属于您的独特机会
+              {% else %}
+                Products you love, experiences you want and the opportunities only you deserve
+              {% endif %}
+            </p>
+          </div>
+          <div class="sm:hidden row-start-3 col-span-2"></div>
+          <div
+            class="lg:hidden transition duration-0 transform sm:translate-y-8 opacity-0"
+            x-bind:class="mPort &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700'"
+          >
+            <div class="glide" x-data="{}" x-init="new Glide($el).mount()">
+              <div class="glide__track" data-glide-el="track">
+                <div class="glide__slides">
+                  <div class="glide__slide">
+                    <div class="">
+                      <div>
+                        <div class="py-8">
+                          <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png" />
+                          <h3 class="text-zuju-red font-bold mb-2">
+                            {% if content.language.languageTag == "zh-cn" %}
+                              Zuju游戏空间
+                            {% else %}
+                              ZujuGamePlay
+                            {% endif %}
+                          </h3>
+                          <p class="text-trueGray-500 text-sm">
+                            {% if content.language.languageTag == "zh-cn" %}
+                              给你互动性极高的、实时的、史诗级的LIVE游戏体验
+                            {% else %}
+                              The LIVE game experience gets interactive, real-time &amp; EPIC
+                            {% endif %}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="glide__slide">
+                    <div class="">
+                      <div>
+                        <div class="py-8">
+                          <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-2.png" />
+                          <h3 class="text-zuju-red font-bold mb-2">
+                            {% if content.language.languageTag == "zh-cn" %}
+                              Zuju交换空间
+                            {% else %}
+                              ZujuGP Exchange
+                            {% endif %}
+                          </h3>
+                          <p class="text-trueGray-500 text-sm">
+                            {% if content.language.languageTag == "zh-cn" %}
+                              基于AI智能技术的全球工作搜寻和匹配系统
+                            {% else %}
+                              Global job search &amp; match engine powered by AI &amp; smart tech
+                            {% endif %}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="glide__slide">
+                    <div class="">
+                      <div>
+                        <div class="py-8">
+                          <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-3.png" />
+                          <h3 class="text-zuju-red font-bold mb-2">
+                            {% if content.language.languageTag == "zh-cn" %}
+                              ZujuGP探索空间
+                            {% else %}
+                              ZujuGP Rank
+                            {% endif %}
+                          </h3>
+                          <p class="text-trueGray-500 text-sm">
+                            {% if content.language.languageTag == "zh-cn" %}
+                              在您口袋里的数字学院。您可以随时随地参加不同的训练并且被发掘
+                            {% else %}
+                              A digital academy in your pocket. Train or be discovered anywhere
+                            {% endif %}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="glide__bullets left-0 bottom-1 translate-x-[-4px]" data-glide-el="controls[nav]">
+                <button class="glide__bullet" data-glide-dir="=0"></button>
+                <button class="glide__bullet" data-glide-dir="=1"></button>
+                <button class="glide__bullet" data-glide-dir="=2"></button>
+              </div>
+            </div>
+          </div>
+          <div
+            x-on:scroll.window="dPortK = (($vh100 - $top) > 1)"
+            class="sm:hidden lg:row-start-3 lg:col-span-3 pt-8 pr-8 transition duration-0 transform translate-y-8 opacity-0"
+            x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700'"
+          >
+            <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png" />
+            <h3 class="text-zuju-red font-bold mb-2">
+              {% if content.language.languageTag == "zh-cn" %}
+                Zuju游戏空间
+              {% else %}
+                ZujuGamePlay
+              {% endif %}
+            </h3>
+            <p class="text-trueGray-500 text-sm">
+              {% if content.language.languageTag == "zh-cn" %}
+                给你互动性极高的、实时的、史诗级的LIVE游戏体验
+              {% else %}
+                The LIVE game experience gets interactive, real-time &amp; EPIC
+              {% endif %}
+            </p>
+          </div>
+          <div
+            class="sm:hidden lg:row-start-3 lg:col-span-3 pt-8 pr-8 transition duration-0 transform translate-y-8 opacity-0"
+            x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700 !delay-[200ms]'"
+          >
+            <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-2.png" />
+            <h3 class="text-zuju-red font-bold mb-2">
+              {% if content.language.languageTag == "zh-cn" %}
+                Zuju交换空间
+              {% else %}
+                ZujuGP Exchange
+              {% endif %}
+            </h3>
+            <p class="text-trueGray-500 text-sm">
+              {% if content.language.languageTag == "zh-cn" %}
+                基于AI智能技术的全球工作搜寻和匹配系统
+              {% else %}
+                Global job search &amp; match engine powered by AI &amp; smart tech
+              {% endif %}
+            </p>
+          </div>
+          <div
+            class="sm:hidden lg:row-start-3 lg:col-span-3 pt-8 pr-8 transition duration-0 transform translate-y-8 opacity-0"
+            x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700 !delay-[400ms]'"
+          >
+            <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-3.png" />
+            <h3 class="text-zuju-red font-bold mb-2">
+              {% if content.language.languageTag == "zh-cn" %}
+                ZujuGP探索空间
+              {% else %}
+                ZujuGP Rank
+              {% endif %}
+            </h3>
+            <p class="text-trueGray-500 text-sm">
+              {% if content.language.languageTag == "zh-cn" %}
+                在您口袋里的数字学院。您可以随时随地参加不同的训练并且被发掘
+              {% else %}
+                A digital academy in your pocket. Train or be discovered anywhere
+              {% endif %}
+            </p>
+          </div>
+          <div
+            class="row-start-3 col-span-3 flex items-center justify-center sm:pt-8 transition duration-0 transform translate-y-8 opacity-0"
+            x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700 lg:!delay-[600ms]'"
+          >
+            <a href="/portfolio">
+              <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
+                {% if content.language.languageTag == "zh-cn" %}
+                  查看更多模块
+                {% else %}
+                  View Portfolio
+                {% endif %}
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    {# Kfd banner #}
+    {# <section>
+      <div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto">
+        <div class="row-start-1 col-start-1 col-span-12">
+          <div class="sm:aspect-w-9 sm:aspect-h-5">
+            <div><img class="h-full w-full object-cover object-left" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/banner-rewards.jpg" /></div>
+          </div>
+        </div>
+        <div class="row-start-1 col-start-8 col-span-4 p-8" x-data="parallax()" x-bind="root">
+          <div class="h-full flex flex-col items-center justify-center" x-bind="animate(8)">
+            <h1 class="text-white sm:text-3xl lg:text-4xl font-gtcond font-black text-center mb-4">
+              {% if content.language.languageTag == "zh-cn" %}
+                获得在线上与C罗见面的机会
+              {% else %}
+                Win a chance to meet Cristiano online!
+              {% endif %}
+            </h1>
+            <p class="text-white text-center mb-4">
+              {% if content.language.languageTag == "zh-cn" %}
+                立即登录以玩 Kungfu Dash！<br/>游戏活动将于2021年12月1日 23:59 GMT 截止
+              {% else %}
+                Sign in to play Kungfu Dash now! <br/>Contest until 1 Dec only.
+              {% endif %}
+            </p>
+            <a href="/kungfu-dash">
+              <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
+                {% if content.language.languageTag == "zh-cn" %}
+                  开始游戏
+                {% else %}
+                  Play Now
+                {% endif %}
+              </button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section> #}
+
+    {% module "kfd_banner" path="/zuju-theme/modules/kfd-banner-cta", label="Kungfu dash banner" %}
+
+    <section class="w-full bg-zuju-gray-2 p-8" x-data="{ bTitle: false, bArt1: false, bArt2: false, bArt3: false, bAll: false }">
+      <div
+        class="
+          max-w-[1440px]
+          sm:max-w-md
+          grid
+          sm:grid-cols-1
+          lg:grid-cols-3
+          sm:grid-rows-[repeat(4,auto)]
+          lg:grid-rows-[repeat(3,auto)] lg:gap-x-8
+          mx-auto
+          mb-16
+        "
+      >
+        <div
+          x-on:scroll.window="bTitle = (($vh100 - $top) > 1)"
+          class="lg:col-start-2 lg:col-span-2 py-16 transition duration-0 transform translate-y-8 opacity-0"
+          x-bind:class="bTitle &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
+        >
+          <div x-data="parallax()" x-bind="root">
+            <h1 class="text-white text-center sm:text-4xl lg:text-5xl font-gtcond font-black" x-bind="animate(8)">
+              {% text 'blog_main_heading' value='What\'s Trending' label="Blog main heading" %}
+            </h1>
+          </div>
+        </div>
+
+        {% set trending_posts = blog_popular_posts('20618228') %}
+        <script>
+          console.log('trending =>', "{{ trending_posts }}")
+          console.log("{{ html_lang }}")
+        </script>
+        {% set trend1 = trending_posts[0] %}
+        {% set trend2 = trending_posts[1] %}
+        {% set trend3 = trending_posts[2] %}
+
+        <div
+          x-on:scroll.window="bArt1 = (($vh100 - $top) > 1)"
+          class="lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:pt-24 sm:mb-16 transition duration-0 transform translate-y-8 opacity-0"
+          x-bind:class="bArt1 &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
+        >
+          <article x-data="parallax()" x-bind="root">
+            <a href="{{ trend1.absolute_url }}">
+              <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
+                <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
+                <div class="absolute top-0 left-0 right-4 bottom-4">
+                  <img class="w-full h-full object-cover" src="{{ trend1.featured_image }}" alt="{{ trend1.featured_image_alt_text }}" />
+                </div>
+              </div>
+              <div x-bind="animate(16)">
+                <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">
+                  {{ trend1.tag_list[0].name }}
+                </h2>
+                <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">
+                  {{ trend1.name }}
+                </h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                  <title>Arrow Forward</title>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="48"
+                    d="M268 112l144 144-144 144M392 256H100"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div
+          x-on:scroll.window="bArt2 = (($vh100 - $top) > 1)"
+          class="lg:pt-24 sm:mb-16 transition duration-0 transform translate-y-8 opacity-0"
+          x-bind:class="bArt2 &amp;&amp; '!translate-y-0 !opacity-100 !duration-700 lg:!delay-[400ms]'"
+        >
+          <article x-data="parallax()" x-bind="root">
+            <a href="{{ trend2.absolute_url }}">
+              <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
+                <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
+                <div class="absolute top-0 left-0 right-4 bottom-4">
+                  <img class="w-full h-full object-cover" src="{{ trend2.featured_image }}" alt="{{ trend2.featured_image_alt_text }}" />
+                </div>
+              </div>
+              <div x-bind="animate(16)">
+                <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">
+                  {{ trend2.tag_list[0].name }}
+                </h2>
+                <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">
+                  {{ trend2.name }}
+                </h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                  <title>Arrow Forward</title>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="48"
+                    d="M268 112l144 144-144 144M392 256H100"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div
+          x-on:scroll.window="bArt3 = (($vh100 - $top) > 1)"
+          class="lg:pt-8 sm:mb-16 transition duration-0 transform translate-y-8 opacity-0"
+          x-bind:class="bArt3 &amp;&amp; '!translate-y-0 !opacity-100 !duration-700 lg:!delay-[200ms]'"
+        >
+          <article x-data="parallax()" x-bind="root">
+            <a href="{{ trend3.absolute_url }}">
+              <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
+                <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
+                <div class="absolute top-0 left-0 right-4 bottom-4">
+                  <img class="w-full h-full object-cover" src="{{ trend3.featured_image }}" alt="{{ trend3.featured_image_alt_text }}" />
+                </div>
+              </div>
+              <div x-bind="animate(16)">
+                <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">
+                  {{ trend3.tag_list[0].name }}
+                </h2>
+                <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">
+                  {{ trend3.name }}
+                </h1>
+                <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                  <title>Arrow Forward</title>
+                  <path
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="48"
+                    d="M268 112l144 144-144 144M392 256H100"
+                  ></path>
+                </svg>
+              </div>
+            </a>
+          </article>
+        </div>
+        <div
+          x-on:scroll.window="bAll = (($vh100 - $top) > 1)"
+          class="lg:col-span-3 flex justify-center lg:pt-16 transition duration-0 transform translate-y-8 opacity-0"
+          x-bind:class="bAll &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
+        >
+          <a href="/latest">
+            <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
+              {% text 'view_all_posts' value='View All Articles' label="View all posts" %}
+              {# {% if content.language.languageTag == "zh-cn" %}
+                查看所有文章
+              {% else %}
+                View All Articles
+              {% endif %} #}
+            </button>
+          </a>
+        </div>
+      </div>
+    </section>
+    <section class="bg-zuju-gray-2 p-8 pb-32">
+      <div class="max-w-[1000px] mx-auto">
+        {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+      </div>
+    </section>
+  </main>
+</div>
+{% endblock body %}
