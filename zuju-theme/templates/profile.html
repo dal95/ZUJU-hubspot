@@ -19,8 +19,8 @@
 
         <div class="scrollable">
           <div class="tabs">
-            <div class="tabs__menu active" data-tab="content-profile">User Profile</div>
-            <div class="tabs__menu" data-tab="content-account">Account</div>
+            <div class="tabs__menu active" data-tab="content-profile">{{ currLang == 'zh-cn' ? '个人资料' : 'User Profile' }}</div>
+            <div class="tabs__menu" data-tab="content-account">{{ currLang == 'zh-cn' ? '账户' : 'Account' }}</div>
           </div>
         </div>
 
@@ -32,7 +32,7 @@
         </div>
 
         <div id="content-account" class="tab-content">
-          <div class="separator">Account preferences</div>
+          <div class="separator">{{ currLang == 'zh-cn' ? '账户偏好' : 'Account preferences' }}</div>
 
           {# <div class="account__email">
             <div>
@@ -47,11 +47,13 @@
 
           <div class="account__password">
             <div>
-              <div class="all-caps">Password</div>
+              <div class="all-caps">{{ currLang == 'zh-cn' ? '账户密码' : 'Password' }}</div>
             </div>
 
             <div>
-              <a href="https://www.zujugp.com/_hcms/mem/reset/request" class="button button--o-primary">Change</a>
+              <a href="https://www.zujugp.com/_hcms/mem/reset/request" class="button button--o-primary">
+                {{ currLang == 'zh-cn' ? '更改密码' : 'Change' }}
+              </a>
             </div>
           </div>
         </div>

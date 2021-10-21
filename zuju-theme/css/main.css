@@ -819,7 +819,7 @@ select {
 }
 
 .kungfu-dash-in {
-  background: url("{{ get_asset_url('/zuju-theme/images/assets/kungfu-dash-game/bg.png') }}");
+  background: url("{{ get_asset_url('/zuju-theme/images/assets/bg/kungfu-dash-bg.png') }}");
   margin-bottom: 3.125rem;
   background-size: cover;
   background-repeat: no-repeat;
@@ -2245,7 +2245,7 @@ section.edit .form-columns-0:not(:first-of-type) {
   margin: 0 1.4rem;
   transition: all 0.3s ease;
   position: relative;
-  display: flex;
+  display: inline-flex;
   align-items: center;
 }
 .nav__link:before,
@@ -2266,6 +2266,13 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 .nav__link:hover:before,
 .nav li a:hover:before {
+  opacity: 1;
+  width: 100%;
+}
+.nav li.active a {
+  color: var(--clr-primary);
+}
+.nav li.active a:before {
   opacity: 1;
   width: 100%;
 }
@@ -2542,6 +2549,13 @@ section.edit .form-columns-0:not(:first-of-type) {
   }
 }
 
+.nav-sticky.is-sticky {
+  position: sticky;
+  top: 0;
+  z-index: 800;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
 .social-links {
   display: flex;
   align-items: center;
@@ -2551,7 +2565,6 @@ section.edit .form-columns-0:not(:first-of-type) {
   font-size: 1.5rem;
   margin: 0 0.5rem;
 }
-
 @media (max-width: 600px) {
   .social-links a {
     color: var(--clr-light-700);

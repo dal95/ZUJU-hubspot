@@ -9,7 +9,7 @@
     margin: 0 1.4rem;
     @include transition;
     position: relative;
-    display: flex;
+    display: inline-flex;
     align-items: center;
 
     &:before {
@@ -31,6 +31,15 @@
         opacity: 1;
         width: 100%;
       }
+    }
+  }
+
+  li.active a {
+    color: var(--clr-primary);
+
+    &:before {
+      opacity: 1;
+      width: 100%;
     }
   }
 }
@@ -304,5 +313,14 @@
 
   @include media('<=340px') {
     margin-right: 10px;
+  }
+}
+
+.nav-sticky {
+  &.is-sticky {
+    position: sticky;
+    top: 0;
+    z-index: 800;
+    box-shadow: 0 10px 30px rgb(0 0 0 / 15%);
   }
 }

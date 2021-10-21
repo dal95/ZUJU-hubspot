@@ -103,7 +103,7 @@ window.addEventListener('message', event => {
       })
     })
 
-     asyncValidate('#register-form [name="referral_code"]', (value = '') => {
+    asyncValidate('#register-form [name="referral_code"]', (value = '') => {
       return fetch(`${BASE_URL}/check-refer-code`, {
         method: 'POST',
         headers: {
@@ -130,5 +130,31 @@ window.addEventListener('message', event => {
       .val(referral_code)
       .trigger('change')
       .trigger('focusout')
+
+    // Birthday validation
+    const BOD = $(`[name="birthday"]`)
+    const inFuture = date => {
+      return date.setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0)
+    }
+
+    console.log(BOD)
+
+    BOD.on('change', () => {
+      console.log('changed')
+      console.log(inFuture(new Date(BOD.val())))
+    })
+
+    // Mutation observer
+    let observer = new MutationObserver(mutationRecords => {
+      console.log(mutationRecords) // console.log(the changes)
+    })
+
+    // observe everything except attributes
+    console.log('======== Mutation observer ======')
+    observer.observe(BOD[0], {
+      childList: true, // observe direct children
+      subtree: true, // and lower descendants too
+      characterDataOldValue: true // pass old data to callback
+    })
   }
 })

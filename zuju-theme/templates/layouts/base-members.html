@@ -38,7 +38,9 @@
   <body>
     <div class="body-wrapper {{ builtin_body_classes }}">
       {% block header %}
-      {% global_partial path='../partials/header.html' %}
+        <div class="nav-sticky is-sticky">
+          {% global_partial path='../partials/header.html' %}
+        </div>
       {% endblock header %}
 
       {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}

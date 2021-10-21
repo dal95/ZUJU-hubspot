@@ -479,3 +479,14 @@ function setUpContinousSlide (start) {
     }
   }).mount()
 }
+
+// var lastScrollTop = 0;
+// $(window).scroll(function(event){
+//    var st = $(this).scrollTop();
+//    if (st > lastScrollTop){
+// 	   $('.nav-sticky').removeClass('is-sticky');
+//    } else {
+// 	   $('.nav-sticky').addClass('is-sticky');
+//    }
+//    lastScrollTop = st;
+// });

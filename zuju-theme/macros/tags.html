@@ -27,7 +27,7 @@
 		{% set node = menu(menu_id || 'default') %}
 
 		{% for child in node.children %}
-			<li><a href="{{ child.url }}" class="{{ link_class }}">{{ child.label }}</a></li>
+			<li class="{{ 'active' if child.activeNode }}"><a href="{{ child.url }}" class="{{ link_class }}">{{ child.label }}</a></li>
 		{% endfor %}
 	</ul>
 {% endmacro %}
