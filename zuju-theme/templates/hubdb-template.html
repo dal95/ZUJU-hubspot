@@ -222,11 +222,6 @@
 									%}
 
 									{% macro categories(category_id) %}
-										{# {{ html_lang }} #}
-										<script>
-										console.log("{{ reward_categories['zh-cn'] }}")
-
-										</script>
 										{{ (reward_categories['zh-cn']|selectattr('id', 'equalto', category_id)|first).value }}
 									{% endmacro %}
 

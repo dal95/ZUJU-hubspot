@@ -143,11 +143,12 @@ window.addEventListener('message', event => {
     const inFuture = date => {
       return date.setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0)
     }
-    // console.log(BOD)
+
+    console.log(BOD)
 
     BOD.on('change', () => {
-      // console.log('changed')
-      // console.log(inFuture(new Date(BOD.val())))
+      console.log('changed')
+      console.log(inFuture(new Date(BOD.val())))
     })
 
     // Mutation observer
@@ -156,7 +157,7 @@ window.addEventListener('message', event => {
     })
 
     // observe everything except attributes
-    // console.log('======== Mutation observer ======')
+    console.log('======== Mutation observer ======')
     observer.observe(BOD[0], {
       childList: true, // observe direct children
       subtree: true, // and lower descendants too

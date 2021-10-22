@@ -18,6 +18,11 @@
   p {
     color: #fff;
   }
+
+  &.auth-register {
+    min-height: unset;
+    padding: 70px 0;
+  }
 }
 
 .auth {
