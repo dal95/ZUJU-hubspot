@@ -142,7 +142,10 @@
           {% if content.language.languageTag == "zh-cn" %}
           <img class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading-cn.png" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
           {% else %}
-          <img class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading.png" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
+          <div x-data="{ fallback: false }">
+            <img x-on:error="fallback = true" x-show="!fallback" class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading.webp" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
+            <img x-cloak x-show="fallback" class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading.gif" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
+          </div>
           {% endif %}
         </div>
         <p class="lg:w-1/2 text-white text-xl font-bold lg:text-center mb-8" x-bind="animate(4)">
