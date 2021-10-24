@@ -1189,11 +1189,8 @@ body {
 .app .blog-post__comments-listing form:before {
   text-transform: uppercase;
 }
-html[lang="en"] .app .blog-post__comments-listing form:before {
-  content: "I'd Say";
-}
-html[lang="zh-cn"] .app .blog-post__comments-listing form:before {
-  content: "\6709\8bdd\8981\8bf4";
+.app .blog-post__comments-listing form:before {
+  content: var(--id-say);
 }
 .app .blog-post__comments-listing form:after {
   position: absolute;

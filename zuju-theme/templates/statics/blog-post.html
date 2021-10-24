@@ -80,7 +80,11 @@
             </section>
             
             {% if request_contact.is_logged_in %}
-              <div class="blog-post__comments-listing">
+              {% if content.language.languageTag == "zh-cn" %}
+                <div class="blog-post__comments-listing" style="--id-say: '有话要说';">
+              {% else %}
+                <div class="blog-post__comments-listing" style="--id-say: 'I\'d Say';">
+              {% endif %}
                 <div>
                   <h3 class="sm:text-2xl lg:text-4xl font-gtcond font-black uppercase mb-4">
                     {% if content.language.languageTag == "zh-cn" %}
