@@ -1,0 +1,65 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Zuju Statics - Name My Mask
+-->
+
+{% set is_statics = true %} {% extends '../layouts/base.html' %} {% block body %}
+<div class="app">
+  <main class="bg-zuju-gray-1" x-data="{}">
+    <section class="bg-zuju-gray-db">
+      <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16 sm:pb-0" x-data="parallax()" x-bind="root">
+        <div class="absolute inset-0">
+          <img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/nmm-masthead.jpg" />
+        </div>
+        <div class="absolute inset-0 bg-gradient-to-b from-zuju-gray-db/0 via-zuju-gray-db/25 to-zuju-gray-db"></div>
+        <div class="relative flex flex-col items-center justify-center sm:p-8">
+          <h1 class="text-white text-6xl sm:text-4xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">Name My Mask</h1>
+          <div class="flex sm:flex-col items-center justify-center">
+            <div class="lg:w-1/2">
+              <h1 class="text-white text-3xl sm:text-2xl font-gtcond font-black text-center mb-16" x-bind="animate(12)">
+                Name Ronaldo's masks in ZujuGP's commercial and&nbsp;win
+              </h1>
+              <p class="text-white text-center mb-8">
+                Cristiano Ronaldo wears our unique ZujuGP mask in this commercial. His 3 other stunning masks remain unnamed! Put in your suggestions as to what
+                we can name them after.
+              </p>
+              <p class="text-white text-center mb-8">
+                The most suggested name will be pooled together where we will pick 20 lucky winners of exclusive CR and ZujuGP merch!
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="bg-zuju-gray-db">
+      <div class="max-w-[1440px] flex flex-col items-center justify-center mx-auto pb-16" x-data="parallax()" x-bind="root">
+        <div class="h-24 w-0.5 bg-zuju-red"></div>
+        <div class="lg:w-5/6 relative flex items-center justify-center bg-white rounded-lg overflow-hidden py-16">
+          <div class="absolute -top-16 -left-16 sm:w-[160%] sm:max-w-auto lg:h-[480px]">
+            <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball.png" />
+          </div>
+          <div class="relative flex flex-wrap justify-center">
+            <h1 class="w-full text-3xl font-gtcond font-black text-center mb-16">
+              This campaign will only run until
+              <span class="text-zuju-red">21&nbsp;July&nbsp;2022</span>
+            </h1>
+            <div class="lg:w-1/2 w-full border-r border-zuju-gray-d sm:px-8 lg:px-16">
+              <p class="text-lg font-bold uppercase sm:text-center pb-8">First, name the masks</p>
+            </div>
+            <div class="sm:hidden lg:w-1/2 w-full sm:px-8 lg:px-16">
+              <p class="text-lg font-bold uppercase pb-8">Next, tell us your name and email address</p>
+            </div>
+            <div class="w-full sm:px-8 lg:px-16 NMM-form" style="--next-text: 'Next, tell us your name and email address';">
+              {% form "name_my_mask" form_to_use='a62a9316-9704-4b6d-8b20-ed9861ef9eb8' %}
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="w-full max-w-[1000px] mx-auto pt-16 pb-32">
+        {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+      </div>
+    </section>
+  </main>
+</div>
+{% endblock body %}
