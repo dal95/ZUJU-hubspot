@@ -9,40 +9,16 @@
 
 {% block body %}
   <main class="public">
-    <div class="auth-wrapper auth">
+    <div class="auth-wrapper auth auth-register">
       <div class="container">
         <div class="auth__push-right form-dark">
-          <h2 class="auth__heading">{{ currLang == "zh-cn" ? "新用户注册" : "New Account Sign Up" }}</h2>
+          <h2 class="auth__heading">
+            {% module "text" path="@hubspot/text" label="Heading" %}
+          </h2>
 
-          {# Custom validation message: read only #}
-          <div class="validate-message is-hidden">
-            <div class="validate-message__success">
-              {% if currLang == 'zh-cn' %}
-                用户名 {uname} 可用
-              {% else %}
-                Username {uname} is available
-              {% endif %}
-            </div>
-
-            <div class="validate-message__failed">
-              {% if currLang == 'zh-cn' %}
-                用户名 {uname} 被采取
-              {% else %}
-                Username {uname} is taken
-              {% endif %}
-            </div>
-          </div>
-
-          {% if currLang == 'zh-cn' %}
-            {% set formId = 'd1d73a59-8f4f-4f16-930e-bbba79f6bca4' %}
-          {% else %}
-            {% set formId = '2a6a57d9-9360-489a-aabe-a6d5bc87d744' %}
-          {% endif %}
-
-          {% form 'register_form'
-            form_key='register',
-            form_to_use='{{ formId }}'
-          %}
+          {% module "register_form"
+            path="/zuju-theme/modules/register-form",
+            label="Register Form" %}
         </div>
       </div>
     </div>
@@ -54,5 +30,3 @@
     var portal_id = "{{ portal_id }}";
   </script>
 {% endblock body %}
-
-{{ require_js(get_asset_url('zuju-theme/js/pages/register.js'), 'footer')}}

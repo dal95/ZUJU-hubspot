@@ -349,12 +349,15 @@ if (
       const ref = new URL(refer?.referral_link)
 
       if (ref) {
-      $('#referral-id').val('https://www.zujugp.com/registration' + '?refer=' + ref.searchParams.get('refer'))
+        const refVal = `https://www.zujugp.com/${
+          lang == 'en' ? '' : lang + '/'
+        }registration?refer=${ref.searchParams.get('refer')}`
+        $('#referral-id').val(refVal)
 
         const shareData = {
           title: 'Zuju Referral Program',
           text: 'Get more Z Points',
-          url: 'https://www.zujugp.com/registration' + '?refer=' + ref.searchParams.get('refer')
+          url: refVal
         }
 
         const btn = document.querySelector('#share-referral')
@@ -476,3 +479,14 @@ function setUpContinousSlide (start) {
     }
   }).mount()
 }
+
+// var lastScrollTop = 0;
+// $(window).scroll(function(event){
+//    var st = $(this).scrollTop();
+//    if (st > lastScrollTop){
+// 	   $('.nav-sticky').removeClass('is-sticky');
+//    } else {
+// 	   $('.nav-sticky').addClass('is-sticky');
+//    }
+//    lastScrollTop = st;
+// });

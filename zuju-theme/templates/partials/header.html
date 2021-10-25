@@ -27,7 +27,7 @@
       </div>
 
       <div class="top-nav__social social-links">
-        <a href="/convo/cr-in-commercial" target="_blank"><i class="far fa-comment"></i></a>
+        <a href="/convo/the-future-of-football" target="_blank"><i class="far fa-comment"></i></a>
         <a href="https://www.facebook.com/zujugp" target="_blank"><i class="fab fa-facebook-square"></i></a>
         <a href="https://instagram.com/zujugp" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://twitter.com/zujugp" target="_blank"><i class="fab fa-twitter"></i></a>
@@ -49,7 +49,6 @@
       </div>
 
       <div class="main-nav__omega">
-
         {% if currLang == "zh-cn" %}
         {% menu "main-nav" id=57071986309 %}
         {% else %}
@@ -57,8 +56,9 @@
         {% endif %}
 
         {% if request_contact.is_logged_in %}
+          {% set langQuery = '?hsLang='~html_lang %}
           <div class="has-dropdown">
-            <a href="/members-portal" class="nav__link account-link">
+            <a href="/members-portal{{ langQuery }}" class="nav__link account-link">
               {% if currLang == "zh-cn" %}
               账户
               {% else %}
@@ -77,7 +77,7 @@
                 {% endif %}
               </div>
 
-              <a href="/profile">
+              <a href="/profile{{ langQuery }}">
                 {% if currLang == "zh-cn" %}
                 编辑个人资料
                 {% else %}
@@ -85,7 +85,7 @@
                 {% endif %}
               </a>
 
-              <a href="/membership">
+              <a href="/membership{{ langQuery }}">
                 {% if currLang == "zh-cn" %}
                 会员
                 {% else %}
@@ -93,7 +93,7 @@
                 {% endif %}
               </a>
 
-              <a href="/_hcms/mem/logout">
+              <a href="/_hcms/mem/logout{{ langQuery }}">
                 {% if currLang == "zh-cn" %}
                 退出登录
                 {% else %}
@@ -107,10 +107,10 @@
         {% if currLang == "zh-cn" %}
         <a class="nav__link nav-auth" href="/zh-cn/registration">注册</a>
         {% else %}
-        <a class="nav__link nav-auth" href="/registration">Sign Up</a>
+        <a class="nav__link nav-auth" href="/registration{{ langQuery }}">Sign Up</a>
         {% endif %}
 
-        <a class="nav__link nav-auth" href="/_hcms/mem/login">
+        <a class="nav__link nav-auth" href="/_hcms/mem/login{{ langQuery }}">
           {% if currLang == "zh-cn" %}
           登录
           {% else %}
@@ -120,12 +120,14 @@
         {% endif %}
 
         <div class="off-canvas">
+          <div class="is-hidden">
+            {{ content.id }}
+          </div>
+
           {{ c.icon_cross() }}
 
           <!-- Off canvas menu content -->
-
           {% if currLang == "zh-cn" %}
-          {# {% menu "main-nav" id=57071986309 %} #}
             {{ c.z_menu(57071986309, 'off-canvas__menu', 'nav__link') }}
           {% else %}
             {{ c.z_menu(54357477653, 'off-canvas__menu', 'nav__link') }}

@@ -50,7 +50,11 @@
             <div class="sm:hidden lg:w-1/2 w-full sm:px-8 lg:px-16">
               <p class="text-lg font-bold uppercase pb-8">Next, tell us your name and email address</p>
             </div>
-            <div class="w-full sm:px-8 lg:px-16 NMM-form" style="--next-text: 'Next, tell us your name and email address';">
+						{% if content.language.languageTag == "zh-cn" %}
+							<div class="w-full sm:px-8 lg:px-16 NMM-form" style="--next-text: '(CN) Next, tell us your name and email address';">
+						{% else %}
+							<div class="w-full sm:px-8 lg:px-16 NMM-form" style="--next-text: 'Next, tell us your name and email address';">
+						{% endif %}
               {% form "name_my_mask" form_to_use='a62a9316-9704-4b6d-8b20-ed9861ef9eb8' %}
             </div>
           </div>

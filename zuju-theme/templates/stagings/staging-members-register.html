@@ -1,0 +1,28 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Staging - Members Register
+-->
+{% extends "../layouts/base-standard.html" %}
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+
+{% block body %}
+  <main class="public">
+    <div class="auth-wrapper auth">
+      <div class="container">
+        <div class="auth__push-right form-dark">
+          <h2 class="auth__heading">{{ currLang == "zh-cn" ? "新用户注册" : "New Account Sign Up" }}</h2>
+
+          {% module "module_16346992207435" path="/zuju-theme/modules/register-form", label="Register Form" %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  {% set referral_code = request.query_dict.refer %}
+  <script>
+    var referral_code = "{{ referral_code }}";
+    var portal_id = "{{ portal_id }}";
+  </script>
+{% endblock body %}

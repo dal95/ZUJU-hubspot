@@ -59,6 +59,7 @@
 							<p class="tier-availability">
 								{{ currLang == 'zh-cn' ? '适用于' : 'Available for' }} : {{ d.member_tier_availability|map('name')|join(', ') }}
 							</p>
+
 							{% if d.show_stock_count %}
 								{{ currLang == 'zh-cn' ? '股票' : 'Stock' }}: {{ d.stock }}
 							{% endif %}
@@ -185,22 +186,59 @@
 										{% endif %}
 									{% endif %}
 
-									<label for="id-categories" class="fs-sm">Categories</label>
-									<select name="" id="id-categories">
-										<option value="" selected>All</option>
 
-										{% for category in categories %}
+									{% set reward_categories = {
+											'en': [
+												{
+													id: 1,
+													value: 'CR7 MEMORABILIA',
+												}, {
+													id: 2,
+													value: 'ELECTRONICS'
+												}, {
+													id: 3,
+													value: 'CR7 EXPERIENCES'
+												}, {
+													id: 4,
+													value: 'GIFT CARDS'
+												}
+											],
+											'zh-cn': [
+												{
+													id: 1,
+													value: '电子产品',
+												}, {
+													id: 2,
+													value: 'C罗相关纪念奖'
+												}, {
+													id: 3,
+													value: 'C罗相关体验奖'
+												}, {
+													id: 4,
+													value: '礼品卡'
+												}
+											]
+										}
+									%}
+
+									{% macro categories(category_id) %}
+										{{ (reward_categories['zh-cn']|selectattr('id', 'equalto', category_id)|first).value }}
+									{% endmacro %}
+
+									<label for="id-categories" class="fs-sm">{{ currLang == 'zh-cn' ? '类别' :  'Categories' }}</label>
+									<select name="" id="id-categories">
+										<option value="" selected>{{ currLang == 'zh-cn' ? '全部' : 'All' }}</option>
+
+										{% for category in reward_categories[html_lang] %}
 											<option value="{{ category.id }}" {{ qCat == category.id ? 'selected' : '' }}>{{ category.value }}</option>
 										{% endfor %}
 									</select>
 								</div>
 
 								<div class="field">
-									<label for="id-points" class="fs-sm"
-										>Z Points</label
-									>
+									<label for="id-points" class="fs-sm">{{ currLang == 'zh-cn' ? 'Z积分' : 'Z Points' }}</label>
 									<select name="" id="id-points">
-										<option value="" selected>All</option>
+										<option value="" selected>{{ currLang == 'zh-cn' ? '全部' : 'All' }}</option>
 
 										{% for point in points %}
 											<option value="{{ point.id }}" {{ 'selected' if point.id == qPts }}>{{ point.value }}</option>

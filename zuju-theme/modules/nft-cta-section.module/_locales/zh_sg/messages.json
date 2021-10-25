@@ -1,0 +1,232 @@
+{
+  "auction_time.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.label" : {
+    "message" : "Text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.label" : {
+    "message" : "Field group",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.label" : {
+    "message" : "Link",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.name" : {
+    "message" : "nft-cta-section",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.label" : {
+    "message" : "Text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.label" : {
+    "message" : "Text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.label" : {
+    "message" : "Boolean",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "nft-cta-section",
+    "description" : null,
+    "placeholders" : null
+  },
+  "t_c.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "t_c.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "t_c.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "t_c.label" : {
+    "message" : "Rich text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "t_c.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "LUMINA - Own your place in history.",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "Title",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

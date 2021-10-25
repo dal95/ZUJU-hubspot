@@ -7,7 +7,6 @@ window.addEventListener('message', event => {
     event.data.eventName === 'onFormReady'
   ) {
     count++
-    // if (event.data.id !== 'ff4fd248-ad02-4d39-9971-a8880316c297')  return
     if (count < total) return
 
     $('[name="custom_avatar"]').each(function () {
@@ -25,18 +24,29 @@ window.addEventListener('message', event => {
     $('[name="custom_avatar"]').on('change', function () {
       $('.avatar-edit img').attr('src', $(this).val())
     })
+    // - end of avatar
 
+    // Disable fields
     $disabledElement = $(
       '.edit input[name="birthday"], .edit input[name="username"], .edit input[name="email"]'
     )
+
     $disabledElement.attr('tabindex', -1)
     $disabledInput = $disabledElement.closest('.input')
-    $emailInput = $('#hs_form_target_profile input[name="email"]').closest(
-      '.input'
-    )
+    $disabledInput.each(function () {
+      const propName = $(this)
+        .find('.hs-input')
+        .attr('name')
+      if (propName == 'birthday' || !propName) return
+
+      $(this).css('position', 'relative')
+      $(this).append(`<div class="mask-input">${contact[propName] || ''}</div>`)
+      $(this)
+        .find('.hs-input')
+        .css('display', 'none')
+    })
 
     $disabledInput.addClass('disabled')
-    $emailInput.addClass('disabled')
 
     $('.disabled')
       .closest('.field')
@@ -51,13 +61,12 @@ window.addEventListener('message', event => {
         const current = new Date(contact[propName])
 
         $(this)
-          .closest('.hs-dateinput')
-          .css('position', 'relative')
+          .closest('.input')
+          .append(`<div class="mask-input">${contact[propName]}</div>`)
         $(this)
           .closest('.hs-dateinput')
-          .append(
-            `<div class="hs-input" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; color: #fff; background: transparent; display: flex; align-items: center; opacity: .5">${contact[propName]}</div>`
-          )
+          .css('display', 'none')
+
         if (current) {
           function pad (n) {
             return (n < 10 ? '0' : '') + n
@@ -69,34 +78,9 @@ window.addEventListener('message', event => {
             (current.getMonth() + 1) +
             '-' +
             pad(current.getDate())
-          $(this).prev().attr('tabindex', -1)
-
-          // this method of changing the value doesn't work.
-          // hubspot internally use react to control / sync between the hidden input, the readonly input and the datepicker
-          // To counter this we have to remove the data-reactid
-          // console.log('original', contact[propName])
-          // console.log(newDate, this)
-          // const reactId = $(this)
-          //   .prev()
-          //   .data('react-id')
-
-          // $(this)
-          //   .prev()
-          //   .removeAttr('readonly')
-          // $(this)
-          //   .prev()
-          //   .removeAttr('data-reactid')
-          // $(this)
-          //   .prev()
-          //   .val(contact[propName])
-          //   .trigger('change')
-          // $(this)
-          //   .val(newDate)
-          //   .trigger('change')
-
-          // $(this)
-          //   .prev()
-          //   .data('react-id', reactId)
+          $(this)
+            .prev()
+            .attr('tabindex', -1)
         }
       } else {
         $(this)

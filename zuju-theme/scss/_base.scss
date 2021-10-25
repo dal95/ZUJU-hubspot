@@ -2,7 +2,13 @@
 
 // Convert px to rem
 @function rem($unit) {
-  @return math.div($unit, 16) + rem
+  @return math.div($unit, 16) + rem;
+}
+
+$theme-name: 'zuju-theme';
+$asset-path: 'images/assets/';
+@function asset_url($path) {
+  @return 'https://www.zujugp.com/hubfs/raw_assets/public/#{$theme-name}/#{$asset-path}#{$path}';
 }
 
 :root {
@@ -33,6 +39,7 @@
   --sidebar-width: 278px;
 }
 
+$clr-primary: #ed2938;
 $max-width: 1200px;
 
 * {
@@ -44,6 +51,8 @@ body {
   font-family: var(--ff-primary);
   font-size: 1rem;
   line-height: 1.5rem;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 img {
@@ -104,9 +113,17 @@ h4 {
 }
 
 label {
-  cursor: pointer;
+  // cursor: pointer;
 }
 
 .container {
   @include container;
+}
+
+select {
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") !important;
+  background-size: 20px !important;
+  background-position: 98% !important;
+  background-repeat: no-repeat !important;
 }

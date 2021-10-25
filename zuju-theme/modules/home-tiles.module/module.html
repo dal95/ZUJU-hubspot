@@ -1,0 +1,142 @@
+<section class="sm:hidden">
+  <div
+    class="h-[calc(100vh-var(--nav-height))] min-h-[600px] max-w-[1920px] mx-auto grid sm:grid-cols-1 sm:grid-rows-1 lg:grid-cols-4 lg:grid-rows-2"
+  >
+    <article class="relative flex items-end lg:col-span-2 lg:row-span-2">
+      <a href="{{ module.main_tiles.cta_url }}">
+        <div class="absolute inset-0 bg-black">
+          <img class="opacity-50 h-full w-full object-cover" src="{{ module.main_tiles.background.src }}" />
+        </div>
+        <div class="relative w-full p-4">
+          <h1 class="lg:text-6xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
+            {{ module.main_tiles.title }}
+          </h1>
+          <p class="relative text-trueGray-200 sm:text-sm pr-12">
+            {{ module.main_tiles.cta_text }}
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="48"
+                d="M268 112l144 144-144 144M392 256H100"
+              ></path>
+            </svg>
+          </p>
+        </div>
+      </a>
+    </article>
+    
+    {% for item in module.children %}     
+      <article class="relative flex items-end {{ "h-full lg:col-span-2" if module.children|length == 3 && loop.index == 1 }}">
+        <a href="{{ item.url_field.href }}">
+          <div class="absolute inset-0 bg-black">
+            {% if item.background.src %}
+              {% set loadingAttr = item.background.loading != 'disabled' ? 'loading="{{ item.background.loading }}"' : '' %}
+              <img class="opacity-50 h-full w-full object-cover" src="{{ item.background.src }}" alt="{{ item.background.alt }}" {{ loadingAttr }} />
+            {% endif %}
+          </div>
+          
+          <div class="relative w-full p-4">
+            <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
+             {{ item.title }}
+            </h1>
+            <p class="relative text-trueGray-200 sm:text-sm pr-12">
+              {{ item.cta_text }}
+              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="48"
+                  d="M268 112l144 144-144 144M392 256H100"
+                ></path>
+              </svg>
+            </p>
+          </div>
+        </a>
+      </article>
+    {% endfor %}
+  </div>
+</section>
+
+<section class="lg:hidden">
+  <div class="aspect-w-4 aspect-h-3">
+    <div>
+      <article class="relative flex items-end h-full lg:col-span-2 lg:row-span-2">
+        <a href="{{ module.main_tiles.cta_url }}">
+          <div class="absolute inset-0 bg-black">
+            <img class="opacity-50 h-full w-full object-cover" src="{{ module.main_tiles.background.src }}" />
+          </div>
+          <div class="relative w-full p-4">
+            <h1 class="lg:text-6xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
+              {{ module.main_tiles.title }}
+            </h1>
+            <p class="relative text-trueGray-200 sm:text-sm pr-12">
+              {{ module.main_tiles.cta_text }}
+              <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                <path
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="48"
+                  d="M268 112l144 144-144 144M392 256H100"
+                ></path>
+              </svg>
+            </p>
+          </div>
+        </a>
+      </article>
+    </div>
+  </div>
+  <div class="glide" x-data="{}" x-init="new Glide($el).mount()">
+    <div class="glide__track" data-glide-el="track">
+      <div class="glide__slides">
+        {% for item in module.children %}        
+          <div class="glide__slide">
+            <div class="aspect-w-4 aspect-h-3">
+              <div>
+                <article class="relative flex items-end h-full">
+                  <a href="{{ item.url_field.href }}">
+                    <div class="absolute inset-0 bg-black">
+                      {% if item.background.src %}
+                        {% set loadingAttr = item.background.loading != 'disabled' ? 'loading="{{ item.background.loading }}"' : '' %}
+                        <img class="opacity-50 h-full w-full object-cover" src="{{ item.background.src }}" alt="{{ item.background.alt }}" {{ loadingAttr }} />
+                      {% endif %}
+                    </div>
+                    <div class="relative w-full p-4">
+                      <h1 class="lg:text-4xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
+                        {{ item.title }}
+                      </h1>
+                      <p class="relative text-trueGray-200 sm:text-sm pb-8 pr-12">
+                        {{ item.cta_text }}
+                        <svg xmlns="http://www.w3.org/2000/svg" class="ionicon absolute right-0 bottom-0 h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+                          <path
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            stroke-width="48"
+                            d="M268 112l144 144-144 144M392 256H100"
+                          ></path>
+                        </svg>
+                      </p>
+                    </div>
+                  </a>
+                </article>
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="pl-4 pb-4 glide__bullets left-0 bottom-1 translate-x-[-4px]" data-glide-el="controls[nav]">
+      {% for item in module.children %}
+        <button class="glide__bullet" data-glide-dir="={{ loop.index0 }}"></button>
+      {% endfor %}
+    </div>
+  </div>
+</section>

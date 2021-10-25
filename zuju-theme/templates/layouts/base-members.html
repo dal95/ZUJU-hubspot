@@ -38,7 +38,9 @@
   <body>
     <div class="body-wrapper {{ builtin_body_classes }}">
       {% block header %}
-      {% global_partial path='../partials/header.html' %}
+        <div class="nav-sticky is-sticky">
+          {% global_partial path='../partials/header.html' %}
+        </div>
       {% endblock header %}
 
       {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
@@ -140,6 +142,7 @@
     {% include "../popups/index.html" %}
     <script>
       var user_vid = "{{ contact.hs_object_id }}";
+      var lang = "{{ html_lang }}" || '';
     </script>
     {{ require_js('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js') }}
     {{ require_js(get_asset_url('../../js/main.js')) }}

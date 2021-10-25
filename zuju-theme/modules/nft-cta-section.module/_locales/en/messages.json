@@ -1,0 +1,287 @@
+{
+  "auction_time.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "auction_time.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default.link.no_follow" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default.link.open_in_new_tab" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default.link.url.content_id" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default.link.url.href" : {
+    "message" : "https://collectibles.zujugp.com/#/auction/228",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default.link.url.type" : {
+    "message" : "EXTERNAL",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default.text" : {
+    "message" : "More Info",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.default.no_follow" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.default.open_in_new_tab" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.default.url.content_id" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.default.url.href" : {
+    "message" : "https://collectibles.zujugp.com/#/auction/228",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.default.url.type" : {
+    "message" : "EXTERNAL",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.link.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.name" : {
+    "message" : "nft-cta-section",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.default" : {
+    "message" : "More Info",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.text.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable_module.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "nft-cta-section",
+    "description" : "",
+    "placeholders" : null
+  },
+  "t_c.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "t_c.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "t_c.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "t_c.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "t_c.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  }
+}

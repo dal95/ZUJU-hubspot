@@ -1,23 +1,33 @@
 .auth-wrapper {
-  min-height: 100vh;
+  min-height: 851px;
+  background-color: #010101;
+  background: url("{{ get_asset_url('/zuju-theme/images/assets/bg/zujugp-login.jpg') }}");
   background-size: cover;
-  padding-top: 120px;
-  padding-bottom: 120px;
+  background-repeat: no-repeat;
+   display: flex;
 
-  @include media('<=tablet') {
-    background-position: -85px;
+  @include media('<=mobile') {
+    background-image: url("{{ get_asset_url('/zuju-theme/images/assets/bg/zujugp-login-mobile.jpg') }}");
+    background-position: center center;
   }
 
-  @include media('<=tablet') {
-    background-position: -240px;
+  a {
+    text-decoration: none;
   }
 
   p {
     color: #fff;
   }
+
+  &.auth-register {
+    min-height: unset;
+    padding: 70px 0;
+  }
 }
 
 .auth {
+  padding: 120px 0;
+
   &.login {
     .hs-form-field:nth-of-type(3) {
       display: flex;
@@ -270,4 +280,8 @@
       color: #333;
     }
   }
+}
+
+#hs_cos_wrapper_membership_admin_content {
+  margin-top: 2rem;
 }
