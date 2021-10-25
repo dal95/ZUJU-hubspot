@@ -1,0 +1,147 @@
+{
+  "blog_selector.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_selector.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_selector.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_selector.label" : {
+    "message" : "Blog",
+    "description" : null,
+    "placeholders" : null
+  },
+  "blog_selector.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "blog-picker",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "What's Trending",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "Title",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "title.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.label" : {
+    "message" : "Field group",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.name" : {
+    "message" : "blog-picker",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.text.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.text.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.text.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.text.label" : {
+    "message" : "Text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.text.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.text.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.url.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.url.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.url.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.url.label" : {
+    "message" : "View all",
+    "description" : null,
+    "placeholders" : null
+  },
+  "view_all.url.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  }
+}

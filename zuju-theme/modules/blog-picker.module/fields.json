@@ -1,0 +1,71 @@
+[ {
+  "id" : "24786775-f605-fbda-8611-9667fa06eaf9",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "What's Trending"
+}, {
+  "id" : "e7badc94-c122-1af9-1c30-063f00fc512b",
+  "name" : "blog_selector",
+  "label" : "Blog Selector",
+  "required" : false,
+  "locked" : false,
+  "type" : "blog",
+  "default" : 55380670097
+}, {
+  "id" : "5e7b9e1c-a74d-ab6c-1535-35b3fe7015b9",
+  "name" : "view_all",
+  "label" : "View all",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "fbeadbba-fff8-7ad9-db89-e29d29137fcc",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }, {
+    "id" : "8ab6679a-7f6b-6624-8104-0be186acf35f",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "View All Articles"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "url" : {
+      "url" : {
+        "content_id" : null,
+        "href" : "",
+        "type" : "EXTERNAL"
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    },
+    "text" : "View All Articles"
+  }
+} ]

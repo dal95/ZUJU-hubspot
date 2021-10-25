@@ -1,6 +1,7 @@
 {
   "global" : false,
   "master_language" : "en",
+  "icon" : "fontawesome-5.14.0:Bitcoin",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 58019718560,
   "label" : "NFT CTA Section",

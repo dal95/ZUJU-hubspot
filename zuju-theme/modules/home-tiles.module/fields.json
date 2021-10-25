@@ -41,7 +41,7 @@
     "label" : "URL",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "EXTERNAL" ],
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
     "type" : "url",
     "default" : {
       "type" : "EXTERNAL",
@@ -131,7 +131,7 @@
     "label" : "URL",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "EXTERNAL" ],
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
     "type" : "url",
     "default" : {
       "type" : "EXTERNAL",

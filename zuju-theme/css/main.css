@@ -608,22 +608,6 @@ select {
   flex: 1;
 }
 
-.auth {
-  padding: 120px 0;
-}
-
-.auth-wrapper {
-  background: url("/hubfs/raw_assets/public/zuju-theme/images/assets//bg/zujugp-login.jpg");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-@media (max-width: 600px) {
-  .auth-wrapper {
-    background-image: url("/hubfs/raw_assets/public/zuju-theme/images/assets//bg/zujugp-login-mobile.jpg");
-    background-position: center center;
-  }
-}
-
 .content-area {
   background-color: var(--clr-dark-800);
   color: #fff;
@@ -2590,13 +2574,6 @@ section.edit .form-columns-0:not(:first-of-type) {
   color: var(--clr-light-700);
   font-size: 1.5rem;
   margin: 0 0.5rem;
-}
-@media (max-width: 600px) {
-  .social-links a {
-    color: var(--clr-light-700);
-    font-size: 1.5rem;
-    margin: 0 0.3rem;
-  }
 }
 @media (max-width: 600px) {
   .social-links a {

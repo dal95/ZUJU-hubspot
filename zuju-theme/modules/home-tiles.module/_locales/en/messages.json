@@ -104,6 +104,11 @@
     "description" : "",
     "placeholders" : null
   },
+  "children.url_field.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "children.url_field.help_text" : {
     "message" : "",
     "description" : "",
@@ -115,7 +120,7 @@
     "placeholders" : null
   },
   "children.url_field.label" : {
-    "message" : "URL",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -179,6 +184,11 @@
     "description" : "",
     "placeholders" : null
   },
+  "main_tiles.cta_url.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "main_tiles.cta_url.help_text" : {
     "message" : "",
     "description" : "",
@@ -190,7 +200,7 @@
     "placeholders" : null
   },
   "main_tiles.cta_url.label" : {
-    "message" : "URL",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },

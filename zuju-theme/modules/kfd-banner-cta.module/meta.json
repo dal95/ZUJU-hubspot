@@ -1,6 +1,7 @@
 {
   "global" : false,
   "master_language" : "en",
+  "icon" : "fontawesome-5.14.0:Gamepad:SOLID",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 57857954651,
   "is_available_for_new_content" : true

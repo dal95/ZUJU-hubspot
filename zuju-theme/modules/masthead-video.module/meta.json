@@ -1,5 +1,6 @@
 {
   "global" : false,
+  "icon" : "fontawesome-5.14.0:Play%20Circle:SOLID",
   "host_template_types" : [ "PAGE", "BLOG_POST" ],
   "module_id" : 57854394040,
   "css_assets" : [ {
@@ -7,5 +8,6 @@
     "path" : "../../css/main.css",
     "name" : "main.css"
   } ],
+  "label" : "Masthead Video",
   "is_available_for_new_content" : true
 }

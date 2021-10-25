@@ -1,0 +1,150 @@
+<section class="w-full bg-zuju-gray-2 p-8" x-data="{ bTitle: false, bArt1: false, bArt2: false, bArt3: false, bAll: false }">
+  <div
+    class="
+      max-w-[1440px]
+      sm:max-w-md
+      grid
+      sm:grid-cols-1
+      lg:grid-cols-3
+      sm:grid-rows-[repeat(4,auto)]
+      lg:grid-rows-[repeat(3,auto)] lg:gap-x-8
+      mx-auto
+      mb-16
+    "
+  >
+    <div
+      x-on:scroll.window="bTitle = (($vh100 - $top) > 1)"
+      class="lg:col-start-2 lg:col-span-2 py-16 transition duration-0 transform translate-y-8 opacity-0"
+      x-bind:class="bTitle &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
+    >
+      <div x-data="parallax()" x-bind="root">
+        <h1 class="text-white text-center sm:text-4xl lg:text-5xl font-gtcond font-black" x-bind="animate(8)">
+          {{ module.title }}
+        </h1>
+      </div>
+    </div>
+    
+    
+    {% set trending_posts = blog_recent_posts(module.blog_selector) %}
+    {% set trend1 = trending_posts[0] %}
+    {% set trend2 = trending_posts[1] %}
+    {% set trend3 = trending_posts[2] %}
+    
+    <div
+      x-on:scroll.window="bArt1 = (($vh100 - $top) > 1)"
+      class="lg:col-start-1 lg:row-start-1 lg:row-span-2 lg:pt-24 sm:mb-16 transition duration-0 transform translate-y-8 opacity-0"
+      x-bind:class="bArt1 &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
+    >
+      <article x-data="parallax()" x-bind="root">
+        <a href="{{ trend1.absolute_url }}">
+          <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
+            <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
+            <div class="absolute top-0 left-0 right-4 bottom-4">
+              <img class="w-full h-full object-cover" src="{{ trend1.featured_image }}" alt="{{ trend1.featured_image_alt_text }}" />
+            </div>
+          </div>
+          <div x-bind="animate(16)">
+            <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">
+              {{ trend1.tag_list[0].name }}
+            </h2>
+            <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">
+              {{ trend1.name }}
+            </h1>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+              <title>Arrow Forward</title>
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="48"
+                d="M268 112l144 144-144 144M392 256H100"
+              ></path>
+            </svg>
+          </div>
+        </a>
+      </article>
+    </div>
+    <div
+      x-on:scroll.window="bArt2 = (($vh100 - $top) > 1)"
+      class="lg:pt-24 sm:mb-16 transition duration-0 transform translate-y-8 opacity-0"
+      x-bind:class="bArt2 &amp;&amp; '!translate-y-0 !opacity-100 !duration-700 lg:!delay-[400ms]'"
+    >
+      <article x-data="parallax()" x-bind="root">
+        <a href="{{ trend2.absolute_url }}">
+          <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
+            <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
+            <div class="absolute top-0 left-0 right-4 bottom-4">
+              <img class="w-full h-full object-cover" src="{{ trend2.featured_image }}" alt="{{ trend2.featured_image_alt_text }}" />
+            </div>
+          </div>
+          <div x-bind="animate(16)">
+            <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">
+              {{ trend2.tag_list[0].name }}
+            </h2>
+            <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">
+              {{ trend2.name }}
+            </h1>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+              <title>Arrow Forward</title>
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="48"
+                d="M268 112l144 144-144 144M392 256H100"
+              ></path>
+            </svg>
+          </div>
+        </a>
+      </article>
+    </div>
+    <div
+      x-on:scroll.window="bArt3 = (($vh100 - $top) > 1)"
+      class="lg:pt-8 sm:mb-16 transition duration-0 transform translate-y-8 opacity-0"
+      x-bind:class="bArt3 &amp;&amp; '!translate-y-0 !opacity-100 !duration-700 lg:!delay-[200ms]'"
+    >
+      <article x-data="parallax()" x-bind="root">
+        <a href="{{ trend3.absolute_url }}">
+          <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
+            <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
+            <div class="absolute top-0 left-0 right-4 bottom-4">
+              <img class="w-full h-full object-cover" src="{{ trend3.featured_image }}" alt="{{ trend3.featured_image_alt_text }}" />
+            </div>
+          </div>
+          <div x-bind="animate(16)">
+            <h2 class="text-zuju-red text-sm font-bold uppercase mb-4">
+              {{ trend3.tag_list[0].name }}
+            </h2>
+            <h1 class="text-white sm:text-xl lg:text-2xl font-gtcond font-black mb-4">
+              {{ trend3.name }}
+            </h1>
+            <svg xmlns="http://www.w3.org/2000/svg" class="ionicon h-6 w-6 text-zuju-red" viewBox="0 0 512 512">
+              <title>Arrow Forward</title>
+              <path
+                fill="none"
+                stroke="currentColor"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="48"
+                d="M268 112l144 144-144 144M392 256H100"
+              ></path>
+            </svg>
+          </div>
+        </a>
+      </article>
+    </div>
+    <div
+      x-on:scroll.window="bAll = (($vh100 - $top) > 1)"
+      class="lg:col-span-3 flex justify-center lg:pt-16 transition duration-0 transform translate-y-8 opacity-0"
+      x-bind:class="bAll &amp;&amp; '!translate-y-0 !opacity-100 !duration-700'"
+    >
+      <a href="{{ '/latest' if !module.view_all.url }}">
+        <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
+          {{ module.view_all.text }}
+        </button>
+      </a>
+    </div>
+  </div>
+</section>
