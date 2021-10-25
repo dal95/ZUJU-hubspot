@@ -61,8 +61,12 @@
         </div>
       </div>
     </section> #}
-    {% module "home_masthead" path="/zuju-theme/modules/masthead-video", label="Masthead video" %}
-    <section class="sm:hidden">
+    {% module "home_masthead"
+      path="/zuju-theme/modules/masthead-video",
+      label="Masthead video"
+    %}
+
+    {# <section class="sm:hidden">
       <div
         class="h-[calc(100vh-var(--nav-height))] min-h-[600px] max-w-[1920px] mx-auto grid sm:grid-cols-1 sm:grid-rows-1 lg:grid-cols-4 lg:grid-rows-2"
       >
@@ -374,20 +378,20 @@
           <button class="glide__bullet" data-glide-dir="=2"></button>
         </div>
       </div>
-    </section>
+    </section> #}
 
-    <div class="is-hidden">
-    {% module "home_tiles"
-      path="/zuju-theme/modules/home-tiles",
-      label="Home Tiles"
-    %}
+    <div class="">
+      {% module "home_tiles"
+        path="/zuju-theme/modules/home-tiles",
+        label="Home Tiles"
+      %}
     </div>
 
-    <div class="is-hidden">
-    {% module "nft_cta_section"
-      path="/zuju-theme/modules/nft-cta-section",
-      label="NFT CTA Section"
-    %}
+    <div class="">
+      {% module "nft_cta_section"
+        path="/zuju-theme/modules/nft-cta-section",
+        label="NFT CTA Section"
+      %}
     </div>
 
     {# Portfolio #}
@@ -703,7 +707,7 @@
     %}
 
     {# Trending posts #}
-    <section class="w-full bg-zuju-gray-2 p-8" x-data="{ bTitle: false, bArt1: false, bArt2: false, bArt3: false, bAll: false }">
+    {# <section class="w-full bg-zuju-gray-2 p-8" x-data="{ bTitle: false, bArt1: false, bArt2: false, bArt3: false, bAll: false }">
       <div
         class="
           max-w-[1440px]
@@ -859,11 +863,18 @@
           </a>
         </div>
       </div>
-    </section>
+    </section> #}
+
+    <div class="">
+      {% module "posts_picker"
+        path="/zuju-theme/modules/blog-picker",
+        label="Blog Posts Picker"
+      %}
+    </div>
 
     <section class="bg-zuju-gray-2 p-8 pb-32">
       <div class="max-w-[1000px] mx-auto">
-        {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+        {% dnd_area 'dnd_area' label='Main section (Drag and drop)' %} {% end_dnd_area %}
       </div>
     </section>
   </main>

@@ -1219,6 +1219,16 @@ input[type='submit'] {
     outline: none;
     // aspect-ratio: 2;
   }
+
+  @include media('<=tablet') {
+    padding-bottom: 0;
+
+    .container {
+      padding: 0;
+      margin-left: -20px;
+      margin-right: -20px;
+    }
+  }
 }
 
 .prev-arrow {
