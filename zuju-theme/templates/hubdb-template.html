@@ -59,7 +59,6 @@
 							<p class="tier-availability">
 								{{ currLang == 'zh-cn' ? '适用于' : 'Available for' }} : {{ d.member_tier_availability|map('name')|join(', ') }}
 							</p>
-
 							{% if d.show_stock_count %}
 								{{ currLang == 'zh-cn' ? '股票' : 'Stock' }}: {{ d.stock }}
 							{% endif %}
