@@ -442,7 +442,7 @@ h4 {
   }
 }
 
-select {
+select:not(.flatpickr-monthDropdown-months) {
   -webkit-appearance: none;
   background-image: url("data:image/svg+xml;utf8,<svg fill='white' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") !important;
   background-size: 20px !important;
@@ -2169,6 +2169,21 @@ section.edit .form-columns-0:not(:first-of-type) {
 
 #hs_cos_wrapper_register_form {
   min-height: 300px;
+}
+
+.hs-input.hs-fieldtype-intl-phone {
+  display: flex;
+}
+.hs-input.hs-fieldtype-intl-phone .hs-input {
+  min-width: unset !important;
+  width: unset;
+}
+.hs-input.hs-fieldtype-intl-phone select.hs-input {
+  flex: 1 50%;
+  border-right: 1px solid #282828;
+  margin-right: 0px;
+  display: flex;
+  padding-right: 25px;
 }
 
 .button, .hs-button {

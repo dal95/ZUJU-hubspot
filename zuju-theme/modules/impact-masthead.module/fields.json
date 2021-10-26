@@ -1,0 +1,99 @@
+[ {
+  "id" : "df53b88e-e305-9b9a-15fd-2e62de95d699",
+  "name" : "background",
+  "label" : "background",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-masthead.jpg",
+    "alt" : "impact-masthead",
+    "loading" : "lazy",
+    "width" : 1440,
+    "height" : 705,
+    "max_width" : 1440,
+    "max_height" : 705
+  }
+}, {
+  "id" : "86c3fcac-942e-ffab-58ee-3d1b41b3555c",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Impact"
+}, {
+  "id" : "837c71f6-5e05-af9c-76d5-053ceff0cad4",
+  "name" : "group",
+  "label" : "Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : 3,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "d758a56c-8482-230d-2c24-f1515f3d4e77",
+    "name" : "group_name",
+    "label" : "Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Access & Accountability"
+  }, {
+    "id" : "3384f3ca-1288-d1ab-6f66-c0eba38065fa",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-1.png",
+      "alt" : "impact-1",
+      "loading" : "lazy",
+      "width" : 238,
+      "height" : 238,
+      "max_width" : 238,
+      "max_height" : 238
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "group_name" : "Access & Accountability",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-1.png",
+      "alt" : "impact-1",
+      "loading" : "lazy",
+      "width" : 238,
+      "height" : 238,
+      "max_width" : 238,
+      "max_height" : 238
+    }
+  }
+}, {
+  "id" : "e52f20b7-89a3-4e56-e122-4cfd5819bf66",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+} ]

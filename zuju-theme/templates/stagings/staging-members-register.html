@@ -7,6 +7,8 @@
 {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
 {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 
+{{ require_css(get_asset_url('zuju-theme/css/vendors/flatpickr-custom-dark.css')) }}
+
 {% block body %}
   <main class="public">
     <div class="auth-wrapper auth">
@@ -14,7 +16,10 @@
         <div class="auth__push-right form-dark">
           <h2 class="auth__heading">{{ currLang == "zh-cn" ? "新用户注册" : "New Account Sign Up" }}</h2>
 
-          {% module "module_16346992207435" path="/zuju-theme/modules/register-form", label="Register Form" %}
+          {% form 'register_form'
+            form_key='register',
+            form_to_use='2a19f705-b958-41a6-a8fa-3e3ff8d5ee78'
+          %}
         </div>
       </div>
     </div>
@@ -26,3 +31,81 @@
     var portal_id = "{{ portal_id }}";
   </script>
 {% endblock body %}
+
+{{ require_js('https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js', 'footer') }}
+{{ require_js('https://cdn.jsdelivr.net/npm/jquery-validation@1.19.3/dist/jquery.validate.min.js', 'footer') }}
+
+{% require_js position='footer'%}
+  <script>
+    let count = 0;
+    const total = $('.hs_cos_wrapper_type_form').length;
+
+    window.addEventListener('message', event => {
+      if (
+        event.data.type === 'hsFormCallback' &&
+        event.data.eventName === 'onFormReady'
+      ) {
+        count++
+        if (count < total) return
+
+
+        const $form = $(`[data-form-id="${event.data.id}"]`)
+        // console.log($form.find('.hs-button').css('transform', 'scale(2)'))
+        const $submitBtn = $('#hs_cos_wrapper_register_form').find('.hs-button')
+        $submitBtn.attr('disabled', true)
+
+        const $parent = $('[name="birthday"]').closest('.input')
+
+        $('[name="birthday"]').prev().css('display', 'none')
+        $('.hs-dateinput').css('display', 'none')
+        $parent.append(`<input type="text" class="birthday-custom hs-input" required />`)
+
+        $('.birthday-custom').change(function() {
+          $('[name="birthday"]').val($(this).val()).trigger('change')
+          $('[name="birthday"]').attr('required', true)
+          $('[name="birthday"]').prev().val($(this).val()).trigger('change')
+        })
+
+        let minDate = new Date()
+        minDate.setTime(minDate.valueOf() - 16 * 365 * 24 * 60 * 60 * 1000);
+
+        $('.birthday-custom').flatpickr({
+          minDate,
+          maxDate: "today",
+          onChange: function(selectedDates) {
+            $submitBtn.attr('disabled', !selectedDates.length)
+          }
+        })
+
+        $('[name="country_dropdown"]').on('change', function() {
+          $('.hs-input.hs-fieldtype-intl-phone')
+            .find('select')
+            .val($(this).val())
+            .trigger('change')
+        })
+
+
+        // Test jquery validate
+        // $form.validate({
+        //   rules: {
+        //     username: "required",
+        //     email: "required",
+        //     birthday: "required"
+        //   },
+        //   messages: {
+        //     username: 'Enter uname',
+        //     email: 'isi emailnya woi',
+        //     birthday: 'isi woi',
+        //   }
+        // })
+      }
+    });
+
+
+    let formatted = []
+
+    console.log($('.hs-fieldtype-intl-phone'))
+
+    console.log(formatted)
+  </script>
+{% end_require_js %}
