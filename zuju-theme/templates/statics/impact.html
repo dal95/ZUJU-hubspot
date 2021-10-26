@@ -68,6 +68,11 @@
 				</div>
 			</div>
 		</section>
+
+		<div class="is-hidden">
+			{% module "impact_masthead" path="/zuju-theme/modules/impact-masthead", label="Impact Masthead" %}
+		</div>
+
 		<section class="bg-white lg:pb-24">
 			<div class="relative max-w-[1440px] flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
 				<div class="flex sm:flex-col justify-center">
@@ -101,6 +106,11 @@
 				</div>
 			</div>
 		</section>
+
+		<div class="is-hidden">
+			{% module "impact_bg_white" path="/zuju-theme/modules/impact-accountability", label="Impact bg white" %}
+		</div>
+
 		<section class="bg-zuju-gray-db">
 			<div class="relative max-w-[1440px] mx-auto py-16" x-data="parallax()" x-bind="root">
 				<div class="lg:w-2/3 sm:px-8 sm:-mt-32 lg:-mt-80 lg:mb-36 mx-auto">
@@ -189,7 +199,7 @@
 				</div>
 			</div>
 			<div class="w-full max-w-[1000px] mx-auto">
-				{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+				{# {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %} #}
 			</div>
 			<div class="py-16 pb-32" x-data="parallax()" x-bind="root">
 				<h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(16)">
@@ -210,6 +220,18 @@
 					<div><img class="h-14" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-peter-lim-scholarship.png" /></div>
 				</div>
 			</div>
+		</section>
+
+		<section class="bg-zuju-gray-db is-hidden">
+			{% module "impact_bg-dark" path="/zuju-theme/modules/impact-bg-dark", label="Impact bg dark" %}
+
+			{# Drag and drop area #}
+			{# <div class="w-full max-w-[1000px] mx-auto">
+				{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+			</div> #}
+
+			{# Alliances #}
+			{% module "alliances" path="/zuju-theme/modules/alliances", label="Alliances" %}
 		</section>
 	</main>
 </div>

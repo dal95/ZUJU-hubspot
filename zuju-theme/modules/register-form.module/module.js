@@ -6,6 +6,8 @@ function validateEmail (email) {
   return re.test(String(email).toLowerCase())
 }
 
+let hasErrors = []
+
 function asyncValidate (selector, callback) {
   const parent = $(selector).closest('.hs-form-field')
   const input = $(selector)
@@ -60,12 +62,22 @@ function asyncValidate (selector, callback) {
           </div>
           `
 
+        console.log({ messageType })
         if (messageType != 'success') {
-          $('#hs_form_target_register .hs-button').attr('disabled', true)
+          if (!hasErrors.find(item => item.message)) hasErrors.push(res.message)
+          // console.log(!hasErrors.find(item => message === res.message))
         } else {
-          $('#hs_form_target_register .hs-button').attr('disabled', false)
+          const index = hasErrors.findIndex(item => item.includes(res.message.split('_')[0]))
+          // console.log(res.message)
+          // console.log(hasErrors)
+          // console.log(index)
+          if (index >= 0) hasErrors.splice(index, index + 1)
         }
 
+        console.log(hasErrors.length)
+
+
+        $('#hs_form_target_register .hs-button').attr('disabled', !!hasErrors.length)
         parent.append(messageEl)
       })
       .catch(err => console.error(err))
@@ -139,28 +151,28 @@ window.addEventListener('message', event => {
       .trigger('focusout')
 
     // Birthday validation
-    const BOD = $(`[name="birthday"]`)
-    const inFuture = date => {
-      return date.setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0)
-    }
-    // console.log(BOD)
+    // const BOD = $(`[name="birthday"]`)
+    // const inFuture = date => {
+    //   return date.setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0)
+    // }
+    // // console.log(BOD)
 
-    BOD.on('change', () => {
-      // console.log('changed')
-      // console.log(inFuture(new Date(BOD.val())))
-    })
+    // BOD.on('change', () => {
+    //   // console.log('changed')
+    //   // console.log(inFuture(new Date(BOD.val())))
+    // })
 
-    // Mutation observer
-    let observer = new MutationObserver(mutationRecords => {
-      console.log(mutationRecords) // console.log(the changes)
-    })
+    // // Mutation observer
+    // let observer = new MutationObserver(mutationRecords => {
+    //   console.log(mutationRecords) // console.log(the changes)
+    // })
 
-    // observe everything except attributes
-    // console.log('======== Mutation observer ======')
-    observer.observe(BOD[0], {
-      childList: true, // observe direct children
-      subtree: true, // and lower descendants too
-      characterDataOldValue: true // pass old data to callback
-    })
+    // // observe everything except attributes
+    // // console.log('======== Mutation observer ======')
+    // observer.observe(BOD[0], {
+    //   childList: true, // observe direct children
+    //   subtree: true, // and lower descendants too
+    //   characterDataOldValue: true // pass old data to callback
+    // })
   }
 })

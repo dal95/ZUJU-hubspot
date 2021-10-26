@@ -61,10 +61,13 @@
         </div>
       </div>
     </section> #}
-    {% module "home_masthead"
-      path="/zuju-theme/modules/masthead-video",
-      label="Masthead video"
-    %}
+
+    <div class="is-hidden">
+      {% module "home_masthead"
+        path="/zuju-theme/modules/masthead-video",
+        label="Masthead video"
+      %}
+    </div>
 
     {# <section class="sm:hidden">
       <div
@@ -468,7 +471,8 @@
                   {% endif %}
                 </button>
               </a>
-              <button class="hidden text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4" x-on:click="playing = true">
+
+              <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4" x-on:click="playing = true">
                 {% if content.language.languageTag == "zh-cn" %}
                   观看预告片
                 {% else %}
