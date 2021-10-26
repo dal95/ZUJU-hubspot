@@ -49,6 +49,10 @@ document.addEventListener("alpine:init", () => {
     new ResizeObserver(callback).observe(el);
   });
 
+  Alpine.magic("MO", (el) => (callback, config = {}) => {
+    new MutationObserver(callback).observe(el, config);
+  });
+
   Alpine.magic("scrollToMid", (el) => () => {
     window.scrollTo({
       top: el.offsetTop - window.innerHeight / 2 + el.clientHeight / 2,

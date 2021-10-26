@@ -14,18 +14,36 @@
         </div>
         <div class="absolute inset-0 bg-gradient-to-b from-zuju-gray-db/0 via-zuju-gray-db/25 to-zuju-gray-db"></div>
         <div class="relative flex flex-col items-center justify-center sm:p-8">
-          <h1 class="text-white text-6xl sm:text-4xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">Name My Mask</h1>
+          <h1 class="text-white text-6xl sm:text-4xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
+            {% if content.language.languageTag == "zh-cn" %}
+              给我的面具命名 
+            {% else %}
+              Name My Mask
+            {% endif %}
+          </h1>
           <div class="flex sm:flex-col items-center justify-center">
             <div class="lg:w-1/2">
               <h1 class="text-white text-3xl sm:text-2xl font-gtcond font-black text-center mb-16" x-bind="animate(12)">
-                Name Ronaldo's masks in ZujuGP's commercial and&nbsp;win
-              </h1>
+                {% if content.language.languageTag == "zh-cn" %}
+                  给在ZujuGP广告中出现的C罗面具命名，并赢得奖励 
+                {% else %}
+                  Name Ronaldo's masks in ZujuGP's commercial and&nbsp;win
+                {% endif %}
+                </h1>
               <p class="text-white text-center mb-8">
-                Cristiano Ronaldo wears our unique ZujuGP mask in this commercial. His 3 other stunning masks remain unnamed! Put in your suggestions as to what
-                we can name them after.
+                {% if content.language.languageTag == "zh-cn" %}
+                  C罗在这个广告中佩戴了独特的ZujuGP面具。还&#8288;有三个精美面具正等待你的命名！ 
+                {% else %}
+                  Cristiano Ronaldo wears our unique ZujuGP mask in this commercial. His 3 other stunning masks remain unnamed! Put in your suggestions as to what
+                  we can name them after.
+                {% endif %}
               </p>
               <p class="text-white text-center mb-8">
-                The most suggested name will be pooled together where we will pick 20 lucky winners of exclusive CR and ZujuGP merch!
+                {% if content.language.languageTag == "zh-cn" %}
+                  我们将把最受欢迎的名字汇集在一起，并从中挑选20位幸运中奖者，赢得C罗与ZujuGP的独家奖&#8288;品! 
+                {% else %}
+                  The most suggested name will be pooled together where we will pick 20 lucky winners of exclusive CR and ZujuGP merch!
+                {% endif %}
               </p>
             </div>
           </div>
@@ -39,19 +57,35 @@
           <div class="absolute -top-16 -left-16 sm:w-[160%] sm:max-w-auto lg:h-[480px]">
             <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball.png" />
           </div>
-          <div class="relative flex flex-wrap justify-center">
+          <div class="relative flex flex-wrap justify-center" x-data="{ formActive: false }" x-init="$MO(() => (formActive = $el.querySelectorAll('form').length > 0), { childList: true, subtree: true });">
             <h1 class="w-full text-3xl font-gtcond font-black text-center mb-16">
-              This campaign will only run until
-              <span class="text-zuju-red">21&nbsp;July&nbsp;2022</span>
+              {% if content.language.languageTag == "zh-cn" %}
+                此次活动将持续至<span class="text-zuju-red">2022年7月21日</span>结束 
+              {% else %}
+                This campaign will only run until
+                <span class="text-zuju-red">21&nbsp;July&nbsp;2022</span>
+              {% endif %}
             </h1>
-            <div class="lg:w-1/2 w-full border-r border-zuju-gray-d sm:px-8 lg:px-16">
-              <p class="text-lg font-bold uppercase sm:text-center pb-8">First, name the masks</p>
+            <div x-show="formActive" class="lg:w-1/2 w-full border-r border-zuju-gray-d sm:px-8 lg:px-16">
+              <p class="text-lg font-bold uppercase sm:text-center pb-8">
+                {% if content.language.languageTag == "zh-cn" %}
+                  首先，给面具命名
+                {% else %}
+                  First, name the masks
+                {% endif %}
+              </p>
             </div>
-            <div class="sm:hidden lg:w-1/2 w-full sm:px-8 lg:px-16">
-              <p class="text-lg font-bold uppercase pb-8">Next, tell us your name and email address</p>
+            <div x-show="formActive" class="sm:hidden lg:w-1/2 w-full sm:px-8 lg:px-16">
+              <p class="text-lg font-bold uppercase pb-8">
+                {% if content.language.languageTag == "zh-cn" %}
+                  之后，留下你的姓名与电子邮箱 
+                {% else %}
+                  Next, tell us your name and email address
+                {% endif %}
+              </p>
             </div>
 						{% if content.language.languageTag == "zh-cn" %}
-							<div class="w-full sm:px-8 lg:px-16 NMM-form" style="--next-text: '(CN) Next, tell us your name and email address';">
+							<div class="w-full sm:px-8 lg:px-16 NMM-form" style="--next-text: '之后，留下你的姓名与电子邮箱';">
 						{% else %}
 							<div class="w-full sm:px-8 lg:px-16 NMM-form" style="--next-text: 'Next, tell us your name and email address';">
 						{% endif %}
