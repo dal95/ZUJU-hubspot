@@ -1,0 +1,175 @@
+[ {
+  "id" : "167fe19f-f835-e68b-e7c5-58d20940e5a5",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text"
+}, {
+  "id" : "f0671b0a-da4f-33a9-43ac-429e5df012ff",
+  "name" : "article_group",
+  "label" : "Article",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "36374355-5221-49ca-470c-4717897a63d4",
+    "name" : "article_link",
+    "label" : "Article Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "08208f04-1790-9121-f97d-1543a4ffb4e3",
+    "name" : "article_image",
+    "label" : "Article Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "f8d415ad-7023-8b8a-ffb1-c52bebf58f32",
+    "name" : "article_title",
+    "label" : "Article Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "1585ef5a-7e7a-5f69-1891-a8d3aea74c92",
+    "name" : "article_description",
+    "label" : "Article Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "article_link" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "article_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }
+}, {
+  "id" : "89c435da-1cf0-8dc4-72f2-998108d9adb5",
+  "name" : "article_2",
+  "label" : "Article 2",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "16f69fee-976a-56bf-aec9-6fad22cf4e80",
+    "name" : "article_link",
+    "label" : "Article Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "default" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    }
+  }, {
+    "id" : "33ad53b4-a3a1-b3d9-f4f8-db04f6c325e0",
+    "name" : "article_image",
+    "label" : "Article Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }, {
+    "id" : "2d4f00a2-6ef3-3ef2-598b-b8231376f65e",
+    "name" : "article_title",
+    "label" : "Article Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "b067ff2d-08a2-57d6-c58e-c86cceab0404",
+    "name" : "article_description",
+    "label" : "Article Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "article_link" : {
+      "content_id" : null,
+      "href" : "",
+      "type" : "EXTERNAL"
+    },
+    "article_image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }
+}, {
+  "id" : "3ef3b7bb-fa3b-538d-1c93-e8d8caff2fa3",
+  "name" : "convo_title",
+  "label" : "Convo Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "10063767-e43a-d15e-8238-ed4d389d2042",
+  "name" : "convo_button",
+  "label" : "Convo Button",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+} ]

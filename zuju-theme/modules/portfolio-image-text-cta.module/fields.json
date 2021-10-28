@@ -1,0 +1,84 @@
+[ {
+  "id" : "69a6349e-a65c-0f0a-28a5-bd30b9e495ac",
+  "name" : "main_title",
+  "label" : "Main Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "Main Title",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "ZujuGamePlay"
+}, {
+  "id" : "8def12d7-a0fb-dbd9-a77c-efcbc7c7c994",
+  "name" : "card_image",
+  "label" : "Card Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay.png",
+    "alt" : "gameplay",
+    "loading" : "lazy",
+    "width" : 1090,
+    "height" : 1160,
+    "max_width" : 1090,
+    "max_height" : 1160
+  }
+}, {
+  "id" : "1da80a1e-0ca6-e940-0c55-0ba0e6d30c45",
+  "name" : "description_html",
+  "label" : "Description (html)",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>We cannot wait to share with you<br><strong>ZujuGamePlay</strong><br>- our flagship product centred on digitising the LIVE game experience.<br><strong>ZujuGamePlay</strong><br>is an interactive, real-time screening venue and virtual stadium where you can participate as a fan, pundit, bidder or event creator. Host<br>your personal Owner's Box or join the brands you love for exclusive drops and content. The live game just got a lot less boring!</p>"
+}, {
+  "id" : "149756e7-5b3d-1f0b-5e15-53eb21702485",
+  "name" : "cta",
+  "label" : "CTA",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "362635c6-c0c0-844b-efed-896b7032a0b2",
+    "name" : "button_title",
+    "label" : "Button Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Button Title",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Find Out More"
+  }, {
+    "id" : "c2dde25a-ea45-da44-c7a4-ce1aca4404df",
+    "name" : "button_url",
+    "label" : "Button URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "type" : "url",
+    "default" : {
+      "type" : "EXTERNAL",
+      "href" : "/portfolio/zujugameplay",
+      "content_id" : null
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "button_title" : "Find Out More",
+    "button_url" : {
+      "type" : "EXTERNAL",
+      "href" : "/portfolio/zujugameplay",
+      "content_id" : null
+    }
+  }
+} ]

@@ -31,10 +31,10 @@
             {% if content.language.languageTag == "zh-cn" %}
             通过兑换获得的积分购物或者赢取其他奖励！你还有机会得到蹴蹴ZujuGP终极会员的头衔。Z积分可以兑换专属奖品并获得独特体验。请开启注册或者选择登录已有账号，参与到蹴蹴ZujuGP的生态系统中去，积累更多的积分吧！
             {% else %}
-              Be rewarded for shopping and spending time with us! 
-              You might even earn the vaunted title of the ZujuGP Ultimate Fan! 
-              Earn Z Points to redeem exclusive prizes and wicked experiences. 
-              Simply sign up or log in, if you are already registered. 
+              Be rewarded for shopping and spending time with us!
+              You might even earn the vaunted title of the ZujuGP Ultimate Fan!
+              Earn Z Points to redeem exclusive prizes and wicked experiences.
+              Simply sign up or log in, if you are already registered.
               Every activity on our ecosystem is designed to help you accumulate points!
             {% endif %}
           </p>
@@ -61,6 +61,11 @@
         </div>
       </div>
     </section>
+
+    <div class="is-hidden">
+      {% module "rewards_masthead" path="/zuju-theme/modules/rewards-masthead", label="Rewards Masthead" %}
+    </div>
+
     <section class="bg-white" x-data="parallax()" x-bind="root">
       <div class="max-w-[1440px] lg:flex justify-center p-8 lg:pb-16 mx-auto">
         <div class="lg:w-1/2 flex items-center sm:py-8 lg:px-8 lg:py-16" x-bind="animate(16)">
@@ -97,6 +102,11 @@
         </div>
       </div>
     </section>
+
+    <div class="is-hidden">
+      {% module "rewards_redemption" path="/zuju-theme/modules/rewards-redemption", label="Rewards redemption" %}
+    </div>
+
     <section class="bg-gradient-to-b from-white to-zuju-gray-db">
       <div class="max-w-[1440px] flex flex-col items-center p-8 mx-auto">
         <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black text-center sm:mb-8 lg:mb-16">
@@ -113,7 +123,12 @@
         {% endif %}
       </div>
     </section>
-    
+
+    <div class="is-hidden">
+      {% module "rewards_tier" path="/zuju-theme/modules/rewards-tier", label="Rewards tier" %}
+    </div>
+
+    {# Spacer #}
     <div class="bg-zuju-gray-db sm:h-8 lg:h-36" />
 
     <section class="bg-zuju-gray-db">
@@ -413,6 +428,12 @@
               <img class="mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/socmed.png" />
             </section>
           </div>
+
+          <div class="is-hidden">
+            {% module "rewards_content_grid" path="/zuju-theme/modules/rewards-content-grid", label="Grid Content" %}
+          </div>
+
+          {# Content grid #}
           <div class="sm:order-last sm:w-full lg:w-5/6 lg:px-8" x-data="parallax()" x-bind="root">
             <section class="mb-24">
               <h2 class="text-white text-4xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(8)">
@@ -553,7 +574,7 @@
                     1积分
                     {% else %}
                     1 Points
-                    {% endif %}  
+                    {% endif %}
                   </div>
                 </div>
               </div>
@@ -723,7 +744,7 @@
                                 1积分
                                 {% else %}
                                 1 Points
-                                {% endif %} 
+                                {% endif %}
                               </div>
                             </div>
                           </div>
@@ -747,6 +768,6 @@
     <section class="bg-zuju-gray-db">
       <div class="w-full max-w-[1000px] mx-auto pb-32">{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}</div>
     </section>
-  </main>  
+  </main>
 </div>
 {% endblock body%}

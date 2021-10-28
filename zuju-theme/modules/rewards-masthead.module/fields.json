@@ -1,0 +1,191 @@
+[ {
+  "id" : "12c5b4cd-8593-47ea-d925-b9f249e865cc",
+  "name" : "background",
+  "label" : "Background",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-masthead.png",
+    "alt" : "rewards-masthead",
+    "loading" : "lazy",
+    "width" : 1440,
+    "height" : 755,
+    "max_width" : 1440,
+    "max_height" : 755
+  }
+}, {
+  "id" : "46ff6b5d-6d1e-10f6-cfae-9919b4e314a8",
+  "name" : "main_title",
+  "label" : "Main title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Earn points and redeem rewards"
+}, {
+  "id" : "cc3261b0-8dc3-f74d-ce0a-202f6c861a57",
+  "name" : "content",
+  "label" : "Content",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "47f7da91-fde9-130e-b0a1-97fc3a265e71",
+    "name" : "paragraph",
+    "label" : "Paragraph",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>Be rewarded for shopping and spending time with us! You might even earn the vaunted title of the ZujuGP Ultimate Fan! Earn Z Points to redeem exclusive prizes and wicked experiences. Simply sign up or log in, if you are already registered. Every activity on our ecosystem is designed to help you accumulate points!</span></p>"
+  }, {
+    "id" : "4741e2e4-66ab-a292-d47f-6c47ef994a64",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Earn Loyalty Z Points"
+  }, {
+    "id" : "40753b1a-9352-a269-6180-b005371cda8d",
+    "name" : "button_primary",
+    "label" : "Button Primary",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "d7be5fe7-30a5-8750-a389-1bb7e453ea8a",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Login Now"
+    }, {
+      "id" : "bd7ff191-4f77-fb91-b37f-5ff80ef8ddfd",
+      "name" : "link_field",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.zujugp.com/registration",
+          "content_id" : null
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "text" : "Login Now",
+      "link_field" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.zujugp.com/registration",
+          "content_id" : null
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }, {
+    "id" : "fb5e634e-54bd-a6fd-7253-2bd47652645e",
+    "name" : "button_secondary",
+    "label" : "Button Secondary",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "1c6add8e-2282-fab0-8971-213481f784a9",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Sign Up Now"
+    }, {
+      "id" : "1a2bb1a6-4615-3eaf-fb02-59d18beee1e7",
+      "name" : "link_field",
+      "label" : "Link",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.zujugp.com/registration?hsLang=en",
+          "content_id" : null
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "text" : "Sign Up Now",
+      "link_field" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.zujugp.com/registration?hsLang=en",
+          "content_id" : null
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "paragraph" : "<p><span>Be rewarded for shopping and spending time with us! You might even earn the vaunted title of the ZujuGP Ultimate Fan! Earn Z Points to redeem exclusive prizes and wicked experiences. Simply sign up or log in, if you are already registered. Every activity on our ecosystem is designed to help you accumulate points!</span></p>",
+    "title" : "Earn Loyalty Z Points",
+    "button_primary" : {
+      "text" : "Login Now",
+      "link_field" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.zujugp.com/registration",
+          "content_id" : null
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    },
+    "button_secondary" : {
+      "text" : "Sign Up Now",
+      "link_field" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.zujugp.com/registration?hsLang=en",
+          "content_id" : null
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+} ]

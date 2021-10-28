@@ -1,0 +1,40 @@
+[ {
+  "id" : "5e55db88-1c07-ae50-2946-f034b1572226",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/fan-level.png",
+    "alt" : "fan-level",
+    "loading" : "lazy",
+    "width" : 765,
+    "height" : 350,
+    "max_width" : 765,
+    "max_height" : 350
+  }
+}, {
+  "id" : "14a7643f-ce7f-17e4-3148-e74edb69caf2",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Rewards Redemption"
+}, {
+  "id" : "4121e197-13a8-e91e-71e5-07fb48236076",
+  "name" : "paragraph",
+  "label" : "Paragraph",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Work your way up. We have Fans. Super Fans. And the illustrious Ultimate Fans. Each tier exists to reward you - bonus raffle chances, exclusive invites, extra birthday gifts .. we are not stopping there!</p>\n<p>Supers and Ultimates will unlock privilege rewards. Z Points not spent following transactions will be carried over to your next redemption. Z Points DO NOT expire but you will need to be in receipt of points in the last 90 days to enjoy benefits.</p>"
+} ]

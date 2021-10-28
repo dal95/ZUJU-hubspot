@@ -1,7 +1,7 @@
 [ {
   "id" : "df53b88e-e305-9b9a-15fd-2e62de95d699",
   "name" : "background",
-  "label" : "background",
+  "label" : "Background",
   "required" : false,
   "locked" : false,
   "responsive" : true,
@@ -42,17 +42,6 @@
     "default" : null
   },
   "children" : [ {
-    "id" : "d758a56c-8482-230d-2c24-f1515f3d4e77",
-    "name" : "group_name",
-    "label" : "Name",
-    "required" : false,
-    "locked" : false,
-    "validation_regex" : "",
-    "allow_new_line" : false,
-    "show_emoji_picker" : false,
-    "type" : "text",
-    "default" : "Access & Accountability"
-  }, {
     "id" : "3384f3ca-1288-d1ab-6f66-c0eba38065fa",
     "name" : "image",
     "label" : "Image",
@@ -72,12 +61,22 @@
       "max_width" : 238,
       "max_height" : 238
     }
+  }, {
+    "id" : "d758a56c-8482-230d-2c24-f1515f3d4e77",
+    "name" : "group_name",
+    "label" : "Name",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Access & Accountability"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : {
-    "group_name" : "Access & Accountability",
     "image" : {
       "size_type" : "auto",
       "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-1.png",
@@ -87,7 +86,8 @@
       "height" : 238,
       "max_width" : 238,
       "max_height" : 238
-    }
+    },
+    "group_name" : "Access & Accountability"
   }
 }, {
   "id" : "e52f20b7-89a3-4e56-e122-4cfd5819bf66",

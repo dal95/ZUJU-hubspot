@@ -392,6 +392,8 @@ h4,
 .button,
 .hs-button {
   font-family: var(--ff-accent);
+  font-weight: bold;
+  margin-bottom: 2.5rem;
 }
 
 h1,
@@ -2620,7 +2622,7 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 .auth-wrapper.auth-register {
   min-height: unset;
-  padding: 70px 0;
+  padding: 100px 0;
 }
 
 .auth {

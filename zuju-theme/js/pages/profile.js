@@ -9,6 +9,13 @@ window.addEventListener('message', event => {
     count++
     if (count < total) return
 
+    $('[name="country_dropdown"]').on('change', function () {
+      $('.hs-input.hs-fieldtype-intl-phone')
+        .find('select')
+        .val($(this).val())
+        .trigger('change')
+    })
+
     $('[name="custom_avatar"]').each(function () {
       const avatarWrap = document.createElement('div')
       avatarWrap.classList.add('avatar-wrap')

@@ -78,7 +78,7 @@
             <section class="blog-post__body mb-24">
               {{ content.post_body }}
             </section>
-            
+
             {% if request_contact.is_logged_in %}
               {% if content.language.languageTag == "zh-cn" %}
                 <div class="blog-post__comments-listing" style="--id-say: '有话要说';">
@@ -143,16 +143,22 @@
                 </p>
               </div>
             {% endif %}
-            
+
           </div>
           <div class="sm:hidden lg:w-1/4 p-8">
             <div class="w-full">
               {% module "module_16330991548833" path="/zuju-theme/modules/blog-adspace", label="Ad Space" %}
             </div>
             <div class="pt-16">
-              <h5 class="text-zuju-red text-sm font-bold border-b uppercase pb-2 mb-2">Trending</h5>
+              <h5 class="text-zuju-red text-sm font-bold border-b uppercase pb-2 mb-2">
+                {{ content.language.languageTag == "zh-cn" ? '最新' : 'Latest' }}
+              </h5>
               {% set renderCount = { value: 0 } %}
-              {% for pop_post in blog_popular_posts('default', 3) %}
+              {% set latest_by_tags = blog_recent_tag_posts('default', content.tag_list|first, 3) %}
+              {% set generic_recent_posts = blog_recent_posts('default', 3) %}
+              {% set latest = latest_by_tags|length ? latest_by_tags : generic_recent_posts %}
+
+              {% for pop_post in latest %}
                 {% if pop_post.id != content.id and renderCount.value < 2 %}
                   {% set renderCount = renderCount.update({ value: renderCount.value + 1 })%}
                   <a href="{{ pop_post.absoluteUrl }}">

@@ -1,0 +1,136 @@
+[ {
+  "id" : "3bebd2c3-500b-81ac-f4a9-e3eb017895b0",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-ball.jpg",
+    "alt" : "about-ball",
+    "loading" : "lazy",
+    "width" : 2400,
+    "height" : 960,
+    "max_width" : 2400,
+    "max_height" : 960
+  }
+}, {
+  "id" : "e2947edd-c472-40f0-707b-900a263c8b0f",
+  "name" : "main_description",
+  "label" : "Main description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p><span>You may be looking for opportunities to upskill, gain employment or watch a game, shop, play and interact. This will no longer be something that only one person does. You won't need a new standalone app or travel to a stadium or find new ways to access different components of what interests you. What you want will be found on&nbsp;</span><strong>a single platform</strong><span>.</span></p>"
+}, {
+  "id" : "c5ea27f5-95a3-2fc3-dab3-fec90294ea08",
+  "name" : "section_1",
+  "label" : "Section 1",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7e8b8d7f-7039-1e77-41c7-d61e90b7fae1",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "This platform is ZujuGP."
+  }, {
+    "id" : "74fec99c-320e-8d56-41d7-415ad838e820",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>Where immediacy of use and interactivity of content will directly contribute to your enjoyment, allow you to connect globally and profit in your love for the sport.</span></p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "This platform is ZujuGP.",
+    "description" : "<p><span>Where immediacy of use and interactivity of content will directly contribute to your enjoyment, allow you to connect globally and profit in your love for the sport.</span></p>"
+  }
+}, {
+  "id" : "7ff70d96-58a4-3874-2886-f7c04c03230b",
+  "name" : "section_2",
+  "label" : "Section_2",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "4510278f-5349-3151-bdee-df2d0285b2d6",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "This platform is ZujuGP."
+  }, {
+    "id" : "86027ea4-3745-2173-c11b-053a1a6d6d54",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>Where immediacy of use and interactivity of content will directly contribute to your enjoyment, allow you to connect globally and profit in your love for the sport.</span></p>"
+  }, {
+    "id" : "0f87f992-9070-d392-dedc-8b68782c0b66",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-stadium.png",
+      "alt" : "about-stadium",
+      "loading" : "lazy",
+      "width" : 480,
+      "height" : 480,
+      "max_width" : 480,
+      "max_height" : 480
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "This platform is ZujuGP.",
+    "description" : "<p><span>Where immediacy of use and interactivity of content will directly contribute to your enjoyment, allow you to connect globally and profit in your love for the sport.</span></p>",
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-stadium.png",
+      "alt" : "about-stadium",
+      "loading" : "lazy",
+      "width" : 480,
+      "height" : 480,
+      "max_width" : 480,
+      "max_height" : 480
+    }
+  }
+}, {
+  "id" : "5b670b1d-cc4b-88e9-ff9d-525dd98c9006",
+  "name" : "footer",
+  "label" : "Footer",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "ZujuGP will be an online immersive that mirrors our world."
+} ]

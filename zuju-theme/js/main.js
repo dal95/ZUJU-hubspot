@@ -1,5 +1,27 @@
 const triggerClose = $('.modal__overlay, [data-modal-close]')
 
+$(document).ready(function () {
+  var lang = navigator.language
+  var currURL = window.location.href
+  var currPath = location.pathname
+
+  //lang = "zh-cn";
+
+  if (
+    currPath == '/' &&
+    currURL.toLowerCase().indexOf('/zh-cn') == -1 &&
+    (lang.toLowerCase().indexOf('cn') !== -1 ||
+      lang.toLowerCase().indexOf('zh') !== -1)
+  ) {
+    var redirectURL =
+      location.protocol + '//' + window.location.hostname + '/zh-cn' + currPath
+    //console.log(redirectURL);
+    window.location.replace(redirectURL)
+  } else {
+    //console.log("currPath is EN homepage or lang is NOT zh-cn or already on /zh-cn, so do nothing");
+  }
+})
+
 $('[data-modal-target]').on('click', function () {
   // togggleBodyScroll(true)
   modalIn(`#${$(this).data('modal-target')}`)

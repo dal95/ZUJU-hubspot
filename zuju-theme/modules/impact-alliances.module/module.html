@@ -1,0 +1,14 @@
+<div class="py-16 pb-32" x-data="parallax()" x-bind="root">
+  <h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(16)">
+    {{ module.title }}
+  </h1>
+  <div class="flex sm:flex-col gap-x-8 gap-y-8 items-center justify-center">  
+    {% for item in module.logo %}
+      {% if item.src %}
+       {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
+    
+        <div><img class="h-14" src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} /></div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

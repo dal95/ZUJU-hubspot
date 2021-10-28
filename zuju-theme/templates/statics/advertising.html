@@ -10,7 +10,7 @@
 {% block body %}
 <div class="app">
 	<main class="bg-zuju-gray-1" x-data="{}">
-		<section>
+		<section x-data="{ noti: false }">
 			<div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
 				<div class="absolute inset-0">
 					<img
@@ -50,28 +50,46 @@
 							</p>
 							<p class="text-white mb-8">
 								{% if content.language.languageTag == "zh-cn" %}
-									请通过邮件
-									<a class="underline" href="mailto:partners@zujugroup.com">partners@zujugroup.com</a>
-									联系我们的团队以了解更多的新机会。
+									请联系我们的团队以了解更多的新机会。
 								{% else %}
-									Please contact our team at
-									<a class="underline" href="mailto:partners@zujugroup.com">partners@zujugroup.com</a>
-									for sales and partnership opportunities.
+									Please contact our team for sales and partnership opportunities.
 								{% endif %}
 							</p>
-							<a href="mailto:partners@zujugroup.com">
-								<button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">
-									{% if content.language.languageTag == "zh-cn" %}
-										联系我们
-									{% else %}
-										How we can help
-									{% endif %}
-								</button>
-							</a>
+							<button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4" x-on:click="noti = true">
+								{% if content.language.languageTag == "zh-cn" %}
+									联系我们
+								{% else %}
+									How we can help
+								{% endif %}
+							</button>
 						</div>
 					</div>
 				</div>
 			</div>
+			<div
+        x-cloak=""
+        x-show="noti"
+        x-transition.opacity.duration.300ms=""
+        class="fixed inset-0 bg-black/90 z-[999]"
+        x-on:click="noti = false"
+        x-on:keyup.window.escape="noti = false"
+      >
+        <div class="h-screen w-full flex items-start py-16 justify-center overflow-y-scroll" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
+          <div class="relative sm:w-full">
+            <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
+            <div x-on:click.stop="" class="AP-form bg-white">
+							<h1 class="text-4xl mobile:text-2xl font-gtcond font-black text-center pt-8 lg:-mb-8">
+								{% if content.language.languageTag == "zh-cn" %}
+									广告咨询
+								{% else %}
+									Advertise Enquiry
+								{% endif %}
+							</h1>
+							{% module "form" path="@hubspot/form" %}
+						</div>
+          </div>
+        </div>
+      </div>
 		</section>
 	</main>
 </div>

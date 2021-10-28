@@ -1,1 +1,40 @@
-[ ]
+[ {
+  "id" : "2f452141-504d-ccc0-8663-91d95fb59c29",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/global-goals.png",
+    "alt" : "global-goals",
+    "loading" : "lazy",
+    "width" : 1012,
+    "height" : 266,
+    "max_width" : 1012,
+    "max_height" : 266
+  }
+}, {
+  "id" : "0517d2a4-4ecd-3300-4ce2-010662ae2e8e",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Access & Accountability"
+}, {
+  "id" : "44420eb6-adc6-13c9-3fcb-fb7aaf475678",
+  "name" : "paragraph",
+  "label" : "Paragraph",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>We work together with partners and portfolio companies to connect and transform football communities transparently and responsibly.</p>\n<p>We use technology as a digital spine to democratise opportunities from East to West, expanding diversity in talent and promoting equity for all.</p>"
+} ]

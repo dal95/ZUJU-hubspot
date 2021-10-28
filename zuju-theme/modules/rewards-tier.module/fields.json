@@ -1,0 +1,32 @@
+[ {
+  "id" : "88f8ae53-9e9c-a71d-1cb5-da57d78cf9c9",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Member Tiers"
+}, {
+  "id" : "c8817f85-9caf-e757-1fdb-837fa8666336",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-loyalty-points.png",
+    "alt" : "rewards-loyalty-points",
+    "loading" : "lazy",
+    "width" : 1800,
+    "height" : 1299,
+    "max_width" : 1800,
+    "max_height" : 1299
+  }
+} ]

@@ -1,0 +1,21 @@
+[ {
+  "id" : "b6f172ec-a3dc-7079-e432-d5ef18d1c1e7",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "ZujuGP converges      <br>      <strong>media, tech</strong>      and      <strong>football</strong>"
+}, {
+  "picker" : "file",
+  "id" : "273179db-260b-154b-cbae-dbb3ac1b257d",
+  "name" : "video",
+  "label" : "Video",
+  "required" : false,
+  "locked" : false,
+  "type" : "file",
+  "default" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/wave.mp4"
+} ]

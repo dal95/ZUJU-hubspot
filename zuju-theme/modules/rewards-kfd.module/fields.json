@@ -1,0 +1,580 @@
+[ {
+  "id" : "c7ed4d77-9cd4-3867-75ab-3b333dbf7b5c",
+  "name" : "background",
+  "label" : "Background",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/kungfu.png",
+    "alt" : "kungfu",
+    "loading" : "lazy",
+    "width" : 1440,
+    "height" : 850,
+    "max_width" : 1440,
+    "max_height" : 850
+  }
+}, {
+  "id" : "6f9ed03e-2f03-fb4e-0f8a-790697489edc",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/theme-assets/images/kungfu-dash-logo.png",
+    "alt" : "kungfu-dash-logo",
+    "loading" : "lazy",
+    "width" : 271,
+    "height" : 140,
+    "max_width" : 271,
+    "max_height" : 140
+  }
+}, {
+  "id" : "a53182a6-4bca-2b2a-f072-5ace2180df0e",
+  "name" : "main_title",
+  "label" : "Main title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Be a super earner!"
+}, {
+  "id" : "2574ffa9-8288-9495-e393-ddd53f8dd56e",
+  "name" : "kdg",
+  "label" : "Kungfu Dash Game",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "6211158c-744a-6cf6-b2b8-3dc096171152",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Kung Fu Dash Game"
+  }, {
+    "id" : "52ad4c81-0ecb-2e71-f4da-1c1aed6cdcb5",
+    "name" : "tree",
+    "label" : "Tree",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "285dd46d-001c-1bd0-18e6-419550140f64",
+      "name" : "tree_parent",
+      "label" : "Tree parent",
+      "required" : false,
+      "locked" : false,
+      "children" : [ {
+        "id" : "2523e7ad-21b0-bacc-9d9a-14f7dd33ca57",
+        "name" : "number",
+        "label" : "Number",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number"
+      }, {
+        "id" : "350ea859-f6aa-4e3d-bd39-d30f56a5245b",
+        "name" : "text",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "EVERY DOLLAR SPENT"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "text" : "EVERY DOLLAR SPENT"
+      }
+    }, {
+      "id" : "34b4df38-e685-293c-218a-3b2b1acdf4fc",
+      "name" : "tree_children",
+      "label" : "Tree children",
+      "required" : false,
+      "locked" : false,
+      "occurrence" : {
+        "min" : null,
+        "max" : null,
+        "sorting_label_field" : null,
+        "default" : null
+      },
+      "children" : [ {
+        "id" : "525905a4-37cd-cc16-b401-5e5dffbd6bc6",
+        "name" : "number",
+        "label" : "Number",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number"
+      }, {
+        "id" : "051e82b4-348d-e677-a713-0e9ea40d60a4",
+        "name" : "text",
+        "label" : "Text",
+        "required" : false,
+        "locked" : false,
+        "validation_regex" : "",
+        "allow_new_line" : false,
+        "show_emoji_picker" : false,
+        "type" : "text",
+        "default" : "EVERY DOLLAR SPENT"
+      } ],
+      "tab" : "CONTENT",
+      "expanded" : false,
+      "type" : "group",
+      "default" : {
+        "text" : "EVERY DOLLAR SPENT"
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "tree_parent" : {
+        "text" : "EVERY DOLLAR SPENT"
+      },
+      "tree_children" : {
+        "text" : "EVERY DOLLAR SPENT"
+      }
+    }
+  }, {
+    "id" : "cd76a32c-3a6c-0f07-0bbb-8074d7114fe9",
+    "name" : "inline_description",
+    "label" : "Inline description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>*One-time bonus, reset after rewarding</p>\n<p>Based on rolling calendar days</p>"
+  }, {
+    "id" : "fce1c129-2dc7-01e0-a6e3-73e06457bd17",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!</span></p>"
+  }, {
+    "id" : "f89230c1-62fa-af5b-047f-29ee95313f2e",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "4be1ab1b-825d-193b-0731-88f4aa9e1eba",
+      "name" : "url",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.zujugp.com/kungfu-dash",
+          "content_id" : null
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }, {
+      "id" : "de92fb41-c376-8910-8ffd-969a9048e7f5",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "PLAY KUNGFU DASH"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "url" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.zujugp.com/kungfu-dash",
+          "content_id" : null
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "PLAY KUNGFU DASH"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Kung Fu Dash Game",
+    "tree" : {
+      "tree_parent" : {
+        "text" : "EVERY DOLLAR SPENT"
+      },
+      "tree_children" : {
+        "text" : "EVERY DOLLAR SPENT"
+      }
+    },
+    "inline_description" : "<p>*One-time bonus, reset after rewarding</p>\n<p>Based on rolling calendar days</p>",
+    "description" : "<p><span>For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!</span></p>",
+    "button" : {
+      "url" : {
+        "url" : {
+          "type" : "EXTERNAL",
+          "href" : "https://www.zujugp.com/kungfu-dash",
+          "content_id" : null
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      },
+      "text" : "PLAY KUNGFU DASH"
+    }
+  }
+}, {
+  "id" : "14e53916-8f1b-b7d7-d7e1-cc328e53013d",
+  "name" : "dth",
+  "label" : "Daily Treasure Hunt",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "fa3e532c-3480-c008-d4d3-a09eb3cfc2bd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Daily Treasure Hunt"
+  }, {
+    "id" : "27057ad8-8b14-a3bb-a0f9-67fb611c6126",
+    "name" : "list",
+    "label" : "List",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_value_regex" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "children" : [ {
+      "id" : "4b5e56ae-9b6f-f6c6-1e01-bea3e2596b3a",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "DAILY LOGIN"
+    }, {
+      "id" : "c08caa58-d7eb-6179-c45e-e86028ceb8a0",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "EVERY DOLLAR SPENT"
+    }, {
+      "id" : "92624cc1-00a1-03dc-7fcf-1c4b225b6efd",
+      "name" : "number",
+      "label" : "Number",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number"
+    }, {
+      "id" : "b5dff35d-bf7e-7578-f3c0-dbc85479d958",
+      "name" : "type",
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "default", "Default" ], [ "dark", "Dark" ] ],
+      "type" : "choice",
+      "default" : "default"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "title" : "DAILY LOGIN",
+      "text" : "EVERY DOLLAR SPENT",
+      "type" : "default"
+    }
+  }, {
+    "id" : "a2d6577e-22a4-4c7c-d3e5-d27c86fda8dd",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!</span></p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Daily Treasure Hunt",
+    "list" : {
+      "title" : "DAILY LOGIN",
+      "text" : "EVERY DOLLAR SPENT",
+      "type" : "default"
+    },
+    "description" : "<p><span>For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!</span></p>"
+  }
+}, {
+  "id" : "80272aac-d0e2-29fb-4ea4-a80ade74372e",
+  "name" : "cr7",
+  "label" : "CR7 (Cross Ref 7)",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "1727ca46-9c87-c44a-3832-260c6ac2dfbd",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Daily Treasure Hunt"
+  }, {
+    "id" : "07f69304-046f-5cff-923d-b4de892733b9",
+    "name" : "list",
+    "label" : "List",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_value_regex" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "children" : [ {
+      "id" : "80ab0f5b-4b67-2849-d762-437fc10ff472",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "DAILY LOGIN"
+    }, {
+      "id" : "2e3b9ce4-e540-638b-8fc1-c0fe462dfbe4",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "EVERY DOLLAR SPENT"
+    }, {
+      "id" : "98254eb6-93f1-4975-fa14-ae3e24275022",
+      "name" : "number",
+      "label" : "Number",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number"
+    }, {
+      "id" : "f7d09253-7ed5-3a2f-2414-ad34daf9f8aa",
+      "name" : "type",
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "default", "Default" ], [ "dark", "Dark" ] ],
+      "type" : "choice",
+      "default" : "default"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "title" : "DAILY LOGIN",
+      "text" : "EVERY DOLLAR SPENT",
+      "type" : "default"
+    }
+  }, {
+    "id" : "cdf889bc-9550-476b-0e25-575b42556f19",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!</span></p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Daily Treasure Hunt",
+    "list" : {
+      "title" : "DAILY LOGIN",
+      "text" : "EVERY DOLLAR SPENT",
+      "type" : "default"
+    },
+    "description" : "<p><span>For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!</span></p>"
+  }
+}, {
+  "id" : "38ff2feb-3e05-6d99-1ce0-0a953f074375",
+  "name" : "share",
+  "label" : "Share ZujuGP",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0fb08ee3-d153-83a8-9357-3263395c0cd4",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Daily Treasure Hunt"
+  }, {
+    "id" : "53a4f804-f8c8-60ed-709e-0fa3667cb9e9",
+    "name" : "list",
+    "label" : "List",
+    "required" : false,
+    "locked" : false,
+    "visibility" : {
+      "controlling_field" : null,
+      "controlling_value_regex" : null,
+      "operator" : "NOT_EMPTY",
+      "access" : null,
+      "hidden_subfields" : null
+    },
+    "children" : [ {
+      "id" : "b3bc4952-c77f-1988-7a51-7a270bccdeb5",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "DAILY LOGIN"
+    }, {
+      "id" : "19adf53d-c7f3-bd3b-7829-d56ef5287a26",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "EVERY DOLLAR SPENT"
+    }, {
+      "id" : "c7fee44e-5ca3-8694-c9d5-77134d0b5465",
+      "name" : "number",
+      "label" : "Number",
+      "required" : false,
+      "locked" : false,
+      "display" : "text",
+      "step" : 1,
+      "type" : "number"
+    }, {
+      "id" : "bb3273f7-fd70-a64e-b294-5fc84de67f8d",
+      "name" : "type",
+      "label" : "Type",
+      "required" : false,
+      "locked" : false,
+      "display" : "select",
+      "choices" : [ [ "default", "Default" ], [ "dark", "Dark" ], [ "alt", "Alt" ] ],
+      "type" : "choice",
+      "default" : "default"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "title" : "DAILY LOGIN",
+      "text" : "EVERY DOLLAR SPENT",
+      "type" : "default"
+    }
+  }, {
+    "id" : "1f3db5cf-64fa-1d69-c6c5-fd28bb3b8e39",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!</span></p>"
+  }, {
+    "id" : "196ceab7-ffdf-05f1-f887-19314ffcc781",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : true,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Daily Treasure Hunt",
+    "list" : {
+      "title" : "DAILY LOGIN",
+      "text" : "EVERY DOLLAR SPENT",
+      "type" : "default"
+    },
+    "description" : "<p><span>For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!</span></p>",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    }
+  }
+} ]

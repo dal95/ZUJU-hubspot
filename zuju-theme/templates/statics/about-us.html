@@ -16,6 +16,11 @@
 					<source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/wave.mp4" />
 				</video>
 			</div>
+
+			<div class="is-hidden">
+				{% module "about_masthead" path="/zuju-theme/modules/about-masthead", label="Masthead" %}
+			</div>
+
 			<div class="relative z-20">
 				<section class="h-[80vh] max-w-[1440px] mx-auto flex items-center justify-center p-8" x-data="parallax()" x-bind="root">
 					{% if content.language.languageTag == "zh-cn" %}
@@ -36,6 +41,7 @@
           </h1>
           {% endif %}
 				</section>
+
 				<section class="max-w-[1440px] mx-auto lg:grid grid-cols-12 auto-rows-auto p-8">
 					<div class="row-start-1 col-end-12 col-span-5 sm:-mx-8 z-10" x-data="parallax()" x-bind="root">
 						<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-1.png" x-bind="animate(0)" />
@@ -530,6 +536,11 @@
 						</div>
 					</article>
 				</section>
+
+				<div class="is-hidden">
+					{% module "about_vision" path="/zuju-theme/modules/about-vision", label="Vision" %}
+				</div>
+
 				<section class="w-full bg-white sm:pt-8 sm:pb-24 lg:pt-16 lg:pb-40">
 					<div class="max-w-[1440px] p-8 mx-auto" x-data="parallax()" x-bind="root">
 						<p class="lg:w-7/12 sm:text-2xl lg:text-4xl text-center font-gtcond font-black mx-auto" x-bind="animate(-4)">
@@ -542,6 +553,7 @@
 						</p>
 					</div>
 				</section>
+
 				<section class="w-full bg-zuju-gray-2 pb-32">
 					<div class="max-w-[1440px] p-8 mx-auto">
 						<img class="lg:hidden w-full max-w-md -mt-24 mb-16 mx-auto" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-ball-mobile.jpg" />
@@ -625,6 +637,14 @@
 						</div>
 					</div>
 				</section>
+
+				<div class="is-hidden">
+					{% module "text_section" path="/zuju-theme/modules/text-section", label="Text section" %}
+				</div>
+
+				<div class="is-hidden">
+					{% module "about_zujugp" path="/zuju-theme/modules/about-zujugp", label="About ZujuGP" %}
+				</div>
 			</div>
 		</div>
 	</main>
