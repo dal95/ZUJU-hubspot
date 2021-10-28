@@ -1,0 +1,73 @@
+[ {
+  "id" : "4cb6d6f8-88cd-eef1-caca-a993b699c6cf",
+  "name" : "main_title",
+  "label" : "Main title",
+  "required" : true,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "Enter Page Title",
+  "allow_new_line" : false,
+  "show_emoji_picker" : true,
+  "type" : "text",
+  "default" : "Welcome to the ZujuGP Footballverse!"
+}, {
+  "id" : "d18d9acd-6ee2-0cce-08ca-1d3383a2dda2",
+  "name" : "card_image",
+  "label" : "Card Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/listing-header.jpg",
+    "alt" : "listing-header",
+    "loading" : "disabled",
+    "width" : 898,
+    "height" : 1200,
+    "max_width" : 898,
+    "max_height" : 1200
+  }
+}, {
+  "id" : "a7c153ec-c1b0-b53f-fdd8-7e85d8c201bd",
+  "name" : "mobile_background",
+  "label" : "Mobile Background",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "",
+    "alt" : null,
+    "loading" : "lazy"
+  }
+}, {
+  "id" : "d45bff86-9b28-2bba-7aa5-3a794d4d7ff7",
+  "name" : "text_field",
+  "label" : "Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "First text description",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Not unlike the internet, we create connections in a collective digital space shared by everyone. We are all about creating new experiences and opportunities so you can communicate, create, game and profit from your love of football. The greater the utility of our networks, the more we can do when connected!"
+}, {
+  "id" : "66832f2a-a291-18d0-07af-06065997c0a2",
+  "name" : "text_second",
+  "label" : "Text second",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "First text description",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "No surprise then that we are launching super cool projects to port football online. ZujuGP's projects will be built around an ecosystem of community driven technology, decentralised and anchored around innovative blockchain tech. This will be deployable universally across other industry."
+} ]

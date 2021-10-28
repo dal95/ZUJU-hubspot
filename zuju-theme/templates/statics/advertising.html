@@ -70,14 +70,23 @@
         x-cloak=""
         x-show="noti"
         x-transition.opacity.duration.300ms=""
-        class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+        class="fixed inset-0 bg-black/90 z-[999]"
         x-on:click="noti = false"
         x-on:keyup.window.escape="noti = false"
       >
-        <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
+        <div class="h-screen w-full flex items-start py-16 justify-center overflow-y-scroll" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
           <div class="relative sm:w-full">
             <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
-            <div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" %}</div>
+            <div x-on:click.stop="" class="AP-form bg-white">
+							<h1 class="text-4xl mobile:text-2xl font-gtcond font-black text-center pt-8 lg:-mb-8">
+								{% if content.language.languageTag == "zh-cn" %}
+									广告咨询
+								{% else %}
+									Advertise Enquiry
+								{% endif %}
+							</h1>
+							{% module "form" path="@hubspot/form" %}
+						</div>
           </div>
         </div>
       </div>

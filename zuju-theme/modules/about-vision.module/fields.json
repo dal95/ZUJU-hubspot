@@ -1,0 +1,109 @@
+[ {
+  "id" : "c0c400bc-5fc9-9b16-3c19-c42b7753c232",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "A community platform bridging East and West, we are an exchange not just between fans but worlds between businesses and ecosystems."
+}, {
+  "id" : "53c460ad-7645-950e-7031-af577d33b485",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p><span>It is a powerful and simple idea that with tech, everyone who loves football can come together to interact in diverse ways. Both business economies and individual economies can benefit.</span></p>"
+}, {
+  "id" : "afb07143-9828-6e3a-1725-fa9a4bbc2a0b",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-1.png",
+    "alt" : "about-1",
+    "loading" : "lazy",
+    "width" : 960,
+    "height" : 960,
+    "max_width" : 960,
+    "max_height" : 960
+  }
+}, {
+  "id" : "a4d78372-e2bf-1c11-246f-3d47e2f843e0",
+  "name" : "list",
+  "label" : "List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "a2358609-9c58-c2b7-7674-b91b4b2ac641",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "The AI revolution has started"
+  }, {
+    "id" : "06c2cd2a-b883-cb22-cda9-8f50c0e38244",
+    "name" : "detail",
+    "label" : "Detail",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>It is our right to&nbsp;</span><span>grow, play</span><span>&nbsp;and&nbsp;</span><span>create</span><span>&nbsp;together in both real and digital worlds.</span></p>"
+  }, {
+    "id" : "dea3deb1-b1e4-0734-04f5-f332b228019e",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/belief-1.png",
+      "alt" : "belief-1",
+      "loading" : "lazy",
+      "width" : 186,
+      "height" : 192,
+      "max_width" : 186,
+      "max_height" : 192
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "text" : "The AI revolution has started",
+    "detail" : "<p><span>It is our right to&nbsp;</span><span>grow, play</span><span>&nbsp;and&nbsp;</span><span>create</span><span>&nbsp;together in both real and digital worlds.</span></p>",
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/belief-1.png",
+      "alt" : "belief-1",
+      "loading" : "lazy",
+      "width" : 186,
+      "height" : 192,
+      "max_width" : 186,
+      "max_height" : 192
+    }
+  }
+} ]

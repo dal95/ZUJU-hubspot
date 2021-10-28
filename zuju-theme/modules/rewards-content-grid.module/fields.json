@@ -1,0 +1,93 @@
+[ {
+  "id" : "6ecd3e91-3aa6-2df1-f4c1-cecbc3f6bd24",
+  "name" : "main_title",
+  "label" : "Main title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "More Ways To Earn Zuju Points"
+}, {
+  "id" : "60f0b338-73c4-c669-f170-6fe6d6ca10c4",
+  "name" : "group",
+  "label" : "Group",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "48495bc9-a7c3-dd9c-f6e8-da4bbf227e18",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "REBATE"
+  }, {
+    "id" : "f5c53eaf-ebbe-0680-be04-093bfe7b01ef",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rebate.png",
+      "alt" : "rebate",
+      "loading" : "lazy",
+      "width" : 104,
+      "height" : 116,
+      "max_width" : 104,
+      "max_height" : 116
+    }
+  }, {
+    "id" : "6cb24286-965f-9115-3e27-0d497348fbb7",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>*Minimum $20 spending per transaction</p>\n<p>*Only on selected products</p>"
+  }, {
+    "id" : "f96a9410-0e8b-d46a-0f84-0cfeb960606e",
+    "name" : "footer_text",
+    "label" : "Footer text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "2 POINTS PER SGD"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "REBATE",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rebate.png",
+      "alt" : "rebate",
+      "loading" : "lazy",
+      "width" : 104,
+      "height" : 116,
+      "max_width" : 104,
+      "max_height" : 116
+    },
+    "description" : "<p>*Minimum $20 spending per transaction</p>\n<p>*Only on selected products</p>",
+    "footer_text" : "2 POINTS PER SGD"
+  }
+} ]

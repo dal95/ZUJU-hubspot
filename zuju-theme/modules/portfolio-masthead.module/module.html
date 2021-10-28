@@ -1,0 +1,64 @@
+      <div class="relative max-w-[1440px] bg-black mx-auto">
+        <div class="absolute inset-0">        
+          {% if module.mobile_background.src %}
+            {% set sizeAttrs = 'width="{{ module.mobile_background.width }}" height="{{ module.mobile_background.height }}"' %}
+            {% if module.mobile_background.size_type == 'auto' %}
+              {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+            {% elif module.mobile_background.size_type == 'auto_custom_max' %}
+              {% set sizeAttrs = 'width="{{ module.mobile_background.max_width }}" height="{{ module.mobile_background.max_height }}" style="max-width: 100%; height: auto;"' %}
+            {% endif %}
+             {% set loadingAttr = module.mobile_background.loading != 'disabled' ? 'loading="{{ module.mobile_background.loading }}"' : '' %}
+            <img class="lg:hidden opacity-50" src="{{ module.mobile_background.src }}" alt="{{ module.mobile_background.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% endif %}
+          <div class="sm:hidden h-full w-full opacity-50" x-init="$dispatch('particle-init', $el)"></div>
+        </div>
+        
+        <div
+          class="relative lg:grid grid-cols-12 grid-rows-[1fr,repeat(4,auto),1fr] sm:pt-24 lg:pt-36 sm:pb-16 lg:pb-60 sm:px-8"
+          x-data="parallax()"
+          x-bind="root"
+        >
+          <h1 class="row-start-2 col-start-4 col-span-6 sm:text-4xl lg:text-6xl font-gtcond text-white font-black text-center z-10 sm:mb-8" x-bind="animate(8)">
+            {% inline_text field="main_title" value="{{ module.main_title }}" %}
+          </h1>
+          {% if module.card_image.src %}
+            <img 
+                 class="row-start-1 row-span-6 col-start-2 col-span-4 sm:w-full sm:max-w-md sm:mb-8 sm:mx-auto" 
+                 src="{{ module.card_image.src }}" alt="{{ module.card_image.alt }}" x-bind="animate(0)"/>
+            <!--<img
+            class="row-start-1 row-span-6 col-start-2 col-span-4 sm:w-full sm:max-w-md sm:mb-8 sm:mx-auto"
+            src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/listing-header.jpg"
+            x-bind="animate(0)"
+          />-->
+          {% endif %}
+          <!--<img
+            class="row-start-1 row-span-6 col-start-2 col-span-4 sm:w-full sm:max-w-md sm:mb-8 sm:mx-auto"
+            src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/listing-header.jpg"
+            x-bind="animate(0)"
+          />-->
+          <p class="row-start-3 row-span-2 col-start-6 col-span-3 text-white z-10 lg:p-8 lg:pt-16 sm:mb-8" x-bind="animate(-8)">
+            {{ module.text_field }}
+            <!--
+            {# if content.language.languageTag == "zh-cn" #}
+            在互联网的世界里，我们是在一个所有人共享的数字空间里建立联系。而蹴蹴集团致力于创造全新的体验和机会，以便您可以交流、创造、竞争并从深爱的足球运动里学到更多。只要我们的社群网络愈发壮大，我们能做到的就会更多！
+            {# else #}
+            Not unlike the internet, we create connections in a collective digital space shared by everyone. We are all about creating new experiences and
+            opportunities so you can communicate, create, game and profit from your love of football. The greater the utility of our networks, the more we can do
+            when connected!
+            {# endif #}
+            -->
+          </p>
+          
+          <p class="row-start-4 row-span-2 col-start-9 col-span-3 text-white z-10 lg:p-8" x-bind="animate(-16)">
+            {{ module.text_second }}
+            <!--
+            {# if content.language.languageTag == "zh-cn" #}
+            毫无疑问，我们正通过超酷的项目来帮助足球运动实现数字化转型。所有的蹴蹴项目都围绕着社群驱动和全新的生态系统而构建。以去中心化的区块链技术作为基底，这也是所有行业都正面临的未来趋势。
+            {# else #}
+            No surprise then that we are launching super cool projects to port football online. ZujuGP's projects will be built around an ecosystem of community
+            driven technology, decentralised and anchored around innovative blockchain tech. This will be deployable universally across other industry.
+            {# endif #}
+            -->
+          </p>
+        </div>
+      </div>

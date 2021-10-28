@@ -1,0 +1,28 @@
+<section class="relative bg-white">
+  <div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto sm:p-8" x-data="parallax()" x-bind="root">
+    {% if module.card_image.src %}
+      {% set sizeAttrs = 'width="{{ module.card_image.width }}" height="{{ module.card_image.height }}"' %}
+      {% if module.card_image.size_type == 'auto' %}
+        {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+      {% elif module.card_image.size_type == 'auto_custom_max' %}
+        {% set sizeAttrs = 'width="{{ module.card_image.max_width }}" height="{{ module.card_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+      {% endif %}
+       {% set loadingAttr = module.card_image.loading != 'disabled' ? 'loading="{{ module.card_image.loading }}"' : '' %}
+      <img  class="row-start-1 col-start-7 col-span-5 sm:w-full sm:max-w-md sm:mx-auto lg:-mt-24" src="{{ module.card_image.src }}" alt="{{ module.card_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+    {% endif %}
+    
+    <div class="row-start-1 col-start-3 col-span-4 flex flex-col items-start justify-center py-16">
+      <h1 class="sm:text-4xl lg:text-5xl font-gtcond font-black mb-8" x-bind="animate(8)">
+        {{ module.main_title }}
+      </h1>
+      <p class="mb-8" x-bind="animate(4)">
+        {{ module.description_html }}
+      </p>
+      <a href="{{ module.cta.button_url.href }}">
+        <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
+          {{ module.cta.button_title }}
+        </button>
+      </a>
+    </div>
+  </div>
+</section>

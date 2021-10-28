@@ -1,0 +1,15 @@
+<div class="absolute z-10 inset-x-0 h-[90vh] w-full max-w-[1920px] bg-black mx-auto pointer-events-none">
+  <video muted="" autoplay="" loop="" class="h-full w-full opacity-30 object-cover transition duration-[3s]">
+    <source src="{{ module.video }}" />
+  </video>
+</div>
+
+<div class="relative z-20">
+  <section class="h-[80vh] max-w-[1440px] mx-auto flex items-center justify-center p-8" x-data="parallax()" x-bind="root">
+					
+    <h1 class="lg:w-5/6 font-gtcom text-white text-6xl lg:text-8xl font-extralight" x-bind="animate(24)" style="transform: translateY(21.24px);">
+      {{ module.title }}
+    </h1>
+
+  </section>
+</div>
