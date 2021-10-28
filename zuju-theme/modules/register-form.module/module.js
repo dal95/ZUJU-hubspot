@@ -62,12 +62,14 @@ function asyncValidate (selector, callback) {
           </div>
           `
 
-        console.log({ messageType })
+        // console.log({ messageType })
         if (messageType != 'success') {
           if (!hasErrors.find(item => item.message)) hasErrors.push(res.message)
           // console.log(!hasErrors.find(item => message === res.message))
         } else {
-          const index = hasErrors.findIndex(item => item.includes(res.message.split('_')[0]))
+          const index = hasErrors.findIndex(item =>
+            item.includes(res.message.split('_')[0])
+          )
           // console.log(res.message)
           // console.log(hasErrors)
           // console.log(index)
@@ -76,8 +78,10 @@ function asyncValidate (selector, callback) {
 
         console.log(hasErrors.length)
 
-
-        $('#hs_form_target_register .hs-button').attr('disabled', !!hasErrors.length)
+        $('#hs_form_target_register .hs-button').attr(
+          'disabled',
+          !!hasErrors.length
+        )
         parent.append(messageEl)
       })
       .catch(err => console.error(err))
@@ -150,29 +154,50 @@ window.addEventListener('message', event => {
       .trigger('change')
       .trigger('focusout')
 
-    // Birthday validation
-    // const BOD = $(`[name="birthday"]`)
-    // const inFuture = date => {
-    //   return date.setHours(0, 0, 0, 0) > new Date().setHours(0, 0, 0, 0)
-    // }
-    // // console.log(BOD)
+    const $form = $(`[data-form-id="${event.data.id}"]`)
+    const $submitBtn = $('#hs_cos_wrapper_register_form').find('.hs-button')
+    $submitBtn.attr('disabled', true)
 
-    // BOD.on('change', () => {
-    //   // console.log('changed')
-    //   // console.log(inFuture(new Date(BOD.val())))
-    // })
+    const $parent = $('[name="birthday"]').closest('.input')
 
-    // // Mutation observer
-    // let observer = new MutationObserver(mutationRecords => {
-    //   console.log(mutationRecords) // console.log(the changes)
-    // })
+    $('[name="birthday"]')
+      .prev()
+      .css('display', 'none')
+    $('.hs-dateinput').css('display', 'none')
+    $parent.append(
+      `<input type="text" class="birthday-custom hs-input" placeholder="Select date" required />`
+    )
 
-    // // observe everything except attributes
-    // // console.log('======== Mutation observer ======')
-    // observer.observe(BOD[0], {
-    //   childList: true, // observe direct children
-    //   subtree: true, // and lower descendants too
-    //   characterDataOldValue: true // pass old data to callback
-    // })
+    $('.birthday-custom').change(function () {
+      $('[name="birthday"]')
+        .val($(this).val())
+        .trigger('change')
+      $('[name="birthday"]').attr('required', true)
+      $('[name="birthday"]')
+        .prev()
+        .val($(this).val())
+        .trigger('change')
+    })
+
+    let maxDate = new Date(
+      new Date().setFullYear(new Date().getFullYear() - 12)
+    )
+    console.log(maxDate)
+    console.log(+new Date() > +new Date(maxDate))
+
+    $('.birthday-custom').flatpickr({
+      maxDate,
+      onChange: function (selectedDates) {
+        console.log(+new Date(selectedDates[0]) > +new Date(maxDate))
+        $submitBtn.attr('disabled', !selectedDates.length)
+      }
+    })
+
+    $('[name="country_dropdown"]').on('change', function () {
+      $('.hs-input.hs-fieldtype-intl-phone')
+        .find('select')
+        .val($(this).val())
+        .trigger('change')
+    })
   }
 })

@@ -48,9 +48,7 @@
         count++
         if (count < total) return
 
-
         const $form = $(`[data-form-id="${event.data.id}"]`)
-        // console.log($form.find('.hs-button').css('transform', 'scale(2)'))
         const $submitBtn = $('#hs_cos_wrapper_register_form').find('.hs-button')
         $submitBtn.attr('disabled', true)
 
@@ -58,7 +56,7 @@
 
         $('[name="birthday"]').prev().css('display', 'none')
         $('.hs-dateinput').css('display', 'none')
-        $parent.append(`<input type="text" class="birthday-custom hs-input" required />`)
+        $parent.append(`<input type="text" class="birthday-custom hs-input" placeholder="Select date" required />`)
 
         $('.birthday-custom').change(function() {
           $('[name="birthday"]').val($(this).val()).trigger('change')
@@ -66,13 +64,14 @@
           $('[name="birthday"]').prev().val($(this).val()).trigger('change')
         })
 
-        let minDate = new Date()
-        minDate.setTime(minDate.valueOf() - 16 * 365 * 24 * 60 * 60 * 1000);
+        let maxDate = new Date(new Date().setFullYear(new Date().getFullYear() - 12))
+        console.log(maxDate)
+        console.log(+new Date() > +new Date(maxDate))
 
         $('.birthday-custom').flatpickr({
-          minDate,
-          maxDate: "today",
+          maxDate,
           onChange: function(selectedDates) {
+            console.log(+new Date(selectedDates[0]) > +new Date(maxDate))
             $submitBtn.attr('disabled', !selectedDates.length)
           }
         })
@@ -100,12 +99,5 @@
         // })
       }
     });
-
-
-    let formatted = []
-
-    console.log($('.hs-fieldtype-intl-phone'))
-
-    console.log(formatted)
   </script>
 {% end_require_js %}

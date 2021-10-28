@@ -7,6 +7,8 @@
 {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
 {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 
+{{ require_css(get_asset_url('zuju-theme/css/vendors/flatpickr-custom-dark.css')) }}
+
 {% block body %}
   <main class="public">
     <div class="auth-wrapper auth auth-register">

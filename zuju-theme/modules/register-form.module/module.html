@@ -1,3 +1,5 @@
+{{ require_css(get_asset_url('zuju-theme/css/vendors/flatpickr-custom-dark.css')) }}
+
 <script>
   var validation_messages = `{{ module.async_validation_messages|tojson }}`;
 </script>
@@ -10,3 +12,5 @@
 </div>
 
 {# {{ require_js(get_asset_url('zuju-theme/js/pages/register.js')) }} #}
+
+{{ require_js('https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js', 'footer') }}
