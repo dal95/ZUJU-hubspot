@@ -1,0 +1,40 @@
+<div class="relative max-w-[1440px] mx-auto py-16" x-data="parallax()" x-bind="root">
+  <div class="lg:w-2/3 sm:px-8 sm:-mt-32 lg:-mt-80 lg:mb-36 mx-auto">
+    <img
+      class="w-full sm:max-w-md"
+      src="{{ module.main_image.src }}"
+      x-bind="animate(16)"
+    />
+  </div>
+  <div class="flex sm:flex-col justify-center sm:mb-16">
+    <div class="lg:w-5/12 sm:px-8 pt-8">
+      <h1 class="lg:w-3/4 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-8" x-bind="animate(8)">
+        {{ module.section1.title }}
+      </h1>
+    </div>
+    <div class="lg:w-5/12 sm:px-8 lg:p-8">
+      <p class="text-white mb-8">
+        {{ module.section1.paragraph }}
+      </p>
+    </div>
+  </div>
+  <div class="lg:grid grid-cols-12 grid-rows-[repeat(2,auto)]" x-data="parallax()" x-bind="root">
+    <div class="row-start-1 row-span-2 col-start-3 col-span-5 flex items-center justify-center sm:px-8 sm:mb-8">
+      <img class="relative z-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-wellness.png" x-bind="animate(8)" />
+    </div>
+    <div class="row-start-1 col-start-6 col-span-3 flex items-center sm:px-8 sm:mb-8">
+      <h1 class="relative z-20 text-white sm:text-4xl lg:text-5xl font-gtcond font-black" x-bind="animate(16)">
+        {{ module.section2.title }}
+      </h1>
+    </div>
+    <div class="row-start-2 col-start-8 col-span-4 lg:pt-16 sm:px-8">
+      <p class="text-white mb-8">
+        {{ module.section2.paragraph }}
+      </p>
+    </div>
+  </div>
+  <div class="sm:hidden relative z-10 w-0.5 h-40 -mt-12 bg-zuju-red mx-auto"></div>
+  <div class="lg:w-2/3 mx-auto pt-4 sm:px-8">
+    <video controls=""><source src="{{ module.section2.video }}" /></video>
+  </div>
+</div>

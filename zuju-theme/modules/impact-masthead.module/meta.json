@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Dice%20D6:SOLID",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 58361312174,
+  "label" : "Masthead",
+  "is_available_for_new_content" : true
+}

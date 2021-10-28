@@ -1,0 +1,8 @@
+{
+  "global" : false,
+  "icon" : "fontawesome-5.14.0:Gitter",
+  "host_template_types" : [ "PAGE" ],
+  "module_id" : 58365905671,
+  "label" : "Impact background dark",
+  "is_available_for_new_content" : true
+}

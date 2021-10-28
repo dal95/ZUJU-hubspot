@@ -1,0 +1,20 @@
+<section class="bg-white lg:pb-24">
+  <div class="relative max-w-[1440px] flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
+    <div class="flex sm:flex-col justify-center">
+      <div class="lg:w-5/12 flex items-center justify-center sm:p-8">
+        <img class="w-full max-w-md" src="{{ module.image.src }}" />
+      </div>
+      <div class="lg:w-5/12 p-8">
+        <h1 class="w-3/4 sm:text-4xl lg:text-5xl font-gtcond font-black mb-8" x-bind="animate(8)">
+          {{ module.image }}
+        </h1>
+        <p class="mb-8">
+          
+        </p>
+        <p class="mb-8">
+          {{ module.paragraph }}
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,127 @@
+[ {
+  "id" : "7fcf9243-b75d-9a19-d7d8-c71550665667",
+  "name" : "main_image",
+  "label" : "Main image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-slide-1.png",
+    "alt" : "impact-slide-1",
+    "loading" : "lazy",
+    "width" : 960,
+    "height" : 540,
+    "max_width" : 960,
+    "max_height" : 540
+  }
+}, {
+  "id" : "fba41a36-2a8b-bc1d-353b-2fa365863fb7",
+  "name" : "section1",
+  "label" : "Section1",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "0c72456f-84e4-b368-3a59-f411aaade848",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Youth Empowerment & Development"
+  }, {
+    "id" : "f7a35406-e920-c239-c49e-dfb338ab4490",
+    "name" : "paragraph",
+    "label" : "Paragraph",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>We advocate youth empowerment and development as a sustainable democracy.</p>\n<p>We have been supporting promising youths from vulnerable backgrounds to achieve their sporting goals and education.</p>\n<p>We work with local partners to contribute to grassroot communities - reducing inequalities and improving conditions for youths from diverse backgrounds.</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Youth Empowerment & Development",
+    "paragraph" : "<p>We advocate youth empowerment and development as a sustainable democracy.</p>\n<p>We have been supporting promising youths from vulnerable backgrounds to achieve their sporting goals and education.</p>\n<p>We work with local partners to contribute to grassroot communities - reducing inequalities and improving conditions for youths from diverse backgrounds.</p>"
+  }
+}, {
+  "id" : "dcddcbdf-3bac-7b46-acb6-939b34cbc0f1",
+  "name" : "section2",
+  "label" : "Section2",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7c7e6079-0b85-e68c-17ad-61f4c5ccfceb",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Wellness & Partnerships"
+  }, {
+    "id" : "67fa51ad-03d2-a7a1-490e-83b13fa8e725",
+    "name" : "paragraph",
+    "label" : "Paragraph",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>ZujuGP believes that wellness is a birthright.</p>\n<p>Through football we strengthen the blueprint to the physical, emotional and mental components of health.</p>\n<p>We advocate global partnerships and innovations to expand wellness towards the larger contexts of social and infrastructural health and resilience for all. Including support of nature conservation, greenery and recreation.</p>"
+  }, {
+    "id" : "a66a2a4e-7159-3525-60f2-13b878077466",
+    "name" : "image_field",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-wellness.png",
+      "alt" : "impact-wellness",
+      "loading" : "lazy",
+      "width" : 480,
+      "height" : 480,
+      "max_width" : 480,
+      "max_height" : 480
+    }
+  }, {
+    "picker" : "video",
+    "id" : "8b0d5751-a36f-84d9-0673-5e5d91661abb",
+    "name" : "video",
+    "label" : "Video Player",
+    "required" : false,
+    "locked" : false,
+    "type" : "file",
+    "default" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/impact.mp4"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Wellness & Partnerships",
+    "paragraph" : "<p>ZujuGP believes that wellness is a birthright.</p>\n<p>Through football we strengthen the blueprint to the physical, emotional and mental components of health.</p>\n<p>We advocate global partnerships and innovations to expand wellness towards the larger contexts of social and infrastructural health and resilience for all. Including support of nature conservation, greenery and recreation.</p>",
+    "image_field" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-wellness.png",
+      "alt" : "impact-wellness",
+      "loading" : "lazy",
+      "width" : 480,
+      "height" : 480,
+      "max_width" : 480,
+      "max_height" : 480
+    },
+    "video" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/impact.mp4"
+  }
+} ]

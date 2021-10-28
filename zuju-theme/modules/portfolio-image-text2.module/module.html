@@ -1,0 +1,14 @@
+{% if module.portfolio_image.src %}
+	{% set sizeAttrs = 'width="{{ module.portfolio_image.width }}" height="{{ module.portfolio_image.height }}"' %}
+	{% if module.portfolio_image.size_type == 'auto' %}
+		{% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+	{% elif module.portfolio_image.size_type == 'auto_custom_max' %}
+		{% set sizeAttrs = 'width="{{ module.portfolio_image.max_width }}" height="{{ module.portfolio_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+	{% endif %}
+	 {% set loadingAttr = module.portfolio_image.loading != 'disabled' ? 'loading="{{ module.portfolio_image.loading }}"' : '' %}
+	<img src="{{ module.portfolio_image.src }}" alt="{{ module.portfolio_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+{% endif %}
+
+{% inline_text field="portfolio_first_text" value="{{ module.portfolio_first_text }}" %}
+
+{% inline_text field="portfolio_second_text" value="{{ module.portfolio_second_text }}" %}
