@@ -1,0 +1,128 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Staging - Zuju Statics - Impact
+-->
+
+{% set is_statics = true %}
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<div class="app">
+  <main class="bg-zuju-gray-1" x-data="{}">
+{#
+		<section>
+			<div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
+				<div class="absolute inset-0">
+					<img
+						class="h-full w-full object-cover object-center"
+						src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-masthead.jpg"
+					/>
+				</div>
+				<div class="relative flex flex-col items-center justify-center sm:p-8">
+					<h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
+						{% if content.language.languageTag == "zh-cn" %}
+							影响力
+						{% else %}
+							Impact
+						{% endif %}
+					</h1>
+					<div class="lg:w-3/4 flex sm:flex-col justify-between">
+						<div class="flex lg:flex-1 flex-col items-center mb-16">
+							<img class="h-28 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-1.png" x-bind="animate(8)" />
+							<p class="w-2/3 text-2xl text-white font-gtcond font-black text-center">
+								{% if content.language.languageTag == "zh-cn" %}
+									资源&amp;责任
+								{% else %}
+									Access &amp; Accountability
+								{% endif %}
+							</p>
+						</div>
+						<div class="flex lg:flex-1 flex-col items-center mb-16">
+							<img class="h-28 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-2.png" x-bind="animate(8)" />
+							<p class="w-2/3 text-2xl text-white font-gtcond font-black text-center">
+								{% if content.language.languageTag == "zh-cn" %}
+									青年球员的赋能&amp;发展
+								{% else %}
+									Youth Empowerment &amp; Development
+								{% endif %}
+							</p>
+						</div>
+						<div class="flex lg:flex-1 flex-col items-center mb-16">
+							<img class="h-28 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-3.png" x-bind="animate(8)" />
+							<p class="w-2/3 text-2xl text-white font-gtcond font-black text-center">
+								{% if content.language.languageTag == "zh-cn" %}
+									健康&amp;合作
+								{% else %}
+									Wellness &amp; Partnerships
+								{% endif %}
+							</p>
+						</div>
+					</div>
+					<p class="text-white lg:w-3/4 text-center mb-8">
+						{% if content.language.languageTag == "zh-cn" %}
+							为了支持联合国的可持续发展目标，即为所有人创造一个更美好的未来，蹴蹴ZujuGP的精神就是在这三大基础上生根发芽的。
+						{% else %}
+							The ZujuGP spirit thrives on these three pillars in support of the UN Sustainable Development Goals to achieve a better future for all.
+						{% endif %}
+					</p>
+				</div>
+			</div>
+		</section> #}
+
+		<div class="">
+			{% module "impact_masthead" path="/zuju-theme/modules/impact-masthead", label="Impact Masthead" %}
+		</div>
+
+		{# <section class="bg-white lg:pb-24">
+			<div class="relative max-w-[1440px] flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
+				<div class="flex sm:flex-col justify-center">
+					<div class="lg:w-5/12 flex items-center justify-center sm:p-8">
+						<img class="w-full max-w-md" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/global-goals.png" />
+					</div>
+					<div class="lg:w-5/12 p-8">
+						<h1 class="w-3/4 sm:text-4xl lg:text-5xl font-gtcond font-black mb-8" x-bind="animate(8)">
+							{% if content.language.languageTag == "zh-cn" %}
+								资源&amp;责任
+							{% else %}
+								Access &amp; Accountability
+							{% endif %}
+						</h1>
+						<p class="mb-8">
+							{% if content.language.languageTag == "zh-cn" %}
+								我们与行业伙伴、投资公司通力合作旨在搭建透明又富有责任心的足球社群。
+							{% else %}
+								We work together with partners and portfolio companies to connect and transform football communities transparently and responsibly.
+							{% endif %}
+						</p>
+						<p class="mb-8">
+							{% if content.language.languageTag == "zh-cn" %}
+								我们以科技为桥梁连接东西方，并创造平等的机会使各色各样的人才聚集于此。
+							{% else %}
+								We use technology as a digital spine to democratise opportunities from East to West, expanding diversity in talent and promoting equity for
+								all.
+							{% endif %}
+						</p>
+					</div>
+				</div>
+			</div>
+		</section> #}
+
+		<div class="">
+			{% module "impact_bg_white" path="/zuju-theme/modules/impact-accountability", label="Impact bg white" %}
+		</div>
+
+		<section class="bg-zuju-gray-db text-white">
+			{% module "impact_bg-dark" path="/zuju-theme/modules/impact-bg-dark", label="Impact bg dark" %}
+
+			{# Drag and drop area #}
+			{# <div class="w-full max-w-[1000px] mx-auto">
+				{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+			</div> #}
+
+			{# Alliances #}
+			{% module "alliances" path="/zuju-theme/modules/alliances", label="Alliances" %}
+		</section>
+	</main>
+</div>
+{% endblock body %}

@@ -1,58 +1,36 @@
 <section class="w-full bg-zuju-gray-2 pb-32">
   <div class="max-w-[1440px] p-8 mx-auto">
-    <img class="lg:hidden w-full max-w-md -mt-24 mb-16 mx-auto" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-ball-mobile.jpg" />
+    <img class="lg:hidden w-full max-w-md -mt-24 mb-16 mx-auto" src="{{ module.image_mobile.src }}" />
     <div class="sm:hidden -mt-32 mb-16" x-data="parallax()" x-bind="root">
-      <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-ball.jpg" x-bind="animate(16)" />
+      <img src="{{ module.image.src }}" x-bind="animate(16)" />
     </div>
     <div class="lg:w-7/12 mb-16 relative z-20" x-data="parallax()" x-bind="root">
-      <p class="text-white mb-8" x-bind="animate(8)">
-        {% if content.language.languageTag == "zh-cn" %}
-        也许你是希望提升能力、寻找工作机会、看一场比赛、线上购物或者单纯上网冲浪一会儿。从现在开始你不再孤单，你也不需要再通过其他独立的应用程序或者通过前往现场的方式去一件一件完成那些事。在这里，你拥有<strong>一个整合而且丰富的平台</strong>，可以一次性实现所有的事。
-        {% else %}
-        You may be looking for opportunities to upskill, gain employment or watch a game, shop, play and interact. This will no longer be something
-        that only one person does. You won't need a new standalone app or travel to a stadium or find new ways to access different components of
-        what interests you. What you want will be found on <strong>a single platform</strong>.
-        {% endif %}
-      </p>
+      <div class="text-white mb-8" x-bind="animate(8)">
+        {{ module.main_description }}
+      </div>
       <p class="text-zuju-red font-gtcond font-black sm:text-2xl lg:text-4xl mb-8" x-bind="animate(8)">
-        {% if content.language.languageTag == "zh-cn" %}
-        这个平台就是蹴蹴ZujuGP
-        {% else %}
-        This platform is ZujuGP.
-        {% endif %}
+        {{ module.section_1.title }}
       </p>
-      <p class="text-white" x-bind="animate(8)">
-        {% if content.language.languageTag == "zh-cn" %}
-        在蹴蹴ZujuGP这个高度集成的平台上，你能享受到即时且互动性很强的内容，来这里，能让你无障碍对接全球并使得你从深爱的运动中学到更多！
-        {% else %}
-        Where immediacy of use and interactivity of content will directly contribute to your enjoyment, allow you to connect globally and profit in your love for the sport.
-        {% endif %}
-      </p>
+      <div class="text-white" x-bind="animate(8)">
+        {{ module.section_1.description }}
+      </div>
     </div>
     <div class="lg:grid grid-cols-12 grid-rows-[1fr,auto,auto,repeat(4,1fr),auto]">
       <div class="sm:hidden0 row-start-1 row-end-7 col-start-6 col-end-13 -mt-32 z-10" x-data="parallax()" x-bind="root">
         <img class="h-full w-full object-contain" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png" x-bind="animate(-16)" />
       </div>
       <div class="row-start-1 row-span-5 col-start-3 col-span-5 sm:-mx-8 z-20">
-        <img class="h-full w-full max-w-none object-cover" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-stadium.png" />
+        <img class="h-full w-full max-w-none object-cover" src="{{ module.section_2.image_field.src }}" />
       </div>
       <div class="row-start-2 col-end-[-2] col-span-5 sm:-mt-8 sm:mb-8 lg:mb-16 z-30" x-data="parallax()" x-bind="root">
         <p class="text-white sm:text-2xl lg:text-4xl font-gtcond font-black" x-bind="animate(24)">
-          {% if content.language.languageTag == "zh-cn" %}
-          足球的未来是更社交化的、更协作化的。这是由更沉浸、更多用户原创内容、更动态和更具可塑性的<strong>线上</strong>模式所决定的。
-          {% else %}
-          The future of football will be mostly social, collaborative and defined by immersive experiences <strong>online</strong>.
-          {% endif %}
+          {{ module.section_2.title }}
         </p>
       </div>
       <div class="row-start-3 col-end-[-2] col-span-3 mb-8 z-30" x-data="parallax()" x-bind="root">
-        <p class="text-white" x-bind="animate(16)">
-          {% if content.language.languageTag == "zh-cn" %}
-          足球将是一场全民参与，每个人都加入其中并成为创造者的游戏。同时，蹴蹴ZujuGP平台也为那些想在足球领域寻找商业和创意机会的人提供了一条出路。
-          {% else %}
-          All football fans and professionals will be both users and creators. Football on ZujuGP is also an outlet for those who seek creative and commercial interests.
-          {% endif %}
-        </p>
+        <div class="text-white" x-bind="animate(16)">
+          {{ module.section_2.description }}
+        </div>
       </div>
       <div class="row-start-6 row-span-2 col-start-1 col-end-[-1]">
         <div class="h-full sm:h-36 w-0 border-l border-r border-zuju-red mx-auto"></div>
@@ -72,11 +50,7 @@
           lg:mb-24
         "
       >
-        {% if content.language.languageTag == "zh-cn" %}
-        蹴蹴ZujuGP，一个可以折射现实世界的在线平台，将为您提供沉浸式的足球体验。
-        {% else %}
-        ZujuGP will be an online immersive that mirrors our world.
-        {% endif %}
+        {{ module.footer }}
       </p>
     </div>
   </div>
