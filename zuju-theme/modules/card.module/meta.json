@@ -2,7 +2,7 @@
   "global" : false,
   "icon" : "../../images/module-icons/info-circle-solid.svg",
   "host_template_types" : [ "PAGE" ],
-  "module_id" : 54935635007,
+  "module_id" : 58733258564,
   "label" : "Card",
   "is_available_for_new_content" : true
 }
