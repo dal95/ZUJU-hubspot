@@ -46,96 +46,82 @@
       {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
       {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 
-    <main class="main-wrapper">
-      <div class="left-offset"></div>
-      <div class="main-wrapper__row">
-        <aside class="sidebar">
-          {% if request_contact.is_logged_in %}
-            <a href="/profile" class="user-card">
-              <div class="user-card__avatar">
-                {{ c.avatar() }}
-              </div>
+      <main class="main-wrapper">
+        <div class="left-offset"></div>
+        <div class="main-wrapper__row">
+          <aside class="sidebar">
+            {% if request_contact.is_logged_in %}
+              <a href="/profile" class="user-card">
+                <div class="user-card__avatar">
+                  {{ c.avatar() }}
+                </div>
 
-              {# <textarea name="" id="" cols="30" rows="10">{{ contact|tojson }}</textarea> #}
-              <div class="user-card__content">
-                <div class="user-card__name all-caps">{{ request_contact.contact.firstname }} {{ contact.lastname }}</div>
-                <div class="user-card__tier fs-sm">
+                {# <textarea name="" id="" cols="30" rows="10">{{ contact|tojson }}</textarea> #}
+                <div class="user-card__content">
+                  <div class="user-card__name all-caps">{{ request_contact.contact.firstname }} {{ contact.lastname }}</div>
+                  <div class="user-card__tier fs-sm">
+
+                    {% if currLang == 'zh-cn' %}
+                      {% if contact.membership_tier == 'Fan' %}
+                        会员
+                      {% elif contact.membership_tier == 'Super Fan' %}
+                        超级会员
+                      {% else %}
+                        终身会员
+                      {% endif %}
+                    {% else %}
+                      {{ contact.membership_tier }}
+                    {% endif %}
+
+                  </div>
+                  <div class="user-card__point fs-sm">
+                    <b>{{ contact.current_loyalty_points }}</b> {{ currLang == "zh-cn" ? " Z 积分" : "Z Points" }}
+                  </div>
+                </div>
+              </a>
+            {% endif %}
+
+            <div class="separator">{{ currLang == "zh-cn" ? "菜单" : "Menu" }}</div>
+            <!-- Side menu -->
+            {% module "side_menu"
+              path="/zuju-theme/modules/menu-with-icon",
+              label="Secondary Menu (Desktop only)"
+            %}
+
+            <div class="separator">{{ currLang == "zh-cn" ? "蹴蹴忠诚积分" : "ZujuGP Loyalty" }}</div>
+
+            {% module "loyalty_menu"
+              path="/zuju-theme/modules/v-menu",
+              label="Loyalty menu" %}
+          </aside>
+
+          <div class="content-wrapper">
+
+            <section class="title-section">
+              <h2 class="page-title">
+                {% if dynamic_page_hubdb_row %}
+                  {% set d = dynamic_page_hubdb_row %}
 
                   {% if currLang == 'zh-cn' %}
-                    {% if contact.membership_tier == 'Fan' %}
-                      会员
-                    {% elif contact.membership_tier == 'Super Fan' %}
-                      超级会员
-                    {% else %}
-                      终身会员
-                    {% endif %}
-                  {% else %}
-                    {{ contact.membership_tier }}
+                    {{ d.name_chinese }}
+                  {% else%}
+                    {{ d.name }}
                   {% endif %}
+                {% else %}
+                  {{ content.title }}
+                {% endif%}
+              </h2>
 
-                </div>
-                <div class="user-card__point fs-sm"><b>{{ contact.current_loyalty_points }}</b> {{ currLang == "zh-cn" ? " Z 积分" : "Z Points" }}</div>
-              </div>
-            </a>
-          {% endif %}
+              <!-- Scrollable menu -->
+              {% module "scrollable_menu"
+                path="/zuju-theme/modules/scrollable-menu",
+                label="Secondary menu (mobile only)"
+              %}
+            </section>
 
-          <div class="separator">{{ currLang == "zh-cn" ? "菜单" : "Menu" }}</div>
-          <!-- Side menu -->
-          {% module "side_menu"
-            path="/zuju-theme/modules/menu-with-icon",
-            label="Secondary Menu (Desktop only)"
-          %}
-
-          <div class="separator">{{ currLang == "zh-cn" ? "蹴蹴忠诚积分" : "ZujuGP Loyalty" }}</div>
-
-          {% module "loyalty_menu"
-            path="/zuju-theme/modules/v-menu",
-            label="Loyalty menu" %}
-
-          {# <ul class="v-menu">
-            <li><a href="/about-rewards">{{ currLang == "zh-cn" ? "忠诚积分该如何获得及使用？" : "How do loyalty Z Points work?" }}</a></li>
-            <li><a href="/about-rewards">{{ currLang == "zh-cn" ? "您的等级和福利" : "Your Tiering & Benefits" }}</a></li>
-
-            {% if request_contact.is_logged_in %}
-              <li>
-                <a href="/_hcms/mem/logout">{{ currLang == "zh-cn" ? "退出登录" : "Logout" }}</a>
-              </li>
-            {% else %}
-              <li>
-                <a href="/_hcms/mem/login">{{ currLang == "zh-cn" ? "登录" : "Login" }}</a>
-              </li>
-            {% endif %}
-          </ul> #}
-        </aside>
-
-        <div class="content-wrapper">
-
-          <section class="title-section">
-            <h2 class="page-title">
-              {% if dynamic_page_hubdb_row %}
-                {% set d = dynamic_page_hubdb_row %}
-
-                {% if currLang == 'zh-cn' %}
-                  {{ d.name_chinese }}
-                {% else%}
-                  {{ d.name }}
-                {% endif %}
-              {% else %}
-                {{ content.title }}
-              {% endif%}
-            </h2>
-
-            <!-- Scrollable menu -->
-            {% module "scrollable_menu"
-              path="/zuju-theme/modules/scrollable-menu",
-              label="Secondary menu (mobile only)"
-            %}
-          </section>
-
-          {% block body %}
-          {% endblock body %}
-        </div>
-
+            {% block body %}
+            {% endblock body %}
+          </div>
         </div>
       </main>
 

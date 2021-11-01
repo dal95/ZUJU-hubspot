@@ -1,5 +1,5 @@
 [ {
-  "id" : "461b51de-088e-b8ce-fc8d-592b95456d68",
+  "id" : "aed85699-70e7-bfb9-a42a-f8d1b104fdf0",
   "name" : "background_image",
   "label" : "Background Image",
   "required" : false,
@@ -10,16 +10,16 @@
   "type" : "image",
   "default" : {
     "size_type" : "auto",
-    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-mast.png",
-    "alt" : "gameplay-mast",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-mast.png",
+    "alt" : "exchange-mast",
     "loading" : "lazy",
-    "width" : 2880,
-    "height" : 1510,
-    "max_width" : 2880,
-    "max_height" : 1510
+    "width" : 1440,
+    "height" : 755,
+    "max_width" : 1440,
+    "max_height" : 755
   }
 }, {
-  "id" : "617f07b0-acfb-4ba0-a18a-37c065c92833",
+  "id" : "db53dc33-d128-17e6-fb0c-5dc603aea000",
   "name" : "logo",
   "label" : "Logo",
   "required" : false,
@@ -30,16 +30,16 @@
   "type" : "image",
   "default" : {
     "size_type" : "exact",
-    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-logo.png",
-    "alt" : "gameplay-logo",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-logo.png",
+    "alt" : "exchange-logo",
     "loading" : "lazy",
-    "width" : 221,
-    "height" : 56,
-    "max_width" : 528,
-    "max_height" : 134
+    "width" : 536,
+    "height" : 124,
+    "max_width" : 536,
+    "max_height" : 124
   }
 }, {
-  "id" : "16a1001f-ed57-f838-f176-ed2f1e03f5d5",
+  "id" : "2b6e5370-003e-3d92-2e92-ad78bd06f4f6",
   "name" : "title",
   "label" : "Title",
   "required" : false,
@@ -48,9 +48,9 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default" : "The LIVE game gets epic."
+  "default" : "AI-Powered & automated job search app."
 }, {
-  "id" : "739580a7-9a21-6460-be02-501a925826fd",
+  "id" : "dd6ca19c-bada-2ad2-7636-d2f09650f118",
   "name" : "description",
   "label" : "Description",
   "required" : false,
@@ -59,9 +59,9 @@
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
-  "default" : "We will be launching a space at once synchronous, immersive and collaborative in a fully-functioning economy that spans the real and digital worlds. "
+  "default" : "A global database of talents, professionals and hiring clubs. Plug into our worldwide network - find or post a job anywhere in the world. Transfers,      fees and records are secured with the latest technology. Designed for ease-of-use and fee-efficiency. Only on ZujuGP Exchange. "
 }, {
-  "id" : "95613fc0-ddc4-f1d2-a8f1-0881a3c06ae8",
+  "id" : "fa044059-0f97-d87b-1d29-77985633d8d2",
   "name" : "notify_label",
   "label" : "Notify Label",
   "required" : false,
@@ -72,9 +72,9 @@
   "type" : "text",
   "default" : "Get Notified"
 }, {
-  "id" : "7fe1cfb4-0306-d803-a002-00f6aba3f4c0",
-  "name" : "watch_vid_label",
-  "label" : "Watch Vid Label",
+  "id" : "02f9e6ea-dbbd-9d5d-1396-8eb9df95023e",
+  "name" : "watch_video_label",
+  "label" : "Watch Video Label",
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
@@ -83,7 +83,7 @@
   "type" : "text",
   "default" : "Watch Video"
 }, {
-  "id" : "5cb7a2fb-7b93-2f50-152c-8c692840f2de",
+  "id" : "724ed31e-7912-2768-d303-96554ecb6cbc",
   "name" : "video_url",
   "label" : "Video URL",
   "required" : false,
@@ -92,7 +92,7 @@
   "type" : "url",
   "default" : {
     "type" : "EXTERNAL",
-    "href" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/gameplay.mp4",
+    "href" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/exchange.mp4",
     "content_id" : null
   }
 } ]
