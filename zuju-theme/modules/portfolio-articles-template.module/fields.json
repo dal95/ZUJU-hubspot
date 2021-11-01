@@ -1,0 +1,133 @@
+[ {
+  "id" : "7feb9743-055d-0a98-9c70-6284f0623ad1",
+  "name" : "article_1",
+  "label" : "Article 1",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "639c473c-eea6-ad04-9f63-f3f91e551a2f",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/more-exchange.png",
+      "alt" : "more-exchange",
+      "loading" : "lazy",
+      "width" : 1440,
+      "height" : 742,
+      "max_width" : 1440,
+      "max_height" : 742
+    }
+  }, {
+    "id" : "195df962-f946-e11c-46ca-c84196fee07e",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "ZujuGP Exchange"
+  }, {
+    "id" : "66e4a21d-3688-02b7-4ad1-88eb9b18774d",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Our AI-powered and automated global job search app"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/more-exchange.png",
+      "alt" : "more-exchange",
+      "loading" : "lazy",
+      "width" : 1440,
+      "height" : 742,
+      "max_width" : 1440,
+      "max_height" : 742
+    },
+    "title" : "ZujuGP Exchange",
+    "description" : "Our AI-powered and automated global job search app"
+  }
+}, {
+  "id" : "c998823b-2326-093a-1018-566bff9366a2",
+  "name" : "article_2",
+  "label" : "Article 2",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "b90e1094-7817-8567-c2bd-b5032a3b116c",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/more-rank.jpg",
+      "alt" : "more-rank",
+      "loading" : "lazy",
+      "width" : 1920,
+      "height" : 755,
+      "max_width" : 1920,
+      "max_height" : 755
+    }
+  }, {
+    "id" : "4d4a5d2d-79c4-6c42-4417-9c4c22c552e1",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "ZujuGP Rank"
+  }, {
+    "id" : "fe41474b-790f-069e-a1e3-a46f5162c644",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Blockchain and AI-enabled talent development &  recruitment app"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/more-rank.jpg",
+      "alt" : "more-rank",
+      "loading" : "lazy",
+      "width" : 1920,
+      "height" : 755,
+      "max_width" : 1920,
+      "max_height" : 755
+    },
+    "title" : "ZujuGP Rank",
+    "description" : "Blockchain and AI-enabled talent development &  recruitment app"
+  }
+} ]

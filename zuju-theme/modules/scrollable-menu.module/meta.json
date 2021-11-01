@@ -2,7 +2,7 @@
   "global" : true,
   "smart_type" : "NOT_SMART",
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 58733807419,
+  "module_id" : 56677699891,
   "label" : "Scrollable menu",
   "is_available_for_new_content" : false
 }

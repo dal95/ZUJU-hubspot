@@ -3,7 +3,7 @@
   "master_language" : "en",
   "icon" : "../../images/module-icons/ellipses.svg",
   "host_template_types" : [ "BLOG_LISTING" ],
-  "module_id" : 58733258549,
+  "module_id" : 54941709607,
   "label" : "Blog pagination",
   "is_available_for_new_content" : true
 }

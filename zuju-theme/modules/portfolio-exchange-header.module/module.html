@@ -1,27 +1,33 @@
-
 <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
-  <!--<div class="absolute inset-0"><img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-mast.png" /></div>-->
-  <div class="absolute inset-0"><img class="h-full w-full object-cover object-center" src="{{ module.background_image.src }}" /></div>
+  <div class="absolute inset-0">
+    <div class="sm:aspect-w-16 sm:aspect-h-9">
+      <div>
+        <!-- <img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-mast.png" />-->
+        <img class="h-full w-full object-cover object-center" src="{{ module.background_image.src }}" />
+      </div>
+    </div>
+  </div>
+  
   <div class="relative flex flex-col items-center justify-center sm:p-8">
-    <!--<img class="h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-logo.png" x-bind="animate(16)" />-->
-    <img class="h-16 mb-16" src="{{ module.logo.src }}" x-bind="animate(16)" />
-    
-    <h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
+    <!--<img class="sm:h-10 lg:h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-logo.png" x-bind="animate(16)" />-->
+    <img class="sm:h-10 lg:h-16 mb-16" src="{{ module.logo.src }}" x-bind="animate(16)" />
+    <h1 class="lg:w-1/2 text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
       {#
       {% if content.language.languageTag == "zh-cn" %}
-      史诗般的LIVE游戏
+      我们以AI智能和自动化技术作为驱动的全球工作搜寻应用程序
       {% else %}
-      The LIVE game gets epic.
+      AI-Powered &amp; automated job search app.
       {% endif %}
       #}
       {{ module.title }}
     </h1>
-    <p class="text-white lg:w-1/2 text-center mb-8" x-bind="animate(16)">
+    <p class="text-white lg:w-5/12 text-center mb-8" x-bind="animate(16)">
       {#
       {% if content.language.languageTag == "zh-cn" %}
-      在一个高速运转且跨越现实世界和数字世界的经济体里，我们即将推出一个同步、沉浸且协作的空&#8288;间。
+      一个集合全球人才、专家和招聘俱乐部的庞大数据库。通过接入我们的网络 – 您可以在世界上任何地方查找或发布相关工作。转会、交易、费用和记录都处在最新技术的保护之下。蹴蹴交换空间提供独一无二的易用性和高效率。
       {% else %}
-      We will be launching a space at once synchronous, immersive and collaborative in a fully-functioning economy that spans the real and digital worlds.
+      A global database of talents, professionals and hiring clubs. Plug into our worldwide network - find or post a job anywhere in the world. Transfers,
+      fees and records are secured with the latest technology. Designed for ease-of-use and fee-efficiency. Only on ZujuGP Exchange.
       {% endif %}
       #}
       {{ module.description }}
@@ -48,7 +54,7 @@
         Watch Video
         {% endif %}
         #}
-        {{ module.watch_vid_label }}
+        {{ module.watch_video_label }}
       </button>
     </div>
   </div>
@@ -62,10 +68,10 @@
      x-on:keyup.window.escape="playing = false"
      >
   <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
-    <div class="relative">
+    <div class="relative sm:w-full">
       <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
       <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
-        <!--<source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/gameplay.mp4" />-->
+        <!--<source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/exchange.mp4" />-->
         <source src="{{ module.video_url.href }}" />
       </video>
     </div>

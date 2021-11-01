@@ -11,26 +11,7 @@
 
     {% module "rewards_redemption" path="/zuju-theme/modules/rewards-redemption", label="Rewards redemption" %}
 
-    <section class="bg-gradient-to-b from-white to-zuju-gray-db">
-      <div class="max-w-[1440px] flex flex-col items-center p-8 mx-auto">
-        <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black text-center sm:mb-8 lg:mb-16">
-          {% if content.language.languageTag == "zh-cn" %}
-          会员等级
-          {% else %}
-          Member Tiers
-          {% endif %}
-        </h1>
-        {% if content.language.languageTag == "zh-cn" %}
-        <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-loyalty-points-cn.png" />
-        {% else %}
-        <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-loyalty-points.png" />
-        {% endif %}
-      </div>
-    </section>
-
-    <div class="is-hidden">
-      {% module "rewards_tier" path="/zuju-theme/modules/rewards-tier", label="Rewards tier" %}
-    </div>
+    {% module "rewards_tier" path="/zuju-theme/modules/rewards-tier", label="Rewards tier" %}
 
     {# Spacer #}
     <div class="bg-zuju-gray-db sm:h-8 lg:h-36" />

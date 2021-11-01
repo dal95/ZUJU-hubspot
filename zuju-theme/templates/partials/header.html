@@ -4,143 +4,143 @@
 -->
 {% import 'zuju-theme/macros/tags.html' as c %}
 
-  {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
-  {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 
-  <!-- Top nav -->
-  <div class="nav">
-    <nav class="top-nav">
-      <div class="top-nav__container">
-        <div>
-          {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}
-            <div class="header__language-switcher">
-              <div class="header__language-switcher-label">
-                {% module 'language-switcher-4'
-                  path='@hubspot/language_switcher',
-                  display_mode='Localized',
-                  label='Language switcher'
-                %}
-                <div class="header__language-switcher-label-current"> {{ locale_name(locale) }}</div>
-              </div>
+<!-- Top nav -->
+<div class="nav">
+  <nav class="top-nav">
+    <div class="top-nav__container">
+      <div>
+        {% if content.translated_content.values()|selectattr('published')|length || is_listing_view && group.translations %}
+          <div class="header__language-switcher">
+            <div class="header__language-switcher-label">
+              {% module 'language-switcher-4'
+                path='@hubspot/language_switcher',
+                display_mode='Localized',
+                label='Language switcher'
+              %}
+              <div class="header__language-switcher-label-current"> {{ locale_name(locale) }}</div>
             </div>
-          {% endif %}
-        </div>
-
-        <div class="top-nav__social social-links">
-          <a href="/convo/the-future-of-football" target="_blank"><i class="far fa-comment"></i></a>
-          <a href="https://www.facebook.com/zujugp" target="_blank"><i class="fab fa-facebook-square"></i></a>
-          <a href="https://instagram.com/zujugp" target="_blank"><i class="fab fa-instagram"></i></a>
-          <a href="https://twitter.com/zujugp" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.youtube.com/channel/UCbXvRvjZAt5aZhBNlDFxHuw" target="_blank"><i class="fab fa-youtube"></i></a>
-          <a href="https://weibo.com/u/7706292600" target="_blank"><i class="fab fa-weibo"></i></a>
-        </div>
+          </div>
+        {% endif %}
       </div>
-    </nav>
 
-    <!-- Main nav -->
-    <nav class="main-nav">
-      <div class="main-nav__container">
-        <div class="main-nav__logo clr-primary">
-          {% if currLang == "zh-cn" %}
-            {% logo "logo_zuju" src="https://www.zujugp.com/hubfs/BRAND%20ASSETS/ZujuGP%20Chinese%20Logo_Red%20Horizontal.png" link="/zh-cn/" no_wrapper=True %}
-          {% else %}
-          {% logo "logo_zuju" link="/" no_wrapper=True %}
-          {% endif %}
-        </div>
+      <div class="top-nav__social social-links">
+        <a href="/convo/the-future-of-football" target="_blank"><i class="far fa-comment"></i></a>
+        <a href="https://www.facebook.com/zujugp" target="_blank"><i class="fab fa-facebook-square"></i></a>
+        <a href="https://instagram.com/zujugp" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://twitter.com/zujugp" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.youtube.com/channel/UCbXvRvjZAt5aZhBNlDFxHuw" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://weibo.com/u/7706292600" target="_blank"><i class="fab fa-weibo"></i></a>
+      </div>
+    </div>
+  </nav>
 
-        <div class="main-nav__omega">
-          {% if currLang == "zh-cn" %}
-            {% menu "main-nav" id=57071986309 %}
-          {% else %}
-            {% menu "main-nav" id=54357477653 %}
-          {% endif %}
+  <!-- Main nav -->
+  <nav class="main-nav">
+    <div class="main-nav__container">
+      <div class="main-nav__logo clr-primary">
+        {% if currLang == "zh-cn" %}
+          {% logo "logo_zuju" src="https://www.zujugp.com/hubfs/BRAND%20ASSETS/ZujuGP%20Chinese%20Logo_Red%20Horizontal.png" link="/zh-cn/" no_wrapper=True %}
+        {% else %}
+        {% logo "logo_zuju" link="/" no_wrapper=True %}
+        {% endif %}
+      </div>
 
-          {% if request_contact.is_logged_in %}
-            {% set langQuery = '?hsLang='~html_lang %}
-            <div class="has-dropdown">
-              <a href="/members-portal{{ langQuery }}" class="nav__link account-link">
-                {% if currLang == "zh-cn" %}
-                账户
-                {% else %}
-                Account
-                {% endif %}
+      <div class="main-nav__omega">
+        {% if currLang == "zh-cn" %}
+          {% menu "main-nav" id=57071986309 %}
+        {% else %}
+          {% menu "main-nav" id=54357477653 %}
+        {% endif %}
 
-                {{ c.icon_chevron_down() }}
-                <div class="arrow-up"></div>
-              </a>
-              <div class="dropdown">
-                <div>
-                  {% if currLang == "zh-cn" %}
-                  你好，{{ contact.firstname }}
-                  {% else %}
-                  Hi, {{ contact.firstname }}
-                  {% endif %}
-                </div>
-
-                <a href="/profile{{ langQuery }}">
-                  {% if currLang == "zh-cn" %}
-                  编辑个人资料
-                  {% else %}
-                  Edit profile
-                  {% endif %}
-                </a>
-
-                <a href="/membership{{ langQuery }}">
-                  {% if currLang == "zh-cn" %}
-                  会员
-                  {% else %}
-                  Membership
-                  {% endif %}
-                </a>
-
-                <a href="/_hcms/mem/logout{{ langQuery }}">
-                  {% if currLang == "zh-cn" %}
-                  退出登录
-                  {% else %}
-                  Logout
-                  {% endif %}
-                </a>
-              </div>
-            </div>
-          {% else %}
-            {% if currLang == "zh-cn" %}
-              <a class="nav__link nav-auth" href="/zh-cn/registration">注册</a>
-            {% else %}
-              <a class="nav__link nav-auth" href="/registration{{ langQuery }}">Sign Up</a>
-            {% endif %}
-
-            <a class="nav__link nav-auth" href="/_hcms/mem/login{{ langQuery }}">
+        {% if request_contact.is_logged_in %}
+          {% set langQuery = '?hsLang='~html_lang %}
+          <div class="has-dropdown">
+            <a href="/members-portal{{ langQuery }}" class="nav__link account-link">
               {% if currLang == "zh-cn" %}
-              登录
+              账户
               {% else %}
-              Login
+              Account
               {% endif %}
+
+              {{ c.icon_chevron_down() }}
+              <div class="arrow-up"></div>
             </a>
+            <div class="dropdown">
+              <div>
+                {% if currLang == "zh-cn" %}
+                你好，{{ contact.firstname }}
+                {% else %}
+                Hi, {{ contact.firstname }}
+                {% endif %}
+              </div>
+
+              <a href="/profile{{ langQuery }}">
+                {% if currLang == "zh-cn" %}
+                编辑个人资料
+                {% else %}
+                Edit profile
+                {% endif %}
+              </a>
+
+              <a href="/membership{{ langQuery }}">
+                {% if currLang == "zh-cn" %}
+                会员
+                {% else %}
+                Membership
+                {% endif %}
+              </a>
+
+              <a href="/_hcms/mem/logout{{ langQuery }}">
+                {% if currLang == "zh-cn" %}
+                退出登录
+                {% else %}
+                Logout
+                {% endif %}
+              </a>
+            </div>
+          </div>
+        {% else %}
+          {% if currLang == "zh-cn" %}
+            <a class="nav__link nav-auth" href="/zh-cn/registration">注册</a>
+          {% else %}
+            <a class="nav__link nav-auth" href="/registration{{ langQuery }}">Sign Up</a>
           {% endif %}
 
-          <div class="off-canvas">
-            <div class="is-hidden">
-              {{ content.id }}
-            </div>
-
-            {{ c.icon_cross() }}
-
-            <!-- Off canvas menu content -->
+          <a class="nav__link nav-auth" href="/_hcms/mem/login{{ langQuery }}">
             {% if currLang == "zh-cn" %}
-              {{ c.z_menu(57071986309, 'off-canvas__menu', 'nav__link') }}
+            登录
             {% else %}
-              {{ c.z_menu(54357477653, 'off-canvas__menu', 'nav__link') }}
+            Login
             {% endif %}
+          </a>
+        {% endif %}
+
+        <div class="off-canvas">
+          <div class="is-hidden">
+            {{ content.id }}
           </div>
 
-          <!-- Burger menu -->
-          <div class="burger-menu">
-            <div class="burger-menu__item"></div>
-            <div class="burger-menu__item"></div>
-            <div class="burger-menu__item"></div>
-          </div>
+          {{ c.icon_cross() }}
 
+          <!-- Off canvas menu content -->
+          {% if currLang == "zh-cn" %}
+            {{ c.z_menu(57071986309, 'off-canvas__menu', 'nav__link') }}
+          {% else %}
+            {{ c.z_menu(54357477653, 'off-canvas__menu', 'nav__link') }}
+          {% endif %}
         </div>
+
+        <!-- Burger menu -->
+        <div class="burger-menu">
+          <div class="burger-menu__item"></div>
+          <div class="burger-menu__item"></div>
+          <div class="burger-menu__item"></div>
+        </div>
+
       </div>
-    </nav>
-  </div>
+    </div>
+  </nav>
+</div>
