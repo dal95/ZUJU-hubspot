@@ -5,18 +5,18 @@
 
 {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
 {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
-{% import '../../macros/tags.html' as c %}
+{% import 'zuju-theme/macros/tags.html' as c %}
 
 <section class="callout-section">
   <img
-    src="{{ get_asset_url('../../images/assets/triangle.png') }}"
+    src="{{ get_asset_url('zuju-theme/images/assets/triangle.png') }}"
     alt=""
     class="callout-section__triangle"
   />
 
   <div>
     {% image 'footer_callout'
-      src="{{ get_asset_url('../../images/assets/callout.png') }}",
+      src="{{ get_asset_url('zuju-theme/images/assets/callout.png') }}",
       alt="Banner",
       label="Footer banner" %}
   </div>
