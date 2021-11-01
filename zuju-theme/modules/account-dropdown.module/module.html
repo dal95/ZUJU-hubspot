@@ -1,0 +1,46 @@
+{% set langQuery = '?hsLang='~html_lang %}
+<div class="has-dropdown">
+  <a href="/members-portal{{ langQuery }}" class="nav__link account-link">
+    {% if currLang == "zh-cn" %}
+    账户
+    {% else %}
+    Account
+    {% endif %}
+
+    {{ c.icon_chevron_down() }}
+    <div class="arrow-up"></div>
+  </a>
+  <div class="dropdown">
+    <div>
+      {% if currLang == "zh-cn" %}
+      你好，{{ contact.firstname }}
+      {% else %}
+      Hi, {{ contact.firstname }}
+      {% endif %}
+    </div>
+
+    <a href="/profile{{ langQuery }}">
+      {% if currLang == "zh-cn" %}
+      编辑个人资料
+      {% else %}
+      Edit profile
+      {% endif %}
+    </a>
+
+    <a href="/membership{{ langQuery }}">
+      {% if currLang == "zh-cn" %}
+      会员
+      {% else %}
+      Membership
+      {% endif %}
+    </a>
+
+    <a href="/_hcms/mem/logout{{ langQuery }}">
+      {% if currLang == "zh-cn" %}
+      退出登录
+      {% else %}
+      Logout
+      {% endif %}
+    </a>
+  </div>
+</div>

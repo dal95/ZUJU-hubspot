@@ -1,7 +1,7 @@
 <!--
     templateType: page
     isAvailableForNewContent: true
-    label: Zuju Statics - Impact
+    label: Staging - Zuju Statics - Impact
 -->
 
 {% set is_statics = true %}
@@ -10,221 +10,21 @@
 {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
+		{% module "impact_masthead"
+			path="/zuju-theme/modules/impact-masthead",
+			label="Impact Masthead"
+		%}
 
-		<section>
-			<div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
-				<div class="absolute inset-0">
-					<img
-						class="h-full w-full object-cover object-center"
-						src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-masthead.jpg"
-					/>
-				</div>
-				<div class="relative flex flex-col items-center justify-center sm:p-8">
-					<h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
-						{% if content.language.languageTag == "zh-cn" %}
-							影响力
-						{% else %}
-							Impact
-						{% endif %}
-					</h1>
-					<div class="lg:w-3/4 flex sm:flex-col justify-between">
-						<div class="flex lg:flex-1 flex-col items-center mb-16">
-							<img class="h-28 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-1.png" x-bind="animate(8)" />
-							<p class="w-2/3 text-2xl text-white font-gtcond font-black text-center">
-								{% if content.language.languageTag == "zh-cn" %}
-									资源&amp;责任
-								{% else %}
-									Access &amp; Accountability
-								{% endif %}
-							</p>
-						</div>
-						<div class="flex lg:flex-1 flex-col items-center mb-16">
-							<img class="h-28 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-2.png" x-bind="animate(8)" />
-							<p class="w-2/3 text-2xl text-white font-gtcond font-black text-center">
-								{% if content.language.languageTag == "zh-cn" %}
-									青年球员的赋能&amp;发展
-								{% else %}
-									Youth Empowerment &amp; Development
-								{% endif %}
-							</p>
-						</div>
-						<div class="flex lg:flex-1 flex-col items-center mb-16">
-							<img class="h-28 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-3.png" x-bind="animate(8)" />
-							<p class="w-2/3 text-2xl text-white font-gtcond font-black text-center">
-								{% if content.language.languageTag == "zh-cn" %}
-									健康&amp;合作
-								{% else %}
-									Wellness &amp; Partnerships
-								{% endif %}
-							</p>
-						</div>
-					</div>
-					<p class="text-white lg:w-3/4 text-center mb-8">
-						{% if content.language.languageTag == "zh-cn" %}
-							为了支持联合国的可持续发展目标，即为所有人创造一个更美好的未来，蹴蹴ZujuGP的精神就是在这三大基础上生根发芽的。
-						{% else %}
-							The ZujuGP spirit thrives on these three pillars in support of the UN Sustainable Development Goals to achieve a better future for all.
-						{% endif %}
-					</p>
-				</div>
-			</div>
-		</section>
+		{% module "impact_bg_white"
+			path="/zuju-theme/modules/impact-accountability",
+			label="Impact bg white"
+		%}
 
-		<div class="is-hidden">
-			{% module "impact_masthead" path="/zuju-theme/modules/impact-masthead", label="Impact Masthead" %}
-		</div>
-
-		<section class="bg-white lg:pb-24">
-			<div class="relative max-w-[1440px] flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
-				<div class="flex sm:flex-col justify-center">
-					<div class="lg:w-5/12 flex items-center justify-center sm:p-8">
-						<img class="w-full max-w-md" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/global-goals.png" />
-					</div>
-					<div class="lg:w-5/12 p-8">
-						<h1 class="w-3/4 sm:text-4xl lg:text-5xl font-gtcond font-black mb-8" x-bind="animate(8)">
-							{% if content.language.languageTag == "zh-cn" %}
-								资源&amp;责任
-							{% else %}
-								Access &amp; Accountability
-							{% endif %}
-						</h1>
-						<p class="mb-8">
-							{% if content.language.languageTag == "zh-cn" %}
-								我们与行业伙伴、投资公司通力合作旨在搭建透明又富有责任心的足球社群。
-							{% else %}
-								We work together with partners and portfolio companies to connect and transform football communities transparently and responsibly.
-							{% endif %}
-						</p>
-						<p class="mb-8">
-							{% if content.language.languageTag == "zh-cn" %}
-								我们以科技为桥梁连接东西方，并创造平等的机会使各色各样的人才聚集于此。
-							{% else %}
-								We use technology as a digital spine to democratise opportunities from East to West, expanding diversity in talent and promoting equity for
-								all.
-							{% endif %}
-						</p>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<div class="is-hidden">
-			{% module "impact_bg_white" path="/zuju-theme/modules/impact-accountability", label="Impact bg white" %}
-		</div>
-
-		<section class="bg-zuju-gray-db">
-			<div class="relative max-w-[1440px] mx-auto py-16" x-data="parallax()" x-bind="root">
-				<div class="lg:w-2/3 sm:px-8 sm:-mt-32 lg:-mt-80 lg:mb-36 mx-auto">
-					<img
-						class="w-full sm:max-w-md"
-						src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-slide-1.png"
-						x-bind="animate(16)"
-					/>
-				</div>
-				<div class="flex sm:flex-col justify-center sm:mb-16">
-					<div class="lg:w-5/12 sm:px-8 pt-8">
-						<h1 class="lg:w-3/4 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-8" x-bind="animate(8)">
-							{% if content.language.languageTag == "zh-cn" %}
-								青年球员的赋能&发展
-							{% else %}
-								Youth Empowerment &amp; Development
-							{% endif %}
-						</h1>
-					</div>
-					<div class="lg:w-5/12 sm:px-8 lg:p-8">
-						<p class="text-white mb-8">
-							{% if content.language.languageTag == "zh-cn" %}
-								我们认为给青年球员赋能与发展机会是实现可持续化的重要一环。
-							{% else %}
-								We advocate youth empowerment and development as a sustainable democracy.
-							{% endif %}
-						</p>
-						<p class="text-white mb-8">
-							{% if content.language.languageTag == "zh-cn" %}
-								长期以来，我们关注并支持弱势群体。给予不同背景的孩子公平的机会，以实现他们在体育和素质教育方面的双发展。
-							{% else %}
-								We have been supporting promising youths from vulnerable backgrounds to achieve their sporting goals and education.
-							{% endif %}
-						</p>
-						<p class="text-white mb-8">
-							{% if content.language.languageTag == "zh-cn" %}
-								我们与当地伙伴紧密合作，努力为草根社区做出贡献 —— 减少不平等，并为青年球员改善训练条件。
-							{% else %}
-								We work with local partners to contribute to grassroot communities - reducing inequalities and improving conditions for youths from diverse
-								backgrounds.
-							{% endif %}
-						</p>
-					</div>
-				</div>
-				<div class="lg:grid grid-cols-12 grid-rows-[repeat(2,auto)]" x-data="parallax()" x-bind="root">
-					<div class="row-start-1 row-span-2 col-start-3 col-span-5 flex items-center justify-center sm:px-8 sm:mb-8">
-						<img class="relative z-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-wellness.png" x-bind="animate(8)" />
-					</div>
-					<div class="row-start-1 col-start-6 col-span-3 flex items-center sm:px-8 sm:mb-8">
-						<h1 class="relative z-20 text-white sm:text-4xl lg:text-5xl font-gtcond font-black" x-bind="animate(16)">
-							{% if content.language.languageTag == "zh-cn" %}
-								健康&合作
-							{% else %}
-								Wellness &amp; Partnerships
-							{% endif %}
-						</h1>
-					</div>
-					<div class="row-start-2 col-start-8 col-span-4 lg:pt-16 sm:px-8">
-						<p class="text-white mb-8">
-							{% if content.language.languageTag == "zh-cn" %}
-								蹴蹴ZujuGP相信身体健康是一切的基础。
-							{% else %}
-								ZujuGP believes that wellness is a birthright.
-							{% endif %}
-						</p>
-						<p class="text-white mb-8">
-							{% if content.language.languageTag == "zh-cn" %}
-								通过足球我们不仅可以强身健体，还能锻造坚韧的心理素质。
-							{% else %}
-								Through football we strengthen the blueprint to the physical, emotional and mental components of health.
-							{% endif %}
-						</p>
-						<p class="text-white mb-8">
-							{% if content.language.languageTag == "zh-cn" %}
-								我们倡导全球的合作伙伴以及创新力量能意识到健康才是一个社会的基础力量，也是个人强大意志和韧性的最终归因。
-							{% else %}
-								We advocate global partnerships and innovations to expand wellness towards the larger contexts of social and infrastructural health and
-								resilience for all. Including support of nature conservation, greenery and recreation.
-							{% endif %}
-						</p>
-					</div>
-				</div>
-				<div class="sm:hidden relative z-10 w-0.5 h-40 -mt-12 bg-zuju-red mx-auto"></div>
-				<div class="lg:w-2/3 mx-auto pt-4 sm:px-8">
-					<video controls=""><source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/impact.mp4" /></video>
-				</div>
-			</div>
-			<div class="w-full max-w-[1000px] mx-auto">
-				{# {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %} #}
-			</div>
-			<div class="py-16 pb-32" x-data="parallax()" x-bind="root">
-				<h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(16)">
-					{% if content.language.languageTag == "zh-cn" %}
-						已与以下伙伴达成合作
-					{% else %}
-						In Alignment With
-					{% endif %}
-				</h1>
-				<div class="flex sm:flex-col gap-x-8 gap-y-8 items-center justify-center">
-					<div class="flex gap-x-8">
-						<img class="h-14" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-unesco.png" />
-						<img class="h-14" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-itu.png" />
-					</div>
-					<div><img class="h-14" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-unicef.png" /></div>
-					<div><img class="h-14" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-who.png" /></div>
-					<div><img class="h-14" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-peter-lim-awards.png" /></div>
-					<div><img class="h-14" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-peter-lim-scholarship.png" /></div>
-				</div>
-			</div>
-		</section>
-
-		<section class="bg-zuju-gray-db is-hidden">
-			{% module "impact_bg-dark" path="/zuju-theme/modules/impact-bg-dark", label="Impact bg dark" %}
+		<section class="bg-zuju-gray-db text-white">
+			{% module "impact_bg-dark"
+				path="/zuju-theme/modules/impact-bg-dark",
+				label="Impact bg dark"
+			%}
 
 			{# Drag and drop area #}
 			{# <div class="w-full max-w-[1000px] mx-auto">
@@ -232,7 +32,10 @@
 			</div> #}
 
 			{# Alliances #}
-			{% module "alliances" path="/zuju-theme/modules/alliances", label="Alliances" %}
+			{% module "alliances"
+				path="/zuju-theme/modules/alliances",
+				label="Alliances"
+			%}
 		</section>
 	</main>
 </div>

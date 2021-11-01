@@ -1,5 +1,6 @@
 {
   "global" : false,
+  "icon" : "fontawesome-5.14.0:Alternate%20Fire:SOLID",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 58533115266,
   "label" : "About page vision section",

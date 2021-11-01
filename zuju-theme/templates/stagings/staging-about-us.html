@@ -1,0 +1,34 @@
+<!--
+    templateType: page
+    isAvailableForNewContent: true
+    label: Staging - Zuju Statics - About
+-->
+
+{% set is_statics = true %}
+{% extends '../layouts/base.html' %}
+
+{% block body %}
+<div class="app">
+	<main class="bg-zuju-gray-1" x-data="{}">
+		<div class="w-full relative">
+			{% module "about_masthead" path="/zuju-theme/modules/about-masthead", label="Masthead" %}
+
+			<div class="relative z-20">
+				{% module "about_vision"
+					path="/zuju-theme/modules/about-vision",
+					label="Vision"
+				%}
+
+				{% module "text_section"
+					path="/zuju-theme/modules/text-section",
+					label="Text section"
+				%}
+
+				<div>
+					{% module "about_zujugp" path="/zuju-theme/modules/about-zujugp", label="About ZujuGP" %}
+				</div>
+			</div>
+		</div>
+	</main>
+</div>
+{% endblock body%}

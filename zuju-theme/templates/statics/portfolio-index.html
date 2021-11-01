@@ -11,6 +11,7 @@
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
     <!-- PROD -->
+    <!--
     {#
     <section>
       <div class="relative max-w-[1440px] bg-black mx-auto">
@@ -58,6 +59,7 @@
       </div>
     </section>
     #}
+    -->
     <section>
       {% module "module_163541626537426" 
       path="/zuju-theme/modules/portfolio-masthead", 
@@ -65,6 +67,7 @@
     </section>
     
     <!-- PROD -->
+    <!--
     {#  <section class="relative bg-white">
       <div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto sm:p-8" x-data="parallax()" x-bind="root">
         <img
@@ -104,11 +107,13 @@
         </div>
       </div>
     </section> #}
-    
+    -->
     {% module "module_163541907584157" path="/zuju-theme/modules/portfolio-image-text-cta", label="Portfolio Image CTA" %}
     
     
-    
+    <!-- PROD -->
+    <!--
+  {#
     <section class="bg-zuju-gray-2">
       <div class="relative max-w-[1440px] mx-auto flex flex-wrap justify-center sm:pt-24 lg:pt-36 sm:px-8" x-data="parallax()" x-bind="root">
         <img class="absolute top-80 right-0 w-1/2" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png" x-bind="animate(-24)" />
@@ -299,6 +304,12 @@
         </div>
       </div>
     </section>
+  #}
+  -->
+    
+    {% module "module_16356957792758" path="/zuju-theme/modules/portfolio-articles", label="Portfolio Articles" %}
+    
+    
     <section class="bg-zuju-gray-2 p-8 pb-32">
       <div class="max-w-[1000px] mx-auto">{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}</div>
     </section>

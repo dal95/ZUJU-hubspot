@@ -1,0 +1,63 @@
+[ {
+  "id" : "d486c560-628d-acf3-2ac6-e3a618cb9cc5",
+  "name" : "card_image",
+  "label" : "Card Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-gallery.png",
+    "alt" : "gameplay-gallery",
+    "loading" : "lazy",
+    "width" : 958,
+    "height" : 600,
+    "max_width" : 958,
+    "max_height" : 600
+  }
+}, {
+  "id" : "c032aa25-1795-7fdb-df46-a549b3fac368",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Join a public Gallery hosted by your idol or favourite brand"
+}, {
+  "id" : "67c59ddf-c3ab-1f7a-2811-4205d8263f56",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Access an experience exclusive to them - from live stream, locker room access, unique content, merchandise and special offers to interactions within a shared community.        "
+}, {
+  "id" : "2e0c5dd0-b118-6cf1-804c-629a8a73118e",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png",
+    "alt" : "bg-ball-dark",
+    "loading" : "lazy",
+    "width" : 1462,
+    "height" : 1464,
+    "max_width" : 1462,
+    "max_height" : 1464
+  }
+} ]

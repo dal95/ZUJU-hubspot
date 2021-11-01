@@ -1,0 +1,87 @@
+{
+  "background_image.default.alt" : {
+    "message" : "rank-mast",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_image.label" : {
+    "message" : "Background Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "background_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "description.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.label" : {
+    "message" : "Description",
+    "description" : null,
+    "placeholders" : null
+  },
+  "description.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "portfolio-rank-header",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.default" : {
+    "message" : "World-class digital academy",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.label" : {
+    "message" : "Title",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "title.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  }
+}

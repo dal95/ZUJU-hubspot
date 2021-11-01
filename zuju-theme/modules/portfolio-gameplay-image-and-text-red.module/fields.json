@@ -1,0 +1,63 @@
+[ {
+  "id" : "48df640f-43f8-bac5-4b01-3f725448d855",
+  "name" : "backgroud_image",
+  "label" : "Backgroud Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-effect.png",
+    "alt" : "gameplay-effect",
+    "loading" : "lazy",
+    "width" : 2880,
+    "height" : 1700,
+    "max_width" : 2880,
+    "max_height" : 1700
+  }
+}, {
+  "id" : "6f5dcb23-9966-404e-1e5d-f44a80c446e4",
+  "name" : "moving_image",
+  "label" : "Moving Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading.gif",
+    "alt" : "gameplay-heading",
+    "loading" : "lazy",
+    "width" : 512,
+    "height" : 247,
+    "max_width" : 512,
+    "max_height" : 247
+  }
+}, {
+  "id" : "af3a1609-9f9f-925e-26c3-5ae52c7b4add",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "ZujuGamePlay will offer unprecedented interoperability between content, data and digital assets, framed by experiences created and operated by a wide      range of contributors - from individuals to informally organised groups to brands and enterprises. Everyone can participate. Everyone can benefit. And      everyone can be a part of building out the vision that is ZujuGamePlay."
+}, {
+  "id" : "286e4fd8-62b3-f3c9-96d8-42001b4e7e29",
+  "name" : "small_text",
+  "label" : "Small Text",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Coming Soon"
+} ]

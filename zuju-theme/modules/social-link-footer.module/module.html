@@ -1,0 +1,30 @@
+<ul class="footer__social">
+  {% for item in module.links %}
+    {% set href = item.link.url.href %}
+    {% if item.link.url.type is equalto "EMAIL_ADDRESS" %}
+      {% set href = "mailto:" + href %}
+    {% endif %}
+    {% set rel = [] %}
+    {% if item.link.no_follow %}
+      {% do rel.append("nofollow") %}
+    {% endif %}
+    {% if item.link.open_in_new_tab %}
+      {% do rel.append("noopener") %}
+    {% endif %}
+
+    <li>
+      <a href="{{ href }}"
+        {% if item.link.open_in_new_tab %}target="_blank"{% endif %}
+        {% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+      >
+        {% icon
+          name="{{ item.icon.name }}"
+          style="{{ item.icon.type }}"
+          unicode="{{ item.icon.unicode }}"
+          icon_set="{{ item.icon.icon_set }}"
+        %}
+        <span style="padding-left: 8px">{{ item.text }}<span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>

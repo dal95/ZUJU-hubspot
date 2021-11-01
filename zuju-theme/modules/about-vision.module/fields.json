@@ -38,6 +38,17 @@
     "max_height" : 960
   }
 }, {
+  "id" : "344c9384-f0e8-3fb2-d395-0b170e17065e",
+  "name" : "list_heading",
+  "label" : "List heading",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "We believe that.."
+}, {
   "id" : "a4d78372-e2bf-1c11-246f-3d47e2f843e0",
   "name" : "list",
   "label" : "List",

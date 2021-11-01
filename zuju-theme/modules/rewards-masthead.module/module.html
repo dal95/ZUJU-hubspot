@@ -1,0 +1,59 @@
+<section class="relative max-w-[1440px] min-h-screen flex bg-zuju-gray-db mx-auto overflow-hidden" x-data="parallax()" x-bind="root">
+	<div class="absolute inset-0 sm:-mx-16">
+		<img class="h-full w-full sm:object-contain sm:object-top lg:object-cover lg:object-center" src="{{ module.background.src }}" />
+	</div>
+	<div class="relative flex-grow flex flex-col items-center sm:justify-center lg:justify-between p-8 lg:pt-32 lg:pb-16">
+		<h1 class="lg:w-1/2 sm:w-full sm:max-w-sm text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(16)">
+			{{ module.main_title }}
+		</h1>
+		<div class="lg:w-1/2 sm:w-full sm:max-w-md lg:self-start">
+			<h2 class="text-white text-4xl font-gtcond font-black mb-8" x-bind="animate(8)">
+				{{ module.content.title }}
+			</h2>
+			<div class="text-white mb-8" x-bind="animate(4)">
+				{{ module.content.paragraph }}
+			</div>
+			<div class="flex flex-wrap justify-start -mx-4">
+				{% set href = module.content.button_primary.link_field.url.href %}
+				{% if module.content.button_primary.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+				{% endif %}
+				{% set rel = [] %}
+				{% if module.content.button_primary.link_field.no_follow %}
+					{% do rel.append("nofollow") %}
+				{% endif %}
+				{% if module.content.button_primary.link_field.open_in_new_tab %}
+					{% do rel.append("noopener") %}
+				{% endif %}
+
+				<a href="{{ href }}"
+					{% if module.content.button_primary.link_field.open_in_new_tab %}target="_blank"{% endif %}
+					{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}>
+					<button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 h-14 mx-4 mb-4">
+						{{ module.content.button_primary.text }}
+					</button>
+				</a>
+
+				{% set href = module.content.button_secondary.link_field.url.href %}
+				{% if module.content.button_secondary.link_field.url.type is equalto "EMAIL_ADDRESS" %}
+					{% set href = "mailto:" + href %}
+				{% endif %}
+				{% set rel = [] %}
+				{% if module.content.button_secondary.link_field.no_follow %}
+					{% do rel.append("nofollow") %}
+				{% endif %}
+				{% if module.content.button_secondary.link_field.open_in_new_tab %}
+					{% do rel.append("noopener") %}
+				{% endif %}
+
+				<a href="{{ href }}"
+					{% if module.content.button_secondary.link_field.open_in_new_tab %}target="_blank"{% endif %}
+					{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}>
+					<button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 h-14 mx-4 mb-4">
+						{{ module.content.button_secondary.text }}
+					</button>
+				</a>
+			</div>
+		</div>
+	</div>
+</section>

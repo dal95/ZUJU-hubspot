@@ -1,0 +1,87 @@
+{
+  "card_description.default" : {
+    "message" : "<p>Invite friends to your<br><strong>private Owner's Box</strong><br>where you can host, commentate, earn extra income, conduct social commerce, chat and more.</p>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_description.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_description.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_description.label" : {
+    "message" : "Card Description",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_description.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_image.default.alt" : {
+    "message" : "gameplay-hero",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_image.label" : {
+    "message" : "Card Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_title.default" : {
+    "message" : "Build your own Footballverse.",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_title.label" : {
+    "message" : "Card Title",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "card_title.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "portfolio-gameplay-image-and-text",
+    "description" : "",
+    "placeholders" : null
+  }
+}

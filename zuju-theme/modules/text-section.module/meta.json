@@ -1,5 +1,6 @@
 {
   "global" : false,
+  "icon" : "fontawesome-5.14.0:Medium",
   "host_template_types" : [ "PAGE" ],
   "module_id" : 58534982006,
   "label" : "About us text section",

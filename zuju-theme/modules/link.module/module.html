@@ -1,0 +1,21 @@
+{% set href = module.url.url.href %}
+{% if module.url.url.type is equalto "EMAIL_ADDRESS" %}
+	{% set href = "mailto:" + href %}
+{% endif %}
+{% set rel = [] %}
+{% if module.url.no_follow %}
+	{% do rel.append("nofollow") %}
+{% endif %}
+{% if module.url.open_in_new_tab %}
+	{% do rel.append("noopener") %}
+{% endif %}
+
+<a href="{{ href }}"
+	{% if module.url.open_in_new_tab %}target="_blank"{% endif %}
+	{% if rel %}rel="{{ rel|join(" ") }}"{% endif %} 
+  class="{{ module.class_name }}"
+>
+  {{ module.text }}
+</a>
+
+

@@ -8,6 +8,8 @@
 {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
+    
+    <!-- Below is Production -->
     <section class="bg-zuju-gray-db" x-data="{ playing: false, noti: false }">
       <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
         <div class="absolute inset-0">
@@ -86,6 +88,29 @@
         </div>
       </div>
     </section>
+    {# Rank Header Module #}
+    {#  Heri!! Please continue here
+    
+    <section class="bg-zuju-gray-db" x-data="{ playing: false, noti: false }">
+       {% module "module_163573450692512" path="/zuju-theme/modules/portfolio-rank-header", label="portfolio-rank-header" %}
+       <div
+        x-cloak=""
+        x-show="noti"
+        x-transition.opacity.duration.300ms=""
+        class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+        x-on:click="noti = false"
+        x-on:keyup.window.escape="noti = false"
+      >
+        <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
+          <div class="relative sm:w-full">
+            <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
+            <div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" %}</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    #}
+    
     <section class="bg-zuju-gray-db">
       <article class="relative max-w-[1440px] grid sm:grid-rows-2 lg:grid-cols-2 mx-auto" x-data="parallax()" x-bind="root">
         <div><img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-hero.jpg" /></div>
@@ -137,6 +162,7 @@
         </div>
       </div>
     </section>
+    
     <section class="pb-32">
       <div class="max-w-[1440px] mx-auto">
         <div class="sm:hidden flex">
@@ -311,6 +337,7 @@
         </div>
       </div>
     </section>
+    
   </main>
 </div>
 {% endblock body %}

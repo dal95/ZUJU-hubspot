@@ -1,0 +1,78 @@
+[ {
+  "id" : "617f07b0-acfb-4ba0-a18a-37c065c92833",
+  "name" : "logo",
+  "label" : "Logo",
+  "required" : false,
+  "locked" : false,
+  "responsive" : false,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-logo.png",
+    "alt" : "gameplay-logo",
+    "loading" : "lazy",
+    "width" : 221,
+    "height" : 56,
+    "max_width" : 528,
+    "max_height" : 134
+  }
+}, {
+  "id" : "16a1001f-ed57-f838-f176-ed2f1e03f5d5",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "The LIVE game gets epic."
+}, {
+  "id" : "739580a7-9a21-6460-be02-501a925826fd",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "We will be launching a space at once synchronous, immersive and collaborative in a fully-functioning economy that spans the real and digital worlds. "
+}, {
+  "id" : "95613fc0-ddc4-f1d2-a8f1-0881a3c06ae8",
+  "name" : "notify_label",
+  "label" : "Notify Label",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Get Notified"
+}, {
+  "id" : "7fe1cfb4-0306-d803-a002-00f6aba3f4c0",
+  "name" : "watch_vid_label",
+  "label" : "Watch Vid Label",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Watch Video"
+}, {
+  "id" : "5cb7a2fb-7b93-2f50-152c-8c692840f2de",
+  "name" : "video_url",
+  "label" : "Video URL",
+  "required" : false,
+  "locked" : false,
+  "supported_types" : [ "EXTERNAL" ],
+  "type" : "url",
+  "default" : {
+    "type" : "EXTERNAL",
+    "href" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/gameplay.mp4",
+    "content_id" : null
+  }
+} ]

@@ -1,0 +1,7 @@
+{% if module.menu %}
+  {% import  '/zuju-theme/macros/tags.html' as c %}
+
+  <ul class="v-menu">
+    {{ c.z_menu(module.menu, 'v-menu', '') }}
+  </ul>
+{% endif %}

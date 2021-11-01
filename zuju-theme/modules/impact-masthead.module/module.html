@@ -10,21 +10,7 @@
       <h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
         {{ module.title }}
       </h1>
-
-      {% for item in module.group %}
-        {% inline_text field="group_name" value="{{ item.group_name }}" %}
-        {% if item.image.src %}
-          {% set sizeAttrs = 'width="{{ item.image.width }}" height="{{ item.image.height }}"' %}
-          {% if item.image.size_type == 'auto' %}
-            {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-          {% elif item.image.size_type == 'auto_custom_max' %}
-            {% set sizeAttrs = 'width="{{ item.image.max_width }}" height="{{ item.image.max_height }}" style="max-width: 100%; height: auto;"' %}
-          {% endif %}
-           {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
-          <img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
-        {% endif %}
-      {% endfor %}
-
+      
       <div class="lg:w-3/4 flex sm:flex-col justify-between">
         {% for item in module.group %}
           <div class="flex lg:flex-1 flex-col items-center mb-16">
@@ -32,16 +18,16 @@
              {% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
               <img class="h-28 mb-8" src="{{ item.image.src }}" x-bind="animate(8)" alt="{{ item.image.alt }}" {{ loadingAttr }} />
             {% endif %}
-            <p class="w-2/3 text-2xl text-white font-gtcond font-black text-center">
+            <div class="w-2/3 text-2xl text-white font-gtcond font-black text-center">
               {{ item.group_name }}
-            </p>
+            </div>
           </div>
         {% endfor %}
       </div>
-
-      <p class="text-white lg:w-3/4 text-center mb-8">
+      
+      <div class="text-white lg:w-3/4 text-center mb-8">
         {{ module.description }}
-      </p>
+      </div>
     </div>
   </div>
 </section>

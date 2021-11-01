@@ -1,0 +1,34 @@
+<section class="bg-zuju-gray-db">
+  <div class="max-w-[1440px] grid sm:grid-rows-[auto,auto] sm:grid-cols-1 lg:grid-cols-12 mx-auto overflow-hidden" x-data="parallax()" x-bind="root">
+    <div class="relative z-20 row-start-1 sm:col-start-1 lg:col-start-6 lg:col-span-7 flex items-center justify-center p-8">
+      <!--<img class="sm:w-full sm:max-w-md" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-gallery.png" x-bind="animate(24)" />-->
+      <img class="sm:w-full sm:max-w-md" src="{{ module.card_image.src }}" x-bind="animate(24)" />
+    </div>
+    <div class="relative z-20 sm:row-start-2 sm:col-start-1 lg:row-start-1 lg:col-start-2 lg:col-span-4 flex flex-col justify-center p-8">
+      <h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black sm:text-center lg:text-right mb-8" x-bind="animate(8)">
+        {#
+        {% if content.language.languageTag == "zh-cn" %}
+        加入由您喜爱的明星或者主办品牌所设立的房间
+        {% else %}
+        Join a public Gallery hosted by your idol or favourite brand
+        {% endif %}
+        #}
+        {{ module.title }}
+      </h1>
+      <p class="text-white sm:text-center lg:text-right" x-bind="animate(8)">
+        {#
+        {% if content.language.languageTag == "zh-cn" %}
+        获得专门的体验 – 包括直播、探访更衣室、独家内幕、特别产品以及相关优惠。
+        {% else %}
+        Access an experience exclusive to them - from live stream, locker room access, unique content, merchandise and special offers to interactions within a shared community.
+        {% endif %}
+        #}
+        {{ module.description }}
+      </p>
+    </div>
+    <div class="relative z-10 sm:row-start-1 sm:row-span-2 sm:col-start-1 lg:row-start-1 lg:col-start-1 lg:col-span-6 flex items-center justify-center pt-8">
+      <!--<img class="sm:w-full sm:max-w-md" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png" x-bind="animate(-8)" />-->
+      <img class="sm:w-full sm:max-w-md" src="{{ module.background_image.src }}" x-bind="animate(-8)" />
+    </div>
+  </div>
+</section>    

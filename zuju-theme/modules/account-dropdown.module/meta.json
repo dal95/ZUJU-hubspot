@@ -1,0 +1,7 @@
+{
+  "global" : false,
+  "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
+  "module_id" : 58743071417,
+  "label" : "Account dropdown",
+  "is_available_for_new_content" : true
+}

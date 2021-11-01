@@ -87,7 +87,12 @@
           %}
 
           <div class="separator">{{ currLang == "zh-cn" ? "蹴蹴忠诚积分" : "ZujuGP Loyalty" }}</div>
-          <ul class="v-menu">
+
+          {% module "loyalty_menu"
+            path="/zuju-theme/modules/v-menu",
+            label="Loyalty menu" %}
+
+          {# <ul class="v-menu">
             <li><a href="/about-rewards">{{ currLang == "zh-cn" ? "忠诚积分该如何获得及使用？" : "How do loyalty Z Points work?" }}</a></li>
             <li><a href="/about-rewards">{{ currLang == "zh-cn" ? "您的等级和福利" : "Your Tiering & Benefits" }}</a></li>
 
@@ -100,7 +105,7 @@
                 <a href="/_hcms/mem/login">{{ currLang == "zh-cn" ? "登录" : "Login" }}</a>
               </li>
             {% endif %}
-          </ul>
+          </ul> #}
         </aside>
 
         <div class="content-wrapper">

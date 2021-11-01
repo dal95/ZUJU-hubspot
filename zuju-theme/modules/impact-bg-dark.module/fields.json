@@ -19,6 +19,102 @@
     "max_height" : 540
   }
 }, {
+  "id" : "7339b2a6-ea01-8c5e-7da6-9008a22617d8",
+  "name" : "gallery",
+  "label" : "Gallery",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "048a1e07-adfd-6fbb-f930-c0ea0c6ebf89",
+    "name" : "column_1_images",
+    "label" : "Column 1 Images",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 5,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : [ {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    } ]
+  }, {
+    "id" : "bd1eb6ae-2350-0db7-e650-ae23f89498b5",
+    "name" : "column_2_images",
+    "label" : "Column 2 Images",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 5,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : [ {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    } ]
+  }, {
+    "id" : "f12146da-83fa-7cf6-ebf7-63ccc58436f6",
+    "name" : "column_3_images",
+    "label" : "Column 3 Images",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : 1,
+      "max" : 5,
+      "sorting_label_field" : null,
+      "default" : null
+    },
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : [ {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    } ]
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "column_1_images" : [ {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    } ],
+    "column_2_images" : [ {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    } ],
+    "column_3_images" : [ {
+      "size_type" : "auto",
+      "src" : "",
+      "alt" : null,
+      "loading" : "lazy"
+    } ]
+  }
+}, {
   "id" : "fba41a36-2a8b-bc1d-353b-2fa365863fb7",
   "name" : "section1",
   "label" : "Section1",

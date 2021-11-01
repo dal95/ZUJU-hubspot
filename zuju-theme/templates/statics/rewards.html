@@ -7,105 +7,9 @@
 {% set is_statics = true %} {% extends '../layouts/base.html' %} {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
-    <section class="relative max-w-[1440px] min-h-screen flex bg-zuju-gray-db mx-auto overflow-hidden" x-data="parallax()" x-bind="root">
-      <div class="absolute inset-0 sm:-mx-16">
-        <img class="h-full w-full sm:object-contain sm:object-top lg:object-cover lg:object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-masthead.png" />
-      </div>
-      <div class="relative flex-grow flex flex-col items-center sm:justify-center lg:justify-between p-8 lg:pt-32 lg:pb-16">
-        <h1 class="lg:w-1/2 sm:w-full sm:max-w-sm text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(16)">
-          {% if content.language.languageTag == "zh-cn" %}
-            赚取积分并兑换奖励
-            {% else %}
-            Earn points and redeem rewards
-            {% endif %}
-        </h1>
-        <div class="lg:w-1/2 sm:w-full sm:max-w-md lg:self-start">
-          <h2 class="text-white text-4xl font-gtcond font-black mb-8" x-bind="animate(8)">
-            {% if content.language.languageTag == "zh-cn" %}
-            赚取忠诚Z积分
-            {% else %}
-            Earn Loyalty Z Points
-            {% endif %}
-          </h2>
-          <p class="text-white mb-8" x-bind="animate(4)">
-            {% if content.language.languageTag == "zh-cn" %}
-            通过兑换获得的积分购物或者赢取其他奖励！你还有机会得到蹴蹴ZujuGP终极会员的头衔。Z积分可以兑换专属奖品并获得独特体验。请开启注册或者选择登录已有账号，参与到蹴蹴ZujuGP的生态系统中去，积累更多的积分吧！
-            {% else %}
-              Be rewarded for shopping and spending time with us!
-              You might even earn the vaunted title of the ZujuGP Ultimate Fan!
-              Earn Z Points to redeem exclusive prizes and wicked experiences.
-              Simply sign up or log in, if you are already registered.
-              Every activity on our ecosystem is designed to help you accumulate points!
-            {% endif %}
-          </p>
-          <div class="flex flex-wrap justify-start -mx-4">
-            <a href="/registration?{{ request.query }}">
-              <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 h-14 mx-4 mb-4">
-                {% if content.language.languageTag == "zh-cn" %}
-                现在注册
-                {% else %}
-                Sign Up Now
-                {% endif %}
-              </button>
-            </a>
-            <a href="/_hcms/mem/login">
-              <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 h-14 mx-4 mb-4">
-                {% if content.language.languageTag == "zh-cn" %}
-                现在登录
-                {% else %}
-                Login Now
-                {% endif %}
-              </button>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
+    {% module "rewards_masthead" path="/zuju-theme/modules/rewards-masthead", label="Rewards Masthead" %}
 
-    <div class="is-hidden">
-      {% module "rewards_masthead" path="/zuju-theme/modules/rewards-masthead", label="Rewards Masthead" %}
-    </div>
-
-    <section class="bg-white" x-data="parallax()" x-bind="root">
-      <div class="max-w-[1440px] lg:flex justify-center p-8 lg:pb-16 mx-auto">
-        <div class="lg:w-1/2 flex items-center sm:py-8 lg:px-8 lg:py-16" x-bind="animate(16)">
-          {% if content.language.languageTag == "zh-cn" %}
-          <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rewards-fan-super-fan-ultimate-fan-cn.png" />
-          {% else %}
-          <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/fan-level.png" />
-          {% endif %}
-        </div>
-        <div class="lg:w-1/3 flex flex-col items-start justify-center">
-          <h1 class="sm:text-2xl lg:text-4xl font-gtcond font-black mb-8" x-bind="animate(4)">
-            {% if content.language.languageTag == "zh-cn" %}
-            奖励兑换
-            {% else %}
-            Rewards Redemption
-            {% endif %}
-          </h1>
-          <p class="mb-8">
-            {% if content.language.languageTag == "zh-cn" %}
-            努力向上吧！我们有会员。超级会员。以及终极会员。每个等级都有其专享礼遇 —— 抽奖机会、独家邀请、额外的生日礼物等等…… 我们不会就此止步。
-            {% else %}
-            Work your way up. We have Fans. Super Fans. And the illustrious Ultimate Fans. Each tier exists to reward you - bonus raffle chances, exclusive
-            invites, extra birthday gifts .. we are not stopping there!
-            {% endif %}
-          </p>
-          <p class="mb-8">
-            {% if content.language.languageTag == "zh-cn" %}
-            超级会员和终极会员可以解锁一些特级奖励。交易后未花费完的Z积分将结转至下一次兑换。Z积分不会过期，但需要是在过去90天内收到的积分才能享受相关礼遇。
-            {% else %}
-            Supers and Ultimates will unlock privilege rewards. Z Points not spent following transactions will be carried over to your next redemption.
-            Z Points DO NOT expire but you will need to be in receipt of points in the last 90 days to enjoy benefits.
-            {% endif %}
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <div class="is-hidden">
-      {% module "rewards_redemption" path="/zuju-theme/modules/rewards-redemption", label="Rewards redemption" %}
-    </div>
+    {% module "rewards_redemption" path="/zuju-theme/modules/rewards-redemption", label="Rewards redemption" %}
 
     <section class="bg-gradient-to-b from-white to-zuju-gray-db">
       <div class="max-w-[1440px] flex flex-col items-center p-8 mx-auto">
@@ -130,6 +34,10 @@
 
     {# Spacer #}
     <div class="bg-zuju-gray-db sm:h-8 lg:h-36" />
+
+    <div class="is-hidden">
+      {% module "rewards_kfd" path="/zuju-theme/modules/rewards-kfd", label="KFD" %}
+    </div>
 
     <section class="bg-zuju-gray-db">
       <div

@@ -1,0 +1,72 @@
+
+<div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
+  <div class="absolute inset-0"><img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-mast.png" /></div>
+  <div class="relative flex flex-col items-center justify-center sm:p-8">
+    <!--<img class="h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-logo.png" x-bind="animate(16)" />-->
+    <img class="h-16 mb-16" src="{{ module.logo.src }}" x-bind="animate(16)" />
+    
+    <h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
+      {#
+      {% if content.language.languageTag == "zh-cn" %}
+      史诗般的LIVE游戏
+      {% else %}
+      The LIVE game gets epic.
+      {% endif %}
+      #}
+      {{ module.title }}
+    </h1>
+    <p class="text-white lg:w-1/2 text-center mb-8" x-bind="animate(16)">
+      {#
+      {% if content.language.languageTag == "zh-cn" %}
+      在一个高速运转且跨越现实世界和数字世界的经济体里，我们即将推出一个同步、沉浸且协作的空&#8288;间。
+      {% else %}
+      We will be launching a space at once synchronous, immersive and collaborative in a fully-functioning economy that spans the real and digital worlds.
+      {% endif %}
+      #}
+      {{ module.description }}
+    </p>
+    <div class="lg:h-20 lg:-mx-4" x-bind="animate(8)">
+      <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4" x-on:click="noti = true">
+        {#
+        {% if content.language.languageTag == "zh-cn" %}
+        得到通知
+        {% else %}
+        Get Notified
+        {% endif %}
+        #}
+        {{ module.notify_label }}
+      </button>
+      <button
+              class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
+              x-on:click="playing = true"
+              >
+        {#
+        {% if content.language.languageTag == "zh-cn" %}
+        观看视频
+        {% else %}
+        Watch Video
+        {% endif %}
+        #}
+        {{ module.watch_vid_label }}
+      </button>
+    </div>
+  </div>
+</div>
+<div
+     x-cloak=""
+     x-show="playing"
+     x-transition.opacity.duration.300ms=""
+     class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+     x-on:click="playing = false"
+     x-on:keyup.window.escape="playing = false"
+     >
+  <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+    <div class="relative">
+      <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
+      <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+        <!--<source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/gameplay.mp4" />-->
+        <source src="{{ module.video_url.href }}" />
+      </video>
+    </div>
+  </div>
+</div>

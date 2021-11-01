@@ -1,0 +1,8 @@
+[ {
+  "id" : "d6c28c79-34fc-f379-2ea3-b387acb2e575",
+  "name" : "menu",
+  "label" : "Menu",
+  "required" : false,
+  "locked" : true,
+  "type" : "menu"
+} ]

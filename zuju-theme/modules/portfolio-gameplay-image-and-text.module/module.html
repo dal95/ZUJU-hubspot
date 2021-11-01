@@ -1,0 +1,30 @@
+<section class="bg-white">
+  <div class="max-w-[1440px] flex sm:flex-col overflow-hidden mx-auto" x-data="parallax()" x-bind="root">
+    <!--<div class="lg:w-2/3 p-8 pb-0"><img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-hero.png" /></div>-->
+    <div class="lg:w-2/3 p-8 pb-0"><img src="{{ module.card_image.src }}" /></div>
+    <div class="lg:w-1/3 flex flex-col justify-center p-8">
+      <h1 class="lg:w-3/4 sm:text-4xl text-5xl font-gtcond font-black sm:text-center mb-8" x-bind="animate(16)">
+        {#
+        {% if content.language.languageTag == "zh-cn" %}
+        建造你自己的足球世界
+        {% else %}
+        Build your own Footballverse.
+        {% endif %}
+        #}
+        {{ module.card_title }}
+      </h1>
+      <p class="lg:w-3/4 sm:text-center" x-bind="animate(8)">
+        {#
+        {% if content.language.languageTag == "zh-cn" %}
+        邀请朋友加入你的<strong>私人专属房间</strong>！你在这里主持、评论、赚取额外的收入、甚至是进行社交或者商务会谈等等
+        {% else %}
+        Invite friends to your
+        <strong>private Owner's Box</strong>
+        where you can host, commentate, earn extra income, conduct social commerce, chat and more.
+        {% endif %}
+        #}
+        {{ module.card_description }}
+      </p>
+    </div>
+  </div>
+</section>

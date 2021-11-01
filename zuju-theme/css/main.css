@@ -406,6 +406,10 @@ p {
   margin-top: 0;
 }
 
+.p {
+  margin-bottom: 1rem;
+}
+
 h1 {
   font-size: 5rem;
   line-height: 4rem;
@@ -2847,12 +2851,16 @@ section.edit .form-columns-0:not(:first-of-type) {
   color: var(--color-primary);
   text-decoration: underline;
 }
+.footer__social {
+  list-style: none;
+}
 .footer__social a {
   display: flex !important;
   align-items: center;
 }
 .footer__social svg {
   margin-right: 10px;
+  width: 18px;
 }
 .footer__social path {
   color: #333;

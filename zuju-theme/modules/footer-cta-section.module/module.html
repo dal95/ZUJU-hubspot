@@ -1,0 +1,57 @@
+{% import 'zuju-theme/macros/tags.html' as c %}
+
+<div class="footer__cta">
+  <div class="footer__cta-alpha">
+    <h3 class="all-caps">
+      {{ module.subscriber.heading }}
+    </h3>
+
+    <div class="p">
+      {{ module.subscriber.text }}
+    </div>
+
+    <div class="subscription-form">
+      {% form
+        form_to_use="{{ module.subscriber.form.form_id }}"
+        response_response_type="{{ module.subscriber.form.response_type }}"
+        response_message="{{ module.subscriber.form.message }}"
+        response_redirect_id="{{ module.subscriber.form.redirect_id }}"
+        response_redirect_url="{{module.subscriber.form.redirect_url}}"
+        gotowebinar_webinar_key="{{ module.subscriber.form.gotowebinar_webinar_key }}"
+      %}
+    </div>
+  </div>
+  <div class="footer__cta-omega">
+    <h3 class="all-caps">
+      {{ module.contact.heading }}
+    </h3>
+    <div class="p">
+      {{ module.contact.text }}
+    </div>
+    <button class="button button--primary" data-modal-target="modal-contact-us">
+      {{ module.contact.button_text }}
+    </button>
+  </div>
+</div>
+
+{# Modal contact us #}
+{% call c.modal('modal-contact-us', null, null) %}
+  <div class="form-contact-wrapper">
+    <h3 class="text-center">
+      {% if currLang == "zh-cn" %}
+        联系我们
+      {% else %}
+        Contact Us
+      {% endif %}
+    </h3>
+
+    {% form
+      form_to_use="{{ module.contact.form.form_id }}"
+      response_response_type="{{ module.contact.form.response_type }}"
+      response_message="{{ module.contact.form.message }}"
+      response_redirect_id="{{ module.contact.form.redirect_id }}"
+      response_redirect_url="{{module.contact.form.redirect_url}}"
+      gotowebinar_webinar_key="{{ module.contact.form.gotowebinar_webinar_key }}"
+    %}
+  </div>
+{% endcall %}

@@ -1,31 +1,34 @@
+<section class="bg-zuju-gray-2">
 <div class="relative max-w-[1440px] mx-auto flex flex-wrap justify-center sm:pt-24 lg:pt-36 sm:px-8" x-data="parallax()" x-bind="root">
   <img class="absolute top-80 right-0 w-1/2" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png" x-bind="animate(-24)" />
   <h1 class="relative lg:w-1/2 text-2xl lg:text-4xl font-gtcond font-black text-white text-center" x-bind="animate(16)">
-    {% inline_text field="title" value="{{ module.title }}" %}
-    {#{% if content.language.languageTag == "zh-cn" %}
+    {{ module.title }}
+    {#
+    {% if content.language.languageTag == "zh-cn" %}
           我们还有面向人才市场和人才发展市场的相关产品。
           {% else %}
           We also have products lined up for the transfer of talent market and talent development &amp; recruitment market. Read more below.
           {% endif %}
           #}
   </h1>
+  
   <div class="w-full mb-16"></div>
   
   <article class="sm:hidden lg:w-5/12 p-8">
     <!--<a href="/portfolio/zujugp-exchange">-->
-    <a href="{{ module.article_group.article_link.href }}">
+    <a href="{{ module.article.article_link.href }}">
       <div class="bg-zuju-red-dark" x-bind="animate(8)">
         <div class="relative bottom-4 right-4">
           <!--<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/list-exchange.png" />-->
-          {% if module.article_group.article_image.src %}
-          {% set sizeAttrs = 'width="{{ module.article_group.article_image.width }}" height="{{ module.article_group.article_image.height }}"' %}
-          {% if module.article_group.article_image.size_type == 'auto' %}
-          {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-          {% elif module.article_group.article_image.size_type == 'auto_custom_max' %}
-          {% set sizeAttrs = 'width="{{ module.article_group.article_image.max_width }}" height="{{ module.article_group.article_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+          {% if module.article.article_image.src %}
+            {% set sizeAttrs = 'width="{{ module.article.article_image.width }}" height="{{ module.article.article_image.height }}"' %}
+            {% if module.article.article_image.size_type == 'auto' %}
+              {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
+            {% elif module.article.article_image.size_type == 'auto_custom_max' %}
+            {% set sizeAttrs = 'width="{{ module.article.article_image.max_width }}" height="{{ module.article.article_image.max_height }}" style="max-width: 100%; height: auto;"' %}
           {% endif %}
-          {% set loadingAttr = module.article_group.article_image.loading != 'disabled' ? 'loading="{{ module.article_group.article_image.loading }}"' : '' %}
-          <img src="{{ module.article_group.article_image.src }}" alt="{{ module.article_group.article_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+          {% set loadingAttr = module.article.article_image.loading != 'disabled' ? 'loading="{{ module.article.article_image.loading }}"' : '' %}
+          <img src="{{ module.article.article_image.src }}" alt="{{ module.article.article_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
           {% endif %}
 
           <div class="absolute inset-0 flex flex-col items-start justify-end pl-8 pb-8 bg-gradient-to-bl from-black/0 via-black/0 to-black/50">
@@ -37,7 +40,7 @@
                       ZujuGP Exchange
                       {% endif %}
                     #}
-              {% inline_text field="article_group.article_title" value="{{ module.article_group.article_title }}" %}
+              {{ module.article.article_title }}
             </h1>
 
             <p class="text-white w-2/3 mb-4">
@@ -48,7 +51,7 @@
                     Our AI-powered and automated global job search app
                     {% endif %}
                     #}
-              {% inline_text field="article_group.article_description" value="{{ module.article_group.article_description }}" %}
+                {{ module.article.article_description }}
             </p>
 
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
@@ -84,7 +87,7 @@
                     ZujuGP Rank
                     {% endif %}
                     #}
-              {% inline_text field="article_2.article_title" value="{{ module.article_2.article_title }}" %}
+              {{ module.article_2.article_title }}
             </h1>
             <p class="text-white w-2/3 mb-8">
               {#
@@ -94,7 +97,7 @@
                 Blockchain and AI-enabled talent development &amp; recruitment app
                 {% endif %}
                #}
-              {% inline_text field="article_2.article_title" value="{{ module.article_2.article_title }}" %}
+              {{ module.article_2.article_description }}
             </p>
                   
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
@@ -121,18 +124,18 @@
           <div class="">
             <div>
               <!--<a href="/portfolio/zujugp-exchange">-->
-              <a href="{{ module.article_group.article_link.href }}">
+              <a href="{{ module.article.article_link.href }}">
                 <div class="bg-zuju-red-dark mt-4 ml-4 mb-8">
                   <!--<img class="relative bottom-4 right-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/list-exchange.png" />-->
-                  {% if module.article_group.article_image.src %}
-                    {% set sizeAttrs = 'width="{{ module.article_group.article_image.width }}" height="{{ module.article_group.article_image.height }}"' %}
-                    {% if module.article_group.article_image.size_type == 'auto' %}
+                  {% if module.article.article_image.src %}
+                    {% set sizeAttrs = 'width="{{ module.article.article_image.width }}" height="{{ module.article.article_image.height }}"' %}
+                    {% if module.article.article_image.size_type == 'auto' %}
                       {% set sizeAttrs = 'style="max-width: 100%; height: auto;"' %}
-                    {% elif module.article_group.article_image.size_type == 'auto_custom_max' %}
-                      {% set sizeAttrs = 'width="{{ module.article_group.article_image.max_width }}" height="{{ module.article_group.article_image.max_height }}" style="max-width: 100%; height: auto;"' %}
+                    {% elif module.article.article_image.size_type == 'auto_custom_max' %}
+                      {% set sizeAttrs = 'width="{{ module.article.article_image.max_width }}" height="{{ module.article.article_image.max_height }}" style="max-width: 100%; height: auto;"' %}
                     {% endif %}
-                     {% set loadingAttr = module.article_group.article_image.loading != 'disabled' ? 'loading="{{ module.article_group.article_image.loading }}"' : '' %}
-                    <img class="relative bottom-4 right-4" src="{{ module.article_group.article_image.src }}" alt="{{ module.article_group.article_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
+                     {% set loadingAttr = module.article.article_image.loading != 'disabled' ? 'loading="{{ module.article.article_image.loading }}"' : '' %}
+                    <img class="relative bottom-4 right-4" src="{{ module.article.article_image.src }}" alt="{{ module.article.article_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
                   {% endif %}
                 </div>
                 
@@ -145,7 +148,7 @@
                     ZujuGP Exchange
                     {% endif %}
                     #}
-                    {% inline_text field="article_group.article_title" value="{{ module.article_group.article_title }}" %}
+                    {{ module.article.article_title }}
                   </h1>
                   <p class="text-white mb-8">
                     {#
@@ -155,7 +158,7 @@
                     Our AI-powered and automated global job search app
                     {% endif %}
                     #}
-                    {% inline_text field="article_group.article_description" value="{{ module.article_group.article_description }}" %}
+                    {{ module.article.article_description }}
                   </p>
                   <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
                     <title>Arrow Forward</title>
@@ -199,7 +202,7 @@
                           {% else %}
                           ZujuGP Rank
                           {% endif %}#}
-                    {% inline_text field="article_2.article_title" value="{{ module.article_2.article_title }}" %}
+                    {{ module.article_2.article_title }}
                   </h1>
                   <p class="text-white mb-8">
                     {#
@@ -209,7 +212,7 @@
                           Blockchain and AI-enabled talent development &amp; recruitment app
                           {% endif %}
                           #}
-                    {% inline_text field="article_2.article_description" value="{{ module.article_2.article_description }}" %}
+                    {{ module.article_2.article_description }}
                   </p>
                   <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
                     <title>Arrow Forward</title>
@@ -245,7 +248,7 @@
       Build out our vision with us. 
       {% endif %}
       #}
-      {% inline_text field="convo_title" value="{{ module.convo_title }}" %}
+     {{ module.convo_title }}
     </h1>
     <a href="/convo/cr-in-commercial">
       <button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4 mb-16">
@@ -256,8 +259,9 @@
         Get in the convo
         {% endif %}
         #}
-        {% inline_text field="convo_button" value="{{ module.convo_button }}" %}
+        {{ module.convo_button }}
       </button>
     </a>
   </div>
 </div>
+</section>

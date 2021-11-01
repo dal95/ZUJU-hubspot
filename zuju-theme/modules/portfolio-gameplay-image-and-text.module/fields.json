@@ -1,0 +1,40 @@
+[ {
+  "id" : "9447eac8-6da3-c0a8-6814-fad2c3bcaa29",
+  "name" : "card_image",
+  "label" : "Card Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "exact",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-hero.png",
+    "alt" : "gameplay-hero",
+    "loading" : "lazy",
+    "width" : 958,
+    "height" : 600,
+    "max_width" : 958,
+    "max_height" : 600
+  }
+}, {
+  "id" : "e2067fa1-fe58-b95b-04b1-7342c7d84903",
+  "name" : "card_title",
+  "label" : "Card Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Build your own Footballverse."
+}, {
+  "id" : "2e98693c-d0b4-21ff-6a1b-c532172e5919",
+  "name" : "card_description",
+  "label" : "Card Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Invite friends to your<br><strong>private Owner's Box</strong><br>where you can host, commentate, earn extra income, conduct social commerce, chat and more.</p>"
+} ]

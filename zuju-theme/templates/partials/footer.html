@@ -9,257 +9,91 @@
 
 <section class="callout-section">
   <img
-       src="{{ get_asset_url('../../images/assets/triangle.png') }}"
-       alt=""
-       class="callout-section__triangle"
-       />
+    src="{{ get_asset_url('../../images/assets/triangle.png') }}"
+    alt=""
+    class="callout-section__triangle"
+  />
+
   <div>
-    <img src="{{ get_asset_url('../../images/assets/callout.png') }}" alt="" />
+    {% image 'footer_callout'
+      src="{{ get_asset_url('../../images/assets/callout.png') }}",
+      alt="Banner",
+      label="Footer banner" %}
   </div>
 </section>
+
 <footer class="footer">
   <div class="container">
-    <div class="footer__cta">
-      <div class="footer__cta-alpha">
-        <h3 class="all-caps">
-          {% if currLang == "zh-cn" %}
-          保持更新
-          {% else %}
-          Stay in the know
-          {% endif %}
-        </h3>
-        <p>
-          {% if currLang == "zh-cn" %}
-          获取第一手足球消息和相关内幕
-          {% else %}
-          Keep updated with news and rewards with us.
-          {% endif %}
-        </p>
-        
-        <div class="subscription-form">
-          {% if currLang == "zh-cn" %}
-            {% form 'form-subscription'
-                form_to_use='3e069afc-6fdd-48ab-9c7c-f2544d944da1',
-              %}
-          {% else %}
-            {% form 'form-subscription'
-                form_to_use='2df3156e-384b-4ed8-8dea-af0bc8503144',
-              %}
-          {% endif %}
-        </div>
-      </div>
-      <div class="footer__cta-omega">
-        <h3 class="all-caps">
-          {% if currLang == "zh-cn" %}
-          开启合作
-          {% else %}
-          Work with Us
-          {% endif %}
-        </h3>
-        <p>
-          {% if currLang == "zh-cn" %}
-          诚邀有识之士与我们一起将足球推向数字化的未来
-          {% else %}
-          We welcome visionaries to build a digital football future.
-          {# We welcome visionaries who share our desire to advance football’s transition to a digital future. #}
-          {% endif %}
-        </p>
-        <button class="button button--primary" data-modal-target="modal-contact-us">
-          {% if currLang == "zh-cn" %}
-          联系我们
-          {% else %}
-          Let's talk
-          {% endif %}
-        </button>
-      </div>
-    </div>
+    {% module "footer_cta"
+      path="/zuju-theme/modules/footer-cta-section",
+      label="Footer CTA Section" %}
+
     <div class="footer__nav">
       <div class="footer__nav-col">
-        <h4>
-          {% if currLang == "zh-cn" %}
-          公司
-          {% else %}
-          Company
-          {% endif %}
-        </h4>
-        <ul>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/about-us">关于我们</a>
-            {% else %}
-            <a href="/about-us">About</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/impact">影响力</a>
-            {% else %}
-            <a href="/impact">Impact</a>
-            {% endif %}
-          </li>
-          {# <li><a href="#">Advertise</a></li> #}
-        </ul>
-      </div>
-      <div class="footer__nav-col">
-        <h4>
-          {% if currLang == "zh-cn" %}
-          文章
-          {% else %}
-          Articles
-          {% endif %}
-        </h4>
-        <ul>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/latest">所有</a>
-            {% else %}
-            <a href="/latest">All</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/latest/tag/观点">观点</a>
-            {% else %}
-            <a href="/latest/tag/opinion">Opinion</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/latest/tag/当地">当地</a>
-            {% else %}
-            <a href="/latest/tag/local-eye">Local Eye</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/latest/tag/周边">周边</a>
-            {% else %}
-            <a href="/latest/tag/offside">Offside</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/latest/tag/画廊">画廊</a>
-            {% else %}
-            <a href="/latest/tag/gallery">Gallery</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/latest/tag/图腾">图腾</a>
-            {% else %}
-            <a href="/latest/tag/icon">Icon</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/latest/tag/榜单">榜单</a>
-            {% else %}
-            <a href="/latest/tag/line-up">Line Up</a>
-            {% endif %}
-          </li>
-        </ul>
-      </div>
-      <div class="footer__nav-col">
-        <h4>
-          {% if currLang == "zh-cn" %}
-          更多模块
-          {% else %}
-          Portfolio
-          {% endif %}
-        </h4>
-        <ul>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/portfolio/zujugameplay">蹴蹴游戏空间</a>
-            {% else %}
-            <a href="/portfolio/zujugameplay">ZujuGamePlay</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/portfolio/zujugp-exchange">蹴蹴交换空间</a>
-            {% else %}
-            <a href="/portfolio/zujugp-exchange">ZujuGP Exchange</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/zh-cn/portfolio/zujugp-rank">蹴蹴探索空间</a>
-            {% else %}
-            <a href="/portfolio/zujugp-rank">ZujuGP Rank</a>
-            {% endif %}
-          </li>
-        </ul>
-      </div>
-      <div class="footer__nav-col">
-        <h4>
-          {% if currLang == "zh-cn" %}
-          法律
-          {% else %}
-          Legal
-          {% endif %}
-        </h4>
-        <ul>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/privacy-policy">隐私政策</a>
-            {% else %}
-            <a href="/privacy-policy">Privacy Policy</a>
-            {% endif %}
-          </li>
-          <li>
-            {% if currLang == "zh-cn" %}
-            <a href="/privacy-policy">使用条款</a>
-            {% else %}
-            <a href="/terms-of-use">Terms of use</a>
-            {% endif %}
-          </li>
-        </ul>
+        {% header 'header_col1'
+          header_tag='h4',
+          value='Company'%}
+
+        {% menu 'footer_menu1'
+          flow='vertical',
+          max_levels='1' %}
       </div>
 
       <div class="footer__nav-col">
-        <h4>
-          {% if currLang == "zh-cn" %}
-          联系我们
-          {% else %}
-          Connect with us
-          {% endif %}
-        </h4>
-        <ul class="footer__social">
+        {% header 'header_col2'
+          header_tag='h4',
+          value='Articles'%}
+
+        {% menu 'footer_menu2'
+          flow='vertical',
+          max_levels='1' %}
+      </div>
+
+      <div class="footer__nav-col">
+        {% header 'header_col3'
+          header_tag='h4',
+          value='Portfolio'%}
+
+        {% menu 'footer_menu3'
+          flow='vertical',
+          max_levels='1' %}
+      </div>
+
+      <div class="footer__nav-col">
+        {% header 'header_col4'
+          header_tag='h4',
+          value='Legal'%}
+
+        {% menu 'footer_menu4'
+          flow='vertical',
+          max_levels='1' %}
+      </div>
+
+      <div class="footer__nav-col">
+        {% header 'header_col4'
+          header_tag='h4',
+          value='Connect with us'%}
+
+        {# <ul class="footer__social">
           <li><a href="/convo/the-future-of-football" target="_blank"><i class="far fa-comment"></i><span style="padding-left: 8px;">Convo</span></a></li>
           <li><a href="https://www.facebook.com/zujugp" target="_blank"><i class="fab fa-facebook-square"></i><span style="padding-left: 8px;">Facebook</span></a></li>
           <li><a href="https://instagram.com/zujugp" target="_blank"><i class="fab fa-instagram"></i><span style="padding-left: 8px;">Instagram</span></a></li>
           <li><a href="https://twitter.com/zujugp" target="_blank"><i class="fab fa-twitter"></i><span style="padding-left: 8px;">Twitter</span></a></li>
           <li><a href="https://www.youtube.com/channel/UCbXvRvjZAt5aZhBNlDFxHuw" target="_blank"><i class="fab fa-youtube"></i><span style="padding-left: 8px;">YouTube</span></a></li>
           <li><a href="https://weibo.com/u/7706292600" target="_blank"><i class="fab fa-weibo"></i><span style="padding-left: 8px;">Weibo</span></a></li>
-        </ul>
+        </ul> #}
+
+        {% module "footer_social"
+          path="/zuju-theme/modules/social-link-footer",
+          label="Social Link" %}
       </div>
     </div>
-    <a href="https://mintmediasports.com/" class="footer__copyright" target="_blank">&copy; 2021 Mint Media Sports Limited</a>
+
+    {% module "copyright_link1"
+      path="/zuju-theme/modules/link",
+      label="Copyright Link",
+      class_name="footer__copyright",
+      url="{ href: 'https://mintmediasports.com/' }",
+      text="&copy; 2021 Mint Media Sports Limited" %}
   </div>
 </footer>
-
-
-{% call c.modal('modal-contact-us', null, null) %}
-  <div class="form-contact-wrapper">
-    <h3 class="text-center">
-      {% if currLang == "zh-cn" %}
-      联系我们
-      {% else %}
-      Contact Us
-      {% endif %}
-    </h3>
-
-    {% if currLang == "zh-cn" %}
-      {% form 'form-contact-us'
-        form_to_use='a47ead18-9f24-425f-9136-48e0f3f37c89',
-      %}
-    {% else %}
-      {% form 'form-contact-us'
-        form_to_use='ff4fd248-ad02-4d39-9971-a8880316c297',
-      %}
-    {% endif %}
-    
-  </div>
-{% endcall %}

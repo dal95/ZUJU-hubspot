@@ -1,0 +1,117 @@
+<section class="max-w-[1440px] mx-auto lg:grid grid-cols-12 auto-rows-auto p-8">
+  <div class="row-start-1 col-end-12 col-span-5 sm:-mx-8 z-10" x-data="parallax()" x-bind="root">
+    {% if module.image.src %}
+
+     {% set loadingAttr = module.image.loading != 'disabled' ? 'loading="{{ module.image.loading }}"' : '' %}
+
+    <img src="{{ module.image.src }}" alt="{{ module.image.alt }}" {{ loadingAttr }} x-bind="animate(0)" />
+    {% endif %}
+  </div>
+  <div class="row-start-1 col-start-2 col-span-8 relative lg:grid grid-cols-8 grid-rows-[1fr,auto,auto,1fr] z-20" x-data="parallax()" x-bind="root">
+    <div class="row-start-3 row-span-2 col-start-1"><div class="h-full w-0 border-l border-r border-zuju-red mx-auto"></div></div>
+    <h2 class="row-start-2 col-span-8 text-white sm:text-2xl lg:text-4xl font-gtcond font-black sm:-mt-4 mb-8" x-bind="animate(16)">
+      {{ module.title }}
+    </h2>
+    <div class="row-start-3 col-start-2 col-span-4 text-white lg:pr-8" x-bind="animate(16)">
+      {{ module.description }}
+    </div>
+  </div>
+  <div class="row-start-2 col-start-2"><div class="h-full w-0 border-l border-r border-zuju-red mx-auto"></div></div>
+  <article class="contents" x-data="{ active: 1, top: 0 }">
+    <div class="row-start-2 col-start-3 col-span-8 pt-16" x-data="parallax()" x-bind="root">
+      <h2 class="text-white sm:max-w-md sm:text-4xl lg:text-6xl font-gtcond font-black mb-8 sm:mx-auto" x-bind="animate(8)">
+        {{ module.list_heading }}
+      </h2>
+    </div>
+    <div class="row-start-3 col-start-2 relative">
+      <div class="sm:hidden h-full w-0 border-l border-r border-zuju-red mx-auto"></div>
+      <svg
+        viewBox="0 0 18 14"
+        version="1.1"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        class="sm:hidden absolute top-0 inset-x-0 w-8 mx-auto transition-all duration-500 transform -translate-y-full"
+        x-bind:style="{ top: $px(top + ($height / 2)) }"
+      >
+        <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+          <g fill="#ED2938" stroke="#ED2938"><polygon points="17 7.0046755 9.273566 13 1 10.7009908 3.613411 3.2843148 13.501537 1"></polygon></g>
+        </g>
+      </svg>
+    </div>
+    <div class="sm:hidden relative row-start-3 col-start-3 col-span-4 pr-8">
+      {% for item in module.list %}
+
+        <div
+          class="group font-bold flex items-center py-4 cursor-pointer"
+          x-data="{ myIndex: {{ loop.index }}, update() { active === this.myIndex &amp;&amp; (top = $el.offsetTop + ($height / 2)) } }"
+          x-effect="update()"
+          x-on:resize.window="update()"
+          x-on:click="active = myIndex"
+          x-on:mouseenter="active = myIndex"
+        >
+          <p class="text-zuju-gray-3 text-4xl font-gtcond font-black italic mr-8">{{ loop.index }}</p>
+          <p class="text-zuju-gray-6 hover:text-zuju-red font-gtcond" x-bind:class="active === myIndex &amp;&amp; '!text-zuju-red'">
+            {{ item.text }}
+          </p>
+        </div>
+      {% endfor %}
+    </div>
+    <div class="lg:hidden max-w-md pb-4 mx-auto">
+      <div class="glide" x-data="{}" x-init="new Glide($el).mount()">
+        <div class="glide__track" data-glide-el="track">
+          <div class="glide__slides">
+						{% for item in module.list %}
+							<div class="glide__slide">
+								<div class="">
+									<div>
+										<div class="flex flex-col lg:items-center justify-center mx-auto" x-data="parallax()" x-bind="root">
+											<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+												{{ item.text }}
+											</div>
+											<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+												{{ item.detail }}
+											</div>
+
+											{% if item.image_field.src %}
+												{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+												<div class="sm:mx-auto"><img class="h-24" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/belief-1.png"src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} /></div>
+											{% endif %}
+										</div>
+									</div>
+								</div>
+							</div>
+						{% endfor %}
+          </div>
+        </div>
+        <div class="-mb-8 glide__bullets bottom-1" data-glide-el="controls[nav]">
+					{% for item in module.list %}
+						<button class="glide__bullet" data-glide-dir="={{ loop.index0 }}"></button>
+					{% endfor %}
+        </div>
+      </div>
+    </div>
+    <div class="sm:hidden relative row-start-2 row-span-2 col-start-7 col-span-6 pr-8">
+			{% for item in module.list %}
+				<div
+					class="flex flex-col lg:items-center justify-center mx-auto w-1/2 absolute inset-0"
+					x-data="parallax()"
+					x-bind="root"
+					x-show="active === {{ loop.index }}"
+					x-transition.duration.500ms=""
+				>
+					<div class="lg:hidden text-zuju-red text-xl font-gtcond font-bold lg:text-center">
+						{{ item.text }}
+					</div>
+					<div class="text-white text-xl font-gtcond font-bold lg:text-center mb-8" x-bind="animate(8)">
+						{{ item.detail }}
+					</div>
+
+					{% if item.image_field.src %}
+						{% set loadingAttr = item.image_field.loading != 'disabled' ? 'loading="{{ item.image_field.loading }}"' : '' %}
+						<div class="sm:mx-auto"><img class="h-24" src="{{ item.image_field.src }}" alt="{{ item.image_field.alt }}" {{ loadingAttr }} /></div>
+					{% endif %}
+				</div>
+			{% endfor %}
+    </div>
+  </article>
+</section>

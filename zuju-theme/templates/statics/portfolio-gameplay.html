@@ -8,63 +8,92 @@
 {% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{}">
-    <section x-data="{ playing: false, noti: false }">
-      <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
-        <div class="absolute inset-0"><img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-mast.png" /></div>
-        <div class="relative flex flex-col items-center justify-center sm:p-8">
-          <img class="h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-logo.png" x-bind="animate(16)" />
-          <h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
-            {% if content.language.languageTag == "zh-cn" %}
-            史诗般的LIVE游戏
-            {% else %}
-            The LIVE game gets epic.
-            {% endif %}
-          </h1>
-          <p class="text-white lg:w-1/2 text-center mb-8" x-bind="animate(16)">
-            {% if content.language.languageTag == "zh-cn" %}
-            在一个高速运转且跨越现实世界和数字世界的经济体里，我们即将推出一个同步、沉浸且协作的空&#8288;间。
-            {% else %}
-            We will be launching a space at once synchronous, immersive and collaborative in a fully-functioning economy that spans the real and digital worlds.
-            {% endif %}
-          </p>
-          <div class="lg:h-20 lg:-mx-4" x-bind="animate(8)">
-            <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4" x-on:click="noti = true">
-              {% if content.language.languageTag == "zh-cn" %}
-              得到通知
-              {% else %}
-              Get Notified
-              {% endif %}
-            </button>
-            <button
-              class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
-              x-on:click="playing = true"
+    
+    
+    <!--
+      {#    
+      <section x-data="{ playing: false, noti: false }">
+            <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
+              <div class="absolute inset-0"><img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-mast.png" /></div>
+              <div class="relative flex flex-col items-center justify-center sm:p-8">
+                <img class="h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-logo.png" x-bind="animate(16)" />
+                <h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
+                  {% if content.language.languageTag == "zh-cn" %}
+                  史诗般的LIVE游戏
+                  {% else %}
+                  The LIVE game gets epic.
+                  {% endif %}
+                </h1>
+                <p class="text-white lg:w-1/2 text-center mb-8" x-bind="animate(16)">
+                  {% if content.language.languageTag == "zh-cn" %}
+                  在一个高速运转且跨越现实世界和数字世界的经济体里，我们即将推出一个同步、沉浸且协作的空&#8288;间。
+                  {% else %}
+                  We will be launching a space at once synchronous, immersive and collaborative in a fully-functioning economy that spans the real and digital worlds.
+                  {% endif %}
+                </p>
+                <div class="lg:h-20 lg:-mx-4" x-bind="animate(8)">
+                  <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4" x-on:click="noti = true">
+                    {% if content.language.languageTag == "zh-cn" %}
+                    得到通知
+                    {% else %}
+                    Get Notified
+                    {% endif %}
+                  </button>
+                  <button
+                    class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
+                    x-on:click="playing = true"
+                  >
+                    {% if content.language.languageTag == "zh-cn" %}
+                    观看视频
+                    {% else %}
+                    Watch Video
+                    {% endif %}
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div
+              x-cloak=""
+              x-show="playing"
+              x-transition.opacity.duration.300ms=""
+              class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+              x-on:click="playing = false"
+              x-on:keyup.window.escape="playing = false"
             >
-              {% if content.language.languageTag == "zh-cn" %}
-              观看视频
-              {% else %}
-              Watch Video
-              {% endif %}
-            </button>
-          </div>
-        </div>
-      </div>
-      <div
-        x-cloak=""
-        x-show="playing"
-        x-transition.opacity.duration.300ms=""
-        class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
-        x-on:click="playing = false"
-        x-on:keyup.window.escape="playing = false"
-      >
-        <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
-          <div class="relative">
-            <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
-            <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
-              <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/gameplay.mp4" />
-            </video>
-          </div>
-        </div>
-      </div>
+              <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+                <div class="relative">
+                  <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
+                  <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+                    <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/gameplay.mp4" />
+                  </video>
+                </div>
+              </div>
+            </div>
+            <div
+              x-cloak=""
+              x-show="noti"
+              x-transition.opacity.duration.300ms=""
+              class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+              x-on:click="noti = false"
+              x-on:keyup.window.escape="noti = false"
+            >
+              <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
+                <div class="relative sm:w-full">
+                  <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
+                  <div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" %}</div>
+                </div>
+              </div>
+            </div>
+          </section>
+      #}
+      -->   
+    <!-- Portfolio Gameplay Header -->
+    <section x-data="{ playing: false, noti: false }">
+      
+      {% module "module_16357377044293" 
+      path='/zuju-theme/modules/portfolio-gameplay-header', 
+      label="Gameplay Header" %}
+      
       <div
         x-cloak=""
         x-show="noti"
@@ -81,6 +110,9 @@
         </div>
       </div>
     </section>
+ 
+    <!--
+  {#
     <section class="bg-white">
       <div class="max-w-[1440px] flex sm:flex-col overflow-hidden mx-auto" x-data="parallax()" x-bind="root">
         <div class="lg:w-2/3 p-8 pb-0"><img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-hero.png" /></div>
@@ -105,6 +137,16 @@
         </div>
       </div>
     </section>
+    #}
+    -->
+    <!-- Portfolio Gameplay image text -->
+    {% module "module_163573252470355" 
+      path='/zuju-theme/modules/portfolio-gameplay-image-and-text', 
+      label="Gameplay Image And Text" %}
+    
+ 
+    <!--
+    {#
     <section class="bg-zuju-gray-db">
       <div class="max-w-[1440px] grid sm:grid-rows-[auto,auto] sm:grid-cols-1 lg:grid-cols-12 mx-auto overflow-hidden" x-data="parallax()" x-bind="root">
         <div class="relative z-20 row-start-1 sm:col-start-1 lg:col-start-6 lg:col-span-7 flex items-center justify-center p-8">
@@ -130,7 +172,14 @@
           <img class="sm:w-full sm:max-w-md" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png" x-bind="animate(-8)" />
         </div>
       </div>
-    </section>
+    </section>    
+    #}
+    -->
+    <!-- Portfolio Gameplay image text dark -->
+    {% module "module_163573886510730" path="/zuju-theme/modules/portfolio-gameplay-image-and-text-dark", label="Gameplay Image and Text Dark" %}
+    
+    <!-- PROD -->
+    {#
     <section class="bg-zuju-gray-db">
       <div
         class="max-w-[1440px] flex flex-col items-center justify-center bg-center sm:bg-contain lg:bg-cover bg-no-repeat mx-auto sm:px-8 py-24"
@@ -140,15 +189,12 @@
       >
         <div class="sm:w-full sm:max-w-md">
           {% if content.language.languageTag == "zh-cn" %}
-          <img class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading-cn.png" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
+            <img class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading-cn.gif" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
           {% else %}
-          <div x-data="{ fallback: false }">
-            <img x-on:error="fallback = true" x-show="!fallback" class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading.gif" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
-            <img x-cloak x-show="fallback" class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading.gif" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
-          </div>
+            <img class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading.gif" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
           {% endif %}
         </div>
-        <p class="lg:w-1/2 text-white text-xl font-bold lg:text-center mb-8" x-bind="animate(4)">
+        <p class="hidden lg:w-1/2 text-white text-xl font-bold lg:text-center mb-8" x-bind="animate(4)">
           {% if content.language.languageTag == "zh-cn" %}
           高度沉浸的。交互的。及时的。娱乐的。数据丰富的。个性化的。社交的。可购物的。可变现的。
           {% else %}
@@ -176,6 +222,20 @@
         </div>
       </div>
     </section>
+    #}
+    
+    <!-- Portfolio Gameplay image text red -->
+    
+    <section class="bg-zuju-gray-db">
+      {% module "module_163574614144543" path="/zuju-theme/modules/portfolio-gameplay-image-and-text-red", label="Gameplay Image and Text Red" %}
+      <div class="w-full max-w-[1000px] mx-auto">
+        {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+      </div>
+      </div>
+    </section>
+
+    
+    
     <section class="pb-32">
       <div class="max-w-[1440px] mx-auto">
         <div class="sm:hidden flex">
@@ -350,6 +410,9 @@
         </div>
       </div>
     </section>
+    <!-- Portfolio-gameplay-articles -->
+    
+    
   </main>
 </div>
 

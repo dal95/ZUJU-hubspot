@@ -5,12 +5,14 @@
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
+  "placeholder" : "Title",
   "allow_new_line" : false,
   "show_emoji_picker" : true,
-  "type" : "text"
+  "type" : "text",
+  "default" : "We also have products lined up for the transfer of talent market and talent development &amp; recruitment market. Read more below."
 }, {
   "id" : "f0671b0a-da4f-33a9-43ac-429e5df012ff",
-  "name" : "article_group",
+  "name" : "article",
   "label" : "Article",
   "required" : false,
   "locked" : false,
@@ -23,9 +25,9 @@
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
     "type" : "url",
     "default" : {
-      "content_id" : null,
-      "href" : "",
-      "type" : "EXTERNAL"
+      "type" : "EXTERNAL",
+      "href" : "/portfolio/zujugp-exchange",
+      "content_id" : null
     }
   }, {
     "id" : "08208f04-1790-9121-f97d-1543a4ffb4e3",
@@ -34,14 +36,18 @@
     "required" : false,
     "locked" : false,
     "responsive" : true,
-    "resizable" : true,
+    "resizable" : false,
     "show_loading" : false,
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/list-exchange.png",
+      "alt" : "list-exchange",
+      "loading" : "lazy",
+      "width" : 1154,
+      "height" : 900,
+      "max_width" : 1154,
+      "max_height" : 900
     }
   }, {
     "id" : "f8d415ad-7023-8b8a-ffb1-c52bebf58f32",
@@ -52,7 +58,8 @@
     "validation_regex" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text"
+    "type" : "text",
+    "default" : "ZujuGP Exchange"
   }, {
     "id" : "1585ef5a-7e7a-5f69-1891-a8d3aea74c92",
     "name" : "article_description",
@@ -62,23 +69,30 @@
     "validation_regex" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text"
+    "type" : "text",
+    "default" : "Our AI-powered and automated global job search app"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : {
     "article_link" : {
-      "content_id" : null,
-      "href" : "",
-      "type" : "EXTERNAL"
+      "type" : "EXTERNAL",
+      "href" : "/portfolio/zujugp-exchange",
+      "content_id" : null
     },
     "article_image" : {
       "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
-    }
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/list-exchange.png",
+      "alt" : "list-exchange",
+      "loading" : "lazy",
+      "width" : 1154,
+      "height" : 900,
+      "max_width" : 1154,
+      "max_height" : 900
+    },
+    "article_title" : "ZujuGP Exchange",
+    "article_description" : "Our AI-powered and automated global job search app"
   }
 }, {
   "id" : "89c435da-1cf0-8dc4-72f2-998108d9adb5",
@@ -95,9 +109,9 @@
     "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
     "type" : "url",
     "default" : {
-      "content_id" : null,
-      "href" : "",
-      "type" : "EXTERNAL"
+      "type" : "EXTERNAL",
+      "href" : "/portfolio/zujugp-rank",
+      "content_id" : null
     }
   }, {
     "id" : "33ad53b4-a3a1-b3d9-f4f8-db04f6c325e0",
@@ -106,14 +120,18 @@
     "required" : false,
     "locked" : false,
     "responsive" : true,
-    "resizable" : true,
+    "resizable" : false,
     "show_loading" : false,
     "type" : "image",
     "default" : {
       "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/list-rank.png",
+      "alt" : "list-rank",
+      "loading" : "lazy",
+      "width" : 1154,
+      "height" : 900,
+      "max_width" : 1154,
+      "max_height" : 900
     }
   }, {
     "id" : "2d4f00a2-6ef3-3ef2-598b-b8231376f65e",
@@ -122,9 +140,11 @@
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
+    "placeholder" : "Title",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text"
+    "type" : "text",
+    "default" : "ZujuGP Rank"
   }, {
     "id" : "b067ff2d-08a2-57d6-c58e-c86cceab0404",
     "name" : "article_description",
@@ -134,23 +154,30 @@
     "validation_regex" : "",
     "allow_new_line" : false,
     "show_emoji_picker" : false,
-    "type" : "text"
+    "type" : "text",
+    "default" : "Blockchain and AI-enabled talent development & recruitment app"
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
   "type" : "group",
   "default" : {
     "article_link" : {
-      "content_id" : null,
-      "href" : "",
-      "type" : "EXTERNAL"
+      "type" : "EXTERNAL",
+      "href" : "/portfolio/zujugp-rank",
+      "content_id" : null
     },
     "article_image" : {
       "size_type" : "auto",
-      "src" : "",
-      "alt" : null,
-      "loading" : "lazy"
-    }
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/list-rank.png",
+      "alt" : "list-rank",
+      "loading" : "lazy",
+      "width" : 1154,
+      "height" : 900,
+      "max_width" : 1154,
+      "max_height" : 900
+    },
+    "article_title" : "ZujuGP Rank",
+    "article_description" : "Blockchain and AI-enabled talent development & recruitment app"
   }
 }, {
   "id" : "3ef3b7bb-fa3b-538d-1c93-e8d8caff2fa3",
@@ -161,7 +188,8 @@
   "validation_regex" : "",
   "allow_new_line" : false,
   "show_emoji_picker" : false,
-  "type" : "text"
+  "type" : "text",
+  "default" : "Build out our vision with us."
 }, {
   "id" : "10063767-e43a-d15e-8238-ed4d389d2042",
   "name" : "convo_button",
@@ -171,5 +199,6 @@
   "validation_regex" : "",
   "allow_new_line" : false,
   "show_emoji_picker" : false,
-  "type" : "text"
+  "type" : "text",
+  "default" : "Get in the convo"
 } ]

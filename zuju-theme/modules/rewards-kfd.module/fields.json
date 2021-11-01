@@ -5,7 +5,7 @@
   "required" : false,
   "locked" : false,
   "responsive" : true,
-  "resizable" : true,
+  "resizable" : false,
   "show_loading" : false,
   "type" : "image",
   "default" : {
@@ -79,15 +79,6 @@
       "required" : false,
       "locked" : false,
       "children" : [ {
-        "id" : "2523e7ad-21b0-bacc-9d9a-14f7dd33ca57",
-        "name" : "number",
-        "label" : "Number",
-        "required" : false,
-        "locked" : false,
-        "display" : "text",
-        "step" : 1,
-        "type" : "number"
-      }, {
         "id" : "350ea859-f6aa-4e3d-bd39-d30f56a5245b",
         "name" : "text",
         "label" : "Text",
@@ -98,6 +89,15 @@
         "show_emoji_picker" : false,
         "type" : "text",
         "default" : "EVERY DOLLAR SPENT"
+      }, {
+        "id" : "2523e7ad-21b0-bacc-9d9a-14f7dd33ca57",
+        "name" : "number",
+        "label" : "Amount",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number"
       } ],
       "tab" : "CONTENT",
       "expanded" : false,
@@ -118,15 +118,6 @@
         "default" : null
       },
       "children" : [ {
-        "id" : "525905a4-37cd-cc16-b401-5e5dffbd6bc6",
-        "name" : "number",
-        "label" : "Number",
-        "required" : false,
-        "locked" : false,
-        "display" : "text",
-        "step" : 1,
-        "type" : "number"
-      }, {
         "id" : "051e82b4-348d-e677-a713-0e9ea40d60a4",
         "name" : "text",
         "label" : "Text",
@@ -137,6 +128,15 @@
         "show_emoji_picker" : false,
         "type" : "text",
         "default" : "EVERY DOLLAR SPENT"
+      }, {
+        "id" : "525905a4-37cd-cc16-b401-5e5dffbd6bc6",
+        "name" : "number",
+        "label" : "Amount",
+        "required" : false,
+        "locked" : false,
+        "display" : "text",
+        "step" : 1,
+        "type" : "number"
       } ],
       "tab" : "CONTENT",
       "expanded" : false,
@@ -275,6 +275,12 @@
     "label" : "List",
     "required" : false,
     "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
     "visibility" : {
       "controlling_field" : null,
       "controlling_value_regex" : null,
@@ -376,6 +382,12 @@
     "label" : "List",
     "required" : false,
     "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
     "visibility" : {
       "controlling_field" : null,
       "controlling_value_regex" : null,
@@ -408,7 +420,7 @@
     }, {
       "id" : "98254eb6-93f1-4975-fa14-ae3e24275022",
       "name" : "number",
-      "label" : "Number",
+      "label" : "Amount",
       "required" : false,
       "locked" : false,
       "display" : "text",
@@ -477,6 +489,12 @@
     "label" : "List",
     "required" : false,
     "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : null,
+      "default" : null
+    },
     "visibility" : {
       "controlling_field" : null,
       "controlling_value_regex" : null,
@@ -509,7 +527,7 @@
     }, {
       "id" : "c7fee44e-5ca3-8694-c9d5-77134d0b5465",
       "name" : "number",
-      "label" : "Number",
+      "label" : "Amount",
       "required" : false,
       "locked" : false,
       "display" : "text",

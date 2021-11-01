@@ -1,0 +1,40 @@
+[ {
+  "id" : "0ea21b9e-ab33-1ff0-d4de-9b1dd9eddbf0",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : true,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-mast.jpg",
+    "alt" : "rank-mast",
+    "loading" : "lazy",
+    "width" : 1920,
+    "height" : 755,
+    "max_width" : 1920,
+    "max_height" : 755
+  }
+}, {
+  "id" : "1e56ac1e-897f-7cd3-6d64-0bf039843d1b",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "World-class digital academy"
+}, {
+  "id" : "15d3b0fa-dc5d-6c4c-723e-38d3a3abe838",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>Check in for exceptional performance training with the world's best football experts and academies. From professional drills, specialist training<br>for specific positions to mentoring, nutrition and rehabilitative conditioning. ZujuGP Rank is a world-class digital academy in your pocket.</p>"
+} ]

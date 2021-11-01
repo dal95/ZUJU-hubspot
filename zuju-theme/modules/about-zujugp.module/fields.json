@@ -19,6 +19,26 @@
     "max_height" : 960
   }
 }, {
+  "id" : "89f1c879-bf46-a487-042b-91e59adb1f08",
+  "name" : "image_mobile",
+  "label" : "Image mobile",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/about-ball.jpg",
+    "alt" : "about-ball",
+    "loading" : "lazy",
+    "width" : 2400,
+    "height" : 960,
+    "max_width" : 2400,
+    "max_height" : 960
+  }
+}, {
   "id" : "e2947edd-c472-40f0-707b-900a263c8b0f",
   "name" : "main_description",
   "label" : "Main description",
