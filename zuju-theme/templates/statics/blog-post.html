@@ -3,8 +3,11 @@
   isAvailableForNewContent: true
   label: Zuju Statics - blog post
 -->
-{% set is_statics = true %} {% extends '../layouts/base.html' %} {% block body
-%}
+{% set is_statics = true %}
+{% set template_css = 'zuju-theme/css/templates/blog.css' %}
+{% extends '../layouts/base.html' %}
+
+{% block body %}
 <div class="app">
   <main class="bg-zuju-gray-1" x-data="{ heroHeight: 0 }">
     <article>

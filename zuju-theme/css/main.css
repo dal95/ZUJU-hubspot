@@ -456,6 +456,10 @@ select:not(.flatpickr-monthDropdown-months) {
   background-repeat: no-repeat !important;
 }
 
+iframe {
+  max-width: 100% !important;
+}
+
 .dfl {
   display: flex;
 }
@@ -2851,8 +2855,9 @@ section.edit .form-columns-0:not(:first-of-type) {
   color: var(--color-primary);
   text-decoration: underline;
 }
-.footer__social {
-  list-style: none;
+.footer__social .hs_cos_wrapper_type_icon {
+  display: flex;
+  align-items: center;
 }
 .footer__social a {
   display: flex !important;

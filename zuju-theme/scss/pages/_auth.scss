@@ -267,6 +267,11 @@
   }
 
   &__social {
+    .hs_cos_wrapper_type_icon {
+      display: flex;
+      align-items: center
+    }
+
     a {
       display: flex !important;
       align-items: center;
@@ -274,6 +279,7 @@
 
     svg {
       margin-right: 10px;
+      width: 18px;
     }
 
     path {
