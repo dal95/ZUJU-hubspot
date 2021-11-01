@@ -1,0 +1,191 @@
+
+			<div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto sm:p-8 lg:pb-16" x-data="parallax()" x-bind="root">
+				<!--<div class="row-start-1 col-start-1 col-span-8 flex items-center sm:-mx-8 sm:mb-16"><img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-laptop.png" /></div>-->
+				<div class="row-start-1 col-start-1 col-span-8 flex items-center sm:-mx-8 sm:mb-16"><img src="{{ module.image_field.src }}" /></div>
+				
+        <div class="row-start-1 col-start-8 col-span-5 border-l-2 border-zuju-red sm:pl-4 lg:pl-16">
+					
+          <article class="mb-24">
+						<h2 class="text-zuju-red uppercase mb-8" x-bind="animate(12)">
+              {#{
+              % if content.language.languageTag == "zh-cn" %}
+              足球俱乐部
+              {% else %}
+              Football Clubs
+              {% endif %}
+              #}
+              {{ module.article.subtext }}
+            </h2>
+						<h1 class="lg:w-3/5 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-16" x-bind="animate(16)">
+							{#
+                {% if content.language.languageTag == "zh-cn" %}
+                将你的招聘流程自动化、简单化
+                {% else %}
+                Simplify and automate your hiring process
+                {% endif %}
+              #}
+              {{ module.article.text_field }}
+						</h1>
+            {#
+						<p class="text-white mb-8" x-bind="animate(8)">
+              {% if content.language.languageTag == "zh-cn" %}
+              节省设置招聘对象的时间
+              {% else %}
+              Save time to set up who you're hiring
+              {% endif %}
+            </p>
+            
+						<p class="text-white mb-8" x-bind="animate(8)">
+              {% if content.language.languageTag == "zh-cn" %}
+              通过我们的全球网络接触到更多候选人
+              {% else %}
+              Reach more candidates through our global network
+              {% endif %}
+            </p>
+            
+						<p class="text-white mb-8" x-bind="animate(8)">
+              {% if content.language.languageTag == "zh-cn" %}
+              在您的概览页上轻松地管理您的候选人
+              {% else %}
+              Manage your candidates easily on your dashboard
+              {% endif %}
+            </p>
+            #}
+            {% for item in module.article.textlist %}
+              <p class="text-white mb-8" x-bind="animate(8)">
+                {{ item }}
+              </p>
+            {% endfor %}
+            
+					</article>
+					
+          <article class="mb-16">
+						<h2 class="text-zuju-red uppercase mb-8" x-bind="animate(12)">
+              {#
+              {% if content.language.languageTag == "zh-cn" %}
+              职业足球
+              {% else %}
+              Football Professionals
+              {% endif %}
+              #}
+              {{ module.article_2.subtext }}
+            </h2>
+						<h1 class="lg:w-3/5 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-16" x-bind="animate(16)">
+              {#
+              {% if content.language.languageTag == "zh-cn" %}
+              职业足球
+              {% else %}
+              Get a job anywhere in the world
+              {% endif %}
+              #}
+              {{ module.article_2.text_field }}
+            </h1>
+            {#
+						<div class="text-white mb-8" x-bind="animate(8)">
+              {% if content.language.languageTag == "zh-cn" %}
+              以专业的简历增加你的机会
+              {% else %}
+              Improve your chances with a professional looking CV
+              {% endif %}
+            </div>
+						<div class="text-white mb-8" x-bind="animate(8)">
+              {% if content.language.languageTag == "zh-cn" %}
+              通过我们的全球网络发现更多机遇
+              {% else %}
+              More choices through our global network
+              {% endif %}
+            </div>
+						<div class="text-white mb-8" x-bind="animate(8)">
+              {% if content.language.languageTag == "zh-cn" %}
+              无缝对接的面试流程
+              {% else %}
+              Seamless interview process
+              {% endif %}
+            </div>
+            #}
+            {% for item in module.article_2.textlist %}
+              <div class="text-white mb-8" x-bind="animate(8)">
+                {{ item }}
+              </div>
+            {% endfor %}
+					</article>
+          
+				</div>
+			</div>
+  
+			<div class="max-w-[1440px] flex sm:flex-col lg:flex-wrap mx-auto" x-data="parallax()" x-bind="root">
+				{#
+        <div class="lg:w-1/3 relative">
+					<div class="absolute inset-0 flex items-center justify-center">
+            {% if content.language.languageTag == "zh-cn" %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t1-cn.png" x-bind="animate(8)" />
+            {% else %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t1.png" x-bind="animate(8)" />
+            {% endif %}
+					</div>
+					<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-i1.jpg" />
+				</div>
+        
+				<div class="lg:w-1/3 relative">
+					<div class="absolute inset-0 flex items-center justify-center">
+            {% if content.language.languageTag == "zh-cn" %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t2-cn.png" x-bind="animate(8)" />
+            {% else %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t2.png" x-bind="animate(8)" />
+            {% endif %}
+					</div>
+					<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-i2.png" />
+				</div>
+        
+				<div class="lg:w-1/3 relative">
+					<div class="absolute inset-0 flex items-center justify-center">
+            {% if content.language.languageTag == "zh-cn" %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t3-cn.png" x-bind="animate(8)" />
+            {% else %}
+            <img class="h-3/5" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-t3.png" x-bind="animate(8)" />
+            {% endif %}
+					</div>
+					<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-i3.png" />
+				</div>
+        #}
+        {% for item in module.gallery %}
+          <div class="lg:w-1/3 relative">
+            {% if item.foreground.src %}
+                <div class="absolute inset-0 flex items-center justify-center">
+                  <img class="h-3/5" src="{{ item.foreground.src }}" alt="{{ item.foreground.alt }}" x-bind="animate(8)">
+                </div>
+            {% endif %}
+            {% if item.background.src %}
+              <img src="{{ item.background.src }}" alt="{{ item.background.alt }}">
+            {% endif %}
+          </div>
+        {% endfor %}
+			</div>
+  
+			<div class="w-full py-16">
+        {#
+				<p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
+          {% if content.language.languageTag == "zh-cn" %}
+          每个人都可以<span class="text-zuju-red">参与</span>。
+          {% else %}
+          Everyone can
+					<span class="text-zuju-red">participate.</span>
+          {% endif %}
+				</p>
+				
+        <p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
+          {% if content.language.languageTag == "zh-cn" %}
+          每个人也<span class="text-zuju-red">从中获益</span>。
+          {% else %}
+          Everyone can
+					<span class="text-zuju-red">benefit.</span>
+          {% endif %}
+				</p>
+        #}
+        
+        {% for item in module.text_blend %}
+          <p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
+            {{ item.white_text }} <span class="text-zuju-red">{{ item.red_text }}</span>
+          </p>
+        {% endfor %}
+			</div>

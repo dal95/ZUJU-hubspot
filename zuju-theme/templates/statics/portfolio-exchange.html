@@ -8,6 +8,9 @@
 {% block body %}
 <div class="app">
 	<main class="bg-zuju-gray-1" x-data="{}">
+    
+    
+    <!-- {#
     <section class="bg-zuju-gray-db" x-data="{ playing: false, noti: false }">
 			<div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
 				<div class="absolute inset-0">
@@ -70,7 +73,29 @@
 					</div>
 				</div>
 			</div>
-			<div
+			
+      <div
+				x-cloak=""
+				x-show="noti"
+				x-transition.opacity.duration.300ms=""
+				class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+				x-on:click="noti = false"
+				x-on:keyup.window.escape="noti = false"
+			>
+				<div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
+					<div class="relative sm:w-full">
+						<button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
+						<div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" %}</div>
+					</div>
+				</div>
+			</div>
+		</section>
+    #} -->
+    
+    <!-- Exchange Header -->
+    <section class="bg-zuju-gray-db" x-data="{ playing: false, noti: false }">
+      {% module "module_1635770633820163" path='/zuju-theme/modules/portfolio-exchange-header', label="Header" %}
+      <div
 				x-cloak=""
 				x-show="noti"
 				x-transition.opacity.duration.300ms=""
@@ -87,13 +112,10 @@
 			</div>
 		</section>
     
-    
-    
-    
-    
-    
-		
-    <section class="relative bg-zuju-gray-db pb-16">
+		<!-- PROD -->
+    <!--
+    {#
+      <section class="relative bg-zuju-gray-db pb-16">
 			<div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto sm:p-8 lg:pb-16" x-data="parallax()" x-bind="root">
 				<div class="row-start-1 col-start-1 col-span-8 flex items-center sm:-mx-8 sm:mb-16"><img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-laptop.png" /></div>
 				<div class="row-start-1 col-start-8 col-span-5 border-l-2 border-zuju-red sm:pl-4 lg:pl-16">
@@ -227,7 +249,19 @@
 				{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
 			</div>
 		</section>
-		
+		#}
+-->
+    <!-- Image and Timeline -->
+    <section class="relative bg-zuju-gray-db pb-16">
+      {% module "module_1635765532816116" 
+        path="/zuju-theme/modules/portfolio-image-and-textlist", 
+        label="Image and Text List" %}
+      <div class="w-full max-w-[1000px] mx-auto">
+				{% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+			</div>
+		</section>
+    
+    
     <!--
   {#
     <section class="pb-32">
@@ -406,6 +440,7 @@
 		</section>
   #}
  -->
+    <!-- Articles Templates -->
     {% module "module_163575201783369" path="/zuju-theme/modules/portfolio-articles-template", label="Articles" %}
 	</main>
 	

@@ -1,71 +1,82 @@
-      <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
-        <div class="absolute inset-0">
-          <div class="sm:aspect-w-16 sm:aspect-h-9">
-            <div>
-               <!--<img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-mast.jpg" />-->
-              <img class="h-full w-full object-cover object-center" src="{{ module.background_image.src }}">
-            
-            </div>
-          </div>
-        </div>
-        <div class="relative flex flex-col items-center justify-center sm:p-8">
-          <img class="sm:h-10 lg:h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-logo.png" x-bind="animate(16)" />
-          <h1 class="lg:w-1/2 text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
-            {#
-            {% if content.language.languageTag == "zh-cn" %}
-            世界级的数字化学院
-            {% else %}
-            World-class digital academy
-            {% endif %}
-            #}
-            {{ module.title }}
-          </h1>
-          <p class="text-white lg:w-5/12 text-center mb-8" x-bind="animate(16)">
-            {#
-            {% if content.language.languageTag == "zh-cn" %}
-            与世界上最好的、最卓越的足球专家和足球学院一起训练。从专业训练课程、到特定位置的培训、再到营养和康复的指导。蹴蹴探索空间就是您口袋里的世界级数字化足球学院！
-            {% else %}
-            Check in for exceptional performance training with the world's best football experts and academies. From professional drills, specialist training
-            for specific positions to mentoring, nutrition and rehabilitative conditioning. ZujuGP Rank is a world-class digital academy in your pocket.
-            {% endif %}
-            #}
-           {{ module.description }}
-          </p>
-          <div class="lg:h-20 lg:-mx-4" x-bind="animate(8)">
-            <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4" x-on:click="noti = true">
-              {% if content.language.languageTag == "zh-cn" %}
-              得到通知
-              {% else %}
-              Get Notified
-              {% endif %}
-            </button>
-            <button
-              class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
-              x-on:click="playing = true"
-            >
-              {% if content.language.languageTag == "zh-cn" %}
-              观看视频
-              {% else %}
-              Watch Video
-              {% endif %}
-            </button>
-          </div>
-        </div>
+
+  <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
+    
+    <div class="absolute inset-0">
+      <div class="sm:aspect-w-16 sm:aspect-h-9">
+        <!--<div><img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-mast.jpg" /></div>-->
+        <div><img class="h-full w-full object-cover object-center" src="{{ module.background_image.src }}" /></div>
       </div>
-      <div
-        x-cloak=""
-        x-show="playing"
-        x-transition.opacity.duration.300ms=""
-        class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
-        x-on:click="playing = false"
-        x-on:keyup.window.escape="playing = false"
-      >
-        <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
-          <div class="relative sm:w-full">
-            <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
-            <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
-              <source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/rank.mp4" />
-            </video>
-          </div>
-        </div>
+    </div>
+    
+    <div class="relative flex flex-col items-center justify-center sm:p-8">
+      <!--<img class="sm:h-10 lg:h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-logo.png" x-bind="animate(16)" />-->
+      <img class="sm:h-10 lg:h-16 mb-16" src="{{ module.logo.src }}" x-bind="animate(16)" />
+      
+      <h1 class="lg:w-1/2 text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
+        {#
+          {% if content.language.languageTag == "zh-cn" %}
+          世界级的数字化学院
+          {% else %}
+          World-class digital academy
+          {% endif %}
+        #}
+        {{ module.title }}
+      </h1>
+      <p class="text-white lg:w-5/12 text-center mb-8" x-bind="animate(16)">
+        {#
+          {% if content.language.languageTag == "zh-cn" %}
+          与世界上最好的、最卓越的足球专家和足球学院一起训练。从专业训练课程、到特定位置的培训、再到营养和康复的指导。蹴蹴探索空间就是您口袋里的世界级数字化足球学院！
+          {% else %}
+          Check in for exceptional performance training with the world's best football experts and academies. From professional drills, specialist training
+          for specific positions to mentoring, nutrition and rehabilitative conditioning. ZujuGP Rank is a world-class digital academy in your pocket.
+          {% endif %}
+        #}
+        {{ module.description }}
+      </p>
+      
+      <div class="lg:h-20 lg:-mx-4" x-bind="animate(8)">
+        <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4" x-on:click="noti = true">
+          {#
+            {% if content.language.languageTag == "zh-cn" %}
+            得到通知
+            {% else %}
+            Get Notified
+            {% endif %}
+          #}
+          {{ module.notify_label }}
+        </button>
+        
+        <button
+                class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
+                x-on:click="playing = true"
+                >
+          {#
+            {% if content.language.languageTag == "zh-cn" %}
+            观看视频
+            {% else %}
+            Watch Video
+            {% endif %}
+          #}
+          {{ module.watch_video_label }}
+        </button>
       </div>
+    </div>
+  </div>
+  <div
+       x-cloak=""
+       x-show="playing"
+       x-transition.opacity.duration.300ms=""
+       class="fixed inset-0 bg-black/90 z-50 sm:p-4 lg:p-24"
+       x-on:click="playing = false"
+       x-on:keyup.window.escape="playing = false"
+       >
+    <div class="h-full w-full flex items-center" x-effect="document.body.classList[playing ? 'add' : 'remove']('overflow-hidden')">
+      <div class="relative sm:w-full">
+        <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
+        <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
+          <!--<source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/rank.mp4" />-->
+          <source src="{{ module.video_url.href }}" />
+        </video>
+      </div>
+    </div>
+  </div>
