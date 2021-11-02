@@ -1,0 +1,73 @@
+<section class="mb-24">
+	<h2 class="text-white text-4xl font-gtcond font-black text-center sm:mb-16 lg:mb-24" x-bind="animate(8)">
+		{{ module.main_title }}
+	</h2>
+	<div class="sm:hidden flex lg:-mx-2">
+
+		{% for item in module.group %}
+			<div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
+				<div class="h-16 w-16 flex items-center mb-24" x-bind="animate(16)">
+					{% if item.image.src %}
+						{% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+						<img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} />
+					{% endif %}
+				</div>
+				<h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+					{{ item.title }}
+				</h2>
+				<div class="flex-grow w-full text-white sm:text-center mb-8">
+					<div class="mb-2 p">
+						{{ item.description }}
+					</div>
+				</div>
+				<div class="w-full text-white font-bold sm:text-center uppercase">
+					{{ item.footer_text }}
+				</div>
+			</div>
+		{% endfor %}
+	</div>
+
+	<div class="lg:hidden">
+		<div class="glide" x-data="{}" x-init="new Glide($el).mount()">
+			<div class="glide__track" data-glide-el="track">
+				<div class="glide__slides">
+						{% inline_text field="title" value="{{ item.title }}" %}
+						{% inline_rich_text field="description" value="{{ item.description }}" %}
+						{% inline_text field="footer_text" value="{{ item.footer_text }}" %}
+					{% for item in module.group %}
+						<div class="glide__slide">
+							<div class="">
+								<div>
+									<div class="lg:w-1/4 sm:h-full flex flex-col items-center px-2 sm:pt-4 sm:mb-16">
+										<div class="h-16 w-16 flex items-center mb-16">
+											{% if item.image.src %}
+												{% set loadingAttr = item.image.loading != 'disabled' ? 'loading="{{ item.image.loading }}"' : '' %}
+												<img src="{{ item.image.src }}" alt="{{ item.image.alt }}" {{ loadingAttr }} />
+											{% endif %}
+										</div>
+										<h2 class="w-full text-white font-bold sm:text-center uppercase mb-2">
+											{{ item.title }}
+										</h2>
+										<div class="flex-grow w-full text-white sm:text-center mb-8">
+											<div class="mb-2 p">
+												{{ item.description }}
+											</div>
+										</div>
+										<div class="w-full text-white font-bold sm:text-center uppercase">
+											{{ item.footer_text }}
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					{% endfor %}
+				</div>
+			</div>
+			<div class="glide__bullets bottom-1" data-glide-el="controls[nav]">
+				{% for item in module.group %}
+					<button class="glide__bullet" data-glide-dir="={{ loop.index0 }}"></button>
+				{% endfor %}
+			</div>
+		</div>
+	</div>
+</section>

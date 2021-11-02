@@ -1475,6 +1475,10 @@ input[type='submit'] {
   display: none;
 }
 
+[data-hs-dragdrop] .is-hidden {
+  display: block !important;
+}
+
 .membership-tier-desc {
   opacity: 0;
 }
