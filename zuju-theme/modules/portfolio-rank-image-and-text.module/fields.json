@@ -1,1 +1,105 @@
-[ ]
+[ {
+  "id" : "4c507bad-02a4-cf5a-1783-7ee23cae41c6",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-hero.jpg",
+    "alt" : "rank-hero",
+    "loading" : "lazy",
+    "width" : 1440,
+    "height" : 1000,
+    "max_width" : 1440,
+    "max_height" : 1000
+  }
+}, {
+  "id" : "69139e97-c583-2f6e-f18f-ed3c10166cf2",
+  "name" : "background_image",
+  "label" : "Background Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png",
+    "alt" : "bg-ball-dark",
+    "loading" : "lazy",
+    "width" : 1462,
+    "height" : 1464,
+    "max_width" : 1462,
+    "max_height" : 1464
+  }
+}, {
+  "id" : "c7e9e26a-b3e0-359f-d207-b67e81e5dc55",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Instant access to global football talents"
+}, {
+  "id" : "147e2e0d-c5ef-cf68-47ac-182e2990e88f",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Scouts now have instant access to a hyperledger of global football talents. Complete with videos, player aggregated statistics and augmented data.        Don't worry about your intel, it's secured with blockchain enabled technology."
+}, {
+  "id" : "938e6a6d-59f0-2142-9e77-51f07b106920",
+  "name" : "text_blend",
+  "label" : "Text Blend",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "74b60008-3959-744d-d307-d6f701f278c6",
+    "name" : "white_text",
+    "label" : "White Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Everyone can"
+  }, {
+    "id" : "67c9ef1d-18ec-7ce2-d0ae-20227ce92885",
+    "name" : "red_text",
+    "label" : "Red text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "benefit"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "white_text" : "Everyone can",
+    "red_text" : "benefit"
+  }
+} ]

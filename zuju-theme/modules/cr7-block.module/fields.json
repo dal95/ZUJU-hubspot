@@ -1,0 +1,57 @@
+[ {
+  "id" : "6d2a8ca5-7f2b-09e1-37f7-f149d1f5d71e",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "0ba0aa99-c42e-fe4e-68fb-49282d21fd31",
+  "name" : "list",
+  "label" : "List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "ababcf2d-4523-252d-9fd6-970ff561e6f2",
+    "name" : "text_main",
+    "label" : "Text main",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "6be82843-f152-c56d-0dbd-723962356de3",
+    "name" : "text_secondary",
+    "label" : "Text Secondary",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "871fc7b6-acad-5964-d0b1-5f9b91d83be7",
+    "name" : "amount",
+    "label" : "Amount",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+} ]

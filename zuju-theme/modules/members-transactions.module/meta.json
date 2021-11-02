@@ -1,8 +1,6 @@
 {
   "global" : false,
-  "master_language" : "en",
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
-  "module_id" : 58786055550,
-  "label" : "Home manifesto",
+  "module_id" : 58843938593,
   "is_available_for_new_content" : true
 }

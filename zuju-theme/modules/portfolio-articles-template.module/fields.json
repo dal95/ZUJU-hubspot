@@ -46,6 +46,19 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "default" : "Our AI-powered and automated global job search app"
+  }, {
+    "id" : "1fa0b236-2162-4a38-7f28-154e7fa2b52f",
+    "name" : "page_link",
+    "label" : "Page Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "CONTENT" ],
+    "type" : "url",
+    "default" : {
+      "type" : "CONTENT",
+      "href" : null,
+      "content_id" : 56320875932
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -62,7 +75,12 @@
       "max_height" : 742
     },
     "title" : "ZujuGP Exchange",
-    "description" : "Our AI-powered and automated global job search app"
+    "description" : "Our AI-powered and automated global job search app",
+    "page_link" : {
+      "type" : "CONTENT",
+      "href" : null,
+      "content_id" : 56320875932
+    }
   }
 }, {
   "id" : "c998823b-2326-093a-1018-566bff9366a2",
@@ -112,6 +130,19 @@
     "show_emoji_picker" : false,
     "type" : "text",
     "default" : "Blockchain and AI-enabled talent development &  recruitment app"
+  }, {
+    "id" : "61e347eb-54aa-36b2-65d7-4000833d2161",
+    "name" : "page_link",
+    "label" : "Page Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "CONTENT" ],
+    "type" : "url",
+    "default" : {
+      "type" : "CONTENT",
+      "href" : null,
+      "content_id" : 56320989802
+    }
   } ],
   "tab" : "CONTENT",
   "expanded" : false,
@@ -128,6 +159,11 @@
       "max_height" : 755
     },
     "title" : "ZujuGP Rank",
-    "description" : "Blockchain and AI-enabled talent development &  recruitment app"
+    "description" : "Blockchain and AI-enabled talent development &  recruitment app",
+    "page_link" : {
+      "type" : "CONTENT",
+      "href" : null,
+      "content_id" : 56320989802
+    }
   }
 } ]

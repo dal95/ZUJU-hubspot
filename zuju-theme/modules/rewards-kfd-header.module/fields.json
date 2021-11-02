@@ -1,0 +1,32 @@
+[ {
+  "id" : "c0d242c0-619e-c3d1-b09f-84df439f6593",
+  "name" : "logo",
+  "label" : "logo",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/theme-assets/images/kungfu-dash-logo.png",
+    "alt" : "kungfu-dash-logo",
+    "loading" : "lazy",
+    "width" : 271,
+    "height" : 140,
+    "max_width" : 271,
+    "max_height" : 140
+  }
+}, {
+  "id" : "b7d6bd4b-7d8e-24b3-13f4-0f2f4bd3aa5f",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Be a super earner!"
+} ]

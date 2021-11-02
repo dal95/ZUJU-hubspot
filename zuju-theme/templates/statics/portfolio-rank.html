@@ -115,6 +115,8 @@
   
 
     <!-- PROD -->
+    <!--
+    {#
     <section class="bg-zuju-gray-db">
       <article class="relative max-w-[1440px] grid sm:grid-rows-2 lg:grid-cols-2 mx-auto" x-data="parallax()" x-bind="root">
         <div><img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-hero.jpg" /></div>
@@ -166,42 +168,21 @@
         </div>
       </div>
     </section>
+    #}
+    -->
     
     <!-- Rank Image and Text -->
-    {#
     <section class="bg-zuju-gray-db">
-    
-    
-  <div class="max-w-[1440px] mx-auto pb-16">
-    
-    <div class="w-full py-16">
-      <p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
-        {% if content.language.languageTag == "zh-cn" %}
-        每个人都可以<span class="text-zuju-red">参与</span>。
-        {% else %}
-        Everyone can
-        <span class="text-zuju-red">participate.</span>
-        {% endif %}
-      </p>
-      <p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
-        {% if content.language.languageTag == "zh-cn" %}
-        每个人也<span class="text-zuju-red">从中获益</span>。
-        {% else %}
-        Everyone can
-        <span class="text-zuju-red">benefit.</span>
-        {% endif %}
-      </p>
-    </div>
-    
-    <div class="w-full max-w-[1000px] mx-auto">
-      <!-- <div class="aspect-w-4 aspect-h-1">
-        <div class="flex items-center justify-center bg-blue-200 text-white font-bold">Ad Space</div>
-      </div> -->
-      {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
-    </div>
-  </div>
-</section>
-    #}
+      {% module "module_1635773107048187" path="/zuju-theme/modules/portfolio-rank-image-and-text", label="Image and text" %}
+        
+        <div class="w-full max-w-[1000px] mx-auto pb-16">
+          <!-- <div class="aspect-w-4 aspect-h-1">
+            <div class="flex items-center justify-center bg-blue-200 text-white font-bold">Ad Space</div>
+            </div> -->
+          {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
+        </div>
+      </div> <!-- the div is inside the module -->
+    </section>
     
     <!-- PROD -->
     <!-- {#

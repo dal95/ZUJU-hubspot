@@ -1,0 +1,76 @@
+[ {
+  "id" : "304c69f6-f89a-4223-d481-1d03f75cec40",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "5f828656-7782-1587-1dcd-fcae480fc6e8",
+  "name" : "list",
+  "label" : "List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "fb3237fa-7502-3db6-fef4-8654af3d9202",
+    "name" : "main_text",
+    "label" : "Main text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "bc9ea23e-a04f-cfdd-fbc0-7090ea1a2aba",
+    "name" : "secondary_text",
+    "label" : "Secondary text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "12eca9ff-e94c-28b6-10b3-0590ca80c5bb",
+    "name" : "amount",
+    "label" : "Amount",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number"
+  }, {
+    "id" : "7a6aa620-daf0-d187-8283-2fc7f3775e46",
+    "name" : "type",
+    "label" : "Type",
+    "required" : false,
+    "locked" : false,
+    "display" : "select",
+    "choices" : [ [ "default", "Default" ], [ "alt", "Alt" ] ],
+    "type" : "choice",
+    "default" : "default"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "type" : "default"
+  }
+}, {
+  "id" : "b6397d89-5fd7-051f-647f-ca0aa8a55503",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+} ]

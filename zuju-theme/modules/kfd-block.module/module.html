@@ -1,0 +1,136 @@
+<section class="sm:order-1 mb-24" x-data="parallax()" x-bind="root">
+  <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">
+    {{ module.title }}
+  </h2>
+  <div class="grid grid-cols-[0.5rem,1.5rem,auto] lg:grid-cols-[2rem,2rem,auto] grid-rows-[repeat(8,minmax(0,1fr))] mb-4"  x-bind="animate(8)">
+    <div class="row-start-1 row-span-2 col-span-3 py-2">
+      <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
+        <div class="flex items-center text-white text-sm font-bold uppercase pr-6">
+          {{ module.tree_parent.text }}
+        </div>
+        <div class="flex items-center text-white text-lg font-bold lg:pr-8">{{ module.tree_parent.amount }}</div>
+      </div>
+    </div>
+    <div class="row-start-3 row-span-2 col-start-1 border-r border-white mt-2"></div>
+   
+    <div class="row-start-3 col-start-2 border-b border-white mr-4"></div>
+    <div class="row-start-3 row-span-2 col-start-3 py-2">
+      <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
+        <div class="flex items-center text-white text-sm font-bold uppercase pr-6">
+          {{ module.tree_children1.text }}
+        </div>
+        <div class="flex items-center text-white text-lg font-bold lg:pr-8">{{ module.tree_children1.amount }}</div>
+      </div>
+    </div>
+    <div class="row-start-5 col-start-1 border-r border-white"></div>
+    <div class="row-start-5 col-start-2 border-b border-white mr-4"></div>
+    <div class="row-start-5 row-span-2 col-start-3 py-2">
+      <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
+        <div class="flex items-center text-white text-sm font-bold uppercase pr-6">
+          {{ module.tree_children_2.text }}
+        </div>
+        <div class="flex items-center text-white text-lg font-bold lg:pr-8">{{ module.tree_children_2.amount }}</div>
+      </div>
+    </div>
+    <div class="row-start-7 row-span-2 sm:col-span-3 lg:col-start-3">
+      <div class="text-white text-sm pr-6 p">
+        {{ module.footer_text }}
+      </div>
+    </div>
+  </div>
+  <div class="text-white mb-8 p">
+    {{ module.description }}
+  </div>
+  <a href="{{ module.button.url.href }}">
+    <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">
+      {{ module.button.text }}
+    </button>
+  </a>
+</section>
+
+<!-- 
+<section class="sm:order-1 mb-24" x-data="parallax()" x-bind="root">
+  <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">
+    {% if content.language.languageTag == "zh-cn" %}
+    功夫快跳游戏
+    {% else %}
+    Kung Fu Dash Game
+    {% endif %}
+  </h2>
+  <div class="grid grid-cols-[0.5rem,1.5rem,auto] lg:grid-cols-[2rem,2rem,auto] grid-rows-[repeat(8,minmax(0,1fr))] mb-4"  x-bind="animate(8)">
+    <div class="row-start-1 row-span-2 col-span-3 py-2">
+      <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
+        <div class="flex items-center text-white text-sm font-bold uppercase pr-6">
+          {% if content.language.languageTag == "zh-cn" %}
+          每消费1美元
+          {% else %}
+          Every Dollar Spent
+          {% endif %}
+        </div>
+        <div class="flex items-center text-white text-lg font-bold lg:pr-8">5</div>
+      </div>
+    </div>
+    <div class="row-start-3 row-span-2 col-start-1 border-r border-white mt-2"></div>
+    <div class="row-start-3 col-start-2 border-b border-white mr-4"></div>
+    <div class="row-start-3 row-span-2 col-start-3 py-2">
+      <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
+        <div class="flex items-center text-white text-sm font-bold uppercase pr-6">
+          {% if content.language.languageTag == "zh-cn" %}
+          连续7天*
+          {% else %}
+          For 7 Consecutive Days*
+          {% endif %}
+        </div>
+        <div class="flex items-center text-white text-lg font-bold lg:pr-8">1</div>
+      </div>
+    </div>
+    <div class="row-start-5 col-start-1 border-r border-white"></div>
+    <div class="row-start-5 col-start-2 border-b border-white mr-4"></div>
+    <div class="row-start-5 row-span-2 col-start-3 py-2">
+      <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
+        <div class="flex items-center text-white text-sm font-bold uppercase pr-6">
+          {% if content.language.languageTag == "zh-cn" %}
+          连续25天*
+          {% else %}
+          For 25 Consecutive Days*
+          {% endif %}
+        </div>
+        <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
+      </div>
+    </div>
+    <div class="row-start-7 row-span-2 sm:col-span-3 lg:col-start-3">
+      <p class="text-white text-sm pr-6">
+        {% if content.language.languageTag == "zh-cn" %}
+        *一次性奖金，奖金发出后重置
+        {% else %}
+        *One-time bonus, reset after rewarding
+        {% endif %}
+      </p>
+      <p class="text-white text-sm pr-6">
+        {% if content.language.languageTag == "zh-cn" %}
+        基于日历天数
+        {% else %}
+        Based on rolling calendar days
+        {% endif %}
+      </p>
+    </div>
+  </div>
+  <p class="text-white mb-8">
+    {% if content.language.languageTag == "zh-cn" %}
+    你每天在游戏内消费，都将让你获得宝贵的蹴蹴ZujuGP忠诚积分，用以换取丰厚的奖励。连续玩7天将获得额外积分。连续玩25天将让你获得3倍蹴蹴ZujuGP忠诚积分！
+    {% else %}
+    For every day that you spend money in-game, you will earn precious loyalty points to exchange for great rewards. Play consecutively for 7 days for bonus points. Earn triple that when you enter 25-day playing streaks!
+    {% endif %}
+  </p>
+  <a href="/kungfu-dash">
+    <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">
+      {% if content.language.languageTag == "zh-cn" %}
+      现在开玩功夫快跳
+      {% else %}
+      Play Kungfu Dash
+      {% endif %}
+    </button>
+  </a>
+</section>
+
+ -->

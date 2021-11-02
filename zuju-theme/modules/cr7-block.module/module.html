@@ -1,0 +1,24 @@
+<section class="sm:order-3 mb-24" x-data="parallax()" x-bind="root">
+  <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">
+    {{ module.title }}
+  </h2>
+  <div class="mb-4" x-bind="animate(8)">
+    {% for item in module.list %}
+  
+       <div class="py-2">
+        <div class="flex justify-between bg-gradient-to-r from-graph-red to-graph-orange rounded-lg sm:p-4 lg:px-6 py-4">
+          <div>
+            <h3 class="text-white text-sm font-bold uppercase pr-6">
+              {{ item.text_main }}
+            </h3>
+            <p class="text-white text-sm pr-6">
+              {{ item.text_secondary }}
+            </p>
+          </div>
+          <div class="flex items-center text-white text-lg font-bold lg:pr-8">{{ item.amount }}</div>
+        </div>
+      </div>
+    {% endfor %}
+   
+  </div>
+</section>

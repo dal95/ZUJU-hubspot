@@ -1,0 +1,632 @@
+{
+  "button_portfolio.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.label" : {
+    "message" : "Field group",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.name" : {
+    "message" : "home-manifesto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "button_portfolio.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.text.default" : {
+    "message" : "View Portfolio",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.text.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.text.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.text.label" : {
+    "message" : "Text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.text.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.text.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.url.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.url.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.url.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.url.label" : {
+    "message" : "Link",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button_portfolio.url.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "manifesto.button.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.label" : {
+    "message" : "Button",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.text.default" : {
+    "message" : "Learn About Us",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.text.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.text.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.text.label" : {
+    "message" : "Text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.text.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.text.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.url.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.url.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.url.label" : {
+    "message" : "URL",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button.url.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.label" : {
+    "message" : "Button Trailer",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.text.default" : {
+    "message" : "Learn About Us",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.text.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.text.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.text.label" : {
+    "message" : "Text",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.text.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.text.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.video_file.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.video_file.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.video_file.label" : {
+    "message" : "Video file",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.button_trailer.video_file.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.description.default" : {
+    "message" : "<h1><span>A community platform for fans and businesses from East to West.</span></h1>",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.description.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.description.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.description.label" : {
+    "message" : "Description",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.description.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.image.default.alt" : {
+    "message" : "ball",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.image.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.image.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.image.label" : {
+    "message" : "Image",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.image.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.label" : {
+    "message" : "Manifesto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.title.default" : {
+    "message" : "Our Manifesto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.title.help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.title.inline_help_text" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.title.label" : {
+    "message" : "Title",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.title.placeholder" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "manifesto.title.validation_regex" : {
+    "message" : "",
+    "description" : "",
+    "placeholders" : null
+  },
+  "name" : {
+    "message" : "home-manifesto",
+    "description" : "",
+    "placeholders" : null
+  },
+  "portfolio.content_group.content.default" : {
+    "message" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.content.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.content.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.content.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.content.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.image.default.alt" : {
+    "message" : "port-1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.image.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.image.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.image.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.image.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.label" : {
+    "message" : "Content group",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.title.default" : {
+    "message" : "ZujuGamePlay",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.title.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.title.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.title.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.title.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.content_group.title.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.description.default" : {
+    "message" : "<p><span>Products you love, experiences you want and the opportunities only you deserve</span></p>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.description.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.description.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.description.label" : {
+    "message" : "Description",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.description.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.label" : {
+    "message" : "Portfolio",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.title.default" : {
+    "message" : "Portfolio",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.title.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.title.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.title.label" : {
+    "message" : "Title",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.title.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.title.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.content_group.image_field.default.loading" : {
+    "message" : "lazy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.content_group.image_field.default.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.content_group.image_field.default.src" : {
+    "message" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.0.content" : {
+    "message" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.0.image_field.alt" : {
+    "message" : "port-1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.0.image_field.loading" : {
+    "message" : "lazy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.0.image_field.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.0.image_field.src" : {
+    "message" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.0.title" : {
+    "message" : "ZujuGamePlay",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.1.content" : {
+    "message" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.1.image_field.alt" : {
+    "message" : "port-1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.1.image_field.loading" : {
+    "message" : "lazy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.1.image_field.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.1.image_field.src" : {
+    "message" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.1.title" : {
+    "message" : "ZujuGamePlay",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.2.content" : {
+    "message" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.2.image_field.alt" : {
+    "message" : "port-1",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.2.image_field.loading" : {
+    "message" : "lazy",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.2.image_field.size_type" : {
+    "message" : "auto",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.2.image_field.src" : {
+    "message" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.content_group.2.title" : {
+    "message" : "ZujuGamePlay",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.description" : {
+    "message" : "<p><span>Products you love, experiences you want and the opportunities only you deserve</span></p>",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portofolio.default.title" : {
+    "message" : "Portfolio",
+    "description" : null,
+    "placeholders" : null
+  }
+}

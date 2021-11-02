@@ -1,0 +1,164 @@
+[ {
+  "id" : "bf7cf184-201d-6e99-ac07-4415abeed05d",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "f88dd92c-6b29-2732-058a-1c77273d43c1",
+  "name" : "tree_parent",
+  "label" : "Tree parent",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "40a36b91-07d2-7fff-c6cd-23ed8ab8c4b6",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "39604810-636d-e0cd-3b01-5189afa54433",
+    "name" : "amount",
+    "label" : "Amount",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+}, {
+  "id" : "d353890e-9bbf-c24a-b622-243e5029c88d",
+  "name" : "tree_children1",
+  "label" : "Tree children 1",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "9b905e62-ebcc-a9e5-7023-99071df33fe2",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "69790319-8160-c544-70f7-7cea45c05c52",
+    "name" : "amount",
+    "label" : "Amount",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+}, {
+  "id" : "4e5eb9f1-cd46-6206-9475-7e2b55c60b0d",
+  "name" : "tree_children_2",
+  "label" : "Tree children 2",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d9c0c8ab-9edd-9a94-cd9b-3d4404961234",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "577694b6-b59c-9ee0-ab72-e4d2b1f8f201",
+    "name" : "amount",
+    "label" : "Amount",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : { }
+}, {
+  "id" : "3ad2232b-fc9c-57b5-e4a3-346fdefc8630",
+  "name" : "footer_text",
+  "label" : "Footer text",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "79832cd7-2bcb-fbb8-172d-3f1c77f56315",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext"
+}, {
+  "id" : "5d1098bc-68cd-ac4a-532b-5c09be38d8ce",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "53811197-b96d-396f-4114-6b6ec34f8715",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text"
+  }, {
+    "id" : "2d8a6900-235e-1313-2dda-4518faffbe8b",
+    "name" : "url",
+    "label" : "URL",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "url" : {
+      "url" : {
+        "content_id" : null,
+        "type" : "EXTERNAL",
+        "href" : ""
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
+    }
+  }
+} ]
