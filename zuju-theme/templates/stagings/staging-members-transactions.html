@@ -1,0 +1,79 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Staging - Members transactions
+-->
+{% extends "../layouts/base-members.html" %}
+
+{% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
+{% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
+
+{% block body %}
+  <div class="member-benefit membership-header" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/bg/members.png') }})">
+    <div class="content-container">
+      <div class="member-benefit__row">
+        <div
+          class="member-benefit__card"
+          data-tilt
+          data-tilt-max="10"
+          data-tilt-speed="600"
+          data-tilt-perspective="400"
+        >
+          <div class="aspect-ratio" style="background-image: url({{ get_asset_url('zuju-theme/images/assets/bg/membership-card.svg') }})"></div>
+          <div class="member-benefit__tier">
+            {% if currLang == 'zh-cn' %}
+              {% if contact.membership_tier == 'Fan' %}
+                会员
+              {% elif contact.membership_tier == 'Super Fan' %}
+                超级会员
+              {% else %}
+                终身会员
+              {% endif %}
+            {% else %}
+              {{ contact.membership_tier }}
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="member-benefit__card-desc">
+          <b class="accumulated-points">{{ contact.current_loyalty_points }} {{ currLang == "zh-cn" ? "蹴蹴积分" : "Z Points" }}</b>
+          <div class="progress">
+            <div class="progress__bar"></div>
+            <div class="icon icon--ball"></div>
+          </div>
+          <p class="membership-tier-desc">
+            {% if currLang == "zh-cn" %}
+            获得<span class="membership-tier-points">{{ 3000 - contact.current_loyalty_points }}</span>积分来保持超级会员身份
+            {% else %}
+            Get <span class="membership-tier-points">{{ 3000 - contact.current_loyalty_points }}</span> more Z Points to achieve <span class="membership-tier-goal">Super Fan</span>.
+            {% endif %}
+
+            {# 会员  |  超级会员  |  终身会员 #}
+
+          </p>
+          <a href="/about-rewards" class="button button--primary">{{ currLang == "zh-cn" ? "等级福利" : "Tier Benefits" }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="content-area">
+    <div class="main-content">
+      <section class="pnt-history">
+        <h4>{{ currLang == "zh-cn" ? "我的历史积分" : "My points history" }}</h4>
+        <!-- Tabs -->
+        <div class="">
+          <div class="tabs scrollable">
+            <div class="tabs__menu active">{{ currLang == "zh-cn" ? "所有交易" : "All Transactions" }}</div>
+            <div class="tabs__menu" data-filter="credit">{{ currLang == "zh-cn" ? "获得积分" : "Points Received" }}</div>
+            <div class="tabs__menu" data-filter="debit">{{ currLang == "zh-cn" ? "已用积分" : "Points Used" }}</div>
+          </div>
+        </div>
+
+				{% module "module_16358344797631" path="/zuju-theme/modules/members-transactions", label="members-transactions" %}
+      </section>
+    </div>
+  </section>
+{% endblock body %}
+
+{{ require_js('https://cdnjs.cloudflare.com/ajax/libs/tilt.js/1.2.1/tilt.jquery.min.js', 'footer')}}

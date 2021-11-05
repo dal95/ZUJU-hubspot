@@ -1476,6 +1476,7 @@ input[type=submit] {
   min-height: 40px;
   align-items: center;
   padding-right: 20px;
+  margin-left: 3rem;
 }
 .table__td-right .clr-primary {
   font-size: 18px;
@@ -1483,11 +1484,15 @@ input[type=submit] {
 }
 .table__td-right > div:first-child {
   font-size: 14px;
+  flex-basis: 65px;
+  flex-shrink: 0;
 }
 .table__td-right > div:last-child {
   margin-left: 20px;
   flex-basis: 40px;
   text-align: right;
+  flex-basis: 65px;
+  flex-shrink: 0;
 }
 
 .pnt-history {
@@ -2650,7 +2655,7 @@ section.edit .form-columns-0:not(:first-of-type) {
 }
 .auth.login .hs_submit {
   position: absolute;
-  bottom: 0;
+  bottom: -2rem;
   right: 0;
 }
 .auth__push-right {

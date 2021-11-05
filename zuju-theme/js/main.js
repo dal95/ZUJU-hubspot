@@ -187,7 +187,7 @@ document.addEventListener('click', function (event) {
  * @param {*} filter could be: 'debit' or 'credit'
  */
 const renderHistoryTable = (data, filter = '') => {
-  const table = $('.pnt-history .table')
+  const table = $('.hs-content-id-56472088979 .pnt-history .table')
 
   let html = ''
 
@@ -273,8 +273,8 @@ fetch(`${BASE_URL}/points-history?uid=${uid}`)
     // Render
     renderHistoryTable(mapToGroup(transactions))
 
-    $('.pnt-history .tabs__menu').on('click', function () {
-      $('.pnt-history .tabs__menu').removeClass('active')
+    $('.hs-content-id-56472088979 .pnt-history .tabs__menu').on('click', function () {
+      $('.hs-content-id-56472088979 .pnt-history .tabs__menu').removeClass('active')
       $(this).addClass('active')
       renderHistoryTable(mapToGroup(transactions, $(this).data('filter')))
     })
