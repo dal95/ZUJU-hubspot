@@ -181,6 +181,8 @@ document.addEventListener("alpine:init", () => {
     };
   });
 
+  // bubblesort function
+
   Alpine.data("parallax", () => ({
     innerIsSm: false,
     offset: 0,

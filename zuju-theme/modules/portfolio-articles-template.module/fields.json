@@ -52,7 +52,7 @@
     "label" : "Page Link",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "CONTENT" ],
+    "supported_types" : [ "CONTENT", "BLOG", "FILE", "EMAIL_ADDRESS", "EXTERNAL" ],
     "type" : "url",
     "default" : {
       "type" : "CONTENT",
@@ -136,7 +136,7 @@
     "label" : "Page Link",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "CONTENT" ],
+    "supported_types" : [ "CONTENT", "BLOG", "FILE", "EMAIL_ADDRESS", "EXTERNAL" ],
     "type" : "url",
     "default" : {
       "type" : "CONTENT",
