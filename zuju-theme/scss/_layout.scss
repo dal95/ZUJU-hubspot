@@ -1480,7 +1480,10 @@ input[type='submit'] {
   display: none;
 }
 
-[data-hs-dragdrop] .is-hidden {
+.page-editor {
+  background-color: red;
+}
+#contentEditor-preview .is-hidden {
   display: block !important;
 }
 
