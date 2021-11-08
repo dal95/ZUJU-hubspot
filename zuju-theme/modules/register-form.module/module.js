@@ -8,7 +8,7 @@
     return re.test(String(email).toLowerCase())
   }
 
-  let hasErrors = []
+  let hasErrors = ['username', 'birthday', 'email']
 
   function asyncValidate (selector, callback) {
     const parent = $(selector).closest('.hs-form-field')
@@ -24,7 +24,9 @@
     const $spinner = parent.find('.spinner')
     // let prevValue = $(selector).val()
 
-    $(selector).on('focusout', function () {
+    $(selector).on('keyup', function () {
+      $('#hs_form_target_register .hs-button').attr('disabled', true)
+
       if (!$(this).val()) return
 
       if (input.attr('type') == 'email') {
@@ -64,22 +66,20 @@
           </div>
           `
 
-          // console.log({ messageType })
           if (messageType != 'success') {
-            if (!hasErrors.find(item => item.message))
+            if (!hasErrors.find(item => item == res.message)) {
               hasErrors.push(res.message)
-            // console.log(!hasErrors.find(item => message === res.message))
+            }
           } else {
             const index = hasErrors.findIndex(item =>
               item.includes(res.message.split('_')[0])
             )
-            // console.log(res.message)
-            // console.log(hasErrors)
-            // console.log(index)
-            if (index >= 0) hasErrors.splice(index, index + 1)
+            if (index >= 0) {
+              hasErrors = hasErrors.filter(item => !item.includes(res.message.split('_')[0]))
+            }
           }
 
-          console.log(hasErrors.length)
+          console.log(hasErrors)
 
           $('#hs_form_target_register .hs-button').attr(
             'disabled',
@@ -144,7 +144,7 @@
       const $referralInput = $('input[name="referral_code"]')
 
       $referralInput.attr('tabindex', -1)
-      $referralInput.addClass('disabled').attr('dsiabled', true)
+      $referralInput.addClass('disabled').attr('disabled', true)
       $referralInput.closest('.input').addClass('disabled')
 
       $('.disabled')
@@ -155,7 +155,7 @@
       $referralInput
         .val(referral_code)
         .trigger('change')
-        .trigger('focusout')
+        .trigger('keyup')
 
       const $form = $(`[data-form-id="${event.data.id}"]`)
       const $submitBtn = $('#hs_cos_wrapper_register_form').find('.hs-button')
@@ -185,16 +185,23 @@
       let maxDate = new Date(
         new Date().setFullYear(new Date().getFullYear() - 12)
       )
-      console.log(maxDate)
-      console.log(+new Date() > +new Date(maxDate))
 
       $('.birthday-custom').flatpickr({
         maxDate,
         onChange: function (selectedDates) {
-          console.log(+new Date(selectedDates[0]) > +new Date(maxDate))
-          $submitBtn.attr('disabled', !selectedDates.length)
+          if (hasErrors.length === 0 && selectedDates.length) {
+            $submitBtn.attr('disabled', false)
+
+            if (hasErrors.find(item => item === 'birthday')) {
+              hasErrors = hasErrors.filter(item => item !== 'birthday')
+            }
+          } else {
+            $submitBtn.attr('disabled', true)
+            hasErrors = hasErrors.filter(item => item != 'birthday')
+          }
         }
       })
+
 
       $('[name="country_dropdown"]').on('change', function () {
         $('.hs-input.hs-fieldtype-intl-phone')
