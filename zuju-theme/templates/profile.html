@@ -62,7 +62,8 @@
   </section>
 
   <script>
-    var contact = JSON.parse(`{{ contact|tojson }}`)
+    var contact = {{ contact|tojson }}
+    console.log(contact.country_dropdown)
   </script>
 
 {% endblock body %}

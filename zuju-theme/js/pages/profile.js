@@ -9,12 +9,31 @@ window.addEventListener('message', event => {
     count++
     if (count < total) return
 
-    $('[name="country_dropdown"]').on('change', function () {
+    let countryCode = ''
+    $("[name='country_dropdown']")
+      .find('option')
+      .each(function () {
+        if ($(this).text() == contact.country_dropdown) {
+          countryCode = $(this).val()
+        }
+      })
+
+    setTimeout(() => {
+      $("[name='country_dropdown']")
+        .val(countryCode)
+        .trigger('change')
+    }, 250)
+
+    setTimeout(() => {
       $('.hs-input.hs-fieldtype-intl-phone')
         .find('select')
-        .val($(this).val())
+        .val(contact.hs_calculated_phone_number_country_code)
         .trigger('change')
-    })
+
+      const trimmed = contact.phone.split('+')
+
+      $('.hs-input[name="phone"]').val(contact.hs_searchable_calculated_phone_number).trigger('change')
+    }, 1)
 
     $('[name="custom_avatar"]').each(function () {
       const avatarWrap = document.createElement('div')
