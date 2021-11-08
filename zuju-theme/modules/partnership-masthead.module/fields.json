@@ -1,0 +1,153 @@
+[ {
+  "id" : "ce3fc9c4-47f7-0bcc-efd5-f18c260b94f6",
+  "name" : "background",
+  "label" : "Background",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/partnerships-masthead.jpg",
+    "alt" : "partnerships-masthead",
+    "loading" : "lazy",
+    "width" : 1440,
+    "height" : 705,
+    "max_width" : 1440,
+    "max_height" : 705
+  }
+}, {
+  "id" : "c3734769-d6f0-3828-288b-dc6ab5060713",
+  "name" : "main",
+  "label" : "Main",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "d1d817e7-16da-bc25-3078-de77e93797fc",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Partnerships"
+  }, {
+    "id" : "609fb363-f91e-d45e-2953-fced73925df0",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>ZujuGP provides game changing founder support to answer the large demand for a tech-driven football ecosystem globally. For investors we provide exposure to the best growth opportunities in a space united by a fervent love for the beautiful game. ZujuGP is focused on growth with a blend of direct and co-investment</p>\n<p>&nbsp;</p>\nWe welcome visionaries who share our desire to advance football's transition to a digital future."
+  }, {
+    "id" : "aaaa9534-b5d8-a9a0-644b-782de9c4ddd7",
+    "name" : "button",
+    "label" : "Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "9d9260ed-532d-d3ae-e58b-314dda019ea0",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Contact us now"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "text" : "Contact us now"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Partnerships",
+    "description" : "<p>ZujuGP provides game changing founder support to answer the large demand for a tech-driven football ecosystem globally. For investors we provide exposure to the best growth opportunities in a space united by a fervent love for the beautiful game. ZujuGP is focused on growth with a blend of direct and co-investment</p>\n<p>&nbsp;</p>\nWe welcome visionaries who share our desire to advance football's transition to a digital future.",
+    "button" : {
+      "text" : "Contact us now"
+    }
+  }
+}, {
+  "id" : "9018c286-3406-85cd-a6fb-8cecae3c4096",
+  "name" : "side",
+  "label" : "Side",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "94f54e6d-b7f7-30e0-acf9-55eeefce4001",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : " Did you know?"
+  }, {
+    "id" : "026705fb-f5b5-ec97-8baf-a3e269112f81",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "Zuju is a play on the name Cuju, an ancient Chinese game widely recognized as the earliest recorded form of football."
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : " Did you know?",
+    "description" : "Zuju is a play on the name Cuju, an ancient Chinese game widely recognized as the earliest recorded form of football."
+  }
+}, {
+  "id" : "9bcf5500-c543-dd8e-8653-53553158fd8d",
+  "name" : "popup",
+  "label" : "Popup",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "bd9e5a02-4f27-fba5-a736-e00ad3e14684",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Partnership Enquiry"
+  }, {
+    "id" : "55890e96-76c9-bff3-34d9-7e4f0f268027",
+    "name" : "form",
+    "label" : "Form",
+    "required" : false,
+    "locked" : false,
+    "type" : "form",
+    "default" : {
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form."
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Partnership Enquiry",
+    "form" : {
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form."
+    }
+  }
+} ]

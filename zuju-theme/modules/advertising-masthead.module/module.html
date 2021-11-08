@@ -1,0 +1,56 @@
+<section x-data="{ noti: false }">
+  <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
+    <div class="absolute inset-0">
+      <img
+        class="h-full w-full object-cover object-center"
+        src="{{ module.background.src }}"
+      />
+    </div>
+    <div class="relative flex flex-col items-center justify-center sm:p-8">
+      <h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
+        {{ module.title }}
+      </h1>
+      <div class="flex sm:flex-col items-center justify-center">
+        <div class="lg:w-1/3 px-8">
+          <img class="mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/advertising-hero.png" x-bind="animate(8)" />
+        </div>
+        <div class="lg:w-1/2 px-8">
+          <div class="text-white mb-8 p">
+            {% inline_rich_text field="description" value="{{ module.description }}" %}
+          </div>
+          
+          <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4" x-on:click="noti = true">
+            {{ module.button.text }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div
+    x-cloak=""
+    x-show="noti"
+    x-transition.opacity.duration.300ms=""
+    class="fixed inset-0 bg-black/90 z-[999]"
+    x-on:click="noti = false"
+    x-on:keyup.window.escape="noti = false"
+  >
+    <div class="h-screen w-full flex items-start py-16 justify-center overflow-y-scroll" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
+      <div class="relative sm:w-full">
+        <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
+        <div x-on:click.stop="" class="AP-form bg-white">
+          <h1 class="text-4xl mobile:text-2xl font-gtcond font-black text-center pt-8 lg:-mb-8">
+            {{ module.popup.title }}
+          </h1>
+          {% form
+            form_to_use="{{ module.popup.form.form_id }}"
+            response_response_type="{{ module.popup.form.response_type }}"
+            response_message="{{ module.popup.form.message }}"
+            response_redirect_id="{{ module.popup.form.redirect_id }}"
+            response_redirect_url="{{module.popup.form.redirect_url}}"
+            gotowebinar_webinar_key="{{ module.popup.form.gotowebinar_webinar_key }}"
+          %}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

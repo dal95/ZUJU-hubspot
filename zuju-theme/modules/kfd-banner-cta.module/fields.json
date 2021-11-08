@@ -1,9 +1,25 @@
 [ {
+  "id" : "4d5c05db-10bf-ccb7-8b6e-3d79c1e24946",
+  "name" : "enable",
+  "label" : "Enable this module?",
+  "required" : false,
+  "locked" : false,
+  "display" : "checkbox",
+  "type" : "boolean",
+  "default" : true
+}, {
   "id" : "3c66ce21-4be7-673a-e34c-d2eba25606ff",
   "name" : "banner_image",
   "label" : "Banner image",
   "required" : false,
   "locked" : false,
+  "visibility" : {
+    "controlling_field" : "4d5c05db-10bf-ccb7-8b6e-3d79c1e24946",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
   "responsive" : true,
   "resizable" : false,
   "show_loading" : false,
@@ -25,6 +41,13 @@
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "4d5c05db-10bf-ccb7-8b6e-3d79c1e24946",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
   "allow_new_line" : false,
   "show_emoji_picker" : false,
   "type" : "text",
@@ -35,6 +58,13 @@
   "label" : "Description",
   "required" : false,
   "locked" : false,
+  "visibility" : {
+    "controlling_field" : "4d5c05db-10bf-ccb7-8b6e-3d79c1e24946",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
   "type" : "richtext",
   "default" : "Sign in to play Kungfu Dash now! <br>Contest until 1 Dec only."
 }, {
@@ -43,6 +73,13 @@
   "label" : "Button",
   "required" : false,
   "locked" : false,
+  "visibility" : {
+    "controlling_field" : "4d5c05db-10bf-ccb7-8b6e-3d79c1e24946",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
   "children" : [ {
     "id" : "daf4681d-c3a3-1803-4b88-d45da5912d1b",
     "name" : "button_label",

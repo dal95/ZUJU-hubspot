@@ -119,6 +119,31 @@
     "description" : null,
     "placeholders" : null
   },
+  "enable.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable.label" : {
+    "message" : "Boolean",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "name" : {
     "message" : "kfd-banner-cta",
     "description" : null,

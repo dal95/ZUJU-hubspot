@@ -1,0 +1,102 @@
+[ {
+  "id" : "cfca47c6-146e-5107-6d9a-7709a752f617",
+  "name" : "background",
+  "label" : "Background",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/advertising-masthead.jpg",
+    "alt" : "advertising-masthead",
+    "loading" : "lazy",
+    "width" : 1440,
+    "height" : 705,
+    "max_width" : 1440,
+    "max_height" : 705
+  }
+}, {
+  "id" : "6cc47c32-fed6-7899-b3ad-3947bebfd940",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "0e565fd5-63b8-e6c5-db18-a728e31dcbef",
+  "name" : "description",
+  "label" : "Description",
+  "required" : false,
+  "locked" : false,
+  "type" : "richtext",
+  "default" : "<p>ZujuGP is born in Asia and raised in the world.</p>\n<p>Recognized as the leading conduit between global football markets. ZujuGP provides insightful sector coverage in Asia with football and<br>tech content consumed by millions across all platforms. ZujuGP is the trusted partner for global football leaders in driving the<br>ecosystem's digital transition to connect 4 billion fans worldwide.</p>\n<p>Please contact our team for sales and partnership opportunities.</p>"
+}, {
+  "id" : "385cdedc-c1d3-9281-4ed0-c67ca068b72e",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "ceec2d97-4355-ebf7-3663-ba664187b0cd",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "How we can help"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "text" : "How we can help"
+  }
+}, {
+  "id" : "0f4c4b3e-bddc-9f89-39f7-4af65fb1151c",
+  "name" : "popup",
+  "label" : "Popup",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "7a5b3247-de26-fb00-73cc-5b72762e5eee",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Advertise Enquiry"
+  }, {
+    "id" : "a913c67f-08ad-2a04-5749-4d8b921d5cdb",
+    "name" : "form",
+    "label" : "Form",
+    "required" : false,
+    "locked" : false,
+    "type" : "form",
+    "default" : {
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form."
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Advertise Enquiry",
+    "form" : {
+      "response_type" : "inline",
+      "message" : "Thanks for submitting the form."
+    }
+  }
+} ]

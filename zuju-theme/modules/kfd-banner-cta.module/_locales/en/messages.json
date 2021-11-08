@@ -1,4 +1,9 @@
 {
+  "banner_image.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
   "banner_image.default.alt" : {
     "message" : "banner-rewards",
     "description" : "",
@@ -15,7 +20,7 @@
     "placeholders" : null
   },
   "banner_image.label" : {
-    "message" : "Banner image",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -74,6 +79,26 @@
     "description" : "",
     "placeholders" : null
   },
+  "button.default.button_label" : {
+    "message" : "Play Now",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default.button_url.no_follow" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default.button_url.url.href" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "button.default.button_url.url.type" : {
+    "message" : "CONTENT",
+    "description" : null,
+    "placeholders" : null
+  },
   "button.help_text" : {
     "message" : "",
     "description" : "",
@@ -85,7 +110,7 @@
     "placeholders" : null
   },
   "button.label" : {
-    "message" : "Button",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -95,7 +120,7 @@
     "placeholders" : null
   },
   "description.default" : {
-    "message" : "Sign in to play Kungfu Dash now! <br>Contest until 1 Dec only.",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -110,13 +135,38 @@
     "placeholders" : null
   },
   "description.label" : {
-    "message" : "Description",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
   "description.placeholder" : {
     "message" : "",
     "description" : "",
+    "placeholders" : null
+  },
+  "enable.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable.label" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "enable.placeholder" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "name" : {
@@ -140,7 +190,7 @@
     "placeholders" : null
   },
   "title.label" : {
-    "message" : "Title",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
