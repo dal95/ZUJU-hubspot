@@ -1,7 +1,5 @@
 let messages = JSON.parse(transactions_locale)
 delete messages.type
-console.log(messages)
-
 
 function getMessage (key, messages) {
   key = 'fe_' + key.replaceAll('-', '_')
@@ -20,7 +18,7 @@ const renderHistoryTable = (data, filter = '') => {
 
   // Filter
   data.forEach(group => {
-    html += `<tr class="table__row table__row--span"><td colspan="2">${group.date}</td></tr>`
+    html += `<tr class="table__row table__row--span"><td colspan="3">${group.date}</td></tr>`
 
     html += group.items
 			.filter(item => {
@@ -28,15 +26,15 @@ const renderHistoryTable = (data, filter = '') => {
 			})
       .map(item => {
         const pointChanged = item.credit ? `+${item.credit}` : `-${item.debit}`
-				// console.log(item)
-        return `<tr class="table__row">
-            <td class="table__td-left">
-							${item.fe_type ?
-									`<b>${getMessage(item.fe_type, messages)}</b> ${ item.fe_item ? ': ' + item.fe_item : ''}` :
-									`<div style="color: red">No FE type => ${item.description}</div>`}
+
+        return `<tr class="table__row" style="vertical-align: baseline">
+            <td class="table__td-left" style="padding-right: 2rem">
+              <b>${getMessage(item.fe_type, messages)}</b> ${ item.fe_item ? ': ' + item.fe_item : ''}
 						</td>
+            <td class="table__cost" style="margin-left: 2rem">
+              ${item.amount ? item.amount : ''}
+            </td>
             <td class="table__td-right">
-              <div>Z Points <span class="debug">credit: ${item.credit} debit: ${item.debit}</span></div>
               <div class="clr-primary">${pointChanged}</div>
             </td>
           </tr>`
@@ -55,6 +53,7 @@ const mapToGroup = (data, filter = '') => {
 
   data
     .filter(item => (filter ? item[filter] : item))
+    .filter(item => item.fe_type)
     .forEach(item => {
       const indexExist = mapped.findIndex(
         m => formatDate(m.date) === formatDate(item.updated_at)
