@@ -211,7 +211,7 @@ const renderHistoryTable = (data, filter = '') => {
       .join('')
   })
 
-  if (!data.length) html = '<h4 class="text-center">No data</h4>'
+  if (!data.length) html = '<tr><td><h4 class="text-center">No data</h4></td></tr>'
   table.find('tbody').append(html)
 
   table.hide().fadeIn()

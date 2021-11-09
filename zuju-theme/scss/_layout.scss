@@ -1082,12 +1082,24 @@ input[type='submit'] {
 .table {
   border-collapse: collapse;
   border: none;
+  overflow-x: auto;
+
+  thead {
+    font-weight: bold;
+    border-top: 3px solid var(--clr-dark-400)
+  }
+
+  td {
+    min-width: 130px;
+  }
 
   &__row {
     height: 40px;
 
-    > td:first-child {
+    > td {
       padding-left: 20px;
+      padding-right: 20px;
+      font-size: rem(14);
     }
   }
 
@@ -1101,15 +1113,12 @@ input[type='submit'] {
     min-height: 40px;
     align-items: center;
     padding-right: 20px;
-    margin-left: 3rem;
 
     .clr-primary {
-      font-size: 18px;
       font-weight: 600;
     }
 
     > div:first-child {
-      font-size: 14px;
       flex-basis: 65px;
       flex-shrink: 0;
     }
@@ -1122,10 +1131,18 @@ input[type='submit'] {
       flex-shrink: 0;
     }
   }
+
+  &__td-left {
+    min-width: 300px !important;
+  }
 }
 
 .pnt-history {
   margin-left: -25px;
+
+  .scrollable {
+    margin-bottom: 1rem;
+  }
 
   @include media('<=laptop') {
     margin-inline: -20px;

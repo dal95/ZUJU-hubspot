@@ -1,4 +1,6 @@
-let messages = JSON.parse(transactions_locale)
+let messages = transactions_locale
+
+console.log(messages)
 delete messages.type
 
 function getMessage (key, messages) {
@@ -27,7 +29,8 @@ const renderHistoryTable = (data, filter = '') => {
       .map(item => {
         const pointChanged = item.credit ? `+${item.credit}` : `-${item.debit}`
 
-        return `<tr class="table__row" style="vertical-align: baseline">
+        return `
+          <tr class="table__row" style="vertical-align: baseline">
             <td class="table__td-left" style="padding-right: 2rem">
               <b>${getMessage(item.fe_type, messages)}</b> ${ item.fe_item ? ': ' + item.fe_item : ''}
 						</td>
@@ -42,7 +45,7 @@ const renderHistoryTable = (data, filter = '') => {
       .join('')
   })
 
-  if (!data.length) html = '<h4 class="text-center">No data</h4>'
+  if (!data.length) html = '<tr><td colspan="3"><h4 class="text-center">No data</h4></td></tr>'
   table.find('tbody').append(html)
 
   table.hide().fadeIn()
