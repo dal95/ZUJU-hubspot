@@ -23,7 +23,7 @@
   "children" : [ {
     "id" : "ababcf2d-4523-252d-9fd6-970ff561e6f2",
     "name" : "text_main",
-    "label" : "Text main",
+    "label" : "Title",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -33,7 +33,7 @@
   }, {
     "id" : "6be82843-f152-c56d-0dbd-723962356de3",
     "name" : "text_secondary",
-    "label" : "Text Secondary",
+    "label" : "Description",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -43,7 +43,7 @@
   }, {
     "id" : "871fc7b6-acad-5964-d0b1-5f9b91d83be7",
     "name" : "amount",
-    "label" : "Amount",
+    "label" : "Points",
     "required" : false,
     "locked" : false,
     "display" : "text",

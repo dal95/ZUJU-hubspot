@@ -23,7 +23,7 @@
   "children" : [ {
     "id" : "fb3237fa-7502-3db6-fef4-8654af3d9202",
     "name" : "main_text",
-    "label" : "Main text",
+    "label" : "Title",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -33,7 +33,7 @@
   }, {
     "id" : "bc9ea23e-a04f-cfdd-fbc0-7090ea1a2aba",
     "name" : "secondary_text",
-    "label" : "Secondary text",
+    "label" : "Description",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -43,7 +43,7 @@
   }, {
     "id" : "12eca9ff-e94c-28b6-10b3-0590ca80c5bb",
     "name" : "amount",
-    "label" : "Amount",
+    "label" : "Points",
     "required" : false,
     "locked" : false,
     "display" : "text",
@@ -52,7 +52,7 @@
   }, {
     "id" : "7a6aa620-daf0-d187-8283-2fc7f3775e46",
     "name" : "type",
-    "label" : "Type",
+    "label" : "Background",
     "required" : false,
     "locked" : false,
     "display" : "select",

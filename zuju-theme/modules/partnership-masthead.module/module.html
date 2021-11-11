@@ -15,7 +15,7 @@
           <div class="text-white mb-8 p">
             {{ module.main.description }}
           </div>
-  
+
 
           <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4" x-on:click="noti = true">
             {{ module.main.button.text }}
@@ -46,8 +46,8 @@
     <div class="h-screen w-full flex items-start py-16 justify-center overflow-y-scroll" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
       <div class="relative sm:w-full">
         <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
-        <div x-on:click.stop="" class="AP-form bg-white">
-          <h1 class="text-4xl mobile:text-2xl font-gtcond font-black text-center pt-8 lg:-mb-8">
+        <div x-on:click.stop="" class="AP-form bg-white px-8 py-8">
+          <h1 class="font-black font-gtcond mb-4 mobile:text-2xl pt-8 text-4xl text-center">
             {{ module.popup.title }}
           </h1>
           {% form

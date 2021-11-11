@@ -21,7 +21,7 @@
 }, {
   "id" : "c3734769-d6f0-3828-288b-dc6ab5060713",
   "name" : "main",
-  "label" : "Main",
+  "label" : "Content (left)",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -81,7 +81,7 @@
 }, {
   "id" : "9018c286-3406-85cd-a6fb-8cecae3c4096",
   "name" : "side",
-  "label" : "Side",
+  "label" : "Content (right)",
   "required" : false,
   "locked" : false,
   "children" : [ {

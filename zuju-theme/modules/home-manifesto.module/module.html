@@ -153,17 +153,17 @@
 				class="row-start-3 col-span-3 flex items-center justify-center sm:pt-8 transition duration-0 transform translate-y-8 opacity-0"
 				x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700 lg:!delay-[600ms]'"
 			>
-				{% set href = module.button_portfolio.url.url.href %}
-				{% if module.button_portfolio.url.url.type is equalto "EMAIL_ADDRESS" %}
+				{% set href = module.portfolio.button_portfolio.url.url.href %}
+				{% if module.portfolio.button_portfolio.url.url.type is equalto "EMAIL_ADDRESS" %}
 					{% set href = "mailto:" + href %}
 				{% endif %}
 
 				<a href="{{ href }}"
-					{% if module.portfolio.button.url.open_in_new_tab %}target="_blank"{% endif %}
-					{% if rel %}rel="{{ rel|join(" ") }}"{% endif %}
+					{% if module.portfolio.button_portfolio.url.open_in_new_tab %}target="_blank"{% endif %}
+					{% if module.portfolio.button_portfolio.url.rel %}rel="{{ module.portfolio.button_portfolio.url.rel }}"{% endif %}
 				>
 					<button class="text-zuju-red font-bold sm:text-sm uppercase rounded border-2 border-zuju-red p-4">
-						{{ module.button_portfolio.text }}
+						{{ module.portfolio.button_portfolio.text }}
 					</button>
 				</a>
 			</div>

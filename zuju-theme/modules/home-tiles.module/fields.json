@@ -1,7 +1,7 @@
 [ {
   "id" : "2b89447e-a2fe-ed35-f941-f7c742456ae6",
   "name" : "main_tiles",
-  "label" : "Main Tiles",
+  "label" : "Main banner (left)",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -51,7 +51,7 @@
   }, {
     "id" : "8396ce92-7776-b698-1f20-e0b2954cf36b",
     "name" : "cta_text",
-    "label" : "CTA text",
+    "label" : "Description",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -85,7 +85,7 @@
 }, {
   "id" : "38d3e71b-9af9-4a87-8d96-06e1bf78672f",
   "name" : "children",
-  "label" : "Children",
+  "label" : "Banners",
   "required" : false,
   "locked" : false,
   "occurrence" : {
@@ -141,7 +141,7 @@
   }, {
     "id" : "ee433d53-eceb-f238-5a34-bcd8599501b1",
     "name" : "cta_text",
-    "label" : "CTA text",
+    "label" : "Description",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",

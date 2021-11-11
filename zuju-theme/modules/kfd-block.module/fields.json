@@ -11,7 +11,7 @@
 }, {
   "id" : "f88dd92c-6b29-2732-058a-1c77273d43c1",
   "name" : "tree_parent",
-  "label" : "Tree parent",
+  "label" : "Main Tier",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -27,7 +27,7 @@
   }, {
     "id" : "39604810-636d-e0cd-3b01-5189afa54433",
     "name" : "amount",
-    "label" : "Amount",
+    "label" : "Points",
     "required" : false,
     "locked" : false,
     "display" : "text",
@@ -41,7 +41,7 @@
 }, {
   "id" : "d353890e-9bbf-c24a-b622-243e5029c88d",
   "name" : "tree_children1",
-  "label" : "Tree children 1",
+  "label" : "Sub Tier 1",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -57,7 +57,7 @@
   }, {
     "id" : "69790319-8160-c544-70f7-7cea45c05c52",
     "name" : "amount",
-    "label" : "Amount",
+    "label" : "Points",
     "required" : false,
     "locked" : false,
     "display" : "text",
@@ -71,7 +71,7 @@
 }, {
   "id" : "4e5eb9f1-cd46-6206-9475-7e2b55c60b0d",
   "name" : "tree_children_2",
-  "label" : "Tree children 2",
+  "label" : "Sub Tier 2",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -87,7 +87,7 @@
   }, {
     "id" : "577694b6-b59c-9ee0-ab72-e4d2b1f8f201",
     "name" : "amount",
-    "label" : "Amount",
+    "label" : "Points",
     "required" : false,
     "locked" : false,
     "display" : "text",
@@ -101,7 +101,7 @@
 }, {
   "id" : "3ad2232b-fc9c-57b5-e4a3-346fdefc8630",
   "name" : "footer_text",
-  "label" : "Footer text",
+  "label" : "Footnote",
   "required" : false,
   "locked" : false,
   "type" : "richtext"

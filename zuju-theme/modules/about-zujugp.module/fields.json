@@ -82,7 +82,7 @@
 }, {
   "id" : "7ff70d96-58a4-3874-2886-f7c04c03230b",
   "name" : "section_2",
-  "label" : "Section_2",
+  "label" : "Section 2",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -145,7 +145,7 @@
 }, {
   "id" : "5b670b1d-cc4b-88e9-ff9d-525dd98c9006",
   "name" : "footer",
-  "label" : "Footer",
+  "label" : "Section 3",
   "required" : false,
   "locked" : false,
   "validation_regex" : "",

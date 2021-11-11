@@ -9,15 +9,15 @@
   <main class="bg-zuju-gray-1" x-data="{}">
     {% module "rewards_masthead"
       path="/zuju-theme/modules/rewards-masthead",
-      label="Rewards Masthead" %}
+      label="Masthead" %}
 
     {% module "rewards_redemption"
       path="/zuju-theme/modules/rewards-redemption",
-      label="Rewards redemption" %}
+      label="Rewards Redemption" %}
 
     {% module "rewards_tier"
       path="/zuju-theme/modules/rewards-tier",
-      label="Rewards tier" %}
+      label="Members Tier" %}
 
     {# Spacer #}
     <div class="bg-zuju-gray-db sm:h-8 lg:h-36" />
@@ -35,57 +35,21 @@
           <div class="sm:contents sm:w-full lg:w-5/12 lg:px-8 lg:pb-16">
             {% module "kfd_block"
               path="/zuju-theme/modules/kfd-block",
-              label="KFD block" %}
+              label="KFD Rewards" %}
 
             {% module "cr7_block"
               path="/zuju-theme/modules/cr7-block",
-              label="CR7 block" %}
+              label="Referral Rewards" %}
           </div>
           <div class="sm:contents sm:w-full lg:w-5/12 lg:px-8 lg:pb-16">
-            {% module "treasure_hunt" path="/zuju-theme/modules/treasure-hunt-block", label="Treasure hunt block" %}
+            {% module "treasure_hunt" path="/zuju-theme/modules/treasure-hunt-block", label="Treasure Hunt Rewards" %}
 
-            <section class="sm:order-4 mb-24" x-data="parallax()" x-bind="root">
-              <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">
-                {% if content.language.languageTag == "zh-cn" %}
-                分享蹴蹴ZujuGP
-                {% else %}
-                Share ZujuGP
-                {% endif %}
-              </h2>
-              <div class="mb-8" x-bind="animate(8)">
-                <div class="py-2">
-                  <div class="flex justify-between bg-gradient-to-r from-graph-blue to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
-                    <div>
-                      <h3 class="text-white text-sm font-bold uppercase pr-6">
-                        {% if content.language.languageTag == "zh-cn" %}
-                        每天的第一次分享
-                        <br />
-                        (Facebook, Instagram, Twitter)
-                        {% else %}
-                        First share per day on
-                        <br />
-                        Facebook, instagram or twitter
-                        {% endif %}
-                      </h3>
-                      <p class="text-white text-sm pr-6">
-                        {% if content.language.languageTag == "zh-cn" %}
-                        每天奖励1次
-                        {% else %}
-                        *Rewarded once per day
-                        {% endif %}
-                      </p>
-                    </div>
-                    <div class="flex items-center text-white text-lg font-bold lg:pr-8">2</div>
-                  </div>
-                </div>
-              </div>
-              <img class="mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/socmed.png" />
-            </section>
+            {% module "share_rewareds" path="/zuju-theme/modules/share-rewards", label="Share Rewards" %}
           </div>
 
           {# Content grid #}
           <div class="sm:order-last sm:w-full lg:w-5/6 lg:px-8" x-data="parallax()" x-bind="root">
-            {% module "rewards_content_grid" path="/zuju-theme/modules/rewards-content-grid", label="Grid Content" %}
+            {% module "rewards_content_grid" path="/zuju-theme/modules/rewards-content-grid", label="Other Rewards" %}
           </div>
         </div>
       </div>
