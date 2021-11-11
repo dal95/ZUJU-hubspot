@@ -211,7 +211,8 @@ const renderHistoryTable = (data, filter = '') => {
       .join('')
   })
 
-  if (!data.length) html = '<tr><td><h4 class="text-center">No data</h4></td></tr>'
+  if (!data.length)
+    html = '<tr><td><h4 class="text-center">No data</h4></td></tr>'
   table.find('tbody').append(html)
 
   table.hide().fadeIn()
@@ -252,34 +253,41 @@ const BASE_URL = 'https://www.zujugp.com/_hcms/api'
 
 const uid = user_vid
 
-fetch(`${BASE_URL}/daily-login`, {
-  method: 'POST',
-  headers: {
-    'Content-Type': 'application/json'
-    // 'Content-Type': 'application/x-www-form-urlencoded',
-  },
-  body: JSON.stringify({
-    uid: uid
-  })
-})
-  .then(res => res.json())
-  .then(res => console.log(res.message))
-
-fetch(`${BASE_URL}/points-history?uid=${uid}`)
-  .then(res => res.json())
-  .then(res => {
-    const transactions = res.data
-
-    // Render
-    renderHistoryTable(mapToGroup(transactions))
-
-    $('.hs-content-id-56472088979 .pnt-history .tabs__menu').on('click', function () {
-      $('.hs-content-id-56472088979 .pnt-history .tabs__menu').removeClass('active')
-      $(this).addClass('active')
-      renderHistoryTable(mapToGroup(transactions, $(this).data('filter')))
+if (membership_tier) {
+  fetch(`${BASE_URL}/daily-login`, {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+      // 'Content-Type': 'application/x-www-form-urlencoded',
+    },
+    body: JSON.stringify({
+      uid: uid
     })
   })
-  .catch(err => console.log(err))
+    .then(res => res.json())
+    .then(res => console.log(res.message))
+
+  fetch(`${BASE_URL}/points-history?uid=${uid}`)
+    .then(res => res.json())
+    .then(res => {
+      const transactions = res.data
+
+      // Render
+      renderHistoryTable(mapToGroup(transactions))
+
+      $('.hs-content-id-56472088979 .pnt-history .tabs__menu').on(
+        'click',
+        function () {
+          $('.hs-content-id-56472088979 .pnt-history .tabs__menu').removeClass(
+            'active'
+          )
+          $(this).addClass('active')
+          renderHistoryTable(mapToGroup(transactions, $(this).data('filter')))
+        }
+      )
+    })
+    .catch(err => console.log(err))
+}
 
 const dashboardAllowedPages = ['/members-portal', '/membership']
 

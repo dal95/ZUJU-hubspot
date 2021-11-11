@@ -131,10 +131,6 @@
     </div>
 
     {% include "../popups/index.html" %}
-    <script>
-      var user_vid = "{{ contact.hs_object_id }}";
-      var lang = "{{ html_lang }}" || '';
-    </script>
     {{ require_js('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js') }}
     {{ require_js(get_asset_url('../../js/main.js')) }}
 

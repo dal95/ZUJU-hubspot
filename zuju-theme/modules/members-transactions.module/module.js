@@ -57,6 +57,15 @@ const mapToGroup = (data, filter = '') => {
   data
     .filter(item => (filter ? item[filter] : item))
     .filter(item => item.fe_type)
+    .map(( item => {
+      if (item.fe_type === 'kfd-14days-bonus' || item.fe_type === 'kfd-21days-bonus') {
+        item.fe_type = 'kfd-7days-bonus'
+
+        return item
+      } else {
+        return item
+      }
+    }))
     .forEach(item => {
       const indexExist = mapped.findIndex(
         m => formatDate(m.date) === formatDate(item.updated_at)

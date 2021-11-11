@@ -90,7 +90,7 @@ document.addEventListener("alpine:init", () => {
   });
 
   Alpine.magic("share", () => async ({ uid, type }) => {
-    if (!uid || !type) return;
+    if (!uid || !type || !membership_tier) return;
 
     const url = "/_hcms/api/share-points";
     try {
@@ -148,7 +148,7 @@ document.addEventListener("alpine:init", () => {
         this.left = Math.floor(this.randLeft * (main.clientWidth - this.$width));
       },
       async getReady() {
-        if (!uid) return false;
+        if (!uid || !membership_tier) return false;
         try {
           const url = `/_hcms/api/easter-egg-info?uid=${uid}`;
           const res = await fetch(url);
