@@ -66,7 +66,7 @@
       <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="playing = false">×</button>
       <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
         <!--<source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/gameplay.mp4" />-->
-        <source src="{{ module.video_url.href }}" />
+        <source src="{{ module.video_player }}" />
       </video>
     </div>
   </div>

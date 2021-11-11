@@ -1,0 +1,74 @@
+[ {
+  "id" : "fd8d31ab-cd0d-20e9-c3cf-4dc09078a895",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text"
+}, {
+  "id" : "a4b167fc-dfe3-d4bf-b003-7728620ba510",
+  "name" : "list",
+  "label" : "List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "a6a027f9-f5c8-3c1b-889b-9f5bfc32b842",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "First share per day on <br>Facebook, instagram or twitter"
+  }, {
+    "id" : "ed044d3d-427f-195f-613b-ec29102ac4f9",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext"
+  }, {
+    "id" : "64fd0636-c728-87e0-fabc-cbfc3afba946",
+    "name" : "points",
+    "label" : "Points",
+    "required" : false,
+    "locked" : false,
+    "display" : "text",
+    "step" : 1,
+    "type" : "number"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "First share per day on <br>Facebook, instagram or twitter"
+  }
+}, {
+  "id" : "28118025-540a-d514-973a-6e3223354576",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/socmed.png",
+    "alt" : "socmed",
+    "loading" : "lazy",
+    "width" : 293,
+    "height" : 90,
+    "max_width" : 293,
+    "max_height" : 90
+  }
+} ]

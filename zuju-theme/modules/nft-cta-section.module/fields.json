@@ -1,157 +1,158 @@
-[
-  {
-    "default": true,
-    "display": "toggle",
-    "id": "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
-    "label": "Enable this module?",
-    "locked": false,
-    "name": "enable_module",
-    "required": true,
-    "type": "boolean"
+[ {
+  "id" : "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
+  "name" : "enable_module",
+  "label" : "Enable this module?",
+  "required" : true,
+  "locked" : false,
+  "display" : "toggle",
+  "type" : "boolean",
+  "default" : true
+}, {
+  "id" : "ac6f3005-cd4a-fe29-8642-7026554dd771",
+  "name" : "title",
+  "label" : "Title",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
   },
-  {
-    "allow_new_line": false,
-    "default": "LUMINA - Own your place in history.",
-    "id": "ac6f3005-cd4a-fe29-8642-7026554dd771",
-    "label": "Title",
-    "locked": false,
-    "name": "title",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": "",
-    "visibility": {
-      "controlling_field": "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
-      "controlling_value_regex": "true",
-      "operator": "EQUAL"
-    }
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "LUMINA - Own your place in history."
+}, {
+  "id" : "d200dba5-1e73-ab78-9462-cdface0d7761",
+  "name" : "description",
+  "label" : "Description Line 1",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
   },
-  {
-    "allow_new_line": false,
-    "default": "Our launch collectible featuring Cristiano Ronaldo",
-    "id": "d200dba5-1e73-ab78-9462-cdface0d7761",
-    "label": "Description Line 1",
-    "locked": false,
-    "name": "description",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": "",
-    "visibility": {
-      "controlling_field": "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
-      "controlling_value_regex": "true",
-      "operator": "EQUAL"
-    }
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Our launch collectible featuring Cristiano Ronaldo"
+}, {
+  "id" : "dbbd3655-ada6-0cbe-78af-06e5b1148ad1",
+  "name" : "auction_time",
+  "label" : "Description Line 2",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "visibility" : {
+    "controlling_field" : "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
   },
-  {
-    "allow_new_line": false,
-    "default": "Auction time 0600 UTC +8 on 26 October 2021.",
-    "id": "dbbd3655-ada6-0cbe-78af-06e5b1148ad1",
-    "label": "Description Line 2",
-    "locked": false,
-    "name": "auction_time",
-    "required": false,
-    "show_emoji_picker": false,
-    "type": "text",
-    "validation_regex": "",
-    "visibility": {
-      "controlling_field": "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
-      "controlling_value_regex": "true",
-      "operator": "EQUAL"
-    }
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Auction time 0600 UTC +8 on 26 October 2021."
+}, {
+  "id" : "033704d3-a6d9-2c67-288e-c5f93e283ccb",
+  "name" : "button",
+  "label" : "Button",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
   },
-  {
-    "children": [
-      {
-        "allow_new_line": false,
-        "default": "More Info",
-        "id": "519203e8-3fb2-1694-922b-77afc9e017a8",
-        "label": "Text",
-        "locked": false,
-        "name": "text",
-        "placeholder": "Button text",
-        "required": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "validation_regex": ""
+  "children" : [ {
+    "id" : "519203e8-3fb2-1694-922b-77afc9e017a8",
+    "name" : "text",
+    "label" : "Text",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "placeholder" : "Button text",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "More Info"
+  }, {
+    "id" : "386b3414-f4d7-0c26-e85d-30eca7f45d14",
+    "name" : "link",
+    "label" : "Link",
+    "required" : false,
+    "locked" : false,
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
+    "show_advanced_rel_options" : false,
+    "type" : "link",
+    "default" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://collectibles.zujugp.com/#/auction/228",
+        "content_id" : null
       },
-      {
-        "default": {
-          "url": {
-            "type": "EXTERNAL",
-            "href": "https://collectibles.zujugp.com/#/auction/228",
-            "content_id": null
-          },
-          "open_in_new_tab": false,
-          "no_follow": false
-        },
-        "id": "386b3414-f4d7-0c26-e85d-30eca7f45d14",
-        "label": "Link",
-        "locked": false,
-        "name": "link",
-        "required": false,
-        "show_advanced_rel_options": false,
-        "supported_types": ["EXTERNAL", "CONTENT", "BLOG"],
-        "type": "link"
-      }
-    ],
-    "default": {
-      "text": "More Info",
-      "link": {
-        "url": {
-          "type": "EXTERNAL",
-          "href": "https://collectibles.zujugp.com/#/auction/228",
-          "content_id": null
-        },
-        "open_in_new_tab": false,
-        "no_follow": false
-      }
-    },
-    "expanded": false,
-    "id": "033704d3-a6d9-2c67-288e-c5f93e283ccb",
-    "label": "Button",
-    "locked": false,
-    "name": "button",
-    "required": false,
-    "tab": "CONTENT",
-    "type": "group",
-    "visibility": {
-      "controlling_field": "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
-      "controlling_value_regex": "true",
-      "operator": "EQUAL"
+      "open_in_new_tab" : false,
+      "no_follow" : false
     }
-  },
-  {
-    "default": "<p>By clicking this button, I acknowledge that I may not buy any item that is restricted or prohibited by a federal, state or local law in your country or jurisdiction. I am responsible for ensuring that I am not buying any item that is prohibited by law in my jurisdiction and ensuring that the items bought comply with all laws and regulations.</p>",
-    "id": "e4f7801f-fcf4-b510-8e1a-d543016e08c2",
-    "label": "T&C",
-    "locked": false,
-    "name": "t_c",
-    "required": false,
-    "type": "richtext",
-    "visibility": {
-      "controlling_field": "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
-      "controlling_value_regex": "true",
-      "operator": "EQUAL"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "text" : "More Info",
+    "link" : {
+      "url" : {
+        "type" : "EXTERNAL",
+        "href" : "https://collectibles.zujugp.com/#/auction/228",
+        "content_id" : null
+      },
+      "open_in_new_tab" : false,
+      "no_follow" : false
     }
-  },
-  {
-    "type": "image",
-    "id": "0d8a37ff-f809-9191-dca6-12cb7a6463e1",
-    "default": {
-      "size_type": "auto",
-      "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/nft.png",
-      "alt": "nft",
-      "loading": "lazy",
-      "width": 924,
-      "height": 768,
-      "max_width": 924,
-      "max_height": 768
-    },
-    "resizable": false,
-    "responsive": true,
-    "show_loading": false,
-    "label": "Image",
-    "name": "image"
   }
-]
+}, {
+  "id" : "e4f7801f-fcf4-b510-8e1a-d543016e08c2",
+  "name" : "t_c",
+  "label" : "T&C",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
+    "controlling_value_regex" : "true",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "type" : "richtext",
+  "default" : "<p>By clicking this button, I acknowledge that I may not buy any item that is restricted or prohibited by a federal, state or local law in your country or jurisdiction. I am responsible for ensuring that I am not buying any item that is prohibited by law in my jurisdiction and ensuring that the items bought comply with all laws and regulations.</p>"
+}, {
+  "id" : "0d8a37ff-f809-9191-dca6-12cb7a6463e1",
+  "name" : "image",
+  "label" : "Image",
+  "required" : false,
+  "locked" : false,
+  "responsive" : true,
+  "resizable" : false,
+  "show_loading" : false,
+  "type" : "image",
+  "default" : {
+    "size_type" : "auto",
+    "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/nft.png",
+    "alt" : "nft",
+    "loading" : "lazy",
+    "width" : 924,
+    "height" : 768,
+    "max_width" : 924,
+    "max_height" : 768
+  }
+} ]

@@ -21,7 +21,7 @@
 }, {
   "id" : "6f5dcb23-9966-404e-1e5d-f44a80c446e4",
   "name" : "moving_image",
-  "label" : "Moving Image",
+  "label" : "Animated Image",
   "required" : false,
   "locked" : false,
   "responsive" : true,

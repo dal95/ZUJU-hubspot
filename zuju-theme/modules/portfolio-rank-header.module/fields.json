@@ -83,16 +83,11 @@
   "type" : "text",
   "default" : "Watch Video"
 }, {
-  "id" : "17d2a3ea-cf24-3bc2-45db-dc4e893386f4",
-  "name" : "video_url",
-  "label" : "Video URL",
+  "picker" : "video",
+  "id" : "c452c266-52be-6769-0d03-5ac5ad871999",
+  "name" : "video_player",
+  "label" : "Video Player",
   "required" : false,
   "locked" : false,
-  "supported_types" : [ "EXTERNAL" ],
-  "type" : "url",
-  "default" : {
-    "type" : "EXTERNAL",
-    "href" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/rank.mp4",
-    "content_id" : null
-  }
+  "type" : "file"
 } ]

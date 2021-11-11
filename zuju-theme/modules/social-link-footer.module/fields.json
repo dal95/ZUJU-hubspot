@@ -26,7 +26,7 @@
     "label" : "Link",
     "required" : false,
     "locked" : false,
-    "supported_types" : [ "EXTERNAL" ],
+    "supported_types" : [ "EXTERNAL", "CONTENT", "BLOG" ],
     "show_advanced_rel_options" : false,
     "type" : "link",
     "default" : {

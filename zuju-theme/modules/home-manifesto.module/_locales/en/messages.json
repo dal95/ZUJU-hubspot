@@ -1,87 +1,7 @@
 {
-  "button_portfolio.default" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.help_text" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.inline_help_text" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.label" : {
-    "message" : "Field group",
-    "description" : null,
-    "placeholders" : null
-  },
   "button_portfolio.name" : {
     "message" : "home-manifesto",
     "description" : "",
-    "placeholders" : null
-  },
-  "button_portfolio.placeholder" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.text.default" : {
-    "message" : "View Portfolio",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.text.help_text" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.text.inline_help_text" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.text.label" : {
-    "message" : "Text",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.text.placeholder" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.text.validation_regex" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.url.default" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.url.help_text" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.url.inline_help_text" : {
-    "message" : "",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.url.label" : {
-    "message" : "Link",
-    "description" : null,
-    "placeholders" : null
-  },
-  "button_portfolio.url.placeholder" : {
-    "message" : "",
-    "description" : null,
     "placeholders" : null
   },
   "manifesto.button.help_text" : {
@@ -327,6 +247,86 @@
   "name" : {
     "message" : "home-manifesto",
     "description" : "",
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.label" : {
+    "message" : "Field group",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.text.default" : {
+    "message" : "View Portfolio",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.text.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.text.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.text.label" : {
+    "message" : "Text",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.text.placeholder" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.text.validation_regex" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.url.default" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.url.help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.url.inline_help_text" : {
+    "message" : "",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.url.label" : {
+    "message" : "Link",
+    "description" : null,
+    "placeholders" : null
+  },
+  "portfolio.button_portfolio.url.placeholder" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "portfolio.content_group.content.default" : {

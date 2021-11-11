@@ -95,4 +95,12 @@
     "href" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/exchange.mp4",
     "content_id" : null
   }
+}, {
+  "picker" : "video",
+  "id" : "7d2c90c8-3d4b-911f-4b94-39dca31900a1",
+  "name" : "video_player",
+  "label" : "Video Player",
+  "required" : false,
+  "locked" : false,
+  "type" : "file"
 } ]

@@ -1,419 +1,396 @@
-[
-  {
-    "children": [
-      {
-        "allow_new_line": false,
-        "default": "Our Manifesto",
-        "id": "882b566f-49f1-090d-8c94-9552ac7960c3",
-        "label": "Title",
-        "locked": false,
-        "name": "title",
-        "required": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "validation_regex": ""
-      },
-      {
-        "default": "<h1><span>A community platform for fans and businesses from East to West.</span></h1>",
-        "id": "731043dc-5262-8b11-1dfd-eb623173cfd1",
-        "label": "Description",
-        "locked": false,
-        "name": "description",
-        "required": false,
-        "type": "richtext"
-      },
-      {
-        "default": {
-          "size_type": "auto",
-          "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball.png",
-          "alt": "ball",
-          "loading": "lazy",
-          "width": 586,
-          "height": 440,
-          "max_width": 586,
-          "max_height": 440
+[ {
+  "id" : "67f39054-e589-a3a6-73e7-524dd79de91b",
+  "name" : "manifesto",
+  "label" : "Manifesto",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "882b566f-49f1-090d-8c94-9552ac7960c3",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Our Manifesto"
+  }, {
+    "id" : "731043dc-5262-8b11-1dfd-eb623173cfd1",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<h1><span>A community platform for fans and businesses from East to West.</span></h1>"
+  }, {
+    "id" : "0341b73b-f195-87cd-a9d8-db45e044d106",
+    "name" : "image",
+    "label" : "Image",
+    "required" : false,
+    "locked" : false,
+    "responsive" : true,
+    "resizable" : false,
+    "show_loading" : false,
+    "type" : "image",
+    "default" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball.png",
+      "alt" : "ball",
+      "loading" : "lazy",
+      "width" : 586,
+      "height" : 440,
+      "max_width" : 586,
+      "max_height" : 440
+    }
+  }, {
+    "id" : "6599f28a-8736-019d-49ef-4af346452157",
+    "name" : "button",
+    "label" : "CTA Button (left)",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "1cce906f-ee36-14b8-0299-b35798869c59",
+      "name" : "url",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "type" : "CONTENT",
+          "href" : null,
+          "content_id" : 58617122459
         },
-        "id": "0341b73b-f195-87cd-a9d8-db45e044d106",
-        "label": "Image",
-        "locked": false,
-        "name": "image",
-        "required": false,
-        "resizable": false,
-        "responsive": true,
-        "show_loading": false,
-        "type": "image"
-      },
-      {
-        "children": [
-          {
-            "default": {
-              "url": {
-                "type": "CONTENT",
-                "href": null,
-                "content_id": 58617122459
-              },
-              "open_in_new_tab": false,
-              "no_follow": false
-            },
-            "id": "1cce906f-ee36-14b8-0299-b35798869c59",
-            "label": "URL",
-            "locked": false,
-            "name": "url",
-            "required": false,
-            "show_advanced_rel_options": false,
-            "supported_types": ["EXTERNAL", "CONTENT", "FILE", "BLOG"],
-            "type": "link"
-          },
-          {
-            "allow_new_line": false,
-            "default": "Learn About Us",
-            "id": "98bcd1ec-846c-0f2a-e3ac-94df0dab72a4",
-            "label": "Text",
-            "locked": false,
-            "name": "text",
-            "required": false,
-            "show_emoji_picker": false,
-            "type": "text",
-            "validation_regex": ""
-          }
-        ],
-        "default": {
-          "url": {
-            "url": {
-              "type": "CONTENT",
-              "href": null,
-              "content_id": 58617122459
-            },
-            "open_in_new_tab": false,
-            "no_follow": false
-          },
-          "text": "Learn About Us"
-        },
-        "expanded": false,
-        "id": "6599f28a-8736-019d-49ef-4af346452157",
-        "label": "CTA Button (left)",
-        "locked": false,
-        "name": "button",
-        "required": false,
-        "tab": "CONTENT",
-        "type": "group"
-      },
-      {
-        "children": [
-          {
-            "allow_new_line": false,
-            "default": "Learn About Us",
-            "id": "e840ea1f-2d4b-7079-d3b9-3f39dbc8270c",
-            "label": "Text",
-            "locked": false,
-            "name": "text",
-            "required": false,
-            "show_emoji_picker": false,
-            "type": "text",
-            "validation_regex": ""
-          },
-          {
-            "picker": "video",
-            "default": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4",
-            "id": "e3971de3-3d40-dcde-36fd-a7af56971154",
-            "label": "Video file",
-            "locked": false,
-            "name": "video_file",
-            "required": false,
-            "type": "file"
-          }
-        ],
-        "default": {
-          "text": "Learn About Us",
-          "video_file": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4"
-        },
-        "expanded": false,
-        "id": "273c2f9b-9f62-7f43-c69f-7efd32bb7b40",
-        "label": "CTA Button (right)",
-        "locked": false,
-        "name": "button_trailer",
-        "required": false,
-        "tab": "CONTENT",
-        "type": "group"
+        "open_in_new_tab" : false,
+        "no_follow" : false
       }
-    ],
-    "default": {
-      "title": "Our Manifesto",
-      "description": "<h1><span>A community platform for fans and businesses from East to West.</span></h1>",
-      "image": {
-        "size_type": "auto",
-        "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball.png",
-        "alt": "ball",
-        "loading": "lazy",
-        "width": 586,
-        "height": 440,
-        "max_width": 586,
-        "max_height": 440
-      },
-      "button": {
-        "url": {
-          "url": { "type": "CONTENT", "href": null, "content_id": 58617122459 },
-          "open_in_new_tab": false,
-          "no_follow": false
+    }, {
+      "id" : "98bcd1ec-846c-0f2a-e3ac-94df0dab72a4",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Learn About Us"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "url" : {
+        "url" : {
+          "type" : "CONTENT",
+          "href" : null,
+          "content_id" : 58617122459
         },
-        "text": "Learn About Us"
+        "open_in_new_tab" : false,
+        "no_follow" : false
       },
-      "button_trailer": {
-        "text": "Learn About Us",
-        "video_file": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4"
-      }
+      "text" : "Learn About Us"
+    }
+  }, {
+    "id" : "273c2f9b-9f62-7f43-c69f-7efd32bb7b40",
+    "name" : "button_trailer",
+    "label" : "CTA Button (right)",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "e840ea1f-2d4b-7079-d3b9-3f39dbc8270c",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Learn About Us"
+    }, {
+      "picker" : "video",
+      "id" : "e3971de3-3d40-dcde-36fd-a7af56971154",
+      "name" : "video_file",
+      "label" : "Video file",
+      "required" : false,
+      "locked" : false,
+      "type" : "file",
+      "default" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "text" : "Learn About Us",
+      "video_file" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4"
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Our Manifesto",
+    "description" : "<h1><span>A community platform for fans and businesses from East to West.</span></h1>",
+    "image" : {
+      "size_type" : "auto",
+      "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball.png",
+      "alt" : "ball",
+      "loading" : "lazy",
+      "width" : 586,
+      "height" : 440,
+      "max_width" : 586,
+      "max_height" : 440
     },
-    "expanded": false,
-    "id": "67f39054-e589-a3a6-73e7-524dd79de91b",
-    "label": "Manifesto",
-    "locked": false,
-    "name": "manifesto",
-    "required": false,
-    "tab": "CONTENT",
-    "type": "group"
-  },
-  {
-    "children": [
-      {
-        "allow_new_line": false,
-        "default": "Portfolio",
-        "id": "10bbdf76-e28b-90b1-06e2-5ccaa5a81167",
-        "label": "Title",
-        "locked": false,
-        "name": "title",
-        "required": false,
-        "show_emoji_picker": false,
-        "type": "text",
-        "validation_regex": ""
+    "button" : {
+      "url" : {
+        "url" : {
+          "type" : "CONTENT",
+          "href" : null,
+          "content_id" : 58617122459
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
       },
-      {
-        "default": "<p><span>Products you love, experiences you want and the opportunities only you deserve</span></p>",
-        "id": "e2cf47aa-2a87-3b5e-90c6-79a427ab14b9",
-        "label": "Description",
-        "locked": false,
-        "name": "description",
-        "required": false,
-        "type": "richtext"
-      },
-      {
-        "children": [
-          {
-            "default": {
-              "size_type": "auto",
-              "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
-              "alt": "port-1",
-              "loading": "lazy",
-              "width": 96,
-              "height": 96,
-              "max_width": 96,
-              "max_height": 96
-            },
-            "id": "8dd5b732-4703-0c6c-cadb-398ebc78c29e",
-            "label": "Image",
-            "locked": false,
-            "name": "image",
-            "required": false,
-            "resizable": false,
-            "responsive": true,
-            "show_loading": false,
-            "type": "image"
-          },
-          {
-            "allow_new_line": false,
-            "default": "ZujuGamePlay",
-            "id": "0144ed5d-864a-5a42-347c-a520a363b040",
-            "label": "Title",
-            "locked": false,
-            "name": "title",
-            "required": false,
-            "show_emoji_picker": false,
-            "type": "text",
-            "validation_regex": ""
-          },
-          {
-            "default": "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>",
-            "id": "e8b35cd1-d7b2-1250-ec29-b61d26179ff0",
-            "label": "Content",
-            "locked": false,
-            "name": "content",
-            "required": false,
-            "type": "richtext"
-          }
-        ],
-        "default": [
-          {
-            "image_field": {
-              "size_type": "auto",
-              "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
-              "alt": "port-1",
-              "loading": "lazy",
-              "width": 96,
-              "height": 96,
-              "max_width": 96,
-              "max_height": 96
-            },
-            "title": "ZujuGamePlay",
-            "content": "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
-          },
-          {
-            "image_field": {
-              "size_type": "auto",
-              "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
-              "alt": "port-1",
-              "loading": "lazy",
-              "width": 96,
-              "height": 96,
-              "max_width": 96,
-              "max_height": 96
-            },
-            "title": "ZujuGamePlay",
-            "content": "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
-          },
-          {
-            "image_field": {
-              "size_type": "auto",
-              "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
-              "alt": "port-1",
-              "loading": "lazy",
-              "width": 96,
-              "height": 96,
-              "max_width": 96,
-              "max_height": 96
-            },
-            "title": "ZujuGamePlay",
-            "content": "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
-          }
-        ],
-        "expanded": false,
-        "id": "08d384ef-df09-173d-119d-db80e24a1413",
-        "label": "Content group",
-        "locked": false,
-        "name": "content_group",
-        "occurrence": {
-          "default": 3,
-          "sorting_label_field": "0144ed5d-864a-5a42-347c-a520a363b040"
-        },
-        "required": false,
-        "tab": "CONTENT",
-        "type": "group"
-      },
-      {
-        "children": [
-          {
-            "allow_new_line": false,
-            "default": "View Portfolio",
-            "id": "08169550-b342-5643-6401-cfd80d9fd72e",
-            "label": "Text",
-            "locked": false,
-            "name": "text",
-            "required": false,
-            "show_emoji_picker": false,
-            "type": "text",
-            "validation_regex": ""
-          },
-          {
-            "default": {
-              "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
-              "open_in_new_tab": false,
-              "no_follow": false
-            },
-            "id": "4f45519c-335c-102b-4dee-439fe5ea70cc",
-            "label": "URL",
-            "locked": false,
-            "name": "url",
-            "required": false,
-            "show_advanced_rel_options": false,
-            "supported_types": [
-              "EXTERNAL",
-              "CONTENT",
-              "FILE",
-              "EMAIL_ADDRESS",
-              "BLOG"
-            ],
-            "type": "link"
-          }
-        ],
-        "default": {
-          "text": "View Portfolio",
-          "url": {
-            "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
-            "open_in_new_tab": false,
-            "no_follow": false
-          }
-        },
-        "expanded": false,
-        "id": "10746552-8e6e-a84d-a1a5-91743f3e0ae3",
-        "label": "Portfolio CTA Button",
-        "locked": false,
-        "name": "button_portfolio",
-        "required": false,
-        "tab": "CONTENT",
-        "type": "group"
-      }
-    ],
-    "default": {
-      "title": "Portfolio",
-      "description": "<p><span>Products you love, experiences you want and the opportunities only you deserve</span></p>",
-      "content_group": [
-        {
-          "image_field": {
-            "size_type": "auto",
-            "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
-            "alt": "port-1",
-            "loading": "lazy",
-            "width": 96,
-            "height": 96,
-            "max_width": 96,
-            "max_height": 96
-          },
-          "title": "ZujuGamePlay",
-          "content": "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
-        },
-        {
-          "image_field": {
-            "size_type": "auto",
-            "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
-            "alt": "port-1",
-            "loading": "lazy",
-            "width": 96,
-            "height": 96,
-            "max_width": 96,
-            "max_height": 96
-          },
-          "title": "ZujuGamePlay",
-          "content": "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
-        },
-        {
-          "image_field": {
-            "size_type": "auto",
-            "src": "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
-            "alt": "port-1",
-            "loading": "lazy",
-            "width": 96,
-            "height": 96,
-            "max_width": 96,
-            "max_height": 96
-          },
-          "title": "ZujuGamePlay",
-          "content": "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
-        }
-      ],
-      "button_portfolio": {
-        "text": "View Portfolio",
-        "url": {
-          "url": { "content_id": null, "type": "EXTERNAL", "href": "" },
-          "open_in_new_tab": false,
-          "no_follow": false
-        }
-      }
+      "text" : "Learn About Us"
     },
-    "expanded": false,
-    "id": "c3f7bb7c-a014-be94-a8e1-8dc92c70e273",
-    "label": "Portfolio",
-    "locked": false,
-    "name": "portfolio",
-    "required": false,
-    "tab": "CONTENT",
-    "type": "group"
+    "button_trailer" : {
+      "text" : "Learn About Us",
+      "video_file" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/trailer.mp4"
+    }
   }
-]
+}, {
+  "id" : "c3f7bb7c-a014-be94-a8e1-8dc92c70e273",
+  "name" : "portfolio",
+  "label" : "Portfolio",
+  "required" : false,
+  "locked" : false,
+  "children" : [ {
+    "id" : "10bbdf76-e28b-90b1-06e2-5ccaa5a81167",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Portfolio"
+  }, {
+    "id" : "e2cf47aa-2a87-3b5e-90c6-79a427ab14b9",
+    "name" : "description",
+    "label" : "Description",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p><span>Products you love, experiences you want and the opportunities only you deserve</span></p>"
+  }, {
+    "id" : "08d384ef-df09-173d-119d-db80e24a1413",
+    "name" : "content_group",
+    "label" : "Content group",
+    "required" : false,
+    "locked" : false,
+    "occurrence" : {
+      "min" : null,
+      "max" : null,
+      "sorting_label_field" : "0144ed5d-864a-5a42-347c-a520a363b040",
+      "default" : 3
+    },
+    "children" : [ {
+      "id" : "8dd5b732-4703-0c6c-cadb-398ebc78c29e",
+      "name" : "image",
+      "label" : "Image",
+      "required" : false,
+      "locked" : false,
+      "responsive" : true,
+      "resizable" : false,
+      "show_loading" : false,
+      "type" : "image",
+      "default" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+        "alt" : "port-1",
+        "loading" : "lazy",
+        "width" : 96,
+        "height" : 96,
+        "max_width" : 96,
+        "max_height" : 96
+      }
+    }, {
+      "id" : "0144ed5d-864a-5a42-347c-a520a363b040",
+      "name" : "title",
+      "label" : "Title",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "ZujuGamePlay"
+    }, {
+      "id" : "e8b35cd1-d7b2-1250-ec29-b61d26179ff0",
+      "name" : "content",
+      "label" : "Content",
+      "required" : false,
+      "locked" : false,
+      "type" : "richtext",
+      "default" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+        "alt" : "port-1",
+        "loading" : "lazy",
+        "width" : 96,
+        "height" : 96,
+        "max_width" : 96,
+        "max_height" : 96
+      },
+      "title" : "ZujuGamePlay",
+      "content" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+        "alt" : "port-1",
+        "loading" : "lazy",
+        "width" : 96,
+        "height" : 96,
+        "max_width" : 96,
+        "max_height" : 96
+      },
+      "title" : "ZujuGamePlay",
+      "content" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+        "alt" : "port-1",
+        "loading" : "lazy",
+        "width" : 96,
+        "height" : 96,
+        "max_width" : 96,
+        "max_height" : 96
+      },
+      "title" : "ZujuGamePlay",
+      "content" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
+    } ]
+  }, {
+    "id" : "10746552-8e6e-a84d-a1a5-91743f3e0ae3",
+    "name" : "button_portfolio",
+    "label" : "Portfolio CTA Button",
+    "required" : false,
+    "locked" : false,
+    "children" : [ {
+      "id" : "08169550-b342-5643-6401-cfd80d9fd72e",
+      "name" : "text",
+      "label" : "Text",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "View Portfolio"
+    }, {
+      "id" : "4f45519c-335c-102b-4dee-439fe5ea70cc",
+      "name" : "url",
+      "label" : "URL",
+      "required" : false,
+      "locked" : false,
+      "supported_types" : [ "EXTERNAL", "CONTENT", "FILE", "EMAIL_ADDRESS", "BLOG" ],
+      "show_advanced_rel_options" : false,
+      "type" : "link",
+      "default" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    } ],
+    "tab" : "CONTENT",
+    "expanded" : false,
+    "type" : "group",
+    "default" : {
+      "text" : "View Portfolio",
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Portfolio",
+    "description" : "<p><span>Products you love, experiences you want and the opportunities only you deserve</span></p>",
+    "content_group" : [ {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+        "alt" : "port-1",
+        "loading" : "lazy",
+        "width" : 96,
+        "height" : 96,
+        "max_width" : 96,
+        "max_height" : 96
+      },
+      "title" : "ZujuGamePlay",
+      "content" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+        "alt" : "port-1",
+        "loading" : "lazy",
+        "width" : 96,
+        "height" : 96,
+        "max_width" : 96,
+        "max_height" : 96
+      },
+      "title" : "ZujuGamePlay",
+      "content" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
+    }, {
+      "image_field" : {
+        "size_type" : "auto",
+        "src" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png",
+        "alt" : "port-1",
+        "loading" : "lazy",
+        "width" : 96,
+        "height" : 96,
+        "max_width" : 96,
+        "max_height" : 96
+      },
+      "title" : "ZujuGamePlay",
+      "content" : "<p><span>The LIVE game experience gets interactive, real-time &amp; EPIC</span></p>"
+    } ],
+    "button_portfolio" : {
+      "text" : "View Portfolio",
+      "url" : {
+        "url" : {
+          "content_id" : null,
+          "type" : "EXTERNAL",
+          "href" : ""
+        },
+        "open_in_new_tab" : false,
+        "no_follow" : false
+      }
+    }
+  }
+} ]

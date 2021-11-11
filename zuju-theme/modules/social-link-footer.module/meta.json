@@ -2,6 +2,11 @@
   "global" : false,
   "host_template_types" : [ "PAGE" ],
   "module_id" : 58742146369,
+  "css_assets" : [ {
+    "autoload" : true,
+    "path" : "../../css/statics/app.css",
+    "name" : "app.css"
+  } ],
   "label" : "Social link",
   "is_available_for_new_content" : true
 }

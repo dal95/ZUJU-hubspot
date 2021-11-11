@@ -83,16 +83,11 @@
   "type" : "text",
   "default" : "Watch Video"
 }, {
-  "id" : "5cb7a2fb-7b93-2f50-152c-8c692840f2de",
-  "name" : "video_url",
-  "label" : "Video URL",
+  "picker" : "video",
+  "id" : "84fe4c97-44a2-f2ba-2825-f05fe1bfeafe",
+  "name" : "video_player",
+  "label" : "Video Player",
   "required" : false,
   "locked" : false,
-  "supported_types" : [ "EXTERNAL" ],
-  "type" : "url",
-  "default" : {
-    "type" : "EXTERNAL",
-    "href" : "https://f.hubspotusercontent20.net/hubfs/20618228/statics/gameplay.mp4",
-    "content_id" : null
-  }
+  "type" : "file"
 } ]
