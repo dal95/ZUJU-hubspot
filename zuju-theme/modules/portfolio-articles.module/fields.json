@@ -13,7 +13,7 @@
 }, {
   "id" : "f0671b0a-da4f-33a9-43ac-429e5df012ff",
   "name" : "article",
-  "label" : "Article",
+  "label" : "Product 1",
   "required" : false,
   "locked" : false,
   "children" : [ {
@@ -97,7 +97,7 @@
 }, {
   "id" : "89c435da-1cf0-8dc4-72f2-998108d9adb5",
   "name" : "article_2",
-  "label" : "Article 2",
+  "label" : "Product 2",
   "required" : false,
   "locked" : false,
   "children" : [ {

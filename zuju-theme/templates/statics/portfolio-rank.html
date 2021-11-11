@@ -95,7 +95,7 @@
     
     <!-- Rank Header -->
     <section class="bg-zuju-gray-db" x-data="{ playing: false, noti: false }">
-      {% module "module_1635770041041154" path="/zuju-theme/modules/portfolio-rank-header", label="Header" %}
+      {% module "module_1635770041041154" path="/zuju-theme/modules/portfolio-rank-header", label="Masthead" %}
       <div
            x-cloak=""
            x-show="noti"
@@ -107,7 +107,7 @@
         <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
           <div class="relative sm:w-full">
             <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
-            <div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" %}</div>
+            <div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" label="Get Notified Form"%}</div>
           </div>
         </div>
       </div>
@@ -173,7 +173,7 @@
     
     <!-- Rank Image and Text -->
     <section class="bg-zuju-gray-db">
-      {% module "module_1635773107048187" path="/zuju-theme/modules/portfolio-rank-image-and-text", label="Image and text" %}
+      {% module "module_1635773107048187" path="/zuju-theme/modules/portfolio-rank-image-and-text", label="Features" %}
         
         <div class="w-full max-w-[1000px] mx-auto pb-16">
           <!-- <div class="aspect-w-4 aspect-h-1">
@@ -363,7 +363,7 @@
     #} 
     -->
     <!-- Articles Templates -->
-    {% module "module_1635768031676119" path="/zuju-theme/modules/portfolio-articles-template", label="Articles" %}
+    {% module "module_1635768031676119" path="/zuju-theme/modules/portfolio-articles-template", label="Other Products" %}
     
   </main>
 </div>

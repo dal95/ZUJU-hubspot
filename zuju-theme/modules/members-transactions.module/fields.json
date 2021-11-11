@@ -133,7 +133,7 @@
 }, {
   "id" : "723facc0-bcb5-2d22-c5d9-98b07a117530",
   "name" : "fe_kfd_7days_bonus",
-  "label" : "Kungfu Dash game daily spend + 7 consecutive days bonus",
+  "label" : "Kungfu Dash game daily spend + 7, 14, 21 consecutive days bonus",
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
@@ -141,28 +141,6 @@
   "show_emoji_picker" : false,
   "type" : "text",
   "default" : "Kungfu Dash game daily spend + 7 consecutive days bonus"
-}, {
-  "id" : "e0af5be7-b167-cba0-8f7c-24bdae6e36a5",
-  "name" : "fe_kfd_14days_bonus",
-  "label" : "Kungfu Dash game daily spend + 14 consecutive days bonus",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Kungfu Dash game daily spend + 14 consecutive days bonus"
-}, {
-  "id" : "c6c3ad92-f0d9-acc6-3dee-5ea9bfb452a6",
-  "name" : "fe_kfd_21days_bonus",
-  "label" : "Kungfu Dash game daily spend + 21 consecutive days bonus",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Kungfu Dash game daily spend + 21 consecutive days bonus"
 }, {
   "id" : "df297595-e1ba-c11f-a48c-2334fba476b9",
   "name" : "fe_kfd_25days_bonus",

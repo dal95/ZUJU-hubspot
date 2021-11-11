@@ -13,10 +13,38 @@
   "id" : "e7badc94-c122-1af9-1c30-063f00fc512b",
   "name" : "blog_selector",
   "label" : "Blog Selector",
+  "inline_help_text" : "Select your blog listing ",
   "required" : false,
   "locked" : false,
   "type" : "blog",
   "default" : 55380670097
+}, {
+  "id" : "28b36ba5-f1e2-cfea-8445-d1104e886f30",
+  "name" : "display_option",
+  "label" : "Display option",
+  "required" : false,
+  "locked" : false,
+  "display" : "select",
+  "choices" : [ [ "latest", "Latest" ], [ "popular", "Popular" ] ],
+  "type" : "choice",
+  "default" : "latest"
+}, {
+  "id" : "f1d6083c-aa1e-9d1e-b8d3-fa07419953d4",
+  "name" : "sort_by",
+  "label" : "Popular Sort By",
+  "required" : false,
+  "locked" : false,
+  "visibility" : {
+    "controlling_field" : "28b36ba5-f1e2-cfea-8445-d1104e886f30",
+    "controlling_value_regex" : "popular",
+    "operator" : "EQUAL",
+    "access" : null,
+    "hidden_subfields" : null
+  },
+  "display" : "select",
+  "choices" : [ [ "popular_all_time", "All time" ], [ "popular_past_year", "Past Year" ], [ "popular_past_six_months", "Past Six month" ], [ "popular_past_month", "Past Month" ] ],
+  "type" : "choice",
+  "default" : "popular_past_year"
 }, {
   "id" : "5e7b9e1c-a74d-ab6c-1535-35b3fe7015b9",
   "name" : "view_all",

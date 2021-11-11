@@ -1,7 +1,7 @@
 [ {
   "id" : "d486c560-628d-acf3-2ac6-e3a618cb9cc5",
   "name" : "card_image",
-  "label" : "Card Image",
+  "label" : "Image",
   "required" : false,
   "locked" : false,
   "responsive" : true,

@@ -4,9 +4,6 @@
   "label" : "Title",
   "required" : false,
   "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
   "type" : "richtext",
   "default" : "ZujuGP converges      <br>      <strong>media, tech</strong>      and      <strong>football</strong>"
 }, {

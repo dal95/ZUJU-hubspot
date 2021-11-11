@@ -1,6 +1,6 @@
 {
   "card_description.default" : {
-    "message" : "<p>Invite friends to your<br><strong>private Owner's Box</strong><br>where you can host, commentate, earn extra income, conduct social commerce, chat and more.</p>",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -15,13 +15,18 @@
     "placeholders" : null
   },
   "card_description.label" : {
-    "message" : "Card Description",
+    "message" : "Description",
     "description" : "",
     "placeholders" : null
   },
   "card_description.placeholder" : {
     "message" : "",
     "description" : "",
+    "placeholders" : null
+  },
+  "card_image.default" : {
+    "message" : "",
+    "description" : null,
     "placeholders" : null
   },
   "card_image.default.alt" : {
@@ -40,7 +45,7 @@
     "placeholders" : null
   },
   "card_image.label" : {
-    "message" : "Card Image",
+    "message" : "Image",
     "description" : "",
     "placeholders" : null
   },
@@ -50,7 +55,7 @@
     "placeholders" : null
   },
   "card_title.default" : {
-    "message" : "Build your own Footballverse.",
+    "message" : "",
     "description" : "",
     "placeholders" : null
   },
@@ -65,7 +70,7 @@
     "placeholders" : null
   },
   "card_title.label" : {
-    "message" : "Card Title",
+    "message" : "Title",
     "description" : "",
     "placeholders" : null
   },

@@ -1,7 +1,7 @@
 [ {
   "id" : "9447eac8-6da3-c0a8-6814-fad2c3bcaa29",
   "name" : "card_image",
-  "label" : "Card Image",
+  "label" : "Image",
   "required" : false,
   "locked" : false,
   "responsive" : true,
@@ -21,7 +21,7 @@
 }, {
   "id" : "e2067fa1-fe58-b95b-04b1-7342c7d84903",
   "name" : "card_title",
-  "label" : "Card Title",
+  "label" : "Title",
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
@@ -32,7 +32,7 @@
 }, {
   "id" : "2e98693c-d0b4-21ff-6a1b-c532172e5919",
   "name" : "card_description",
-  "label" : "Card Description",
+  "label" : "Description",
   "required" : false,
   "locked" : false,
   "type" : "richtext",

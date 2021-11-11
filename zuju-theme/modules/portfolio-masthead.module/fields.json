@@ -49,7 +49,7 @@
 }, {
   "id" : "d45bff86-9b28-2bba-7aa5-3a794d4d7ff7",
   "name" : "text_field",
-  "label" : "Text",
+  "label" : "Text (left)",
   "required" : false,
   "locked" : false,
   "validation_regex" : "",
@@ -61,7 +61,7 @@
 }, {
   "id" : "66832f2a-a291-18d0-07af-06065997c0a2",
   "name" : "text_second",
-  "label" : "Text second",
+  "label" : "Text (right)",
   "required" : false,
   "locked" : false,
   "validation_regex" : "",

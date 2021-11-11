@@ -21,13 +21,13 @@
 }, {
   "id" : "6c2843c0-3e2d-735b-a54c-4c2d70d0b117",
   "name" : "article",
-  "label" : "Article",
+  "label" : "Feature 1",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "2f3483aa-c30c-1b5c-1948-7ba82d73e9b5",
     "name" : "subtext",
-    "label" : "Subtext",
+    "label" : "Subtitle",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -38,7 +38,7 @@
   }, {
     "id" : "e0f500a2-c230-f0f0-9a28-5048d4958751",
     "name" : "text_field",
-    "label" : "Text",
+    "label" : "Title",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -49,7 +49,7 @@
   }, {
     "id" : "c755cf0e-4959-b5ff-5875-2e6be49ccfd5",
     "name" : "textlist",
-    "label" : "textlist",
+    "label" : "Description",
     "required" : false,
     "locked" : false,
     "occurrence" : {
@@ -73,13 +73,13 @@
 }, {
   "id" : "aae257ed-0811-42db-7533-d42450549fc3",
   "name" : "article_2",
-  "label" : "Article 2",
+  "label" : "Feature 2",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "5ca414b5-2b9e-9824-c6fc-c9439bc54772",
     "name" : "subtext",
-    "label" : "Subtext",
+    "label" : "Subtitle",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -90,7 +90,7 @@
   }, {
     "id" : "911a2aa2-f26e-9210-dafc-09428db312a7",
     "name" : "text_field",
-    "label" : "Text",
+    "label" : "Title",
     "required" : false,
     "locked" : false,
     "validation_regex" : "",
@@ -101,7 +101,7 @@
   }, {
     "id" : "2582a8e9-fe09-2c8b-9fc1-41c3c364ca9a",
     "name" : "textlist",
-    "label" : "textlist",
+    "label" : "Description",
     "required" : false,
     "locked" : false,
     "occurrence" : {
@@ -125,7 +125,7 @@
 }, {
   "id" : "3313ae9e-2212-4650-cfd1-ab027eba4231",
   "name" : "gallery",
-  "label" : "Gallery",
+  "label" : "Other Features",
   "required" : false,
   "locked" : false,
   "occurrence" : {

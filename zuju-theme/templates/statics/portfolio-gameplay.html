@@ -92,7 +92,7 @@
       
       {% module "module_16357377044293" 
       path='/zuju-theme/modules/portfolio-gameplay-header', 
-      label="Header" %}
+      label="Masthead" %}
       
       <div
         x-cloak=""
@@ -105,7 +105,7 @@
         <div class="h-full w-full flex items-center justify-center" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
           <div class="relative sm:w-full">
             <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
-            <div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" %}</div>
+            <div x-on:click.stop="" class="STO-gpform bg-white">{% module "form" path="@hubspot/form" label="Get Notified Form"%}</div>
           </div>
         </div>
       </div>
@@ -142,7 +142,7 @@
     <!-- Portfolio Gameplay image text -->
     {% module "module_163573252470355" 
       path='/zuju-theme/modules/portfolio-gameplay-image-and-text', 
-      label="Image And Text" %}
+      label="Feature 1" %}
     
  
     <!--
@@ -176,7 +176,7 @@
     #}
     -->
     <!-- Portfolio Gameplay image text dark -->
-    {% module "module_163573886510730" path="/zuju-theme/modules/portfolio-gameplay-image-and-text-dark", label="Image and Text Dark" %}
+    {% module "module_163573886510730" path="/zuju-theme/modules/portfolio-gameplay-image-and-text-dark", label="Feature 2" %}
     
     <!--
     {#
@@ -226,7 +226,7 @@
   -->
     <!-- Portfolio Gameplay image text red -->
     <section class="bg-zuju-gray-db">
-      {% module "module_163574614144543" path="/zuju-theme/modules/portfolio-gameplay-image-and-text-red", label="Image and Text Red" %}
+      {% module "module_163574614144543" path="/zuju-theme/modules/portfolio-gameplay-image-and-text-red", label="Feature 3" %}
       <div class="w-full max-w-[1000px] mx-auto pb-16">
         {% dnd_area 'dnd_area' label='Main section' %} {% end_dnd_area %}
       </div>
@@ -410,7 +410,7 @@
       </div>
     </section> #} -->
     <!-- Portfolio-gameplay-articles -->
-    {% module "module_163575091575962" path='/zuju-theme/modules/portfolio-articles-template', label="Articles" %}
+    {% module "module_163575091575962" path='/zuju-theme/modules/portfolio-articles-template', label="Other Products" %}
     
     
   </main>
