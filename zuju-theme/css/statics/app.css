@@ -565,15 +565,19 @@ body {
   --tw-bg-opacity: 1;
   background-color: rgba(221, 221, 221, var(--tw-bg-opacity));
 }
-@media (max-width: 1023.98px) {
-  .app main .AP-form #hs_form_target_form {
-    padding: 1rem;
-  }
+.app main .AP-form-wrapper {
+  width: clamp(300px, 660px, 90%);
 }
-@media (min-width: 1024px) {
-  .app main .AP-form #hs_form_target_form {
-    padding: 4rem;
-  }
+.app main .AP-form {
+  padding: 20px 50px 50px;
+  color: #666;
+  border-radius: 3px;
+}
+.app main .AP-form .form-contact-wrapper {
+  padding-top: 1.875rem;
+}
+.app main .AP-form .no-list.hs-error-msgs {
+  margin-bottom: 0;
 }
 .app main .AP-form form {
   display: flex;
@@ -591,23 +595,25 @@ body {
 .app main .AP-form form .hs-form-field {
   margin: 0;
 }
+.app main .AP-form form .hs-form-field {
+  width: 100%;
+}
+.app main .AP-form form .hs-form-field {
+  padding-bottom: 0.5rem;
+}
 .app main .AP-form form .hs-form-field input {
   height: 3rem;
+}
+.app main .AP-form form .hs-form-field input {
+  width: 100%;
 }
 @media (max-width: 1023.98px) {
   .app main .AP-form form .hs-form-field input {
     margin-bottom: 2rem;
   }
 }
-@media (max-width: 1023.98px) {
-  .app main .AP-form form .hs-form-field input {
-    width: 100%;
-  }
-}
-@media (min-width: 1024px) {
-  .app main .AP-form form .hs-form-field input {
-    width: 24rem;
-  }
+.app main .AP-form form .hs-form-field textarea {
+  width: 100%;
 }
 .app main .AP-form form .hs-form-field textarea {
   resize: none;
@@ -615,16 +621,6 @@ body {
 @media (max-width: 1023.98px) {
   .app main .AP-form form .hs-form-field textarea {
     margin-bottom: 2rem;
-  }
-}
-@media (max-width: 1023.98px) {
-  .app main .AP-form form .hs-form-field textarea {
-    width: 100%;
-  }
-}
-@media (min-width: 1024px) {
-  .app main .AP-form form .hs-form-field textarea {
-    width: 24rem;
   }
 }
 .app main .AP-form form .hs_submit {
@@ -3356,8 +3352,6 @@ body.overflow-hidden {
   .app .lg\:hover\:animate-flash:hover {
     -webkit-animation: flash 1.5s;
     animation: flash 1.5s;
-  }
-   {
   }
 }
 @media (pointer: coarse) {

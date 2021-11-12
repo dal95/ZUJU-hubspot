@@ -75,10 +75,15 @@
         x-on:keyup.window.escape="noti = false"
       >
         <div class="h-screen w-full flex items-start py-16 justify-center overflow-y-scroll" x-effect="document.body.classList[noti ? 'add' : 'remove']('overflow-hidden')">
-          <div class="relative sm:w-full">
-            <button class="absolute top-0 right-0 transform -translate-y-full text-white text-4xl" x-on:click="noti = false">×</button>
+          <div class="relative AP-form-wrapper">
+            <button class="absolute top-0 right-0 transform -translate-y-full text-white pb-2" x-on:click="noti = false">
+							<svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<path d="M1.35783 1.35787L29.6421 29.6421" stroke="currentColor" stroke-linecap="square"></path>
+								<path d="M29.6421 1.35786L1.35783 29.6421" stroke="currentColor" stroke-linecap="square"></path>
+							</svg>
+						</button>
             <div x-on:click.stop="" class="AP-form bg-white">
-							<h1 class="text-4xl mobile:text-2xl font-gtcond font-black text-center pt-8 lg:-mb-8">
+							<h1 class="text-4xl mobile:text-2xl font-bold text-center pt-8 mb-4">
 								{% if content.language.languageTag == "zh-cn" %}
 									广告咨询
 								{% else %}
