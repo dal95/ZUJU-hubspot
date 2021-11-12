@@ -618,6 +618,9 @@ body {
 .app main .AP-form form .hs-form-field textarea {
   resize: none;
 }
+.app main .AP-form form .hs-form-field textarea {
+  padding-left: 1.25rem;
+}
 @media (max-width: 1023.98px) {
   .app main .AP-form form .hs-form-field textarea {
     margin-bottom: 2rem;
