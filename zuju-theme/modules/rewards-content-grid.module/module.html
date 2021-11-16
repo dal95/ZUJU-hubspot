@@ -31,9 +31,6 @@
 		<div class="glide" x-data="{}" x-init="new Glide($el).mount()">
 			<div class="glide__track" data-glide-el="track">
 				<div class="glide__slides">
-						{% inline_text field="title" value="{{ item.title }}" %}
-						{% inline_rich_text field="description" value="{{ item.description }}" %}
-						{% inline_text field="footer_text" value="{{ item.footer_text }}" %}
 					{% for item in module.group %}
 						<div class="glide__slide">
 							<div class="">

@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class="row-start-3 row-span-2 col-start-1 border-r border-white mt-2"></div>
-   
+
     <div class="row-start-3 col-start-2 border-b border-white mr-4"></div>
     <div class="row-start-3 row-span-2 col-start-3 py-2">
       <div class="h-full flex justify-between bg-gradient-to-r from-graph-blue-dark to-graph-dirt rounded-lg sm:p-4 lg:px-6 py-4">
@@ -41,14 +41,22 @@
   <div class="text-white mb-8 p">
     {{ module.description }}
   </div>
-  <a href="{{ module.button.url.href }}">
+
+  {% set href = module.button.url.url.href %}
+  {% if module.button.url.url.type is equalto "EMAIL_ADDRESS" %}
+    {% set href = "mailto:" + href %}
+  {% endif %}
+
+  <a href="{{ href }}"
+    {% if module.button.url.open_in_new_tab %}target="_blank"{% endif %}
+    {% if module.button.url.rel %}rel="{{ module.button.url.rel }}"{% endif %}>
     <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4">
       {{ module.button.text }}
     </button>
   </a>
 </section>
 
-<!-- 
+<!--
 <section class="sm:order-1 mb-24" x-data="parallax()" x-bind="root">
   <h2 class="text-white text-2xl font-gtcond font-black mb-8" x-bind="animate(4)">
     {% if content.language.languageTag == "zh-cn" %}
