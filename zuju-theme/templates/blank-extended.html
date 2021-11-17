@@ -1,0 +1,28 @@
+<!--
+  templateType: page
+  isAvailableForNewContent: true
+  label: Blank Page Extended
+-->
+{% extends 'zuju-theme/templates/layouts/base-dnd.html' %}
+
+{% block body %}
+  <style>
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      font-family: 'GT America Condensed', sans-serif;
+    }
+  </style>
+
+  <main class="dnd-wrapper">
+    {% dnd_area 'dnd_area'
+      label='Main section',
+    %}
+      {% include_dnd_partial path='../sections/masthead-1.html' context={} %}
+      {% include_dnd_partial path='../sections/call-to-action.html' context={} %}
+    {% end_dnd_area %}
+  </main>
+{% endblock body %}

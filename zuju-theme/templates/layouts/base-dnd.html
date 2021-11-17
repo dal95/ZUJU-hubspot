@@ -1,0 +1,73 @@
+<!--
+  templateType: none
+-->
+<!doctype html>
+<html lang="{{ html_lang }}" {{ html_lang_dir }}>
+  <head>
+    <meta charset="utf-8">
+
+    {% if page_meta.html_title %}<title>{{ page_meta.html_title }} {% if content.language.languageTag == "zh-cn" %}| 蹴蹴ZujuGP{% else %}| ZujuGP{% endif %}</title>{% endif %}
+    {% if site_settings.favicon_src %}<link rel="shortcut icon" href="{{ site_settings.favicon_src }}" />{% endif %}
+    <meta name="description" content="{{ page_meta.meta_description }}">
+
+    {% if content.featured_image %}
+      <meta property="og:image" content="{{content.featured_image}}" />
+    {% else %}
+      <meta property="og:image" content="{{ get_asset_url('zuju-theme/images/assets/bg/ZujuGP-OG.png') }}" />
+    {% endif %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    />
+
+    {{ require_css(get_asset_url("../../css/main.css")) }}
+    {{ require_css(get_asset_url("../../css/essentials/built-in.css")) }}
+
+    {# This is intended to be used if a template requires template specific style sheets #}
+    {% include '../statics/statics-head.html' %}
+
+    {# This is intended to be used if a template requires template specific style sheets #}
+    {% include '../statics/statics-head.html' %}
+
+    {% if template_css %}
+      {{ require_css(get_asset_url(template_css)) }}
+    {% endif %}
+
+    {{ standard_header_includes }}
+
+  </head>
+  <body>
+    <div class="body-wrapper {{ builtin_body_classes }} app">
+      {% block header %}
+        <div class="nav-sticky is-sticky">
+          {% global_partial path='../partials/header.html' %}
+        </div>
+      {% endblock header %}
+
+      {% block body %}
+      {% endblock body %}
+
+      {% block footer %}
+        {% global_partial path='../partials/footer.html' %}
+      {% endblock footer %}
+
+      {{ require_js('https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js') }}
+      <script>
+        var user_vid = "{{ contact.hs_object_id }}";
+      </script>
+      {{ require_js(get_asset_url('../../js/main.js')) }}
+    </div>
+    {{ standard_footer_includes }}
+    {% include '../statics/statics-foot.html' %}
+  </body>
+
+
+</html>
