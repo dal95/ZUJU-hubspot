@@ -1826,7 +1826,7 @@ input[type=submit] {
 }
 
 .is-hidden {
-  display: none;
+  display: none !important;
 }
 
 .page-editor {
@@ -1851,6 +1851,32 @@ input[type=submit] {
 
 .splide__arrow:disabled {
   opacity: 0.3;
+}
+
+.callout-section {
+  position: relative;
+  max-width: 972px;
+  margin: auto;
+}
+
+#back-to-top {
+  width: 64px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  background: #ed2938;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+  transition: bottom 0.3s ease;
+  cursor: pointer;
+}
+#back-to-top.fixed {
+  transform: translate(0);
+  position: fixed;
+  bottom: 30px;
+  right: 1.875rem;
+  transition: bottom 0.3s ease;
 }
 
 .hs-input {
@@ -2441,7 +2467,7 @@ section.edit .form-columns-0:not(:first-of-type) {
   left: 0;
   top: 0;
   height: 100%;
-  width: 90%;
+  width: 100%;
   z-index: 500;
   background: rgba(0, 0, 0, 0.88);
   color: #fff;
@@ -2452,6 +2478,8 @@ section.edit .form-columns-0:not(:first-of-type) {
   top: 1.25rem;
   right: 1.25rem;
   stroke: #fff;
+  width: 1.3125rem;
+  height: 1.3125rem;
 }
 .off-canvas path {
   stroke: #fff;
@@ -2464,7 +2492,7 @@ section.edit .form-columns-0:not(:first-of-type) {
   color: #fff;
   font-size: 1.25rem;
   display: inline-block;
-  margin-block: 1rem !important;
+  margin: 1rem 0 !important;
 }
 
 .scrollable-container {

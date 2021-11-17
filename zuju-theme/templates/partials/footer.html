@@ -15,10 +15,24 @@
   />
 
   <div>
-    {% image 'footer_callout'
-      src="{{ get_asset_url('zuju-theme/images/assets/callout.png') }}",
-      alt="Banner",
-      label="Footer banner" %}
+    {% if currLang == 'zh-cn' %}
+      {% module "footer_callout" path="@hubspot/linked_image" label="Hashtag image" %}
+    {% else %}
+      {% module "footer_callout" path="@hubspot/linked_image" label="Hashtag image" %}
+    {% endif %}
+  </div>
+
+  {# Back to top #}
+  <div id="back-to-top" class="is-hidden fixed">
+    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.99991 9.60224L10.7415 4L12.3492 4L18.0908 9.60224L16.4832 11.1933L12.6937 7.51821L12.6937 20L10.397 20L10.397 7.51821L6.60757 11.2157L4.99991 9.60224Z" fill="#C5C5C5"/>
+      <mask id="mask0_0_541" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="5" y="4" width="14" height="16">
+      <path fill-rule="evenodd" clip-rule="evenodd" d="M4.99991 9.60224L10.7415 4L12.3492 4L18.0908 9.60224L16.4832 11.1933L12.6937 7.51821L12.6937 20L10.397 20L10.397 7.51821L6.60757 11.2157L4.99991 9.60224Z" fill="white"/>
+      </mask>
+      <g mask="url(#mask0_0_541)">
+      <rect y="24" width="24" height="24" transform="rotate(-90 0 24)" fill="white"/>
+      </g>
+    </svg>
   </div>
 </section>
 
@@ -73,15 +87,6 @@
         {% header 'header_col5'
           header_tag='h4',
           value='Connect with us'%}
-
-        {# <ul class="footer__social">
-          <li><a href="/convo/the-future-of-football" target="_blank"><i class="far fa-comment"></i><span style="padding-left: 8px;">Convo</span></a></li>
-          <li><a href="https://www.facebook.com/zujugp" target="_blank"><i class="fab fa-facebook-square"></i><span style="padding-left: 8px;">Facebook</span></a></li>
-          <li><a href="https://instagram.com/zujugp" target="_blank"><i class="fab fa-instagram"></i><span style="padding-left: 8px;">Instagram</span></a></li>
-          <li><a href="https://twitter.com/zujugp" target="_blank"><i class="fab fa-twitter"></i><span style="padding-left: 8px;">Twitter</span></a></li>
-          <li><a href="https://www.youtube.com/channel/UCbXvRvjZAt5aZhBNlDFxHuw" target="_blank"><i class="fab fa-youtube"></i><span style="padding-left: 8px;">YouTube</span></a></li>
-          <li><a href="https://weibo.com/u/7706292600" target="_blank"><i class="fab fa-weibo"></i><span style="padding-left: 8px;">Weibo</span></a></li>
-        </ul> #}
 
         {% module "footer_social"
           path="/zuju-theme/modules/social-link-footer",

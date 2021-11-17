@@ -1086,7 +1086,7 @@ input[type='submit'] {
 
   thead {
     font-weight: bold;
-    border-top: 3px solid var(--clr-dark-400)
+    border-top: 3px solid var(--clr-dark-400);
   }
 
   td {
@@ -1494,7 +1494,7 @@ input[type='submit'] {
 }
 
 .is-hidden {
-  display: none;
+  display: none !important;
 }
 
 .page-editor {
@@ -1516,5 +1516,37 @@ input[type='submit'] {
   }
 }
 .splide__arrow:disabled {
-  opacity: .3;
+  opacity: 0.3;
+}
+
+.callout-section {
+  position: relative;
+  max-width: 972px;
+  margin: auto;
+}
+
+#back-to-top {
+  // position: absolute;
+  width: 64px;
+  height: 48px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 8px;
+  // bottom: 50%;
+  // transform-origin: bottom bottom;
+  // transform: translateY(50%);
+  background: $clr-primary;
+  // right: 30px;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 30%);
+  transition: bottom .3s ease;
+  cursor: pointer;
+
+  &.fixed {
+    transform: translate(0);
+    position: fixed;
+    bottom: 30px;
+    right: rem(30);
+    transition: bottom .3s ease;
+  }
 }

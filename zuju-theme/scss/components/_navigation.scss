@@ -134,7 +134,7 @@
   left: 0;
   top: 0;
   height: 100%;
-  width: 90%;
+  width: 100%;
   z-index: 500;
   background: rgba(black, 0.88);
   color: #fff;
@@ -145,6 +145,8 @@
     top: 1.25rem;
     right: 1.25rem;
     stroke: #fff;
+    width: rem(21);
+    height: rem(21);
   }
 
   path {
@@ -161,7 +163,7 @@
     color: #fff;
     font-size: 1.25rem;
     display: inline-block;
-    margin-block: 1rem !important;
+    margin: 1rem 0 !important
   }
 }
 
