@@ -20,6 +20,40 @@ $(document).ready(function () {
   } else {
     //console.log("currPath is EN homepage or lang is NOT zh-cn or already on /zh-cn, so do nothing");
   }
+
+  $('#back-to-top').on('click', function () {
+    $('html, body').animate({ scrollTop: 0 }, 800)
+  })
+
+  // generate intersection observer function for back to top button
+  const $backToTop = $('#back-to-top')
+  // const backToTopObserver = new IntersectionObserver(entries => {
+  //   entries.forEach(entry => {
+  //     if (entry.isIntersecting  && $(window).width() > 768) {
+  //       $backToTop.removeClass('fixed')
+  //     } else {
+  //       $backToTop.addClass('fixed')
+  //     }
+  //   })
+  // })
+
+  // backToTopObserver.observe(document.querySelector('.callout-section'))
+
+  lastScroll = 0
+  $(window).on('scroll', function () {
+    var scroll = $(window).scrollTop()
+
+    if (scroll > scroll / $(window).height() * 100) {
+      $backToTop.removeClass('is-hidden')
+    } else {
+      $backToTop.addClass('is-hidden')
+    }
+    // if (lastScroll - scroll > 0) {
+    //   $backToTop.removeClass('is-hidden')
+    // } else {
+    //   $backToTop.addClass('is-hidden')
+    lastScroll = scroll
+  })
 })
 
 $('[data-modal-target]').on('click', function () {
@@ -149,11 +183,28 @@ $('#id-points').on('change', function () {
 // Off canvas
 function offCanvasEffect (bool = false) {
   const tl = gsap.timeline({})
-  return tl.to('.off-canvas', {
-    duration: 0.5,
-    ease: Power2.easeInOut,
-    x: 0
-  })
+
+  return tl
+    .fromTo(
+      '.off-canvas',
+      { x: '100%' },
+      { x: 0, duration: 0.5, ease: Power2.easeInOut }
+    )
+    .fromTo(
+      '.off-canvas__menu .nav__link',
+      {
+        x: '2rem',
+        opacity: 0
+      },
+      {
+        x: 0,
+        opacity: 1,
+        ease: Power2.easeInOut,
+        display: 'block',
+        stagger: 0.1
+      },
+      '-=.5'
+    )
 }
 
 function offCanvasOut () {
@@ -171,15 +222,28 @@ $('.burger-menu').on('click', e => {
 
 $('.off-canvas')
   .find('svg')
-  .on('click', () => offCanvasOut())
+  .on('click', event => {
+    const timeline = gsap.timeline({})
+
+    timeline
+      .to('.off-canvas .nav__link', {
+        opacity: 0,
+        stagger: 0.05,
+        duration: 0.25
+      })
+      .to(
+        '.off-canvas',
+        {
+          x: '100%',
+          display: 'block',
+          duration: 0.5,
+          ease: Power2.easeInOut
+        },
+        '-=.1'
+      )
+  })
 
 $('.has-dropdown svg').on('click', e => e.preventDefault())
-
-document.addEventListener('click', function (event) {
-  if (!event.target.closest('.off-canvas')) {
-    offCanvasOut()
-  }
-})
 
 /**
  *
