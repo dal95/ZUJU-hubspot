@@ -1,0 +1,69 @@
+html {
+	scroll-behavior: smooth;
+}
+
+.app h1,
+.app h2,
+.app h3,
+.app h4,
+.app h5,
+.app h6 {
+  font-family: "GT America Condensed", sans-serif;
+	font-weight: 900 !important;
+	margin-bottom: 2rem;
+	margin-top: 0;
+}
+
+.app html {
+  font-size: 100%;
+} /*16px*/
+
+.app p {
+  margin-bottom: 1rem;
+}
+
+.app a {
+	text-decoration: underline;
+	color: var(--clr-primary)
+}
+
+.app h1 {
+  font-size: 3.75rem;
+  line-height: 3.75rem;
+}
+
+.app h2 {
+  font-size: 3rem;
+  line-height: 3rem;
+}
+
+.app h3 {
+  font-size: 2.25rem;
+  line-height: 2.25rem;
+}
+
+.app h4 {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+.app small,
+.text_small {
+  font-size: 0.889rem;
+}
+
+[data-hs-dragdrop] .nav-sticky.is-sticky {
+	position: static
+}
+
+.app .button,
+.app .hs-button {
+	color: #fff;
+	padding-inline: 20px;
+}
+
+/* @media (max-width: 767px) {
+	.dnd-section .dnd-column {
+		padding: 0 1rem;
+	}
+} */

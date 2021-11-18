@@ -2,10 +2,5 @@
   "global" : false,
   "host_template_types" : [ "PAGE", "BLOG_POST", "BLOG_LISTING" ],
   "module_id" : 59085177118,
-  "css_assets" : [ {
-    "autoload" : true,
-    "path" : "../../css/statics/app.css",
-    "name" : "app.css"
-  } ],
   "is_available_for_new_content" : true
 }

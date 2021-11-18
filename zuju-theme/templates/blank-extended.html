@@ -5,19 +5,10 @@
 -->
 {% extends 'zuju-theme/templates/layouts/base-dnd.html' %}
 
-{% block body %}
-  <style>
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6 {
-      font-family: 'GT America Condensed', sans-serif;
-    }
-  </style>
 
-  <main class="dnd-wrapper">
+{% block body %}
+
+  <main class="dnd-wrapper app">
     {% dnd_area 'dnd_area'
       label='Main section',
     %}

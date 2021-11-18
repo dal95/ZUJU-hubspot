@@ -28,14 +28,12 @@
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
     />
 
-    {{ require_css(get_asset_url("../../css/main.css")) }}
-    {{ require_css(get_asset_url("../../css/essentials/built-in.css")) }}
-
     {# This is intended to be used if a template requires template specific style sheets #}
     {% include '../statics/statics-head.html' %}
 
-    {# This is intended to be used if a template requires template specific style sheets #}
-    {% include '../statics/statics-head.html' %}
+    {{ require_css(get_asset_url("zuju-theme/css/essentials/built-in.css")) }}
+    {{ require_css(get_asset_url("zuju-theme/css/main.css")) }}
+    {{ require_css(get_asset_url('zuju-theme/css/essentials/resolver.css')) }}
 
     {% if template_css %}
       {{ require_css(get_asset_url(template_css)) }}
@@ -45,7 +43,7 @@
 
   </head>
   <body>
-    <div class="body-wrapper {{ builtin_body_classes }} app">
+    <div class="body-wrapper {{ builtin_body_classes }}">
       {% block header %}
         <div class="nav-sticky is-sticky">
           {% global_partial path='../partials/header.html' %}
