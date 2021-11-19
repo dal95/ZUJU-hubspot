@@ -41,6 +41,10 @@
 
     {{ standard_header_includes }}
 
+    <script>
+      var contact = "{{ contact|tojson }}"
+    </script>
+
   </head>
   <body>
     <div class="body-wrapper {{ builtin_body_classes }}">
