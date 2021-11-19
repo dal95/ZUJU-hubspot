@@ -14,6 +14,11 @@ html {
 	margin-top: 0;
 }
 
+.app .hs-button {
+	font-family: "GT America Condensed", sans-serif;
+	font-weight: bold
+}
+
 .app html {
   font-size: 100%;
 } /*16px*/
@@ -60,10 +65,61 @@ html {
 .app .hs-button {
 	color: #fff;
 	padding-inline: 20px;
+	text-decoration: none;
 }
+
+.app .hs-form fieldset[class*=form-columns-] {
+	margin-left: unset;
+	margin-right: unset;
+}
+
+.app fieldset .hs-richtext {
+	padding: 0 10px;
+	text-transform: uppercase;
+}
+
+.form-style select {
+	padding-left: 1rem;
+}
+
+form .inputs-list>li {
+	margin: 0;
+}
+
+form .hs-error-msg {
+	margin: 0;
+}
+
 
 /* @media (max-width: 767px) {
 	.dnd-section .dnd-column {
 		padding: 0 1rem;
 	}
 } */
+
+
+.form-style.light select:not(.flatpickr-monthDropdown-months) {
+  background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") !important;
+}
+
+.footer form label {
+	display: none
+}
+
+label strong {
+	color: #ef6b51;
+	font-weight: normal
+}
+
+.input.disabled.disabled.disabled input {
+	background: #5f60645e !important
+}
+
+.hs-input.hs-fieldtype-intl-phone select.hs-input {
+	border-right: 1px solid #e1e1e1;
+}
+
+.form-dark.form-dark label[for] .hs-form-required,
+.form-dark.form-dark label[for] strong {
+	color: #ef6b51;
+}

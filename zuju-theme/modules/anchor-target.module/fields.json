@@ -1,0 +1,13 @@
+[ {
+  "id" : "a370e898-df70-b611-b631-e074cd733db4",
+  "name" : "section_id",
+  "label" : "Section ID",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "placeholder" : "e.g FAQ",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "faq"
+} ]

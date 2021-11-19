@@ -7,7 +7,7 @@
     "sass:global": "sass --watch --update ./zuju-theme/scss:./zuju-theme/css",
     "sass:module": "sass --watch --update ./zuju-theme/modules:./zuju-theme/modules",
     "watch:dev": "hs watch --account=zuju-staging zuju-theme zuju-theme --remove",
-    "watch:prod": "hs watch --account=dallah zuju-theme zuju-theme --remove --initial-upload",
+    "watch:prod": "hs watch --account=dallah zuju-theme zuju-theme --remove",
     "watch": "hs watch zuju-theme zuju-theme --remove",
     "fetch": "hs fetch zuju-theme zuju-theme --overwrite"
   },

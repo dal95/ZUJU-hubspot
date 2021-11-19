@@ -1,0 +1,40 @@
+[ {
+  "id" : "4e11a81b-8140-0b46-a48a-596d0ba68c3c",
+  "name" : "list",
+  "label" : "List",
+  "required" : false,
+  "locked" : false,
+  "occurrence" : {
+    "min" : null,
+    "max" : null,
+    "sorting_label_field" : null,
+    "default" : null
+  },
+  "children" : [ {
+    "id" : "518fac56-681f-7601-6aeb-029fa97bd9c2",
+    "name" : "title",
+    "label" : "Title",
+    "required" : false,
+    "locked" : false,
+    "validation_regex" : "",
+    "allow_new_line" : false,
+    "show_emoji_picker" : false,
+    "type" : "text",
+    "default" : "Lorem title"
+  }, {
+    "id" : "fdc8dd6a-c81a-44c7-9b2c-d0943a011db0",
+    "name" : "content",
+    "label" : "Content",
+    "required" : false,
+    "locked" : false,
+    "type" : "richtext",
+    "default" : "<p>Lorem ipsum</p>"
+  } ],
+  "tab" : "CONTENT",
+  "expanded" : false,
+  "type" : "group",
+  "default" : {
+    "title" : "Lorem title",
+    "content" : "<p>Lorem ipsum</p>"
+  }
+} ]

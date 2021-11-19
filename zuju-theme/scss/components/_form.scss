@@ -314,6 +314,12 @@ section.edit {
 }
 
 .form-dark.form-dark {
+  label[for] strong,
+  .hs-form-required {
+    color: #ef6b51;
+  }
+
+
   .hs-input,
   #hs-pwd-widget-password {
     background: var(--clr-dark-400);

@@ -189,6 +189,10 @@
       $('.birthday-custom').flatpickr({
         maxDate,
         onChange: function (selectedDates) {
+          if (selectedDates.length) {
+            hasErrors = hasErrors.filter(item => item !== 'birthday')
+          }
+
           if (hasErrors.length === 0 && selectedDates.length) {
             $submitBtn.attr('disabled', false)
 

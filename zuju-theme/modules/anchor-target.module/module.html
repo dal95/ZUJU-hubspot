@@ -1,0 +1,10 @@
+<section id="{{ module.section_id }}" style="visibility: hidden"></section>
+
+<script>
+  console.log("{{ request.postDict.inpageEditorUI }}")
+</script>
+{% if request.postDict.inpageEditorUI %}
+  <h3 style="text-align: center">
+     Anchor target, this text won't show up in the actual page
+  </h3>
+{% endif %}

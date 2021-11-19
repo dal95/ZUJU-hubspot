@@ -1,0 +1,58 @@
+:root {
+  --c-border: #e4e4e4
+}
+
+html body .accordion-content,
+html body .accordion-title {
+  border-bottom: 1px solid var(--c-border)
+}
+
+html body .accordion-title {
+  margin: 0;
+  padding-top: .5rem;
+  padding-bottom: .5rem;
+  font-family: 'GT America Condensed', sans-serif;
+  font-size: 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  user-select: none;
+  color: var(--clr-primary)
+}
+
+html body .accordion-content {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-top: 1rem;
+}
+
+html body .accordion-item .minus,
+html body .accordion-item .accordion-content {
+  display: none;
+}
+
+/* .accordion-item .accordion-content {
+  display: none;
+} */
+
+html body .accordion-item.active .minus,
+html body .accordion-item.active .accordion-content {
+  display: block;
+}
+
+html body .accordion-item.active .accordion-title {
+  border: none;
+}
+
+html body .accordion-item.active .plus {
+  display: none;
+}
+
+
+html body .minus,
+html body .plus {
+  max-width: 1.5rem;
+  width: 1.5rem;
+  height: 1.5rem
+}

@@ -1,0 +1,15 @@
+{{ require_css(get_asset_url('zuju-theme/css/vendors/flatpickr-custom-dark.css')) }}
+
+<script>
+  var validation_messages = `{{ module.async_validation_messages|tojson }}`;
+  var contact = {{ request_contact.contact|tojson }};
+</script>
+
+<div class="form-style {{ module.mode }} dnd-form" id="register-form">
+  {% form 'register_form'
+    form_key='register'
+    form_to_use="{{ module.form.form_id }}"
+  %}
+</div>
+
+{{ require_js('https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js', 'footer') }}
