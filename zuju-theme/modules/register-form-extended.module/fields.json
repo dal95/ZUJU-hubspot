@@ -16,6 +16,7 @@
   "id" : "dfde18e4-de30-7183-4bed-66dc9b782ea9",
   "name" : "mode",
   "label" : "Mode",
+  "inline_help_text" : "On development",
   "required" : false,
   "locked" : false,
   "display" : "select",
@@ -72,7 +73,7 @@
     "type" : "group",
     "default" : {
       "username_valid" : "(username) is available",
-      "referral_code_valid" : "Referral code is valid",
+      "valid_promo_code" : "Congrats your promo code is applied!",
       "email_available" : "Email is available"
     }
   }, {
@@ -92,6 +93,17 @@
       "show_emoji_picker" : false,
       "type" : "text",
       "default" : "Nickname is taken"
+    }, {
+      "id" : "49715eda-4ba9-b232-f39a-b0743b039809",
+      "name" : "username_invalid_character",
+      "label" : "Invalid character",
+      "required" : false,
+      "locked" : false,
+      "validation_regex" : "",
+      "allow_new_line" : false,
+      "show_emoji_picker" : false,
+      "type" : "text",
+      "default" : "Special character not allowed"
     }, {
       "id" : "2ca9b819-58a3-f153-27d0-0dc3547f80c2",
       "name" : "username_minmax",
@@ -131,8 +143,9 @@
     "type" : "group",
     "default" : {
       "username_taken" : "Nickname is taken",
+      "username_invalid_character" : "Special character not allowed",
       "username_minmax" : "Nickname must be between 3-25 characters",
-      "referral_code_invalid" : "Invalid referral code",
+      "invalid_promo_code" : "Invalid Promo code",
       "email_exist" : "Email already exists"
     }
   } ],
@@ -142,13 +155,14 @@
   "default" : {
     "success" : {
       "username_valid" : "(username) is available",
-      "referral_code_valid" : "Referral code is valid",
+      "valid_promo_code" : "Congrats your promo code is applied!",
       "email_available" : "Email is available"
     },
     "error" : {
       "username_taken" : "Nickname is taken",
+      "username_invalid_character" : "Special character not allowed",
       "username_minmax" : "Nickname must be between 3-25 characters",
-      "referral_code_invalid" : "Invalid referral code",
+      "invalid_promo_code" : "Invalid Promo code",
       "email_exist" : "Email already exists"
     }
   }
