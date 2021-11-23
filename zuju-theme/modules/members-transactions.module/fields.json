@@ -1,26 +1,4 @@
 [ {
-  "id" : "de1262d1-73e7-5bfb-036b-6f1d51a14782",
-  "name" : "fe_rebate",
-  "label" : "Rebate",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Rebate on selected product"
-}, {
-  "id" : "e6651357-cdd8-e732-5871-d9afd89b92a3",
-  "name" : "fe_redeem",
-  "label" : "Redeem",
-  "required" : false,
-  "locked" : false,
-  "validation_regex" : "",
-  "allow_new_line" : false,
-  "show_emoji_picker" : false,
-  "type" : "text",
-  "default" : "Reward redemption"
-}, {
   "id" : "8a428f27-b12a-84bf-e15f-33c4f141da5f",
   "name" : "fe_daily_login",
   "label" : "Daily login reward",
@@ -152,4 +130,48 @@
   "show_emoji_picker" : false,
   "type" : "text",
   "default" : "Kungfu Dash game daily spend + 25 consecutive days bonus"
+}, {
+  "id" : "de1262d1-73e7-5bfb-036b-6f1d51a14782",
+  "name" : "fe_rebate",
+  "label" : "Rebate",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Rebate on selected product"
+}, {
+  "id" : "e6651357-cdd8-e732-5871-d9afd89b92a3",
+  "name" : "fe_redeem",
+  "label" : "Redeem",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Reward redemption"
+}, {
+  "id" : "54de6f4d-92cb-ede5-0612-6d9e14117815",
+  "name" : "fe_reversal_points",
+  "label" : "Reversal Points",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Reversal of Z Points for a cancelled transaction"
+}, {
+  "id" : "5de333bb-a139-c65c-cf31-363a1f4907e2",
+  "name" : "fe_compensation_points",
+  "label" : "Compensations Points",
+  "required" : false,
+  "locked" : false,
+  "validation_regex" : "",
+  "allow_new_line" : false,
+  "show_emoji_picker" : false,
+  "type" : "text",
+  "default" : "Compensations History"
 } ]
