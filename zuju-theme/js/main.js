@@ -1,11 +1,43 @@
 const triggerClose = $('.modal__overlay, [data-modal-close]')
 
+function validateEmail (email) {
+  const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
+  return re.test(String(email).toLowerCase())
+}
+
+function disableField (fields) {
+  fields.forEach(field => {
+    field.attr('tabindex', -1)
+    field.addClass('disabled').attr('disabled', true)
+    field.closest('.input').addClass('disabled')
+
+    $('.disabled')
+      .closest('.field')
+      .find('label')
+      .on('click', e => e.preventDefault())
+  })
+}
+
+function debounce (func, wait, immediate) {
+  var timeout
+  return function () {
+    var context = this,
+      args = arguments
+    var later = function () {
+      timeout = null
+      if (!immediate) func.apply(context, args)
+    }
+    var callNow = immediate && !timeout
+    clearTimeout(timeout)
+    timeout = setTimeout(later, wait)
+    if (callNow) func.apply(context, args)
+  }
+}
+
 $(document).ready(function () {
   var lang = navigator.language
   var currURL = window.location.href
   var currPath = location.pathname
-
-  //lang = "zh-cn";
 
   if (
     currPath == '/' &&
@@ -15,10 +47,9 @@ $(document).ready(function () {
   ) {
     var redirectURL =
       location.protocol + '//' + window.location.hostname + '/zh-cn' + currPath
-    //console.log(redirectURL);
-    window.location.replace(redirectURL)
+      window.location.replace(redirectURL)
   } else {
-    //console.log("currPath is EN homepage or lang is NOT zh-cn or already on /zh-cn, so do nothing");
+      //console.log("currPath is EN homepage or lang is NOT zh-cn or already on /zh-cn, so do nothing");
   }
 
   $('#back-to-top').on('click', function () {
@@ -27,17 +58,6 @@ $(document).ready(function () {
 
   // generate intersection observer function for back to top button
   const $backToTop = $('#back-to-top')
-  // const backToTopObserver = new IntersectionObserver(entries => {
-  //   entries.forEach(entry => {
-  //     if (entry.isIntersecting  && $(window).width() > 768) {
-  //       $backToTop.removeClass('fixed')
-  //     } else {
-  //       $backToTop.addClass('fixed')
-  //     }
-  //   })
-  // })
-
-  // backToTopObserver.observe(document.querySelector('.callout-section'))
 
   lastScroll = 0
   $(window).on('scroll', function () {
@@ -48,22 +68,17 @@ $(document).ready(function () {
     } else {
       $backToTop.addClass('is-hidden')
     }
-    // if (lastScroll - scroll > 0) {
-    //   $backToTop.removeClass('is-hidden')
-    // } else {
-    //   $backToTop.addClass('is-hidden')
+
     lastScroll = scroll
   })
 })
 
 $('[data-modal-target]').on('click', function () {
-  // togggleBodyScroll(true)
   modalIn(`#${$(this).data('modal-target')}`)
 })
 
 triggerClose.on('click', function () {
   modalOut('.modal', () => {
-    // togggleBodyScroll(false)
   })
 })
 

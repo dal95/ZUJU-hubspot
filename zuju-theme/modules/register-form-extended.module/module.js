@@ -3,40 +3,6 @@
   let count = 0
   const total = $('.hs_cos_wrapper_type_form').length
 
-  function validateEmail (email) {
-    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    return re.test(String(email).toLowerCase())
-  }
-
-  function disableField (fields) {
-    fields.forEach(field => {
-      field.attr('tabindex', -1)
-      field.addClass('disabled').attr('disabled', true)
-      field.closest('.input').addClass('disabled')
-
-      $('.disabled')
-        .closest('.field')
-        .find('label')
-        .on('click', e => e.preventDefault())
-    })
-  }
-
-  function debounce (func, wait, immediate) {
-    var timeout
-    return function () {
-      var context = this,
-        args = arguments
-      var later = function () {
-        timeout = null
-        if (!immediate) func.apply(context, args)
-      }
-      var callNow = immediate && !timeout
-      clearTimeout(timeout)
-      timeout = setTimeout(later, wait)
-      if (callNow) func.apply(context, args)
-    }
-  }
-
   let hasErrors = ['username', 'email', 'birthday']
 
   function asyncValidate (selector, callback, disable = true) {

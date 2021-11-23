@@ -33,16 +33,16 @@
 
     {{ require_css(get_asset_url("zuju-theme/css/essentials/built-in.css")) }}
     {{ require_css(get_asset_url("zuju-theme/css/main.css")) }}
-    {{ require_css(get_asset_url('zuju-theme/css/essentials/resolver.css')) }}
 
     {% if template_css %}
       {{ require_css(get_asset_url(template_css)) }}
     {% endif %}
 
     {{ standard_header_includes }}
+    {{ require_css(get_asset_url('zuju-theme/css/essentials/resolver.css')) }}
 
     <script>
-      var contact = "{{ contact|tojson }}"
+      var contact = {{ contact|tojson }}
     </script>
 
   </head>

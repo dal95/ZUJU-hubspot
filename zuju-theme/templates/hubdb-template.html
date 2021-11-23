@@ -5,6 +5,7 @@
 -->
 {% extends "./layouts/base-members.html" %}
 {% import "../macros/tags.html" as c %}
+{{ require_css('https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.6/dist/css/splide.min.css', 'header') }}
 
 {% block body %}
 	{% if dynamic_page_hubdb_row %}
@@ -15,7 +16,7 @@
 				<section class="rewards-details">
 					<div class="breadcrumb">
 						<div class="breadcrumb__item">
-							<a style="color: #fff; text-decoration: none" href="{{ '/'~(request.path|split('/'))[0] }}">
+							<a href="{{ '/'~(request.path|split('/'))[0] }}">
 								{% if currLang == 'zh-cn' %}
 									 奖励
 								{% else %}
@@ -25,7 +26,7 @@
 						</div>
 						<div class="breadcrumb__item">
 							{{ c.chevron_right() }}
-							{{ c.categories(1) }}
+							{{ c.categories((d.categories|first).name) }}
 						</div>
 						<div class="breadcrumb__item active">
 							{{ c.chevron_right() }}
@@ -116,7 +117,56 @@
 						</div>
 
 						<div class="content-col">
-							<img src="{{ d.image.url }}" alt="" />
+							<div class="splide rewards-carousel">
+								<div class="splide__arrows">
+									<button class="splide__arrow splide__arrow--prev">
+										<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+											<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<g id="zuju/members-portal/rewards-details" transform="translate(-1518.000000, -674.000000)">
+															<g id="Group-2" transform="translate(1518.000000, 674.000000)">
+																	<rect id="Rectangle" fill="#ED2938" x="0" y="0" width="32" height="32"></rect>
+																	<path d="M19.8312146,15.9999629 L12.979811,9.16750932 C12.7553328,8.94378329 12.3918973,8.94415939 12.1677952,9.16866657 C11.9438666,9.39314482 11.9444452,9.7567828 12.1689524,9.98068242 L18.6125399,16.4064771 L12.168721,22.8322428 C11.9442427,23.0561714 11.9436641,23.4195779 12.1675637,23.6440851 C12.2799041,23.756628 12.4270778,23.8128994 12.5742515,23.8128994 C12.7210491,23.8128994 12.8676442,23.7570041 12.9797821,23.6452423 L19.8312146,16.8129624 C19.939331,16.7053957 20,16.5590031 20,16.4064771 C20,16.2539511 19.9391574,16.1077321 19.8312146,15.9999629 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero" transform="translate(16.000000, 16.406450) scale(-1, 1) rotate(-180.000000) translate(-16.000000, -16.406450) "></path>
+															</g>
+													</g>
+											</g>
+										</svg>
+									</button>
+
+									<button class="splide__arrow splide__arrow--next">
+										<svg width="32px" height="32px" viewBox="0 0 32 32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+											<g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+													<g id="zuju/members-portal/rewards-details" transform="translate(-1518.000000, -674.000000)">
+															<g id="Group-2" transform="translate(1518.000000, 674.000000)">
+																	<rect id="Rectangle" fill="#ED2938" x="0" y="0" width="32" height="32"></rect>
+																	<path d="M19.8312146,15.9999629 L12.979811,9.16750932 C12.7553328,8.94378329 12.3918973,8.94415939 12.1677952,9.16866657 C11.9438666,9.39314482 11.9444452,9.7567828 12.1689524,9.98068242 L18.6125399,16.4064771 L12.168721,22.8322428 C11.9442427,23.0561714 11.9436641,23.4195779 12.1675637,23.6440851 C12.2799041,23.756628 12.4270778,23.8128994 12.5742515,23.8128994 C12.7210491,23.8128994 12.8676442,23.7570041 12.9797821,23.6452423 L19.8312146,16.8129624 C19.939331,16.7053957 20,16.5590031 20,16.4064771 C20,16.2539511 19.9391574,16.1077321 19.8312146,15.9999629 Z" id="Path" fill="#FFFFFF" fill-rule="nonzero" transform="translate(16.000000, 16.406450) scale(-1, 1) rotate(-180.000000) translate(-16.000000, -16.406450) "></path>
+															</g>
+													</g>
+											</g>
+										</svg>
+									</button>
+								</div>
+								<div class="splide__track">
+									<ul class="splide__list">
+										{% if d.image %}
+											<li class="splide__slide">
+												<img src="{{ d.image.url }}" alt="{{ d.name }}" />
+											</li>
+										{% endif %}
+
+										{% if d.image2 %}
+											<li class="splide__slide">
+												<img src="{{ d.image2.url }}" alt="" />
+											</li>
+										{% endif %}
+
+										{% if d.image3 %}
+											<li class="splide__slide">
+												<img src="{{ d.image3.url }}" alt="" />
+											</li>
+										{% endif %}
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
 				</section>
@@ -273,4 +323,22 @@
 		});
 	</script>
 
+	{{ require_js('https://cdn.jsdelivr.net/npm/@splidejs/splide@3.1.6/dist/js/splide.min.js', 'footer') }}
+
+	{% require_js %}
+		<script>
+			$(document).ready(function() {
+				const splide = new Splide('.splide', { pagination: false, heightRatio: .7 })
+				splide.on( 'mounted', function (a, b, c) {
+
+					if (splide.length <= 1)  {
+						{# console.log(splide.Components.Arrows.destroy()) #}
+						{# splide.options.arrows = false #}
+						$('.splide__arrows').hide()
+					}
+				});
+				splide.mount()
+			});
+		</script>
+	{% end_require_js %}
 {% endblock body %}

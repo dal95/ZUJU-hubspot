@@ -393,7 +393,6 @@ h4,
 .hs-button {
   font-family: var(--ff-accent);
   font-weight: bold;
-  margin-bottom: 2.5rem;
 }
 
 h1,
@@ -554,6 +553,24 @@ iframe {
   border-radius: 50%;
   overflow: hidden;
   margin-right: 17px;
+}
+.user-card__avatar:hover .user-card__avatar-overlay {
+  display: flex;
+}
+.user-card__avatar-overlay {
+  display: none;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  background: #1212128c;
+  height: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.user-card__avatar svg {
+  width: 16px;
+  height: 16px;
 }
 .user-card__tier {
   margin-bottom: 8px;
@@ -1180,6 +1197,15 @@ input[type=submit] {
   align-items: center;
   font-size: 12px;
 }
+.breadcrumb a {
+  color: #fff;
+  text-decoration: none;
+}
+.breadcrumb a:hover {
+  color: var(--clr-primary);
+  text-decoration: underline;
+  text-decoration-color: var(--clr-primary);
+}
 .breadcrumb__item {
   padding-right: 5px;
 }
@@ -1276,6 +1302,8 @@ input[type=submit] {
 }
 .content-col img {
   object-fit: cover;
+  height: 100%;
+  width: 100%;
 }
 
 .modal {
@@ -1879,6 +1907,19 @@ input[type=submit] {
   transition: bottom 0.3s ease;
 }
 
+.rewards-carousel .splide__arrows {
+  position: absolute;
+  bottom: -32px;
+  right: 0;
+  display: flex;
+  align-items: center;
+}
+.rewards-carousel .splide__arrow {
+  position: static;
+  transform: unset;
+  margin: 0;
+}
+
 .hs-input {
   height: 40px;
   border: none;
@@ -2203,7 +2244,7 @@ section.edit .form-columns-0:not(:first-of-type) {
   width: 100%;
   height: 100%;
   color: #fff;
-  padding-inline: 20px;
+  padding-inline: 14px;
   display: flex;
   align-items: center;
   opacity: 0.5;
