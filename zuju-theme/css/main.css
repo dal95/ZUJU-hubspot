@@ -1532,6 +1532,9 @@ input[type=submit] {
 .table__td-left {
   min-width: 300px !important;
 }
+.table__cost {
+  font-weight: bold;
+}
 
 .pnt-history {
   margin-left: -25px;

@@ -91,7 +91,7 @@ const formatDate = date => {
 }
 
 // uid
-fetch(`${BASE_URL}/points-history?uid=${37851}`)
+fetch(`${BASE_URL}/points-history?uid=${2013201}`)
   .then(res => res.json())
   .then(res => {
     const transactions = res.data
@@ -106,3 +106,4 @@ fetch(`${BASE_URL}/points-history?uid=${37851}`)
     })
   })
   .catch(err => console.log(err))
+

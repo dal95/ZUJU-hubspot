@@ -1171,6 +1171,10 @@ input[type='submit'] {
   &__td-left {
     min-width: 300px !important;
   }
+
+  &__cost {
+    font-weight: bold;
+  }
 }
 
 .pnt-history {
