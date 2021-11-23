@@ -47,7 +47,7 @@
       "default" : "(username) is available"
     }, {
       "id" : "c1f19ce0-b48e-c977-33c5-edaa241b4ca4",
-      "name" : "valid_promo_code",
+      "name" : "promo_code_valid",
       "label" : "Valid Promo code",
       "required" : false,
       "locked" : false,
@@ -73,7 +73,7 @@
     "type" : "group",
     "default" : {
       "username_valid" : "(username) is available",
-      "valid_promo_code" : "Congrats your promo code is applied!",
+      "promo_code_valid" : "Congrats your promo code is applied!",
       "email_available" : "Email is available"
     }
   }, {
@@ -117,7 +117,7 @@
       "default" : "Nickname must be between 3-25 characters"
     }, {
       "id" : "fa17ae5e-b5e5-ab7b-fc76-fe5ab3c448aa",
-      "name" : "invalid_promo_code",
+      "name" : "promo_code_invalid",
       "label" : "Invalid promo code",
       "required" : false,
       "locked" : false,
@@ -145,7 +145,7 @@
       "username_taken" : "Nickname is taken",
       "username_invalid_character" : "Special character not allowed",
       "username_minmax" : "Nickname must be between 3-25 characters",
-      "invalid_promo_code" : "Invalid Promo code",
+      "promo_code_invalid" : "Invalid Promo code",
       "email_exist" : "Email already exists"
     }
   } ],
@@ -155,14 +155,14 @@
   "default" : {
     "success" : {
       "username_valid" : "(username) is available",
-      "valid_promo_code" : "Congrats your promo code is applied!",
+      "promo_code_valid" : "Congrats your promo code is applied!",
       "email_available" : "Email is available"
     },
     "error" : {
       "username_taken" : "Nickname is taken",
       "username_invalid_character" : "Special character not allowed",
       "username_minmax" : "Nickname must be between 3-25 characters",
-      "invalid_promo_code" : "Invalid Promo code",
+      "promo_code_invalid" : "Invalid Promo code",
       "email_exist" : "Email already exists"
     }
   }

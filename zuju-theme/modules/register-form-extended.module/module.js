@@ -76,7 +76,7 @@
           `
 
             if (messageType != 'success') {
-              if (!hasErrors.find(item => item == res.message) && res.message !== "invalid_promo_code") {
+              if (!hasErrors.find(item => item == res.message)) {
                 hasErrors.push(res.message)
               }
             } else {

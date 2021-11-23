@@ -49,6 +49,8 @@ function asyncValidate (selector, callback, disable = true) {
         if (!validateEmail($(this).val())) return
       }
 
+      if ($(this).val().trim() == contact.username) return
+
       $spinner[0].classList.add('active')
 
       callback($(this).val())
@@ -100,8 +102,6 @@ function asyncValidate (selector, callback, disable = true) {
             }
           }
 
-          console.log(hasErrors)
-
           $('#hs_form_target_register .hs-button').attr(
             'disabled',
             !!hasErrors.length
@@ -121,15 +121,14 @@ window.addEventListener('message', event => {
     count++
     if (count < total) return
 
-    console.log(BASE_URL)
-    asyncValidate('.dnd-form [name="username"]', (value = '') => {
+    asyncValidate('.edit [name="username"]', (value = '') => {
       return fetch(`${BASE_URL}/check-nickname`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          username: value
+          username: value.trim()
         })
       })
     })
@@ -181,7 +180,7 @@ window.addEventListener('message', event => {
 
     // Disable fields
     $disabledElement = $(
-      '.edit input[name="birthday"], .edit input[name="username"], .edit input[name="email"]'
+      '.edit input[name="birthday"], .edit input[name="email"]'
     )
 
     $disabledElement.attr('tabindex', -1)
