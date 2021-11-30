@@ -3,7 +3,7 @@
     <div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto">
       <div class="row-start-1 col-start-1 col-span-12">
         <div class="sm:aspect-w-9 sm:aspect-h-5">
-          <div><img class="h-full w-full object-cover object-left" src="{{ module.banner_image.src }}" /></div>
+          <div><img class="h-full w-full object-cover object-left" src="{{ resize_image_url(module.banner_image.src, 1440, 400) }}" /></div>
         </div>
       </div>
       <div class="row-start-1 col-start-8 col-span-4 p-8" x-data="parallax()" x-bind="root">

@@ -5,19 +5,22 @@
 <!-- Begin partial -->
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="" />
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&amp;display=swap" rel="stylesheet" />
+<link rel="preload" as="style"
+onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700;800&amp;display=swap" rel="stylesheet" />
 
-<script src="https://unpkg.com/smoothscroll-polyfill@0.4.4/dist/smoothscroll.js"></script>
+{{ require_css(get_asset_url('zuju-theme/css/vendors/glide.min.css')) }}
+{{ require_css(get_asset_url('zuju-theme/css/vendors/glide.theme.min.css')) }}
 
-<script src="https://unpkg.com/@glidejs/glide@3.4.1/dist/glide.js"></script>
-<link rel="stylesheet" href="https://unpkg.com/@glidejs/glide@3.4.1/dist/css/glide.core.min.css" />
-<link rel="stylesheet" href="https://unpkg.com/@glidejs/glide@3.4.1/dist/css/glide.theme.min.css" />
+{# Portfolio page only #}
+{% if content.id == '56320989603' %}
+    <script src="https://unpkg.com/three@0.72.0/three.min.js"></script>
+{% endif %}
 
-<script src="https://unpkg.com/three@0.72.0/three.min.js"></script>
-<script src="https://unpkg.com/bodymovin@4.13.0/build/player/bodymovin.js"></script>
+{{ require_js(get_asset_url('zuju-theme/js/vendors/smoothscroll-polyfill.min.js'), { defer: true }) }}
 
+{{ require_js(get_asset_url('zuju-theme/js/vendors/bodymovin.min.js'), { defer: true }) }}
 <script defer src="https://unpkg.com/@alpinejs/intersect@3.4.1/dist/cdn.min.js"></script>
-<script defer src="https://unpkg.com/alpinejs@3.4.1/dist/cdn.min.js"></script>
+{{ require_js(get_asset_url('zuju-theme/js/vendors/alpine.min.js'), { defer: true }) }}
 
 {{ require_css(get_asset_url("../../css/statics/app.css")) }}
 <!-- End partial -->

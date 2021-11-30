@@ -23,6 +23,13 @@
     </div>
   </div>
 </div>
-<script src="{{ get_asset_url("../../js/statics/magic.js") }}"></script>
-<script src="{{ get_asset_url("../../js/statics/particle.js") }}"></script>
+
+
+{{ require_js(get_asset_url('zuju-theme/js/vendors/glide.min.js'), { position: 'footer' }) }}
+{{ require_js(get_asset_url("../../js/statics/magic.js"), { position: 'footer' }) }}
+
+{# Portfolio page only #}
+{% if content.id == '56320989603' %}
+  <script src="{{ get_asset_url("../../js/statics/particle.js") }}"></script>
+{% endif%}
 <!-- End partial -->

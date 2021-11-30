@@ -5,9 +5,9 @@ delete messages.type
 
 function getMessage (key, messages) {
   key = 'fe_' + key.replaceAll('-', '_')
-	console.log(key)
+  console.log(key)
 
-	if (!messages[key]) return `<div style="color: red">Undefined => ${key}<div>`
+  if (!messages[key]) return `<div style="color: red">Undefined => ${key}<div>`
   return messages[key]
 }
 
@@ -23,16 +23,18 @@ const renderHistoryTable = (data, filter = '') => {
     html += `<tr class="table__row table__row--span"><td colspan="3">${group.date}</td></tr>`
 
     html += group.items
-			.filter(item => {
-				return item.fe_type !== 'non-rebate'
-			})
+      .filter(item => {
+        return item.fe_type !== 'non-rebate'
+      })
       .map(item => {
         const pointChanged = item.credit ? `+${item.credit}` : `-${item.debit}`
 
         return `
           <tr class="table__row" style="vertical-align: baseline">
             <td class="table__td-left" style="padding-right: 2rem">
-              <b>${getMessage(item.fe_type, messages)}</b> ${ item.fe_item ? ': ' + item.fe_item : ''}
+              <b>${getMessage(item.fe_type, messages)}</b> ${
+          item.fe_item ? ': ' + item.fe_item : ''
+        }
 						</td>
             <td class="table__cost" style="margin-left: 2rem">
               ${item.amount ? item.amount : ''}
@@ -45,7 +47,8 @@ const renderHistoryTable = (data, filter = '') => {
       .join('')
   })
 
-  if (!data.length) html = '<tr><td colspan="3"><h4 class="text-center">No data</h4></td></tr>'
+  if (!data.length)
+    html = '<tr><td colspan="3"><h4 class="text-center">No data</h4></td></tr>'
   table.find('tbody').append(html)
 
   table.hide().fadeIn()
@@ -57,18 +60,21 @@ const mapToGroup = (data, filter = '') => {
   data
     .filter(item => (filter ? item[filter] : item))
     .filter(item => item.fe_type)
-    .map(( item => {
-      if (item.fe_type === 'kfd-14days-bonus' || item.fe_type === 'kfd-21days-bonus') {
+    .map(item => {
+      if (
+        item.fe_type === 'kfd-14days-bonus' ||
+        item.fe_type === 'kfd-21days-bonus'
+      ) {
         item.fe_type = 'kfd-7days-bonus'
 
         return item
       } else {
         return item
       }
-    }))
+    })
     .forEach(item => {
       const indexExist = mapped.findIndex(
-        m => formatDate(m.date) === formatDate(item.updated_at)
+        m => m.date === formatDate(item.created_at)
       )
       if (indexExist >= 0) {
         mapped[indexExist].date = formatDate(item.created_at)
@@ -78,11 +84,22 @@ const mapToGroup = (data, filter = '') => {
       }
     })
 
+    console.log(mapped)
+
   return mapped
 }
 
 const formatDate = date => {
-  return new Date(date).toLocaleDateString('en-SG', {
+  // return new Date(date).toLocaleDateString('en-SG', {
+  //   weekday: 'short',
+  //   year: 'numeric',
+  //   month: 'short',
+  //   day: 'numeric'
+  // })
+
+  return new Date(
+    Date.UTC(date.substr(0, 4), date.substr(5, 2) - 1, date.substr(8, 2))
+  ).toLocaleDateString('en-SG', {
     weekday: 'short',
     year: 'numeric',
     month: 'short',
@@ -106,4 +123,3 @@ fetch(`${BASE_URL}/points-history?uid=${2013201}`)
     })
   })
   .catch(err => console.log(err))
-

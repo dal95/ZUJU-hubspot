@@ -16,18 +16,6 @@
       <meta property="og:image" content="{{ get_asset_url('zuju-theme/images/assets/bg/ZujuGP-OG.png') }}" />
     {% endif %}
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,600;0,700;1,400;1,700&family=Roboto+Condensed:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-    />
-
     {{ require_css(get_asset_url("../../css/main.css")) }}
 
     {# This is intended to be used if a template requires template specific style sheets #}
@@ -64,6 +52,4 @@
     {{ standard_footer_includes }}
     {% include '../statics/statics-foot.html' %}
   </body>
-
-
 </html>

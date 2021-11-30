@@ -30,9 +30,6 @@
       {% set trending_posts = blog_popular_posts(module.blog_selector, 3, null, module.sort_by) %}
     {% endif %}
 
-    <script>
-      console.log('tag list', "{{ tag_list }}")
-    </script>
     {% set trend1 = trending_posts[0] %}
     {% set trend2 = trending_posts[1] %}
     {% set trend3 = trending_posts[2] %}
@@ -47,7 +44,7 @@
           <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
             <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
             <div class="absolute top-0 left-0 right-4 bottom-4">
-              <img class="w-full h-full object-cover" src="{{ trend1.featured_image }}" alt="{{ trend1.featured_image_alt_text }}" />
+              <img class="w-full h-full object-cover" loading="lazy" src="{{ resize_image_url(trend1.featured_image, 560, 360, 560) }}" alt="{{ trend1.featured_image_alt_text }}" />
             </div>
           </div>
           <div x-bind="animate(16)">
@@ -82,7 +79,7 @@
           <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
             <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
             <div class="absolute top-0 left-0 right-4 bottom-4">
-              <img class="w-full h-full object-cover" src="{{ trend2.featured_image }}" alt="{{ trend2.featured_image_alt_text }}" />
+              <img class="w-full h-full object-cover" loading="lazy" src="{{ resize_image_url(trend2.featured_image, 560, 360, 560) }}" alt="{{ trend2.featured_image_alt_text }}" />
             </div>
           </div>
           <div x-bind="animate(16)">
@@ -117,7 +114,7 @@
           <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
             <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
             <div class="absolute top-0 left-0 right-4 bottom-4">
-              <img class="w-full h-full object-cover" src="{{ trend3.featured_image }}" alt="{{ trend3.featured_image_alt_text }}" />
+              <img class="w-full h-full object-cover" loading="lazy" src="{{ resize_image_url(trend3.featured_image, 560, 360, 560) }}" alt="{{ trend3.featured_image_alt_text }}" />
             </div>
           </div>
           <div x-bind="animate(16)">

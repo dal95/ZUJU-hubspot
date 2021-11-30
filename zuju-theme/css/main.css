@@ -2709,6 +2709,16 @@ section.edit .form-columns-0:not(:first-of-type) {
     margin: 0 0.3rem;
   }
 }
+.social-links svg {
+  width: 24px;
+  height: 24px;
+}
+@media (max-width: 600px) {
+  .social-links svg {
+    width: 20px;
+    height: 20px;
+  }
+}
 
 .auth-wrapper {
   min-height: 851px;
