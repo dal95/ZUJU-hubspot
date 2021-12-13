@@ -10,7 +10,7 @@
        x-data="parallax()"
        x-bind="root"
        >
-    
+
     <div class="sm:w-full sm:max-w-md">
       {#
       {% if content.language.languageTag == "zh-cn" %}
@@ -19,7 +19,7 @@
       <img class="lg:w-96 mb-8" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-heading.gif" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
       {% endif %}
       #}
-      <img class="lg:w-96 mb-8" src="{{ module.moving_image.src }}" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" />
+      <img class="lg:w-96 mb-8" src="{{ module.moving_image.src }}" title="Highly Immersive" alt="Highly Immersive" x-bind="animate(8)" loading="lazy" />
     </div>
     <p class="lg:w-1/2 text-white lg:text-center sm:mb-16 lg:mb-24">
       {#

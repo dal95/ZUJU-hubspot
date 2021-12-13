@@ -3,14 +3,14 @@
     <div class="sm:aspect-w-16 sm:aspect-h-9">
       <div>
         <!-- <img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-mast.png" />-->
-        <img class="h-full w-full object-cover object-center" src="{{ module.background_image.src }}" />
+        <img class="h-full w-full object-cover object-center" src="{{ module.background_image.src }}" loading="lazy" />
       </div>
     </div>
   </div>
-  
+
   <div class="relative flex flex-col items-center justify-center sm:p-8">
     <!--<img class="sm:h-10 lg:h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-logo.png" x-bind="animate(16)" />-->
-    <img class="sm:h-10 lg:h-16 mb-16" src="{{ module.logo.src }}" x-bind="animate(16)" />
+    <img class="sm:h-10 lg:h-16 mb-16" src="{{ module.logo.src }}" x-bind="animate(16)" loading="lazy" />
     <h1 class="lg:w-1/2 text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
       {#
       {% if content.language.languageTag == "zh-cn" %}
@@ -73,8 +73,8 @@
       <video controls="" x-on:click.stop="" x-effect="playing ? $el.play() : ($el.pause(), $el.currentTime = 0)">
         <!--<source src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/exchange.mp4" />-->
         <source src="{{ module.video_player }}" />
-        
-        
+
+
       </video>
     </div>
   </div>

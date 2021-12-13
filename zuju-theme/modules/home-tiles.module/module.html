@@ -5,7 +5,7 @@
     <article class="relative flex items-end lg:col-span-2 lg:row-span-2">
       <a href="{{ module.main_tiles.cta_url.href }}">
         <div class="absolute inset-0 bg-black">
-          <img class="opacity-50 h-full w-full object-cover" src="{{ resize_image_url(module.main_tiles.background.src, 900, 0, 900) }}" />
+          <img class="opacity-50 h-full w-full object-cover" src="{{ resize_image_url(module.main_tiles.background.src, 900, 0, 900) }}" loading="lazy" />
         </div>
         <div class="relative w-full p-4">
           <h1 class="lg:text-6xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">
@@ -68,7 +68,7 @@
       <article class="relative flex items-end h-full lg:col-span-2 lg:row-span-2">
         <a href="{{ module.main_tiles.cta_url.href }}">
           <div class="absolute inset-0 bg-black">
-            <img class="opacity-50 h-full w-full object-cover" src="{{ module.main_tiles.background.src }}" />
+            <img class="opacity-50 h-full w-full object-cover" src="{{ module.main_tiles.background.src }}" loading="lazy" />
           </div>
           <div class="relative w-full p-4">
             <h1 class="lg:text-6xl sm:text-3xl font-gtcond font-black text-white sm:mb-2 lg:mb-4">

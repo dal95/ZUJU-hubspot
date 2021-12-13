@@ -157,6 +157,7 @@
           class="sm:hidden absolute bottom-0 -right-8 pointer-events-none"
           src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball-bg.png"
           x-bind="animate(-24)"
+          loading="lazy"
         />
         <div
           class="
@@ -173,7 +174,7 @@
             <div class="sm:max-w-md sm:mx-auto">
               <div class="relative aspect-w-4 aspect-h-3">
                 <div class="absolute top-4 left-4 bottom-0 right-0 bg-zuju-red"></div>
-                <img class="h-full w-full object-cover" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball.png" />
+                <img class="h-full w-full object-cover" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball.png" loading="lazy" />
               </div>
             </div>
           </div>
@@ -248,7 +249,7 @@
                     <div class="">
                       <div>
                         <div class="py-8">
-                          <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png" />
+                          <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png" loading="lazy" />
                           <h3 class="text-zuju-red font-bold mb-2">
                             {% if content.language.languageTag == "zh-cn" %}
                               Zuju游戏空间
@@ -271,7 +272,7 @@
                     <div class="">
                       <div>
                         <div class="py-8">
-                          <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-2.png" />
+                          <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-2.png" loading="lazy" />
                           <h3 class="text-zuju-red font-bold mb-2">
                             {% if content.language.languageTag == "zh-cn" %}
                               Zuju交换空间
@@ -294,7 +295,7 @@
                     <div class="">
                       <div>
                         <div class="py-8">
-                          <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-3.png" />
+                          <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-3.png" loading="lazy" />
                           <h3 class="text-zuju-red font-bold mb-2">
                             {% if content.language.languageTag == "zh-cn" %}
                               ZujuGP探索空间
@@ -327,7 +328,7 @@
             class="sm:hidden lg:row-start-3 lg:col-span-3 pt-8 pr-8 transition duration-0 transform translate-y-8 opacity-0"
             x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700'"
           >
-            <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png" />
+            <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-1.png" loading="lazy" />
             <h3 class="text-zuju-red font-bold mb-2">
               {% if content.language.languageTag == "zh-cn" %}
                 Zuju游戏空间
@@ -347,7 +348,7 @@
             class="sm:hidden lg:row-start-3 lg:col-span-3 pt-8 pr-8 transition duration-0 transform translate-y-8 opacity-0"
             x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700 !delay-[200ms]'"
           >
-            <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-2.png" />
+            <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-2.png" loading="lazy" />
             <h3 class="text-zuju-red font-bold mb-2">
               {% if content.language.languageTag == "zh-cn" %}
                 Zuju交换空间
@@ -367,7 +368,7 @@
             class="sm:hidden lg:row-start-3 lg:col-span-3 pt-8 pr-8 transition duration-0 transform translate-y-8 opacity-0"
             x-bind:class="dPortK &amp;&amp; '!translate-x-0 !translate-y-0 !opacity-100 !duration-700 !delay-[400ms]'"
           >
-            <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-3.png" />
+            <img class="h-16 w-16 mb-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/port-3.png" loading="lazy" />
             <h3 class="text-zuju-red font-bold mb-2">
               {% if content.language.languageTag == "zh-cn" %}
                 ZujuGP探索空间
@@ -483,7 +484,7 @@
               <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
                 <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
                 <div class="absolute top-0 left-0 right-4 bottom-4">
-                  <img class="w-full h-full object-cover" src="{{ trend1.featured_image }}" alt="{{ trend1.featured_image_alt_text }}" />
+                  <img class="w-full h-full object-cover" src="{{ trend1.featured_image }}" alt="{{ trend1.featured_image_alt_text }}" loading="lazy" />
                 </div>
               </div>
               <div x-bind="animate(16)">
@@ -518,7 +519,7 @@
               <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
                 <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
                 <div class="absolute top-0 left-0 right-4 bottom-4">
-                  <img class="w-full h-full object-cover" src="{{ trend2.featured_image }}" alt="{{ trend2.featured_image_alt_text }}" />
+                  <img class="w-full h-full object-cover" src="{{ trend2.featured_image }}" alt="{{ trend2.featured_image_alt_text }}" loading="lazy" />
                 </div>
               </div>
               <div x-bind="animate(16)">
@@ -553,7 +554,7 @@
               <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(16)">
                 <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
                 <div class="absolute top-0 left-0 right-4 bottom-4">
-                  <img class="w-full h-full object-cover" src="{{ trend3.featured_image }}" alt="{{ trend3.featured_image_alt_text }}" />
+                  <img class="w-full h-full object-cover" src="{{ trend3.featured_image }}" alt="{{ trend3.featured_image_alt_text }}" loading="lazy" />
                 </div>
               </div>
               <div x-bind="animate(16)">

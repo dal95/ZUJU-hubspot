@@ -149,19 +149,19 @@
 									<ul class="splide__list">
 										{% if d.image %}
 											<li class="splide__slide">
-												<img src="{{ d.image.url }}" alt="{{ d.name }}" />
+												<img src="{{ d.image.url }}" alt="{{ d.name }}" loading="lazy" />
 											</li>
 										{% endif %}
 
 										{% if d.image2 %}
 											<li class="splide__slide">
-												<img src="{{ d.image2.url }}" alt="" />
+												<img src="{{ d.image2.url }}" alt="" loading="lazy" />
 											</li>
 										{% endif %}
 
 										{% if d.image3 %}
 											<li class="splide__slide">
-												<img src="{{ d.image3.url }}" alt="" />
+												<img src="{{ d.image3.url }}" alt="" loading="lazy" />
 											</li>
 										{% endif %}
 									</ul>

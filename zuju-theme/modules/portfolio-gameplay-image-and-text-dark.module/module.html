@@ -2,7 +2,7 @@
   <div class="max-w-[1440px] grid sm:grid-rows-[auto,auto] sm:grid-cols-1 lg:grid-cols-12 mx-auto overflow-hidden" x-data="parallax()" x-bind="root">
     <div class="relative z-20 row-start-1 sm:col-start-1 lg:col-start-6 lg:col-span-7 flex items-center justify-center p-8">
       <!--<img class="sm:w-full sm:max-w-md" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-gallery.png" x-bind="animate(24)" />-->
-      <img class="sm:w-full sm:max-w-md" src="{{ module.card_image.src }}" x-bind="animate(24)" />
+      <img class="sm:w-full sm:max-w-md" src="{{ module.card_image.src }}" x-bind="animate(24)" loading="lazy" />
     </div>
     <div class="relative z-20 sm:row-start-2 sm:col-start-1 lg:row-start-1 lg:col-start-2 lg:col-span-4 flex flex-col justify-center p-8">
       <h1 class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black sm:text-center lg:text-right mb-8" x-bind="animate(8)">
@@ -28,7 +28,7 @@
     </div>
     <div class="relative z-10 sm:row-start-1 sm:row-span-2 sm:col-start-1 lg:row-start-1 lg:col-start-1 lg:col-span-6 flex items-center justify-center pt-8">
       <!--<img class="sm:w-full sm:max-w-md" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png" x-bind="animate(-8)" />-->
-      <img class="sm:w-full sm:max-w-md" src="{{ module.background_image.src }}" x-bind="animate(-8)" />
+      <img class="sm:w-full sm:max-w-md" src="{{ module.background_image.src }}" x-bind="animate(-8)" loading="lazy" />
     </div>
   </div>
-</section>    
+</section>

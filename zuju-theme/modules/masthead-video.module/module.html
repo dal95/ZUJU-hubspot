@@ -11,6 +11,7 @@
           x-show="!init"
           class="absolute z-20 transform top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 pointer-events-none"
           src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png"
+          loading="lazy"
         />
         <div
           x-cloak=""
@@ -19,13 +20,13 @@
           class="touch:hidden sm:hidden absolute z-20 origin-center transition-all duration-200 ease-out pointer-events-none"
           x-bind:style="{ hidden: !init, top: $px(y - top - ($height / 2)), left: $px(x - ($width / 2)) }"
         >
-          <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" />
+          <img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" loading="lazy" />
         </div>
         <video muted="" autoplay="" loop="" class="sm:hidden h-full w-full object-cover object-center opacity-70" x-on:click="playing = true">
           <source src="{{ module.video}}" type="video/mp4" />
         </video>
         <div class="hidden sm:block touch:block absolute z-20 top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 pointer-events-none">
-          <img class="sm:h-20 sm:0w-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" />
+          <img class="sm:h-20 sm:0w-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/play-button.png" loading="lazy" />
         </div>
         <video muted="" class="lg:hidden h-full w-full object-cover object-center" x-on:click="playing = true">
           <source src="{{ module.video }}" type="video/mp4" />

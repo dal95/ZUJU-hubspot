@@ -4,13 +4,14 @@
       <img
         class="h-full w-full object-cover object-center"
         src="{{ module.background.src }}"
+        loading="lazy"
       />
     </div>
     <div class="relative flex flex-col items-center justify-center sm:p-8">
       <h1 class="text-white text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
         {{ module.title }}
       </h1>
-      
+
       <div class="lg:w-3/4 flex sm:flex-col justify-between">
         {% for item in module.group %}
           <div class="flex lg:flex-1 flex-col items-center mb-16">
@@ -24,7 +25,7 @@
           </div>
         {% endfor %}
       </div>
-      
+
       <div class="text-white lg:w-3/4 text-center mb-8">
         {{ module.description }}
       </div>

@@ -22,6 +22,7 @@
 			class="sm:hidden absolute bottom-0 -right-8 pointer-events-none"
 			src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/ball-bg.png"
 			x-bind="animate(-24)"
+			loading="lazy"
 		/>
 		<div
 			class="
@@ -38,7 +39,7 @@
 				<div class="sm:max-w-md sm:mx-auto">
 					<div class="relative aspect-w-4 aspect-h-3">
 						<div class="absolute top-4 left-4 bottom-0 right-0 bg-zuju-red"></div>
-						<img class="h-full w-full object-cover" src="{{ module.manifesto.image.src }}" />
+						<img class="h-full w-full object-cover" src="{{ module.manifesto.image.src }}" loading="lazy" />
 					</div>
 				</div>
 			</div>

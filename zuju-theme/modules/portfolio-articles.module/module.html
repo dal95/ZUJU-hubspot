@@ -1,6 +1,7 @@
 <section class="bg-zuju-gray-2">
 <div class="relative max-w-[1440px] mx-auto flex flex-wrap justify-center sm:pt-24 lg:pt-36 sm:px-8" x-data="parallax()" x-bind="root">
-  <img class="absolute top-80 right-0 w-1/2" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png" x-bind="animate(-24)" />
+  <img class="absolute top-80 right-0 w-1/2" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/bg-ball-dark.png" x-bind="animate(-24)" loading="lazy" />
+
   <h1 class="relative lg:w-1/2 text-2xl lg:text-4xl font-gtcond font-black text-white text-center" x-bind="animate(16)">
     {{ module.title }}
     {#
@@ -11,9 +12,9 @@
           {% endif %}
           #}
   </h1>
-  
+
   <div class="w-full mb-16"></div>
-  
+
   <article class="sm:hidden lg:w-5/12 p-8">
     <!--<a href="/portfolio/zujugp-exchange">-->
     <a href="{{ module.article.article_link.href }}">
@@ -99,7 +100,7 @@
                #}
               {{ module.article_2.article_description }}
             </p>
-                  
+
             <svg xmlns="http://www.w3.org/2000/svg" class="ionicon text-zuju-red h-8 w-8" viewBox="0 0 512 512">
               <title>Arrow Forward</title>
               <path
@@ -116,7 +117,7 @@
       </div>
     </a>
   </article>
-        
+
   <div class="glide lg:hidden sm:max-w-md" x-data="{}" x-init="new Glide($el).mount()">
     <div class="glide__track" data-glide-el="track">
       <div class="glide__slides">
@@ -138,7 +139,7 @@
                     <img class="relative bottom-4 right-4" src="{{ module.article.article_image.src }}" alt="{{ module.article.article_image.alt }}" {{ loadingAttr }} {{ sizeAttrs }}>
                   {% endif %}
                 </div>
-                
+
                 <div class="flex flex-col items-start justify-end mb-8">
                   <h1 class="text-5xl text-white font-gtcond font-black mb-4">
                     {#
@@ -176,7 +177,7 @@
             </div>
           </div>
         </div>
-              
+
         <div class="glide__slide">
           <div class="">
             <div>
@@ -237,15 +238,15 @@
       <button class="glide__bullet" data-glide-dir="=1"></button>
     </div>
   </div>
-  
+
   <div class="w-full mb-16"></div>
-  
+
   <div class="lg:w-2/3 relative flex flex-col items-center">
     <h1 class="sm:text-4xl lg:text-5xl font-gtcond font-black text-white text-center mb-8">
       {#{% if content.language.languageTag == "zh-cn" %}
       和我们并肩构筑伟大的愿景。
       {% else %}
-      Build out our vision with us. 
+      Build out our vision with us.
       {% endif %}
       #}
      {{ module.convo_title }}

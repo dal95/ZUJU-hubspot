@@ -34,7 +34,7 @@
 				{% endif %}
 				{% set loadingAttr = item.icon.loading != 'disabled' ? 'loading="{{ item.icon.loading }}"' : '' %}
 					{# Icon #}
-					<img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" >
+					<img src="{{ item.icon.src }}" alt="{{ item.icon.alt }}" loading="lazy" />
 				{% endif %}
 
 				{# Label #}

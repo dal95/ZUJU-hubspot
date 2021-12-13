@@ -5,7 +5,7 @@
 <!-- Begin partial -->
 {# Modal #}
   {% macro modal_welcome_header() %}
-    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/welcome-gift.png') }}" alt="">
+    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/welcome-gift.png') }}" alt="" loading="lazy" />
   {% endmacro %}
 
   {% call c.modal('modal-welcome', null, modal_welcome_header()) %}
@@ -19,7 +19,7 @@
   {% endcall %}
 
   {% macro modal_birthday_header() %}
-    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/birthday-gift.png') }}" alt="">
+    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/birthday-gift.png') }}" alt="" loading="lazy" />
   {% endmacro %}
 
   {% call c.modal('modal-birthday', null, modal_birthday_header()) %}

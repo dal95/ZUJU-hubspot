@@ -1,17 +1,17 @@
 
   <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
-    
+
     <div class="absolute inset-0">
       <div class="sm:aspect-w-16 sm:aspect-h-9">
         <!--<div><img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-mast.jpg" /></div>-->
-        <div><img class="h-full w-full object-cover object-center" src="{{ module.background_image.src }}" /></div>
+        <div><img class="h-full w-full object-cover object-center" src="{{ module.background_image.src }}" loading="lazy" /></div>
       </div>
     </div>
-    
+
     <div class="relative flex flex-col items-center justify-center sm:p-8">
       <!--<img class="sm:h-10 lg:h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/rank-logo.png" x-bind="animate(16)" />-->
-      <img class="sm:h-10 lg:h-16 mb-16" src="{{ module.logo.src }}" x-bind="animate(16)" />
-      
+      <img class="sm:h-10 lg:h-16 mb-16" src="{{ module.logo.src }}" x-bind="animate(16)" loading="lazy" />
+
       <h1 class="lg:w-1/2 text-white sm:text-5xl lg:text-6xl font-gtcond font-black text-center mb-16" x-bind="animate(24)">
         {#
           {% if content.language.languageTag == "zh-cn" %}
@@ -33,7 +33,7 @@
         #}
         {{ module.description }}
       </p>
-      
+
       <div class="lg:h-20 lg:-mx-4" x-bind="animate(8)">
         <button class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4" x-on:click="noti = true">
           {#
@@ -45,7 +45,7 @@
           #}
           {{ module.notify_label }}
         </button>
-        
+
         <button
                 class="bg-zuju-red text-white sm:text-sm font-bold uppercase rounded px-6 py-4 sm:block sm:mx-auto sm:mb-8 lg:mx-4"
                 x-on:click="playing = true"

@@ -76,7 +76,7 @@
 
         <div class="tiles__item current-point">
           <div class="dfl fl-j-c">
-            <img src="{{ get_asset_url('zuju-theme/images/assets/icons/coin.svg') }}" alt="" />
+            <img src="{{ get_asset_url('zuju-theme/images/assets/icons/coin.svg') }}" alt="" loading="lazy" />
             <div>
               <h4>{{ currLang == "zh-cn" ? "现有" : "Current" }}</h4>
               <div><b>{{ contact.current_loyalty_points }}</b> {{ currLang == "zh-cn" ? "蹴蹴积分" : "Z Points" }}</div>
@@ -100,7 +100,7 @@
       <h4 class="all-caps">{{ currLang == "zh-cn" ? "功夫快跳" : "Kungfu Dash" }}</h4>
       <section class="kungfu-dash-in">
         <div class="kungfu-dash-in__cta">
-          <img src="{{ get_asset_url('zuju-theme/images/assets/kungfu-dash-logo.png') }}" alt="" />
+          <img src="{{ get_asset_url('zuju-theme/images/assets/kungfu-dash-logo.png') }}" alt="" loading="lazy" />
           <a href="/kungfu-dash-game" class="button button--primary">{{ currLang == "zh-cn" ? "立即开始" : "Play Now" }}</a>
         </div>
 
@@ -170,7 +170,7 @@
 
   {# Modal #}
   {% macro modal_referral_header() %}
-    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/referral-modal.png') }}" alt="">
+    <img class="modal__header-bg" src="{{ get_asset_url('zuju-theme/images/assets/bg/referral-modal.png') }}" alt="" loading="lazy">
     <div class="modal__header-inner text-center">
 
       <h3>{{ currLang == "zh-cn" ? "传球" : "Pass the Ball" }}</h3>

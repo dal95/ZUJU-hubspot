@@ -14,7 +14,7 @@
           {% endif %}
         {% endfor %}
       </div>
-      
+
       <div class="w-1/3 sm:w-full sm:max-w-md px-4">
         {% for item in module.gallery.column_2_images %}
           {% if item.src %}
@@ -28,7 +28,7 @@
           {% endif %}
         {% endfor %}
       </div>
-      
+
       <div class="w-1/3 sm:w-full sm:max-w-md px-4">
         {% for item in module.gallery.column_3_images %}
           {% if item.src %}
@@ -44,7 +44,7 @@
       </div>
     </div>
   </div>
-  
+
   <div class="flex sm:flex-col justify-center sm:mb-16">
     <div class="lg:w-5/12 sm:px-8 pt-8">
       <h1 class="lg:w-3/4 text-white sm:text-4xl lg:text-5xl font-gtcond font-black mb-8" x-bind="animate(8)">
@@ -59,7 +59,7 @@
   </div>
   <div class="lg:grid grid-cols-12 grid-rows-[repeat(2,auto)]" x-data="parallax()" x-bind="root">
     <div class="row-start-1 row-span-2 col-start-3 col-span-5 flex items-center justify-center sm:px-8 sm:mb-8">
-      <img class="relative z-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-wellness.png" x-bind="animate(8)" />
+      <img class="relative z-20" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/impact-wellness.png" x-bind="animate(8)" loading="lazy" />
     </div>
     <div class="row-start-1 col-start-6 col-span-3 flex items-center sm:px-8 sm:mb-8">
       <h1 class="relative z-20 text-white sm:text-4xl lg:text-5xl font-gtcond font-black" x-bind="animate(16)">

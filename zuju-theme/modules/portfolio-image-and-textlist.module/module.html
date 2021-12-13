@@ -1,10 +1,10 @@
 
 			<div class="max-w-[1440px] lg:grid grid-cols-12 mx-auto sm:p-8 lg:pb-16" x-data="parallax()" x-bind="root">
 				<!--<div class="row-start-1 col-start-1 col-span-8 flex items-center sm:-mx-8 sm:mb-16"><img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-laptop.png" /></div>-->
-				<div class="row-start-1 col-start-1 col-span-8 flex items-center sm:-mx-8 sm:mb-16"><img src="{{ module.image_field.src }}" /></div>
-				
+				<div class="row-start-1 col-start-1 col-span-8 flex items-center sm:-mx-8 sm:mb-16"><img src="{{ module.image_field.src }}" loading="lazy" /></div>
+
         <div class="row-start-1 col-start-8 col-span-5 border-l-2 border-zuju-red sm:pl-4 lg:pl-16">
-					
+
           <article class="mb-24">
 						<h2 class="text-zuju-red uppercase mb-8" x-bind="animate(12)">
               {#{
@@ -34,7 +34,7 @@
               Save time to set up who you're hiring
               {% endif %}
             </p>
-            
+
 						<p class="text-white mb-8" x-bind="animate(8)">
               {% if content.language.languageTag == "zh-cn" %}
               通过我们的全球网络接触到更多候选人
@@ -42,7 +42,7 @@
               Reach more candidates through our global network
               {% endif %}
             </p>
-            
+
 						<p class="text-white mb-8" x-bind="animate(8)">
               {% if content.language.languageTag == "zh-cn" %}
               在您的概览页上轻松地管理您的候选人
@@ -56,9 +56,9 @@
                 {{ item }}
               </p>
             {% endfor %}
-            
+
 					</article>
-					
+
           <article class="mb-16">
 						<h2 class="text-zuju-red uppercase mb-8" x-bind="animate(12)">
               {#
@@ -109,10 +109,10 @@
               </div>
             {% endfor %}
 					</article>
-          
+
 				</div>
 			</div>
-  
+
 			<div class="max-w-[1440px] flex sm:flex-col lg:flex-wrap mx-auto" x-data="parallax()" x-bind="root">
 				{#
         <div class="lg:w-1/3 relative">
@@ -125,7 +125,7 @@
 					</div>
 					<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-i1.jpg" />
 				</div>
-        
+
 				<div class="lg:w-1/3 relative">
 					<div class="absolute inset-0 flex items-center justify-center">
             {% if content.language.languageTag == "zh-cn" %}
@@ -136,7 +136,7 @@
 					</div>
 					<img src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/exchange-i2.png" />
 				</div>
-        
+
 				<div class="lg:w-1/3 relative">
 					<div class="absolute inset-0 flex items-center justify-center">
             {% if content.language.languageTag == "zh-cn" %}
@@ -152,16 +152,16 @@
           <div class="lg:w-1/3 relative">
             {% if item.foreground.src %}
                 <div class="absolute inset-0 flex items-center justify-center">
-                  <img class="h-3/5" src="{{ item.foreground.src }}" alt="{{ item.foreground.alt }}" x-bind="animate(8)">
+                  <img class="h-3/5" src="{{ item.foreground.src }}" alt="{{ item.foreground.alt }}" x-bind="animate(8)" loading="lazy">
                 </div>
             {% endif %}
             {% if item.background.src %}
-              <img src="{{ item.background.src }}" alt="{{ item.background.alt }}">
+              <img src="{{ item.background.src }}" alt="{{ item.background.alt }}" loading="lazy">
             {% endif %}
           </div>
         {% endfor %}
 			</div>
-  
+
 			<div class="w-full py-16">
         {#
 				<p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
@@ -172,7 +172,7 @@
 					<span class="text-zuju-red">participate.</span>
           {% endif %}
 				</p>
-				
+
         <p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
           {% if content.language.languageTag == "zh-cn" %}
           每个人也<span class="text-zuju-red">从中获益</span>。
@@ -182,7 +182,7 @@
           {% endif %}
 				</p>
         #}
-        
+
         {% for item in module.text_blend %}
           <p class="text-white sm:text-4xl lg:text-5xl font-gtcond font-black text-center mb-2">
             {{ item.white_text }} <span class="text-zuju-red">{{ item.red_text }}</span>

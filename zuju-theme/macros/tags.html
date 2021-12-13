@@ -15,9 +15,9 @@
 
 {% macro avatar() %}
 	{% if contact.custom_avatar %}
-		<img src="{{ request.scheme~'://'~request.domain }}/hubfs/theme-assets/avatars/{{ contact.custom_avatar }}.svg" alt="user avatar">
+		<img src="{{ request.scheme~'://'~request.domain }}/hubfs/theme-assets/avatars/{{ contact.custom_avatar }}.svg" alt="user avatar" loading="lazy">
 	{% else %}
-		<img src="{{ get_asset_url('zuju-theme/images/assets/icons/avatar-default.png') }}" alt="user avatar">
+		<img src="{{ get_asset_url('zuju-theme/images/assets/icons/avatar-default.png') }}" alt="user avatar" loading="lazy">
 	{% endif %}
 {% endmacro %}
 

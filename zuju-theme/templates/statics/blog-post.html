@@ -33,6 +33,7 @@
               class="h-14 w-14 cursor-pointer"
               x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' }); navigator.share?.({ url: location.href })"
               src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/share.png"
+              loading="lazy"
             />
           </div>
           <div class="sm:hidden px-8">
@@ -49,14 +50,14 @@
 							x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'tw_share' })"
 							x-bind:href="`https://twitter.com/intent/tweet?url=${encodeURIComponent(location.href)}`"
               >
-                <img class="h-6 mx-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/share-twitter.png" />
+                <img class="h-6 mx-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/share-twitter.png" loading="lazy" />
               </a>
               <a
                 target="_blank"
                 x-on:click="$share({ uid: '{{ contact.hs_object_id }}', type: 'fb_share' })"
                 x-bind:href="`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(location.href)}`"
               >
-                <img class="h-6 mx-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/share-facebook.png" />
+                <img class="h-6 mx-4" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/share-facebook.png" loading="lazy" />
               </a>
             </div>
             <p class="text-white mb-8">{{ content.publish_date_localized }}</p>
@@ -74,6 +75,7 @@
               class="w-full sm:mb-2 lg:mb-16"
               src="{{ content.featured_image }}"
               x-init="$RO(() => { heroHeight = $height })"
+              loading="lazy"
             />
             <p class="lg:hidden text-xs mb-8">
               {{ content.publish_date_localized }}
@@ -166,7 +168,7 @@
                   {% set renderCount = renderCount.update({ value: renderCount.value + 1 })%}
                   <a href="{{ pop_post.absoluteUrl }}">
                     <article class="mb-8">
-                      <img class="mb-2" src="{{pop_post.featuredImage}}" />
+                      <img class="mb-2" src="{{pop_post.featuredImage}}" loading="lazy" />
                       <h1 class="text-2xl font-gtcond font-regular">
                         {{ pop_post.name }}
                       </h1>
