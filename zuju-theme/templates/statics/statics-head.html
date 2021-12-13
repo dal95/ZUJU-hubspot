@@ -20,7 +20,7 @@ onload="this.onload=null;this.rel='stylesheet'" href="https://fonts.googleapis.c
 
 {{ require_js(get_asset_url('zuju-theme/js/vendors/bodymovin.min.js'), { defer: true }) }}
 <script defer src="https://unpkg.com/@alpinejs/intersect@3.4.1/dist/cdn.min.js"></script>
-{{ require_js(get_asset_url('zuju-theme/js/vendors/alpine.min.js'), { defer: true }) }}
+{{ require_js('https://unpkg.com/alpinejs@3.7.0/dist/cdn.min.js', { defer: true }) }}
 
 {{ require_css(get_asset_url("../../css/statics/app.css")) }}
 <!-- End partial -->
