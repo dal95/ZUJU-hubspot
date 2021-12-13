@@ -1,6 +1,7 @@
 [ {
   "id" : "ce3fc9c4-47f7-0bcc-efd5-f18c260b94f6",
   "name" : "background",
+  "display_width" : null,
   "label" : "Background",
   "required" : false,
   "locked" : false,
@@ -21,12 +22,14 @@
 }, {
   "id" : "c3734769-d6f0-3828-288b-dc6ab5060713",
   "name" : "main",
+  "display_width" : null,
   "label" : "Content (left)",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "d1d817e7-16da-bc25-3078-de77e93797fc",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -38,6 +41,7 @@
   }, {
     "id" : "609fb363-f91e-d45e-2953-fced73925df0",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -46,12 +50,14 @@
   }, {
     "id" : "aaaa9534-b5d8-a9a0-644b-782de9c4ddd7",
     "name" : "button",
+    "display_width" : null,
     "label" : "Button",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "9d9260ed-532d-d3ae-e58b-314dda019ea0",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -81,12 +87,14 @@
 }, {
   "id" : "9018c286-3406-85cd-a6fb-8cecae3c4096",
   "name" : "side",
+  "display_width" : null,
   "label" : "Content (right)",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "94f54e6d-b7f7-30e0-acf9-55eeefce4001",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -98,6 +106,7 @@
   }, {
     "id" : "026705fb-f5b5-ec97-8baf-a3e269112f81",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -114,12 +123,14 @@
 }, {
   "id" : "9bcf5500-c543-dd8e-8653-53553158fd8d",
   "name" : "popup",
+  "display_width" : null,
   "label" : "Popup",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "bd9e5a02-4f27-fba5-a736-e00ad3e14684",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -131,6 +142,7 @@
   }, {
     "id" : "55890e96-76c9-bff3-34d9-7e4f0f268027",
     "name" : "form",
+    "display_width" : null,
     "label" : "Form",
     "required" : false,
     "locked" : false,

@@ -1,6 +1,7 @@
 [ {
   "id" : "aed85699-70e7-bfb9-a42a-f8d1b104fdf0",
   "name" : "background_image",
+  "display_width" : null,
   "label" : "Background Image",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "db53dc33-d128-17e6-fb0c-5dc603aea000",
   "name" : "logo",
+  "display_width" : null,
   "label" : "Logo",
   "required" : false,
   "locked" : false,
@@ -41,6 +43,7 @@
 }, {
   "id" : "2b6e5370-003e-3d92-2e92-ad78bd06f4f6",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -52,6 +55,7 @@
 }, {
   "id" : "dd6ca19c-bada-2ad2-7636-d2f09650f118",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,
@@ -63,6 +67,7 @@
 }, {
   "id" : "fa044059-0f97-d87b-1d29-77985633d8d2",
   "name" : "notify_label",
+  "display_width" : null,
   "label" : "Notify Label",
   "required" : false,
   "locked" : false,
@@ -74,6 +79,7 @@
 }, {
   "id" : "02f9e6ea-dbbd-9d5d-1396-8eb9df95023e",
   "name" : "watch_video_label",
+  "display_width" : null,
   "label" : "Watch Video Label",
   "required" : false,
   "locked" : false,
@@ -85,6 +91,7 @@
 }, {
   "id" : "724ed31e-7912-2768-d303-96554ecb6cbc",
   "name" : "video_url",
+  "display_width" : null,
   "label" : "Video URL",
   "required" : false,
   "locked" : false,
@@ -99,6 +106,7 @@
   "picker" : "video",
   "id" : "7d2c90c8-3d4b-911f-4b94-39dca31900a1",
   "name" : "video_player",
+  "display_width" : null,
   "label" : "Video Player",
   "required" : false,
   "locked" : false,

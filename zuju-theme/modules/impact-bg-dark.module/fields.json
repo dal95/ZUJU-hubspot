@@ -1,12 +1,14 @@
 [ {
   "id" : "7339b2a6-ea01-8c5e-7da6-9008a22617d8",
   "name" : "gallery",
+  "display_width" : null,
   "label" : "Gallery",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "048a1e07-adfd-6fbb-f930-c0ea0c6ebf89",
     "name" : "column_1_images",
+    "display_width" : null,
     "label" : "Column 1 Images",
     "required" : false,
     "locked" : false,
@@ -29,6 +31,7 @@
   }, {
     "id" : "bd1eb6ae-2350-0db7-e650-ae23f89498b5",
     "name" : "column_2_images",
+    "display_width" : null,
     "label" : "Column 2 Images",
     "required" : false,
     "locked" : false,
@@ -51,6 +54,7 @@
   }, {
     "id" : "f12146da-83fa-7cf6-ebf7-63ccc58436f6",
     "name" : "column_3_images",
+    "display_width" : null,
     "label" : "Column 3 Images",
     "required" : false,
     "locked" : false,
@@ -97,12 +101,14 @@
 }, {
   "id" : "fba41a36-2a8b-bc1d-353b-2fa365863fb7",
   "name" : "section1",
+  "display_width" : null,
   "label" : "Section1",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "0c72456f-84e4-b368-3a59-f411aaade848",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -114,6 +120,7 @@
   }, {
     "id" : "f7a35406-e920-c239-c49e-dfb338ab4490",
     "name" : "paragraph",
+    "display_width" : null,
     "label" : "Paragraph",
     "required" : false,
     "locked" : false,
@@ -130,12 +137,14 @@
 }, {
   "id" : "dcddcbdf-3bac-7b46-acb6-939b34cbc0f1",
   "name" : "section2",
+  "display_width" : null,
   "label" : "Section2",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "7c7e6079-0b85-e68c-17ad-61f4c5ccfceb",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -147,6 +156,7 @@
   }, {
     "id" : "67fa51ad-03d2-a7a1-490e-83b13fa8e725",
     "name" : "paragraph",
+    "display_width" : null,
     "label" : "Paragraph",
     "required" : false,
     "locked" : false,
@@ -155,6 +165,7 @@
   }, {
     "id" : "a66a2a4e-7159-3525-60f2-13b878077466",
     "name" : "image_field",
+    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
@@ -176,6 +187,7 @@
     "picker" : "video",
     "id" : "8b0d5751-a36f-84d9-0673-5e5d91661abb",
     "name" : "video",
+    "display_width" : null,
     "label" : "Video URL",
     "required" : false,
     "locked" : false,

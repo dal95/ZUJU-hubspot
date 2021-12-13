@@ -1,6 +1,7 @@
 [ {
   "id" : "4d5c05db-10bf-ccb7-8b6e-3d79c1e24946",
   "name" : "enable",
+  "display_width" : null,
   "label" : "Enable this module?",
   "required" : false,
   "locked" : false,
@@ -10,6 +11,7 @@
 }, {
   "id" : "3c66ce21-4be7-673a-e34c-d2eba25606ff",
   "name" : "banner_image",
+  "display_width" : null,
   "label" : "Banner image",
   "required" : false,
   "locked" : false,
@@ -37,6 +39,7 @@
 }, {
   "id" : "acadf756-3f18-c4ff-7ad7-feeaa552d002",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -55,6 +58,7 @@
 }, {
   "id" : "5006e0ef-0e34-63a2-2278-7f1cd7d9d517",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,
@@ -70,6 +74,7 @@
 }, {
   "id" : "f7d4445f-dd95-5b00-3b81-0465d577bc3b",
   "name" : "button",
+  "display_width" : null,
   "label" : "Button",
   "required" : false,
   "locked" : false,
@@ -83,6 +88,7 @@
   "children" : [ {
     "id" : "daf4681d-c3a3-1803-4b88-d45da5912d1b",
     "name" : "button_label",
+    "display_width" : null,
     "label" : "Button label",
     "required" : false,
     "locked" : false,
@@ -94,6 +100,7 @@
   }, {
     "id" : "559655d0-16b1-dc44-ff80-c928b90593af",
     "name" : "button_url",
+    "display_width" : null,
     "label" : "Button url",
     "required" : false,
     "locked" : false,

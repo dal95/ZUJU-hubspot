@@ -1,6 +1,7 @@
 [ {
   "id" : "3bebd2c3-500b-81ac-f4a9-e3eb017895b0",
   "name" : "image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "89f1c879-bf46-a487-042b-91e59adb1f08",
   "name" : "image_mobile",
+  "display_width" : null,
   "label" : "Image mobile",
   "required" : false,
   "locked" : false,
@@ -41,6 +43,7 @@
 }, {
   "id" : "e2947edd-c472-40f0-707b-900a263c8b0f",
   "name" : "main_description",
+  "display_width" : null,
   "label" : "Main description",
   "required" : false,
   "locked" : false,
@@ -49,12 +52,14 @@
 }, {
   "id" : "c5ea27f5-95a3-2fc3-dab3-fec90294ea08",
   "name" : "section_1",
+  "display_width" : null,
   "label" : "Section 1",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "68a3ffaf-e29d-f1ca-742c-a28ab4187b58",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -62,6 +67,7 @@
   }, {
     "id" : "74fec99c-320e-8d56-41d7-415ad838e820",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -77,12 +83,14 @@
 }, {
   "id" : "7ff70d96-58a4-3874-2886-f7c04c03230b",
   "name" : "section_2",
+  "display_width" : null,
   "label" : "Section 2",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "ebef621b-49f5-d87f-4992-1df407d9a044",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -90,6 +98,7 @@
   }, {
     "id" : "86027ea4-3745-2173-c11b-053a1a6d6d54",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -98,6 +107,7 @@
   }, {
     "id" : "0f87f992-9070-d392-dedc-8b68782c0b66",
     "name" : "image_field",
+    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
@@ -135,6 +145,7 @@
 }, {
   "id" : "5b670b1d-cc4b-88e9-ff9d-525dd98c9006",
   "name" : "footer",
+  "display_width" : null,
   "label" : "Section 3",
   "required" : false,
   "locked" : false,

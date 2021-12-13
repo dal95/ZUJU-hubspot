@@ -1,6 +1,7 @@
 [ {
   "id" : "97f51a2a-4b1c-c529-2a01-cab62fdd5d6f",
   "name" : "text",
+  "display_width" : null,
   "label" : "Text",
   "required" : false,
   "locked" : false,
@@ -12,6 +13,7 @@
 }, {
   "id" : "46a66f8a-bbbf-aa76-86a2-dd9da434c3a7",
   "name" : "url",
+  "display_width" : null,
   "label" : "URL",
   "required" : false,
   "locked" : false,
@@ -30,6 +32,7 @@
 }, {
   "id" : "9046ef24-ec00-49a2-c84b-150b4a7eacf5",
   "name" : "class_name",
+  "display_width" : null,
   "label" : "Class Name",
   "required" : false,
   "locked" : false,

@@ -1,6 +1,7 @@
 [ {
   "id" : "5a1112d4-cccb-aec1-0c27-4b7b8bb85d79",
   "name" : "image_field",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,
@@ -21,12 +22,14 @@
 }, {
   "id" : "6c2843c0-3e2d-735b-a54c-4c2d70d0b117",
   "name" : "article",
+  "display_width" : null,
   "label" : "Feature 1",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "2f3483aa-c30c-1b5c-1948-7ba82d73e9b5",
     "name" : "subtext",
+    "display_width" : null,
     "label" : "Subtitle",
     "required" : false,
     "locked" : false,
@@ -38,6 +41,7 @@
   }, {
     "id" : "e0f500a2-c230-f0f0-9a28-5048d4958751",
     "name" : "text_field",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -49,6 +53,7 @@
   }, {
     "id" : "c755cf0e-4959-b5ff-5875-2e6be49ccfd5",
     "name" : "textlist",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -73,12 +78,14 @@
 }, {
   "id" : "aae257ed-0811-42db-7533-d42450549fc3",
   "name" : "article_2",
+  "display_width" : null,
   "label" : "Feature 2",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "5ca414b5-2b9e-9824-c6fc-c9439bc54772",
     "name" : "subtext",
+    "display_width" : null,
     "label" : "Subtitle",
     "required" : false,
     "locked" : false,
@@ -90,6 +97,7 @@
   }, {
     "id" : "911a2aa2-f26e-9210-dafc-09428db312a7",
     "name" : "text_field",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -101,6 +109,7 @@
   }, {
     "id" : "2582a8e9-fe09-2c8b-9fc1-41c3c364ca9a",
     "name" : "textlist",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -125,6 +134,7 @@
 }, {
   "id" : "3313ae9e-2212-4650-cfd1-ab027eba4231",
   "name" : "gallery",
+  "display_width" : null,
   "label" : "Other Features",
   "required" : false,
   "locked" : false,
@@ -137,6 +147,7 @@
   "children" : [ {
     "id" : "2e3ae281-c150-21c5-000a-fe65d2a0a1dd",
     "name" : "foreground",
+    "display_width" : null,
     "label" : "Foreground",
     "required" : false,
     "locked" : false,
@@ -157,6 +168,7 @@
   }, {
     "id" : "e49950b2-60e9-5f5a-1f0f-78899a25f56f",
     "name" : "background",
+    "display_width" : null,
     "label" : "Background",
     "required" : false,
     "locked" : false,
@@ -203,6 +215,7 @@
 }, {
   "id" : "4284fd91-1c3b-89d3-4b2f-afc732fc3f3e",
   "name" : "text_blend",
+  "display_width" : null,
   "label" : "Text Blend",
   "required" : false,
   "locked" : false,
@@ -215,6 +228,7 @@
   "children" : [ {
     "id" : "90f021fe-c766-92b0-5f38-b91c7b9c6965",
     "name" : "white_text",
+    "display_width" : null,
     "label" : "White Text",
     "required" : false,
     "locked" : false,
@@ -226,6 +240,7 @@
   }, {
     "id" : "e78cd35e-4b2b-2506-8abc-dcaf1a75e727",
     "name" : "red_text",
+    "display_width" : null,
     "label" : "Red Text",
     "required" : false,
     "locked" : false,

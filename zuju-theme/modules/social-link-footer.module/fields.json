@@ -1,6 +1,7 @@
 [ {
   "id" : "05955180-da1b-b81e-6214-38552f7dd6b2",
   "name" : "links",
+  "display_width" : null,
   "label" : "Links",
   "required" : false,
   "locked" : false,
@@ -13,6 +14,7 @@
   "children" : [ {
     "id" : "56f0fe62-b15a-3dad-461d-752361418ec2",
     "name" : "text",
+    "display_width" : null,
     "label" : "Text",
     "required" : false,
     "locked" : false,
@@ -23,6 +25,7 @@
   }, {
     "id" : "79932739-459b-4aa0-5b21-f120f85c0e20",
     "name" : "link",
+    "display_width" : null,
     "label" : "Link",
     "required" : false,
     "locked" : false,
@@ -41,6 +44,7 @@
   }, {
     "id" : "d40b5166-2cbc-04c1-6e05-06b60d423b50",
     "name" : "icon",
+    "display_width" : null,
     "label" : "Icon",
     "required" : false,
     "locked" : false,

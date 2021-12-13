@@ -1,6 +1,7 @@
 [ {
   "id" : "a370e898-df70-b611-b631-e074cd733db4",
   "name" : "section_id",
+  "display_width" : null,
   "label" : "Section ID",
   "required" : false,
   "locked" : false,

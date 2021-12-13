@@ -1,6 +1,7 @@
 [ {
   "id" : "cfca47c6-146e-5107-6d9a-7709a752f617",
   "name" : "background",
+  "display_width" : null,
   "label" : "Background",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "6cc47c32-fed6-7899-b3ad-3947bebfd940",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -31,6 +33,7 @@
 }, {
   "id" : "0e565fd5-63b8-e6c5-db18-a728e31dcbef",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,
@@ -39,12 +42,14 @@
 }, {
   "id" : "385cdedc-c1d3-9281-4ed0-c67ca068b72e",
   "name" : "button",
+  "display_width" : null,
   "label" : "Button",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "ceec2d97-4355-ebf7-3663-ba664187b0cd",
     "name" : "text",
+    "display_width" : null,
     "label" : "Text",
     "required" : false,
     "locked" : false,
@@ -63,12 +68,14 @@
 }, {
   "id" : "0f4c4b3e-bddc-9f89-39f7-4af65fb1151c",
   "name" : "popup",
+  "display_width" : null,
   "label" : "Popup",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "7a5b3247-de26-fb00-73cc-5b72762e5eee",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -80,6 +87,7 @@
   }, {
     "id" : "a913c67f-08ad-2a04-5749-4d8b921d5cdb",
     "name" : "form",
+    "display_width" : null,
     "label" : "Form",
     "required" : false,
     "locked" : false,

@@ -1,6 +1,7 @@
 [ {
   "id" : "4c507bad-02a4-cf5a-1783-7ee23cae41c6",
   "name" : "image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "69139e97-c583-2f6e-f18f-ed3c10166cf2",
   "name" : "background_image",
+  "display_width" : null,
   "label" : "Background Image",
   "required" : false,
   "locked" : false,
@@ -41,6 +43,7 @@
 }, {
   "id" : "c7e9e26a-b3e0-359f-d207-b67e81e5dc55",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -52,6 +55,7 @@
 }, {
   "id" : "147e2e0d-c5ef-cf68-47ac-182e2990e88f",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,
@@ -63,6 +67,7 @@
 }, {
   "id" : "938e6a6d-59f0-2142-9e77-51f07b106920",
   "name" : "text_blend",
+  "display_width" : null,
   "label" : "Text Blend",
   "required" : false,
   "locked" : false,
@@ -75,6 +80,7 @@
   "children" : [ {
     "id" : "74b60008-3959-744d-d307-d6f701f278c6",
     "name" : "white_text",
+    "display_width" : null,
     "label" : "White Text",
     "required" : false,
     "locked" : false,
@@ -86,6 +92,7 @@
   }, {
     "id" : "67c9ef1d-18ec-7ce2-d0ae-20227ce92885",
     "name" : "red_text",
+    "display_width" : null,
     "label" : "Red text",
     "required" : false,
     "locked" : false,

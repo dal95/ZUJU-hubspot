@@ -1,12 +1,14 @@
 [ {
   "id" : "67f39054-e589-a3a6-73e7-524dd79de91b",
   "name" : "manifesto",
+  "display_width" : null,
   "label" : "Manifesto",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "882b566f-49f1-090d-8c94-9552ac7960c3",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -18,6 +20,7 @@
   }, {
     "id" : "731043dc-5262-8b11-1dfd-eb623173cfd1",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -26,6 +29,7 @@
   }, {
     "id" : "0341b73b-f195-87cd-a9d8-db45e044d106",
     "name" : "image",
+    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
@@ -46,12 +50,14 @@
   }, {
     "id" : "6599f28a-8736-019d-49ef-4af346452157",
     "name" : "button",
+    "display_width" : null,
     "label" : "CTA Button (left)",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "1cce906f-ee36-14b8-0299-b35798869c59",
       "name" : "url",
+      "display_width" : null,
       "label" : "URL",
       "required" : false,
       "locked" : false,
@@ -70,6 +76,7 @@
     }, {
       "id" : "98bcd1ec-846c-0f2a-e3ac-94df0dab72a4",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -97,12 +104,14 @@
   }, {
     "id" : "273c2f9b-9f62-7f43-c69f-7efd32bb7b40",
     "name" : "button_trailer",
+    "display_width" : null,
     "label" : "CTA Button (right)",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "e840ea1f-2d4b-7079-d3b9-3f39dbc8270c",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -115,6 +124,7 @@
       "picker" : "video",
       "id" : "e3971de3-3d40-dcde-36fd-a7af56971154",
       "name" : "video_file",
+      "display_width" : null,
       "label" : "Video file",
       "required" : false,
       "locked" : false,
@@ -165,12 +175,14 @@
 }, {
   "id" : "c3f7bb7c-a014-be94-a8e1-8dc92c70e273",
   "name" : "portfolio",
+  "display_width" : null,
   "label" : "Portfolio",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "10bbdf76-e28b-90b1-06e2-5ccaa5a81167",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -182,6 +194,7 @@
   }, {
     "id" : "e2cf47aa-2a87-3b5e-90c6-79a427ab14b9",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -190,6 +203,7 @@
   }, {
     "id" : "08d384ef-df09-173d-119d-db80e24a1413",
     "name" : "content_group",
+    "display_width" : null,
     "label" : "Content group",
     "required" : false,
     "locked" : false,
@@ -202,6 +216,7 @@
     "children" : [ {
       "id" : "8dd5b732-4703-0c6c-cadb-398ebc78c29e",
       "name" : "image",
+      "display_width" : null,
       "label" : "Image",
       "required" : false,
       "locked" : false,
@@ -222,6 +237,7 @@
     }, {
       "id" : "0144ed5d-864a-5a42-347c-a520a363b040",
       "name" : "title",
+      "display_width" : null,
       "label" : "Title",
       "required" : false,
       "locked" : false,
@@ -233,6 +249,7 @@
     }, {
       "id" : "e8b35cd1-d7b2-1250-ec29-b61d26179ff0",
       "name" : "content",
+      "display_width" : null,
       "label" : "Content",
       "required" : false,
       "locked" : false,
@@ -285,12 +302,14 @@
   }, {
     "id" : "10746552-8e6e-a84d-a1a5-91743f3e0ae3",
     "name" : "button_portfolio",
+    "display_width" : null,
     "label" : "Portfolio CTA Button",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "08169550-b342-5643-6401-cfd80d9fd72e",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -302,6 +321,7 @@
     }, {
       "id" : "4f45519c-335c-102b-4dee-439fe5ea70cc",
       "name" : "url",
+      "display_width" : null,
       "label" : "URL",
       "required" : false,
       "locked" : false,

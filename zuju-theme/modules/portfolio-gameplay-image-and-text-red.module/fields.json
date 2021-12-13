@@ -1,6 +1,7 @@
 [ {
   "id" : "48df640f-43f8-bac5-4b01-3f725448d855",
   "name" : "backgroud_image",
+  "display_width" : null,
   "label" : "Backgroud Image",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "6f5dcb23-9966-404e-1e5d-f44a80c446e4",
   "name" : "moving_image",
+  "display_width" : null,
   "label" : "Animated Image",
   "required" : false,
   "locked" : false,
@@ -41,6 +43,7 @@
 }, {
   "id" : "af3a1609-9f9f-925e-26c3-5ae52c7b4add",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,
@@ -52,6 +55,7 @@
 }, {
   "id" : "286e4fd8-62b3-f3c9-96d8-42001b4e7e29",
   "name" : "small_text",
+  "display_width" : null,
   "label" : "Small Text",
   "required" : false,
   "locked" : false,

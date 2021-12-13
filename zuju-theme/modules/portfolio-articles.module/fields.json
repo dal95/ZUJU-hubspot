@@ -1,6 +1,7 @@
 [ {
   "id" : "167fe19f-f835-e68b-e7c5-58d20940e5a5",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -13,12 +14,14 @@
 }, {
   "id" : "f0671b0a-da4f-33a9-43ac-429e5df012ff",
   "name" : "article",
+  "display_width" : null,
   "label" : "Product 1",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "36374355-5221-49ca-470c-4717897a63d4",
     "name" : "article_link",
+    "display_width" : null,
     "label" : "Article Link",
     "required" : false,
     "locked" : false,
@@ -32,6 +35,7 @@
   }, {
     "id" : "08208f04-1790-9121-f97d-1543a4ffb4e3",
     "name" : "article_image",
+    "display_width" : null,
     "label" : "Article Image",
     "required" : false,
     "locked" : false,
@@ -52,6 +56,7 @@
   }, {
     "id" : "f8d415ad-7023-8b8a-ffb1-c52bebf58f32",
     "name" : "article_title",
+    "display_width" : null,
     "label" : "Article Title",
     "required" : false,
     "locked" : false,
@@ -63,6 +68,7 @@
   }, {
     "id" : "1585ef5a-7e7a-5f69-1891-a8d3aea74c92",
     "name" : "article_description",
+    "display_width" : null,
     "label" : "Article Description",
     "required" : false,
     "locked" : false,
@@ -97,12 +103,14 @@
 }, {
   "id" : "89c435da-1cf0-8dc4-72f2-998108d9adb5",
   "name" : "article_2",
+  "display_width" : null,
   "label" : "Product 2",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "16f69fee-976a-56bf-aec9-6fad22cf4e80",
     "name" : "article_link",
+    "display_width" : null,
     "label" : "Article Link",
     "required" : false,
     "locked" : false,
@@ -116,6 +124,7 @@
   }, {
     "id" : "33ad53b4-a3a1-b3d9-f4f8-db04f6c325e0",
     "name" : "article_image",
+    "display_width" : null,
     "label" : "Article Image",
     "required" : false,
     "locked" : false,
@@ -136,6 +145,7 @@
   }, {
     "id" : "2d4f00a2-6ef3-3ef2-598b-b8231376f65e",
     "name" : "article_title",
+    "display_width" : null,
     "label" : "Article Title",
     "required" : false,
     "locked" : false,
@@ -148,6 +158,7 @@
   }, {
     "id" : "b067ff2d-08a2-57d6-c58e-c86cceab0404",
     "name" : "article_description",
+    "display_width" : null,
     "label" : "Article Description",
     "required" : false,
     "locked" : false,
@@ -182,6 +193,7 @@
 }, {
   "id" : "3ef3b7bb-fa3b-538d-1c93-e8d8caff2fa3",
   "name" : "convo_title",
+  "display_width" : null,
   "label" : "Convo Title",
   "required" : false,
   "locked" : false,
@@ -193,6 +205,7 @@
 }, {
   "id" : "10063767-e43a-d15e-8238-ed4d389d2042",
   "name" : "convo_button",
+  "display_width" : null,
   "label" : "Convo Button",
   "required" : false,
   "locked" : false,

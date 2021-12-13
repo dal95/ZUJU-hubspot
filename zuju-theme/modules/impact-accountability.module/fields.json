@@ -1,6 +1,7 @@
 [ {
   "id" : "2f452141-504d-ccc0-8663-91d95fb59c29",
   "name" : "image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "0517d2a4-4ecd-3300-4ce2-010662ae2e8e",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -32,6 +34,7 @@
 }, {
   "id" : "44420eb6-adc6-13c9-3fcb-fb7aaf475678",
   "name" : "paragraph",
+  "display_width" : null,
   "label" : "Paragraph",
   "required" : false,
   "locked" : false,

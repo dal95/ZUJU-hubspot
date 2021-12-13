@@ -1,6 +1,7 @@
 [ {
   "id" : "e75d012f-72dc-add5-b7b9-609859bfc15c",
   "name" : "form",
+  "display_width" : null,
   "label" : "Form",
   "required" : false,
   "locked" : false,
@@ -15,6 +16,7 @@
 }, {
   "id" : "dfde18e4-de30-7183-4bed-66dc9b782ea9",
   "name" : "mode",
+  "display_width" : null,
   "label" : "Mode",
   "inline_help_text" : "On development",
   "required" : false,
@@ -25,18 +27,21 @@
 }, {
   "id" : "f6979640-bf1b-3c17-622c-732387b04cac",
   "name" : "async_validation_messages",
+  "display_width" : null,
   "label" : "Async Validation Messages",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "995eb744-548d-1297-bcd8-40ba38931b70",
     "name" : "success",
+    "display_width" : null,
     "label" : "Success",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "c770350d-e18a-1eae-8063-788f180ab155",
       "name" : "username_valid",
+      "display_width" : null,
       "label" : "Nickname available",
       "required" : false,
       "locked" : false,
@@ -48,6 +53,7 @@
     }, {
       "id" : "c1f19ce0-b48e-c977-33c5-edaa241b4ca4",
       "name" : "promo_code_valid",
+      "display_width" : null,
       "label" : "Valid Promo code",
       "required" : false,
       "locked" : false,
@@ -59,6 +65,7 @@
     }, {
       "id" : "5ba6f77e-54d4-fded-43e9-52ee6a65edd9",
       "name" : "email_available",
+      "display_width" : null,
       "label" : "Email available",
       "required" : false,
       "locked" : false,
@@ -79,12 +86,14 @@
   }, {
     "id" : "b28d4581-15a4-69f2-039e-2e791c8693f2",
     "name" : "error",
+    "display_width" : null,
     "label" : "Error",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "e3ea374d-b84c-9f7c-a2d5-a5bad10add6b",
       "name" : "username_taken",
+      "display_width" : null,
       "label" : "Nickname is taken",
       "required" : false,
       "locked" : false,
@@ -96,6 +105,7 @@
     }, {
       "id" : "49715eda-4ba9-b232-f39a-b0743b039809",
       "name" : "username_invalid_character",
+      "display_width" : null,
       "label" : "Invalid character",
       "required" : false,
       "locked" : false,
@@ -107,6 +117,7 @@
     }, {
       "id" : "2ca9b819-58a3-f153-27d0-0dc3547f80c2",
       "name" : "username_minmax",
+      "display_width" : null,
       "label" : "Nickname Min/Max Char",
       "required" : false,
       "locked" : false,
@@ -118,6 +129,7 @@
     }, {
       "id" : "fa17ae5e-b5e5-ab7b-fc76-fe5ab3c448aa",
       "name" : "promo_code_invalid",
+      "display_width" : null,
       "label" : "Invalid promo code",
       "required" : false,
       "locked" : false,
@@ -129,6 +141,7 @@
     }, {
       "id" : "2b104034-afb3-60d0-6b50-27eef177e023",
       "name" : "email_exist",
+      "display_width" : null,
       "label" : "Email exist",
       "required" : false,
       "locked" : false,

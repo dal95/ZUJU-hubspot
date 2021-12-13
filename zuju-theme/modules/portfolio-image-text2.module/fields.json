@@ -1,6 +1,7 @@
 [ {
   "id" : "ad4ace94-e71d-fe43-74b4-6a01ef410e72",
   "name" : "portfolio_image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,
@@ -17,6 +18,7 @@
 }, {
   "id" : "6864fbdd-5441-b3f6-c56d-d036e1fc952c",
   "name" : "portfolio_first_text",
+  "display_width" : null,
   "label" : "First Text",
   "required" : false,
   "locked" : false,
@@ -27,6 +29,7 @@
 }, {
   "id" : "6c838026-1cab-c419-6032-d436a55650d5",
   "name" : "portfolio_second_text",
+  "display_width" : null,
   "label" : "Second Text",
   "required" : false,
   "locked" : false,

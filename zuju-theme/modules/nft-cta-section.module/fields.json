@@ -1,6 +1,7 @@
 [ {
   "id" : "47f83ea2-90ba-14b1-564c-e6292ab2dc2a",
   "name" : "enable_module",
+  "display_width" : null,
   "label" : "Enable this module?",
   "required" : true,
   "locked" : false,
@@ -10,6 +11,7 @@
 }, {
   "id" : "ac6f3005-cd4a-fe29-8642-7026554dd771",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -28,6 +30,7 @@
 }, {
   "id" : "d200dba5-1e73-ab78-9462-cdface0d7761",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description Line 1",
   "required" : false,
   "locked" : false,
@@ -46,6 +49,7 @@
 }, {
   "id" : "dbbd3655-ada6-0cbe-78af-06e5b1148ad1",
   "name" : "auction_time",
+  "display_width" : null,
   "label" : "Description Line 2",
   "required" : false,
   "locked" : false,
@@ -64,6 +68,7 @@
 }, {
   "id" : "033704d3-a6d9-2c67-288e-c5f93e283ccb",
   "name" : "button",
+  "display_width" : null,
   "label" : "Button",
   "required" : false,
   "locked" : false,
@@ -77,6 +82,7 @@
   "children" : [ {
     "id" : "519203e8-3fb2-1694-922b-77afc9e017a8",
     "name" : "text",
+    "display_width" : null,
     "label" : "Text",
     "required" : false,
     "locked" : false,
@@ -89,6 +95,7 @@
   }, {
     "id" : "386b3414-f4d7-0c26-e85d-30eca7f45d14",
     "name" : "link",
+    "display_width" : null,
     "label" : "Link",
     "required" : false,
     "locked" : false,
@@ -123,6 +130,7 @@
 }, {
   "id" : "e4f7801f-fcf4-b510-8e1a-d543016e08c2",
   "name" : "t_c",
+  "display_width" : null,
   "label" : "T&C",
   "required" : false,
   "locked" : false,
@@ -138,6 +146,7 @@
 }, {
   "id" : "0d8a37ff-f809-9191-dca6-12cb7a6463e1",
   "name" : "image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,

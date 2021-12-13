@@ -1,6 +1,7 @@
 [ {
   "id" : "card",
   "name" : "card",
+  "display_width" : null,
   "label" : "Card",
   "required" : false,
   "locked" : false,
@@ -13,6 +14,7 @@
   "children" : [ {
     "id" : "card.image",
     "name" : "image",
+    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
@@ -26,6 +28,7 @@
   }, {
     "id" : "card.title",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -37,6 +40,7 @@
   }, {
     "id" : "card.title_heading_type",
     "name" : "title_heading_type",
+    "display_width" : null,
     "label" : "Title heading type",
     "required" : true,
     "locked" : false,
@@ -54,6 +58,7 @@
   }, {
     "id" : "card.text",
     "name" : "text",
+    "display_width" : null,
     "label" : "Content",
     "required" : false,
     "locked" : false,
@@ -91,24 +96,28 @@
 }, {
   "id" : "styles",
   "name" : "styles",
+  "display_width" : null,
   "label" : "Styles",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "styles.image",
     "name" : "image",
+    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "styles.image.corner",
       "name" : "corner",
+      "display_width" : null,
       "label" : "Corner",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.image.corner.radius",
         "name" : "radius",
+        "display_width" : null,
         "label" : "Radius",
         "required" : false,
         "locked" : false,
@@ -128,18 +137,21 @@
   }, {
     "id" : "styles.title",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "styles.title.text",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.title.text.font",
         "name" : "font",
+        "display_width" : null,
         "label" : "Font",
         "required" : false,
         "locked" : false,
@@ -163,12 +175,14 @@
     }, {
       "id" : "styles.title.alignment",
       "name" : "alignment",
+      "display_width" : null,
       "label" : "Alignment",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.title.alignment.alignment",
         "name" : "alignment",
+        "display_width" : null,
         "label" : "Alignment",
         "required" : false,
         "locked" : false,
@@ -186,18 +200,21 @@
   }, {
     "id" : "styles.content",
     "name" : "content",
+    "display_width" : null,
     "label" : "Content",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "styles.content.text",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.content.text.font",
         "name" : "font",
+        "display_width" : null,
         "label" : "Font",
         "required" : false,
         "locked" : false,
@@ -221,12 +238,14 @@
     }, {
       "id" : "styles.content.alignment",
       "name" : "alignment",
+      "display_width" : null,
       "label" : "Alignment",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.content.alignment.alignment",
         "name" : "alignment",
+        "display_width" : null,
         "label" : "Alignment",
         "required" : false,
         "locked" : false,
@@ -244,18 +263,21 @@
   }, {
     "id" : "styles.card",
     "name" : "card",
+    "display_width" : null,
     "label" : "Card",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "styles.card.background",
       "name" : "background",
+      "display_width" : null,
       "label" : "Background",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.card.background.background_type",
         "name" : "background_type",
+        "display_width" : null,
         "label" : "Background type",
         "required" : false,
         "locked" : false,
@@ -266,6 +288,7 @@
       }, {
         "id" : "styles.card.background.color",
         "name" : "color",
+        "display_width" : null,
         "label" : "Color",
         "required" : false,
         "locked" : false,
@@ -284,6 +307,7 @@
       }, {
         "id" : "styles.card.background.gradient",
         "name" : "gradient",
+        "display_width" : null,
         "label" : "Gradient",
         "required" : false,
         "locked" : false,
@@ -299,6 +323,7 @@
       }, {
         "id" : "styles.card.background.image",
         "name" : "image",
+        "display_width" : null,
         "label" : "Image",
         "required" : false,
         "locked" : false,
@@ -322,12 +347,14 @@
     }, {
       "id" : "styles.card.border",
       "name" : "border",
+      "display_width" : null,
       "label" : "Border",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.card.border.border",
         "name" : "border",
+        "display_width" : null,
         "label" : "Border",
         "required" : false,
         "locked" : false,
@@ -341,12 +368,14 @@
     }, {
       "id" : "styles.card.corner",
       "name" : "corner",
+      "display_width" : null,
       "label" : "Corner",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.card.corner.radius",
         "name" : "radius",
+        "display_width" : null,
         "label" : "Radius",
         "required" : false,
         "locked" : false,
@@ -362,12 +391,14 @@
     }, {
       "id" : "styles.card.spacing",
       "name" : "spacing",
+      "display_width" : null,
       "label" : "Spacing",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.card.spacing.spacing",
         "name" : "spacing",
+        "display_width" : null,
         "label" : "Spacing",
         "required" : false,
         "locked" : false,

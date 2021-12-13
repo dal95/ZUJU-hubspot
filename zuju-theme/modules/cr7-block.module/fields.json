@@ -1,6 +1,7 @@
 [ {
   "id" : "6d2a8ca5-7f2b-09e1-37f7-f149d1f5d71e",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -11,6 +12,7 @@
 }, {
   "id" : "0ba0aa99-c42e-fe4e-68fb-49282d21fd31",
   "name" : "list",
+  "display_width" : null,
   "label" : "List",
   "required" : false,
   "locked" : false,
@@ -23,6 +25,7 @@
   "children" : [ {
     "id" : "ababcf2d-4523-252d-9fd6-970ff561e6f2",
     "name" : "text_main",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -33,6 +36,7 @@
   }, {
     "id" : "6be82843-f152-c56d-0dbd-723962356de3",
     "name" : "text_secondary",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -43,6 +47,7 @@
   }, {
     "id" : "871fc7b6-acad-5964-d0b1-5f9b91d83be7",
     "name" : "amount",
+    "display_width" : null,
     "label" : "Points",
     "required" : false,
     "locked" : false,

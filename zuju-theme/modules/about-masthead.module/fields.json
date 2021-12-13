@@ -1,6 +1,7 @@
 [ {
   "id" : "b6f172ec-a3dc-7079-e432-d5ef18d1c1e7",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -10,6 +11,7 @@
   "picker" : "file",
   "id" : "273179db-260b-154b-cbae-dbb3ac1b257d",
   "name" : "video",
+  "display_width" : null,
   "label" : "Video",
   "required" : false,
   "locked" : false,

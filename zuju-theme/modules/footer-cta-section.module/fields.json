@@ -1,12 +1,14 @@
 [ {
   "id" : "3f181a98-9d26-753d-1567-7f300d0d63cd",
   "name" : "subscriber",
+  "display_width" : null,
   "label" : "Subscriber",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "563561b1-7c96-939d-5209-2fa9d2b54b68",
     "name" : "heading",
+    "display_width" : null,
     "label" : "Heading",
     "required" : false,
     "locked" : false,
@@ -18,6 +20,7 @@
   }, {
     "id" : "0055e285-300f-428a-3652-bbbe5b76e1a3",
     "name" : "text",
+    "display_width" : null,
     "label" : "Text",
     "required" : false,
     "locked" : false,
@@ -29,6 +32,7 @@
   }, {
     "id" : "5bd5d4db-a0bf-9467-5c71-e430a645ad44",
     "name" : "form",
+    "display_width" : null,
     "label" : "Form",
     "required" : false,
     "locked" : false,
@@ -52,12 +56,14 @@
 }, {
   "id" : "3bfd353f-16a2-735b-d435-730cc4f34318",
   "name" : "contact",
+  "display_width" : null,
   "label" : "Contact",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "97d112c1-006f-c8c6-ede8-52f1d4749e9f",
     "name" : "heading",
+    "display_width" : null,
     "label" : "Heading",
     "required" : false,
     "locked" : false,
@@ -69,6 +75,7 @@
   }, {
     "id" : "ad301569-86cd-3b5e-8f27-9c9ee6366a67",
     "name" : "text",
+    "display_width" : null,
     "label" : "Text",
     "required" : false,
     "locked" : false,
@@ -80,6 +87,7 @@
   }, {
     "id" : "d6b3d7c0-4f3d-83b0-f3b3-640c10e0b2b7",
     "name" : "button_text",
+    "display_width" : null,
     "label" : "Button text",
     "required" : false,
     "locked" : false,
@@ -91,6 +99,7 @@
   }, {
     "id" : "94a4c1d8-ec11-76f2-1522-a7eebe5ab9f3",
     "name" : "form",
+    "display_width" : null,
     "label" : "Form",
     "required" : false,
     "locked" : false,

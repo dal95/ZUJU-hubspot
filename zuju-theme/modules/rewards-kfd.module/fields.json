@@ -1,6 +1,7 @@
 [ {
   "id" : "c7ed4d77-9cd4-3867-75ab-3b333dbf7b5c",
   "name" : "background",
+  "display_width" : null,
   "label" : "Background",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "6f9ed03e-2f03-fb4e-0f8a-790697489edc",
   "name" : "logo",
+  "display_width" : null,
   "label" : "Logo",
   "required" : false,
   "locked" : false,
@@ -41,6 +43,7 @@
 }, {
   "id" : "a53182a6-4bca-2b2a-f072-5ace2180df0e",
   "name" : "main_title",
+  "display_width" : null,
   "label" : "Main title",
   "required" : false,
   "locked" : false,
@@ -52,12 +55,14 @@
 }, {
   "id" : "2574ffa9-8288-9495-e393-ddd53f8dd56e",
   "name" : "kdg",
+  "display_width" : null,
   "label" : "Kungfu Dash Game",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "6211158c-744a-6cf6-b2b8-3dc096171152",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -69,18 +74,21 @@
   }, {
     "id" : "52ad4c81-0ecb-2e71-f4da-1c1aed6cdcb5",
     "name" : "tree",
+    "display_width" : null,
     "label" : "Tree",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "285dd46d-001c-1bd0-18e6-419550140f64",
       "name" : "tree_parent",
+      "display_width" : null,
       "label" : "Tree parent",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "350ea859-f6aa-4e3d-bd39-d30f56a5245b",
         "name" : "text",
+        "display_width" : null,
         "label" : "Text",
         "required" : false,
         "locked" : false,
@@ -92,6 +100,7 @@
       }, {
         "id" : "2523e7ad-21b0-bacc-9d9a-14f7dd33ca57",
         "name" : "number",
+        "display_width" : null,
         "label" : "Amount",
         "required" : false,
         "locked" : false,
@@ -108,6 +117,7 @@
     }, {
       "id" : "34b4df38-e685-293c-218a-3b2b1acdf4fc",
       "name" : "tree_children",
+      "display_width" : null,
       "label" : "Tree children",
       "required" : false,
       "locked" : false,
@@ -120,6 +130,7 @@
       "children" : [ {
         "id" : "051e82b4-348d-e677-a713-0e9ea40d60a4",
         "name" : "text",
+        "display_width" : null,
         "label" : "Text",
         "required" : false,
         "locked" : false,
@@ -131,6 +142,7 @@
       }, {
         "id" : "525905a4-37cd-cc16-b401-5e5dffbd6bc6",
         "name" : "number",
+        "display_width" : null,
         "label" : "Amount",
         "required" : false,
         "locked" : false,
@@ -159,6 +171,7 @@
   }, {
     "id" : "cd76a32c-3a6c-0f07-0bbb-8074d7114fe9",
     "name" : "inline_description",
+    "display_width" : null,
     "label" : "Inline description",
     "required" : false,
     "locked" : false,
@@ -167,6 +180,7 @@
   }, {
     "id" : "fce1c129-2dc7-01e0-a6e3-73e06457bd17",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -175,12 +189,14 @@
   }, {
     "id" : "f89230c1-62fa-af5b-047f-29ee95313f2e",
     "name" : "button",
+    "display_width" : null,
     "label" : "Button",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "4be1ab1b-825d-193b-0731-88f4aa9e1eba",
       "name" : "url",
+      "display_width" : null,
       "label" : "URL",
       "required" : false,
       "locked" : false,
@@ -199,6 +215,7 @@
     }, {
       "id" : "de92fb41-c376-8910-8ffd-969a9048e7f5",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -255,12 +272,14 @@
 }, {
   "id" : "14e53916-8f1b-b7d7-d7e1-cc328e53013d",
   "name" : "dth",
+  "display_width" : null,
   "label" : "Daily Treasure Hunt",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "fa3e532c-3480-c008-d4d3-a09eb3cfc2bd",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -272,6 +291,7 @@
   }, {
     "id" : "27057ad8-8b14-a3bb-a0f9-67fb611c6126",
     "name" : "list",
+    "display_width" : null,
     "label" : "List",
     "required" : false,
     "locked" : false,
@@ -291,6 +311,7 @@
     "children" : [ {
       "id" : "4b5e56ae-9b6f-f6c6-1e01-bea3e2596b3a",
       "name" : "title",
+      "display_width" : null,
       "label" : "Title",
       "required" : false,
       "locked" : false,
@@ -302,6 +323,7 @@
     }, {
       "id" : "c08caa58-d7eb-6179-c45e-e86028ceb8a0",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -313,6 +335,7 @@
     }, {
       "id" : "92624cc1-00a1-03dc-7fcf-1c4b225b6efd",
       "name" : "number",
+      "display_width" : null,
       "label" : "Number",
       "required" : false,
       "locked" : false,
@@ -322,6 +345,7 @@
     }, {
       "id" : "b5dff35d-bf7e-7578-f3c0-dbc85479d958",
       "name" : "type",
+      "display_width" : null,
       "label" : "Type",
       "required" : false,
       "locked" : false,
@@ -341,6 +365,7 @@
   }, {
     "id" : "a2d6577e-22a4-4c7c-d3e5-d27c86fda8dd",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -362,12 +387,14 @@
 }, {
   "id" : "80272aac-d0e2-29fb-4ea4-a80ade74372e",
   "name" : "cr7",
+  "display_width" : null,
   "label" : "CR7 (Cross Ref 7)",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "1727ca46-9c87-c44a-3832-260c6ac2dfbd",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -379,6 +406,7 @@
   }, {
     "id" : "07f69304-046f-5cff-923d-b4de892733b9",
     "name" : "list",
+    "display_width" : null,
     "label" : "List",
     "required" : false,
     "locked" : false,
@@ -398,6 +426,7 @@
     "children" : [ {
       "id" : "80ab0f5b-4b67-2849-d762-437fc10ff472",
       "name" : "title",
+      "display_width" : null,
       "label" : "Title",
       "required" : false,
       "locked" : false,
@@ -409,6 +438,7 @@
     }, {
       "id" : "2e3b9ce4-e540-638b-8fc1-c0fe462dfbe4",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -420,6 +450,7 @@
     }, {
       "id" : "98254eb6-93f1-4975-fa14-ae3e24275022",
       "name" : "number",
+      "display_width" : null,
       "label" : "Amount",
       "required" : false,
       "locked" : false,
@@ -429,6 +460,7 @@
     }, {
       "id" : "f7d09253-7ed5-3a2f-2414-ad34daf9f8aa",
       "name" : "type",
+      "display_width" : null,
       "label" : "Type",
       "required" : false,
       "locked" : false,
@@ -448,6 +480,7 @@
   }, {
     "id" : "cdf889bc-9550-476b-0e25-575b42556f19",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -469,12 +502,14 @@
 }, {
   "id" : "38ff2feb-3e05-6d99-1ce0-0a953f074375",
   "name" : "share",
+  "display_width" : null,
   "label" : "Share ZujuGP",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "0fb08ee3-d153-83a8-9357-3263395c0cd4",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -486,6 +521,7 @@
   }, {
     "id" : "53a4f804-f8c8-60ed-709e-0fa3667cb9e9",
     "name" : "list",
+    "display_width" : null,
     "label" : "List",
     "required" : false,
     "locked" : false,
@@ -505,6 +541,7 @@
     "children" : [ {
       "id" : "b3bc4952-c77f-1988-7a51-7a270bccdeb5",
       "name" : "title",
+      "display_width" : null,
       "label" : "Title",
       "required" : false,
       "locked" : false,
@@ -516,6 +553,7 @@
     }, {
       "id" : "19adf53d-c7f3-bd3b-7829-d56ef5287a26",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -527,6 +565,7 @@
     }, {
       "id" : "c7fee44e-5ca3-8694-c9d5-77134d0b5465",
       "name" : "number",
+      "display_width" : null,
       "label" : "Amount",
       "required" : false,
       "locked" : false,
@@ -536,6 +575,7 @@
     }, {
       "id" : "bb3273f7-fd70-a64e-b294-5fc84de67f8d",
       "name" : "type",
+      "display_width" : null,
       "label" : "Type",
       "required" : false,
       "locked" : false,
@@ -555,6 +595,7 @@
   }, {
     "id" : "1f3db5cf-64fa-1d69-c6c5-fd28bb3b8e39",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -563,6 +604,7 @@
   }, {
     "id" : "196ceab7-ffdf-05f1-f887-19314ffcc781",
     "name" : "image",
+    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,

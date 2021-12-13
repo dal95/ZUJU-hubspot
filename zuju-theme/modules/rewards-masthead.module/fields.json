@@ -1,6 +1,7 @@
 [ {
   "id" : "12c5b4cd-8593-47ea-d925-b9f249e865cc",
   "name" : "background",
+  "display_width" : null,
   "label" : "Background",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "46ff6b5d-6d1e-10f6-cfae-9919b4e314a8",
   "name" : "main_title",
+  "display_width" : null,
   "label" : "Main title",
   "required" : false,
   "locked" : false,
@@ -32,12 +34,14 @@
 }, {
   "id" : "cc3261b0-8dc3-f74d-ce0a-202f6c861a57",
   "name" : "content",
+  "display_width" : null,
   "label" : "Content",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "47f7da91-fde9-130e-b0a1-97fc3a265e71",
     "name" : "paragraph",
+    "display_width" : null,
     "label" : "Paragraph",
     "required" : false,
     "locked" : false,
@@ -46,6 +50,7 @@
   }, {
     "id" : "4741e2e4-66ab-a292-d47f-6c47ef994a64",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -57,12 +62,14 @@
   }, {
     "id" : "40753b1a-9352-a269-6180-b005371cda8d",
     "name" : "button_primary",
+    "display_width" : null,
     "label" : "Button Primary",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "d7be5fe7-30a5-8750-a389-1bb7e453ea8a",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -74,6 +81,7 @@
     }, {
       "id" : "bd7ff191-4f77-fb91-b37f-5ff80ef8ddfd",
       "name" : "link_field",
+      "display_width" : null,
       "label" : "Link",
       "required" : false,
       "locked" : false,
@@ -108,12 +116,14 @@
   }, {
     "id" : "fb5e634e-54bd-a6fd-7253-2bd47652645e",
     "name" : "button_secondary",
+    "display_width" : null,
     "label" : "Button Secondary",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "1c6add8e-2282-fab0-8971-213481f784a9",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
@@ -125,6 +135,7 @@
     }, {
       "id" : "1a2bb1a6-4615-3eaf-fb02-59d18beee1e7",
       "name" : "link_field",
+      "display_width" : null,
       "label" : "Link",
       "required" : false,
       "locked" : false,

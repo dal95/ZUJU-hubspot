@@ -90,7 +90,15 @@
             Competition closes on 1 December 2021 at 2359 GMT.
             {% endif %}
           </p>
-
+          
+          <p class="text-center">
+            {% if content.language.languageTag == "zh-cn" %}
+            通过单击此按钮，即表示您同意我们的<a href="{{ content_by_id(57218093957).absolute_url }}" target="_blank">条款和条件</a>
+            {% else %}
+            By clicking this button, you agree to our <a href="{{ content_by_id(57218093957).absolute_url }}" target="_blank">terms and conditions</a>
+            {% endif %}
+          </p>
+          
           <a href="{{ content_by_id(56960838040).absolute_url }}">
             <button class="button button-o-primary">
               {% if content.language.languageTag == "zh-cn" %}

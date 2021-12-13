@@ -1,6 +1,7 @@
 [ {
   "id" : "5e55db88-1c07-ae50-2946-f034b1572226",
   "name" : "image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "14a7643f-ce7f-17e4-3148-e74edb69caf2",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -32,6 +34,7 @@
 }, {
   "id" : "4121e197-13a8-e91e-71e5-07fb48236076",
   "name" : "paragraph",
+  "display_width" : null,
   "label" : "Paragraph",
   "required" : false,
   "locked" : false,

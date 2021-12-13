@@ -1,6 +1,7 @@
 [ {
   "id" : "9447eac8-6da3-c0a8-6814-fad2c3bcaa29",
   "name" : "card_image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "e2067fa1-fe58-b95b-04b1-7342c7d84903",
   "name" : "card_title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -32,6 +34,7 @@
 }, {
   "id" : "2e98693c-d0b4-21ff-6a1b-c532172e5919",
   "name" : "card_description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,

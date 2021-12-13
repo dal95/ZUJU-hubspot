@@ -1,6 +1,7 @@
 [ {
   "id" : "4e11a81b-8140-0b46-a48a-596d0ba68c3c",
   "name" : "list",
+  "display_width" : null,
   "label" : "List",
   "required" : false,
   "locked" : false,
@@ -13,6 +14,7 @@
   "children" : [ {
     "id" : "518fac56-681f-7601-6aeb-029fa97bd9c2",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -24,6 +26,7 @@
   }, {
     "id" : "fdc8dd6a-c81a-44c7-9b2c-d0943a011db0",
     "name" : "content",
+    "display_width" : null,
     "label" : "Content",
     "required" : false,
     "locked" : false,

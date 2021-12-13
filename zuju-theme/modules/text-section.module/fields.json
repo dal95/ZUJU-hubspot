@@ -1,6 +1,7 @@
 [ {
   "id" : "aac64d0a-c66a-9d07-2cf6-ff147cdc193b",
   "name" : "text",
+  "display_width" : null,
   "label" : "Text",
   "required" : false,
   "locked" : false,

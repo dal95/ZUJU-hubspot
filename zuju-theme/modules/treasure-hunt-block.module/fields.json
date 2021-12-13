@@ -1,6 +1,7 @@
 [ {
   "id" : "304c69f6-f89a-4223-d481-1d03f75cec40",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -11,6 +12,7 @@
 }, {
   "id" : "5f828656-7782-1587-1dcd-fcae480fc6e8",
   "name" : "list",
+  "display_width" : null,
   "label" : "List",
   "required" : false,
   "locked" : false,
@@ -23,6 +25,7 @@
   "children" : [ {
     "id" : "fb3237fa-7502-3db6-fef4-8654af3d9202",
     "name" : "main_text",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -33,6 +36,7 @@
   }, {
     "id" : "bc9ea23e-a04f-cfdd-fbc0-7090ea1a2aba",
     "name" : "secondary_text",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -43,6 +47,7 @@
   }, {
     "id" : "12eca9ff-e94c-28b6-10b3-0590ca80c5bb",
     "name" : "amount",
+    "display_width" : null,
     "label" : "Points",
     "required" : false,
     "locked" : false,
@@ -52,6 +57,7 @@
   }, {
     "id" : "7a6aa620-daf0-d187-8283-2fc7f3775e46",
     "name" : "type",
+    "display_width" : null,
     "label" : "Background",
     "required" : false,
     "locked" : false,
@@ -69,6 +75,7 @@
 }, {
   "id" : "b6397d89-5fd7-051f-647f-ca0aa8a55503",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,

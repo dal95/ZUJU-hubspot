@@ -1,6 +1,7 @@
 [ {
   "id" : "d486c560-628d-acf3-2ac6-e3a618cb9cc5",
   "name" : "card_image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "c032aa25-1795-7fdb-df46-a549b3fac368",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -32,6 +34,7 @@
 }, {
   "id" : "67c59ddf-c3ab-1f7a-2811-4205d8263f56",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,
@@ -43,6 +46,7 @@
 }, {
   "id" : "2e0c5dd0-b118-6cf1-804c-629a8a73118e",
   "name" : "background_image",
+  "display_width" : null,
   "label" : "Background Image",
   "required" : false,
   "locked" : false,

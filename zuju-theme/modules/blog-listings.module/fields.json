@@ -1,6 +1,7 @@
 [ {
   "id" : "layout_style",
   "name" : "layout_style",
+  "display_width" : null,
   "label" : "Layout style",
   "required" : true,
   "locked" : false,
@@ -11,6 +12,7 @@
 }, {
   "id" : "featured_image",
   "name" : "featured_image",
+  "display_width" : null,
   "label" : "Featured image",
   "required" : false,
   "locked" : false,
@@ -20,6 +22,7 @@
 }, {
   "id" : "tags",
   "name" : "tags",
+  "display_width" : null,
   "label" : "Tags",
   "required" : false,
   "locked" : false,
@@ -29,6 +32,7 @@
 }, {
   "id" : "title",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -38,6 +42,7 @@
 }, {
   "id" : "author",
   "name" : "author",
+  "display_width" : null,
   "label" : "Author",
   "required" : false,
   "locked" : false,
@@ -47,6 +52,7 @@
 }, {
   "id" : "publish_date",
   "name" : "publish_date",
+  "display_width" : null,
   "label" : "Publish date",
   "required" : false,
   "locked" : false,
@@ -56,6 +62,7 @@
 }, {
   "id" : "description",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,
@@ -65,6 +72,7 @@
 }, {
   "id" : "button",
   "name" : "button",
+  "display_width" : null,
   "label" : "Button",
   "required" : false,
   "locked" : false,
@@ -74,6 +82,7 @@
 }, {
   "id" : "button_text",
   "name" : "button_text",
+  "display_width" : null,
   "label" : "Button text",
   "required" : true,
   "locked" : false,
@@ -92,12 +101,14 @@
 }, {
   "id" : "styles",
   "name" : "styles",
+  "display_width" : null,
   "label" : "Styles",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "styles.featured_image",
     "name" : "featured_image",
+    "display_width" : null,
     "label" : "Featured image",
     "required" : false,
     "locked" : false,
@@ -111,12 +122,14 @@
     "children" : [ {
       "id" : "styles.featured_image.corner",
       "name" : "corner",
+      "display_width" : null,
       "label" : "Corner",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.featured_image.corner.radius",
         "name" : "radius",
+        "display_width" : null,
         "label" : "Radius",
         "required" : false,
         "locked" : false,
@@ -136,6 +149,7 @@
   }, {
     "id" : "styles.tags",
     "name" : "tags",
+    "display_width" : null,
     "label" : "Tags",
     "required" : false,
     "locked" : false,
@@ -149,12 +163,14 @@
     "children" : [ {
       "id" : "styles.tags.text",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.tags.text.font",
         "name" : "font",
+        "display_width" : null,
         "label" : "Font",
         "required" : false,
         "locked" : false,
@@ -174,6 +190,7 @@
   }, {
     "id" : "styles.title",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -187,12 +204,14 @@
     "children" : [ {
       "id" : "styles.title.text",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.title.text.font",
         "name" : "font",
+        "display_width" : null,
         "label" : "Font",
         "required" : false,
         "locked" : false,
@@ -212,6 +231,7 @@
   }, {
     "id" : "styles.author",
     "name" : "author",
+    "display_width" : null,
     "label" : "Author",
     "required" : false,
     "locked" : false,
@@ -225,18 +245,21 @@
     "children" : [ {
       "id" : "styles.author.image",
       "name" : "image",
+      "display_width" : null,
       "label" : "Image",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.author.image.corner",
         "name" : "corner",
+        "display_width" : null,
         "label" : "Corner",
         "required" : false,
         "locked" : false,
         "children" : [ {
           "id" : "styles.author.image.corner.radius",
           "name" : "radius",
+          "display_width" : null,
           "label" : "Radius",
           "required" : false,
           "locked" : false,
@@ -256,12 +279,14 @@
     }, {
       "id" : "styles.author.text",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.author.text.font",
         "name" : "font",
+        "display_width" : null,
         "label" : "Font",
         "required" : false,
         "locked" : false,
@@ -281,6 +306,7 @@
   }, {
     "id" : "styles.publish_date",
     "name" : "publish_date",
+    "display_width" : null,
     "label" : "Publish date",
     "required" : false,
     "locked" : false,
@@ -294,12 +320,14 @@
     "children" : [ {
       "id" : "styles.publish_date.text",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.publish_date.text.font",
         "name" : "font",
+        "display_width" : null,
         "label" : "Font",
         "required" : false,
         "locked" : false,
@@ -319,6 +347,7 @@
   }, {
     "id" : "styles.description",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -332,12 +361,14 @@
     "children" : [ {
       "id" : "styles.description.text",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.description.text.font",
         "name" : "font",
+        "display_width" : null,
         "label" : "Font",
         "required" : false,
         "locked" : false,
@@ -377,6 +408,7 @@
   }, {
     "id" : "styles.button",
     "name" : "button",
+    "display_width" : null,
     "label" : "Button",
     "required" : false,
     "locked" : false,
@@ -390,12 +422,14 @@
     "children" : [ {
       "id" : "styles.button.text",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.button.text.font",
         "name" : "font",
+        "display_width" : null,
         "label" : "Font",
         "required" : false,
         "locked" : false,
@@ -419,12 +453,14 @@
     }, {
       "id" : "styles.button.background",
       "name" : "background",
+      "display_width" : null,
       "label" : "Background",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.button.background.color",
         "name" : "color",
+        "display_width" : null,
         "label" : "Color",
         "required" : false,
         "locked" : false,
@@ -440,12 +476,14 @@
     }, {
       "id" : "styles.button.border",
       "name" : "border",
+      "display_width" : null,
       "label" : "Border",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.button.border.border",
         "name" : "border",
+        "display_width" : null,
         "label" : "Border",
         "required" : false,
         "locked" : false,
@@ -459,12 +497,14 @@
     }, {
       "id" : "styles.button.corner",
       "name" : "corner",
+      "display_width" : null,
       "label" : "Corner",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.button.corner.radius",
         "name" : "radius",
+        "display_width" : null,
         "label" : "Radius",
         "required" : false,
         "locked" : false,
@@ -480,12 +520,14 @@
     }, {
       "id" : "styles.button.spacing",
       "name" : "spacing",
+      "display_width" : null,
       "label" : "Spacing",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.button.spacing.spacing",
         "name" : "spacing",
+        "display_width" : null,
         "label" : "Spacing",
         "required" : false,
         "locked" : false,
@@ -507,12 +549,14 @@
     }, {
       "id" : "styles.button.alignment",
       "name" : "alignment",
+      "display_width" : null,
       "label" : "Alignment",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.button.alignment.alignment",
         "name" : "alignment",
+        "display_width" : null,
         "label" : "Alignment",
         "required" : false,
         "locked" : false,

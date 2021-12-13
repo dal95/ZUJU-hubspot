@@ -1,6 +1,7 @@
 [ {
   "id" : "88f8ae53-9e9c-a71d-1cb5-da57d78cf9c9",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -12,6 +13,7 @@
 }, {
   "id" : "c8817f85-9caf-e757-1fdb-837fa8666336",
   "name" : "image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,

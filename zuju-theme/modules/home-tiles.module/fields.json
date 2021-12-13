@@ -1,12 +1,14 @@
 [ {
   "id" : "2b89447e-a2fe-ed35-f941-f7c742456ae6",
   "name" : "main_tiles",
+  "display_width" : null,
   "label" : "Main banner (left)",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "0b84bf05-4e8e-dad5-2103-e26caf486709",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -18,6 +20,7 @@
   }, {
     "id" : "3875ab53-5f3c-0f38-8624-8f59d7ffd75f",
     "name" : "background",
+    "display_width" : null,
     "label" : "Background",
     "required" : false,
     "locked" : false,
@@ -38,6 +41,7 @@
   }, {
     "id" : "39825c24-c521-429b-8bb5-889642f36e41",
     "name" : "cta_url",
+    "display_width" : null,
     "label" : "URL",
     "required" : false,
     "locked" : false,
@@ -51,6 +55,7 @@
   }, {
     "id" : "8396ce92-7776-b698-1f20-e0b2954cf36b",
     "name" : "cta_text",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -85,6 +90,7 @@
 }, {
   "id" : "38d3e71b-9af9-4a87-8d96-06e1bf78672f",
   "name" : "children",
+  "display_width" : null,
   "label" : "Banners",
   "required" : false,
   "locked" : false,
@@ -97,6 +103,7 @@
   "children" : [ {
     "id" : "8e503466-b246-61df-f5be-73230b083957",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -108,6 +115,7 @@
   }, {
     "id" : "6c2558ed-97ef-7da2-fed7-f5a7db63f88d",
     "name" : "background",
+    "display_width" : null,
     "label" : "Background",
     "required" : false,
     "locked" : false,
@@ -128,6 +136,7 @@
   }, {
     "id" : "fe4976cb-8d63-05d2-daf4-37a060f59718",
     "name" : "url_field",
+    "display_width" : null,
     "label" : "URL",
     "required" : false,
     "locked" : false,
@@ -141,6 +150,7 @@
   }, {
     "id" : "ee433d53-eceb-f238-5a34-bcd8599501b1",
     "name" : "cta_text",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,

@@ -1,6 +1,7 @@
 [ {
   "id" : "24786775-f605-fbda-8611-9667fa06eaf9",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -12,6 +13,7 @@
 }, {
   "id" : "e7badc94-c122-1af9-1c30-063f00fc512b",
   "name" : "blog_selector",
+  "display_width" : null,
   "label" : "Blog Selector",
   "inline_help_text" : "Select your blog listing ",
   "required" : false,
@@ -21,6 +23,7 @@
 }, {
   "id" : "28b36ba5-f1e2-cfea-8445-d1104e886f30",
   "name" : "display_option",
+  "display_width" : null,
   "label" : "Display option",
   "required" : false,
   "locked" : false,
@@ -31,6 +34,7 @@
 }, {
   "id" : "f1d6083c-aa1e-9d1e-b8d3-fa07419953d4",
   "name" : "sort_by",
+  "display_width" : null,
   "label" : "Popular Sort By",
   "required" : false,
   "locked" : false,
@@ -48,12 +52,14 @@
 }, {
   "id" : "5e7b9e1c-a74d-ab6c-1535-35b3fe7015b9",
   "name" : "view_all",
+  "display_width" : null,
   "label" : "View all",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "fbeadbba-fff8-7ad9-db89-e29d29137fcc",
     "name" : "url",
+    "display_width" : null,
     "label" : "URL",
     "required" : false,
     "locked" : false,
@@ -72,6 +78,7 @@
   }, {
     "id" : "8ab6679a-7f6b-6624-8104-0be186acf35f",
     "name" : "text",
+    "display_width" : null,
     "label" : "Text",
     "required" : false,
     "locked" : false,

@@ -1,6 +1,7 @@
 [ {
   "id" : "fd8d31ab-cd0d-20e9-c3cf-4dc09078a895",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -11,6 +12,7 @@
 }, {
   "id" : "a4b167fc-dfe3-d4bf-b003-7728620ba510",
   "name" : "list",
+  "display_width" : null,
   "label" : "List",
   "required" : false,
   "locked" : false,
@@ -23,6 +25,7 @@
   "children" : [ {
     "id" : "a6a027f9-f5c8-3c1b-889b-9f5bfc32b842",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -31,6 +34,7 @@
   }, {
     "id" : "ed044d3d-427f-195f-613b-ec29102ac4f9",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -38,6 +42,7 @@
   }, {
     "id" : "64fd0636-c728-87e0-fabc-cbfc3afba946",
     "name" : "points",
+    "display_width" : null,
     "label" : "Points",
     "required" : false,
     "locked" : false,
@@ -54,6 +59,7 @@
 }, {
   "id" : "28118025-540a-d514-973a-6e3223354576",
   "name" : "image",
+  "display_width" : null,
   "label" : "Image",
   "required" : false,
   "locked" : false,

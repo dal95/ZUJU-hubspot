@@ -1,6 +1,7 @@
 [ {
   "id" : "menu",
   "name" : "menu",
+  "display_width" : null,
   "label" : "Menu",
   "required" : false,
   "locked" : false,
@@ -9,6 +10,7 @@
 }, {
   "id" : "max_levels",
   "name" : "max_levels",
+  "display_width" : null,
   "label" : "Max levels",
   "help_text" : "Determines the number of menu tree children that can be expanded in the menu",
   "required" : true,
@@ -22,18 +24,21 @@
 }, {
   "id" : "styles",
   "name" : "styles",
+  "display_width" : null,
   "label" : "Styles",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "styles.text",
     "name" : "text",
+    "display_width" : null,
     "label" : "Text",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "styles.text.color",
       "name" : "color",
+      "display_width" : null,
       "label" : "Color",
       "required" : false,
       "locked" : false,
@@ -58,18 +63,21 @@
   }, {
     "id" : "styles.drop_downs",
     "name" : "drop_downs",
+    "display_width" : null,
     "label" : "Drop downs",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "styles.drop_downs.text",
       "name" : "text",
+      "display_width" : null,
       "label" : "Text",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.drop_downs.text.color",
         "name" : "color",
+        "display_width" : null,
         "label" : "Color",
         "required" : false,
         "locked" : false,
@@ -94,12 +102,14 @@
     }, {
       "id" : "styles.drop_downs.background",
       "name" : "background",
+      "display_width" : null,
       "label" : "Background",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.drop_downs.background.color",
         "name" : "color",
+        "display_width" : null,
         "label" : "Color",
         "required" : false,
         "locked" : false,
@@ -115,12 +125,14 @@
     }, {
       "id" : "styles.drop_downs.border",
       "name" : "border",
+      "display_width" : null,
       "label" : "Border",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.drop_downs.border.border",
         "name" : "border",
+        "display_width" : null,
         "label" : "Border",
         "required" : false,
         "locked" : false,

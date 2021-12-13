@@ -1,6 +1,7 @@
 [ {
   "id" : "show_previous_and_next_links",
   "name" : "show_previous_and_next_links",
+  "display_width" : null,
   "label" : "Show previous and next links",
   "required" : false,
   "locked" : false,
@@ -10,6 +11,7 @@
 }, {
   "id" : "previous_label",
   "name" : "previous_label",
+  "display_width" : null,
   "label" : "Previous label",
   "required" : false,
   "locked" : false,
@@ -28,6 +30,7 @@
 }, {
   "id" : "next_label",
   "name" : "next_label",
+  "display_width" : null,
   "label" : "Next label",
   "required" : false,
   "locked" : false,
@@ -46,6 +49,7 @@
 }, {
   "id" : "show_first_and_last_links",
   "name" : "show_first_and_last_links",
+  "display_width" : null,
   "label" : "Show first and last links",
   "required" : false,
   "locked" : false,
@@ -55,6 +59,7 @@
 }, {
   "id" : "first_label",
   "name" : "first_label",
+  "display_width" : null,
   "label" : "First label",
   "required" : false,
   "locked" : false,
@@ -73,6 +78,7 @@
 }, {
   "id" : "last_label",
   "name" : "last_label",
+  "display_width" : null,
   "label" : "Last label",
   "required" : false,
   "locked" : false,
@@ -91,18 +97,21 @@
 }, {
   "id" : "styles",
   "name" : "styles",
+  "display_width" : null,
   "label" : "Styles",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "styles.text",
     "name" : "text",
+    "display_width" : null,
     "label" : "Text",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "styles.text.font",
       "name" : "font",
+      "display_width" : null,
       "label" : "Font",
       "required" : false,
       "locked" : false,
@@ -118,12 +127,14 @@
   }, {
     "id" : "styles.spacing",
     "name" : "spacing",
+    "display_width" : null,
     "label" : "Spacing",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "styles.spacing.space_between_links",
       "name" : "space_between_links",
+      "display_width" : null,
       "label" : "Space between links",
       "required" : false,
       "locked" : false,
@@ -136,6 +147,7 @@
     }, {
       "id" : "styles.spacing.spacing",
       "name" : "spacing",
+      "display_width" : null,
       "label" : "Spacing",
       "required" : false,
       "locked" : false,
@@ -157,18 +169,21 @@
   }, {
     "id" : "styles.active",
     "name" : "active",
+    "display_width" : null,
     "label" : "Active",
     "required" : false,
     "locked" : false,
     "children" : [ {
       "id" : "styles.active.border",
       "name" : "border",
+      "display_width" : null,
       "label" : "Border",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.active.border.border",
         "name" : "border",
+        "display_width" : null,
         "label" : "Border",
         "required" : false,
         "locked" : false,
@@ -182,12 +197,14 @@
     }, {
       "id" : "styles.active.corner",
       "name" : "corner",
+      "display_width" : null,
       "label" : "Corner",
       "required" : false,
       "locked" : false,
       "children" : [ {
         "id" : "styles.active.corner.radius",
         "name" : "radius",
+        "display_width" : null,
         "label" : "Radius",
         "required" : false,
         "locked" : false,

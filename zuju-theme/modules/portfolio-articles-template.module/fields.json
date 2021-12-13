@@ -1,12 +1,14 @@
 [ {
   "id" : "7feb9743-055d-0a98-9c70-6284f0623ad1",
   "name" : "article_1",
+  "display_width" : null,
   "label" : "Product 1",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "639c473c-eea6-ad04-9f63-f3f91e551a2f",
     "name" : "image",
+    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
@@ -27,6 +29,7 @@
   }, {
     "id" : "195df962-f946-e11c-46ca-c84196fee07e",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -38,6 +41,7 @@
   }, {
     "id" : "66e4a21d-3688-02b7-4ad1-88eb9b18774d",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -49,6 +53,7 @@
   }, {
     "id" : "1fa0b236-2162-4a38-7f28-154e7fa2b52f",
     "name" : "page_link",
+    "display_width" : null,
     "label" : "Page Link",
     "required" : false,
     "locked" : false,
@@ -85,12 +90,14 @@
 }, {
   "id" : "c998823b-2326-093a-1018-566bff9366a2",
   "name" : "article_2",
+  "display_width" : null,
   "label" : "Product 2",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "b90e1094-7817-8567-c2bd-b5032a3b116c",
     "name" : "image",
+    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
@@ -111,6 +118,7 @@
   }, {
     "id" : "4d4a5d2d-79c4-6c42-4417-9c4c22c552e1",
     "name" : "title",
+    "display_width" : null,
     "label" : "Title",
     "required" : false,
     "locked" : false,
@@ -122,6 +130,7 @@
   }, {
     "id" : "fe41474b-790f-069e-a1e3-a46f5162c644",
     "name" : "description",
+    "display_width" : null,
     "label" : "Description",
     "required" : false,
     "locked" : false,
@@ -133,6 +142,7 @@
   }, {
     "id" : "61e347eb-54aa-36b2-65d7-4000833d2161",
     "name" : "page_link",
+    "display_width" : null,
     "label" : "Page Link",
     "required" : false,
     "locked" : false,

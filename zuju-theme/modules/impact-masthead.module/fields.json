@@ -1,6 +1,7 @@
 [ {
   "id" : "df53b88e-e305-9b9a-15fd-2e62de95d699",
   "name" : "background",
+  "display_width" : null,
   "label" : "Background",
   "required" : false,
   "locked" : false,
@@ -21,6 +22,7 @@
 }, {
   "id" : "86c3fcac-942e-ffab-58ee-3d1b41b3555c",
   "name" : "title",
+  "display_width" : null,
   "label" : "Title",
   "required" : false,
   "locked" : false,
@@ -32,6 +34,7 @@
 }, {
   "id" : "837c71f6-5e05-af9c-76d5-053ceff0cad4",
   "name" : "group",
+  "display_width" : null,
   "label" : "Group",
   "required" : false,
   "locked" : false,
@@ -44,6 +47,7 @@
   "children" : [ {
     "id" : "3384f3ca-1288-d1ab-6f66-c0eba38065fa",
     "name" : "image",
+    "display_width" : null,
     "label" : "Image",
     "required" : false,
     "locked" : false,
@@ -64,6 +68,7 @@
   }, {
     "id" : "d758a56c-8482-230d-2c24-f1515f3d4e77",
     "name" : "group_name",
+    "display_width" : null,
     "label" : "Name",
     "required" : false,
     "locked" : false,
@@ -92,6 +97,7 @@
 }, {
   "id" : "e52f20b7-89a3-4e56-e122-4cfd5819bf66",
   "name" : "description",
+  "display_width" : null,
   "label" : "Description",
   "required" : false,
   "locked" : false,

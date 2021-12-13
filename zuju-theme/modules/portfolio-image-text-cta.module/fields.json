@@ -1,6 +1,7 @@
 [ {
   "id" : "69a6349e-a65c-0f0a-28a5-bd30b9e495ac",
   "name" : "main_title",
+  "display_width" : null,
   "label" : "Main Title",
   "required" : false,
   "locked" : false,
@@ -13,6 +14,7 @@
 }, {
   "id" : "8def12d7-a0fb-dbd9-a77c-efcbc7c7c994",
   "name" : "card_image",
+  "display_width" : null,
   "label" : "Card Image",
   "required" : false,
   "locked" : false,
@@ -33,6 +35,7 @@
 }, {
   "id" : "1da80a1e-0ca6-e940-0c55-0ba0e6d30c45",
   "name" : "description_html",
+  "display_width" : null,
   "label" : "Description (html)",
   "required" : false,
   "locked" : false,
@@ -41,12 +44,14 @@
 }, {
   "id" : "149756e7-5b3d-1f0b-5e15-53eb21702485",
   "name" : "cta",
+  "display_width" : null,
   "label" : "CTA",
   "required" : false,
   "locked" : false,
   "children" : [ {
     "id" : "362635c6-c0c0-844b-efed-896b7032a0b2",
     "name" : "button_title",
+    "display_width" : null,
     "label" : "Button Title",
     "required" : false,
     "locked" : false,
@@ -59,6 +64,7 @@
   }, {
     "id" : "c2dde25a-ea45-da44-c7a4-ce1aca4404df",
     "name" : "button_url",
+    "display_width" : null,
     "label" : "Button URL",
     "required" : false,
     "locked" : false,
