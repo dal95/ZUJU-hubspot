@@ -39,6 +39,10 @@ $(document).ready(function () {
   var currURL = window.location.href
   var currPath = location.pathname
 
+  if (new URL(currURL).searchParams.get('reset_success')) {
+    modalIn('#modal-message')
+  }
+
   if (
     currPath == '/' &&
     currURL.toLowerCase().indexOf('/zh-cn') == -1 &&
@@ -47,9 +51,9 @@ $(document).ready(function () {
   ) {
     var redirectURL =
       location.protocol + '//' + window.location.hostname + '/zh-cn' + currPath
-      window.location.replace(redirectURL)
+    window.location.replace(redirectURL)
   } else {
-      //console.log("currPath is EN homepage or lang is NOT zh-cn or already on /zh-cn, so do nothing");
+    //console.log("currPath is EN homepage or lang is NOT zh-cn or already on /zh-cn, so do nothing");
   }
 
   $('#back-to-top').on('click', function () {
@@ -63,7 +67,13 @@ $(document).ready(function () {
   $(window).on('scroll', function () {
     var scroll = $(window).scrollTop()
 
-    if (scroll > scroll / $(window).height() * 100) {
+    if (scroll > 10) {
+      $('.nav-sticky').addClass('is-sticky')
+    } else {
+      $('.nav-sticky').removeClass('is-sticky')
+    }
+
+    if (scroll > (scroll / $(window).height()) * 100) {
       $backToTop.removeClass('is-hidden')
     } else {
       $backToTop.addClass('is-hidden')
@@ -78,8 +88,7 @@ $('[data-modal-target]').on('click', function () {
 })
 
 triggerClose.on('click', function () {
-  modalOut('.modal', () => {
-  })
+  modalOut('.modal', () => {})
 })
 
 function isModalActive (modalClass = '.modal') {
@@ -345,27 +354,6 @@ if (membership_tier) {
   })
     .then(res => res.json())
     .then(res => console.log(res.message))
-
-  fetch(`${BASE_URL}/points-history?uid=${uid}`)
-    .then(res => res.json())
-    .then(res => {
-      const transactions = res.data
-
-      // Render
-      renderHistoryTable(mapToGroup(transactions))
-
-      $('.hs-content-id-56472088979 .pnt-history .tabs__menu').on(
-        'click',
-        function () {
-          $('.hs-content-id-56472088979 .pnt-history .tabs__menu').removeClass(
-            'active'
-          )
-          $(this).addClass('active')
-          renderHistoryTable(mapToGroup(transactions, $(this).data('filter')))
-        }
-      )
-    })
-    .catch(err => console.log(err))
 }
 
 const dashboardAllowedPages = ['/members-portal', '/membership']
@@ -594,34 +582,39 @@ $('a[href*="#"]')
   // Remove links that don't actually link to anything
   .not('[href="#"]')
   .not('[href="#0"]')
-  .click(function(event) {
+  .click(function (event) {
     // On-page links
     if (
-      location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '')
-      &&
+      location.pathname.replace(/^\//, '') ==
+        this.pathname.replace(/^\//, '') &&
       location.hostname == this.hostname
     ) {
       // Figure out element to scroll to
-      var target = $(this.hash);
-      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+      var target = $(this.hash)
+      target = target.length ? target : $('[name=' + this.hash.slice(1) + ']')
       // Does a scroll target exist?
       if (target.length) {
         // Only prevent default if animation is actually gonna happen
-        event.preventDefault();
-        $('html, body').animate({
-          scrollTop: target.offset().top - navHeight
-        }, 300, function() {
-          // Callback after animation
-          // Must change focus!
-          var $target = $(target);
-          $target.focus();
-          if ($target.is(":focus")) { // Checking if the target was focused
-            return false;
-          } else {
-            $target.attr('tabindex','-1'); // Adding tabindex for elements not focusable
-            $target.focus(); // Set focus again
-          };
-        });
+        event.preventDefault()
+        $('html, body').animate(
+          {
+            scrollTop: target.offset().top - navHeight
+          },
+          300,
+          function () {
+            // Callback after animation
+            // Must change focus!
+            var $target = $(target)
+            $target.focus()
+            if ($target.is(':focus')) {
+              // Checking if the target was focused
+              return false
+            } else {
+              $target.attr('tabindex', '-1') // Adding tabindex for elements not focusable
+              $target.focus() // Set focus again
+            }
+          }
+        )
       }
     }
-  });
+  })

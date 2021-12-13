@@ -163,7 +163,7 @@
     color: #fff;
     font-size: 1.25rem;
     display: inline-block;
-    margin: 1rem 0 !important
+    margin: 1rem 0 !important;
   }
 }
 
@@ -319,10 +319,27 @@
 }
 
 .nav-sticky {
+  transition: all 0.3s;
+
+  .main-nav__logo img {
+    transition: all 0.3s;
+  }
+
   &.is-sticky {
     position: sticky;
     top: 0;
     z-index: 800;
     box-shadow: 0 10px 30px rgb(0 0 0 / 15%);
+    transition: all 0.3s ease;
+
+    @include media('>tablet') {
+      .main-nav {
+        height: 4rem;
+      }
+
+      .main-nav__logo img {
+        max-width: 180px;
+      }
+    }
   }
 }

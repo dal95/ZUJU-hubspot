@@ -4,7 +4,6 @@
   label: Members transactions
 -->
 {% extends "./layouts/base-members.html" %}
-
 {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
 {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 
@@ -70,9 +69,7 @@
           </div>
         </div>
 
-        <table class="table table--dark">
-          <tbody></tbody>
-        </table>
+        {% module "transaction_history" path="/zuju-theme/modules/members-transactions", label="Transactions table" %}
       </section>
     </div>
   </section>
