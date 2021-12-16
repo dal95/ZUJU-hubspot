@@ -29,7 +29,9 @@
     </article>
 
     {% for item in module.children %}
-      <article class="relative flex items-end {{ "h-full lg:col-span-2" if module.children|length == 3 && loop.index == 1 }}">
+      {% if module.children|length <= 3 %}
+      {% endif %}
+      <article class="relative flex items-end {{ "h-full lg:col-span-2" if (module.children|length == 2 && loop.index < 3) || (module.children|length == 3 && loop.index == 1) }}">
         <a href="{{ item.url_field.href }}">
           <div class="absolute inset-0 bg-black">
             {% if item.background.src %}

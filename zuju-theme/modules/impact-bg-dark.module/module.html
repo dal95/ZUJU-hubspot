@@ -7,7 +7,7 @@
             {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
             <figure class="mb-8">
               <div class="w-full lg:hover:animate-flash overflow-hidden mb-4">
-                <img class="w-full transition-transform duration-300 lg:hover:scale-125" src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} />
+                <img class="w-full transition-transform duration-300 lg:hover:scale-125" src="{{ resize_image_url(item.src, 357, 0, 0) }}" alt="{{ item.alt }}" {{ loadingAttr }} />
               </div>
               <figcaption class="text-black font-bold uppercase">{{ item.alt }}</figcaption>
             </figure>
@@ -21,7 +21,7 @@
             {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
             <figure class="mb-8">
               <div class="w-full lg:hover:animate-flash overflow-hidden mb-4">
-                <img class="w-full transition-transform duration-300 lg:hover:scale-125" src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} />
+                <img class="w-full transition-transform duration-300 lg:hover:scale-125" src="{{ resize_image_url(item.src, 357, 0, 0) }}" alt="{{ item.alt }}" {{ loadingAttr }} />
               </div>
               <figcaption class="text-black font-bold uppercase">{{ item.alt }}</figcaption>
             </figure>
@@ -35,7 +35,7 @@
             {% set loadingAttr = item.loading != 'disabled' ? 'loading="{{ item.loading }}"' : '' %}
             <figure class="mb-8">
               <div class="w-full lg:hover:animate-flash overflow-hidden mb-4">
-                <img class="w-full transition-transform duration-300 lg:hover:scale-125" src="{{ item.src }}" alt="{{ item.alt }}" {{ loadingAttr }} />
+                <img class="w-full transition-transform duration-300 lg:hover:scale-125" src="{{ resize_image_url(item.src, 357, 0, 0) }}" alt="{{ item.alt }}" {{ loadingAttr }} />
               </div>
               <figcaption class="text-black font-bold uppercase">{{ item.alt }}</figcaption>
             </figure>

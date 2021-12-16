@@ -6,7 +6,11 @@
           <div class="relative w-full aspect-w-16 aspect-h-9 mb-8" x-bind="animate(0)">
             <div class="absolute top-4 left-4 right-0 bottom-0 bg-zuju-red-dark"></div>
             <div class="absolute top-0 left-0 right-4 bottom-4">
-              <img class="w-full h-full object-cover" src="{{ content.featured_image }}" loading="lazy" alt="{{ content.featured_image_alt_text }}" />
+              <img
+                class="w-full h-full object-cover"
+                src="{{ resize_image_url(content.featured_image, 336, 189) }}"
+                loading="lazy" alt="{{ content.featured_image_alt_text }}"
+              />
             </div>
           </div>
         {% endif %}

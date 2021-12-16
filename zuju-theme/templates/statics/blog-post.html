@@ -73,7 +73,7 @@
           >
             <img
               class="w-full sm:mb-2 lg:mb-16"
-              src="{{ content.featured_image }}"
+              src="{{ resize_image_url(content.featured_image, 776, 436) }}"
               x-init="$RO(() => { heroHeight = $height })"
               loading="lazy"
             />
@@ -168,7 +168,7 @@
                   {% set renderCount = renderCount.update({ value: renderCount.value + 1 })%}
                   <a href="{{ pop_post.absoluteUrl }}">
                     <article class="mb-8">
-                      <img class="mb-2" src="{{pop_post.featuredImage}}" loading="lazy" />
+                      <img class="mb-2" src="{{ resize_image_url(pop_post.featuredImage, 296, 167) }}" loading="lazy" />
                       <h1 class="text-2xl font-gtcond font-regular">
                         {{ pop_post.name }}
                       </h1>
