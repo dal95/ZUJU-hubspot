@@ -6,7 +6,7 @@
        >-->
     <div
        class="max-w-[1440px] flex flex-col items-center justify-center bg-center sm:bg-contain lg:bg-cover bg-no-repeat mx-auto sm:px-8 py-24"
-       style="background-image: url({{ module.backgroud_image.src }})"
+       style="background-image: url({{ resize_image_url(module.backgroud_image.src, 1440) }})"
        x-data="parallax()"
        x-bind="root"
        >

@@ -1,7 +1,7 @@
 
 <div class="relative max-w-[1440px] min-h-screen flex justify-center mx-auto py-16" x-data="parallax()" x-bind="root">
   <!--<div class="absolute inset-0"><img class="h-full w-full object-cover object-center" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-mast.png" /></div>-->
-  <div class="absolute inset-0"><img class="h-full w-full object-cover object-center" src="{{ module.background_image.src }}" /></div>
+  <div class="absolute inset-0"><img class="h-full w-full object-cover object-center" src="{{ resize_image_url(module.background_image.src, 1440) }}" loading="lazy" /></div>
   <div class="relative flex flex-col items-center justify-center sm:p-8">
     <!--<img class="h-16 mb-16" src="https://f.hubspotusercontent20.net/hubfs/20618228/statics/assets/gameplay-logo.png" x-bind="animate(16)" />-->
     <img class="h-16 mb-16" src="{{ module.logo.src }}" x-bind="animate(16)" loading="lazy" />
