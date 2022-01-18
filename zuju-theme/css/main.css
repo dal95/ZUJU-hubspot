@@ -2182,6 +2182,7 @@ section.edit .form-columns-0:not(:first-of-type) {
 .account__password {
   margin-bottom: 1.5rem;
   display: flex;
+  align-items: center;
   justify-content: space-between;
 }
 .account__email .all-caps,

@@ -9,7 +9,7 @@
 {% block body %}
 {# The main-content ID is used for the navigation skipper in the header.html file. More information on the navigation skipper can be found here: https://github.com/HubSpot/cms-theme-boilerplate/wiki/Accessibility #}
 <main id="main-content" class="body-container-wrapper">
-  <section class="content-wrapper">
+  <section class="content-wrapper ">
     <div class="systems-page">
       {% module 'subscription_preferences'
         path='@hubspot/email_subscriptions'
@@ -17,4 +17,49 @@
     </div>
   </section>
 </main>
+
+<style>
+  #email-prefs-form h1 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  #email-prefs-form h2 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  #email-prefs-form select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") !important;
+    width: unset;
+    min-width: 250px;
+  }
+
+  #email-prefs-form input[type="checkbox"],
+  #email-prefs-form .fakelabel input[type="checkbox"] {
+    width: unset;
+    display: inline-block;
+    height: unset;
+  }
+
+  .checkbox-row {
+    margin-top: 1rem;
+  }
+
+  .item-inner p {
+    font-weight: bold
+  }
+
+  label[for="globalunsub"] {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  #globalunsub {
+    margin-right: 5px;
+  }
+</style>
 {% endblock body %}

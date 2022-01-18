@@ -17,4 +17,45 @@
     </div>
   </section>
 </main>
+
+<style>
+  .systems-page h1 {
+    font-size: 3rem;
+    line-height: 4.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e7e7e7;
+  }
+
+  .systems-page h2 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin-bottom: 0;
+  }
+
+  .systems-page select {
+    background-image: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") !important;
+    width: unset;
+    min-width: 250px;
+  }
+
+  .systems-page input[type="checkbox"],
+  .systems-page .fakelabel input[type="checkbox"] {
+    width: unset;
+    display: inline-block;
+    height: unset;
+  }
+
+  .checkbox-row {
+    margin-top: 1rem;
+  }
+
+  label[for="globalunsub"] {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  #globalunsub {
+    margin-right: 5px;
+  }
+</style>
 {% endblock body %}

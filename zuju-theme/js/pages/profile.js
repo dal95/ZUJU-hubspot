@@ -9,12 +9,12 @@ function asyncValidate (selector, callback, disable = true) {
   const inputParent = $(selector).closest('.input')
   var messages = {
     success: {
-      username_valid: '(username) is available',
+      username_valid: '(username) is available'
     },
     error: {
       username_taken: 'Nickname is taken',
       username_invalid_character: 'Special character not allowed',
-      username_minmax: 'Nickname must be between 3-25 characters',
+      username_minmax: 'Nickname must be between 3-25 characters'
     }
   }
 
@@ -49,7 +49,12 @@ function asyncValidate (selector, callback, disable = true) {
         if (!validateEmail($(this).val())) return
       }
 
-      if ($(this).val().trim() == contact.username) return
+      if (
+        $(this)
+          .val()
+          .trim() == contact.username
+      )
+        return
 
       $spinner[0].classList.add('active')
 
@@ -240,5 +245,31 @@ window.addEventListener('message', event => {
           .trigger('change')
       }
     })
+
+    // Delete form
+    const deleteForm = $('#hs_form_target_delete_form')
+    const submitBtn = deleteForm.find('[type="submit"]').addClass('disabled')
+    deleteForm.find('[type="submit"]').attr('disabled', true)
+
+    const inputEl = deleteForm.find('[type="email"]')
+
+    inputEl.on('keyup', e => {
+      const value = e.target.value
+
+      if (value.trim() == contact.email) {
+        console.log('enabled')
+        submitBtn.attr('disabled', false)
+        $('.custom-validation').remove()
+      } else {
+        if (!$('.custom-validation').length) {
+          inputEl.parent().append(`
+          <div class="custom-validation validate-message__error">Wrong email</div>
+        `)
+        }
+        submitBtn.attr('disabled', true)
+      }
+    })
+
+    inputEl.trigger('keyup')
   }
 })

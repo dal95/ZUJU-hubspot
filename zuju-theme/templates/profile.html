@@ -13,6 +13,8 @@
     }
   </style>
 
+  {% set demo = request.query_dict.demo %}
+
   <section class="content-area">
     <div class="main-content">
       <section class="edit">
@@ -28,7 +30,7 @@
           <div class="avatar-edit">
             {{ c.avatar() }}
           </div>
-          {% form "profile" form_to_use='48fa9bbb-c0d8-4996-a45e-de28f83f227a' %}
+          {% form "profile" form_to_use='48fa9bbb-c0d8-4996-a45e-de28f83f227a' label="Profile form" %}
         </div>
 
         <div id="content-account" class="tab-content">
@@ -56,14 +58,43 @@
               </a>
             </div>
           </div>
+
+          {% if demo %}
+            <div class="account__password">
+              <div>
+                <div class="all-caps">Delete account</div>
+              </div>
+
+              <div>
+                <button
+                  href="https://www.zujugp.com/_hcms/mem/reset/request"
+                  class="button button--o-primary"
+                  data-modal-target="modal-delete-account">
+                    Delete
+                </button>
+              </div>
+            </div>
+          {% endif %}
         </div>
       </section>
     </div>
   </section>
 
+  {% call c.modal('modal-delete-account', null) %}
+    <div>
+      <h3 class="text-center">To proceed, please type in your email address</h3>
+
+      {% module
+        "delete_form"
+        path="@hubspot/form"
+        label="Delete form"
+        form_to_use="a7baf041-3275-452e-a83b-772fa99ef026"
+      %}
+    </div>
+  {% endcall %}
+
   <script>
     var contact = {{ contact|tojson }}
-    console.log(contact.country_dropdown)
   </script>
 
 {% endblock body %}

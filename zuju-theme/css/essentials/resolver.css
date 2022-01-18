@@ -9,7 +9,6 @@
 	margin-bottom: 2rem;
 	margin-top: 0;
 }
-
 .app .hs-button {
 	font-family: "GT America Condensed", sans-serif;
 	font-weight: bold
@@ -118,4 +117,17 @@ label strong {
 .form-dark.form-dark label[for] .hs-form-required,
 .form-dark.form-dark label[for] strong {
 	color: #ef6b51;
+}
+
+@media screen and (max-width: 768px) {
+	.app h1,
+	.app h2 {
+		font-size: 2.25rem;
+		line-height: 2.5rem;
+		margin-bottom: 1rem;
+	}
+
+	.app h3 {
+		font-size: 2rem;
+	}
 }
