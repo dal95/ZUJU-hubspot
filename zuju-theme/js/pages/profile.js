@@ -214,6 +214,7 @@ window.addEventListener('message', event => {
       const propName = $(this).attr('name')
       if (propName === 'custom_avatar') return
 
+      if ($(this).closest('#hs_cos_wrapper_delete_form')) return
       if (propName === 'birthday') {
         const current = new Date(contact[propName])
 
@@ -263,13 +264,13 @@ window.addEventListener('message', event => {
       } else {
         if (!$('.custom-validation').length) {
           inputEl.parent().append(`
-          <div class="custom-validation validate-message__error">Wrong email</div>
+          <div class="custom-validation validate-message__error">You have keyed in an incorrect email</div>
         `)
         }
         submitBtn.attr('disabled', true)
       }
     })
 
-    inputEl.trigger('keyup')
+    // inputEl.trigger('keyup')
   }
 })

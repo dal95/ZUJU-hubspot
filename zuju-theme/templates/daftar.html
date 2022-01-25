@@ -3,30 +3,50 @@
   isAvailableForNewContent: true
   label: Daftar
 -->
-{% extends "./layouts/base-standard.html" %}
-{% block body %}
-  <main class="public">
-    <div class="auth-wrapper auth dandan" style="background-image: url({{ get_asset_url('../images/assets/bg/register.png') }})">
-      <div class="container">
-        <div class="auth__push-right form-dark">
-          <h2 class="auth__heading">New Account Sign Up</h2>
+{% extends "./layouts/base-standard.html" %} {% block body %}
+<main class="public">
+  <div
+    class="auth-wrapper auth dandan"
+    style="background-image: url({{ get_asset_url('../images/assets/bg/register.png') }})"
+  >
+    <div class="container">
+      <div class="auth__push-right form-dark">
+        <h2 class="auth__heading">New Account Sign Up</h2>
 
+        {% form 'my_form' %}
 
-          <div class="form-embed-container">
-          </div>
-        </div>
+        <div class="form-embed-container"></div>
       </div>
     </div>
-  </main>
+  </div>
+</main>
 
-  {% set referral_code = request.query_dict.refer %}
-  <script>
-    var referral_code = "{{ referral_code }}";
-    var portal_id = "{{ portal_id }}";
-  </script>
-  <!--[if lte IE 8]>
-  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2-legacy.js"></script>
-  <![endif]-->
-  <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/v2.js"></script>
-  {{ require_js(get_asset_url('zuju-theme/js/pages/register.js'), 'footer')}}
+<script>
+  let count = 0
+  let total = 0
+  window.addEventListener("message", (event) => {
+    if (event.data.type === "hsFormCallback" && event.data.eventName === "onFormReady") {
+      count++;
+      if (count < total) return;
+
+      const form = document.getElementById("hs_form_target_my_form");
+
+      window.addEventListener("message", (event) => {
+        if (event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmit") {
+          event.preventDefault() // Trying to imperatively cancel the submission. Doesn't work
+          console.log(event)
+
+          {# Below codes runs just fine #}
+          const url = new URL(window.location.href)
+
+          if (url) {
+            const ref = url.searchParams.get('ref')
+            window.location = ref
+          }
+        }
+      });
+    }
+  });
+</script>
+
 {% endblock body %}
