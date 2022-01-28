@@ -2314,6 +2314,7 @@ section.edit .form-columns-0:not(:first-of-type) {
   padding-left: 20px;
   padding-right: 20px;
   text-decoration: none;
+  min-width: 120px;
   transition: all 0.3s ease;
 }
 .button:hover, .hs-button:hover {
