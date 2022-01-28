@@ -214,7 +214,7 @@ window.addEventListener('message', event => {
       const propName = $(this).attr('name')
       if (propName === 'custom_avatar') return
 
-      if ($(this).closest('#hs_cos_wrapper_delete_form')) return
+      // if ($(this).closest('#hs_cos_wrapper_delete_form')) return
       if (propName === 'birthday') {
         const current = new Date(contact[propName])
 
