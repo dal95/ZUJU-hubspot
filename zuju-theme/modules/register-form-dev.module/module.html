@@ -4,15 +4,13 @@
   var validation_messages = `{{ module.async_validation_messages|tojson }}`;
 </script>
 
-<div id="redirect-msg">
-  You will be redirected back soon.
-</div>
 <div id="register-form">
   {% form 'register_form'
     form_key='register'
     form_to_use="{{ module.form.form_id }}"
   %}
 </div>
+
 {# {{ require_js(get_asset_url('zuju-theme/js/pages/register.js')) }} #}
 
 {{ require_js('https://cdnjs.cloudflare.com/ajax/libs/flatpickr/4.6.9/flatpickr.min.js', 'footer') }}

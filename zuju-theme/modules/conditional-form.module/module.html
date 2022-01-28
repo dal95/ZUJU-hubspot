@@ -1,0 +1,30 @@
+<!-- Condition  -->
+<!-- Check login status: request_contact.logged_in -->
+
+<!-- check url query  -->
+<!-- https://developers.hubspot.com/docs/cms/hubl/variables -->
+{% if request_contact.is_logged_in or request.query_dict.register == "true"  %}
+  <div id="campaign-upload-form-wrapper">
+    {% form 
+      form_to_use="{{ module.form.form_id }}"
+      response_response_type="{{ module.form.response_type }}"
+      response_message="{{ module.form.message }}"
+      response_redirect_id="{{ module.form.redirect_id }}"
+      response_redirect_url="{{module.form.redirect_url}}"
+      gotowebinar_webinar_key="{{ module.form.gotowebinar_webinar_key }}"
+    %}
+  </div>
+{% else %}
+<div class="campaign--login-section">
+  <div class="campaign--login-btn button">
+    <a href="https://www.zujugp.com/_hcms/mem/login?campaign=true" target="_self">LOGIN</a>
+  </div>
+  <div class="campaign--login-btn campaign--signup-btn button">
+    <a href="https://www.zujugp.com/registration?campaign=true" target="_self">SIGN UP</a>
+  </div>
+</div>
+{% endif %} 
+
+<script>
+  var contactUser = {{ contact|tojson }}
+</script>

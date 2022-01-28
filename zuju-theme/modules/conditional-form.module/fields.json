@@ -1,0 +1,16 @@
+[ {
+  "id" : "923e250e-0b44-dd29-1e10-5d7588ba2da9",
+  "name" : "form",
+  "display_width" : null,
+  "label" : "Form",
+  "required" : false,
+  "locked" : false,
+  "type" : "form",
+  "default" : {
+    "form_id" : "d7592c30-de75-4781-a21a-386326cdcfb4",
+    "response_type" : "inline",
+    "message" : "Thank you for submitting the form.",
+    "gotowebinar_webinar_key" : null,
+    "form_type" : "HUBSPOT"
+  }
+} ]

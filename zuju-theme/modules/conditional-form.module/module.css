@@ -1,0 +1,15 @@
+.campaign--login-section{
+  display: flex;
+  justify-content: center;
+}
+.campaign--login-btn{
+  margin-left: 50px;
+  margin-right: 50px;
+}
+.campaign--login-btn a{
+  color: #ffffff;
+  text-decoration: none;
+}
+.campaign--signup-btn{
+  background: var(--clr-light-600);
+}

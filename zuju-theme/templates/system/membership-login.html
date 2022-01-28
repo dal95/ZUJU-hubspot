@@ -47,4 +47,16 @@
     </div>
   </div>
 </main>
+
+<script>
+  const url = new URL(window.location.href)
+  var refCampaign = ''
+  if (url) {
+    refCampaign = url.searchParams.get('campaign')
+    if(refCampaign == 'true'){
+      document.getElementById("hs-membership-form").action = "/_hcms/mem/login?campaign=true&redirect_url=https://www.zujugp.com/player-of-the-month";
+      document.getElementsByName("redirect_url")[0].value = "https://www.zujugp.com/player-of-the-month"; 
+    }
+  }
+</script>
 {% endblock %}

@@ -215,23 +215,4 @@
       })
     }
   })
-  
-  const url = new URL(window.location.href)
-  var refCampaign = ''
-  if (url) {
-    refCampaign = url.searchParams.get('campaign')
-  }
-  window.addEventListener("message", (event) => {
-    if (event.data.type === "hsFormCallback" && event.data.eventName === "onFormSubmit") {
-      event.preventDefault() // Trying to imperatively cancel the submission. Doesn't work
-
-      if (refCampaign == 'true') {
-        document.getElementById("redirect-msg").style.display = "block"
-        setTimeout(function() {
-          window.location = "https://www.zujugp.com/player-of-the-month?register=true"
-        }, 2000);
-      }
-    }
-  });
-  
 })()
