@@ -229,7 +229,7 @@
         document.getElementById("redirect-msg").style.display = "block"
         setTimeout(function() {
           window.location = "https://www.zujugp.com/player-of-the-month?register=true"
-        }, 2000);
+        }, 5000);
       }
     }
   });
