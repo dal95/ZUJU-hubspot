@@ -3,8 +3,8 @@
   justify-content: center;
 }
 .campaign--login-btn{
-  margin-left: 50px;
-  margin-right: 50px;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
 .campaign--login-btn a{
   color: #ffffff;
