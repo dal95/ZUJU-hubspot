@@ -1,6 +1,10 @@
 $(window).on('load', function () {
   console.log(contactUser)
 
+  $('input[name="firstname"').attr('disabled', true)
+  $('input[name="lastname"').attr('disabled', true)
+  $('input[name="email"').attr('disabled', true)
+
   function fillFormWithTimeout (isSubmit) {
     console.log('refill for fields')
     setTimeout(function () {
@@ -20,13 +24,9 @@ $(window).on('load', function () {
       //       }
     }, 150)
   }
-
-  $('input[name="firstname"').attr('disabled', true)
-  $('input[name="lastname"').attr('disabled', true)
-  $('input[name="email"').attr('disabled', true)
-  $('input[type="tel"').attr('disabled', true)
-  $('[name="user_gender"]').attr('disabled', true)
-  $('[name="country_dropdown"]').attr('disabled', true)
+  // $('input[type="tel"').attr('disabled', true)
+  // $('[name="user_gender"]').attr('disabled', true)
+  // $('[name="country_dropdown"]').attr('disabled', true)
   // $('[name="player_of_the_month___position"]').attr('disabled', true)
 
   if (contactUser != null) {
