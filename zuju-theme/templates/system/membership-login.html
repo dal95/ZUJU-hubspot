@@ -15,7 +15,13 @@
         <div class="auth__push-right form-dark">
 
           <h2 class="auth__heading">
-            {{ currLang == "zh-cn" ? "登录" : "Login" }}
+            {% if currLang == "zh-cn" %}
+              登录
+            {% elif currLang == "id" %}
+              Masuk
+            {% else %}
+              Login
+            {% endif %}
           </h2>
           {% member_login 'my_login'
             email_label= {{ currLang == "zh-cn" ? "电子邮箱" : "Email" }},
@@ -55,7 +61,7 @@
     refCampaign = url.searchParams.get('campaign')
     if(refCampaign == 'true'){
       document.getElementById("hs-membership-form").action = "/_hcms/mem/login?campaign=true&redirect_url=https://www.zujugp.com/player-of-the-month";
-      document.getElementsByName("redirect_url")[0].value = "https://www.zujugp.com/player-of-the-month"; 
+      document.getElementsByName("redirect_url")[0].value = "https://www.zujugp.com/player-of-the-month";
     }
   }
 </script>
