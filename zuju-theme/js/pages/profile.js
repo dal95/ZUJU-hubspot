@@ -241,6 +241,12 @@ window.addEventListener('message', event => {
             .attr('tabindex', -1)
         }
       } else {
+        console.log($(this.closest('form')).attr('id'))
+        if ($(this.closest('form')).data('form-id') === 'a7baf041-3275-452e-a83b-772fa99ef026')  {
+          console.log(this)
+          return
+        }
+
         $(this)
           .val(contact[propName])
           .trigger('change')

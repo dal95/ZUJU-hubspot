@@ -1,9 +1,9 @@
 $(window).on('load', function () {
   console.log(contactUser)
 
-  $('input[name="firstname"').attr('disabled', true)
-  $('input[name="lastname"').attr('disabled', true)
-  $('input[name="email"').attr('disabled', true)
+  $('input[name="firstname"').attr('readonly', true)
+  $('input[name="lastname"').attr('readonly', true)
+  $('input[name="email"').attr('readonly', true)
 
   function fillFormWithTimeout (isSubmit) {
     console.log('refill for fields')
@@ -24,17 +24,17 @@ $(window).on('load', function () {
       //       }
     }, 150)
   }
-  // $('input[type="tel"').attr('disabled', true)
-  // $('[name="user_gender"]').attr('disabled', true)
-  // $('[name="country_dropdown"]').attr('disabled', true)
-  // $('[name="player_of_the_month___position"]').attr('disabled', true)
+  // $('input[type="tel"').attr('readonly', true)
+  // $('[name="user_gender"]').attr('readonly', true)
+  // $('[name="country_dropdown"]').attr('readonly', true)
+  // $('[name="player_of_the_month___position"]').attr('readonly', true)
 
   if (contactUser != null) {
     fillFormWithTimeout(false)
   } else {
-    $('input[name="firstname"').attr('disabled', false)
-    $('input[name="lastname"').attr('disabled', false)
-    $('input[name="email"').attr('disabled', false)
+    $('input[name="firstname"').attr('readonly', false)
+    $('input[name="lastname"').attr('readonly', false)
+    $('input[name="email"').attr('readonly', false)
   }
 
   // $("#campaign-upload-form-wrapper form").on('change', 'input', function(){

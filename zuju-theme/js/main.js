@@ -185,6 +185,7 @@ function modalOut (selector = '.modal', callback) {
 }
 
 $(window).on('load', function () {
+  $('[data-language="id"], [data-language="vi"]').closest('li').remove()
   $('.card').css('height', function () {
     return this.scrollHeight
   })

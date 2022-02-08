@@ -347,7 +347,8 @@ input.disabled, select.disabled, textarea.disabled {
 	background: #5f60645e !important
 }
 
-.app input[disabled], .app select[disabled], .app textarea[disabled]{
+.app input[disabled], .app select[disabled], .app textarea[disabled],
+.app input[readonly], .app select[readonly], .app textarea[readonly]{
 	background: #5f60645e !important;
 	opacity: .3
 }
