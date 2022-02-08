@@ -185,7 +185,14 @@ function modalOut (selector = '.modal', callback) {
 }
 
 $(window).on('load', function () {
-  $('[data-language="id"], [data-language="vi"]').closest('li').remove()
+  console.log(contact)
+  // Temprarily hide the language selector
+  if (contact.email !== 'afdallah.arafat+99@onyxisland.com') {
+    $('[data-language="id"], [data-language="vi"]')
+      .closest('li')
+      .remove()
+  }
+
   $('.card').css('height', function () {
     return this.scrollHeight
   })

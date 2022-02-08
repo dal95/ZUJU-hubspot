@@ -7,6 +7,9 @@
 {% set currLang = content.language.languageTag != NULL ? content.language.languageTag : "" %}
 {% set currLang = currLang == "" ? request.query_dict['hsLang'] : currLang %}
 
+<script>
+var contact = {{ request_contact.contact|tojson }}
+</script>
 <!-- Top nav -->
 <div class="nav">
   <nav class="top-nav">
@@ -72,9 +75,11 @@
           <div class="has-dropdown">
             <a href="/members-portal{{ langQuery }}" class="nav__link account-link">
               {% if currLang == "zh-cn" %}
-              账户
+                账户
+              {% elif currLang == "id" %}
+                Akun
               {% else %}
-              Account
+                Account
               {% endif %}
 
               {{ c.icon_chevron_down() }}
@@ -83,9 +88,11 @@
             <div class="dropdown">
               <div>
                 {% if currLang == "zh-cn" %}
-                你好，{{ contact.firstname }}
+                  你好，{{ contact.firstname }}
+                {% elif currLang == "id" %}
+                  Halo, {{ contact.firstname }}
                 {% else %}
-                Hi, {{ contact.firstname }}
+                  Hi, {{ contact.firstname }}
                 {% endif %}
               </div>
 
@@ -117,15 +124,19 @@
         {% else %}
           {% if currLang == "zh-cn" %}
             <a class="nav__link nav-auth" href="/zh-cn/registration">注册</a>
+          {% elif currLang == "id" %}
+            <a class="nav__link nav-auth" href="/id/registration">Daftar</a>
           {% else %}
             <a class="nav__link nav-auth" href="/registration{{ langQuery }}">Sign Up</a>
           {% endif %}
 
           <a class="nav__link nav-auth" href="/_hcms/mem/login{{ langQuery }}">
             {% if currLang == "zh-cn" %}
-            登录
+              登录
+            {% elif currLang == "id" %}
+              Masuk
             {% else %}
-            Login
+              Login
             {% endif %}
           </a>
         {% endif %}
@@ -151,7 +162,6 @@
           <div class="burger-menu__item"></div>
           <div class="burger-menu__item"></div>
         </div>
-
       </div>
     </div>
   </nav>
